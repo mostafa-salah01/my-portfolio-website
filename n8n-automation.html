@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>n8n Enterprise Workflow Automation | أتمتة العمليات والربط المؤسسي عبر n8n - Mostafa Salah</title>
+  <meta name="description" content="Build reliable, self-hosted n8n automation workflows, multi-system data pipelines, webhook security handlers, and automated invoicing." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Content Security Policy & Mozilla Observatory Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https: ws: wss:; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="n8n Enterprise Workflow Automation | أتمتة العمليات عبر n8n" />
+  <meta property="og:description" content="Transform manual operations into 10,000+ daily automated executions with n8n." />
+  <meta property="og:image" content="assets/images/n8n_workflow_canvas_1789849612939.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Framework & Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#030712',
+              card: '#0b1329',
+              emerald: '#10b981',
+              cyan: '#06b6d4'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Complete CSS Stylesheet (Design System + Pre-compiled Styles & Animations) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Synchronous Theme Initializer (External script for strict CSP) -->
+  <script src="theme-init.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 p-[1.5px] transition-transform group-hover:scale-105">
+          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+            <span class="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 text-lg">MS</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-white text-base sm:text-lg tracking-tight block leading-tight font-mono">Mostafa Salah</span>
+          <span class="text-[11px] text-cyan-400 block font-mono" data-en="Software & Systems Engineer" data-ar="مهندس برمجيات ونظم">مهندس برمجيات ونظم</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span>&larr;</span>
+          <span data-en="Home" data-ar="الرئيسية">الرئيسية</span>
+        </a>
+        <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
+        <a href="whatsapp-ai-employee.html" class="hover:text-cyan-400 transition-colors" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
+        <a href="n8n-automation.html" class="text-cyan-400 font-bold" data-en="Automation" data-ar="الأتمتة">الأتمتة</a>
+        <a href="smart-shipping-system.html" class="hover:text-cyan-400 transition-colors" data-en="Logistics" data-ar="اللوجستيات">اللوجستيات</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="theme-toggle-btn" data-action="toggle-theme" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <button id="lang-toggle-btn" data-action="toggle-language" class="px-3 py-2 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-xs font-mono font-bold text-cyan-400 hover:text-cyan-300 transition-all cursor-pointer">
+          <span id="lang-btn-text">EN</span>
+        </button>
+
+        <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84%20n8n" target="_blank" rel="noopener noreferrer" data-service="n8n-enterprise-orchestrator" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 dynamic-whatsapp-link">
+          <span>💬</span>
+          <span data-en="Order n8n Service" data-ar="طلب أتمتة n8n">طلب أتمتة n8n</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb Navigation -->
+      <div class="flex items-center gap-2 text-xs font-mono text-slate-400 mb-6">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>/</span>
+        <a href="index.html#projects" class="hover:text-cyan-400 transition-colors" data-en="Services" data-ar="الخدمات">الخدمات</a>
+        <span>/</span>
+        <span class="text-cyan-400" data-en="n8n Enterprise Automation" data-ar="أتمتة العمليات n8n">أتمتة العمليات n8n</span>
+      </div>
+
+      <!-- Hero Header Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span data-en="10,000+ Daily Executions · 99.98% Reliability" data-ar="+10,000 تدفق يومي · موثوقية 99.98%">+10,000 تدفق يومي · موثوقية 99.98%</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4" data-en="n8n Enterprise Workflow & Business Orchestration" data-ar="أتمتة مسارات العمل والربط المؤسسي عبر n8n">أتمتة مسارات العمل والربط المؤسسي عبر n8n</h1>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6" data-en="Eliminate repetitive administrative tasks and connect your fragmented apps. We architect self-hosted, enterprise-grade n8n workflow systems with sub-workflow isolation, automated retry queues, cryptographically secured webhooks, and real-time Telegram alerting." data-ar="تخلص من الأعمال الروتينية اليدوية واربط برامجك المنفصلة في نظام متناغم. نصمم ونبني مسارات أتمتة n8n ذات اعتمادية عالية، مع طوابير إعادة محاولة ذكية، وتشفير آمن للـ Webhooks، وإشعارات فورية على تيليجرام وواتساب.">تخلص من الأعمال الروتينية اليدوية واربط برامجك المنفصلة في نظام متناغم. نصمم ونبني مسارات أتمتة n8n ذات اعتمادية عالية، مع طوابير إعادة محاولة ذكية، وتشفير آمن للـ Webhooks، وإشعارات فورية على تيليجرام وواتساب.</p>
+          
+          <div class="flex flex-wrap gap-2.5 mb-6 text-xs font-mono">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 font-bold">n8n Self-Hosted</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-emerald-400 font-bold">Docker & Redis Queues</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-purple-400 font-bold">HMAC Webhook Auth</span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84%20n8n" target="_blank" rel="noopener noreferrer" data-service="n8n-enterprise-orchestrator" class="px-6 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-cyan-500/20 dynamic-whatsapp-link">
+              <span>💬</span>
+              <span data-en="Discuss Your Workflow with Mostafa" data-ar="ناقش مسار أتمتة أعمالك مع مصطفى">ناقش مسار أتمتة أعمالك مع مصطفى</span>
+            </a>
+            <a href="index.html#projects" class="px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-bold text-sm border border-slate-800 transition-colors">
+              <span data-en="View Other Systems" data-ar="استعراض الأنظمة الأخرى">استعراض الأنظمة الأخرى</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Banner Image -->
+        <div class="lg:col-span-5">
+          <div class="relative group rounded-2xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl cursor-pointer" data-action="open-lightbox" data-img="assets/images/n8n_workflow_canvas_1789849612939.jpg" data-caption="أتمتة العمليات ومسارات العمل عبر n8n">
+            <img src="assets/images/n8n_workflow_canvas_1789849612939.jpg" alt="n8n Enterprise Automation Canvas" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs">🔍 <span data-en="Enlarge Screenshot" data-ar="تكبير الصورة">تكبير الصورة</span></span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-lg bg-slate-950/80 backdrop-blur border border-slate-800 text-[11px] text-center font-mono text-cyan-300">
+              <span data-en="Production Workflow Canvas with Retry Isolation" data-ar="مخطط مسار أتمتة حي مع عزل الأخطاء وإعادة المحاولة">مخطط مسار أتمتة حي مع عزل الأخطاء وإعادة المحاولة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Use Cases & Capabilities -->
+      <section class="mb-14">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center" data-en="High-Impact Automation Scenarios" data-ar="أبرز سيناريوهات وحلول الأتمتة">أبرز سيناريوهات وحلول الأتمتة</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-panel p-6">
+            <div class="text-2xl mb-3">🔄</div>
+            <h3 class="text-base font-bold text-white mb-2" data-en="Omni-Store Order Sync" data-ar="مزامنة المخزون والطلبات">مزامنة المخزون والطلبات</h3>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Sync orders across Shopify, WooCommerce, Salla, Zid, and ERP systems automatically with real-time stock deductions." data-ar="ربط المتاجر الإلكترونية مع برنامج الحسابات والمخازن وخصم الكميات تلقائياً فور إتمام كل عملية بيع.">ربط المتاجر الإلكترونية مع برنامج الحسابات والمخازن وخصم الكميات تلقائياً فور إتمام كل عملية بيع.</p>
+          </div>
+
+          <div class="glass-panel p-6">
+            <div class="text-2xl mb-3">🧾</div>
+            <h3 class="text-base font-bold text-white mb-2" data-en="Automated Invoicing & Receipts" data-ar="إصدار الفواتير والإيصالات">إصدار الفواتير والإيصالات</h3>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Generate branded PDF invoices, push them directly to customers on WhatsApp, and file accounting entries into your database." data-ar="توليد فواتير PDF تلقائية وإرسالها فوراً للعميل على الواتساب وتسجيل القيود المحاسبية في قاعدة بياناتك.">توليد فواتير PDF تلقائية وإرسالها فوراً للعميل على الواتساب وتسجيل القيود المحاسبية في قاعدة بياناتك.</p>
+          </div>
+
+          <div class="glass-panel p-6">
+            <div class="text-2xl mb-3">🚨</div>
+            <h3 class="text-base font-bold text-white mb-2" data-en="Critical Alerting & Bot Dispatch" data-ar="التنبيهات الفورية وبوتات الإدارة">التنبيهات الفورية وبوتات الإدارة</h3>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Broadcast instantaneous VIP client activity, system health exceptions, or payment confirmations straight to private Telegram channels." data-ar="إرسال تقارير العمليات الهامة، أو التنبيه عند نقص صنف في المخزون، أو فشل سيرفر إلى قنوات خاصة على تيليجرام.">إرسال تقارير العمليات الهامة، أو التنبيه عند نقص صنف في المخزون، أو فشل سيرفر إلى قنوات خاصة على تيليجرام.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Navigation -->
+      <section class="pt-8 border-t border-slate-800">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <a href="index.html" class="text-xs font-mono text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+            <span>&larr;</span>
+            <span data-en="Return to Home Portfolio" data-ar="الرجوع للرئيسية">الرجوع للرئيسية</span>
+          </a>
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="text-slate-500 font-mono" data-en="Other Services:" data-ar="خدمات أخرى:">خدمات أخرى:</span>
+            <a href="corporate-website.html" class="text-cyan-400 hover:underline" data-en="Corporate Websites ($65 / $75)" data-ar="مواقع الشركات (65$ / 75$)">مواقع الشركات (65$ / 75$)</a>
+            <span>·</span>
+            <a href="whatsapp-ai-employee.html" class="text-emerald-400 hover:underline" data-en="AI Employee" data-ar="موظف الذكاء الاصطناعي">موظف الذكاء الاصطناعي</a>
+            <span>·</span>
+            <a href="smart-shipping-system.html" class="text-cyan-400 hover:underline" data-en="Shipping System" data-ar="سيستم الشحن">سيستم الشحن</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="modal-overlay" data-action="close-lightbox">
+    <div class="modal-content p-4" data-stop-propagation="true">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+        <div id="lightbox-caption" class="text-sm font-bold text-white"></div>
+        <button data-action="close-lightbox" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold cursor-pointer">✕</button>
+      </div>
+      <img id="lightbox-img" src="" alt="Screenshot" class="w-full max-h-[75vh] object-contain rounded-lg bg-black" />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-800/80 bg-slate-950/80 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-white font-mono">&gt;_ Mostafa Salah</span>
+        <span>·</span>
+        <span>© 2026 Mostafa Salah. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400 font-medium">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>·</span>
+        <a href="privacy.html" class="hover:text-cyan-400 transition-colors" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+        <span>·</span>
+        <a href="terms.html" class="hover:text-cyan-400 transition-colors" data-en="Terms of Service" data-ar="الشروط والأحكام">الشروط والأحكام</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

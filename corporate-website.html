@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Website Design & Setup | تصميم وإعداد موقع تعريفي احترافي للشركات - Mostafa Salah</title>
+  <meta name="description" content="Professional corporate website design & setup for businesses. Includes multi-page responsive design, domain (.uk or .com), high-speed hosting, bilingual support (AR/EN), and continuous daily maintenance." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Content Security Policy & Mozilla Observatory Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https: ws: wss:; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Corporate Website Design & Setup | تصميم وإعداد موقع تعريفي احترافي للشركات" />
+  <meta property="og:description" content="Get a complete, ultra-fast corporate website in both Arabic & English within base price. $65 with .uk or $75 with .com domain." />
+  <meta property="og:image" content="assets/images/watermarked_img_3971138867213192952.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Framework & Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#030712',
+              card: '#0b1329',
+              emerald: '#10b981',
+              cyan: '#06b6d4'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Complete CSS Stylesheet (Design System + Pre-compiled Styles & Animations) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Synchronous Theme Initializer (External script for strict CSP) -->
+  <script src="theme-init.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 p-[1.5px] transition-transform group-hover:scale-105">
+          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+            <span class="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 text-lg">MS</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-white text-base sm:text-lg tracking-tight block leading-tight font-mono">Mostafa Salah</span>
+          <span class="text-[11px] text-cyan-400 block font-mono" data-en="Software & Systems Engineer" data-ar="مهندس برمجيات ونظم">مهندس برمجيات ونظم</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span>&larr;</span>
+          <span data-en="Home" data-ar="الرئيسية">الرئيسية</span>
+        </a>
+        <a href="corporate-website.html" class="text-cyan-400 font-bold" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
+        <a href="whatsapp-ai-employee.html" class="hover:text-cyan-400 transition-colors" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
+        <a href="n8n-automation.html" class="hover:text-cyan-400 transition-colors" data-en="Automation" data-ar="الأتمتة">الأتمتة</a>
+        <a href="smart-shipping-system.html" class="hover:text-cyan-400 transition-colors" data-en="Logistics" data-ar="اللوجستيات">اللوجستيات</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="theme-toggle-btn" data-action="toggle-theme" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer" title="تبديل الثيم / Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <button id="lang-toggle-btn" data-action="toggle-language" class="px-3 py-2 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-xs font-mono font-bold text-cyan-400 hover:text-cyan-300 transition-all cursor-pointer">
+          <span id="lang-btn-text">EN</span>
+        </button>
+
+        <a id="nav-order-btn" href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%85%D9%88%D9%82%D8%B9%20%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%8A%20%D9%84%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%20(65%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%A8%D8%AF%D9%88%D9%85%D9%8A%D9%86%20uk.%20%D8%A3%D9%88%2075%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%A8%D8%AF%D9%88%D9%85%D9%8A%D9%86%20com.)" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105">
+          <span>💬</span>
+          <span data-en="Order Package ($65 / $75)" data-ar="طلب الباقة (65$ / 75$)">طلب الباقة (65$ / 75$)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb Navigation -->
+      <div class="flex items-center gap-2 text-xs font-mono text-slate-400 mb-6">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>/</span>
+        <a href="index.html#projects" class="hover:text-cyan-400 transition-colors" data-en="Services" data-ar="الخدمات">الخدمات</a>
+        <span>/</span>
+        <span class="text-cyan-400" data-en="Corporate Website Setup" data-ar="موقع تعريفي للشركات">موقع تعريفي للشركات</span>
+      </div>
+
+      <!-- Hero Header Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span data-en="Complete Business Solution · Arabic & English Included" data-ar="حل متكامل للأعمال · اللغتان العربية والإنجليزية معاً">حل متكامل للأعمال · اللغتان العربية والإنجليزية معاً</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4" data-en="Professional Corporate Website Design & Setup" data-ar="تصميم وإعداد موقع تعريفي احترافي للشركات">تصميم وإعداد موقع تعريفي احترافي للشركات</h1>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6" data-en="Get a complete, ultra-fast corporate website for your business in both Arabic and English together within the base price. Includes custom multi-page design, domain registration, high-speed cloud hosting, daily technical support, and ongoing maintenance throughout the entire year." data-ar="احصل على موقع إلكتروني تعريفي متكامل وسريع لشركتك باللغتين العربية والإنجليزية معاً ضمن السعر الأساسي. يشمل التصميم المتجاوب، حجز الدومين، الاستضافة السحابية فائقة السرعة، ودعم فني وصيانة يومية طوال السنة الأولى.">احصل على موقع إلكتروني تعريفي متكامل وسريع لشركتك باللغتين العربية والإنجليزية معاً ضمن السعر الأساسي. يشمل التصميم المتجاوب، حجز الدومين، الاستضافة السحابية فائقة السرعة، ودعم فني وصيانة يومية طوال السنة الأولى.</p>
+          
+          <!-- Key Points Badges -->
+          <div class="flex flex-wrap gap-2.5 mb-6 text-xs font-mono">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-emerald-400 font-bold" data-en="🌐 Arabic & English Included" data-ar="🌐 اللغتان معاً مشمولتان">🌐 اللغتان معاً مشمولتان</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 font-bold" data-en="⚡ $65 (.uk) or $75 (.com)" data-ar="⚡ 65$ بدومين uk. أو 75$ بدومين com.">⚡ 65$ بدومين uk. أو 75$ بدومين com.</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-amber-400 font-bold" data-en="🔄 $40/Year Fixed Renewal" data-ar="🔄 تجديد سنوي ثابت 40$">🔄 تجديد سنوي ثابت 40$</span>
+          </div>
+
+          <!-- Direct CTA -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%85%D9%88%D9%82%D8%B9%20%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%8A%20%D9%84%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%20(65%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%A8%D8%AF%D9%88%D9%85%D9%8A%D9%86%20uk.%20%D8%A3%D9%88%2075%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%A8%D8%AF%D9%88%D9%85%D9%8A%D9%86%20com.)" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-cyan-500/20">
+              <span>💬</span>
+              <span data-en="Order This Package on WhatsApp" data-ar="طلب حجز الباقة عبر واتساب">طلب حجز الباقة عبر واتساب</span>
+            </a>
+            <a href="index.html#projects" class="px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-bold text-sm border border-slate-800 transition-colors">
+              <span data-en="Browse All Services" data-ar="استعراض باقي الخدمات">استعراض باقي الخدمات</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Banner Image with Lightbox Zoom -->
+        <div class="lg:col-span-5">
+          <div class="relative group rounded-2xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl cursor-pointer" data-action="open-lightbox" data-img="assets/images/watermarked_img_3971138867213192952.jpg" data-caption="تصميم وإعداد موقع تعريفي احترافي للشركات ($65 - $75)">
+            <img src="assets/images/watermarked_img_3971138867213192952.jpg" alt="Corporate Website Package" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs">🔍 <span data-en="Enlarge Screenshot" data-ar="تكبير الصورة">تكبير الصورة</span></span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-lg bg-slate-950/80 backdrop-blur border border-slate-800 text-[11px] text-center font-mono text-cyan-300">
+              <span data-en="Official Banner · Bilingual AR/EN · $65 uk / $75 com" data-ar="البنر الرسمي · ثنائي اللغة عربي/إنجليزي · 65$ uk أو 75$ com">البنر الرسمي · ثنائي اللغة عربي/إنجليزي · 65$ uk أو 75$ com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Pricing & Domain Calculator -->
+      <section class="mb-14">
+        <div class="glass-panel p-6 sm:p-8 border-t-2 border-t-cyan-500">
+          <div class="text-center max-w-2xl mx-auto mb-8">
+            <h2 class="text-2xl font-bold text-white mb-2" data-en="Choose Your Domain & Start Immediately" data-ar="اختر نوع الدومين وابدأ موقع شركتك فوراً">اختر نوع الدومين وابدأ موقع شركتك فوراً</h2>
+            <p class="text-slate-400 text-xs sm:text-sm" data-en="Two transparent options for your business identity with zero hidden fees. Both include full bilingual design and year-round support." data-ar="خياران واضحان لهوية شركتك دون أي رسوم مخفية. كلا الخيارين يشملان الموقع باللغتين والدعم اليومي.">خياران واضحان لهوية شركتك دون أي رسوم مخفية. كلا الخيارين يشملان الموقع باللغتين والدعم اليومي.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <!-- Option 1: .uk Domain -->
+            <div id="card-uk" data-action="select-domain" data-domain="uk" class="p-6 rounded-2xl border-2 border-cyan-500 bg-cyan-950/20 cursor-pointer transition-all hover:border-cyan-400 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-bold text-xs" data-en="Base Package" data-ar="الباقة الأساسية">الباقة الأساسية</span>
+                  <span class="text-2xl font-black text-cyan-400 font-mono">$65 <span class="text-xs text-slate-400 font-normal">USD / Year 1</span></span>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2" data-en="Official .uk Domain Included" data-ar="دومين رسمي بامتداد .uk مشمول">دومين رسمي بامتداد .uk مشمول</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4" data-en="Great for businesses seeking an authoritative UK/international identity with complete first-year setup, hosting, and daily support." data-ar="مثالي للشركات التي تبحث عن تواجد دولي رسمي مع حجز الدومين والاستضافة والتصميم والدعم للسنة الأولى كاملة.">مثالي للشركات التي تبحث عن تواجد دولي رسمي مع حجز الدومين والاستضافة والتصميم والدعم للسنة الأولى كاملة.</p>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span data-en="Official .uk Domain Registration" data-ar="حجز دومين رسمي .uk">حجز دومين رسمي .uk</span></li>
+                  <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span data-en="Arabic & English Bilingual Setup" data-ar="إعداد الموقع باللغتين العربية والإنجليزية">إعداد الموقع باللغتين العربية والإنجليزية</span></li>
+                  <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span data-en="Ultra-fast Cloud Hosting & SSL" data-ar="استضافة سحابية فائقة السرعة مع SSL">استضافة سحابية فائقة السرعة مع SSL</span></li>
+                  <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span data-en="Daily Maintenance (Sat-Thu)" data-ar="صيانة ومتابعة يومية (السبت-الخميس)">صيانة ومتابعة يومية (السبت-الخميس)</span></li>
+                </ul>
+              </div>
+              <div class="mt-6 pt-4 border-t border-cyan-500/30 flex items-center justify-between text-xs">
+                <span class="text-slate-400" data-en="Annual Renewal:" data-ar="التجديد السنوي:">التجديد السنوي:</span>
+                <span class="font-mono font-bold text-emerald-400" data-en="$40 USD / Year Fixed" data-ar="40$ سنوياً ثابت">40$ سنوياً ثابت</span>
+              </div>
+            </div>
+
+            <!-- Option 2: .com Domain -->
+            <div id="card-com" data-action="select-domain" data-domain="com" class="p-6 rounded-2xl border-2 border-slate-800 bg-slate-900/60 cursor-pointer transition-all hover:border-emerald-400 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-mono font-bold text-xs" data-en="Global .com Upgrade" data-ar="ترقية الدومين العالمي .com">ترقية الدومين العالمي .com</span>
+                  <span class="text-2xl font-black text-emerald-400 font-mono">$75 <span class="text-xs text-slate-400 font-normal">USD / Year 1</span></span>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2" data-en="Official .com Domain Included" data-ar="دومين رسمي بامتداد .com مشمول">دومين رسمي بامتداد .com مشمول</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4" data-en="Worldwide recognized commercial domain extension for your brand, fully configured with bilingual setup, hosting, and daily support." data-ar="الامتداد التجاري العالمي الأكثر شهرة لعلامتك التجارية، مع إعداد كامل باللغتين واستضافة ودعم فني يومي.">الامتداد التجاري العالمي الأكثر شهرة لعلامتك التجارية، مع إعداد كامل باللغتين واستضافة ودعم فني يومي.</p>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                  <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> <span data-en="Official .com Domain Registration" data-ar="حجز دومين رسمي .com">حجز دومين رسمي .com</span></li>
+                  <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> <span data-en="Arabic & English Bilingual Setup" data-ar="إعداد الموقع باللغتين العربية والإنجليزية">إعداد الموقع باللغتين العربية والإنجليزية</span></li>
+                  <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> <span data-en="Ultra-fast Cloud Hosting & SSL" data-ar="استضافة سحابية فائقة السرعة مع SSL">استضافة سحابية فائقة السرعة مع SSL</span></li>
+                  <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> <span data-en="Daily Maintenance (Sat-Thu)" data-ar="صيانة ومتابعة يومية (السبت-الخميس)">صيانة ومتابعة يومية (السبت-الخميس)</span></li>
+                </ul>
+              </div>
+              <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-400" data-en="Annual Renewal:" data-ar="التجديد السنوي:">التجديد السنوي:</span>
+                <span class="font-mono font-bold text-emerald-400" data-en="$40 USD / Year Fixed" data-ar="40$ سنوياً ثابت">40$ سنوياً ثابت</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Action Box -->
+          <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <div id="selected-summary-title" class="text-base font-bold text-white mb-1">
+                <span data-en="Selected: Base Package with .uk Domain ($65 USD)" data-ar="المختار: الباقة الأساسية بدومين uk. رسمي (65 دولار)">المختار: الباقة الأساسية بدومين uk. رسمي (65 دولار)</span>
+              </div>
+              <div class="text-xs text-slate-400" data-en="Includes bilingual site + hosting + daily support + fixed $40/yr renewal" data-ar="تشمل الموقع باللغتين + الاستضافة + الصيانة اليومية + تجديد سنوي ثابت بـ 40$">تشمل الموقع باللغتين + الاستضافة + الصيانة اليومية + تجديد سنوي ثابت بـ 40$</div>
+            </div>
+            <a id="interactive-order-btn" href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%8A%20%D8%A8%D8%AF%D9%88%D9%85%D9%8A%D9%86%20uk.%20%D8%A8%D8%B3%D8%B9%D8%B1%2065%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm text-center transition-all hover:scale-105 flex items-center justify-center gap-2">
+              <span>💬</span>
+              <span id="order-btn-label" data-en="Order with .uk ($65)" data-ar="طلب الباقة بدومين uk. (65$)">طلب الباقة بدومين uk. (65$)</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Full Features Matrix -->
+      <section class="mb-14">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center" data-en="Everything Included in Your First Year" data-ar="كل ما هو مشمول في باقتك للسنة الأولى">كل ما هو مشمول في باقتك للسنة الأولى</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-panel p-6">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4">📱</div>
+            <h3 class="text-base font-bold text-white mb-2" data-en="Responsive Multi-Page Design" data-ar="تصميم متعدد الصفحات ومتجاوب">تصميم متعدد الصفحات ومتجاوب</h3>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Custom-designed pages for Home, About, Services, Products, Contact, and direct lead generation forms. Flawless on smartphones, tablets, and desktops." data-ar="صفحات متكاملة للرئيسية، نبذة عنا، الخدمات، المنتجات، واستمارات التواصل وطلب العروض، متوافقة 100% مع الهواتف والشاشات الذكية.">صفحات متكاملة للرئيسية، نبذة عنا، الخدمات، المنتجات، واستمارات التواصل وطلب العروض، متوافقة 100% مع الهواتف والشاشات الذكية.</p>
+          </div>
+
+          <div class="glass-panel p-6">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">🌍</div>
+            <h3 class="text-base font-bold text-white mb-2" data-en="Full Bilingual Support (AR & EN)" data-ar="دعم كامل للغتين (العربية والإنجليزية)">دعم كامل للغتين (العربية والإنجليزية)</h3>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Seamless language switcher with full RTL/LTR typographic optimization included within the base price without extra translation charges." data-ar="تبديل لغوي فوري وسلس مع ضبط تام للخطوط واتجاه النصوص من اليمين لليسار والعكس، مشمول ضمن السعر الأساسي.">تبديل لغوي فوري وسلس مع ضبط تام للخطوط واتجاه النصوص من اليمين لليسار والعكس، مشمول ضمن السعر الأساسي.</p>
+          </div>
+
+          <div class="glass-panel p-6">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-4">⚡</div>
+            <h3 class="text-base font-bold text-white mb-2" data-en="High-Speed Cloud Hosting + SSL" data-ar="استضافة سحابية فائقة السرعة وSSL">استضافة سحابية فائقة السرعة وSSL</h3>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Deployments on global edge CDNs for lightning-fast sub-second loading, 99.9% uptime, and automatic Let's Encrypt SSL encryption." data-ar="استضافة على شبكات سحابية فائقة السرعة لتحميل لحظي، مع شهادة أمان مشفرة SSL ونسبة تشغيل 99.9%.">استضافة على شبكات سحابية فائقة السرعة لتحميل لحظي، مع شهادة أمان مشفرة SSL ونسبة تشغيل 99.9%.</p>
+          </div>
+
+          <div class="glass-panel p-6">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4">💬</div>
+            <h3 class="text-base font-bold text-white mb-2" data-en="Direct WhatsApp CTA Integration" data-ar="ربط مباشر مع الواتساب لزيادة المبيعات">ربط مباشر مع الواتساب لزيادة المبيعات</h3>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Floating chat buttons and service-specific inquiry triggers directing potential clients straight to your sales team's WhatsApp." data-ar="أزرار تواصل عائمة ونماذج طلب مباشرة تحوّل عملاءك المحتملين إلى رقم واتساب المبيعات الخاص بك فوراً.">أزرار تواصل عائمة ونماذج طلب مباشرة تحوّل عملاءك المحتملين إلى رقم واتساب المبيعات الخاص بك فوراً.</p>
+          </div>
+
+          <div class="glass-panel p-6">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4">🛠️</div>
+            <h3 class="text-base font-bold text-white mb-2" data-en="Daily Maintenance (Sat - Thu)" data-ar="صيانة ومتابعة يومية (السبت - الخميس)">صيانة ومتابعة يومية (السبت - الخميس)</h3>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Continuous technical oversight throughout the year. Need text changes, new images, or phone updates? We handle it daily for you." data-ar="متابعة فنية مستمرة طوال العام. ترغب في تحديث أرقام، تغيير نصوص، أو إضافة صور؟ نتولى الأمر يومياً دون تأخير.">متابعة فنية مستمرة طوال العام. ترغب في تحديث أرقام، تغيير نصوص، أو إضافة صور؟ نتولى الأمر يومياً دون تأخير.</p>
+          </div>
+
+          <div class="glass-panel p-6">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl mb-4">🔍</div>
+            <h3 class="text-base font-bold text-white mb-2" data-en="SEO & Google Indexing Setup" data-ar="تهيئة محركات البحث وأرشفة جوجل">تهيئة محركات البحث وأرشفة جوجل</h3>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Structured OpenGraph meta tags, XML sitemaps, and robots.txt setup so your company ranks properly when customers search your brand." data-ar="تهيئة الأكواد الوصفية، خريطة الموقع XML، وربط الموقع ليظهر لعملائك عند البحث عن شركتك على محركات البحث.">تهيئة الأكواد الوصفية، خريطة الموقع XML، وربط الموقع ليظهر لعملائك عند البحث عن شركتك على محركات البحث.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4-Step Project Delivery Process -->
+      <section class="mb-14">
+        <div class="glass-panel p-6 sm:p-8">
+          <h2 class="text-2xl font-bold text-white mb-8 text-center" data-en="Simple 4-Step Launch Process" data-ar="خطوات استلام وتدشين موقعك (4 خطوات بسيطة)">خطوات استلام وتدشين موقعك (4 خطوات بسيطة)</h2>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 relative">
+              <span class="text-3xl font-black text-cyan-500/30 font-mono absolute top-2 right-3">01</span>
+              <h4 class="font-bold text-white text-sm mb-1" data-en="1. Brief & Requirements" data-ar="1. استقبال البيانات والشعار">1. استقبال البيانات والشعار</h4>
+              <p class="text-xs text-slate-400" data-en="Share your company logo, contact info, and preferred services list via WhatsApp." data-ar="ترسل شعارك، بيانات التواصل، وقائمة خدماتك أو نبذة عن نشاطك عبر الواتساب.">ترسل شعارك، بيانات التواصل، وقائمة خدماتك أو نبذة عن نشاطك عبر الواتساب.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 relative">
+              <span class="text-3xl font-black text-cyan-500/30 font-mono absolute top-2 right-3">02</span>
+              <h4 class="font-bold text-white text-sm mb-1" data-en="2. Interactive Staging" data-ar="2. التصميم والعرض التجريبي">2. التصميم والعرض التجريبي</h4>
+              <p class="text-xs text-slate-400" data-en="We develop the prototype and share a private live link for your review and notes." data-ar="نقوم ببرمجة وتصميم الموقع ونرسل لك رابطاً حياً لمعاينته وإبداء أي ملاحظات.">نقوم ببرمجة وتصميم الموقع ونرسل لك رابطاً حياً لمعاينته وإبداء أي ملاحظات.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 relative">
+              <span class="text-3xl font-black text-cyan-500/30 font-mono absolute top-2 right-3">03</span>
+              <h4 class="font-bold text-white text-sm mb-1" data-en="3. Domain & SSL Setup" data-ar="3. حجز الدومين وتفعيل الأمان">3. حجز الدومين وتفعيل الأمان</h4>
+              <p class="text-xs text-slate-400" data-en="We register your official domain (.uk or .com), set up DNS records and SSL encryption." data-ar="نحجز الدومين الرسمي المطلوب (.uk أو .com) ونربطه بالسيرفر ونفعّل تشفير الأمان.">نحجز الدومين الرسمي المطلوب (.uk أو .com) ونربطه بالسيرفر ونفعّل تشفير الأمان.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 relative">
+              <span class="text-3xl font-black text-cyan-500/30 font-mono absolute top-2 right-3">04</span>
+              <h4 class="font-bold text-white text-sm mb-1" data-en="4. Launch & Daily Support" data-ar="4. التدشين والصيانة اليومية">4. التدشين والصيانة اليومية</h4>
+              <p class="text-xs text-slate-400" data-en="Your website goes live to the world, backed by daily maintenance all year round." data-ar="يصبح موقعك جاهزاً للعملاء مع دعم فني وصيانة ومتابعة يومية طوال السنة.">يصبح موقعك جاهزاً للعملاء مع دعم فني وصيانة ومتابعة يومية طوال السنة.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fixed Annual Renewal Notice Box -->
+      <section class="mb-14">
+        <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-cyan-950/60 to-emerald-950/40 border border-cyan-500/30 text-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-xs font-bold mb-3">
+            <span>🛡️</span>
+            <span data-en="Guaranteed Renewal Price" data-ar="سعر تجديد سنوي ثابت ومضمون">سعر تجديد سنوي ثابت ومضمون</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-2" data-en="Fixed Annual Renewal: Only $40 USD / Year for All Packages" data-ar="التجديد السنوي ثابت: 40$ سنوياً فقط لجميع الباقات">التجديد السنوي ثابت: 40$ سنوياً فقط لجميع الباقات</h3>
+          <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto mb-6 leading-relaxed" data-en="No unexpected price hikes in Year 2. Renewal is fixed at $40/year regardless of whether you choose .uk or .com, fully covering official domain renewal, cloud hosting, SSL, and continuous daily maintenance and updates." data-ar="لا توجد أي زيادات مفاجئة في السنة الثانية. التجديد ثابت بـ 40 دولار سنوياً لجميع الباقات، ويشمل تجديد الدومين، الاستضافة السحابية، شهادات الأمان، والصيانة والتحديثات اليومية.">لا توجد أي زيادات مفاجئة في السنة الثانية. التجديد ثابت بـ 40 دولار سنوياً لجميع الباقات، ويشمل تجديد الدومين، الاستضافة السحابية، شهادات الأمان، والصيانة والتحديثات اليومية.</p>
+          <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%85%D9%88%D9%82%D8%B9%20%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%8A%20%D9%84%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%20(65%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%A8%D8%AF%D9%88%D9%85%D9%8A%D9%86%20uk.%20%D8%A3%D9%88%2075%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%A8%D8%AF%D9%88%D9%85%D9%8A%D9%86%20com.)" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105">
+            <span>💬</span>
+            <span data-en="Chat with Mostafa on WhatsApp" data-ar="تواصل مع مصطفى عبر واتساب">تواصل مع مصطفى عبر واتساب</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Navigation to Other Services -->
+      <section class="pt-8 border-t border-slate-800">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <a href="index.html" class="text-xs font-mono text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+            <span>&larr;</span>
+            <span data-en="Return to Home Portfolio" data-ar="الرجوع للرئيسية ومعرض الأعمال">الرجوع للرئيسية ومعرض الأعمال</span>
+          </a>
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="text-slate-500 font-mono" data-en="Explore other systems:" data-ar="استكشف أنظمة أخرى:">استكشف أنظمة أخرى:</span>
+            <a href="whatsapp-ai-employee.html" class="text-cyan-400 hover:underline" data-en="AI Employee" data-ar="موظف الذكاء الاصطناعي">موظف الذكاء الاصطناعي</a>
+            <span>·</span>
+            <a href="n8n-automation.html" class="text-cyan-400 hover:underline" data-en="n8n Automation" data-ar="أتمتة العمليات">أتمتة العمليات</a>
+            <span>·</span>
+            <a href="smart-shipping-system.html" class="text-cyan-400 hover:underline" data-en="Shipping System" data-ar="سيستم الشحن">سيستم الشحن</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="modal-overlay" data-action="close-lightbox">
+    <div class="modal-content p-4" data-stop-propagation="true">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+        <div id="lightbox-caption" class="text-sm font-bold text-white"></div>
+        <button data-action="close-lightbox" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold cursor-pointer">✕</button>
+      </div>
+      <img id="lightbox-img" src="" alt="Screenshot" class="w-full max-h-[75vh] object-contain rounded-lg bg-black" />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-800/80 bg-slate-950/80 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-white font-mono">&gt;_ Mostafa Salah</span>
+        <span>·</span>
+        <span>© 2026 Mostafa Salah. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400 font-medium">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>·</span>
+        <a href="privacy.html" class="hover:text-cyan-400 transition-colors" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+        <span>·</span>
+        <a href="terms.html" class="hover:text-cyan-400 transition-colors" data-en="Terms of Service" data-ar="الشروط والأحكام">الشروط والأحكام</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Engine -->
+  <script src="script.js"></script>
+</body>
+</html>

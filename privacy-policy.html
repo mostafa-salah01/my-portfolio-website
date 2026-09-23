@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | سياسة الخصوصية - Mostafa Salah</title>
+  <meta name="description" content="Privacy Policy for Mostafa Salah - Professional Software Development, Automation Engineering, and Systems Architecture." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Content Security Policy & Mozilla Observatory Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https: ws: wss:; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Privacy Policy | سياسة الخصوصية - Mostafa Salah" />
+  <meta property="og:description" content="Client confidentiality, data protection, and privacy policies for systems developed by Mostafa Salah." />
+  <meta property="og:image" content="assets/images/corporate_bilingual_web_1790065829632.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Framework & Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#030712',
+              card: '#0b1329',
+              emerald: '#10b981',
+              cyan: '#06b6d4'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Complete CSS Stylesheet (Design System + Pre-compiled Styles & Animations) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Synchronous Theme Initializer (External script for strict CSP) -->
+  <script src="theme-init.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 p-[1.5px] transition-transform group-hover:scale-105">
+          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+            <span class="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 text-lg">MS</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-white text-base sm:text-lg tracking-tight block leading-tight font-mono">Mostafa Salah</span>
+          <span class="text-[11px] text-cyan-400 block font-mono" data-en="Software & Systems Engineer" data-ar="مهندس برمجيات ونظم">مهندس برمجيات ونظم</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span>&larr;</span>
+          <span data-en="Back to Home" data-ar="العودة للرئيسية">العودة للرئيسية</span>
+        </a>
+        <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
+        <a href="whatsapp-ai-employee.html" class="hover:text-cyan-400 transition-colors" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
+        <a href="terms.html" class="hover:text-cyan-400 transition-colors" data-en="Terms of Service" data-ar="الشروط والأحكام">الشروط والأحكام</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" data-action="toggle-theme" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer" title="تبديل الثيم / Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- Language Toggle -->
+        <button id="lang-toggle-btn" data-action="toggle-language" class="px-3 py-2 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-xs font-mono font-bold text-cyan-400 hover:text-cyan-300 transition-all cursor-pointer">
+          <span id="lang-btn-text">EN</span>
+        </button>
+
+        <!-- WhatsApp Direct CTA -->
+        <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83" target="_blank" rel="noopener noreferrer" data-service="general" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 dynamic-whatsapp-link">
+          <span>💬</span>
+          <span data-en="Direct WhatsApp" data-ar="محادثة واتساب">محادثة واتساب</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb -->
+      <div class="flex items-center gap-2 text-xs font-mono text-slate-400 mb-6">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>/</span>
+        <span class="text-cyan-400" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</span>
+      </div>
+
+      <!-- Header Banner -->
+      <div class="glass-panel p-6 sm:p-10 mb-10 border-t-4 border-t-cyan-500 relative overflow-hidden">
+        <div class="absolute -right-12 -top-12 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+          <span>🛡️</span>
+          <span data-en="Data Protection & Confidentiality" data-ar="حماية وسرية بيانات العملاء والمشاريع">حماية وسرية بيانات العملاء والمشاريع</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4" data-en="Privacy Policy & Client Data Protection" data-ar="سياسة الخصوصية وحماية بيانات العملاء">سياسة الخصوصية وحماية بيانات العملاء</h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-en="Last Updated: September 2026. This Privacy Policy outlines how client information, business logic, software project details, and communication records are protected, handled, and strictly guarded." data-ar="آخر تحديث: سبتمبر 2026. توضح هذه السياسة كيف يتم التعامل مع بيانات العملاء، المعمارية البرمجية، تفاصيل المشروعات، والمحادثات بصرامة وأمان تام.">آخر تحديث: سبتمبر 2026. توضح هذه السياسة كيف يتم التعامل مع بيانات العملاء، المعمارية البرمجية، تفاصيل المشروعات، والمحادثات بصرامة وأمان تام.</p>
+      </div>
+
+      <!-- Policy Sections -->
+      <div class="space-y-8 text-slate-300 text-sm sm:text-base leading-relaxed">
+        
+        <!-- Section 1 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-sm">01</span>
+            <span data-en="1. Information We Collect" data-ar="1. البيانات التي نقوم بجمعها">1. البيانات التي نقوم بجمعها</span>
+          </h2>
+          <p class="mb-3" data-en="We only collect information directly provided by clients when initiating a software development request, consultation, or service agreement:" data-ar="نقوم بجمع البيانات التي يقدمها العميل مباشرة فقط بغرض تنفيذ المشروعات البرمجية أو الاستشارات التقنية:">نقوم بجمع البيانات التي يقدمها العميل مباشرة فقط بغرض تنفيذ المشروعات البرمجية أو الاستشارات التقنية:</p>
+          <ul class="space-y-2 list-disc list-inside text-slate-300 pr-2">
+            <li data-en="Contact details (Name, Business Name, WhatsApp number, Email address)." data-ar="بيانات التواصل الأساسية (الاسم، اسم الشركة، رقم الواتساب، البريد الإلكتروني).">بيانات التواصل الأساسية (الاسم، اسم الشركة، رقم الواتساب، البريد الإلكتروني).</li>
+            <li data-en="Project requirements, functional specifications, product catalogs, and branding assets." data-ar="متطلبات المشروع، المواصفات الفنية، كتالوجات المنتجات، والشعارات والهويات البصرية.">متطلبات المشروع، المواصفات الفنية، كتالوجات المنتجات، والشعارات والهويات البصرية.</li>
+            <li data-en="API credentials or domain access details provided specifically for production deployment." data-ar="مفاتيح الربط البرمجي (API Credentials) أو بيانات الدومين التي يشاركها العميل لربط الخدمة.">مفاتيح الربط البرمجي (API Credentials) أو بيانات الدومين التي يشاركها العميل لربط الخدمة.</li>
+          </ul>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-mono font-bold text-sm">02</span>
+            <span data-en="2. Strict Non-Disclosure & Business Confidentiality" data-ar="2. سرية الأعمال وعدم الإفصاح (NDA)">2. سرية الأعمال وعدم الإفصاح (NDA)</span>
+          </h2>
+          <p data-en="We consider all client systems, proprietary business logic, operational workflows, customer databases, and code implementations as strictly confidential. We never sell, lease, disclose, or repurpose your business data or client databases to any third party under any circumstance." data-ar="نعتبر جميع أنظمة العملاء، المنطق التشغيلي، مسارات العمل، وقواعد بيانات العملاء أسراراً مهنية مقدسة. نلتزم بعدم بيع أو تأجير أو مشاركة أو إعادة استخدام أي جزء من بياناتكم مع أي طرف ثالث تحت أي ظرف من الظروف.">نعتبر جميع أنظمة العملاء، المنطق التشغيلي، مسارات العمل، وقواعد بيانات العملاء أسراراً مهنية مقدسة. نلتزم بعدم بيع أو تأجير أو مشاركة أو إعادة استخدام أي جزء من بياناتكم مع أي طرف ثالث تحت أي ظرف من الظروف.</p>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-sm">03</span>
+            <span data-en="3. WhatsApp & AI Integration Privacy" data-ar="3. خصوصية تكاملات الواتساب وموظفي الذكاء الاصطناعي">3. خصوصية تكاملات الواتساب وموظفي الذكاء الاصطناعي</span>
+          </h2>
+          <p data-en="For clients deploying WhatsApp AI Sales/Support Employees or automated bots: All customer conversation logs and media handled by the AI engine remain stored securely within the client's dedicated database or private server environment. We do not use client conversation data to train public models." data-ar="بالنسبة للعملاء الذين يتعاقدون على موظفي الذكاء الاصطناعي لواتساب أو أنظمة الأتمتة: تظل جميع سجلات المحادثات ومرفقات العملاء محفوظة بشكل آمن داخل قواعد البيانات الخاصة بالعميل أو خوادمه المعزولة. لا يتم استخدام بيانات محادثات عملائكم أبداً لتدريب نماذج ذكاء اصطناعي عامة.">بالنسبة للعملاء الذين يتعاقدون على موظفي الذكاء الاصطناعي لواتساب أو أنظمة الأتمتة: تظل جميع سجلات المحادثات ومرفقات العملاء محفوظة بشكل آمن داخل قواعد البيانات الخاصة بالعميل أو خوادمه المعزولة. لا يتم استخدام بيانات محادثات عملائكم أبداً لتدريب نماذج ذكاء اصطناعي عامة.</p>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-mono font-bold text-sm">04</span>
+            <span data-en="4. Cookies, Storage & Security Standards" data-ar="4. ملفات تعريف الارتباط ومعايير الأمان الفنية">4. ملفات تعريف الارتباط ومعايير الأمان الفنية</span>
+          </h2>
+          <p class="mb-3" data-en="Our website does not use tracking or advertising cookies. We only utilize local browser storage (localStorage) to save user preferences:" data-ar="لا يستخدم موقعنا أي ملفات تعريف ارتباط دعائية أو تتبعية. يقتصر التخزين المحلي فقط على حفظ تفضيلات الاستخدام الشخصية:">لا يستخدم موقعنا أي ملفات تعريف ارتباط دعائية أو تتبعية. يقتصر التخزين المحلي فقط على حفظ تفضيلات الاستخدام الشخصية:</p>
+          <ul class="space-y-1.5 list-disc list-inside text-slate-300 pr-2 mb-3">
+            <li data-en="Your chosen interface theme (Dark or Light mode)." data-ar="ثيم العرض المفضل (الوضع الليلي أو النهاري).">ثيم العرض المفضل (الوضع الليلي أو النهاري).</li>
+            <li data-en="Your selected language preference (Arabic or English)." data-ar="اللغة المفضلة للتصفح (العربية أو الإنجليزية).">اللغة المفضلة للتصفح (العربية أو الإنجليزية).</li>
+          </ul>
+          <p data-en="We implement Content Security Policy (CSP), TLS/SSL encryption, and strict origin isolation to protect client interactions against cross-site scripting (XSS) and unauthorized tampering." data-ar="نطبق ترويسات أمان متطورة تشمل Content Security Policy (CSP) وتشفير TLS/SSL وعزل الأصول لحماية الاتصالات ومنع هجمات البرمجة عبر المواقع (XSS).">نطبق ترويسات أمان متطورة تشمل Content Security Policy (CSP) وتشفير TLS/SSL وعزل الأصول لحماية الاتصالات ومنع هجمات البرمجة عبر المواقع (XSS).</p>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-mono font-bold text-sm">05</span>
+            <span data-en="5. Client Rights & Contact" data-ar="5. حقوق العميل وطلب حذف البيانات">5. حقوق العميل وطلب حذف البيانات</span>
+          </h2>
+          <p class="mb-4" data-en="You maintain full ownership of your business data. At any time, you may request an export or complete permanent purge of any sensitive credentials, documents, or backups from our staging storage." data-ar="يحتفظ العميل بالملكية الكاملة لبياناته، ويحق له في أي وقت طلب تصدير أو حذف نهائي لأي ملفات مؤقتة أو بيانات اعتماد مخزنة لدينا بعد إتمام التسليم.">يحتفظ العميل بالملكية الكاملة لبياناته، ويحق له في أي وقت طلب تصدير أو حذف نهائي لأي ملفات مؤقتة أو بيانات اعتماد مخزنة لدينا بعد إتمام التسليم.</p>
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div class="text-xs font-mono text-cyan-400 font-bold mb-1" data-en="Direct Privacy Contact" data-ar="التواصل المباشر بشأن الخصوصية">التواصل المباشر بشأن الخصوصية</div>
+              <div class="text-white font-mono text-sm">mostafaalsn82@gmail.com · +20 110 778 7049</div>
+            </div>
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D9%84%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%AD%D9%88%D9%84%20%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105">
+              <span data-en="Contact via WhatsApp" data-ar="تواصل عبر واتساب">تواصل عبر واتساب</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-800/80 bg-slate-950/80 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-white font-mono">&gt;_ Mostafa Salah</span>
+        <span>·</span>
+        <span>© 2026 Mostafa Salah. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400 font-medium">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
+        <a href="privacy.html" class="text-cyan-400 font-bold" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+        <a href="terms.html" class="hover:text-cyan-400 transition-colors" data-en="Terms of Service" data-ar="الشروط والأحكام">الشروط والأحكام</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Engine -->
+  <script src="script.js"></script>
+</body>
+</html>

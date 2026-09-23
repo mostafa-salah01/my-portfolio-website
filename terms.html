@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service | الشروط والأحكام - Mostafa Salah</title>
+  <meta name="description" content="Terms of Service and Project Engagement Guidelines for software development and automation services by Mostafa Salah." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Content Security Policy & Mozilla Observatory Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https: ws: wss:; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Terms of Service | الشروط والأحكام - Mostafa Salah" />
+  <meta property="og:description" content="Clear, transparent terms of service, payment milestones, code ownership, and renewal terms." />
+  <meta property="og:image" content="assets/images/corporate_bilingual_web_1790065829632.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Framework & Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#030712',
+              card: '#0b1329',
+              emerald: '#10b981',
+              cyan: '#06b6d4'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Complete CSS Stylesheet (Design System + Pre-compiled Styles & Animations) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Synchronous Theme Initializer (External script for strict CSP) -->
+  <script src="theme-init.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 p-[1.5px] transition-transform group-hover:scale-105">
+          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+            <span class="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 text-lg">MS</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-white text-base sm:text-lg tracking-tight block leading-tight font-mono">Mostafa Salah</span>
+          <span class="text-[11px] text-cyan-400 block font-mono" data-en="Software & Systems Engineer" data-ar="مهندس برمجيات ونظم">مهندس برمجيات ونظم</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span>&larr;</span>
+          <span data-en="Back to Home" data-ar="العودة للرئيسية">العودة للرئيسية</span>
+        </a>
+        <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
+        <a href="whatsapp-ai-employee.html" class="hover:text-cyan-400 transition-colors" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
+        <a href="privacy.html" class="hover:text-cyan-400 transition-colors" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" data-action="toggle-theme" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer" title="تبديل الثيم / Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- Language Toggle -->
+        <button id="lang-toggle-btn" data-action="toggle-language" class="px-3 py-2 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-xs font-mono font-bold text-cyan-400 hover:text-cyan-300 transition-all cursor-pointer">
+          <span id="lang-btn-text">EN</span>
+        </button>
+
+        <!-- WhatsApp Direct CTA -->
+        <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%AF%D8%A1%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%AC%D8%AF%D9%8A%D8%AF" target="_blank" rel="noopener noreferrer" data-service="general" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 dynamic-whatsapp-link">
+          <span>💬</span>
+          <span data-en="Direct WhatsApp" data-ar="محادثة واتساب">محادثة واتساب</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb -->
+      <div class="flex items-center gap-2 text-xs font-mono text-slate-400 mb-6">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>/</span>
+        <span class="text-cyan-400" data-en="Terms of Service" data-ar="الشروط والأحكام">الشروط والأحكام</span>
+      </div>
+
+      <!-- Header Banner -->
+      <div class="glass-panel p-6 sm:p-10 mb-10 border-t-4 border-t-emerald-500 relative overflow-hidden">
+        <div class="absolute -right-12 -top-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-4">
+          <span>📜</span>
+          <span data-en="Service Agreements & Policies" data-ar="اتفاقية تقديم الخدمات والتسليم">اتفاقية تقديم الخدمات والتسليم</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4" data-en="Terms of Service & Project Engagement" data-ar="الشروط والأحكام واتفاقية العمل">الشروط والأحكام واتفاقية العمل</h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-en="Clear, professional terms designed to ensure transparency, mutual trust, defined deliverables, and guaranteed timelines for all software engineering and automation engagements." data-ar="شروط واضحة ومهنية تهدف لضمان الشفافية، الثقة المتبادلة، وتحديد مواعيد ومخرجات العمل بدقة لجميع المشروعات البرمجية وحلول الأتمتة.">شروط واضحة ومهنية تهدف لضمان الشفافية، الثقة المتبادلة، وتحديد مواعيد ومخرجات العمل بدقة لجميع المشروعات البرمجية وحلول الأتمتة.</p>
+      </div>
+
+      <!-- Terms Sections -->
+      <div class="space-y-8 text-slate-300 text-sm sm:text-base leading-relaxed">
+        
+        <!-- Section 1 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-mono font-bold text-sm">01</span>
+            <span data-en="1. Project Scope & Specifications" data-ar="1. نطاق العمل والمواصفات الفنية">1. نطاق العمل والمواصفات الفنية</span>
+          </h2>
+          <p class="mb-3" data-en="Every project starts with an agreed technical scope outlining requirements, deliverables, tech stack, and timeline. Any additional features or modules requested during or after development will be quoted as separate milestone enhancements." data-ar="يبدأ كل مشروع بالاتفاق على وثيقة مواصفات فنية تحدد المتطلبات والمخرجات والتقنيات المستخدمة والجدول الزمني. أي مزايا أو تعديلات جوهرية إضافية تُطلب خارج النطاق المتفق عليه يتم تقييمها كإضافات تطويرية مستقلة.">يبدأ كل مشروع بالاتفاق على وثيقة مواصفات فنية تحدد المتطلبات والمخرجات والتقنيات المستخدمة والجدول الزمني. أي مزايا أو تعديلات جوهرية إضافية تُطلب خارج النطاق المتفق عليه يتم تقييمها كإضافات تطويرية مستقلة.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-sm">02</span>
+            <span data-en="2. Corporate Website Package Pricing & Domain Terms" data-ar="2. تسعير باقة المواقع التعريفية وشروط الدومين والتجديد">2. تسعير باقة المواقع التعريفية وشروط الدومين والتجديد</span>
+          </h2>
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+              <span class="font-bold text-cyan-400 block mb-1" data-en="Base Package ($65 USD / Year 1)" data-ar="الباقة الأساسية (65 دولار للسنة الأولى)">الباقة الأساسية (65 دولار للسنة الأولى)</span>
+              <p class="text-xs sm:text-sm text-slate-300" data-en="Includes full multi-page responsive design, official .uk domain registration for year one, high-speed cloud hosting with SSL, bilingual support (Arabic & English together in base price), direct WhatsApp CTA, and daily technical maintenance (Sat-Thu)." data-ar="تشمل تصميماً متجاوباً متعدد الصفحات، حجز دومين رسمي بامتداد uk. للسنة الأولى، استضافة سحابية فائقة السرعة مع SSL، دعم اللغتين (عربي وإنجليزي معاً ضمن السعر الأساسي)، ربط واتساب مباشر، وصيانة ودعم فني يومي (من السبت للخميس).">تشمل تصميماً متجاوباً متعدد الصفحات، حجز دومين رسمي بامتداد uk. للسنة الأولى، استضافة سحابية فائقة السرعة مع SSL، دعم اللغتين (عربي وإنجليزي معاً ضمن السعر الأساسي)، ربط واتساب مباشر، وصيانة ودعم فني يومي (من السبت للخميس).</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+              <span class="font-bold text-emerald-400 block mb-1" data-en="Domain Upgrade Option ($75 USD / Year 1)" data-ar="خيار ترقية الدومين لـ com. (75 دولار للسنة الأولى)">خيار ترقية الدومين لـ com. (75 دولار للسنة الأولى)</span>
+              <p class="text-xs sm:text-sm text-slate-300" data-en="If the client opts for an official .com domain, the complete package price is $75 USD for the first year with all included features and support." data-ar="في حال اختيار العميل حجز دومين بامتداد com.، يصبح السعر الإجمالي للباقة 75 دولار للسنة الأولى مع الاحتفاظ بكافة المزايا والخدمات والدعم.">في حال اختيار العميل حجز دومين بامتداد com.، يصبح السعر الإجمالي للباقة 75 دولار للسنة الأولى مع الاحتفاظ بكافة المزايا والخدمات والدعم.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30">
+              <span class="font-bold text-white block mb-1" data-en="Fixed Annual Renewal: $40 USD / Year" data-ar="التجديد السنوي الثابت: 40 دولار سنوياً لجميع الباقات">التجديد السنوي الثابت: 40 دولار سنوياً لجميع الباقات</span>
+              <p class="text-xs sm:text-sm text-slate-300" data-en="Starting Year 2, annual renewal is permanently fixed at $40 USD / Year for all website packages. This renewal covers official domain renewal, high-speed cloud hosting renewal, SSL security certificates, and ongoing daily technical support and updates." data-ar="بدءاً من السنة الثانية، يكون التجديد السنوي ثابتاً بمبلغ 40 دولار سنوياً فقط لجميع باقات المواقع. يشمل التجديد: تجديد الدومين السنوي، تجديد الاستضافة السحابية وشهادات SSL، واستمرار الصيانة والدعم الفني والتحديثات اليومية.">بدءاً من السنة الثانية، يكون التجديد السنوي ثابتاً بمبلغ 40 دولار سنوياً فقط لجميع باقات المواقع. يشمل التجديد: تجديد الدومين السنوي، تجديد الاستضافة السحابية وشهادات SSL، واستمرار الصيانة والدعم الفني والتحديثات اليومية.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-mono font-bold text-sm">03</span>
+            <span data-en="3. Code Ownership & Intellectual Property" data-ar="3. ملكية الأكواد والملكية الفكرية">3. ملكية الأكواد والملكية الفكرية</span>
+          </h2>
+          <p data-en="Upon final project settlement, the client receives 100% full ownership of custom code, assets, database schemas, and integration credentials created for their system. There are no vendor lock-ins or hidden retention clauses." data-ar="بمجرد إتمام تسليم المشروع وسداد المستحقات المتفق عليها، تنتقل الملكية الكاملة 100% لكود المشروع وقواعد البيانات والأصول المصممة إلى العميل بالكامل، دون أي قيود أو شروط احتكار.">بمجرد إتمام تسليم المشروع وسداد المستحقات المتفق عليها، تنتقل الملكية الكاملة 100% لكود المشروع وقواعد البيانات والأصول المصممة إلى العميل بالكامل، دون أي قيود أو شروط احتكار.</p>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-mono font-bold text-sm">04</span>
+            <span data-en="4. Deliverables, Testing & Revisions" data-ar="4. فترات المراجعة والاعتماد والتسليم">4. فترات المراجعة والاعتماد والتسليم</span>
+          </h2>
+          <p data-en="All projects undergo testing on a live staging environment before deployment. Clients are provided with an acceptance review window to request adjustments and fine-tuning according to the initial scope specifications." data-ar="تخضع جميع المشاريع لاختبارات جودة وأداء على بيئة تجريبية حية قبل الإطلاق الرسمي. يُمنح العميل فترة مراجعة واعتماد لطلب التعديلات وضبط الأداء وفقاً لوثيقة المواصفات المتفق عليها.">تخضع جميع المشاريع لاختبارات جودة وأداء على بيئة تجريبية حية قبل الإطلاق الرسمي. يُمنح العميل فترة مراجعة واعتماد لطلب التعديلات وضبط الأداء وفقاً لوثيقة المواصفات المتفق عليها.</p>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="glass-panel p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-sm">05</span>
+            <span data-en="5. Service Level Agreement & Daily Support" data-ar="5. اتفاقية مستوى الخدمة والدعم الفني اليومي">5. اتفاقية مستوى الخدمة والدعم الفني اليومي</span>
+          </h2>
+          <p data-en="Technical support is provided Saturday to Thursday. Urgent critical incidents (e.g. server outage, API webhook disconnection) receive prioritized immediate response to ensure business continuity." data-ar="يُقدم الدعم الفني اليومي من السبت إلى الخميس. بينما تحظى الأعطال الطارئة الحرجة (مثل توقف السيرفر أو انقطاع الـ API) بأولوية قصوى واستجابة فورية على مدار الساعة لضمان استمرارية أعمالكم.">يُقدم الدعم الفني اليومي من السبت إلى الخميس. بينما تحظى الأعطال الطارئة الحرجة (مثل توقف السيرفر أو انقطاع الـ API) بأولوية قصوى واستجابة فورية على مدار الساعة لضمان استمرارية أعمالكم.</p>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-800/80 bg-slate-950/80 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-white font-mono">&gt;_ Mostafa Salah</span>
+        <span>·</span>
+        <span>© 2026 Mostafa Salah. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400 font-medium">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
+        <a href="privacy.html" class="hover:text-cyan-400 transition-colors" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+        <a href="terms.html" class="text-cyan-400 font-bold" data-en="Terms of Service" data-ar="الشروط والأحكام">الشروط والأحكام</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Engine -->
+  <script src="script.js"></script>
+</body>
+</html>
