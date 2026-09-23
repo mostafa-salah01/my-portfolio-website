@@ -141,7 +141,10 @@
         <!-- Banner Image -->
         <div class="lg:col-span-5">
           <div class="relative group rounded-2xl overflow-hidden border-2 border-emerald-500/40 shadow-2xl cursor-pointer" data-action="open-lightbox" data-img="assets/images/ai_whatsapp_agent_1789851518713.jpg" data-caption="موظف الذكاء الاصطناعي البشري لواتساب">
-            <img src="assets/images/ai_whatsapp_agent_1789851518713.jpg" alt="WhatsApp AI Employee" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
+            <picture>
+              <source srcset="assets/images/ai_whatsapp_agent_1789851518713.webp" type="image/webp" />
+              <img src="assets/images/ai_whatsapp_agent_1789851518713.jpg" alt="WhatsApp AI Employee" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" width="800" height="450" />
+            </picture>
             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span class="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">🔍 <span data-en="Enlarge Screenshot" data-ar="تكبير الصورة">تكبير الصورة</span></span>
             </div>
@@ -152,28 +155,104 @@
         </div>
       </div>
 
-      <!-- Live Interactive Simulation Sandbox -->
+      <!-- Live Interactive Simulation Sandbox (Powered by DeepSeek API) -->
       <section class="mb-14">
-        <div class="glass-panel p-6 sm:p-8 border-t-2 border-t-emerald-500">
+        <div class="glass-panel p-4 sm:p-6 border-t-2 border-t-emerald-500 overflow-hidden">
+          
+          <!-- Simulator Header -->
           <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-800 mb-4 gap-4">
-            <div>
-              <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                <span>💬</span>
-                <span data-en="Interactive AI Employee Chat Simulator" data-ar="محاكي محادثة موظف الذكاء الاصطناعي">محاكي محادثة موظف الذكاء الاصطناعي</span>
-              </h2>
-              <p class="text-xs text-slate-400 mt-1" data-en="Click the button to simulate a high-intent customer asking for price quotes and technical specifications." data-ar="اضغط على الزر لمحاكاة عميل يطلب تفاصيل وعرض سعر ومعاينة رد الذكاء الاصطناعي في أجزاء من الثانية.">اضغط على الزر لمحاكاة عميل يطلب تفاصيل وعرض سعر ومعاينة رد الذكاء الاصطناعي في أجزاء من الثانية.</p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-xl shrink-0">
+                🤖
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h2 class="text-base sm:text-lg font-bold text-white" data-en="Live WhatsApp AI Employee Simulator" data-ar="محاكي موظف مبيعات وتواصل صلاح لوجيستيكس">محاكي موظف مبيعات وتواصل صلاح لوجيستيكس</h2>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-[10px] font-mono text-emerald-300 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span data-en="DeepSeek API Connected" data-ar="متصل بـ DeepSeek API">متصل بـ DeepSeek API</span>
+                  </span>
+                </div>
+                <p class="text-xs text-slate-400 mt-0.5" data-en="Direct AI communication as Salah Logistics sales & client relations agent. Ask any question below or simulate an inquiry." data-ar="موظف ذكاء اصطناعي بشري مدرب على خدمات وأسعار شركة صلاح لوجيستيكس. اكتب سؤالك مباشرة أو اختر نموذجاً.">موظف ذكاء اصطناعي بشري مدرب على خدمات وأسعار شركة صلاح لوجيستيكس. اكتب سؤالك مباشرة أو اختر نموذجاً.</p>
+              </div>
             </div>
-            <button id="sim-btn" data-action="simulate-chat" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer">
-              <span data-en="▶ Simulate WhatsApp Inquiry" data-ar="▶ محاكاة رسالة عميل جديدة">▶ محاكاة رسالة عميل جديدة</span>
+
+            <!-- Action Controls -->
+            <div class="flex items-center gap-2 shrink-0">
+              <button id="sim-btn" data-action="simulate-chat" class="px-3.5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center gap-1.5 shadow-sm">
+                <span>▶</span>
+                <span data-en="Simulate Sample Inquiry" data-ar="محاكاة استفسار تلقائي">محاكاة استفسار تلقائي</span>
+              </button>
+              <button id="clear-chat-btn" data-action="clear-chat" class="px-2.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800 text-xs font-mono cursor-pointer" title="مسح المحادثة">
+                <span>🗑️</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Suggestion Prompts -->
+          <div class="flex flex-wrap items-center gap-2 mb-3 text-xs">
+            <span class="text-slate-500 font-mono text-[11px]" data-en="Suggested questions:" data-ar="أسئلة سريعة:">أسئلة سريعة:</span>
+            <button type="button" class="quick-prompt-btn px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 text-[11px] transition-colors cursor-pointer" data-question="كم سعر باقة تصميم الموقع التعريفي للشركات وتفاصيل التجديد السنوي؟">
+              💼 باقة الموقع التعريفي والتجديد
+            </button>
+            <button type="button" class="quick-prompt-btn px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 text-[11px] transition-colors cursor-pointer" data-question="عايز موظف ذكاء اصطناعي لواتساب لمتجري يرد على العملاء ويبعت عروض أسعار PDF">
+              💬 موظف واتساب للطلبات وعروض PDF
+            </button>
+            <button type="button" class="quick-prompt-btn px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 text-[11px] transition-colors cursor-pointer" data-question="ما هي مميزات سيستم الشحن واللوجستيات وتتبع المناديب؟">
+              🚚 سيستم الشحن وإدارة المناديب
             </button>
           </div>
 
           <!-- Chat Window Box -->
-          <div id="sim-chat-box" class="h-64 overflow-y-auto space-y-3 p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs">
-            <div class="text-slate-500 text-center py-8">
-              <span data-en="Click 'Simulate WhatsApp Inquiry' above to test real-time handling." data-ar="اضغط على زر المحاكاة بالأعلى لتجربة سرعة وكفاءة الرد الفوري.">اضغط على زر المحاكاة بالأعلى لتجربة سرعة وكفاءة الرد الفوري.</span>
+          <div id="sim-chat-box" class="h-80 sm:h-96 overflow-y-auto space-y-3.5 p-4 rounded-xl bg-slate-950/90 border border-slate-800 text-xs shadow-inner">
+            <!-- Initial Greeting from Salah Logistics AI Salesperson -->
+            <div class="flex items-start gap-2.5">
+              <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+                🤖
+              </div>
+              <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+                <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+                  <span class="font-bold">[موظف مبيعات صلاح لوجيستيكس]</span>
+                  <span class="text-slate-500">متصل الآن</span>
+                </div>
+                <p>أهلاً بحضرتك يا فندم في منصة صلاح لوجيستيكس والمهندس مصطفى صلاح! 👋 أنا موظف المبيعات والتواصل الذكي، أقدر أساعد حضرتك فوراً في معرفة تفاصيل وأسعار باقاتنا (مثل باقة الموقع التعريفي بـ 65$ أو 75$، موظف الذكاء الاصطناعي لواتساب، وسيستمات الشحن وتطبيقات الموبايل). اتفضل اسألني في أي تفاصيل أو اكتب طلبك وهرد عليك فوراً! 🚀</p>
+              </div>
             </div>
           </div>
+
+          <!-- Typing Indicator (Hidden by default) -->
+          <div id="sim-typing-indicator" class="hidden items-center gap-2 px-4 py-2 text-xs text-emerald-400 font-mono">
+            <span class="inline-flex gap-1 items-center">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.2s]"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.4s]"></span>
+            </span>
+            <span data-en="AI Employee is typing response via DeepSeek..." data-ar="موظف الذكاء الاصطناعي يكتب الرد عبر DeepSeek...">موظف الذكاء الاصطناعي يكتب الرد عبر DeepSeek...</span>
+          </div>
+
+          <!-- Interactive User Input Bar -->
+          <form id="sim-chat-form" class="mt-3 flex items-center gap-2">
+            <div class="relative flex-1">
+              <input 
+                id="sim-chat-input" 
+                type="text" 
+                placeholder="اكتب استفسارك هنا لموظف مبيعات صلاح لوجيستيكس..." 
+                data-placeholder-ar="اكتب استفسارك هنا لموظف مبيعات صلاح لوجيستيكس..." 
+                data-placeholder-en="Type your question to Salah Logistics AI Employee..."
+                class="w-full h-11 px-4 text-xs rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500/80 transition-colors"
+                autocomplete="off"
+              />
+            </div>
+            <button 
+              id="sim-send-btn" 
+              type="submit" 
+              class="h-11 px-5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center justify-center gap-1.5 shrink-0 shadow-sm"
+            >
+              <span data-en="Send" data-ar="إرسال">إرسال</span>
+              <span>➤</span>
+            </button>
+          </form>
+
         </div>
       </section>
 

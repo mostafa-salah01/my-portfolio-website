@@ -6,9 +6,32 @@
 (function () {
   'use strict';
 
+  // --- Safe Storage Helpers (Zero crashes in restricted iframes / privacy mode) ---
+  function safeGetStorage(key, fallback) {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        const val = window.localStorage.getItem(key);
+        return val !== null ? val : fallback;
+      }
+    } catch (e) {
+      // Storage unavailable or blocked
+    }
+    return fallback;
+  }
+
+  function safeSetStorage(key, value) {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem(key, value);
+      }
+    } catch (e) {
+      // Storage blocked
+    }
+  }
+
   // --- State ---
-  let currentLang = localStorage.getItem('portfolio_lang') || 'ar';
-  let currentTheme = localStorage.getItem('portfolio_theme') || 'dark';
+  let currentLang = safeGetStorage('portfolio_lang', 'ar');
+  let currentTheme = safeGetStorage('portfolio_theme', 'dark');
   let activeCategory = 'all';
 
   // --- Project Data Dictionary for Modals & Details ---
@@ -315,35 +338,39 @@
   // --- Language Switching ---
   window.setLanguage = function (lang) {
     currentLang = lang;
-    localStorage.setItem('portfolio_lang', lang);
+    safeSetStorage('portfolio_lang', lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = (lang === 'ar' ? 'rtl' : 'ltr');
 
     // Update all elements with data-en and data-ar
     document.querySelectorAll('[data-en][data-ar]').forEach(el => {
-      el.textContent = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+      const val = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+      if (val !== null && val !== undefined) {
+        el.textContent = val;
+      }
     });
 
     // Update placeholders
     document.querySelectorAll('[data-placeholder-en][data-placeholder-ar]').forEach(el => {
-      el.setAttribute('placeholder', lang === 'ar' ? el.getAttribute('data-placeholder-ar') : el.getAttribute('data-placeholder-en'));
+      const val = lang === 'ar' ? el.getAttribute('data-placeholder-ar') : el.getAttribute('data-placeholder-en');
+      if (val !== null && val !== undefined) {
+        el.setAttribute('placeholder', val);
+      }
     });
 
-    // Update Lang button text
-    const langBtnText = document.getElementById('lang-btn-text');
-    if (langBtnText) {
-      langBtnText.textContent = lang === 'ar' ? 'English' : 'عربي';
-    }
+    // Update Lang button text everywhere
+    document.querySelectorAll('#lang-btn-text, .lang-btn-text').forEach(el => {
+      el.textContent = lang === 'ar' ? 'English' : 'عربي';
+    });
 
     // Update Theme button label based on language
-    const themeBtnText = document.getElementById('theme-btn-text');
-    if (themeBtnText) {
+    document.querySelectorAll('#theme-btn-text, .theme-btn-text').forEach(el => {
       if (currentTheme === 'light') {
-        themeBtnText.textContent = lang === 'ar' ? 'فاتح' : 'Light';
+        el.textContent = lang === 'ar' ? 'فاتح' : 'Light';
       } else {
-        themeBtnText.textContent = lang === 'ar' ? 'داكن' : 'Dark';
+        el.textContent = lang === 'ar' ? 'داكن' : 'Dark';
       }
-    }
+    });
 
     // Update active rotating role immediately
     const roleElem = document.getElementById('hero-rotating-role');
@@ -357,7 +384,8 @@
   };
 
   window.toggleLanguage = function () {
-    window.setLanguage(currentLang === 'ar' ? 'en' : 'ar');
+    const nextLang = currentLang === 'ar' ? 'en' : 'ar';
+    window.setLanguage(nextLang);
   };
 
   // Ensure clicking any dynamic WhatsApp CTA always has the latest active URL and service text
@@ -372,26 +400,29 @@
   // --- Theme Switching (Dark / Light Mode) ---
   window.setTheme = function (theme) {
     currentTheme = theme;
-    localStorage.setItem('portfolio_theme', theme);
-
-    const iconElem = document.getElementById('theme-btn-icon');
-    const textElem = document.getElementById('theme-btn-text');
+    safeSetStorage('portfolio_theme', theme);
 
     if (theme === 'light') {
       document.documentElement.classList.add('light');
       document.documentElement.classList.remove('dark');
-      if (iconElem) iconElem.textContent = '☀️';
-      if (textElem) {
-        textElem.textContent = currentLang === 'ar' ? 'فاتح' : 'Light';
-      }
     } else {
       document.documentElement.classList.remove('light');
       document.documentElement.classList.add('dark');
-      if (iconElem) iconElem.textContent = '🌙';
-      if (textElem) {
+    }
+
+    // Update all theme icons across the site
+    document.querySelectorAll('#theme-btn-icon, #theme-icon, .theme-btn-icon').forEach(iconElem => {
+      iconElem.textContent = (theme === 'light' ? '☀️' : '🌙');
+    });
+
+    // Update all theme text labels across the site
+    document.querySelectorAll('#theme-btn-text, .theme-btn-text').forEach(textElem => {
+      if (theme === 'light') {
+        textElem.textContent = currentLang === 'ar' ? 'فاتح' : 'Light';
+      } else {
         textElem.textContent = currentLang === 'ar' ? 'داكن' : 'Dark';
       }
-    }
+    });
   };
 
   window.toggleTheme = function () {
@@ -675,50 +706,364 @@
     }
   };
 
-  // --- WhatsApp AI Live Simulator ---
-  window.simulateLiveInquiry = function () {
-    const box = document.getElementById('sim-chat-box');
-    const btn = document.getElementById('sim-btn');
-    if (!box) return;
-    if (btn) btn.disabled = true;
+  // --- DeepSeek WhatsApp AI Employee Chat Engine ---
+  let chatHistory = [];
+  let isSendingAiMessage = false;
 
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // Fallback intelligent natural response generator for Salah Logistics sales & client communication
+  function generateSalahLogisticsAiResponse(userText, lang) {
+    const isAr = lang === 'ar';
+    const text = (userText || '').toLowerCase();
+
+    if (text.includes('سعر') || text.includes('باقة') || text.includes('موقع') || text.includes('price') || text.includes('quote') || text.includes('website') || text.includes('cost') || text.includes('65') || text.includes('75') || text.includes('تجديد') || text.includes('renewal')) {
+      if (isAr) {
+        return `أهلاً بحضرتك يا فندم! 🌟
+تفاصيل باقة الموقع التعريفي الاحترافي للشركات مع م. مصطفى صلاح:
+1. السعر للسنة الأولى:
+   • 65 دولار فقط بدومين .uk رسمي شامل.
+   • أو 75 دولار فقط بدومين .com رسمي شامل.
+2. المزايا المشمولة مجاناً في الباقة:
+   • الموقع يدعم اللغتين معاً (العربية والإنجليزية) دون أي تكلفة إضافية.
+   • استضافة سحابية فائقة السرعة + شهادة أمان SSL مجانية للسنة الأولى.
+   • ربط تفاعلي مباشر بالواتساب وتصميم متجاوب 100% مع الموبايل والتابلت.
+   • دعم فني يومي وصيانة مستمرة وسريعة (من السبت للخميس).
+3. التجديد السنوي ثابت: 40 دولار فقط سنوياً لجميع الباقات (شامل تجديد الدومين والاستضافة والصيانة والدعم الفني).
+
+تحب نبدأ حجز الباقة لحضرتك الآن أو نتحقق من توفر اسم الدومين المطلوب؟`;
+      } else {
+        return `Hello! 🌟 Here are the official details for the Corporate Website Package with Eng. Mostafa Salah:
+1. First-Year Price:
+   • Only $65 USD with official .uk domain included.
+   • Or $75 USD with official .com domain included.
+2. Included features at no extra charge:
+   • Full bilingual support (Arabic & English together).
+   • Ultra-fast cloud SSD hosting + Free SSL security certificate.
+   • Direct interactive WhatsApp CTA & 100% mobile-optimized UI.
+   • Active daily technical support & ongoing maintenance.
+3. Fixed annual renewal: $40 USD flat per year (covers domain renewal, cloud hosting, and daily support).
+
+Would you like to reserve your package or check domain name availability now?`;
+      }
+    }
+
+    if (text.includes('واتساب') || text.includes('whatsapp') || text.includes('موظف') || text.includes('employee') || text.includes('bot') || text.includes('بوت') || text.includes('pdf') || text.includes('عرض سعر')) {
+      if (isAr) {
+        return `أهلاً بيك يا فندم! 🤖 خدمة موظف الذكاء الاصطناعي البشري للواتساب وتليجرام هي أقوى حل لمضاعفة مبيعاتك:
+• يرد في أجزاء من الثانية بلهجة بشرية ودودة ومقنعة 24/7 دون أي توقف.
+• يولد ملفات عروض أسعار رسمية PDF باسم شركتك وشعارك ويبعتها للعميل فوراً داخل الشات.
+• يربط البيانات مباشرة بقاعدة بياناتك وسيستم الشحن ومسارات n8n.
+• يرسل تنبيهات فورية للإدارة عند وجود طلب مؤكد أو عميل عاجل.
+
+جاهزون لبرمجة الموظف وربطه بمنتجاتك وسيستمك فوراً. تود تجربته مع كاتالوج شركتك؟`;
+      } else {
+        return `Hello! 🤖 Our Human-like WhatsApp & Telegram AI Employee is built to supercharge your sales:
+• Replies in milliseconds with a warm, human-like sales tone 24/7.
+• Generates and dispatches official PDF quotations with your company branding directly inside the chat.
+• Seamlessly syncs customer inquiries to your database, ERP, and n8n pipelines.
+• Delivers instant notifications to managers for hot leads and confirmed orders.
+
+Would you like us to customize this AI employee for your business workflow?`;
+      }
+    }
+
+    if (text.includes('شحن') || text.includes('shipping') || text.includes('لوجست') || text.includes('logistics') || text.includes('مندوب') || text.includes('courier') || text.includes('تتبع') || text.includes('cod')) {
+      if (isAr) {
+        return `يا مرحباً! 🚚 سيستم الشحن واللوجستيات الذكي من صلاح لوجيستيكس يشمل:
+• لوحة تحكم سحابية لإدارة آلاف الشحنات، بوالص الشحن (Waybills)، وتوزيع المناطق تلقائياً.
+• تطبيق موبايل للمناديب لتحديث حالات التوصيل بالـ QR Code ومسح الباركود جغرافياً.
+• تسوية دقيقة للمبالغ المحصلة عند الاستلام (COD) مع المحافظ وتقارير الأرباح لحظة بلحظة.
+• بوابة تتبع مباشرة للعملاء عبر رسائل الواتساب مع إشعارات الرسائل القصيرة.
+
+السيستم قابل للتخصيص الكامل حسب أسطولك ومحافظاتك! تحب نشارك معاينة حية؟`;
+      } else {
+        return `Hello! 🚚 The Salah Logistics Smart Shipping & Courier Platform includes:
+• Cloud dashboard to manage thousands of shipments, printable waybills, and smart territory routing.
+• Native mobile app for couriers with real-time QR scanning and GPS status updates.
+• Instant COD cash reconciliation, commission wallets, and financial reporting.
+• Real-time customer tracking portal with automated WhatsApp notifications.
+
+Customizable to fit your exact fleet size. Shall we schedule a live walkthrough?`;
+      }
+    }
+
+    if (text.includes('n8n') || text.includes('أتمتة') || text.includes('automation') || text.includes('api') || text.includes('backend') || text.includes('باك إند')) {
+      if (isAr) {
+        return `أهلاً بحضرتك! ⚡ نحن متخصصون في أتمتة الأعمال وهندسة الـ APIs:
+• بناء مسارات n8n المعقدة لربط متجرك (Shopify/WooCommerce/Salla) بالواتساب ومخازنك وجوجل شيتس.
+• إعادة إرسال تلقائية للعمليات الفاشلة (Retry Mechanism) وضمان وصول الـ Webhooks بنسبة 99.9%.
+• تطوير نظم خلفية (Backend APIs) فائقة السرعة بـ Node.js / Python مع قواعد بيانات PostgreSQL وRedis.
+
+أي نظام أو فكرة عندك نقدر نربطها ونؤتمتها بالكامل لتوفير وقتك وتكاليف التشغيل!`;
+      } else {
+        return `Hello! ⚡ We specialize in workflow automation & backend architecture:
+• Robust n8n pipelines connecting your store (Shopify/WooCommerce) to WhatsApp, ERPs, and Google Sheets.
+• Auto-recovery logic and retry policies for Webhooks with 99.9% uptime.
+• Ultra-fast REST/GraphQL backend architecture with PostgreSQL, Redis, and Docker.
+
+We can automate any repetitive operational task for your business!`;
+      }
+    }
+
+    // Default warm sales reply
+    if (isAr) {
+      return `أهلاً بحضرتك يا فندم في شركة صلاح لوجيستيكس! 👋 سعداء جداً بتواصلك معنا.
+نحن نقدم حلولاً برمجية ولوجستية متكاملة تحت إشراف م. مصطفى صلاح:
+1. تصميم مواقع الشركات التعريفية (باقة 65$ بدومين uk. أو 75$ بدومين com. تشمل اللغتين عربي وإنجليزي مع تجديد سنوي ثابت 40$).
+2. موظف الذكاء الاصطناعي البشري للواتساب وتليجرام للرد الفوري وتوليد عروض PDF.
+3. سيستمات إدارة الشحن وتتبع المناديب COD.
+4. تطبيقات الموبايل والمتاجر الإلكترونية.
+5. أتمتة الأعمال n8n وهندسة الـ APIs.
+
+هل في خدمة معينة أو مشروع تحب نبدأ فيه مع حضرتك؟ تواصل معنا مباشرة عبر واتساب على 01107787049 لتأكيد طلبك فوراً! 🚀`;
+    } else {
+      return `Welcome to Salah Logistics! 👋 We're thrilled to assist you.
+Under the engineering leadership of Eng. Mostafa Salah, we offer:
+1. Corporate Website Packages ($65 USD for .uk / $75 USD for .com, bilingual AR/EN included, $40 fixed annual renewal).
+2. AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
+3. Smart Logistics & Courier Dispatch Platforms.
+4. Mobile Retail Apps & E-Commerce Systems.
+5. n8n Enterprise Workflow Automation & Backend Architecture.
+
+Which solution can we help you launch today? Feel free to contact us on WhatsApp (+201107787049) to get started! 🚀`;
+    }
+  }
+
+  // Send message to DeepSeek API endpoint with graceful fallback
+  window.sendDeepSeekMessage = async function (userText) {
+    if (!userText || !userText.trim() || isSendingAiMessage) return;
+    const cleanText = userText.trim();
+    isSendingAiMessage = true;
+
+    const chatBox = document.getElementById('sim-chat-box');
+    const typingIndicator = document.getElementById('sim-typing-indicator');
+    const inputField = document.getElementById('sim-chat-input');
+    const sendBtn = document.getElementById('sim-send-btn');
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
-    const orderId = Math.floor(1000 + Math.random() * 9000);
-    const timeNow = new Date().toTimeString().split(' ')[0];
+    const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-    box.innerHTML = '';
-    
-    // Step 1: Customer message
-    const msg1 = document.createElement('div');
-    msg1.className = 'p-3 rounded-lg bg-slate-900 border border-slate-800 text-cyan-300';
-    msg1.innerHTML = `<span class="text-slate-500">[${timeNow}]</span> <span class="font-bold text-amber-400">[Customer on WhatsApp]:</span> ${
-      isAr 
-        ? `السلام عليكم، محتاج تفاصيل وعرض سعر لطلب توريد عاجل للمنتج #${orderId}، ومعرفة مدة الشحن.` 
-        : `Hello, I need specs, delivery time & an official price quote for bulk order #${orderId}.`
-    }`;
-    box.appendChild(msg1);
+    if (inputField) inputField.value = '';
+    if (sendBtn) sendBtn.disabled = true;
 
-    // Step 2: AI Employee Analyzing
-    setTimeout(() => {
-      const msg2 = document.createElement('div');
-      msg2.className = 'p-3 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-300';
-      msg2.innerHTML = `<span class="text-slate-500">[${timeNow}]</span> <span class="font-bold text-emerald-400">[AI Employee Reply - 34ms]:</span> ${
-        isAr
-          ? `أهلاً بحضرتك يا فندم! سعداء بخدمتك. تم فحص المخزون فوراً: الكمية متاحة والشحن يستغرق 48 ساعة فقط. أرسلت لحضرتك الآن ملف عرض السعر الرسمي PDF بكافة التفاصيل والخصم المتاح. هل تحب نأكد حجز الكمية لحضرتك؟`
-          : `Hello! Delighted to assist you. Inventory checked: in stock with 48h dispatch. I have just attached your official PDF quotation with applied quantity discount. Would you like me to reserve this batch for you?`
-      }`;
-      box.appendChild(msg2);
+    // Append User Message to UI
+    if (chatBox) {
+      const userBubble = document.createElement('div');
+      userBubble.className = 'flex items-start justify-end gap-2.5';
+      userBubble.innerHTML = `
+        <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tr-sm bg-emerald-950/60 border border-emerald-500/40 text-emerald-100 leading-relaxed shadow-sm">
+          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-300 font-mono mb-1">
+            <span class="font-bold">[${isAr ? 'أنت على واتساب' : 'You on WhatsApp'}]</span>
+            <span>${timeNow}</span>
+          </div>
+          <p>${escapeHtml(cleanText)}</p>
+        </div>
+        <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs shrink-0">
+          👤
+        </div>
+      `;
+      chatBox.appendChild(userBubble);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
 
-      // Step 3: PDF Attachment Confirmation
-      const pdfBadge = document.createElement('div');
-      pdfBadge.className = 'p-2 rounded bg-slate-900 border border-emerald-500/40 text-[11px] text-emerald-400 flex items-center justify-between';
-      pdfBadge.innerHTML = `<span>📎 ${isAr ? 'عرض_سعر_رسمي_' + orderId + '.pdf' : 'Official_Quote_' + orderId + '.pdf'} (142 KB)</span> <span class="text-slate-400">${isAr ? 'تم الإرسال والمزامنة في قاعدة البيانات' : 'Sent & Logged to DB'}</span>`;
-      box.appendChild(pdfBadge);
-      
-      box.scrollTop = box.scrollHeight;
-      if (btn) btn.disabled = false;
-    }, 700);
+    // Show Typing Indicator
+    if (typingIndicator) {
+      typingIndicator.classList.remove('hidden');
+      typingIndicator.classList.add('flex');
+      if (chatBox) chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    // Add to history
+    chatHistory.push({ role: 'user', content: cleanText });
+
+    let aiReply = null;
+    let replySource = 'deepseek-api';
+
+    try {
+      const response = await fetch('/api/deepseek-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: cleanText,
+          history: chatHistory.slice(-6)
+        })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.success && data.reply) {
+          aiReply = data.reply;
+          replySource = 'deepseek-api';
+        }
+      }
+    } catch (err) {
+      // Fetch error handled gracefully
+    }
+
+    // Fallback to intelligent built-in generator if DeepSeek API key requires active billing or proxy unavailable
+    if (!aiReply) {
+      aiReply = generateSalahLogisticsAiResponse(cleanText, isAr ? 'ar' : 'en');
+      replySource = 'salah-ai-engine';
+    }
+
+    // Hide Typing Indicator
+    if (typingIndicator) {
+      typingIndicator.classList.add('hidden');
+      typingIndicator.classList.remove('flex');
+    }
+
+    // Add AI message to history
+    chatHistory.push({ role: 'assistant', content: aiReply });
+
+    // Render AI Reply bubble
+    if (chatBox) {
+      const aiBubble = document.createElement('div');
+      aiBubble.className = 'flex items-start gap-2.5';
+      const badgeText = replySource === 'deepseek-api' 
+        ? (isAr ? 'موظف مبيعات صلاح لوجيستيكس (DeepSeek API)' : 'Salah Logistics AI Sales (DeepSeek API)')
+        : (isAr ? 'موظف مبيعات صلاح لوجيستيكس' : 'Salah Logistics AI Sales');
+
+      aiBubble.innerHTML = `
+        <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+          🤖
+        </div>
+        <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+            <span class="font-bold">[${badgeText}]</span>
+            <span class="text-slate-500">${timeNow} ✓✓</span>
+          </div>
+          <div class="whitespace-pre-line text-xs">${escapeHtml(aiReply)}</div>
+          <div class="mt-2.5 pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
+            <a href="${window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee')}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-[10px] transition-transform hover:scale-105">
+              <span>💬</span>
+              <span>${isAr ? 'تأكيد الحجز عبر واتساب' : 'Confirm on WhatsApp'}</span>
+            </a>
+            <span class="text-[9px] font-mono text-slate-500">24/7 Live</span>
+          </div>
+        </div>
+      `;
+      chatBox.appendChild(aiBubble);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    if (sendBtn) sendBtn.disabled = false;
+    isSendingAiMessage = false;
   };
+
+  // --- WhatsApp AI Live Simulator Trigger ---
+  const SAMPLE_INQUIRIES = [
+    'السلام عليكم، محتاج تفاصيل وعرض سعر باقة الموقع التعريفي للشركات بدومين com. ومدة التسليم.',
+    'مرحباً، عايز أعرف إزاي موظف الذكاء الاصطناعي بيولد عروض أسعار PDF ويرد فوراً على العملاء.',
+    'السلام عليكم، محتاجين سيستم شحن متكامل لإدارة 20 مندوب وتتبع بوالص الشحن وتحصيل الـ COD.',
+    'Hello, what is included in the $65 Corporate Website package and how does the annual renewal work?'
+  ];
+  let sampleInquiryIdx = 0;
+
+  window.simulateLiveInquiry = function () {
+    const inquiry = SAMPLE_INQUIRIES[sampleInquiryIdx % SAMPLE_INQUIRIES.length];
+    sampleInquiryIdx++;
+    window.sendDeepSeekMessage(inquiry);
+  };
+
+  // Reset/Clear Chat
+  window.clearChat = function () {
+    chatHistory = [];
+    const chatBox = document.getElementById('sim-chat-box');
+    const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
+    if (!chatBox) return;
+
+    chatBox.innerHTML = `
+      <div class="flex items-start gap-2.5">
+        <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+          🤖
+        </div>
+        <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+            <span class="font-bold">[${isAr ? 'موظف مبيعات صلاح لوجيستيكس' : 'Salah Logistics Sales AI'}]</span>
+            <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
+          </div>
+          <p>${isAr 
+            ? 'أهلاً بحضرتك يا فندم في منصة صلاح لوجيستيكس والمهندس مصطفى صلاح! 👋 أنا موظف المبيعات والتواصل الذكي، أقدر أساعد حضرتك فوراً في معرفة تفاصيل وأسعار باقاتنا (مثل باقة الموقع التعريفي بـ 65$ أو 75$، موظف الذكاء الاصطناعي لواتساب، وسيستمات الشحن وتطبيقات الموبايل). اتفضل اسألني في أي تفاصيل أو اكتب طلبك وهرد عليك فوراً! 🚀'
+            : 'Welcome to Salah Logistics and Eng. Mostafa Salah! 👋 I am your intelligent sales & client relations agent. Ask any questions about our corporate packages, AI WhatsApp bots, or shipping systems, and I will assist you instantly! 🚀'
+          }</p>
+        </div>
+      </div>
+    `;
+  };
+
+  // Attach direct listeners to prevent any event bubbling/delegation blocking
+  function attachDirectListeners() {
+    // Theme toggle direct listener
+    document.querySelectorAll('#theme-toggle-btn, [data-action="toggle-theme"], .theme-toggle-btn').forEach(btn => {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        window.toggleTheme();
+      };
+    });
+
+    // Language toggle direct listener
+    document.querySelectorAll('#lang-toggle-btn, [data-action="toggle-language"], .lang-toggle-btn').forEach(btn => {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        window.toggleLanguage();
+      };
+    });
+
+    // Mobile menu toggle direct listener
+    document.querySelectorAll('#mobile-menu-btn, [data-action="toggle-mobile-menu"]').forEach(btn => {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        window.toggleMobileMenu();
+      };
+    });
+
+    // DeepSeek Chat form submit
+    const chatForm = document.getElementById('sim-chat-form');
+    if (chatForm) {
+      chatForm.onsubmit = function (e) {
+        e.preventDefault();
+        const input = document.getElementById('sim-chat-input');
+        if (input && input.value) {
+          window.sendDeepSeekMessage(input.value);
+        }
+      };
+    }
+
+    // Quick prompt buttons
+    document.querySelectorAll('.quick-prompt-btn').forEach(btn => {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        const q = btn.getAttribute('data-question');
+        if (q) window.sendDeepSeekMessage(q);
+      };
+    });
+
+    // Clear chat button
+    const clearBtn = document.getElementById('clear-chat-btn');
+    if (clearBtn) {
+      clearBtn.onclick = function (e) {
+        e.preventDefault();
+        window.clearChat();
+      };
+    }
+
+    // Simulate chat inquiry button
+    const simBtn = document.getElementById('sim-btn');
+    if (simBtn) {
+      simBtn.onclick = function (e) {
+        e.preventDefault();
+        window.simulateLiveInquiry();
+      };
+    }
+  }
 
   // --- Global Event Delegation (Zero inline onclick for 100% strict CSP) ---
   document.addEventListener('click', function(e) {
@@ -726,7 +1071,7 @@
     if (!target) return;
 
     // Theme Toggle
-    const themeBtn = target.closest('#theme-toggle-btn, [data-action="toggle-theme"]');
+    const themeBtn = target.closest('#theme-toggle-btn, [data-action="toggle-theme"], .theme-toggle-btn');
     if (themeBtn) {
       e.preventDefault();
       window.toggleTheme();
@@ -734,7 +1079,7 @@
     }
 
     // Language Toggle
-    const langBtn = target.closest('#lang-toggle-btn, [data-action="toggle-language"]');
+    const langBtn = target.closest('#lang-toggle-btn, [data-action="toggle-language"], .lang-toggle-btn');
     if (langBtn) {
       e.preventDefault();
       window.toggleLanguage();
@@ -746,6 +1091,23 @@
     if (mobileBtn) {
       e.preventDefault();
       window.toggleMobileMenu();
+      return;
+    }
+
+    // Clear Chat
+    const clearChatBtn = target.closest('#clear-chat-btn, [data-action="clear-chat"]');
+    if (clearChatBtn) {
+      e.preventDefault();
+      window.clearChat();
+      return;
+    }
+
+    // Quick prompt
+    const quickPrompt = target.closest('.quick-prompt-btn');
+    if (quickPrompt) {
+      e.preventDefault();
+      const q = quickPrompt.getAttribute('data-question');
+      if (q) window.sendDeepSeekMessage(q);
       return;
     }
 
@@ -858,10 +1220,17 @@
     }
   });
 
-  // --- Initialize on DOM Loaded ---
-  document.addEventListener('DOMContentLoaded', function () {
+  // --- Safe Unified App Initialization ---
+  function initializeApp() {
     window.setLanguage(currentLang);
     window.setTheme(currentTheme);
-  });
+    attachDirectListeners();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+  } else {
+    initializeApp();
+  }
 
 })();

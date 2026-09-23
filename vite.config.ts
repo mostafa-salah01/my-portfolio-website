@@ -1,11 +1,101 @@
-import { defineConfig } from 'vite';
+import { defineConfig, Plugin } from 'vite';
 import { resolve } from 'path';
 import tailwindcss from '@tailwindcss/vite';
+
+function deepseekProxyPlugin(): Plugin {
+  return {
+    name: 'deepseek-api-proxy',
+    configureServer(server) {
+      server.middlewares.use('/api/deepseek-chat', async (req, res) => {
+        if (req.method !== 'POST') {
+          res.statusCode = 405;
+          res.end(JSON.stringify({ error: 'Method Not Allowed' }));
+          return;
+        }
+
+        let body = '';
+        req.on('data', chunk => { body += chunk; });
+        req.on('end', async () => {
+          try {
+            const data = JSON.parse(body || '{}');
+            const userMessage = data.message || '';
+            const history = data.history || [];
+            const apiKey = process.env.DEEPSEEK_API_KEY || '';
+            if (!apiKey) {
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ 
+                success: false, 
+                error: 'No DEEPSEEK_API_KEY configured',
+                fallbackNeeded: true 
+              }));
+              return;
+            }
+
+            const systemPrompt = `أنت موظف مبيعات وتواصل ذكي ودود واحترافي لشركة "صلاح لوجيستيكس" (Salah Logistics) والمهندس مصطفى صلاح. تتحدث بلهجة مصرية وعربية راقية وطبيعية تشبه البشر تماماً بدون أي تكلف أو جمود.
+خدمات الشركة وأسعارها الرسمية:
+1. باقة الموقع التعريفي الاحترافي للشركات: 65 دولار بدومين uk. أو 75 دولار بدومين com. تشمل اللغتين (عربي وإنجليزي معاً بدون أي رسوم إضافية)، استضافة سحابية فائقة السرعة، شهادة أمان SSL، ربط مباشر بالواتساب، دعم فني وصيانة يومية، مع تجديد سنوي ثابت 40 دولار فقط.
+2. موظف الذكاء الاصطناعي البشري للواتساب وتليجرام: رد فوري، إرسال عروض أسعار PDF، تسجيل الطلبات في السيستم، وإشعار الإدارة.
+3. سيستم الشحن واللوجستيات: إدارة الشحنات والمناديب وتتبع خطوط السير والتحصيل COD.
+4. تطبيقات الموبايل وأنظمة السوبرماركت والمتاجر والصيدليات.
+5. أتمتة العمليات عبر n8n وهندسة الـ APIs وقواعد البيانات.
+رقم الواتساب المباشر للتأكيد والحجز: 201107787049 (أو 01107787049).
+مهمتك: الرد على استفسار العميل بإيجاز وذكاء ولباقة وحثه على تأكيد حجزه أو التواصل عبر واتساب.`;
+
+            const messages = [
+              { role: 'system', content: systemPrompt },
+              ...history.slice(-6),
+              { role: 'user', content: userMessage }
+            ];
+
+            const response = await fetch('https://api.deepseek.com/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+              },
+              body: JSON.stringify({
+                model: 'deepseek-chat',
+                messages: messages,
+                temperature: 0.7,
+                max_tokens: 350
+              })
+            });
+
+            const result = await response.json();
+            if (response.ok && result.choices && result.choices[0]) {
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ 
+                success: true, 
+                reply: result.choices[0].message.content,
+                source: 'deepseek-api'
+              }));
+            } else {
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ 
+                success: false, 
+                error: result.error || 'DeepSeek API response error',
+                fallbackNeeded: true
+              }));
+            }
+          } catch (err: any) {
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ 
+              success: false, 
+              error: err?.message || 'Server error',
+              fallbackNeeded: true
+            }));
+          }
+        });
+      });
+    }
+  };
+}
 
 export default defineConfig(() => {
   return {
     plugins: [
       tailwindcss(),
+      deepseekProxyPlugin(),
     ],
     server: {
       port: 3000,

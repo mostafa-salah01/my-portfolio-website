@@ -114,15 +114,14 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), vr=(), interest-cohort=()" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts Optimized Loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
 
   <!-- Tailwind CSS Framework & Configuration -->
-  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
+    window.tailwind = {
       darkMode: 'class',
       theme: {
         extend: {
@@ -136,8 +135,9 @@
           }
         }
       }
-    }
+    };
   </script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
 
   <!-- Complete CSS Stylesheet (Design System + Pre-compiled Styles & Animations) -->
   <link rel="stylesheet" href="style.css" />
@@ -396,7 +396,10 @@
         <!-- Featured Service: Corporate Website Design & Setup ($65 / $75 Package) -->
         <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col border-t-2 border-t-cyan-500" data-project-category="web-development">
           <a href="corporate-website.html" class="block project-img-wrapper group">
-            <img src="/assets/watermarked_img_3971138867213192952-DyEmPtI3.jpg" alt="Corporate Website Package" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <picture>
+              <source srcset="assets/images/watermarked_img_3971138867213192952.webp" type="image/webp" />
+              <img src="assets/images/watermarked_img_3971138867213192952.jpg" alt="Corporate Website Package" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            </picture>
             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-cyan text-xs font-mono font-bold">$65 (.uk) / $75 (.com)</div>
             <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-emerald-500/90 text-slate-950 text-[11px] font-bold font-mono">
               <span data-en="AR & EN Included" data-ar="العربية والإنجليزية معاً">العربية والإنجليزية معاً</span>
@@ -465,7 +468,10 @@
         <!-- Project 1: WhatsApp AI Sales Employee -->
         <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col" data-project-category="ai-employee">
           <a href="whatsapp-ai-employee.html" class="block project-img-wrapper group">
-            <img src="/assets/ai_whatsapp_agent_1789851518713-D0jFmQrg.jpg" alt="WhatsApp AI Employee" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <picture>
+              <source srcset="assets/images/ai_whatsapp_agent_1789851518713.webp" type="image/webp" />
+              <img src="assets/images/ai_whatsapp_agent_1789851518713.jpg" alt="WhatsApp AI Employee" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            </picture>
             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-emerald text-xs font-mono font-bold">WhatsApp Cloud API</div>
             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span class="px-3.5 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold text-xs" data-en="🚀 View Dedicated Page" data-ar="🚀 فتح صفحة الخدمة المستقلة">🚀 فتح صفحة الخدمة المستقلة</span>
@@ -497,7 +503,10 @@
         <!-- Project 2: Telegram & Messenger Omnichannel AI -->
         <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col" data-project-category="ai-employee">
           <a href="omnichannel-ai-agent.html" class="block project-img-wrapper group">
-            <img src="/assets/omnichannel_ai_hub_1789851545960-Da0-f6J4.jpg" alt="Telegram and Messenger AI" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <picture>
+              <source srcset="assets/images/omnichannel_ai_hub_1789851545960.webp" type="image/webp" />
+              <img src="assets/images/omnichannel_ai_hub_1789851545960.jpg" alt="Telegram and Messenger AI" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            </picture>
             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-cyan text-xs font-mono font-bold">Telegram & Messenger</div>
             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span class="px-3.5 py-1.5 rounded-lg bg-cyan-500 text-slate-950 font-bold text-xs" data-en="🚀 View Dedicated Page" data-ar="🚀 فتح صفحة الخدمة المستقلة">🚀 فتح صفحة الخدمة المستقلة</span>
@@ -529,7 +538,10 @@
         <!-- Project 3: Smart Shipping & Logistics System -->
         <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col" data-project-category="shipping">
           <a href="smart-shipping-system.html" class="block project-img-wrapper group">
-            <img src="/assets/logistics_sync_hub_1789849655051-DHsI56OV.jpg" alt="Smart Shipping System" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <picture>
+              <source srcset="assets/images/logistics_sync_hub_1789849655051.webp" type="image/webp" />
+              <img src="assets/images/logistics_sync_hub_1789849655051.jpg" alt="Smart Shipping System" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            </picture>
             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-indigo text-xs font-mono font-bold">Shipping & Logistics</div>
             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span class="px-3.5 py-1.5 rounded-lg bg-indigo-500 text-white font-bold text-xs" data-en="🚀 View Dedicated Page" data-ar="🚀 فتح صفحة الخدمة المستقلة">🚀 فتح صفحة الخدمة المستقلة</span>
@@ -561,7 +573,10 @@
         <!-- Project 4: Supermarket, Pharmacy & Mobile Apps -->
         <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col" data-project-category="mobile-apps">
           <a href="mobile-retail-apps.html" class="block project-img-wrapper group">
-            <img src="/assets/mobile_erp_apps_1789851533593-8OOVuzw-.jpg" alt="Mobile Apps and POS" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <picture>
+              <source srcset="assets/images/mobile_erp_apps_1789851533593.webp" type="image/webp" />
+              <img src="assets/images/mobile_erp_apps_1789851533593.jpg" alt="Mobile Apps and POS" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            </picture>
             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-amber text-xs font-mono font-bold">Android & iOS Apps</div>
             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span class="px-3.5 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold text-xs" data-en="🚀 View Dedicated Page" data-ar="🚀 فتح صفحة الخدمة المستقلة">🚀 فتح صفحة الخدمة المستقلة</span>
@@ -593,7 +608,10 @@
         <!-- Project 5: n8n Enterprise Orchestrator -->
         <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col" data-project-category="automation">
           <a href="n8n-automation.html" class="block project-img-wrapper group">
-            <img src="/assets/n8n_workflow_canvas_1789849612939-Dg2E-hiN.jpg" alt="n8n Automation Engine" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <picture>
+              <source srcset="assets/images/n8n_workflow_canvas_1789849612939.webp" type="image/webp" />
+              <img src="assets/images/n8n_workflow_canvas_1789849612939.jpg" alt="n8n Automation Engine" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            </picture>
             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-emerald text-xs font-mono font-bold">n8n Automation</div>
             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span class="px-3.5 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold text-xs" data-en="🚀 View Dedicated Page" data-ar="🚀 فتح صفحة الخدمة المستقلة">🚀 فتح صفحة الخدمة المستقلة</span>
@@ -625,7 +643,10 @@
         <!-- Project 6: API Telemetry & Database Hub -->
         <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col" data-project-category="backend">
           <a href="backend-api-architecture.html" class="block project-img-wrapper group">
-            <img src="/assets/api_telemetry_hub_1789849643910-boY_kGrG.jpg" alt="API Telemetry Hub" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <picture>
+              <source srcset="assets/images/api_telemetry_hub_1789849643910.webp" type="image/webp" />
+              <img src="assets/images/api_telemetry_hub_1789849643910.jpg" alt="API Telemetry Hub" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            </picture>
             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-cyan text-xs font-mono font-bold">Backend & DB</div>
             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span class="px-3.5 py-1.5 rounded-lg bg-cyan-500 text-slate-950 font-bold text-xs" data-en="🚀 View Dedicated Page" data-ar="🚀 فتح صفحة الخدمة المستقلة">🚀 فتح صفحة الخدمة المستقلة</span>
