@@ -342,21 +342,38 @@
     document.documentElement.lang = lang;
     document.documentElement.dir = (lang === 'ar' ? 'rtl' : 'ltr');
 
-    // Update all elements with data-en and data-ar
-    document.querySelectorAll('[data-en][data-ar]').forEach(el => {
-      const val = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
-      if (val !== null && val !== undefined) {
-        el.textContent = val;
-      }
-    });
+    // Only walk DOM if language changed from initial server HTML language (ar)
+    if (lang !== 'ar') {
+      // Update all elements with data-en and data-ar
+      document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+        const val = el.getAttribute('data-en');
+        if (val !== null && val !== undefined) {
+          el.textContent = val;
+        }
+      });
 
-    // Update placeholders
-    document.querySelectorAll('[data-placeholder-en][data-placeholder-ar]').forEach(el => {
-      const val = lang === 'ar' ? el.getAttribute('data-placeholder-ar') : el.getAttribute('data-placeholder-en');
-      if (val !== null && val !== undefined) {
-        el.setAttribute('placeholder', val);
-      }
-    });
+      // Update placeholders
+      document.querySelectorAll('[data-placeholder-en][data-placeholder-ar]').forEach(el => {
+        const val = el.getAttribute('data-placeholder-en');
+        if (val !== null && val !== undefined) {
+          el.setAttribute('placeholder', val);
+        }
+      });
+    } else {
+      document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+        const val = el.getAttribute('data-ar');
+        if (val !== null && val !== undefined) {
+          el.textContent = val;
+        }
+      });
+
+      document.querySelectorAll('[data-placeholder-en][data-placeholder-ar]').forEach(el => {
+        const val = el.getAttribute('data-placeholder-ar');
+        if (val !== null && val !== undefined) {
+          el.setAttribute('placeholder', val);
+        }
+      });
+    }
 
     // Update Lang button text everywhere
     document.querySelectorAll('#lang-btn-text, .lang-btn-text').forEach(el => {
@@ -1222,7 +1239,13 @@ Which solution can we help you launch today? Feel free to contact us on WhatsApp
 
   // --- Safe Unified App Initialization ---
   function initializeApp() {
-    window.setLanguage(currentLang);
+    // Only perform DOM update if preferred language is not the pre-rendered default (ar)
+    if (currentLang !== 'ar') {
+      window.setLanguage(currentLang);
+    } else {
+      // Ensure WhatsApp links have the default language query
+      window.updateAllWhatsAppLinks('ar');
+    }
     window.setTheme(currentTheme);
     attachDirectListeners();
   }

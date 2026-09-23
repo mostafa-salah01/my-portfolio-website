@@ -232,3 +232,19 @@ html.light .hero-showcase-hover-btn {
   color: #ffffff;
 }
 
+/* --- Mobile Performance & Main-Thread Rendering Optimizations --- */
+@media (max-width: 768px) {
+  /* Off-screen sections deferred rendering for instant First Contentful Paint & reduced TBT */
+  #workflow,
+  #architecture,
+  #skills,
+  #about,
+  #faq,
+  #contact,
+  footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+}
+
+
