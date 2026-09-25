@@ -164,13 +164,13 @@
       <!-- Actions Container (Left side in RTL) -->
       <div class="header-actions-group">
         <!-- Theme Toggle Button (Dark / Light) -->
-        <button id="theme-toggle-btn" data-action="toggle-theme" class="h-10 p-2 sm:px-3 rounded-xl border border-slate-700/80 bg-slate-900/80 hover:bg-slate-800 text-slate-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm shrink-0 whitespace-nowrap" title="Toggle Theme" aria-label="Toggle theme">
+        <button type="button" id="theme-toggle-btn" data-action="toggle-theme" class="h-10 p-2 sm:px-3 rounded-xl border border-slate-700/80 bg-slate-900/80 hover:bg-slate-800 text-slate-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm shrink-0 whitespace-nowrap" title="Toggle Theme" aria-label="Toggle theme">
           <span id="theme-btn-icon" class="text-base select-none">🌙</span>
           <span id="theme-btn-text" class="hidden sm:inline text-xs font-semibold text-slate-300">داكن</span>
         </button>
 
         <!-- Language Switcher -->
-        <button id="lang-toggle-btn" data-action="toggle-language" class="h-10 px-2.5 sm:px-3 rounded-xl border border-slate-700/80 bg-slate-900/80 hover:bg-slate-800 text-xs font-semibold text-slate-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm shrink-0 whitespace-nowrap">
+        <button type="button" id="lang-toggle-btn" data-action="toggle-language" class="h-10 px-2.5 sm:px-3 rounded-xl border border-slate-700/80 bg-slate-900/80 hover:bg-slate-800 text-xs font-semibold text-slate-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm shrink-0 whitespace-nowrap">
           <span class="text-emerald-400 select-none">🌐</span>
           <span id="lang-btn-text">English</span>
         </button>
@@ -187,7 +187,7 @@
         </a>
 
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn" data-action="toggle-mobile-menu" class="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer" aria-label="Open navigation menu">
+        <button type="button" id="mobile-menu-btn" data-action="toggle-mobile-menu" class="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer" aria-label="Open navigation menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
@@ -211,6 +211,18 @@
       <a href="#workflow" data-action="toggle-mobile-menu" class="block py-2 text-slate-300 hover:text-emerald-400" data-en="Interactive Flow" data-ar="محاكي الأتمتة">محاكي الأتمتة</a>
       <a href="#skills" data-action="toggle-mobile-menu" class="block py-2 text-slate-300 hover:text-emerald-400" data-en="Tech Stack" data-ar="المهارات والتقنيات">المهارات والتقنيات</a>
       <a href="#about" data-action="toggle-mobile-menu" class="block py-2 text-slate-300 hover:text-emerald-400" data-en="About" data-ar="من أنا">من أنا</a>
+
+      <!-- Dedicated Mobile Quick Settings (Theme & Language Controls) -->
+      <div class="pt-3 mt-3 border-t border-slate-800/80 flex items-center gap-3">
+        <button type="button" data-action="toggle-theme" class="theme-toggle-btn flex-1 py-2.5 px-3 rounded-xl border border-slate-700/80 bg-slate-900/80 hover:bg-slate-800 text-xs font-semibold text-slate-200 flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-95 transition-all" aria-label="Toggle Theme">
+          <span class="theme-btn-icon text-base select-none">🌙</span>
+          <span class="theme-btn-text">داكن</span>
+        </button>
+        <button type="button" data-action="toggle-language" class="lang-toggle-btn flex-1 py-2.5 px-3 rounded-xl border border-slate-700/80 bg-slate-900/80 hover:bg-slate-800 text-xs font-semibold text-slate-200 flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-95 transition-all" aria-label="Toggle Language">
+          <span class="text-emerald-400 select-none">🌐</span>
+          <span class="lang-btn-text">English</span>
+        </button>
+      </div>
     </div>
   </header>
 

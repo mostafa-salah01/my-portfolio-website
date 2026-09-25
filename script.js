@@ -400,7 +400,11 @@
     window.updateAllWhatsAppLinks(lang);
   };
 
+  let lastLangToggle = 0;
   window.toggleLanguage = function () {
+    const now = Date.now();
+    if (now - lastLangToggle < 300) return;
+    lastLangToggle = now;
     const nextLang = currentLang === 'ar' ? 'en' : 'ar';
     window.setLanguage(nextLang);
   };
@@ -442,7 +446,11 @@
     });
   };
 
+  let lastThemeToggle = 0;
   window.toggleTheme = function () {
+    const now = Date.now();
+    if (now - lastThemeToggle < 300) return;
+    lastThemeToggle = now;
     const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
     window.setTheme(nextTheme);
   };
@@ -677,7 +685,11 @@
   }
 
   // --- Mobile Menu Toggle ---
+  let lastMenuToggle = 0;
   window.toggleMobileMenu = function () {
+    const now = Date.now();
+    if (now - lastMenuToggle < 300) return;
+    lastMenuToggle = now;
     const menu = document.getElementById('mobile-menu');
     if (!menu) return;
     menu.classList.toggle('hidden');
@@ -1021,7 +1033,10 @@ Which solution can we help you launch today? Feel free to contact us on WhatsApp
     // Theme toggle direct listener
     document.querySelectorAll('#theme-toggle-btn, [data-action="toggle-theme"], .theme-toggle-btn').forEach(btn => {
       btn.onclick = function (e) {
-        e.preventDefault();
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
         window.toggleTheme();
       };
     });
@@ -1029,7 +1044,10 @@ Which solution can we help you launch today? Feel free to contact us on WhatsApp
     // Language toggle direct listener
     document.querySelectorAll('#lang-toggle-btn, [data-action="toggle-language"], .lang-toggle-btn').forEach(btn => {
       btn.onclick = function (e) {
-        e.preventDefault();
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
         window.toggleLanguage();
       };
     });
@@ -1037,7 +1055,10 @@ Which solution can we help you launch today? Feel free to contact us on WhatsApp
     // Mobile menu toggle direct listener
     document.querySelectorAll('#mobile-menu-btn, [data-action="toggle-mobile-menu"]').forEach(btn => {
       btn.onclick = function (e) {
-        e.preventDefault();
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
         window.toggleMobileMenu();
       };
     });

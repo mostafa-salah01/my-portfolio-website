@@ -247,4 +247,58 @@ html.light .hero-showcase-hover-btn {
   }
 }
 
+/* --- Mobile Header & Toggle Controls Touch Responsiveness --- */
+@media (max-width: 640px) {
+  .glass-header-container {
+    padding: 0 0.75rem !important;
+    height: 4.25rem !important;
+  }
+  .header-actions-group {
+    gap: 0.35rem !important;
+  }
+  /* On compact screens, hide the text of the WhatsApp CTA in the header and keep the icon */
+  .whatsapp-header-btn .whatsapp-btn-text {
+    display: none !important;
+  }
+  .whatsapp-header-btn {
+    padding: 0.5rem 0.65rem !important;
+    border-radius: 0.75rem !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+  }
+  #theme-toggle-btn,
+  #lang-toggle-btn,
+  #mobile-menu-btn,
+  .theme-toggle-btn,
+  .lang-toggle-btn {
+    min-width: 38px !important;
+    min-height: 38px !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .glass-header-container {
+    padding: 0 0.5rem !important;
+  }
+  .header-brand-logo {
+    gap: 0.4rem !important;
+  }
+  .header-brand-sub {
+    display: none !important;
+  }
+  .header-actions-group {
+    gap: 0.25rem !important;
+  }
+  #lang-toggle-btn {
+    padding-left: 0.45rem !important;
+    padding-right: 0.45rem !important;
+  }
+  #theme-toggle-btn {
+    padding-left: 0.45rem !important;
+    padding-right: 0.45rem !important;
+  }
+}
+
 
