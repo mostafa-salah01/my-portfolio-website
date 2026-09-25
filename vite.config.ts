@@ -20,8 +20,13 @@ function staticAssetsCopyPlugin(): Plugin {
   };
 }
 
-const CUSTOMER_SERVICE_SYSTEM_PROMPT = `أنت موظف خدمة عملاء ودعم ومبيعات حقيقي وبشري 100% لموقع المهندس مصطفى صلاح وشركة "صلاح لوجيستيكس" (Salah Logistics).
-اسمك "أحمد" من فريق خدمة العملاء والدعم الفني.
+const CUSTOMER_SERVICE_SYSTEM_PROMPT = `أنت موظف خدمة عملاء ودعم ومبيعات حقيقي وبشري 100% لموقع المهندس مصطفى صلاح (Eng. Mostafa Salah).
+اسمك "أحمد" من فريق خدمة العملاء والدعم الفني للمهندس مصطفى صلاح.
+
+تنبيه حاسم وإلزامي:
+هذا الموقع هو موقع شخصي ومهني تعريفي خاص بالمهندس مصطفى صلاح (مطور برمجيات ومهندس أتمتة وبناء أنظمة ذكية).
+ممنوع نهائياً ومطلقاً ذكر كلمة أو اسم "صلاح لوجيستيكس" أو "صلاح لوجيستيك" أو "Salah Logistics" في أي جملة أو رد أو ترحيب على الإطلاق!
+أنت تمثل شخص وخدمات المهندس مصطفى صلاح وفريقه التقني فقط لا غير.
 
 شخصيتك وأسلوبك الحقيقي:
 1. أنت إنسان وبشري تماماً، ودود، محترم، لبق، راقي، وذكي. لست آلياً أو روبوتياً على الإطلاق، وتتجنب تماماً التكلف أو الإجابات الجامدة والمصطنعة.
@@ -113,7 +118,7 @@ Would you like us to customize this AI employee for your business workflow? You 
 
   if (text.includes('شحن') || text.includes('shipping') || text.includes('لوجست') || text.includes('logistics') || text.includes('مندوب') || text.includes('courier') || text.includes('تتبع') || text.includes('cod')) {
     if (isEn) {
-      return `Hello! 🚚 The Salah Logistics Smart Shipping & Courier Platform includes:
+      return `Hello! 🚚 Our Smart Shipping & Logistics Operations Platform developed by Eng. Mostafa Salah includes:
 • Cloud dashboard to manage thousands of shipments, printable waybills, and smart territory routing.
 • Native mobile app for couriers with real-time QR scanning and GPS status updates.
 • Instant COD cash reconciliation, commission wallets, and financial reporting.
@@ -122,7 +127,7 @@ Would you like us to customize this AI employee for your business workflow? You 
 Customizable to fit your exact fleet size. Contact us on WhatsApp (+201107787049) for a live walkthrough! 🚀`;
     }
     return `يا مرحباً بحضرتك يا فندم! 🚚
-سيستم الشحن واللوجستيات الذكي من صلاح لوجيستيكس بيشمل كل اللي محتاجه:
+سيستم الشحن وإدارة المناديب الذكي من المهندس مصطفى صلاح بيشمل كل اللي محتاجه:
 • لوحة تحكم سحابية لإدارة آلاف الشحنات، إصدار بوالص الشحن (Waybills) بباركود وQR، وتوزيع المناديب جغرافياً.
 • تطبيق موبايل للمناديب لتحديث حالات التوصيل وتأكيد الاستلام والتوقيع.
 • تسوية دقيقة لمبالغ الدفع عند الاستلام (COD) وتقارير مالية لحظية.
@@ -150,7 +155,7 @@ Tell us about your project idea on WhatsApp (+201107787049) to get started! 🚀
   }
 
   if (isEn) {
-    return `Welcome to Salah Logistics! 👋 I'm Ahmed from Customer Service & Support.
+    return `Welcome to Eng. Mostafa Salah's website! 👋 I'm Ahmed from Customer Service & Support.
 We provide end-to-end software and automation solutions under Eng. Mostafa Salah:
 1. Corporate Website Packages ($65 USD for .uk / $75 USD for .com, bilingual AR/EN included, $40 fixed annual renewal).
 2. Human-like AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
@@ -161,7 +166,7 @@ We provide end-to-end software and automation solutions under Eng. Mostafa Salah
 How can I help you today? You can also message Eng. Mostafa directly on WhatsApp (+201107787049)! 🚀`;
   }
 
-  return `أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋
+  return `أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋
 أنا أحمد من خدمة العملاء والمبيعات، سعيد جداً بتواصلك وتحت أمرك في أي استفسار:
 1. تصميم مواقع الشركات التعريفية (باقة 65$ بدومين uk. أو 75$ بدومين com. تشمل العربي والإنجليزي مع تجديد سنوي ثابت 40$).
 2. موظف الذكاء الاصطناعي البشري للواتساب وتليجرام للرد الفوري وتوليد عروض أسعار PDF.

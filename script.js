@@ -407,7 +407,7 @@
     const csAgentName = document.getElementById('cs-agent-name');
     if (csAgentName) csAgentName.textContent = lang === 'ar' ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support';
     const csAgentStatus = document.getElementById('cs-agent-status');
-    if (csAgentStatus) csAgentStatus.textContent = lang === 'ar' ? 'صلاح لوجيستيكس • يرد فوراً بلهجة بشرية' : 'Salah Logistics • Human-like Replies';
+    if (csAgentStatus) csAgentStatus.textContent = lang === 'ar' ? 'م. مصطفى صلاح • يرد فوراً بلهجة بشرية' : 'Eng. Mostafa Salah • Human-like Replies';
     const floatInput = document.getElementById('floating-cs-input');
     if (floatInput) floatInput.placeholder = lang === 'ar' ? 'اكتب سؤالك هنا لأحمد...' : 'Type your question here...';
 
@@ -774,7 +774,7 @@
   }
 
   // Intelligent client-side response generator matching Egyptian tech customer service tone
-  function generateSalahLogisticsAiResponse(userText, lang) {
+  function generateMostafaSalahAiResponse(userText, lang) {
     const text = (userText || '').toLowerCase();
     const isEn = lang === 'en' || (/^[a-zA-Z0-9\s.,?!'"@#$%^&*()_+-=:;/<>]+$/.test(userText.trim()) && !/[\u0600-\u06FF]/.test(userText));
 
@@ -830,7 +830,7 @@ Would you like us to customize this AI employee for your business workflow? Mess
 
     if (text.includes('شحن') || text.includes('shipping') || text.includes('لوجست') || text.includes('logistics') || text.includes('مندوب') || text.includes('courier') || text.includes('تتبع') || text.includes('cod')) {
       if (isEn) {
-        return `Hello! 🚚 The Salah Logistics Smart Shipping & Courier Platform includes:
+        return `Hello! 🚚 Our Smart Shipping & Logistics Operations Platform includes:
 • Cloud dashboard to manage thousands of shipments, printable waybills, and smart territory routing.
 • Native mobile app for couriers with real-time QR scanning and GPS status updates.
 • Instant COD cash reconciliation, commission wallets, and financial reporting.
@@ -839,7 +839,7 @@ Would you like us to customize this AI employee for your business workflow? Mess
 Customizable to fit your exact fleet size. Contact us on WhatsApp (+201107787049) for a live walkthrough! 🚀`;
       }
       return `يا مرحباً بحضرتك يا فندم! 🚚
-سيستم الشحن واللوجستيات الذكي من صلاح لوجيستيكس بيشمل كل اللي محتاجه لإدارة أسطولك:
+سيستم الشحن وإدارة المناديب الذكي من المهندس مصطفى صلاح بيشمل كل اللي محتاجه لإدارة أسطولك:
 • لوحة تحكم سحابية لإدارة آلاف الشحنات، إصدار بوالص الشحن (Waybills) بباركود وQR، وتوزيع المناديب جغرافياً.
 • تطبيق موبايل للمناديب لتحديث حالات التوصيل وتأكيد الاستلام والتوقيع الإلكتروني.
 • تسوية دقيقة لمبالغ الدفع عند الاستلام (COD) وتقارير أرباح يومية.
@@ -885,7 +885,7 @@ We can automate any repetitive operational task for your business! Message Eng. 
     }
 
     if (isEn) {
-      return `Welcome to Salah Logistics! 👋 I'm Ahmed from Customer Service & Support.
+      return `Welcome to Eng. Mostafa Salah's website! 👋 I'm Ahmed from Customer Service & Support.
 We provide end-to-end software and automation solutions under Eng. Mostafa Salah:
 1. Corporate Website Packages ($65 USD for .uk / $75 USD for .com, bilingual AR/EN included, $40 fixed annual renewal).
 2. Human-like AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
@@ -896,7 +896,7 @@ We provide end-to-end software and automation solutions under Eng. Mostafa Salah
 How can I help you today? You can also message Eng. Mostafa directly on WhatsApp (+201107787049)! 🚀`;
     }
 
-    return `أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋
+    return `أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋
 أنا أحمد من خدمة العملاء والمبيعات، سعيد جداً بتواصلك وتحت أمرك في أي استفسار:
 1. تصميم مواقع الشركات التعريفية (باقة 65$ بدومين uk. أو 75$ بدومين com. تشمل العربي والإنجليزي مع تجديد سنوي ثابت 40$).
 2. موظف الذكاء الاصطناعي البشري للواتساب وتليجرام للرد الفوري وتوليد عروض أسعار PDF.
@@ -952,7 +952,7 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
                 <span class="chat-header-title font-bold text-sm text-white" id="cs-agent-name">${isAr ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support'}</span>
                 <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[9px]">AI Live</span>
               </div>
-              <span class="text-[11px] text-slate-400 block font-mono" id="cs-agent-status">${isAr ? 'صلاح لوجيستيكس • يرد فوراً بلهجة بشرية' : 'Salah Logistics • Human-like Replies'}</span>
+              <span class="text-[11px] text-slate-400 block font-mono" id="cs-agent-status">${isAr ? 'م. مصطفى صلاح • يرد فوراً بلهجة بشرية' : 'Eng. Mostafa Salah • Human-like Replies'}</span>
             </div>
           </div>
           <div class="flex items-center gap-1.5">
@@ -991,8 +991,8 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
                 <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
               </div>
               <p id="cs-welcome-text">${isAr 
-                ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
-                : 'Welcome to Salah Logistics and Eng. Mostafa Salah! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or logistics systems, and I will assist you instantly! 🚀'
+                ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
+                : 'Welcome to Eng. Mostafa Salah\'s website! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or custom systems, and I will assist you instantly! 🚀'
               }</p>
             </div>
           </div>
@@ -1245,8 +1245,8 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     chatHistory = [];
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
     const welcome = isAr 
-      ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
-      : 'Welcome to Salah Logistics and Eng. Mostafa Salah! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or logistics systems, and I will assist you instantly! 🚀';
+      ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
+      : 'Welcome to Eng. Mostafa Salah\'s website! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or custom systems, and I will assist you instantly! 🚀';
 
     // Clear Floating Widget
     const floatBox = document.getElementById('floating-cs-chat-box');
@@ -1277,7 +1277,7 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
           </div>
           <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
             <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
-              <span class="font-bold">[${isAr ? 'موظف مبيعات صلاح لوجيستيكس' : 'Salah Logistics Sales AI'}]</span>
+              <span class="font-bold">[${isAr ? 'موظف مبيعات م. مصطفى صلاح' : 'Eng. Mostafa Salah Sales AI'}]</span>
               <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
             </div>
             <p>${welcome}</p>
@@ -1404,7 +1404,7 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
     // 3. Built-in intelligent Egyptian customer service fallback
     if (!aiReply) {
-      aiReply = generateSalahLogisticsAiResponse(cleanText, isAr ? 'ar' : 'en');
+      aiReply = generateMostafaSalahAiResponse(cleanText, isAr ? 'ar' : 'en');
       replySource = 'egyptian-customer-service-engine';
     }
 
