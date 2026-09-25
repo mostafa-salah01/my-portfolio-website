@@ -909,160 +909,171 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
   // --- Dynamic Mounting of Site-Wide Floating Customer Service AI Widget ---
   function mountFloatingAiCustomerServiceWidget() {
-    if (document.getElementById('floating-ai-launcher')) return;
+    let launcher = document.getElementById('floating-ai-launcher');
+    let chatWin = document.getElementById('floating-ai-window');
+    let greetingBubble = document.getElementById('floating-ai-greeting-bubble');
 
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
 
     // 1. Floating Launcher Button
-    const launcher = document.createElement('div');
-    launcher.id = 'floating-ai-launcher';
-    launcher.setAttribute('role', 'button');
-    launcher.setAttribute('aria-label', isAr ? 'فتح محادثة موظف خدمة العملاء الذكي' : 'Open AI Customer Service Chat');
-    launcher.innerHTML = `
-      <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/60 text-base shrink-0">
-        <span>👨‍💼</span>
-        <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
-        <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full"></span>
-      </div>
-      <div class="flex flex-col text-start leading-tight">
-        <span class="font-bold text-xs text-white" id="launcher-title-text">${isAr ? 'خدمة العملاء | أحمد' : 'AI Customer Support'}</span>
-        <span class="text-[10px] text-emerald-400 font-mono" id="launcher-status-text">${isAr ? 'متصل الآن ⚡' : 'Online ⚡'}</span>
-      </div>
-    `;
-    document.body.appendChild(launcher);
+    if (!launcher) {
+      launcher = document.createElement('div');
+      launcher.id = 'floating-ai-launcher';
+      launcher.setAttribute('role', 'button');
+      launcher.setAttribute('aria-label', isAr ? 'فتح محادثة موظف خدمة العملاء الذكي' : 'Open AI Customer Service Chat');
+      launcher.innerHTML = `
+        <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/60 text-base shrink-0">
+          <span>👨‍💼</span>
+          <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
+          <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full"></span>
+        </div>
+        <div class="flex flex-col text-start leading-tight">
+          <span class="font-bold text-xs text-white" id="launcher-title-text">${isAr ? 'خدمة العملاء | أحمد' : 'AI Customer Support'}</span>
+          <span class="text-[10px] text-emerald-400 font-mono" id="launcher-status-text">${isAr ? 'متصل الآن ⚡' : 'Online ⚡'}</span>
+        </div>
+      `;
+      document.body.appendChild(launcher);
+    }
 
     // 2. Floating Chat Window
-    const chatWin = document.createElement('div');
-    chatWin.id = 'floating-ai-window';
-    chatWin.innerHTML = `
-      <!-- Header -->
-      <div class="chat-header p-3.5 sm:p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between shrink-0">
-        <div class="flex items-center gap-2.5">
-          <div class="relative w-9 h-9 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-lg shrink-0">
-            <span>👨‍💼</span>
-            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-slate-900"></span>
-          </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <span class="chat-header-title font-bold text-sm text-white" id="cs-agent-name">${isAr ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support'}</span>
-              <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[9px]">AI Live</span>
+    if (!chatWin) {
+      chatWin = document.createElement('div');
+      chatWin.id = 'floating-ai-window';
+      chatWin.innerHTML = `
+        <!-- Header -->
+        <div class="chat-header p-3.5 sm:p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2.5">
+            <div class="relative w-9 h-9 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-lg shrink-0">
+              <span>👨‍💼</span>
+              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-slate-900"></span>
             </div>
-            <span class="text-[11px] text-slate-400 block font-mono" id="cs-agent-status">${isAr ? 'صلاح لوجيستيكس • يرد فوراً بلهجة بشرية' : 'Salah Logistics • Human-like Replies'}</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-1.5">
-          <button type="button" id="floating-cs-clear-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 text-xs font-mono transition-colors" title="${isAr ? 'مسح المحادثة' : 'Clear Chat'}">
-            🗑️
-          </button>
-          <button type="button" id="floating-cs-close-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-xs font-bold transition-colors" title="${isAr ? 'تصغير' : 'Minimize'}">
-            ✕
-          </button>
-        </div>
-      </div>
-
-      <!-- Quick Chips -->
-      <div class="p-2.5 bg-slate-950/60 border-b border-slate-800/80 flex items-center gap-1.5 overflow-x-auto text-[11px] shrink-0 no-scrollbar">
-        <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 transition-colors cursor-pointer" data-question="كم سعر باقة الموقع التعريفي وتفاصيل التجديد السنوي؟">
-          💼 باقة الموقع (65$/75$)
-        </button>
-        <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 transition-colors cursor-pointer" data-question="عايز موظف ذكاء اصطناعي لواتساب يرسل عروض أسعار PDF ويرد على العملاء">
-          💬 موظف واتساب الذكي
-        </button>
-        <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 transition-colors cursor-pointer" data-question="ما هي مميزات سيستم الشحن واللوجستيات وتتبع المناديب؟">
-          🚚 سيستم الشحن
-        </button>
-      </div>
-
-      <!-- Chat Messages Scroll Container -->
-      <div id="floating-cs-chat-box" class="flex-1 p-3.5 sm:p-4 overflow-y-auto space-y-3 text-xs">
-        <!-- Initial Welcome Message -->
-        <div class="flex items-start gap-2.5">
-          <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
-            👨‍💼
-          </div>
-          <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
-            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
-              <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Customer Support]'}</span>
-              <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="chat-header-title font-bold text-sm text-white" id="cs-agent-name">${isAr ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support'}</span>
+                <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[9px]">AI Live</span>
+              </div>
+              <span class="text-[11px] text-slate-400 block font-mono" id="cs-agent-status">${isAr ? 'صلاح لوجيستيكس • يرد فوراً بلهجة بشرية' : 'Salah Logistics • Human-like Replies'}</span>
             </div>
-            <p id="cs-welcome-text">${isAr 
-              ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
-              : 'Welcome to Salah Logistics and Eng. Mostafa Salah! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or logistics systems, and I will assist you instantly! 🚀'
-            }</p>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button type="button" id="floating-cs-clear-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 text-xs font-mono transition-colors" title="${isAr ? 'مسح المحادثة' : 'Clear Chat'}">
+              🗑️
+            </button>
+            <button type="button" id="floating-cs-close-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-xs font-bold transition-colors" title="${isAr ? 'تصغير' : 'Minimize'}">
+              ✕
+            </button>
           </div>
         </div>
-      </div>
 
-      <!-- Typing Indicator -->
-      <div id="floating-cs-typing" class="hidden items-center gap-2 px-4 py-1.5 text-xs text-emerald-400 font-mono bg-slate-950/40 shrink-0">
-        <span class="inline-flex gap-1 items-center">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce"></span>
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.2s]"></span>
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.4s]"></span>
-        </span>
-        <span class="text-[11px]">${isAr ? 'أحمد يكتب الآن...' : 'Ahmed is typing...'}</span>
-      </div>
-
-      <!-- Input Bar -->
-      <div class="p-3 bg-slate-900/95 border-t border-slate-800 shrink-0">
-        <form id="floating-cs-form" class="flex items-center gap-2">
-          <input 
-            id="floating-cs-input" 
-            type="text" 
-            placeholder="${isAr ? 'اكتب سؤالك هنا لأحمد...' : 'Type your question here...'}" 
-            class="chat-input-box flex-1 h-10 px-3.5 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500/80 transition-colors"
-            autocomplete="off"
-          />
-          <button 
-            id="floating-cs-send-btn" 
-            type="submit" 
-            class="h-10 px-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center justify-center shrink-0 shadow-sm"
-            title="${isAr ? 'إرسال' : 'Send'}"
-          >
-            <span>➤</span>
+        <!-- Quick Chips -->
+        <div class="p-2.5 bg-slate-950/60 border-b border-slate-800/80 flex items-center gap-1.5 overflow-x-auto text-[11px] shrink-0 no-scrollbar">
+          <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 transition-colors cursor-pointer" data-question="كم سعر باقة الموقع التعريفي وتفاصيل التجديد السنوي؟">
+            💼 باقة الموقع (65$/75$)
           </button>
-        </form>
-        <div class="mt-2 flex items-center justify-between text-[10px] text-slate-400">
-          <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors flex items-center gap-1">
-            <span>💬</span>
-            <span>${isAr ? 'تحويل للمحادثة عبر واتساب' : 'Switch to WhatsApp'}</span>
-          </a>
-          <span class="font-mono text-slate-500">م. مصطفى صلاح</span>
+          <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 transition-colors cursor-pointer" data-question="عايز موظف ذكاء اصطناعي لواتساب يرسل عروض أسعار PDF ويرد على العملاء">
+            💬 موظف واتساب الذكي
+          </button>
+          <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 transition-colors cursor-pointer" data-question="ما هي مميزات سيستم الشحن واللوجستيات وتتبع المناديب؟">
+            🚚 سيستم الشحن
+          </button>
         </div>
-      </div>
-    `;
-    document.body.appendChild(chatWin);
+
+        <!-- Chat Messages Scroll Container -->
+        <div id="floating-cs-chat-box" class="flex-1 p-3.5 sm:p-4 overflow-y-auto space-y-3 text-xs">
+          <!-- Initial Welcome Message -->
+          <div class="flex items-start gap-2.5">
+            <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+              👨‍💼
+            </div>
+            <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+              <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+                <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Customer Support]'}</span>
+                <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
+              </div>
+              <p id="cs-welcome-text">${isAr 
+                ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
+                : 'Welcome to Salah Logistics and Eng. Mostafa Salah! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or logistics systems, and I will assist you instantly! 🚀'
+              }</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div id="floating-cs-typing" class="hidden items-center gap-2 px-4 py-1.5 text-xs text-emerald-400 font-mono bg-slate-950/40 shrink-0">
+          <span class="inline-flex gap-1 items-center">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.2s]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.4s]"></span>
+          </span>
+          <span class="text-[11px]">${isAr ? 'أحمد يكتب الآن...' : 'Ahmed is typing...'}</span>
+        </div>
+
+        <!-- Input Bar -->
+        <div class="p-3 bg-slate-900/95 border-t border-slate-800 shrink-0">
+          <form id="floating-cs-form" class="flex items-center gap-2">
+            <input 
+              id="floating-cs-input" 
+              type="text" 
+              placeholder="${isAr ? 'اكتب سؤالك هنا لأحمد...' : 'Type your question here...'}" 
+              class="chat-input-box flex-1 h-10 px-3.5 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500/80 transition-colors"
+              autocomplete="off"
+            />
+            <button 
+              id="floating-cs-send-btn" 
+              type="submit" 
+              class="h-10 px-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center justify-center shrink-0 shadow-sm"
+              title="${isAr ? 'إرسال' : 'Send'}"
+            >
+              <span>➤</span>
+            </button>
+          </form>
+          <div class="mt-2 flex items-center justify-between text-[10px] text-slate-400">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors flex items-center gap-1">
+              <span>💬</span>
+              <span>${isAr ? 'تحويل للمحادثة عبر واتساب' : 'Switch to WhatsApp'}</span>
+            </a>
+            <span class="font-mono text-slate-500">م. مصطفى صلاح</span>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(chatWin);
+    }
 
     // 3. Proactive 5-Second Greeting Bubble
-    const greetingBubble = document.createElement('div');
-    greetingBubble.id = 'floating-ai-greeting-bubble';
-    greetingBubble.className = 'hidden';
-    greetingBubble.innerHTML = `
-      <div class="flex items-center justify-between gap-2 pb-2 border-b border-slate-800/80 mb-2">
-        <div class="flex items-center gap-2">
-          <div class="relative w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-sm shrink-0">
-            <span>👨‍💼</span>
-            <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+    if (!greetingBubble) {
+      greetingBubble = document.createElement('div');
+      greetingBubble.id = 'floating-ai-greeting-bubble';
+      greetingBubble.className = 'hidden';
+      greetingBubble.innerHTML = `
+        <div class="flex items-center justify-between gap-2 pb-2 border-b border-slate-800/80 mb-2">
+          <div class="flex items-center gap-2">
+            <div class="relative w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-sm shrink-0">
+              <span>👨‍💼</span>
+              <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+            </div>
+            <div>
+              <span class="font-bold text-xs text-white block leading-tight" id="bubble-agent-name">${isAr ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support'}</span>
+              <span class="text-[9px] text-emerald-400 font-mono">${isAr ? 'متصل الآن ⚡' : 'Online ⚡'}</span>
+            </div>
           </div>
-          <div>
-            <span class="font-bold text-xs text-white block leading-tight" id="bubble-agent-name">${isAr ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support'}</span>
-            <span class="text-[9px] text-emerald-400 font-mono">${isAr ? 'متصل الآن ⚡' : 'Online ⚡'}</span>
-          </div>
+          <button type="button" id="bubble-dismiss-btn" class="text-slate-400 hover:text-white text-xs p-1 cursor-pointer transition-colors" title="${isAr ? 'إغلاق' : 'Dismiss'}">✕</button>
         </div>
-        <button type="button" id="bubble-dismiss-btn" class="text-slate-400 hover:text-white text-xs p-1 cursor-pointer transition-colors" title="${isAr ? 'إغلاق' : 'Dismiss'}">✕</button>
-      </div>
-      <p class="text-xs text-slate-200 leading-relaxed mb-3" id="bubble-msg-text">
-        ${isAr 
-          ? 'أهلاً بحضرتك يا فندم! 👋 أنا أحمد من خدمة العملاء، لو حابب تستفسر عن تفاصيل وأسعار باقاتنا (مثل باقة الموقع التعريفي بـ 65$ أو 75$) أو أي خدمة، أنا هنا في خدمتك في أي لحظة! 💬'
-          : 'Welcome to our website! 👋 I am Ahmed from Customer Service. If you have any questions about our packages ($65/$75) or custom systems, I am here to assist you anytime! 💬'}
-      </p>
-      <div class="flex items-center gap-2 pt-1 border-t border-slate-800/60">
-        <button type="button" id="bubble-open-chat-btn" class="flex-1 py-1.5 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-transform hover:scale-105 shadow-sm cursor-pointer">
-          ${isAr ? '💬 تحدث مع أحمد الآن' : '💬 Chat with Ahmed'}
-        </button>
-      </div>
-    `;
-    document.body.appendChild(greetingBubble);
+        <p class="text-xs text-slate-200 leading-relaxed mb-3" id="bubble-msg-text">
+          ${isAr 
+            ? 'أهلاً بحضرتك يا فندم! 👋 أنا أحمد من خدمة العملاء، لو حابب تستفسر عن تفاصيل وأسعار باقاتنا (مثل باقة الموقع التعريفي بـ 65$ أو 75$) أو موظف الواتساب الذكي وسيستمات الشحن، أنا هنا في خدمتك في أي لحظة! 💬'
+            : 'Welcome to our website! 👋 I am Ahmed from Customer Service. If you have any questions about our packages ($65/$75) or custom systems, I am here to assist you anytime! 💬'}
+        </p>
+        <div class="flex items-center gap-2 pt-1 border-t border-slate-800/60">
+          <button type="button" id="bubble-open-chat-btn" class="flex-1 py-1.5 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-transform hover:scale-105 shadow-sm cursor-pointer">
+            ${isAr ? '💬 تحدث مع أحمد الآن' : '💬 Chat with Ahmed'}
+          </button>
+        </div>
+      `;
+      document.body.appendChild(greetingBubble);
+    }
+
+    if (launcher._hasEventsBound) return;
+    launcher._hasEventsBound = true;
 
     // Event Bindings for Floating Widget
     launcher.onclick = function (e) {
@@ -1074,7 +1085,6 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     if (closeBtn) {
       closeBtn.onclick = function (e) {
         if (e) e.preventDefault();
-        safeSetStorage('cs_chat_home_dismissed', 'true');
         window.toggleAiCustomerServiceChat(false);
       };
     }
@@ -1112,7 +1122,6 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     if (bubbleDismissBtn) {
       bubbleDismissBtn.onclick = function (e) {
         if (e) e.stopPropagation();
-        safeSetStorage('cs_greeting_dismissed', 'true');
         greetingBubble.classList.remove('show');
         setTimeout(() => greetingBubble.classList.add('hidden'), 300);
       };
@@ -1163,48 +1172,46 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
   }
 
   // Setup Proactive 5-Second Greeting on Movement & Homepage Side-docking
-  let greetingTimerStarted = false;
+  let proactiveGreetingScheduled = false;
   function setupProactiveCustomerServiceGreeting() {
-    const isHomepage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '' || window.location.pathname.endsWith('/');
+    const path = (window.location.pathname || '').toLowerCase();
+    const isHomepage = path === '' || path === '/' || path.endsWith('/index.html') || path.endsWith('/index') || path.endsWith('/');
 
-    // 1. Homepage Desktop: show chat on the side automatically
-    if (isHomepage && window.innerWidth >= 1024) {
-      const dismissed = safeGetStorage('cs_chat_home_dismissed', 'false');
-      if (dismissed !== 'true') {
-        setTimeout(() => {
-          const win = document.getElementById('floating-ai-window');
-          if (win && !win.classList.contains('open')) {
-            window.toggleAiCustomerServiceChat(true);
-          }
-        }, 1200);
-      }
+    // 1. Homepage on Desktop/Tablet (>= 768px): Show chat on the side automatically after 1.2s
+    if (isHomepage && window.innerWidth >= 768) {
+      setTimeout(() => {
+        const win = document.getElementById('floating-ai-window');
+        if (win && !win.classList.contains('open')) {
+          window.toggleAiCustomerServiceChat(true);
+        }
+      }, 1200);
     }
 
-    // 2. On other pages (or homepage if closed): trigger greeting 5 seconds after user activity
-    const onUserActivity = function () {
-      if (greetingTimerStarted) return;
-      greetingTimerStarted = true;
+    // 2. Proactive 5-Second Greeting for visitors (on mobile, other pages, or if closed)
+    if (proactiveGreetingScheduled) return;
+    proactiveGreetingScheduled = true;
 
-      // Remove activity listeners once triggered
+    const triggerGreetingBubble = () => {
+      const win = document.getElementById('floating-ai-window');
+      const bubble = document.getElementById('floating-ai-greeting-bubble');
+      if (win && !win.classList.contains('open') && bubble && !bubble.classList.contains('show')) {
+        bubble.classList.remove('hidden');
+        setTimeout(() => {
+          bubble.classList.add('show');
+          playGentleGreetingChime();
+        }, 50);
+      }
+    };
+
+    // Guaranteed 5-second automatic countdown from load
+    setTimeout(triggerGreetingBubble, 5000);
+
+    // Also trigger faster (after 3 seconds) if the visitor interacts with the page
+    const onUserActivity = function () {
       ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(ev => {
         window.removeEventListener(ev, onUserActivity);
       });
-
-      // 5-second countdown after user movement starts
-      setTimeout(() => {
-        const win = document.getElementById('floating-ai-window');
-        const bubble = document.getElementById('floating-ai-greeting-bubble');
-        const bubbleDismissed = safeGetStorage('cs_greeting_dismissed', 'false');
-
-        // Only display if chat window is not already open and user hasn't explicitly dismissed
-        if (win && !win.classList.contains('open') && bubble && bubbleDismissed !== 'true') {
-          bubble.classList.remove('hidden');
-          setTimeout(() => {
-            bubble.classList.add('show');
-            playGentleGreetingChime();
-          }, 20);
-        }
-      }, 5000);
+      setTimeout(triggerGreetingBubble, 3000);
     };
 
     ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(ev => {
@@ -1723,12 +1730,18 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     }
     window.setTheme(currentTheme);
     attachDirectListeners();
+    mountFloatingAiCustomerServiceWidget();
   }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeApp);
   } else {
     initializeApp();
+  }
+
+  // Guaranteed immediate mount if body is already available
+  if (typeof document !== 'undefined' && document.body) {
+    mountFloatingAiCustomerServiceWidget();
   }
 
 })();

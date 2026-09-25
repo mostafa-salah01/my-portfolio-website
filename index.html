@@ -1320,6 +1320,140 @@
     </div>
   </div>
 
+  <!-- Floating AI Customer Service Employee Widget (ودجت موظف خدمة العملاء الذكي - أحمد) -->
+  <div id="floating-ai-launcher" role="button" aria-label="فتح محادثة موظف خدمة العملاء الذكي">
+    <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/60 text-base shrink-0">
+      <span>👨‍💼</span>
+      <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
+      <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full"></span>
+    </div>
+    <div class="flex flex-col text-start leading-tight">
+      <span class="font-bold text-xs text-white" id="launcher-title-text">خدمة العملاء | أحمد</span>
+      <span class="text-[10px] text-emerald-400 font-mono" id="launcher-status-text">متصل الآن ⚡</span>
+    </div>
+  </div>
+
+  <!-- Proactive 5-Second Greeting Bubble -->
+  <div id="floating-ai-greeting-bubble" class="hidden">
+    <div class="flex items-center justify-between gap-2 pb-2 border-b border-slate-800/80 mb-2">
+      <div class="flex items-center gap-2">
+        <div class="relative w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-sm shrink-0">
+          <span>👨‍💼</span>
+          <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+        </div>
+        <div>
+          <span class="font-bold text-xs text-white block leading-tight" id="bubble-agent-name">أحمد - خدمة العملاء</span>
+          <span class="text-[9px] text-emerald-400 font-mono">متصل الآن ⚡</span>
+        </div>
+      </div>
+      <button type="button" id="bubble-dismiss-btn" class="text-slate-400 hover:text-white text-xs p-1 cursor-pointer transition-colors" title="إغلاق">✕</button>
+    </div>
+    <p class="text-xs text-slate-200 leading-relaxed mb-3" id="bubble-msg-text">
+      أهلاً بحضرتك يا فندم! 👋 أنا أحمد من خدمة العملاء، لو حابب تستفسر عن تفاصيل وأسعار باقاتنا (مثل باقة الموقع التعريفي بـ 65$ أو 75$) أو موظف الواتساب الذكي وسيستمات الشحن، أنا هنا في خدمتك في أي لحظة! 💬
+    </p>
+    <div class="flex items-center gap-2 pt-1 border-t border-slate-800/60">
+      <button type="button" id="bubble-open-chat-btn" class="flex-1 py-1.5 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-transform hover:scale-105 shadow-sm cursor-pointer">
+        💬 تحدث مع أحمد الآن
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating Chat Window -->
+  <div id="floating-ai-window">
+    <!-- Header -->
+    <div class="chat-header p-3.5 sm:p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="relative w-9 h-9 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-lg shrink-0">
+          <span>👨‍💼</span>
+          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-slate-900"></span>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="chat-header-title font-bold text-sm text-white" id="cs-agent-name">أحمد - خدمة العملاء</span>
+            <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[9px]">AI Live</span>
+          </div>
+          <span class="text-[11px] text-slate-400 block font-mono" id="cs-agent-status">صلاح لوجيستيكس • يرد فوراً بلهجة بشرية</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <button type="button" id="floating-cs-clear-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 text-xs font-mono transition-colors" title="مسح المحادثة">
+          🗑️
+        </button>
+        <button type="button" id="floating-cs-close-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-xs font-bold transition-colors" title="تصغير">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Chips -->
+    <div class="p-2.5 bg-slate-950/60 border-b border-slate-800/80 flex items-center gap-1.5 overflow-x-auto text-[11px] shrink-0 no-scrollbar">
+      <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 transition-colors cursor-pointer" data-question="كم سعر باقة الموقع التعريفي وتفاصيل التجديد السنوي؟">
+        💼 باقة الموقع (65$/75$)
+      </button>
+      <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 transition-colors cursor-pointer" data-question="عايز موظف ذكاء اصطناعي لواتساب يرسل عروض أسعار PDF ويرد على العملاء">
+        💬 موظف واتساب الذكي
+      </button>
+      <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 transition-colors cursor-pointer" data-question="ما هي مميزات سيستم الشحن واللوجستيات وتتبع المناديب؟">
+        🚚 سيستم الشحن
+      </button>
+    </div>
+
+    <!-- Chat Messages Scroll Container -->
+    <div id="floating-cs-chat-box" class="flex-1 p-3.5 sm:p-4 overflow-y-auto space-y-3 text-xs">
+      <!-- Initial Welcome Message -->
+      <div class="flex items-start gap-2.5">
+        <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+          👨‍💼
+        </div>
+        <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+            <span class="font-bold">أحمد [خدمة العملاء]</span>
+            <span class="text-slate-500">متصل الآن</span>
+          </div>
+          <p id="cs-welcome-text">أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div id="floating-cs-typing" class="hidden items-center gap-2 px-4 py-1.5 text-xs text-emerald-400 font-mono bg-slate-950/40 shrink-0">
+      <span class="inline-flex gap-1 items-center">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.2s]"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.4s]"></span>
+      </span>
+      <span class="text-[11px]">أحمد يكتب الآن...</span>
+    </div>
+
+    <!-- Input Bar -->
+    <div class="p-3 bg-slate-900/95 border-t border-slate-800 shrink-0">
+      <form id="floating-cs-form" class="flex items-center gap-2">
+        <input 
+          id="floating-cs-input" 
+          type="text" 
+          placeholder="اكتب سؤالك هنا لأحمد..." 
+          class="chat-input-box flex-1 h-10 px-3.5 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500/80 transition-colors"
+          autocomplete="off"
+        />
+        <button 
+          id="floating-cs-send-btn" 
+          type="submit" 
+          class="h-10 px-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center justify-center shrink-0 shadow-sm"
+          title="إرسال"
+        >
+          <span>➤</span>
+        </button>
+      </form>
+      <div class="mt-2 flex items-center justify-between text-[10px] text-slate-400">
+        <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors flex items-center gap-1">
+          <span>💬</span>
+          <span>تحويل للمحادثة عبر واتساب</span>
+        </a>
+        <span class="font-mono text-slate-500">م. مصطفى صلاح</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div id="app-toast" class="toast"></div>
 
