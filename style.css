@@ -301,4 +301,199 @@ html.light .hero-showcase-hover-btn {
   }
 }
 
+/* ==========================================================================
+   Floating AI Customer Service Employee Widget (ودجت موظف خدمة العملاء الذكي)
+   ========================================================================== */
+#floating-ai-launcher {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1.5px solid rgba(16, 185, 129, 0.45);
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.25);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  user-select: none;
+}
+
+[dir="ltr"] #floating-ai-launcher {
+  left: auto;
+  right: 1.5rem;
+}
+
+#floating-ai-launcher:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: rgba(16, 185, 129, 0.8);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6), 0 0 25px rgba(16, 185, 129, 0.4);
+}
+
+#floating-ai-window {
+  position: fixed;
+  bottom: 5.5rem;
+  left: 1.5rem;
+  width: 380px;
+  max-width: calc(100vw - 2rem);
+  height: 540px;
+  max-height: calc(100vh - 7rem);
+  background: rgba(10, 15, 30, 0.96);
+  border: 1.5px solid rgba(16, 185, 129, 0.35);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(16, 185, 129, 0.2);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[dir="ltr"] #floating-ai-window {
+  left: auto;
+  right: 1.5rem;
+}
+
+#floating-ai-window.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* Light Theme Adaptations for AI Widget */
+html.light #floating-ai-launcher {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #0f172a;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15), 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+html.light #floating-ai-window {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.18), 0 0 20px rgba(16, 185, 129, 0.15);
+}
+
+html.light #floating-ai-window .chat-header {
+  background: #f8fafc;
+  border-bottom-color: #e2e8f0;
+}
+
+html.light #floating-ai-window .chat-header-title {
+  color: #0f172a;
+}
+
+html.light #floating-ai-window .chat-bubble-assistant {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #1e293b;
+}
+
+html.light #floating-ai-window .chat-bubble-user {
+  background: #059669;
+  color: #ffffff;
+}
+
+html.light #floating-ai-window .chat-input-box {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+html.light #floating-ai-window .chat-input-box::placeholder {
+  color: #94a3b8;
+}
+
+@media (max-width: 480px) {
+  #floating-ai-launcher {
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.8rem;
+  }
+  [dir="ltr"] #floating-ai-launcher {
+    left: auto;
+    right: 1rem;
+  }
+  #floating-ai-window {
+    bottom: 4.8rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    width: auto;
+    max-width: calc(100vw - 1.5rem);
+    height: 72vh;
+  }
+  [dir="ltr"] #floating-ai-window {
+    left: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   Proactive 5-Second Greeting Bubble (الترحيب الاستباقي التلقائي بعد 5 ثوانٍ)
+   ========================================================================== */
+#floating-ai-greeting-bubble {
+  position: fixed;
+  bottom: 5.25rem;
+  left: 1.5rem;
+  width: 330px;
+  max-width: calc(100vw - 2.5rem);
+  background: rgba(15, 23, 42, 0.96);
+  border: 1.5px solid rgba(16, 185, 129, 0.5);
+  border-radius: 18px;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(16, 185, 129, 0.25);
+  z-index: 9997;
+  padding: 0.85rem 1rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.95);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+[dir="ltr"] #floating-ai-greeting-bubble {
+  left: auto;
+  right: 1.5rem;
+}
+
+#floating-ai-greeting-bubble.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+html.light #floating-ai-greeting-bubble {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.2), 0 0 20px rgba(16, 185, 129, 0.15);
+  color: #0f172a;
+}
+
+@media (max-width: 480px) {
+  #floating-ai-greeting-bubble {
+    bottom: 4.6rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    max-width: calc(100vw - 2rem);
+  }
+  [dir="ltr"] #floating-ai-greeting-bubble {
+    left: 1rem;
+    right: 1rem;
+  }
+}
+
 

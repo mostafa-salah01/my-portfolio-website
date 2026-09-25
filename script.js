@@ -398,6 +398,30 @@
 
     // Update WhatsApp links to active language message immediately
     window.updateAllWhatsAppLinks(lang);
+
+    // Update Floating Customer Service AI widget labels
+    const launcherTitle = document.getElementById('launcher-title-text');
+    if (launcherTitle) launcherTitle.textContent = lang === 'ar' ? 'خدمة العملاء | أحمد' : 'AI Customer Support';
+    const launcherStatus = document.getElementById('launcher-status-text');
+    if (launcherStatus) launcherStatus.textContent = lang === 'ar' ? 'متصل الآن ⚡' : 'Online ⚡';
+    const csAgentName = document.getElementById('cs-agent-name');
+    if (csAgentName) csAgentName.textContent = lang === 'ar' ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support';
+    const csAgentStatus = document.getElementById('cs-agent-status');
+    if (csAgentStatus) csAgentStatus.textContent = lang === 'ar' ? 'صلاح لوجيستيكس • يرد فوراً بلهجة بشرية' : 'Salah Logistics • Human-like Replies';
+    const floatInput = document.getElementById('floating-cs-input');
+    if (floatInput) floatInput.placeholder = lang === 'ar' ? 'اكتب سؤالك هنا لأحمد...' : 'Type your question here...';
+
+    // Update Greeting Bubble text
+    const bubbleName = document.getElementById('bubble-agent-name');
+    if (bubbleName) bubbleName.textContent = lang === 'ar' ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support';
+    const bubbleMsg = document.getElementById('bubble-msg-text');
+    if (bubbleMsg) {
+      bubbleMsg.textContent = lang === 'ar'
+        ? 'أهلاً بحضرتك يا فندم! 👋 أنا أحمد من خدمة العملاء، لو حابب تستفسر عن تفاصيل وأسعار باقاتنا (مثل باقة الموقع التعريفي بـ 65$ أو 75$) أو أي خدمة، أنا هنا في خدمتك في أي لحظة! 💬'
+        : 'Welcome to our website! 👋 I am Ahmed from Customer Service. If you have any questions about our packages ($65/$75) or custom systems, I am here to assist you anytime! 💬';
+    }
+    const bubbleBtn = document.getElementById('bubble-open-chat-btn');
+    if (bubbleBtn) bubbleBtn.textContent = lang === 'ar' ? '💬 تحدث مع أحمد الآن' : '💬 Chat with Ahmed';
   };
 
   let lastLangToggle = 0;
@@ -735,7 +759,7 @@
     }
   };
 
-  // --- DeepSeek WhatsApp AI Employee Chat Engine ---
+  // --- Unified AI Customer Service & Sales Employee Engine (أحمد - خدمة العملاء) ---
   let chatHistory = [];
   let isSendingAiMessage = false;
 
@@ -749,27 +773,13 @@
       .replace(/'/g, '&#039;');
   }
 
-  // Fallback intelligent natural response generator for Salah Logistics sales & client communication
+  // Intelligent client-side response generator matching Egyptian tech customer service tone
   function generateSalahLogisticsAiResponse(userText, lang) {
-    const isAr = lang === 'ar';
     const text = (userText || '').toLowerCase();
+    const isEn = lang === 'en' || (/^[a-zA-Z0-9\s.,?!'"@#$%^&*()_+-=:;/<>]+$/.test(userText.trim()) && !/[\u0600-\u06FF]/.test(userText));
 
     if (text.includes('سعر') || text.includes('باقة') || text.includes('موقع') || text.includes('price') || text.includes('quote') || text.includes('website') || text.includes('cost') || text.includes('65') || text.includes('75') || text.includes('تجديد') || text.includes('renewal')) {
-      if (isAr) {
-        return `أهلاً بحضرتك يا فندم! 🌟
-تفاصيل باقة الموقع التعريفي الاحترافي للشركات مع م. مصطفى صلاح:
-1. السعر للسنة الأولى:
-   • 65 دولار فقط بدومين .uk رسمي شامل.
-   • أو 75 دولار فقط بدومين .com رسمي شامل.
-2. المزايا المشمولة مجاناً في الباقة:
-   • الموقع يدعم اللغتين معاً (العربية والإنجليزية) دون أي تكلفة إضافية.
-   • استضافة سحابية فائقة السرعة + شهادة أمان SSL مجانية للسنة الأولى.
-   • ربط تفاعلي مباشر بالواتساب وتصميم متجاوب 100% مع الموبايل والتابلت.
-   • دعم فني يومي وصيانة مستمرة وسريعة (من السبت للخميس).
-3. التجديد السنوي ثابت: 40 دولار فقط سنوياً لجميع الباقات (شامل تجديد الدومين والاستضافة والصيانة والدعم الفني).
-
-تحب نبدأ حجز الباقة لحضرتك الآن أو نتحقق من توفر اسم الدومين المطلوب؟`;
-      } else {
+      if (isEn) {
         return `Hello! 🌟 Here are the official details for the Corporate Website Package with Eng. Mostafa Salah:
 1. First-Year Price:
    • Only $65 USD with official .uk domain included.
@@ -781,116 +791,526 @@
    • Active daily technical support & ongoing maintenance.
 3. Fixed annual renewal: $40 USD flat per year (covers domain renewal, cloud hosting, and daily support).
 
-Would you like to reserve your package or check domain name availability now?`;
+Would you like to reserve your package or check domain name availability now? Contact us directly on WhatsApp (+201107787049)! 🚀`;
       }
+      return `أهلاً بحضرتك يا فندم! 🌟
+بص يا فندم، باقة الموقع التعريفي الاحترافي للشركات مع م. مصطفى صلاح تفاصيلها واضحة وممتازة:
+1. السعر للسنة الأولى:
+   • 65 دولار فقط بدومين .uk رسمي شامل.
+   • أو 75 دولار فقط بدومين .com رسمي شامل.
+2. المزايا المشمولة مجاناً في الباقة:
+   • الموقع بيدعم اللغتين معاً (العربية والإنجليزية) بدون أي مصاريف إضافية.
+   • استضافة سحابية فائقة السرعة SSD + شهادة أمان SSL مجانية للسنة الأولى.
+   • ربط تفاعلي مباشر بالواتساب وتصميم متجاوب 100% مع الموبايل والتابلت والكمبيوتر.
+   • دعم فني وصيانة يومية وتحديثات سريعة ومستمرة (من السبت للخميس).
+3. التجديد السنوي ثابت: 40 دولار فقط سنوياً لجميع الباقات (شامل تجديد الدومين والاستضافة والصيانة والدعم الفني).
+
+تحب نبدأ حجز الباقة لحضرتك الآن أو نتحقق من اسم الدومين اللي في بالك على الواتساب؟`;
     }
 
     if (text.includes('واتساب') || text.includes('whatsapp') || text.includes('موظف') || text.includes('employee') || text.includes('bot') || text.includes('بوت') || text.includes('pdf') || text.includes('عرض سعر')) {
-      if (isAr) {
-        return `أهلاً بيك يا فندم! 🤖 خدمة موظف الذكاء الاصطناعي البشري للواتساب وتليجرام هي أقوى حل لمضاعفة مبيعاتك:
-• يرد في أجزاء من الثانية بلهجة بشرية ودودة ومقنعة 24/7 دون أي توقف.
-• يولد ملفات عروض أسعار رسمية PDF باسم شركتك وشعارك ويبعتها للعميل فوراً داخل الشات.
-• يربط البيانات مباشرة بقاعدة بياناتك وسيستم الشحن ومسارات n8n.
-• يرسل تنبيهات فورية للإدارة عند وجود طلب مؤكد أو عميل عاجل.
-
-جاهزون لبرمجة الموظف وربطه بمنتجاتك وسيستمك فوراً. تود تجربته مع كاتالوج شركتك؟`;
-      } else {
-        return `Hello! 🤖 Our Human-like WhatsApp & Telegram AI Employee is built to supercharge your sales:
-• Replies in milliseconds with a warm, human-like sales tone 24/7.
+      if (isEn) {
+        return `Hello! 🤖 Our Human-like WhatsApp & Telegram AI Employee is built to supercharge your business:
+• Replies in milliseconds with a warm, natural human sales tone 24/7.
 • Generates and dispatches official PDF quotations with your company branding directly inside the chat.
 • Seamlessly syncs customer inquiries to your database, ERP, and n8n pipelines.
 • Delivers instant notifications to managers for hot leads and confirmed orders.
 
-Would you like us to customize this AI employee for your business workflow?`;
+Would you like us to customize this AI employee for your business workflow? Message Eng. Mostafa directly on WhatsApp (+201107787049)! 🚀`;
       }
+      return `يا هلا بحضرتك يا فندم! 🤖
+خدمة موظف الذكاء الاصطناعي البشري للواتساب وتليجرام بتوفر عليك وقت ومصاريف وتضاعف مبيعاتك:
+• بيرد في ثوانٍ معدودة بلهجة بشرية ودودة ومقنعة 24/7 ومستحيل العميل يحس إنه بيكلم آلة أو بوت تقليدي.
+• بيولد ملفات عروض أسعار رسمية PDF باسم وشعار شركتك ويبعتها فوراً جوه الشات.
+• بيسجل بيانات الطلبات والعملاء مباشرة في قاعدة البيانات وجوجل شيتس.
+• بيبعت إشعار فوري للإدارة عند وجود طلب مؤكد أو عميل مستعجل.
+
+جاهزين نبرمجه لشركتك ونربطه بمنتجاتك فوراً، تحب نجربه مع كتالوج منتجاتك؟`;
     }
 
     if (text.includes('شحن') || text.includes('shipping') || text.includes('لوجست') || text.includes('logistics') || text.includes('مندوب') || text.includes('courier') || text.includes('تتبع') || text.includes('cod')) {
-      if (isAr) {
-        return `يا مرحباً! 🚚 سيستم الشحن واللوجستيات الذكي من صلاح لوجيستيكس يشمل:
-• لوحة تحكم سحابية لإدارة آلاف الشحنات، بوالص الشحن (Waybills)، وتوزيع المناطق تلقائياً.
-• تطبيق موبايل للمناديب لتحديث حالات التوصيل بالـ QR Code ومسح الباركود جغرافياً.
-• تسوية دقيقة للمبالغ المحصلة عند الاستلام (COD) مع المحافظ وتقارير الأرباح لحظة بلحظة.
-• بوابة تتبع مباشرة للعملاء عبر رسائل الواتساب مع إشعارات الرسائل القصيرة.
-
-السيستم قابل للتخصيص الكامل حسب أسطولك ومحافظاتك! تحب نشارك معاينة حية؟`;
-      } else {
+      if (isEn) {
         return `Hello! 🚚 The Salah Logistics Smart Shipping & Courier Platform includes:
 • Cloud dashboard to manage thousands of shipments, printable waybills, and smart territory routing.
 • Native mobile app for couriers with real-time QR scanning and GPS status updates.
 • Instant COD cash reconciliation, commission wallets, and financial reporting.
 • Real-time customer tracking portal with automated WhatsApp notifications.
 
-Customizable to fit your exact fleet size. Shall we schedule a live walkthrough?`;
+Customizable to fit your exact fleet size. Contact us on WhatsApp (+201107787049) for a live walkthrough! 🚀`;
       }
+      return `يا مرحباً بحضرتك يا فندم! 🚚
+سيستم الشحن واللوجستيات الذكي من صلاح لوجيستيكس بيشمل كل اللي محتاجه لإدارة أسطولك:
+• لوحة تحكم سحابية لإدارة آلاف الشحنات، إصدار بوالص الشحن (Waybills) بباركود وQR، وتوزيع المناديب جغرافياً.
+• تطبيق موبايل للمناديب لتحديث حالات التوصيل وتأكيد الاستلام والتوقيع الإلكتروني.
+• تسوية دقيقة لمبالغ الدفع عند الاستلام (COD) وتقارير أرباح يومية.
+• بوابة تتبع مباشرة للعملاء عبر رسائل الواتساب مع إشعارات SMS.
+
+السيستم جاهز للتخصيص حسب محافظاتك وفريق عملك!`;
+    }
+
+    if (text.includes('تطبيق') || text.includes('app') || text.includes('موبايل') || text.includes('mobile') || text.includes('pos') || text.includes('كاشير') || text.includes('صيدلية') || text.includes('سوبرماركت')) {
+      if (isEn) {
+        return `Hello! 📱 We engineer and launch full-stack mobile applications and retail POS systems:
+• Native & Cross-platform Android and iOS apps with guaranteed App Store & Google Play approval.
+• Supermarket POS & Barcode cashier systems with receipt printer integration.
+• Complete Pharmacy ERP managing expiry dates, batches, and supplier accounts.
+
+Tell us about your project idea on WhatsApp (+201107787049) to get started! 🚀`;
+      }
+      return `أهلاً بحضرتك يا فندم! 📱
+بنبرمج وننفذ أنظمة وتطبيقات الموبايل الكاملة من الصفر حتى النشر:
+• تطبيقات أندرويد وآيفون متكاملة مع رفعها واعتمادها رسمياً على Google Play وApp Store.
+• سيستم كاشير ونقاط بيع (POS) متكامل للسوبرماركت مع قارئات الباركود وطابعات الفواتير.
+• سيستم إدارة صيدليات ERP متكامل لتتبع الأدوية، تواريخ الصلاحية، وحسابات الموردين.
+
+عند حضرتك فكرة معينة تحب نحولها لتطبيق؟`;
     }
 
     if (text.includes('n8n') || text.includes('أتمتة') || text.includes('automation') || text.includes('api') || text.includes('backend') || text.includes('باك إند')) {
-      if (isAr) {
-        return `أهلاً بحضرتك! ⚡ نحن متخصصون في أتمتة الأعمال وهندسة الـ APIs:
-• بناء مسارات n8n المعقدة لربط متجرك (Shopify/WooCommerce/Salla) بالواتساب ومخازنك وجوجل شيتس.
-• إعادة إرسال تلقائية للعمليات الفاشلة (Retry Mechanism) وضمان وصول الـ Webhooks بنسبة 99.9%.
-• تطوير نظم خلفية (Backend APIs) فائقة السرعة بـ Node.js / Python مع قواعد بيانات PostgreSQL وRedis.
-
-أي نظام أو فكرة عندك نقدر نربطها ونؤتمتها بالكامل لتوفير وقتك وتكاليف التشغيل!`;
-      } else {
+      if (isEn) {
         return `Hello! ⚡ We specialize in workflow automation & backend architecture:
-• Robust n8n pipelines connecting your store (Shopify/WooCommerce) to WhatsApp, ERPs, and Google Sheets.
+• Robust n8n pipelines connecting your store (Shopify/WooCommerce/Salla) to WhatsApp, ERPs, and Google Sheets.
 • Auto-recovery logic and retry policies for Webhooks with 99.9% uptime.
 • Ultra-fast REST/GraphQL backend architecture with PostgreSQL, Redis, and Docker.
 
-We can automate any repetitive operational task for your business!`;
+We can automate any repetitive operational task for your business! Message Eng. Mostafa on WhatsApp (+201107787049).`;
       }
+      return `أهلاً بحضرتك يا فندم! ⚡
+إحنا متخصصين في أتمتة مسارات العمل وهندسة الـ APIs والـ Backend:
+• بنبني مسارات n8n المعقدة لربط متجرك (سلة، زد، شوبيفاي، ووكومرس) بالواتساب ومخازنك وجوجل شيتس.
+• إعادة محاولة تلقائية عند انقطاع الاتصال (Retry Mechanism) وضمان وصول الـ Webhooks.
+• بنية تحتية سحابية للـ Backend فائقة السرعة بـ Node.js وPython مع قواعد بيانات PostgreSQL وRedis.
+
+أي فكرة أو ربط بين أنظمتك نقدر ننفذه لحضرتك باحترافية!`;
     }
 
-    // Default warm sales reply
-    if (isAr) {
-      return `أهلاً بحضرتك يا فندم في شركة صلاح لوجيستيكس! 👋 سعداء جداً بتواصلك معنا.
-نحن نقدم حلولاً برمجية ولوجستية متكاملة تحت إشراف م. مصطفى صلاح:
-1. تصميم مواقع الشركات التعريفية (باقة 65$ بدومين uk. أو 75$ بدومين com. تشمل اللغتين عربي وإنجليزي مع تجديد سنوي ثابت 40$).
-2. موظف الذكاء الاصطناعي البشري للواتساب وتليجرام للرد الفوري وتوليد عروض PDF.
-3. سيستمات إدارة الشحن وتتبع المناديب COD.
-4. تطبيقات الموبايل والمتاجر الإلكترونية.
-5. أتمتة الأعمال n8n وهندسة الـ APIs.
-
-هل في خدمة معينة أو مشروع تحب نبدأ فيه مع حضرتك؟ تواصل معنا مباشرة عبر واتساب على 01107787049 لتأكيد طلبك فوراً! 🚀`;
-    } else {
-      return `Welcome to Salah Logistics! 👋 We're thrilled to assist you.
-Under the engineering leadership of Eng. Mostafa Salah, we offer:
+    if (isEn) {
+      return `Welcome to Salah Logistics! 👋 I'm Ahmed from Customer Service & Support.
+We provide end-to-end software and automation solutions under Eng. Mostafa Salah:
 1. Corporate Website Packages ($65 USD for .uk / $75 USD for .com, bilingual AR/EN included, $40 fixed annual renewal).
-2. AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
-3. Smart Logistics & Courier Dispatch Platforms.
-4. Mobile Retail Apps & E-Commerce Systems.
-5. n8n Enterprise Workflow Automation & Backend Architecture.
+2. Human-like AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
+3. Smart Logistics & Courier Dispatch Platforms with live waybills & COD tracking.
+4. Mobile Retail Apps & E-Commerce Systems (Android & iOS).
+5. n8n Enterprise Workflow Automation & Backend APIs.
 
-Which solution can we help you launch today? Feel free to contact us on WhatsApp (+201107787049) to get started! 🚀`;
+How can I help you today? You can also message Eng. Mostafa directly on WhatsApp (+201107787049)! 🚀`;
+    }
+
+    return `أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋
+أنا أحمد من خدمة العملاء والمبيعات، سعيد جداً بتواصلك وتحت أمرك في أي استفسار:
+1. تصميم مواقع الشركات التعريفية (باقة 65$ بدومين uk. أو 75$ بدومين com. تشمل العربي والإنجليزي مع تجديد سنوي ثابت 40$).
+2. موظف الذكاء الاصطناعي البشري للواتساب وتليجرام للرد الفوري وتوليد عروض أسعار PDF.
+3. سيستمات إدارة الشحن وتتبع المناديب وتسوية الـ COD.
+4. تطبيقات الموبايل وأنظمة السوبرماركت والصيدليات.
+5. أتمتة الأعمال n8n وهندسة الـ APIs والـ Backend.
+
+تحب تستفسر عن تفاصيل خدمة معينة؟ أو تحب أحول حضرتك للواتساب للتأكيد مع البشمهندس مصطفى على 01107787049؟ 🚀`;
+  }
+
+  // --- Dynamic Mounting of Site-Wide Floating Customer Service AI Widget ---
+  function mountFloatingAiCustomerServiceWidget() {
+    if (document.getElementById('floating-ai-launcher')) return;
+
+    const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
+
+    // 1. Floating Launcher Button
+    const launcher = document.createElement('div');
+    launcher.id = 'floating-ai-launcher';
+    launcher.setAttribute('role', 'button');
+    launcher.setAttribute('aria-label', isAr ? 'فتح محادثة موظف خدمة العملاء الذكي' : 'Open AI Customer Service Chat');
+    launcher.innerHTML = `
+      <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/60 text-base shrink-0">
+        <span>👨‍💼</span>
+        <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
+        <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full"></span>
+      </div>
+      <div class="flex flex-col text-start leading-tight">
+        <span class="font-bold text-xs text-white" id="launcher-title-text">${isAr ? 'خدمة العملاء | أحمد' : 'AI Customer Support'}</span>
+        <span class="text-[10px] text-emerald-400 font-mono" id="launcher-status-text">${isAr ? 'متصل الآن ⚡' : 'Online ⚡'}</span>
+      </div>
+    `;
+    document.body.appendChild(launcher);
+
+    // 2. Floating Chat Window
+    const chatWin = document.createElement('div');
+    chatWin.id = 'floating-ai-window';
+    chatWin.innerHTML = `
+      <!-- Header -->
+      <div class="chat-header p-3.5 sm:p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-2.5">
+          <div class="relative w-9 h-9 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-lg shrink-0">
+            <span>👨‍💼</span>
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-slate-900"></span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="chat-header-title font-bold text-sm text-white" id="cs-agent-name">${isAr ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support'}</span>
+              <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[9px]">AI Live</span>
+            </div>
+            <span class="text-[11px] text-slate-400 block font-mono" id="cs-agent-status">${isAr ? 'صلاح لوجيستيكس • يرد فوراً بلهجة بشرية' : 'Salah Logistics • Human-like Replies'}</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <button type="button" id="floating-cs-clear-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 text-xs font-mono transition-colors" title="${isAr ? 'مسح المحادثة' : 'Clear Chat'}">
+            🗑️
+          </button>
+          <button type="button" id="floating-cs-close-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-xs font-bold transition-colors" title="${isAr ? 'تصغير' : 'Minimize'}">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Chips -->
+      <div class="p-2.5 bg-slate-950/60 border-b border-slate-800/80 flex items-center gap-1.5 overflow-x-auto text-[11px] shrink-0 no-scrollbar">
+        <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 transition-colors cursor-pointer" data-question="كم سعر باقة الموقع التعريفي وتفاصيل التجديد السنوي؟">
+          💼 باقة الموقع (65$/75$)
+        </button>
+        <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 transition-colors cursor-pointer" data-question="عايز موظف ذكاء اصطناعي لواتساب يرسل عروض أسعار PDF ويرد على العملاء">
+          💬 موظف واتساب الذكي
+        </button>
+        <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 transition-colors cursor-pointer" data-question="ما هي مميزات سيستم الشحن واللوجستيات وتتبع المناديب؟">
+          🚚 سيستم الشحن
+        </button>
+      </div>
+
+      <!-- Chat Messages Scroll Container -->
+      <div id="floating-cs-chat-box" class="flex-1 p-3.5 sm:p-4 overflow-y-auto space-y-3 text-xs">
+        <!-- Initial Welcome Message -->
+        <div class="flex items-start gap-2.5">
+          <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+            👨‍💼
+          </div>
+          <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+              <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Customer Support]'}</span>
+              <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
+            </div>
+            <p id="cs-welcome-text">${isAr 
+              ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
+              : 'Welcome to Salah Logistics and Eng. Mostafa Salah! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or logistics systems, and I will assist you instantly! 🚀'
+            }</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing Indicator -->
+      <div id="floating-cs-typing" class="hidden items-center gap-2 px-4 py-1.5 text-xs text-emerald-400 font-mono bg-slate-950/40 shrink-0">
+        <span class="inline-flex gap-1 items-center">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.2s]"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:0.4s]"></span>
+        </span>
+        <span class="text-[11px]">${isAr ? 'أحمد يكتب الآن...' : 'Ahmed is typing...'}</span>
+      </div>
+
+      <!-- Input Bar -->
+      <div class="p-3 bg-slate-900/95 border-t border-slate-800 shrink-0">
+        <form id="floating-cs-form" class="flex items-center gap-2">
+          <input 
+            id="floating-cs-input" 
+            type="text" 
+            placeholder="${isAr ? 'اكتب سؤالك هنا لأحمد...' : 'Type your question here...'}" 
+            class="chat-input-box flex-1 h-10 px-3.5 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500/80 transition-colors"
+            autocomplete="off"
+          />
+          <button 
+            id="floating-cs-send-btn" 
+            type="submit" 
+            class="h-10 px-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center justify-center shrink-0 shadow-sm"
+            title="${isAr ? 'إرسال' : 'Send'}"
+          >
+            <span>➤</span>
+          </button>
+        </form>
+        <div class="mt-2 flex items-center justify-between text-[10px] text-slate-400">
+          <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors flex items-center gap-1">
+            <span>💬</span>
+            <span>${isAr ? 'تحويل للمحادثة عبر واتساب' : 'Switch to WhatsApp'}</span>
+          </a>
+          <span class="font-mono text-slate-500">م. مصطفى صلاح</span>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(chatWin);
+
+    // 3. Proactive 5-Second Greeting Bubble
+    const greetingBubble = document.createElement('div');
+    greetingBubble.id = 'floating-ai-greeting-bubble';
+    greetingBubble.className = 'hidden';
+    greetingBubble.innerHTML = `
+      <div class="flex items-center justify-between gap-2 pb-2 border-b border-slate-800/80 mb-2">
+        <div class="flex items-center gap-2">
+          <div class="relative w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-sm shrink-0">
+            <span>👨‍💼</span>
+            <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+          </div>
+          <div>
+            <span class="font-bold text-xs text-white block leading-tight" id="bubble-agent-name">${isAr ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support'}</span>
+            <span class="text-[9px] text-emerald-400 font-mono">${isAr ? 'متصل الآن ⚡' : 'Online ⚡'}</span>
+          </div>
+        </div>
+        <button type="button" id="bubble-dismiss-btn" class="text-slate-400 hover:text-white text-xs p-1 cursor-pointer transition-colors" title="${isAr ? 'إغلاق' : 'Dismiss'}">✕</button>
+      </div>
+      <p class="text-xs text-slate-200 leading-relaxed mb-3" id="bubble-msg-text">
+        ${isAr 
+          ? 'أهلاً بحضرتك يا فندم! 👋 أنا أحمد من خدمة العملاء، لو حابب تستفسر عن تفاصيل وأسعار باقاتنا (مثل باقة الموقع التعريفي بـ 65$ أو 75$) أو أي خدمة، أنا هنا في خدمتك في أي لحظة! 💬'
+          : 'Welcome to our website! 👋 I am Ahmed from Customer Service. If you have any questions about our packages ($65/$75) or custom systems, I am here to assist you anytime! 💬'}
+      </p>
+      <div class="flex items-center gap-2 pt-1 border-t border-slate-800/60">
+        <button type="button" id="bubble-open-chat-btn" class="flex-1 py-1.5 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-transform hover:scale-105 shadow-sm cursor-pointer">
+          ${isAr ? '💬 تحدث مع أحمد الآن' : '💬 Chat with Ahmed'}
+        </button>
+      </div>
+    `;
+    document.body.appendChild(greetingBubble);
+
+    // Event Bindings for Floating Widget
+    launcher.onclick = function (e) {
+      if (e) e.preventDefault();
+      window.toggleAiCustomerServiceChat();
+    };
+
+    const closeBtn = document.getElementById('floating-cs-close-btn');
+    if (closeBtn) {
+      closeBtn.onclick = function (e) {
+        if (e) e.preventDefault();
+        safeSetStorage('cs_chat_home_dismissed', 'true');
+        window.toggleAiCustomerServiceChat(false);
+      };
+    }
+
+    const clearBtn = document.getElementById('floating-cs-clear-btn');
+    if (clearBtn) {
+      clearBtn.onclick = function (e) {
+        if (e) e.preventDefault();
+        window.clearAiCustomerServiceChat();
+      };
+    }
+
+    const form = document.getElementById('floating-cs-form');
+    if (form) {
+      form.onsubmit = function (e) {
+        e.preventDefault();
+        const input = document.getElementById('floating-cs-input');
+        if (input && input.value) {
+          window.sendAiCustomerServiceMessage(input.value, 'floating');
+        }
+      };
+    }
+
+    // Bind Quick Chips in Floating Widget
+    chatWin.querySelectorAll('.floating-quick-chip').forEach(btn => {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        const q = btn.getAttribute('data-question');
+        if (q) window.sendAiCustomerServiceMessage(q, 'floating');
+      };
+    });
+
+    // Bind Greeting Bubble buttons
+    const bubbleDismissBtn = document.getElementById('bubble-dismiss-btn');
+    if (bubbleDismissBtn) {
+      bubbleDismissBtn.onclick = function (e) {
+        if (e) e.stopPropagation();
+        safeSetStorage('cs_greeting_dismissed', 'true');
+        greetingBubble.classList.remove('show');
+        setTimeout(() => greetingBubble.classList.add('hidden'), 300);
+      };
+    }
+
+    const bubbleOpenBtn = document.getElementById('bubble-open-chat-btn');
+    if (bubbleOpenBtn) {
+      bubbleOpenBtn.onclick = function (e) {
+        if (e) e.stopPropagation();
+        greetingBubble.classList.remove('show');
+        greetingBubble.classList.add('hidden');
+        window.toggleAiCustomerServiceChat(true);
+      };
+    }
+
+    greetingBubble.onclick = function (e) {
+      if (e.target.id !== 'bubble-dismiss-btn') {
+        greetingBubble.classList.remove('show');
+        greetingBubble.classList.add('hidden');
+        window.toggleAiCustomerServiceChat(true);
+      }
+    };
+
+    // Setup Proactive Greeting & Homepage side-docking
+    setupProactiveCustomerServiceGreeting();
+  }
+
+  // Soft synthetic Web Audio chime (100% CSP compliant, no external files)
+  function playGentleGreetingChime() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+      osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.15); // A5
+      gain.gain.setValueAtTime(0.04, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.45);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.45);
+    } catch (e) {
+      // Audio autoplay policy handled
     }
   }
 
-  // Send message to DeepSeek API endpoint with graceful fallback
-  window.sendDeepSeekMessage = async function (userText) {
+  // Setup Proactive 5-Second Greeting on Movement & Homepage Side-docking
+  let greetingTimerStarted = false;
+  function setupProactiveCustomerServiceGreeting() {
+    const isHomepage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '' || window.location.pathname.endsWith('/');
+
+    // 1. Homepage Desktop: show chat on the side automatically
+    if (isHomepage && window.innerWidth >= 1024) {
+      const dismissed = safeGetStorage('cs_chat_home_dismissed', 'false');
+      if (dismissed !== 'true') {
+        setTimeout(() => {
+          const win = document.getElementById('floating-ai-window');
+          if (win && !win.classList.contains('open')) {
+            window.toggleAiCustomerServiceChat(true);
+          }
+        }, 1200);
+      }
+    }
+
+    // 2. On other pages (or homepage if closed): trigger greeting 5 seconds after user activity
+    const onUserActivity = function () {
+      if (greetingTimerStarted) return;
+      greetingTimerStarted = true;
+
+      // Remove activity listeners once triggered
+      ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(ev => {
+        window.removeEventListener(ev, onUserActivity);
+      });
+
+      // 5-second countdown after user movement starts
+      setTimeout(() => {
+        const win = document.getElementById('floating-ai-window');
+        const bubble = document.getElementById('floating-ai-greeting-bubble');
+        const bubbleDismissed = safeGetStorage('cs_greeting_dismissed', 'false');
+
+        // Only display if chat window is not already open and user hasn't explicitly dismissed
+        if (win && !win.classList.contains('open') && bubble && bubbleDismissed !== 'true') {
+          bubble.classList.remove('hidden');
+          setTimeout(() => {
+            bubble.classList.add('show');
+            playGentleGreetingChime();
+          }, 20);
+        }
+      }, 5000);
+    };
+
+    ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(ev => {
+      window.addEventListener(ev, onUserActivity, { passive: true });
+    });
+  }
+
+  window.toggleAiCustomerServiceChat = function (forceState) {
+    const win = document.getElementById('floating-ai-window');
+    if (!win) return;
+    const isOpen = win.classList.contains('open');
+    const targetState = typeof forceState === 'boolean' ? forceState : !isOpen;
+
+    // Also close greeting bubble when full chat is toggled
+    const bubble = document.getElementById('floating-ai-greeting-bubble');
+    if (bubble) {
+      bubble.classList.remove('show');
+      bubble.classList.add('hidden');
+    }
+
+    if (targetState) {
+      win.classList.add('open');
+      const input = document.getElementById('floating-cs-input');
+      if (input) setTimeout(() => input.focus(), 150);
+    } else {
+      win.classList.remove('open');
+    }
+  };
+
+  window.clearAiCustomerServiceChat = function () {
+    chatHistory = [];
+    const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
+    const welcome = isAr 
+      ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح وصلاح لوجيستيكس! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
+      : 'Welcome to Salah Logistics and Eng. Mostafa Salah! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or logistics systems, and I will assist you instantly! 🚀';
+
+    // Clear Floating Widget
+    const floatBox = document.getElementById('floating-cs-chat-box');
+    if (floatBox) {
+      floatBox.innerHTML = `
+        <div class="flex items-start gap-2.5">
+          <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+            👨‍💼
+          </div>
+          <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+              <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Customer Support]'}</span>
+              <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
+            </div>
+            <p>${welcome}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    // Clear Page Simulator if present
+    const simBox = document.getElementById('sim-chat-box');
+    if (simBox) {
+      simBox.innerHTML = `
+        <div class="flex items-start gap-2.5">
+          <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+            🤖
+          </div>
+          <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+              <span class="font-bold">[${isAr ? 'موظف مبيعات صلاح لوجيستيكس' : 'Salah Logistics Sales AI'}]</span>
+              <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
+            </div>
+            <p>${welcome}</p>
+          </div>
+        </div>
+      `;
+    }
+  };
+
+  // Unified messaging function across Floating Widget and Simulator
+  window.sendAiCustomerServiceMessage = async function (userText, sourceContext) {
     if (!userText || !userText.trim() || isSendingAiMessage) return;
     const cleanText = userText.trim();
     isSendingAiMessage = true;
 
-    const chatBox = document.getElementById('sim-chat-box');
-    const typingIndicator = document.getElementById('sim-typing-indicator');
-    const inputField = document.getElementById('sim-chat-input');
-    const sendBtn = document.getElementById('sim-send-btn');
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
     const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-    if (inputField) inputField.value = '';
-    if (sendBtn) sendBtn.disabled = true;
+    // Target elements depending on source
+    const floatBox = document.getElementById('floating-cs-chat-box');
+    const floatTyping = document.getElementById('floating-cs-typing');
+    const floatInput = document.getElementById('floating-cs-input');
+    const floatSendBtn = document.getElementById('floating-cs-send-btn');
 
-    // Append User Message to UI
-    if (chatBox) {
-      const userBubble = document.createElement('div');
-      userBubble.className = 'flex items-start justify-end gap-2.5';
-      userBubble.innerHTML = `
-        <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tr-sm bg-emerald-950/60 border border-emerald-500/40 text-emerald-100 leading-relaxed shadow-sm">
-          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-300 font-mono mb-1">
-            <span class="font-bold">[${isAr ? 'أنت على واتساب' : 'You on WhatsApp'}]</span>
+    const simBox = document.getElementById('sim-chat-box');
+    const simTyping = document.getElementById('sim-typing-indicator');
+    const simInput = document.getElementById('sim-chat-input');
+    const simSendBtn = document.getElementById('sim-send-btn');
+
+    if (floatInput) floatInput.value = '';
+    if (simInput) simInput.value = '';
+    if (floatSendBtn) floatSendBtn.disabled = true;
+    if (simSendBtn) simSendBtn.disabled = true;
+
+    // Build User Bubble HTML
+    const userBubbleHtml = `
+      <div class="flex items-start justify-end gap-2.5">
+        <div class="chat-bubble-user max-w-[85%] p-3 rounded-2xl rounded-tr-sm bg-emerald-600 text-white leading-relaxed shadow-sm">
+          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-100 font-mono mb-1">
+            <span class="font-bold">[${isAr ? 'أنت' : 'You'}]</span>
             <span>${timeNow}</span>
           </div>
           <p>${escapeHtml(cleanText)}</p>
@@ -898,26 +1318,41 @@ Which solution can we help you launch today? Feel free to contact us on WhatsApp
         <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs shrink-0">
           👤
         </div>
-      `;
-      chatBox.appendChild(userBubble);
-      chatBox.scrollTop = chatBox.scrollHeight;
+      </div>
+    `;
+
+    // Append to active boxes
+    if (sourceContext === 'floating' || !simBox) {
+      if (floatBox) {
+        const div = document.createElement('div');
+        div.innerHTML = userBubbleHtml;
+        floatBox.appendChild(div.firstElementChild);
+        floatBox.scrollTop = floatBox.scrollHeight;
+      }
+    } else {
+      if (simBox) {
+        const div = document.createElement('div');
+        div.innerHTML = userBubbleHtml;
+        simBox.appendChild(div.firstElementChild);
+        simBox.scrollTop = simBox.scrollHeight;
+      }
     }
 
-    // Show Typing Indicator
-    if (typingIndicator) {
-      typingIndicator.classList.remove('hidden');
-      typingIndicator.classList.add('flex');
-      if (chatBox) chatBox.scrollTop = chatBox.scrollHeight;
+    // Show active typing indicators
+    if (floatTyping) floatTyping.classList.remove('hidden');
+    if (simTyping) {
+      simTyping.classList.remove('hidden');
+      simTyping.classList.add('flex');
     }
 
-    // Add to history
     chatHistory.push({ role: 'user', content: cleanText });
 
     let aiReply = null;
-    let replySource = 'deepseek-api';
+    let replySource = 'gemini-3.8-flash';
 
+    // 1. Send to server proxy (/api/chat)
     try {
-      const response = await fetch('/api/deepseek-chat', {
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -930,43 +1365,60 @@ Which solution can we help you launch today? Feel free to contact us on WhatsApp
         const data = await response.json();
         if (data && data.success && data.reply) {
           aiReply = data.reply;
-          replySource = 'deepseek-api';
+          replySource = data.source || 'gemini-3.8-flash';
         }
       }
     } catch (err) {
-      // Fetch error handled gracefully
+      // Server error handled gracefully
     }
 
-    // Fallback to intelligent built-in generator if DeepSeek API key requires active billing or proxy unavailable
+    // 2. Secondary fallback to /api/deepseek-chat if needed
+    if (!aiReply) {
+      try {
+        const dsResponse = await fetch('/api/deepseek-chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: cleanText,
+            history: chatHistory.slice(-6)
+          })
+        });
+        if (dsResponse.ok) {
+          const dsData = await dsResponse.json();
+          if (dsData && dsData.success && dsData.reply) {
+            aiReply = dsData.reply;
+            replySource = dsData.source || 'deepseek-api';
+          }
+        }
+      } catch (err) {
+        // Fallback below
+      }
+    }
+
+    // 3. Built-in intelligent Egyptian customer service fallback
     if (!aiReply) {
       aiReply = generateSalahLogisticsAiResponse(cleanText, isAr ? 'ar' : 'en');
-      replySource = 'salah-ai-engine';
+      replySource = 'egyptian-customer-service-engine';
     }
 
-    // Hide Typing Indicator
-    if (typingIndicator) {
-      typingIndicator.classList.add('hidden');
-      typingIndicator.classList.remove('flex');
+    // Hide typing indicators
+    if (floatTyping) floatTyping.classList.add('hidden');
+    if (simTyping) {
+      simTyping.classList.add('hidden');
+      simTyping.classList.remove('flex');
     }
 
-    // Add AI message to history
     chatHistory.push({ role: 'assistant', content: aiReply });
 
-    // Render AI Reply bubble
-    if (chatBox) {
-      const aiBubble = document.createElement('div');
-      aiBubble.className = 'flex items-start gap-2.5';
-      const badgeText = replySource === 'deepseek-api' 
-        ? (isAr ? 'موظف مبيعات صلاح لوجيستيكس (DeepSeek API)' : 'Salah Logistics AI Sales (DeepSeek API)')
-        : (isAr ? 'موظف مبيعات صلاح لوجيستيكس' : 'Salah Logistics AI Sales');
-
-      aiBubble.innerHTML = `
+    // Build Assistant Bubble HTML
+    const assistantBubbleHtml = `
+      <div class="flex items-start gap-2.5">
         <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
-          🤖
+          👨‍💼
         </div>
-        <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+        <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
           <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
-            <span class="font-bold">[${badgeText}]</span>
+            <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Support]'}</span>
             <span class="text-slate-500">${timeNow} ✓✓</span>
           </div>
           <div class="whitespace-pre-line text-xs">${escapeHtml(aiReply)}</div>
@@ -978,13 +1430,38 @@ Which solution can we help you launch today? Feel free to contact us on WhatsApp
             <span class="text-[9px] font-mono text-slate-500">24/7 Live</span>
           </div>
         </div>
-      `;
-      chatBox.appendChild(aiBubble);
-      chatBox.scrollTop = chatBox.scrollHeight;
+      </div>
+    `;
+
+    // Append reply to active boxes
+    if (sourceContext === 'floating' || !simBox) {
+      if (floatBox) {
+        const div = document.createElement('div');
+        div.innerHTML = assistantBubbleHtml;
+        floatBox.appendChild(div.firstElementChild);
+        floatBox.scrollTop = floatBox.scrollHeight;
+      }
+    } else {
+      if (simBox) {
+        const div = document.createElement('div');
+        div.innerHTML = assistantBubbleHtml;
+        simBox.appendChild(div.firstElementChild);
+        simBox.scrollTop = simBox.scrollHeight;
+      }
     }
 
-    if (sendBtn) sendBtn.disabled = false;
+    if (floatSendBtn) floatSendBtn.disabled = false;
+    if (simSendBtn) simSendBtn.disabled = false;
     isSendingAiMessage = false;
+  };
+
+  // Backwards compatibility alias for existing simulation callers
+  window.sendDeepSeekMessage = function (userText) {
+    window.sendAiCustomerServiceMessage(userText, 'simulator');
+  };
+
+  window.clearChat = function () {
+    window.clearAiCustomerServiceChat();
   };
 
   // --- WhatsApp AI Live Simulator Trigger ---
@@ -999,37 +1476,14 @@ Which solution can we help you launch today? Feel free to contact us on WhatsApp
   window.simulateLiveInquiry = function () {
     const inquiry = SAMPLE_INQUIRIES[sampleInquiryIdx % SAMPLE_INQUIRIES.length];
     sampleInquiryIdx++;
-    window.sendDeepSeekMessage(inquiry);
-  };
-
-  // Reset/Clear Chat
-  window.clearChat = function () {
-    chatHistory = [];
-    const chatBox = document.getElementById('sim-chat-box');
-    const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
-    if (!chatBox) return;
-
-    chatBox.innerHTML = `
-      <div class="flex items-start gap-2.5">
-        <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
-          🤖
-        </div>
-        <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
-          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
-            <span class="font-bold">[${isAr ? 'موظف مبيعات صلاح لوجيستيكس' : 'Salah Logistics Sales AI'}]</span>
-            <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
-          </div>
-          <p>${isAr 
-            ? 'أهلاً بحضرتك يا فندم في منصة صلاح لوجيستيكس والمهندس مصطفى صلاح! 👋 أنا موظف المبيعات والتواصل الذكي، أقدر أساعد حضرتك فوراً في معرفة تفاصيل وأسعار باقاتنا (مثل باقة الموقع التعريفي بـ 65$ أو 75$، موظف الذكاء الاصطناعي لواتساب، وسيستمات الشحن وتطبيقات الموبايل). اتفضل اسألني في أي تفاصيل أو اكتب طلبك وهرد عليك فوراً! 🚀'
-            : 'Welcome to Salah Logistics and Eng. Mostafa Salah! 👋 I am your intelligent sales & client relations agent. Ask any questions about our corporate packages, AI WhatsApp bots, or shipping systems, and I will assist you instantly! 🚀'
-          }</p>
-        </div>
-      </div>
-    `;
+    window.sendAiCustomerServiceMessage(inquiry, 'simulator');
   };
 
   // Attach direct listeners to prevent any event bubbling/delegation blocking
   function attachDirectListeners() {
+    // Mount floating customer service widget
+    mountFloatingAiCustomerServiceWidget();
+
     // Theme toggle direct listener
     document.querySelectorAll('#theme-toggle-btn, [data-action="toggle-theme"], .theme-toggle-btn').forEach(btn => {
       btn.onclick = function (e) {
@@ -1063,37 +1517,37 @@ Which solution can we help you launch today? Feel free to contact us on WhatsApp
       };
     });
 
-    // DeepSeek Chat form submit
-    const chatForm = document.getElementById('sim-chat-form');
-    if (chatForm) {
-      chatForm.onsubmit = function (e) {
+    // In-page Chat simulator form submit
+    const simChatForm = document.getElementById('sim-chat-form');
+    if (simChatForm) {
+      simChatForm.onsubmit = function (e) {
         e.preventDefault();
         const input = document.getElementById('sim-chat-input');
         if (input && input.value) {
-          window.sendDeepSeekMessage(input.value);
+          window.sendAiCustomerServiceMessage(input.value, 'simulator');
         }
       };
     }
 
-    // Quick prompt buttons
+    // In-page Quick prompt buttons
     document.querySelectorAll('.quick-prompt-btn').forEach(btn => {
       btn.onclick = function (e) {
         e.preventDefault();
         const q = btn.getAttribute('data-question');
-        if (q) window.sendDeepSeekMessage(q);
+        if (q) window.sendAiCustomerServiceMessage(q, 'simulator');
       };
     });
 
-    // Clear chat button
+    // In-page Clear chat button
     const clearBtn = document.getElementById('clear-chat-btn');
     if (clearBtn) {
       clearBtn.onclick = function (e) {
         e.preventDefault();
-        window.clearChat();
+        window.clearAiCustomerServiceChat();
       };
     }
 
-    // Simulate chat inquiry button
+    // In-page Simulate chat inquiry button
     const simBtn = document.getElementById('sim-btn');
     if (simBtn) {
       simBtn.onclick = function (e) {
