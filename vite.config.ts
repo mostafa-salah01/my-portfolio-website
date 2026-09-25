@@ -21,51 +21,93 @@ function staticAssetsCopyPlugin(): Plugin {
 }
 
 const CUSTOMER_SERVICE_SYSTEM_PROMPT = `أنت موظف خدمة عملاء ودعم ومبيعات حقيقي وبشري 100% لموقع المهندس مصطفى صلاح (Eng. Mostafa Salah).
-اسمك "أحمد" من فريق خدمة العملاء والدعم الفني للمهندس مصطفى صلاح.
+اسمك "أحمد" من فريق خدمة العملاء والمبيعات للمهندس مصطفى صلاح.
 
 تنبيه حاسم وإلزامي:
 هذا الموقع هو موقع شخصي ومهني تعريفي خاص بالمهندس مصطفى صلاح (مطور برمجيات ومهندس أتمتة وبناء أنظمة ذكية).
 ممنوع نهائياً ومطلقاً ذكر كلمة أو اسم "صلاح لوجيستيكس" أو "صلاح لوجيستيك" أو "Salah Logistics" في أي جملة أو رد أو ترحيب على الإطلاق!
 أنت تمثل شخص وخدمات المهندس مصطفى صلاح وفريقه التقني فقط لا غير.
 
-شخصيتك وأسلوبك الحقيقي:
+شخصيتك وأسلوبك الحقيقي ومحرك المبيعات (Persona & Sales Engine):
 1. أنت إنسان وبشري تماماً، ودود، محترم، لبق، راقي، وذكي. لست آلياً أو روبوتياً على الإطلاق، وتتجنب تماماً التكلف أو الإجابات الجامدة والمصطنعة.
 2. اللهجة الأساسية: مصرية راقية ومهذبة تناسب بيئة الأعمال والشركات (مثل: "أهلاً بحضرتك يا فندم"، "تمام يا فندم تحت أمرك"، "من عيوني"، "حاضر يا غالي"، "بص يا فندم...").
-3. ثنائي اللغة واحترافية المصطلحات (Code-Switching): أنت شخص مصري دارس وفاهم إنجليزي كويس جداً. إذا العميل كتب بالعربي ومدخل كلام إنجليزي أو مصطلحات تقنية (مثل: domain, hosting, SSL, system, dashboard, package, features, setup, backend, API, webhook, renewal)، تفهمه تماماً وترد عليه بلهجة مصرية ذكية مع استخدام المصطلحات الإنجليزية بعفوية وطبيعية زي ما بيتكلم المهندس المصري بالظبط.
-4. التكيف التلقائي مع جميع اللغات:
-   - لو كلمك العميل بالإنجليزي: رد عليه بإنجليزي احترافي ودود وسلس جداً.
-   - لو كلمك بالفرانكو (Franco-Arab): افهمه ورد عليه بأسلوب مريح وواضح.
-   - لو كلمك بأي لغة تانية (فرنسي، ألماني، إسباني، روسي... إلخ): رد عليه بنفس لغته بطلاقة وود.
-   - لو كلمك بعربي فصحى أو لهجة خليجية أو مغاربية: رحب بيه بأعلى درجات الأدب والاحترافية ورد عليه بأسلوب يفهمه ويرتاح له.
+3. ثنائي اللغة واحترافية المصطلحات (Code-Switching): أنت شخص مصري دارس وفاهم إنجليزي كويس جداً. إذا العميل كتب بالعربي ومدخل كلام إنجليزي أو مصطلحات تقنية (مثل: domain, hosting, SSL, system, dashboard, package, features, setup, backend, API, webhook, renewal, affiliate, commission)، تفهمه تماماً وترد عليه بلهجة مصرية ذكية مع استخدام المصطلحات الإنجليزية بعفوية وطبيعية.
+4. التكيف التلقائي مع جميع اللغات (إنجليزي، فرانكو، عربي فصحى، لهجة خليجية، فرنسي، إلخ).
 
-قاعدة بيانات خدماتنا وأسعارنا الرسمية المؤكدة:
+دورك في التعريف بالخدمات وشرح البرمجيات:
+اشرح خدمات وأنظمة وحلول المهندس مصطفى صلاح بأسلوب بشري وسلس وجذاب.
+قاعدة بيانات الخدمات الرسمية:
 1. باقة تصميم الموقع التعريفي الاحترافي للشركات (Corporate Website Package):
    - السعر: 65 دولار فقط للسنة الأولى مع دومين رسمي .uk شامل، أو 75 دولار فقط للسنة الأولى مع دومين رسمي .com شامل.
-   - اللغتان (العربية والإنجليزية معاً) مشمولتان في السعر الأساسي مجاناً بدون أي تكلفة إضافية.
-   - استضافة سحابية فائقة السرعة SSD + شهادة أمان SSL مجانية للسنة الأولى.
-   - تصميم متجاوب 100% وسريع للموبايل والتابلت والكمبيوتر، وربط تفاعلي مباشر بأزرار الواتساب.
-   - دعم فني وصيانة يومية سريعة ومستمرة (من السبت للخميس).
-   - تجديد سنوي ثابت ومضمون: 40 دولار فقط سنوياً لجميع الباقات (يشمل تجديد الدومين والاستضافة السحابية والصيانة والدعم الفني اليومي).
+   - اللغتان (العربية والإنجليزية معاً) مشمولتان في السعر مجاناً.
+   - استضافة سحابية سريعة SSD + شهادة أمان SSL مجانية للسنة الأولى.
+   - تجديد سنوي ثابت ومضمون: 40 دولار فقط سنوياً.
 2. موظف الذكاء الاصطناعي البشري (WhatsApp & Telegram AI Employee):
-   - يرد في ثوانٍ معدودة بطبيعة بشرية مقنعة 24/7.
-   - يولد ويرسل ملفات عروض أسعار رسمية PDF مخصصة، صور المنتجات، والكتالوجات داخل الشات.
-   - تسجيل فوري للطلبات في قاعدة البيانات وجوجل شيتس، وإشعارات للمدير بالطلبات العاجلة.
+   - ردود فورية مقنعة 24/7، توليد عروض أسعار رسمية PDF، إرسال الكتالوجات داخل الشات، وربط بقواعد البيانات ونظام n8n.
 3. سيستم الشحن واللوجستيات (Smart Shipping & Courier Management):
-   - إصدار بوالص الشحن PDF مع باركود وQR، تتبع خطوط السير والمناديب لحظياً، وتسوية تحصيل الـ COD ومحافظ المناديب.
-4. تطبيقات الموبايل والمتاجر وأنظمة السوبرماركت والصيدليات:
-   - برمجة ونشر تطبيقات أندرويد وآيفون على Google Play وApp Store.
-   - أنظمة نقاط بيع وكاشير للسوبرماركت مع طابعات الفواتير وقارئات الباركود.
-   - أنظمة صيدليات ERP متكاملة تتبع الصلاحيات وأرقام التشغيل وحسابات الموردين.
-5. أتمتة مسارات العمل n8n وهندسة الـ APIs والباك إند السحابي:
-   - ربط المتاجر (Shopify, WooCommerce, Salla) بأتمتة n8n مع قواعد بيانات PostgreSQL وRedis.
+   - إصدار بوالص الشحن PDF مع باركود وQR، تتبع المناديب لحظياً، وتسوية تحصيل الـ COD.
+4. تطبيقات الموبايل والمتاجر والأنظمة المخصصة (سوبرماركت، صيدليات، ERP، متاجر إلكترونية).
+5. أتمتة مسارات العمل n8n وهندسة الـ APIs والباك إند السحابي.
 
-رقم واتساب المباشر للتأكيد والحجز مع م. مصطفى صلاح: 201107787049 (أو 01107787049).
-مهمتك: الرد بذكاء ولباقة وبشرية تامة، ومساعدة العميل فوراً في أي استفسار، وتشجيعه بود على التواصل عبر واتساب لتأكيد حجزه والبدء فوراً!`;
+دورك في نظام الأفلييت والتسويق بالعمولة (Affiliate Program & Marketer Onboarding):
+1. إذا سأل المستخدم عن كيفية العمل معنا، أو التسويق لخدماتنا، أو الربح بالعمولة، أو برنامج الأفلييت:
+   - رحب به بحفاوة وشغف واشرح له نظام الأفلييت والشراكة.
+   - وضح له بوضوح تام أن نظام التسويق بالعمولة يمنحه عمولة فورية قدرها 30% كاش من قيمة كل خدمة أو مشروع يتم بيعه أو التعاقد عليه عن طريقه!
+   - اضرب له أمثلة واضحة على الأرباح:
+     * موقع شركات تعريفي (75$): عمولتك فوراً 22.5$ كاش.
+     * موظف ذكاء اصطناعي لواتساب أو أنظمة متوسطة: عمولتك 30% فوراً.
+     * سيستم شحن أو إدارة شركات (مثلاً 500$): عمولتك فوراً 150$ كاش.
+     * تطبيقات موبايل أو مشاريع مخصصة (مثلاً 1000$): عمولتك فوراً 300$ كاش.
+     * الدفع فوري بمجرد تعاقد العميل عبر إنستاباي أو فودافون كاش أو تحويل بنكي.
+   - قم بالتعرف على إمكانيات وخبرة المستخدم: اسأله بلطف عن خلفيته التسويقية (هل شغال سوشيال ميديا، إعلانات ممولة، شبكة علاقات مع شركات ومحلات، تسويق مباشر؟) واقترح عليه خطة تسويقية سريعة لتحقيق أكبر دخل.
+2. جمع بيانات التواصل وإرسالها للواتساب:
+   - عندما يبدي المستخدم رغبته في الانضمام كمسوق أو البدء معنا، اطلب منه بلطف اسمه الكريم ورقم هاتفه أو واتس اب.
+   - بمجرد أن يرسل لك اسمه ورقمه، أكد له تسجيله فوراً، واعرض عليه رابط التواصل المباشر مع المهندس مصطفى صلاح على واتساب (+201107787049)، مع استمرارك في الحديث معه بسلاسة وإجابته عن أي استفسار دون أي انقطاع.
+
+رقم واتساب المباشر للمهندس مصطفى صلاح: 201107787049 (أو 01107787049).
+مهمتك: الرد بذكاء وسرعة، بناء علاقة ودية وثقة مع العميل أو المسوق، ومساعدته خطوة بخطوة للبدء وتحقيق النجاح!`;
 
 function generateLocalSmartResponse(userText: string): string {
   const text = (userText || '').toLowerCase();
   const isEn = /^[a-zA-Z0-9\s.,?!'"@#$%^&*()_+-=:;/<>]+$/.test(userText.trim()) && !/[\u0600-\u06FF]/.test(userText);
 
+  // Affiliate & Marketing Program Query
+  if (text.includes('أفلييت') || text.includes('افلييت') || text.includes('تسويق') || text.includes('عمولة') || text.includes('مسوق') || text.includes('اشتغل') || text.includes('شغل') || text.includes('ربح') || text.includes('30%') || text.includes('affiliate') || text.includes('commission') || text.includes('marketer') || text.includes('partner')) {
+    if (isEn) {
+      return `Welcome to the Eng. Mostafa Salah 30% Affiliate & Growth Program! 🚀💰
+Here is how you earn high immediate payouts with us:
+1. Instant 30% Cash Commission on every client or project closed through you.
+   • Corporate Website Package ($75): You get $22.50 instant cash.
+   • WhatsApp AI Employee / CRM Systems: 30% immediate payout.
+   • Custom Logistics & Dispatch Systems ($500+): You get $150+ cash.
+   • Mobile Apps & ERP Systems ($1,000+): You get $300+ cash!
+2. Complete Marketing Kit: We provide you with official PDF quotation templates, live showcase demos, and pitch decks.
+3. Fast Payouts: Transfer via Bank, InstaPay, or digital wallets immediately upon client contract.
+
+To get registered as an authorized affiliate partner right now:
+Could you please share your Name and Phone/WhatsApp number?
+You can also connect directly with Eng. Mostafa Salah on WhatsApp: https://wa.me/201107787049`;
+    }
+    return `يا هلا بيك يا فندم! 🌟 شرف كبير لينا، وبرنامج التسويق بالعمولة (30% Affiliate Program) مع المهندس مصطفى صلاح هو فرصتك الذهبية لتحقيق دخل ممتاز وفوري:
+
+💰 نظام العمولة والأرباح:
+• ليك عمولة فورية 30% كاش عن كل عميل أو مشروع يتعاقد عن طريقك!
+• أمثلة مباشرة:
+  - باقة موقع الشركات (75$): عمولتك فوراً 22.5 دولار كاش.
+  - موظف الواتساب الذكي وعروض الأسعار: 30% من قيمة الباقة فوراً.
+  - سيستم الشحن واللوجستيات (مثلاً 500$): عمولتك فوراً 150 دولار كاش!
+  - تطبيقات الموبايل والمشاريع الكبيرة (1000$ مثلاً): عمولتك فوراً 300 دولار كاش!
+• استلام فوري لعمولتك بمجرد تعاقد العميل (إنستاباي، فودافون كاش، أو حساب بنكي).
+
+🛠️ إحنا بنوفرلك إيه؟
+• نماذج عروض أسعار PDF رسمية، روابط معاينة حية لكل الأنظمة، ودعم فني كامل لإقناع العميل وإغلاق التعاقد.
+
+📝 عشان نسجلك كمسوق معتمد ونبدأ فوراً:
+ممكن بعد إذنك اسمك الكريم ورقم هاتفك/واتساب؟
+(وفوراً هنسجل بياناتك ونحولك للواتساب الخاص بالبشمهندس مصطفى صلاح 01107787049 عشان تستلم المواد التسويقية وتبدأ فوراً). تحب تركز على تسويق المواقع ولا موظفي الذكاء الاصطناعي؟`;
+  }
+
+  // Price & Packages
   if (text.includes('سعر') || text.includes('باقة') || text.includes('موقع') || text.includes('price') || text.includes('quote') || text.includes('website') || text.includes('cost') || text.includes('65') || text.includes('75') || text.includes('تجديد') || text.includes('renewal')) {
     if (isEn) {
       return `Hello! 🌟 Here are the official details for the Corporate Website Package with Eng. Mostafa Salah:
@@ -161,7 +203,7 @@ We provide end-to-end software and automation solutions under Eng. Mostafa Salah
 2. Human-like AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
 3. Smart Logistics & Courier Dispatch Platforms with live waybills & COD tracking.
 4. Mobile Retail Apps & E-Commerce Systems (Android & iOS).
-5. n8n Enterprise Workflow Automation & Backend APIs.
+5. 30% Affiliate Program for marketers and partners (instant cash commissions on every sale).
 
 How can I help you today? You can also message Eng. Mostafa directly on WhatsApp (+201107787049)! 🚀`;
   }
@@ -172,9 +214,9 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 2. موظف الذكاء الاصطناعي البشري للواتساب وتليجرام للرد الفوري وتوليد عروض أسعار PDF.
 3. سيستمات إدارة الشحن وتتبع المناديب وتسوية الـ COD.
 4. تطبيقات الموبايل وأنظمة السوبرماركت والصيدليات.
-5. أتمتة الأعمال n8n وهندسة الـ APIs والـ Backend.
+5. برنامج التسويق بالعمولة والأفلييت 30% (اربح 30% عمولة فورية كاش عن كل تعاقد).
 
-تحب تستفسر عن تفاصيل خدمة معينة؟ أو تحب أحول حضرتك للواتساب للتأكيد مع البشمهندس مصطفى على 01107787049؟ 🚀`;
+تحب تستفسر عن تفاصيل خدمة معينة؟ أو تحب تنضم كمسوق في برنامج الأفلييت 30%؟ 🚀`;
 }
 
 function aiChatProxyPlugin(): Plugin {
@@ -199,12 +241,69 @@ function aiChatProxyPlugin(): Plugin {
           return;
         }
 
-        // 1. First priority: Google Gemini API via @google/genai
+        // 1. First priority: DeepSeek API directly via DEEPSEEK_API_KEY
+        const deepseekKey = process.env.DEEPSEEK_API_KEY;
+        if (deepseekKey && deepseekKey !== 'YOUR_DEEPSEEK_API_KEY' && deepseekKey.trim() !== '') {
+          try {
+            const formattedHistory = history.slice(-10).map((h: any) => ({
+              role: h.role === 'assistant' ? 'assistant' : 'user',
+              content: String(h.content || '')
+            }));
+
+            const messages = [
+              { role: 'system', content: CUSTOMER_SERVICE_SYSTEM_PROMPT },
+              ...formattedHistory,
+              { role: 'user', content: userMessage }
+            ];
+
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 18000);
+
+            const dsResponse = await fetch('https://api.deepseek.com/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${deepseekKey.trim()}`
+              },
+              body: JSON.stringify({
+                model: 'deepseek-chat',
+                messages: messages,
+                temperature: 0.7,
+                max_tokens: 800
+              }),
+              signal: controller.signal
+            });
+            clearTimeout(timeoutId);
+
+            if (dsResponse.ok) {
+              const result: any = await dsResponse.json();
+              if (result && result.choices && result.choices[0] && result.choices[0].message) {
+                const reply = result.choices[0].message.content;
+                if (reply) {
+                  res.setHeader('Content-Type', 'application/json');
+                  res.end(JSON.stringify({
+                    success: true,
+                    reply: reply,
+                    source: 'deepseek-chat'
+                  }));
+                  return;
+                }
+              }
+            } else {
+              const errBody = await dsResponse.text();
+              console.warn('DeepSeek API responded with HTTP error:', dsResponse.status, errBody);
+            }
+          } catch (dsErr: any) {
+            console.warn('DeepSeek invocation attempt failed, falling back:', dsErr?.message || dsErr);
+          }
+        }
+
+        // 2. Second priority: Google Gemini API via @google/genai
         const geminiKey = process.env.GEMINI_API_KEY;
-        if (geminiKey && geminiKey !== 'MY_GEMINI_API_KEY') {
+        if (geminiKey && geminiKey !== 'MY_GEMINI_API_KEY' && geminiKey.trim() !== '') {
           try {
             const ai = new GoogleGenAI({
-              apiKey: geminiKey,
+              apiKey: geminiKey.trim(),
               httpOptions: {
                 headers: {
                   'User-Agent': 'aistudio-build',
@@ -213,7 +312,7 @@ function aiChatProxyPlugin(): Plugin {
             });
 
             const contents: any[] = [];
-            for (const h of history.slice(-6)) {
+            for (const h of history.slice(-8)) {
               if (h.content) {
                 contents.push({
                   role: h.role === 'assistant' ? 'model' : 'user',
@@ -246,50 +345,11 @@ function aiChatProxyPlugin(): Plugin {
               return;
             }
           } catch (geminiErr: any) {
-            console.warn('Gemini API invocation attempt:', geminiErr?.message || geminiErr);
+            console.warn('Gemini API invocation attempt failed, falling back:', geminiErr?.message || geminiErr);
           }
         }
 
-        // 2. Second priority: DeepSeek API if configured
-        const deepseekKey = process.env.DEEPSEEK_API_KEY;
-        if (deepseekKey && deepseekKey !== 'YOUR_DEEPSEEK_API_KEY') {
-          try {
-            const messages = [
-              { role: 'system', content: CUSTOMER_SERVICE_SYSTEM_PROMPT },
-              ...history.slice(-6),
-              { role: 'user', content: userMessage }
-            ];
-
-            const dsResponse = await fetch('https://api.deepseek.com/chat/completions', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${deepseekKey}`
-              },
-              body: JSON.stringify({
-                model: 'deepseek-chat',
-                messages: messages,
-                temperature: 0.7,
-                max_tokens: 450
-              })
-            });
-
-            const result: any = await dsResponse.json();
-            if (dsResponse.ok && result.choices && result.choices[0]) {
-              res.setHeader('Content-Type', 'application/json');
-              res.end(JSON.stringify({
-                success: true,
-                reply: result.choices[0].message.content,
-                source: 'deepseek-api'
-              }));
-              return;
-            }
-          } catch (dsErr: any) {
-            console.warn('DeepSeek invocation attempt:', dsErr?.message || dsErr);
-          }
-        }
-
-        // 3. Fallback: Intelligent Egyptian AI Customer Service Engine
+        // 3. Built-in Fallback: Intelligent Egyptian AI Customer Service Engine
         const fallbackReply = generateLocalSmartResponse(userMessage);
         res.setHeader('Content-Type', 'application/json');
         res.end(JSON.stringify({

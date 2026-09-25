@@ -760,8 +760,23 @@
   };
 
   // --- Unified AI Customer Service & Sales Employee Engine (أحمد - خدمة العملاء) ---
+  const CHAT_STORAGE_KEY = 'mostafa_salah_chat_history_v2';
   let chatHistory = [];
-  let isSendingAiMessage = false;
+  try {
+    const saved = sessionStorage.getItem(CHAT_STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) chatHistory = parsed;
+    }
+  } catch (e) {
+    chatHistory = [];
+  }
+
+  function persistChatHistory() {
+    try {
+      sessionStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(chatHistory));
+    } catch (e) {}
+  }
 
   function escapeHtml(str) {
     if (!str) return '';
@@ -777,6 +792,57 @@
   function generateMostafaSalahAiResponse(userText, lang) {
     const text = (userText || '').toLowerCase();
     const isEn = lang === 'en' || (/^[a-zA-Z0-9\s.,?!'"@#$%^&*()_+-=:;/<>]+$/.test(userText.trim()) && !/[\u0600-\u06FF]/.test(userText));
+
+    // Phone / Contact provided by user for marketer onboarding or order
+    const hasPhone = /(01[0125]\d{8}|\+?\d{10,15})/.test(userText.replace(/\s+/g, ''));
+    if (hasPhone) {
+      if (isEn) {
+        return `Awesome! 🌟 I have recorded your contact details.
+I have prepared a direct fast-track link to Eng. Mostafa Salah on WhatsApp (+201107787049) so you can receive the official sales kit, quotation templates, and confirm your 30% affiliate registration right away.
+
+I'm still right here with you—what questions or systems would you like to explore next? 🚀`;
+      }
+      return `تمام جداً يا غالي! 🌟 سجلت بياناتك ورقم تواصلك بنجاح.
+دلوقتي تقدر تضغط على الزرار بالأسفل للتأكيد الفوري مع البشمهندس مصطفى صلاح على الواتساب (01107787049) عشان تستلم الحقيبة التسويقية ونماذج عروض الأسعار وتبدأ فوراً تحقق أرباحك الـ 30%.
+
+وأنا مكمل معاك هنا خطوة بخطوة—تحب تركز في البداية على تسويق المواقع التعريفية ولا موظف الواتساب وسيستمات الشركات؟ 🚀`;
+    }
+
+    // Affiliate & Marketing Program Inquiries
+    if (text.includes('أفلييت') || text.includes('افلييت') || text.includes('تسويق') || text.includes('عمولة') || text.includes('مسوق') || text.includes('اشتغل') || text.includes('شغل') || text.includes('ربح') || text.includes('30%') || text.includes('affiliate') || text.includes('commission') || text.includes('marketer') || text.includes('partner')) {
+      if (isEn) {
+        return `Welcome to the Eng. Mostafa Salah 30% Affiliate & Growth Program! 🚀💰
+Here is how you earn high immediate payouts with us:
+1. Instant 30% Cash Commission on every client or project closed through you.
+   • Corporate Website Package ($75): You get $22.50 instant cash.
+   • WhatsApp AI Employee / CRM Systems: 30% immediate payout.
+   • Custom Logistics & Dispatch Systems ($500+): You get $150+ cash.
+   • Mobile Apps & Retail Systems ($1,000+): You get $300+ cash!
+2. Complete Marketing Kit: We provide you with official PDF quotation templates, live showcase demos, and pitch decks.
+3. Fast Payouts: Transfer via Bank, InstaPay, or digital wallets immediately upon client contract.
+
+To get registered as an authorized affiliate partner right now:
+Could you please share your Name and Phone/WhatsApp number?
+You can also connect directly with Eng. Mostafa Salah on WhatsApp: https://wa.me/201107787049`;
+      }
+      return `يا هلا بيك يا فندم! 🌟 شرف كبير لينا، وبرنامج التسويق بالعمولة (30% Affiliate Program) مع المهندس مصطفى صلاح هو فرصتك الذهبية لتحقيق دخل ممتاز وفوري:
+
+💰 نظام العمولة والأرباح:
+• ليك عمولة فورية 30% كاش عن كل عميل أو مشروع يتعاقد عن طريقك!
+• أمثلة مباشرة:
+  - باقة موقع الشركات (75$): عمولتك فوراً 22.5 دولار كاش.
+  - موظف الواتساب الذكي وعروض الأسعار: 30% من قيمة الباقة فوراً.
+  - سيستم الشحن واللوجستيات (مثلاً 500$): عمولتك فوراً 150 دولار كاش!
+  - تطبيقات الموبايل والمشاريع الكبيرة (1000$ مثلاً): عمولتك فوراً 300 دولار كاش!
+• استلام فوري لعمولتك بمجرد تعاقد العميل (إنستاباي، فودافون كاش، أو حساب بنكي).
+
+🛠️ إحنا بنوفرلك إيه؟
+• نماذج عروض أسعار PDF رسمية، روابط معاينة حية لكل الأنظمة، ودعم فني كامل لإقناع العميل وإغلاق التعاقد.
+
+📝 عشان نسجلك كمسوق معتمد ونبدأ فوراً:
+ممكن بعد إذنك اسمك الكريم ورقم هاتفك/واتساب؟
+(وفوراً هنسجل بياناتك ونحولك للواتساب الخاص بالبشمهندس مصطفى صلاح 01107787049 عشان تستلم المواد التسويقية وتبدأ فوراً). تحب تركز على تسويق المواقع ولا موظفي الذكاء الاصطناعي؟`;
+    }
 
     if (text.includes('سعر') || text.includes('باقة') || text.includes('موقع') || text.includes('price') || text.includes('quote') || text.includes('website') || text.includes('cost') || text.includes('65') || text.includes('75') || text.includes('تجديد') || text.includes('renewal')) {
       if (isEn) {
@@ -967,6 +1033,9 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
         <!-- Quick Chips -->
         <div class="p-2.5 bg-slate-950/60 border-b border-slate-800/80 flex items-center gap-1.5 overflow-x-auto text-[11px] shrink-0 no-scrollbar">
+          <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-purple-300 border border-purple-500/30 transition-colors cursor-pointer" data-question="عايز تفاصيل نظام الأفلييت والتسويق بالعمولة 30% وإزاي أبدأ معاكم كمسوق؟">
+            🤝 نظام الأفلييت (30%)
+          </button>
           <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 transition-colors cursor-pointer" data-question="كم سعر باقة الموقع التعريفي وتفاصيل التجديد السنوي؟">
             💼 باقة الموقع (65$/75$)
           </button>
@@ -1147,6 +1216,74 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
     // Setup Proactive Greeting & Homepage side-docking
     setupProactiveCustomerServiceGreeting();
+
+    // Restore prior conversation memory from sessionStorage across page navigation
+    restoreChatHistoryToBoxes();
+  }
+
+  function restoreChatHistoryToBoxes() {
+    if (!Array.isArray(chatHistory) || chatHistory.length === 0) return;
+    const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
+    const floatBox = document.getElementById('floating-cs-chat-box');
+    const simBox = document.getElementById('sim-chat-box');
+
+    chatHistory.forEach(msg => {
+      if (!msg || !msg.content) return;
+      if (msg.role === 'user') {
+        const userHtml = `
+          <div class="flex items-start justify-end gap-2.5">
+            <div class="chat-bubble-user max-w-[85%] p-3 rounded-2xl rounded-tr-sm bg-emerald-600 text-white leading-relaxed shadow-sm">
+              <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-100 font-mono mb-1">
+                <span class="font-bold">[${isAr ? 'أنت' : 'You'}]</span>
+                <span class="text-[9px] text-emerald-200">ذاكرة الجلسة ⚡</span>
+              </div>
+              <p>${escapeHtml(msg.content)}</p>
+            </div>
+            <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs shrink-0">
+              👤
+            </div>
+          </div>
+        `;
+        if (floatBox) {
+          const div = document.createElement('div');
+          div.innerHTML = userHtml;
+          floatBox.appendChild(div.firstElementChild);
+        }
+        if (simBox) {
+          const div = document.createElement('div');
+          div.innerHTML = userHtml;
+          simBox.appendChild(div.firstElementChild);
+        }
+      } else if (msg.role === 'assistant') {
+        const asstHtml = `
+          <div class="flex items-start gap-2.5">
+            <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+              👨‍💼
+            </div>
+            <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+              <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+                <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Support]'}</span>
+                <span class="text-slate-500">✓✓</span>
+              </div>
+              <div class="whitespace-pre-line text-xs">${escapeHtml(msg.content)}</div>
+            </div>
+          </div>
+        `;
+        if (floatBox) {
+          const div = document.createElement('div');
+          div.innerHTML = asstHtml;
+          floatBox.appendChild(div.firstElementChild);
+        }
+        if (simBox) {
+          const div = document.createElement('div');
+          div.innerHTML = asstHtml;
+          simBox.appendChild(div.firstElementChild);
+        }
+      }
+    });
+
+    if (floatBox) floatBox.scrollTop = floatBox.scrollHeight;
+    if (simBox) simBox.scrollTop = simBox.scrollHeight;
   }
 
   // Soft synthetic Web Audio chime (100% CSP compliant, no external files)
@@ -1243,6 +1380,10 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
   window.clearAiCustomerServiceChat = function () {
     chatHistory = [];
+    try {
+      sessionStorage.removeItem(CHAT_STORAGE_KEY);
+    } catch (e) {}
+
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
     const welcome = isAr 
       ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
@@ -1353,18 +1494,19 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     }
 
     chatHistory.push({ role: 'user', content: cleanText });
+    persistChatHistory();
 
     let aiReply = null;
-    let replySource = 'gemini-3.8-flash';
+    let replySource = 'deepseek-api';
 
-    // 1. Send to server proxy (/api/chat)
+    // 1. Send to server proxy (/api/chat) which prioritizes DeepSeek API
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: cleanText,
-          history: chatHistory.slice(-6)
+          history: chatHistory.slice(-10)
         })
       });
 
@@ -1372,14 +1514,14 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
         const data = await response.json();
         if (data && data.success && data.reply) {
           aiReply = data.reply;
-          replySource = data.source || 'gemini-3.8-flash';
+          replySource = data.source || 'deepseek-chat';
         }
       }
     } catch (err) {
       // Server error handled gracefully
     }
 
-    // 2. Secondary fallback to /api/deepseek-chat if needed
+    // 2. Secondary fallback to /api/deepseek-chat directly if needed
     if (!aiReply) {
       try {
         const dsResponse = await fetch('/api/deepseek-chat', {
@@ -1387,7 +1529,7 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             message: cleanText,
-            history: chatHistory.slice(-6)
+            history: chatHistory.slice(-10)
           })
         });
         if (dsResponse.ok) {
@@ -1416,6 +1558,26 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     }
 
     chatHistory.push({ role: 'assistant', content: aiReply });
+    persistChatHistory();
+
+    // Check if user text provides phone number or contact info for affiliate registration
+    const hasPhone = /(01[0125]\d{8}|\+?\d{10,15})/.test(cleanText.replace(/\s+/g, ''));
+    const isAffiliateChat = cleanText.includes('أفلييت') || cleanText.includes('افلييت') || cleanText.includes('تسويق') || cleanText.includes('عمولة') || cleanText.includes('مسوق') || cleanText.includes('30%') || cleanText.includes('affiliate');
+
+    let extraActionBtn = '';
+    if (hasPhone || isAffiliateChat) {
+      const waMsg = isAr 
+        ? `مرحباً مهندس مصطفى صلاح، أود الانضمام لبرنامج التسويق بالعمولة (30%).\nبياناتي وتفاصيلي من الشات:\n${cleanText}`
+        : `Hello Eng. Mostafa Salah, I would like to join the 30% Affiliate Program.\nMy details:\n${cleanText}`;
+      extraActionBtn = `
+        <div class="mt-2.5 pt-2 border-t border-emerald-500/30">
+          <a href="https://wa.me/201107787049?text=${encodeURIComponent(waMsg)}" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-md transition-transform hover:scale-[1.02]">
+            <span>🚀</span>
+            <span>${isAr ? 'تأكيد التسجيل كمسوق على واتساب المهندس مصطفى' : 'Confirm Affiliate Registration on WhatsApp'}</span>
+          </a>
+        </div>
+      `;
+    }
 
     // Build Assistant Bubble HTML
     const assistantBubbleHtml = `
@@ -1429,12 +1591,13 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
             <span class="text-slate-500">${timeNow} ✓✓</span>
           </div>
           <div class="whitespace-pre-line text-xs">${escapeHtml(aiReply)}</div>
+          ${extraActionBtn}
           <div class="mt-2.5 pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
-            <a href="${window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee')}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-[10px] transition-transform hover:scale-105">
+            <a href="${window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee')}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-[10px] transition-colors border border-slate-700">
               <span>💬</span>
-              <span>${isAr ? 'تأكيد الحجز عبر واتساب' : 'Confirm on WhatsApp'}</span>
+              <span>${isAr ? 'واتساب م. مصطفى' : 'WhatsApp'}</span>
             </a>
-            <span class="text-[9px] font-mono text-slate-500">24/7 Live</span>
+            <span class="text-[9px] font-mono text-emerald-400">DeepSeek Live</span>
           </div>
         </div>
       </div>
@@ -1562,12 +1725,73 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
         window.simulateLiveInquiry();
       };
     }
+
+    // Affiliate Program Registration Form
+    const affForm = document.getElementById('affiliate-registration-form');
+    if (affForm) {
+      affForm.onsubmit = function (e) {
+        e.preventDefault();
+        const nameInput = document.getElementById('affiliate-name');
+        const phoneInput = document.getElementById('affiliate-phone');
+        const channelInput = document.getElementById('affiliate-channel');
+        const noteInput = document.getElementById('affiliate-note');
+
+        const name = (nameInput ? nameInput.value : '').trim();
+        const phone = (phoneInput ? phoneInput.value : '').trim();
+        const channel = (channelInput ? channelInput.value : '').trim();
+        const note = (noteInput ? noteInput.value : '').trim();
+
+        if (!name || !phone) {
+          window.showToast('يرجى إدخال الاسم ورقم الواتساب للتسجيل', 'warning');
+          return;
+        }
+
+        const msgText = `مرحباً مهندس مصطفى صلاح، أود التسجيل في برنامج التسويق بالعمولة (30%).
+الاسم: ${name}
+الهاتف / واتساب: ${phone}
+طريقة التسويق والخبرة: ${channel}
+${note ? 'ملاحظات: ' + note : ''}`;
+
+        // Save into chat session memory so Ahmed continues smoothly
+        chatHistory.push({ role: 'user', content: `أرغب بالانضمام كمسوق بالعمولة (30%). اسمي: ${name}، ورقمي: ${phone}، وطريقة تسويقي: ${channel}.` });
+        chatHistory.push({ role: 'assistant', content: `أهلاً بك يا ${name}! 🌟 تم تسجيل بياناتك في نظام التسويق بالعمولة 30% بنجاح. بياناتك جاهزة وجاري تحويلك لواتساب المهندس مصطفى صلاح (01107787049) لاستلام المواد التسويقية ونماذج العروض والبدء فوراً. وأنا في خدمتك هنا في أي وقت!` });
+        persistChatHistory();
+
+        window.showToast('تم تسجيل بياناتك بنجاح! جاري تحويلك للواتساب للتأكيد واستلام الحقيبة التسويقية 🚀', 'success');
+
+        const waUrl = `https://wa.me/201107787049?text=${encodeURIComponent(msgText)}`;
+        setTimeout(() => {
+          window.open(waUrl, '_blank');
+        }, 500);
+      };
+    }
   }
 
   // --- Global Event Delegation (Zero inline onclick for 100% strict CSP) ---
   document.addEventListener('click', function(e) {
     const target = e.target;
     if (!target) return;
+
+    // Affiliate Chat Openers
+    const affChatBtn = target.closest('#affiliate-open-chat-btn');
+    if (affChatBtn) {
+      e.preventDefault();
+      window.toggleAiCustomerServiceChat(true);
+      return;
+    }
+
+    const affAskBtn = target.closest('.affiliate-ask-btn');
+    if (affAskBtn) {
+      e.preventDefault();
+      const prompt = affAskBtn.getAttribute('data-prompt');
+      window.toggleAiCustomerServiceChat(true);
+      if (prompt) {
+        setTimeout(() => {
+          window.sendAiCustomerServiceMessage(prompt, 'floating');
+        }, 300);
+      }
+      return;
+    }
 
     // Theme Toggle
     const themeBtn = target.closest('#theme-toggle-btn, [data-action="toggle-theme"], .theme-toggle-btn');
