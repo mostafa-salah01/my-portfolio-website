@@ -2,7 +2,6 @@ import { defineConfig, Plugin } from 'vite';
 import { resolve } from 'path';
 import fs from 'fs';
 import tailwindcss from '@tailwindcss/vite';
-import { GoogleGenAI } from '@google/genai';
 
 function staticAssetsCopyPlugin(): Plugin {
   return {
@@ -199,68 +198,23 @@ function aiChatProxyPlugin(): Plugin {
           return;
         }
 
-        // 1. First priority: Google Gemini API via @google/genai
-        const geminiKey = process.env.GEMINI_API_KEY;
-        if (geminiKey && geminiKey !== 'MY_GEMINI_API_KEY') {
-          try {
-            const ai = new GoogleGenAI({
-              apiKey: geminiKey,
-              httpOptions: {
-                headers: {
-                  'User-Agent': 'aistudio-build',
-                }
-              }
-            });
-
-            const contents: any[] = [];
-            for (const h of history.slice(-6)) {
-              if (h.content) {
-                contents.push({
-                  role: h.role === 'assistant' ? 'model' : 'user',
-                  parts: [{ text: String(h.content) }]
-                });
-              }
-            }
-            contents.push({
-              role: 'user',
-              parts: [{ text: userMessage }]
-            });
-
-            const response = await ai.models.generateContent({
-              model: 'gemini-3.8-flash',
-              contents: contents,
-              config: {
-                systemInstruction: CUSTOMER_SERVICE_SYSTEM_PROMPT,
-                temperature: 0.7,
-              }
-            });
-
-            const reply = response.text;
-            if (reply) {
-              res.setHeader('Content-Type', 'application/json');
-              res.end(JSON.stringify({
-                success: true,
-                reply: reply,
-                source: 'gemini-3.8-flash'
-              }));
-              return;
-            }
-          } catch (geminiErr: any) {
-            console.warn('Gemini API invocation attempt:', geminiErr?.message || geminiErr);
-          }
-        }
-
-        // 2. Second priority: DeepSeek API if configured
+                // Primary & only AI provider: Direct DeepSeek API (OpenAI-compatible format).
+        // The API key is read securely from the server-side environment (.env) and
+        // is never exposed to the browser.
         const deepseekKey = process.env.DEEPSEEK_API_KEY;
         if (deepseekKey && deepseekKey !== 'YOUR_DEEPSEEK_API_KEY') {
           try {
+            // OpenAI / DeepSeek-compatible payload: messages: [{ role, content }]
             const messages = [
               { role: 'system', content: CUSTOMER_SERVICE_SYSTEM_PROMPT },
-              ...history.slice(-6),
+              ...history.slice(-20).map((h: any) => ({
+                role: h.role === 'assistant' ? 'assistant' : 'user',
+                content: String(h.content || '')
+              })),
               { role: 'user', content: userMessage }
             ];
 
-            const dsResponse = await fetch('https://api.deepseek.com/chat/completions', {
+            const dsResponse = await fetch('https://api.deepseek.com/v1/chat/completions', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -270,26 +224,30 @@ function aiChatProxyPlugin(): Plugin {
                 model: 'deepseek-chat',
                 messages: messages,
                 temperature: 0.7,
-                max_tokens: 450
+                max_tokens: 450,
+                stream: false
               })
             });
 
             const result: any = await dsResponse.json();
-            if (dsResponse.ok && result.choices && result.choices[0]) {
+            if (dsResponse.ok && result.choices && result.choices[0] && result.choices[0].message) {
               res.setHeader('Content-Type', 'application/json');
               res.end(JSON.stringify({
                 success: true,
                 reply: result.choices[0].message.content,
-                source: 'deepseek-api'
+                source: 'deepseek-chat'
               }));
               return;
             }
+            console.warn('DeepSeek API non-OK response:', dsResponse.status, result?.error?.message || result);
           } catch (dsErr: any) {
             console.warn('DeepSeek invocation attempt:', dsErr?.message || dsErr);
           }
+        } else {
+          console.warn('DEEPSEEK_API_KEY is not configured in the environment (.env).');
         }
 
-        // 3. Fallback: Intelligent Egyptian AI Customer Service Engine
+        // Fallback: Intelligent Egyptian AI Customer Service Engine
         const fallbackReply = generateLocalSmartResponse(userMessage);
         res.setHeader('Content-Type', 'application/json');
         res.end(JSON.stringify({
