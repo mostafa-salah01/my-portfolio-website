@@ -1,6 +1,6 @@
 {
   "name": "Mostafa Salah - Software Developer & Automation Engineer",
   "description": "Professional portfolio and interactive systems showcase for Mostafa Salah, Software Developer, Automation Engineer, and Backend Specialist.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+    "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_DEEPSEEK_API"]
 }
