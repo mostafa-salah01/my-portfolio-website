@@ -14,5 +14,7 @@
     "tailwindcss": "^4.3.3",
     "vite": "^8.3.0"
   },
-    "dependencies": {}
+  "dependencies": {
+    "@google/genai": "^2.24.0"
+  }
 }

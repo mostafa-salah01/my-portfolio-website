@@ -29,41 +29,6 @@
     }
   }
 
-  // --- Safe Session Storage Helpers (for chat memory that persists across page navigation) ---
-  function safeGetSession(key, fallback) {
-    try {
-      if (typeof window !== 'undefined' && window.sessionStorage) {
-        const val = window.sessionStorage.getItem(key);
-        return val !== null ? val : fallback;
-      }
-    } catch (e) {
-      // Session storage unavailable or blocked
-    }
-    return fallback;
-  }
-
-  function safeSetSession(key, value) {
-    try {
-      if (typeof window !== 'undefined' && window.sessionStorage) {
-        window.sessionStorage.setItem(key, value);
-      }
-    } catch (e) {
-      // Session storage blocked
-    }
-  }
-
-  function safeRemoveSession(key) {
-    try {
-      if (typeof window !== 'undefined' && window.sessionStorage) {
-        window.sessionStorage.removeItem(key);
-      }
-    } catch (e) {
-      // Session storage blocked
-    }
-  }
-
-  const CHAT_HISTORY_STORAGE_KEY = 'portfolio_chat_history';
-
   // --- State ---
   let currentLang = safeGetStorage('portfolio_lang', 'ar');
   let currentTheme = safeGetStorage('portfolio_theme', 'dark');
@@ -795,34 +760,7 @@
   };
 
   // --- Unified AI Customer Service & Sales Employee Engine (أحمد - خدمة العملاء) ---
-  // --- Chat Memory (Chat History) ---
-  // Rehydrate the conversation from sessionStorage so "Ahmed" keeps context
-  // across page navigation and page refreshes within the same browsing session.
-  function loadChatHistory() {
-    try {
-      const raw = safeGetSession(CHAT_HISTORY_STORAGE_KEY, '');
-      if (!raw) return [];
-      const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed)) {
-        return parsed.filter(function (m) {
-          return m && typeof m.content === 'string' && (m.role === 'user' || m.role === 'assistant');
-        });
-      }
-    } catch (e) {
-      // Corrupted history; start fresh
-    }
-    return [];
-  }
-
-  function persistChatHistory() {
-    try {
-      safeSetSession(CHAT_HISTORY_STORAGE_KEY, JSON.stringify(chatHistory));
-    } catch (e) {
-      // Storage blocked
-    }
-  }
-
-  let chatHistory = loadChatHistory();
+  let chatHistory = [];
   let isSendingAiMessage = false;
 
   function escapeHtml(str) {
@@ -1305,7 +1243,6 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
   window.clearAiCustomerServiceChat = function () {
     chatHistory = [];
-    safeRemoveSession(CHAT_HISTORY_STORAGE_KEY);
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
     const welcome = isAr 
       ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
@@ -1416,20 +1353,18 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     }
 
     chatHistory.push({ role: 'user', content: cleanText });
-    persistChatHistory();
 
-        let aiReply = null;
-    let replySource = 'deepseek-chat';
+    let aiReply = null;
+    let replySource = 'gemini-3.8-flash';
 
-    // 1. Primary: Send to server proxy (/api/deepseek-chat) which forwards the
-    // FULL conversation context (from sessionStorage) to the direct DeepSeek API.
+    // 1. Send to server proxy (/api/chat)
     try {
-      const response = await fetch('/api/deepseek-chat', {
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: cleanText,
-          history: chatHistory.map(function (m) { return { role: m.role, content: m.content }; })
+          history: chatHistory.slice(-6)
         })
       });
 
@@ -1437,29 +1372,29 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
         const data = await response.json();
         if (data && data.success && data.reply) {
           aiReply = data.reply;
-          replySource = data.source || 'deepseek-chat';
+          replySource = data.source || 'gemini-3.8-flash';
         }
       }
     } catch (err) {
       // Server error handled gracefully
     }
 
-    // 2. Secondary fallback to the unified /api/chat proxy if needed
+    // 2. Secondary fallback to /api/deepseek-chat if needed
     if (!aiReply) {
       try {
-        const dsResponse = await fetch('/api/chat', {
+        const dsResponse = await fetch('/api/deepseek-chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             message: cleanText,
-            history: chatHistory.map(function (m) { return { role: m.role, content: m.content }; })
+            history: chatHistory.slice(-6)
           })
         });
         if (dsResponse.ok) {
           const dsData = await dsResponse.json();
           if (dsData && dsData.success && dsData.reply) {
             aiReply = dsData.reply;
-            replySource = dsData.source || 'deepseek-chat';
+            replySource = dsData.source || 'deepseek-api';
           }
         }
       } catch (err) {
@@ -1481,7 +1416,6 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     }
 
     chatHistory.push({ role: 'assistant', content: aiReply });
-    persistChatHistory();
 
     // Build Assistant Bubble HTML
     const assistantBubbleHtml = `
