@@ -7,13 +7,53 @@ import { GoogleGenAI } from '@google/genai';
 function staticAssetsCopyPlugin(): Plugin {
   return {
     name: 'static-assets-copy',
+    transformIndexHtml(html) {
+      const deepseekKey = (process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || '').trim();
+      const isValidKey = deepseekKey && deepseekKey.length > 15 && !deepseekKey.includes('YOUR_DEEPSEEK');
+      if (isValidKey) {
+        return html.replace('<head>', `<head>\n  <script>window.DEEPSEEK_API_KEY = ${JSON.stringify(deepseekKey)}; window.__DEEPSEEK_API_KEY__ = window.DEEPSEEK_API_KEY;</script>`);
+      }
+      return html;
+    },
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url && (req.url === '/script.js' || req.url.startsWith('/script.js?'))) {
+          const filePath = resolve(import.meta.dirname, 'script.js');
+          if (fs.existsSync(filePath)) {
+            let content = fs.readFileSync(filePath, 'utf8');
+            const deepseekKey = (process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || '').trim();
+            const isValidKey = deepseekKey && deepseekKey.length > 15 && !deepseekKey.includes('YOUR_DEEPSEEK');
+            const keyToInject = isValidKey ? deepseekKey : '';
+            content = content.replace(/import\.meta\.env\.VITE_DEEPSEEK_API_KEY/g, JSON.stringify(keyToInject));
+            content = content.replace(/import\.meta\.env\.DEEPSEEK_API_KEY/g, JSON.stringify(keyToInject));
+            content = content.replace(/__INJECTED_DEEPSEEK_KEY__/g, keyToInject);
+            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+            res.end(content);
+            return;
+          }
+        }
+        next();
+      });
+    },
     closeBundle() {
-      const filesToCopy = ['script.js', 'theme-init.js', 'style.css'];
+      const deepseekKey = (process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || '').trim();
+      const isValidKey = deepseekKey && deepseekKey.length > 15 && !deepseekKey.includes('YOUR_DEEPSEEK');
+      const keyToInject = isValidKey ? deepseekKey : '';
+
+      const filesToCopy = ['script.js', 'theme-init.js', 'style.css', 'CNAME', 'sitemap.xml', 'google7da3f41b1c6a9b4a.html', 'robots.txt'];
       for (const file of filesToCopy) {
         const src = resolve(import.meta.dirname, file);
         const dest = resolve(import.meta.dirname, 'dist', file);
         if (fs.existsSync(src)) {
-          fs.copyFileSync(src, dest);
+          if (file === 'script.js') {
+            let content = fs.readFileSync(src, 'utf8');
+            content = content.replace(/__INJECTED_DEEPSEEK_KEY__/g, keyToInject);
+            content = content.replace(/import\.meta\.env\.VITE_DEEPSEEK_API_KEY/g, JSON.stringify(keyToInject));
+            content = content.replace(/import\.meta\.env\.DEEPSEEK_API_KEY/g, JSON.stringify(keyToInject));
+            fs.writeFileSync(dest, content, 'utf8');
+          } else {
+            fs.copyFileSync(src, dest);
+          }
         }
       }
     }
@@ -242,7 +282,7 @@ function aiChatProxyPlugin(): Plugin {
         }
 
         // 1. First priority: DeepSeek API directly via DEEPSEEK_API_KEY (if a valid non-placeholder key is provided)
-        const deepseekKey = (process.env.DEEPSEEK_API_KEY || '').trim();
+        const deepseekKey = (process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || '').trim();
         const isPlaceholderDeepseek = !deepseekKey || 
           deepseekKey === 'YOUR_DEEPSEEK_API_KEY' || 
           deepseekKey === 'YOUR_DEEPSEEK_API_KEY_HERE' || 
@@ -386,6 +426,14 @@ function aiChatProxyPlugin(): Plugin {
 
 export default defineConfig(() => {
   return {
+    define: {
+      'import.meta.env.VITE_DEEPSEEK_API_KEY': JSON.stringify(process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || ''),
+      'import.meta.env.DEEPSEEK_API_KEY': JSON.stringify(process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || ''),
+      'DEEPSEEK_API_KEY': JSON.stringify(process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || ''),
+      'process.env.DEEPSEEK_API_KEY': JSON.stringify(process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || ''),
+      'process.env.VITE_DEEPSEEK_API_KEY': JSON.stringify(process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || ''),
+      '__DEEPSEEK_API_KEY__': JSON.stringify(process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || ''),
+    },
     plugins: [
       tailwindcss(),
       staticAssetsCopyPlugin(),

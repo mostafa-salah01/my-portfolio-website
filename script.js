@@ -763,6 +763,102 @@
   const CHAT_STORAGE_KEY = 'mostafa_salah_chat_history_v2';
   let chatHistory = [];
   let isSendingAiMessage = false;
+
+  const CUSTOMER_SERVICE_SYSTEM_PROMPT_CLIENT = `أنت موظف خدمة عملاء ودعم ومبيعات حقيقي وبشري 100% لموقع المهندس مصطفى صلاح (Eng. Mostafa Salah).
+اسمك "أحمد" من فريق خدمة العملاء والمبيعات للمهندس مصطفى صلاح.
+
+تنبيه حاسم وإلزامي:
+هذا الموقع هو موقع شخصي ومهني تعريفي خاص بالمهندس مصطفى صلاح (مطور برمجيات ومهندس أتمتة وبناء أنظمة ذكية).
+ممنوع نهائياً ومطلقاً ذكر كلمة أو اسم "صلاح لوجيستيكس" أو "صلاح لوجيستيك" أو "Salah Logistics" في أي جملة أو رد أو ترحيب على الإطلاق!
+أنت تمثل شخص وخدمات المهندس مصطفى صلاح وفريقه التقني فقط لا غير.
+
+شخصيتك وأسلوبك الحقيقي ومحرك المبيعات (Persona & Sales Engine):
+1. أنت إنسان وبشري تماماً، ودود، محترم، لبق، راقي، وذكي. لست آلياً أو روبوتياً على الإطلاق، وتتجنب تماماً التكلف أو الإجابات الجامدة والمصطنعة.
+2. اللهجة الأساسية: مصرية راقية ومهذبة تناسب بيئة الأعمال والشركات (مثل: "أهلاً بحضرتك يا فندم"، "تمام يا فندم تحت أمرك"، "من عيوني"، "حاضر يا غالي"، "بص يا فندم...").
+3. ثنائي اللغة واحترافية المصطلحات (Code-Switching): أنت شخص مصري دارس وفاهم إنجليزي كويس جداً. إذا العميل كتب بالعربي ومدخل كلام إنجليزي أو مصطلحات تقنية (مثل: domain, hosting, SSL, system, dashboard, package, features, setup, backend, API, webhook, renewal, affiliate, commission)، تفهمه تماماً وترد عليه بلهجة مصرية ذكية مع استخدام المصطلحات الإنجليزية بعفوية وطبيعية.
+4. التكيف التلقائي مع جميع اللغات (إنجليزي، فرانكو، عربي فصحى، لهجة خليجية، فرنسي، إلخ).
+
+دورك في التعريف بالخدمات وشرح البرمجيات:
+اشرح خدمات وأنظمة وحلول المهندس مصطفى صلاح بأسلوب بشري وسلس وجذاب.
+قاعدة بيانات الخدمات الرسمية:
+1. باقة تصميم الموقع التعريفي الاحترافي للشركات (Corporate Website Package):
+   - السعر: 65 دولار فقط للسنة الأولى مع دومين رسمي .uk شامل، أو 75 دولار فقط للسنة الأولى مع دومين رسمي .com شامل.
+   - اللغتان (العربية والإنجليزية معاً) مشمولتان في السعر مجاناً.
+   - استضافة سحابية سريعة SSD + شهادة أمان SSL مجانية للسنة الأولى.
+   - تجديد سنوي ثابت ومضمون: 40 دولار فقط سنوياً.
+2. موظف الذكاء الاصطناعي البشري (WhatsApp & Telegram AI Employee):
+   - ردود فورية مقنعة 24/7، توليد عروض أسعار رسمية PDF، إرسال الكتالوجات داخل الشات، وربط بقواعد البيانات ونظام n8n.
+3. سيستم الشحن واللوجستيات (Smart Shipping & Courier Management):
+   - إصدار بوالص الشحن PDF مع باركود وQR، تتبع المناديب لحظياً، وتسوية تحصيل الـ COD.
+4. تطبيقات الموبايل والمتاجر والأنظمة المخصصة (سوبرماركت، صيدليات، ERP، متاجر إلكترونية).
+5. أتمتة مسارات العمل n8n وهندسة الـ APIs والباك إند السحابي.
+
+دورك في نظام الأفلييت والتسويق بالعمولة (Affiliate Program & Marketer Onboarding):
+1. إذا سأل المستخدم عن كيفية العمل معنا، أو التسويق لخدماتنا، أو الربح بالعمولة، أو برنامج الأفلييت:
+   - رحب به بحفاوة وشغف واشرح له نظام الأفلييت والشراكة (عمولة فورية 30% كاش عن كل تعاقد).
+   - موقع شركات تعريفي (75$): عمولتك فوراً 22.5$ كاش.
+   - سيستم شحن أو إدارة شركات (مثلاً 500$): عمولتك فوراً 150$ كاش.
+   - تطبيقات موبايل أو مشاريع مخصصة (مثلاً 1000$): عمولتك فوراً 300$ كاش.
+   - الدفع فوري بمجرد تعاقد العميل عبر إنستاباي أو فودافون كاش أو تحويل بنكي.
+2. اطلب بلطف الاسم ورقم الهاتف/واتساب وسجل بياناته فوراً واعرض رابط التواصل المباشر مع المهندس مصطفى صلاح (+201107787049).`;
+
+  function getDeepSeekClientKey() {
+    let key = '';
+
+    // 1. Direct read from import.meta.env.VITE_DEEPSEEK_API_KEY
+    try {
+      const viteKey = import.meta.env.VITE_DEEPSEEK_API_KEY;
+      if (viteKey && typeof viteKey === 'string' && viteKey.length > 15 && !viteKey.includes('YOUR_DEEPSEEK')) {
+        key = viteKey.trim();
+      }
+    } catch (e) {}
+
+    // 2. Direct read from DEEPSEEK_API_KEY (direct environment variable or build injection)
+    if (!key) {
+      try {
+        const directKey = typeof DEEPSEEK_API_KEY !== 'undefined' ? DEEPSEEK_API_KEY : '';
+        if (directKey && typeof directKey === 'string' && directKey.length > 15 && !directKey.includes('YOUR_DEEPSEEK')) {
+          key = directKey.trim();
+        }
+      } catch (e) {}
+    }
+
+    // 3. Direct read from process.env.DEEPSEEK_API_KEY
+    if (!key) {
+      try {
+        if (typeof process !== 'undefined' && process && process.env) {
+          if (process.env.DEEPSEEK_API_KEY && process.env.DEEPSEEK_API_KEY.length > 15 && !process.env.DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
+            key = String(process.env.DEEPSEEK_API_KEY).trim();
+          } else if (process.env.VITE_DEEPSEEK_API_KEY && process.env.VITE_DEEPSEEK_API_KEY.length > 15 && !process.env.VITE_DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
+            key = String(process.env.VITE_DEEPSEEK_API_KEY).trim();
+          }
+        }
+      } catch (e) {}
+    }
+
+    // 4. Direct read from window.DEEPSEEK_API_KEY or window.__DEEPSEEK_API_KEY__
+    if (!key) {
+      try {
+        if (typeof window !== 'undefined') {
+          if (window.DEEPSEEK_API_KEY && window.DEEPSEEK_API_KEY.length > 15 && !window.DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
+            key = String(window.DEEPSEEK_API_KEY).trim();
+          } else if (window.__DEEPSEEK_API_KEY__ && window.__DEEPSEEK_API_KEY__.length > 15 && !window.__DEEPSEEK_API_KEY__.includes('YOUR_DEEPSEEK')) {
+            key = String(window.__DEEPSEEK_API_KEY__).trim();
+          }
+        }
+      } catch (e) {}
+    }
+
+    // 5. Injected build-time key placeholder
+    if (!key || key.length < 15 || key.includes('YOUR_DEEPSEEK') || key.includes('__INJECTED_')) {
+      const injectedKey = '__INJECTED_DEEPSEEK_KEY__';
+      if (injectedKey && injectedKey.length > 15 && !injectedKey.includes('YOUR_DEEPSEEK') && !injectedKey.includes('__INJECTED_')) {
+        key = injectedKey;
+      }
+    }
+
+    return key;
+  }
   try {
     const saved = sessionStorage.getItem(CHAT_STORAGE_KEY);
     if (saved) {
@@ -1519,29 +1615,136 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
       let aiReply = null;
       let replySource = 'smart-ai';
 
-      // 1. Send to server proxy (/api/chat) which prioritizes connected models
-      try {
-        const response = await fetch('/api/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            message: cleanText,
-            history: chatHistory.slice(-10)
-          })
-        });
+      const directKey = getDeepSeekClientKey();
+      const isStaticSite = typeof window !== 'undefined' && (
+        window.location.hostname.includes('github.io') ||
+        window.location.hostname.includes('salah-logistics.uk') ||
+        window.location.protocol === 'file:'
+      );
 
-        if (response.ok) {
-          const data = await response.json();
-          if (data && data.success && data.reply) {
-            aiReply = data.reply;
-            replySource = data.source || 'ai-engine';
+      // 1. Direct DeepSeek API call if on static production site (GitHub Pages / custom domain)
+      if (isStaticSite && directKey && directKey.length > 15) {
+        try {
+          const formattedHistory = chatHistory.slice(-8).map(h => ({
+            role: h.role === 'assistant' ? 'assistant' : 'user',
+            content: String(h.content || '')
+          }));
+
+          const messages = [
+            { role: 'system', content: CUSTOMER_SERVICE_SYSTEM_PROMPT_CLIENT },
+            ...formattedHistory,
+            { role: 'user', content: cleanText }
+          ];
+
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 14000);
+
+          const dsResponse = await fetch('https://api.deepseek.com/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${directKey}`
+            },
+            body: JSON.stringify({
+              model: 'deepseek-chat',
+              messages: messages,
+              temperature: 0.7,
+              max_tokens: 800
+            }),
+            signal: controller.signal
+          });
+          clearTimeout(timeoutId);
+
+          if (dsResponse.ok) {
+            const dsData = await dsResponse.json();
+            if (dsData && dsData.choices && dsData.choices[0] && dsData.choices[0].message) {
+              const textReply = dsData.choices[0].message.content;
+              if (textReply) {
+                aiReply = textReply;
+                replySource = 'deepseek-chat';
+              }
+            }
           }
+        } catch (err) {
+          console.warn('Static direct DeepSeek call error:', err);
         }
-      } catch (err) {
-        // Handled gracefully below
       }
 
-      // 2. Secondary fallback to /api/deepseek-chat or /api/ai-customer-service if needed
+      // 2. Send to server proxy (/api/chat) for local/preview environments
+      if (!aiReply) {
+        try {
+          const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              message: cleanText,
+              history: chatHistory.slice(-10)
+            })
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            if (data && data.success && data.reply) {
+              aiReply = data.reply;
+              replySource = data.source || 'ai-engine';
+            }
+          }
+        } catch (err) {
+          // Handled gracefully below
+        }
+      }
+
+      // 3. Direct DeepSeek API call fallback if server proxy failed and key is available
+      if (!aiReply && directKey && directKey.length > 15) {
+        try {
+          const formattedHistory = chatHistory.slice(-8).map(h => ({
+            role: h.role === 'assistant' ? 'assistant' : 'user',
+            content: String(h.content || '')
+          }));
+
+          const messages = [
+            { role: 'system', content: CUSTOMER_SERVICE_SYSTEM_PROMPT_CLIENT },
+            ...formattedHistory,
+            { role: 'user', content: cleanText }
+          ];
+
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 14000);
+
+          const dsResponse = await fetch('https://api.deepseek.com/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${directKey}`
+            },
+            body: JSON.stringify({
+              model: 'deepseek-chat',
+              messages: messages,
+              temperature: 0.7,
+              max_tokens: 800
+            }),
+            signal: controller.signal
+          });
+          clearTimeout(timeoutId);
+
+          if (dsResponse.ok) {
+            const dsData = await dsResponse.json();
+            if (dsData && dsData.choices && dsData.choices[0] && dsData.choices[0].message) {
+              const textReply = dsData.choices[0].message.content;
+              if (textReply) {
+                aiReply = textReply;
+                replySource = 'deepseek-chat';
+              }
+            }
+          } else {
+            console.warn('Direct DeepSeek responded with HTTP error:', dsResponse.status);
+          }
+        } catch (directDsErr) {
+          console.warn('Direct client DeepSeek call attempt failed:', directDsErr);
+        }
+      }
+
+      // 3. Secondary fallback to /api/ai-customer-service or /api/deepseek-chat if available
       if (!aiReply) {
         try {
           const altResponse = await fetch('/api/ai-customer-service', {
