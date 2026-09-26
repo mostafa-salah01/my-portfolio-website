@@ -805,20 +805,52 @@
   function getDeepSeekClientKey() {
     let key = '';
 
-    // 1. Direct read from window.DEEPSEEK_API_KEY or window.VITE_DEEPSEEK_API_KEY (injected by Vite / GitHub Secrets)
+    // 1. Direct read from localStorage (persistent in browser session/domain)
     try {
-      if (typeof window !== 'undefined') {
-        if (window.DEEPSEEK_API_KEY && typeof window.DEEPSEEK_API_KEY === 'string' && window.DEEPSEEK_API_KEY.length > 15 && !window.DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
-          key = window.DEEPSEEK_API_KEY.trim();
-        } else if (window.VITE_DEEPSEEK_API_KEY && typeof window.VITE_DEEPSEEK_API_KEY === 'string' && window.VITE_DEEPSEEK_API_KEY.length > 15 && !window.VITE_DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
-          key = window.VITE_DEEPSEEK_API_KEY.trim();
-        } else if (window.__DEEPSEEK_API_KEY__ && typeof window.__DEEPSEEK_API_KEY__ === 'string' && window.__DEEPSEEK_API_KEY__.length > 15 && !window.__DEEPSEEK_API_KEY__.includes('YOUR_DEEPSEEK')) {
-          key = window.__DEEPSEEK_API_KEY__.trim();
+      if (typeof localStorage !== 'undefined') {
+        const storedKey = localStorage.getItem('DEEPSEEK_API_KEY') || 
+                          localStorage.getItem('VITE_DEEPSEEK_API_KEY') || 
+                          localStorage.getItem('deepseek_key');
+        if (storedKey && typeof storedKey === 'string' && storedKey.trim().length > 15 && !storedKey.includes('YOUR_DEEPSEEK')) {
+          key = storedKey.trim();
         }
       }
     } catch (e) {}
 
-    // 2. Direct read from process.env (Node / Vite replacement)
+    // 2. Direct read from URL query parameters (e.g. https://salah-logistics.uk/?key=sk-...)
+    if (!key) {
+      try {
+        if (typeof window !== 'undefined' && window.location && window.location.search) {
+          const params = new URLSearchParams(window.location.search);
+          const urlKey = params.get('key') || params.get('deepseek_key') || params.get('DEEPSEEK_API_KEY');
+          if (urlKey && urlKey.trim().length > 15 && !urlKey.includes('YOUR_DEEPSEEK')) {
+            key = urlKey.trim();
+            try {
+              localStorage.setItem('DEEPSEEK_API_KEY', key);
+              const cleanUrl = window.location.pathname + window.location.hash;
+              window.history.replaceState({}, document.title, cleanUrl);
+            } catch (err) {}
+          }
+        }
+      } catch (e) {}
+    }
+
+    // 3. Direct read from window.DEEPSEEK_API_KEY or window.VITE_DEEPSEEK_API_KEY (injected by Vite / GitHub Secrets)
+    if (!key) {
+      try {
+        if (typeof window !== 'undefined') {
+          if (window.DEEPSEEK_API_KEY && typeof window.DEEPSEEK_API_KEY === 'string' && window.DEEPSEEK_API_KEY.length > 15 && !window.DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
+            key = window.DEEPSEEK_API_KEY.trim();
+          } else if (window.VITE_DEEPSEEK_API_KEY && typeof window.VITE_DEEPSEEK_API_KEY === 'string' && window.VITE_DEEPSEEK_API_KEY.length > 15 && !window.VITE_DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
+            key = window.VITE_DEEPSEEK_API_KEY.trim();
+          } else if (window.__DEEPSEEK_API_KEY__ && typeof window.__DEEPSEEK_API_KEY__ === 'string' && window.__DEEPSEEK_API_KEY__.length > 15 && !window.__DEEPSEEK_API_KEY__.includes('YOUR_DEEPSEEK')) {
+            key = window.__DEEPSEEK_API_KEY__.trim();
+          }
+        }
+      } catch (e) {}
+    }
+
+    // 4. Direct read from process.env (Node / Vite replacement)
     if (!key) {
       try {
         if (typeof process !== 'undefined' && process && process.env) {
@@ -831,7 +863,7 @@
       } catch (e) {}
     }
 
-    // 3. Injected build-time key placeholder
+    // 5. Injected build-time key placeholder
     if (!key || key.length < 15 || key.includes('YOUR_DEEPSEEK') || key.includes('__INJECTED_')) {
       const injectedKey = '__INJECTED_DEEPSEEK_KEY__';
       if (injectedKey && injectedKey.length > 15 && !injectedKey.includes('YOUR_DEEPSEEK') && !injectedKey.includes('__INJECTED_')) {
@@ -1101,6 +1133,9 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
             </div>
           </div>
           <div class="flex items-center gap-1.5">
+            <button type="button" id="floating-cs-key-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-800 text-xs font-mono transition-colors" title="${isAr ? 'ربط وإعداد مفتاح DeepSeek الذكي' : 'DeepSeek API Key Settings'}">
+              🔑
+            </button>
             <button type="button" id="floating-cs-clear-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 text-xs font-mono transition-colors" title="${isAr ? 'مسح المحادثة' : 'Clear Chat'}">
               🗑️
             </button>
@@ -1591,6 +1626,39 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
         simTyping.classList.add('flex');
       }
 
+      // Detect if user sent a DeepSeek API key directly in chat
+      const trimmedInput = cleanText.trim();
+      const isDirectKeyInput = (trimmedInput.startsWith('sk-') && trimmedInput.length > 20) ||
+                              (trimmedInput.toLowerCase().startsWith('/key ') && trimmedInput.length > 25) ||
+                              (trimmedInput.startsWith('مفتاح ') && trimmedInput.length > 25) ||
+                              (trimmedInput.startsWith('المفتاح: ') && trimmedInput.length > 25);
+
+      if (isDirectKeyInput) {
+        let keyToStore = trimmedInput;
+        if (keyToStore.toLowerCase().startsWith('/key ')) keyToStore = keyToStore.slice(5).trim();
+        if (keyToStore.startsWith('مفتاح ')) keyToStore = keyToStore.slice(6).trim();
+        if (keyToStore.startsWith('المفتاح: ')) keyToStore = keyToStore.slice(8).trim();
+
+        if (keyToStore.startsWith('sk-') && keyToStore.length > 20) {
+          try {
+            localStorage.setItem('DEEPSEEK_API_KEY', keyToStore);
+            window.DEEPSEEK_API_KEY = keyToStore;
+          } catch(e) {}
+
+          const keySuccessReply = isAr
+            ? `تم حفظ وتفعيل مفتاح DeepSeek بنجاح يا فندم! 🚀✨\nالموديل الذكي المفكر (DeepSeek) متصل وشغال الآن 100%. كل استفساراتك القادمة سيتم الرد عليها بشكل حي ومباشر بالذكاء الاصطناعي.`
+            : `DeepSeek API Key has been saved and activated successfully! 🚀 Every upcoming question will be processed directly by DeepSeek AI.`;
+          
+          setTimeout(() => {
+            if (floatTyping) floatTyping.classList.add('hidden');
+            if (simTyping) simTyping.classList.add('hidden');
+            appendAiBubble(keySuccessReply, 'deepseek-chat');
+            isSendingAiMessage = false;
+          }, 300);
+          return;
+        }
+      }
+
       chatHistory.push({ role: 'user', content: cleanText });
       persistChatHistory();
 
@@ -1604,8 +1672,9 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
         window.location.protocol === 'file:'
       );
 
-      // 1. Direct DeepSeek API call if on static production site (GitHub Pages / custom domain)
-      if (isStaticSite && directKey && directKey.length > 15) {
+      // Helper function to call DeepSeek API
+      async function requestDeepSeek(key) {
+        if (!key || key.length < 15) return null;
         try {
           const formattedHistory = chatHistory.slice(-8).map(h => ({
             role: h.role === 'assistant' ? 'assistant' : 'user',
@@ -1619,19 +1688,19 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
           ];
 
           const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 14000);
+          const timeoutId = setTimeout(() => controller.abort(), 18000);
 
           const dsResponse = await fetch('https://api.deepseek.com/chat/completions', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${directKey}`
+              'Authorization': `Bearer ${key}`
             },
             body: JSON.stringify({
               model: 'deepseek-chat',
               messages: messages,
               temperature: 0.7,
-              max_tokens: 800
+              max_tokens: 1000
             }),
             signal: controller.signal
           });
@@ -1640,15 +1709,31 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
           if (dsResponse.ok) {
             const dsData = await dsResponse.json();
             if (dsData && dsData.choices && dsData.choices[0] && dsData.choices[0].message) {
-              const textReply = dsData.choices[0].message.content;
-              if (textReply) {
-                aiReply = textReply;
-                replySource = 'deepseek-chat';
-              }
+              return { success: true, reply: dsData.choices[0].message.content };
+            }
+          } else {
+            const errBody = await dsResponse.text().catch(() => '');
+            console.warn('DeepSeek HTTP Error:', dsResponse.status, errBody);
+            if (dsResponse.status === 401) {
+              return { success: false, reply: 'عذراً يا فندم، مفتاح DeepSeek غير صالح أو تم إلغاؤه (خطأ 401 Unauthorized). يرجى الضغط على أيقونة 🔑 بأعلى الشات لإدخال مفتاح جديد وسليم.' };
+            } else if (dsResponse.status === 402) {
+              return { success: false, reply: 'عذراً يا فندم، رصيد حسابك في منصة DeepSeek غير كافٍ أو انتهى (خطأ 402 Insufficient Balance). يرجى شحن الرصيد في منصة DeepSeek ليعود الموديل للرد التفاعلي.' };
+            } else if (dsResponse.status === 429) {
+              return { success: false, reply: 'عذراً يا فندم، تم تجاوز معدل الطلبات المسموح به حالياً على منصة DeepSeek (خطأ 429 Rate Limit). يرجى الانتظار بضع ثوانٍ والمحاولة ثانية.' };
             }
           }
         } catch (err) {
-          console.warn('Static direct DeepSeek call error:', err);
+          console.warn('Direct DeepSeek call network exception:', err);
+        }
+        return null;
+      }
+
+      // 1. Direct DeepSeek API call if on static production site (GitHub Pages / custom domain)
+      if (isStaticSite && directKey && directKey.length > 15) {
+        const dsResult = await requestDeepSeek(directKey);
+        if (dsResult && dsResult.reply) {
+          aiReply = dsResult.reply;
+          replySource = 'deepseek-chat';
         }
       }
 
@@ -1678,55 +1763,14 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
       // 3. Direct DeepSeek API call fallback if server proxy failed and key is available
       if (!aiReply && directKey && directKey.length > 15) {
-        try {
-          const formattedHistory = chatHistory.slice(-8).map(h => ({
-            role: h.role === 'assistant' ? 'assistant' : 'user',
-            content: String(h.content || '')
-          }));
-
-          const messages = [
-            { role: 'system', content: CUSTOMER_SERVICE_SYSTEM_PROMPT_CLIENT },
-            ...formattedHistory,
-            { role: 'user', content: cleanText }
-          ];
-
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 14000);
-
-          const dsResponse = await fetch('https://api.deepseek.com/chat/completions', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${directKey}`
-            },
-            body: JSON.stringify({
-              model: 'deepseek-chat',
-              messages: messages,
-              temperature: 0.7,
-              max_tokens: 800
-            }),
-            signal: controller.signal
-          });
-          clearTimeout(timeoutId);
-
-          if (dsResponse.ok) {
-            const dsData = await dsResponse.json();
-            if (dsData && dsData.choices && dsData.choices[0] && dsData.choices[0].message) {
-              const textReply = dsData.choices[0].message.content;
-              if (textReply) {
-                aiReply = textReply;
-                replySource = 'deepseek-chat';
-              }
-            }
-          } else {
-            console.warn('Direct DeepSeek responded with HTTP error:', dsResponse.status);
-          }
-        } catch (directDsErr) {
-          console.warn('Direct client DeepSeek call attempt failed:', directDsErr);
+        const dsResult = await requestDeepSeek(directKey);
+        if (dsResult && dsResult.reply) {
+          aiReply = dsResult.reply;
+          replySource = 'deepseek-chat';
         }
       }
 
-      // 3. Secondary fallback to /api/ai-customer-service or /api/deepseek-chat if available
+      // 4. Secondary fallback to /api/ai-customer-service or /api/deepseek-chat if available
       if (!aiReply) {
         try {
           const altResponse = await fetch('/api/ai-customer-service', {
@@ -1749,10 +1793,14 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
         }
       }
 
-      // 3. Built-in intelligent Egyptian customer service fallback
+      // 5. Built-in intelligent Egyptian customer service fallback
       if (!aiReply) {
         aiReply = generateMostafaSalahAiResponse(cleanText, isAr ? 'ar' : 'en');
         replySource = 'egyptian-customer-service-engine';
+
+        if (isStaticSite && !directKey) {
+          aiReply += '\n\n💡 ملاحظة: لتفعيل ردود موديل DeepSeek الذكي المفكر، يمكنك الضغط على أيقونة 🔑 بأعلى الشات لإدخال المفتاح مرة واحدة فقط.';
+        }
       }
 
       // Hide typing indicators
@@ -2018,6 +2066,48 @@ ${note ? 'ملاحظات: ' + note : ''}`;
     if (floatLauncher) {
       e.preventDefault();
       window.toggleAiCustomerServiceChat();
+      return;
+    }
+
+    // Floating Chat DeepSeek Key Button Click
+    const floatKeyBtn = target.closest('#floating-cs-key-btn');
+    if (floatKeyBtn) {
+      e.preventDefault();
+      const currentKey = getDeepSeekClientKey();
+      const maskedKey = (currentKey && currentKey.length > 8) 
+        ? currentKey.slice(0, 6) + '...' + currentKey.slice(-4) 
+        : '';
+      
+      const promptMsg = isAr
+        ? (maskedKey 
+            ? `مفتاح DeepSeek الحالي: (${maskedKey})\n\nلإدخال مفتاح جديد أو تحديث المفتاح، الصقه هنا (يبدأ بـ sk-...):`
+            : 'أدخل مفتاح DeepSeek API الخاص بك (يبدأ بـ sk-...) لتفعيل ردود الذكاء الاصطناعي المفكر فوراً وبشكل دائم:')
+        : 'Enter your DeepSeek API key (starts with sk-...) to activate live AI reasoning:';
+
+      const enteredKey = window.prompt(promptMsg, currentKey || '');
+      if (enteredKey !== null) {
+        const clean = enteredKey.trim();
+        if (clean.startsWith('sk-') && clean.length > 20) {
+          try {
+            localStorage.setItem('DEEPSEEK_API_KEY', clean);
+            window.DEEPSEEK_API_KEY = clean;
+          } catch(err) {}
+          window.showToast(isAr ? 'تم حفظ وتفعيل مفتاح DeepSeek بنجاح! 🚀 الموديل متصل الآن' : 'DeepSeek Key activated successfully! 🚀', 'success');
+          
+          const statusEl = document.getElementById('cs-agent-status');
+          if (statusEl) {
+            statusEl.innerHTML = `<span class="text-emerald-400">● DeepSeek AI متصل ونشط 🧠</span>`;
+          }
+        } else if (clean === '') {
+          try {
+            localStorage.removeItem('DEEPSEEK_API_KEY');
+            delete window.DEEPSEEK_API_KEY;
+          } catch(err) {}
+          window.showToast(isAr ? 'تم مسح المفتاح المخزن' : 'Key removed', 'info');
+        } else {
+          window.showToast(isAr ? 'المفتاح غير صحيح (يجب أن يبدأ بـ sk-)' : 'Invalid key (must start with sk-)', 'warning');
+        }
+      }
       return;
     }
 
