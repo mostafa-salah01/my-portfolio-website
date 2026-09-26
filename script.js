@@ -630,6 +630,21 @@
     document.body.style.overflow = '';
   };
 
+  // --- Affiliate Market Modal (برنامج شركاء النجاح والمسوقين) ---
+  window.openAffiliateModal = function () {
+    const modal = document.getElementById('affiliate-market-modal');
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeAffiliateModal = function () {
+    const modal = document.getElementById('affiliate-market-modal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
   // --- Interactive Architecture Tabs ---
   window.selectArchitectureTab = function (tabId) {
     document.querySelectorAll('.arch-tab-btn').forEach(btn => {
@@ -2394,7 +2409,14 @@ ${note ? 'ملاحظات: ' + note : ''}`;
     const affChatBtn = target.closest('#affiliate-open-chat-btn');
     if (affChatBtn) {
       e.preventDefault();
+      if (window.closeAffiliateModal) window.closeAffiliateModal();
       window.toggleAiCustomerServiceChat(true);
+      const prompt = 'عايز أعرف تفاصيل نظام Affiliate Market والـ 30% عمولة وإزاي أبدأ معاكم كمسوق؟';
+      setTimeout(() => {
+        if (window.sendAiCustomerServiceMessage) {
+          window.sendAiCustomerServiceMessage(prompt, 'floating');
+        }
+      }, 350);
       return;
     }
 
@@ -2408,6 +2430,25 @@ ${note ? 'ملاحظات: ' + note : ''}`;
           window.sendAiCustomerServiceMessage(prompt, 'floating');
         }, 300);
       }
+      return;
+    }
+
+    // Affiliate Market Modal Open
+    const openAffiliateTrigger = target.closest('[data-action="open-affiliate-modal"]');
+    if (openAffiliateTrigger) {
+      e.preventDefault();
+      if (window.openAffiliateModal) window.openAffiliateModal();
+      return;
+    }
+
+    // Affiliate Market Modal Close
+    const closeAffiliateTrigger = target.closest('[data-action="close-affiliate-modal"]');
+    if (closeAffiliateTrigger) {
+      if (target.closest('[data-stop-propagation="true"]') && !target.closest('button[data-action="close-affiliate-modal"]')) {
+        return;
+      }
+      e.preventDefault();
+      if (window.closeAffiliateModal) window.closeAffiliateModal();
       return;
     }
 
@@ -2558,6 +2599,7 @@ ${note ? 'ملاحظات: ' + note : ''}`;
     if (e.key === 'Escape') {
       window.closeLightbox();
       window.closeProjectDetails();
+      if (window.closeAffiliateModal) window.closeAffiliateModal();
     }
   });
 
@@ -2573,6 +2615,13 @@ ${note ? 'ملاحظات: ' + note : ''}`;
     window.setTheme(currentTheme);
     attachDirectListeners();
     mountFloatingAiCustomerServiceWidget();
+
+    // Check hash for affiliate market modal on-demand
+    if (typeof window !== 'undefined' && window.location && (window.location.hash === '#affiliate' || window.location.hash === '#affiliate-market')) {
+      setTimeout(() => {
+        if (window.openAffiliateModal) window.openAffiliateModal();
+      }, 300);
+    }
   }
 
   if (document.readyState === 'loading') {

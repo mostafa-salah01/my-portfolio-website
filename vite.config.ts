@@ -483,6 +483,7 @@ export default defineConfig(() => {
           mobileRetailApps: resolve(import.meta.dirname, 'mobile-retail-apps.html'),
           omnichannelAiAgent: resolve(import.meta.dirname, 'omnichannel-ai-agent.html'),
           backendApiArchitecture: resolve(import.meta.dirname, 'backend-api-architecture.html'),
+          affiliateMarket: resolve(import.meta.dirname, 'affiliate-market.html'),
           privacy: resolve(import.meta.dirname, 'privacy.html'),
           privacyPolicy: resolve(import.meta.dirname, 'privacy-policy.html'),
           terms: resolve(import.meta.dirname, 'terms.html'),
