@@ -772,6 +772,20 @@
 ممنوع نهائياً ومطلقاً ذكر كلمة أو اسم "صلاح لوجيستيكس" أو "صلاح لوجيستيك" أو "Salah Logistics" في أي جملة أو رد أو ترحيب على الإطلاق!
 أنت تمثل شخص وخدمات المهندس مصطفى صلاح وفريقه التقني فقط لا غير.
 
+قواعد التنسيق البصري وترتيب الردود (إلزامي وحاسم جداً لسهولة القراءة والراحة البصرية):
+1. ممنوع نهائياً إرسال نصوص مكدسة أو كتل كلام صماء متداخلة ببعضها!
+2. التباعد والتنظيم: اترك دائماً سطراً فارغاً بين كل فكرة وأخرى، واجعل كل فقرة قصيرة ومريحة للنظر (2-3 أسطر كحد أقصى).
+3. عند استعراض الخدمات أو الباقات:
+   - افصل كل خدمة في نقطة مرقمة واضحة ومستقلة: (1. ، 2. ، 3. ...)
+   - ابدأ كل خدمة بعنوان بارز بين علامتي نجوم مزدوجة مثل: **1. باقة الموقع التعريفي للشركات:**
+   - اكتب تحت كل خدمة بسطور قصيرة ومنظمة نقاطها الرئيسية:
+     - السعر: 65$ بدومين .uk أو 75$ بدومين .com
+     - التجديد السنوي: 40$ فقط
+     - الميزات: لغتان + استضافة سريعة + SSL مجاناً
+   - اترك سطراً فارغاً بعد كل خدمة قبل الانتقال للخدمة التي تليها لتظهر كبطاقة مستقلة واضحة.
+4. الذكاء في العرض: إذا سأل العميل سؤالاً عاماً (مثل: "ممكن سؤال" أو "إيه خدماتكم")، لا تغرقه بجميع التفاصيل التقنية المعقدة دفعة واحدة؛ رحب به بلباقة واعرض الخدمات الأساسية بنقاط مرتبة ونظيفة، واسأله ما هو المشروع أو الفكرة التي يريد تنفيذها.
+5. استخدام الإيموجي الراقي للتوضيح والتمييز (مثل: 🌐 للمواقع، 🤖 لموظف الواتساب، 🚚 للشحن، 📱 للموبايل، 💰 للأسعار والأفلييت).
+
 شخصيتك وأسلوبك الحقيقي ومحرك المبيعات (Persona & Sales Engine):
 1. أنت إنسان وبشري تماماً، ودود، محترم، لبق، راقي، وذكي. لست آلياً أو روبوتياً على الإطلاق، وتتجنب تماماً التكلف أو الإجابات الجامدة والمصطنعة.
 2. اللهجة الأساسية: مصرية راقية ومهذبة تناسب بيئة الأعمال والشركات (مثل: "أهلاً بحضرتك يا فندم"، "تمام يا فندم تحت أمرك"، "من عيوني"، "حاضر يا غالي"، "بص يا فندم...").
@@ -897,6 +911,173 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
+  }
+
+  // High-fidelity Markdown & Rich Text Formatter for AI Responses
+  function renderFormattedAiMessage(rawText) {
+    if (!rawText) return '';
+
+    // Step 1: Escape raw HTML tags for XSS security
+    let text = escapeHtml(rawText);
+
+    // Step 2: Normalize newlines
+    text = text.replace(/\r\n/g, '\n');
+
+    // Step 3: Bold text (**bold** or __bold__)
+    text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-emerald-400">$1</strong>');
+    text = text.replace(/__(.+?)__/g, '<strong class="font-bold text-emerald-400">$1</strong>');
+
+    // Step 4: Highlight key pricing and percentages with beautiful tags
+    text = text.replace(/(\$\s*\d+(?:\.\d+)?|\b\d+(?:\.\d+)?\s*\$)/g, '<span class="ai-price-tag">$1</span>');
+    text = text.replace(/(\b\d+%\b|\b30%\b)/g, '<span class="ai-percent-tag">$1</span>');
+
+    // Step 5: Process lines for headers, numbered cards, and bullet lists
+    const rawLines = text.split('\n');
+    const htmlChunks = [];
+    let inCardList = false;
+    let inBulletList = false;
+
+    for (let i = 0; i < rawLines.length; i++) {
+      const line = rawLines[i].trim();
+
+      if (!line) {
+        if (inCardList || inBulletList) {
+          htmlChunks.push('</div>');
+          inCardList = false;
+          inBulletList = false;
+        }
+        htmlChunks.push('<div class="h-1.5"></div>');
+        continue;
+      }
+
+      // Headers: ### or ## or #
+      const headerMatch = line.match(/^(#{1,4})\s+(.+)$/);
+      if (headerMatch) {
+        if (inCardList || inBulletList) {
+          htmlChunks.push('</div>');
+          inCardList = false;
+          inBulletList = false;
+        }
+        const title = headerMatch[2];
+        htmlChunks.push(`
+          <div class="mt-2.5 mb-1.5 pt-1.5 pb-1 border-b border-emerald-500/25 font-bold text-white text-[13px] flex items-center gap-1.5">
+            <span class="text-emerald-400">✦</span>
+            <span>${title}</span>
+          </div>
+        `);
+        continue;
+      }
+
+      // Numbered Card items: 1. or 2. or 1- or 2- or 1)
+      const numMatch = line.match(/^(\d+)[\.\-\)]\s+(.+)$/);
+      if (numMatch) {
+        if (inBulletList) {
+          htmlChunks.push('</div>');
+          inBulletList = false;
+        }
+        if (!inCardList) {
+          htmlChunks.push('<div class="space-y-1.5 my-2">');
+          inCardList = true;
+        }
+        const num = numMatch[1];
+        const content = numMatch[2];
+        htmlChunks.push(`
+          <div class="ai-card-item">
+            <span class="ai-card-badge">${num}</span>
+            <div class="flex-1 text-slate-200 text-xs leading-relaxed">${content}</div>
+          </div>
+        `);
+        continue;
+      }
+
+      // Bullet items: - or * or •
+      const bulletMatch = line.match(/^[-*•]\s+(.+)$/);
+      if (bulletMatch) {
+        if (inCardList) {
+          htmlChunks.push('</div>');
+          inCardList = false;
+        }
+        if (!inBulletList) {
+          htmlChunks.push('<div class="space-y-1 my-1.5">');
+          inBulletList = true;
+        }
+        const content = bulletMatch[1];
+        htmlChunks.push(`
+          <div class="ai-bullet-item">
+            <span class="ai-bullet-icon">◆</span>
+            <div class="flex-1">${content}</div>
+          </div>
+        `);
+        continue;
+      }
+
+      // Regular paragraph line
+      if (inCardList || inBulletList) {
+        htmlChunks.push('</div>');
+        inCardList = false;
+        inBulletList = false;
+      }
+
+      htmlChunks.push(`<p class="text-xs leading-relaxed text-slate-200 my-1">${line}</p>`);
+    }
+
+    if (inCardList || inBulletList) {
+      htmlChunks.push('</div>');
+    }
+
+    return htmlChunks.join('');
+  }
+
+  function appendAiBubble(rawReply, replySource) {
+    const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
+    const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const floatBox = document.getElementById('floating-cs-chat-box');
+    const simBox = document.getElementById('sim-chat-box');
+
+    let displaySource = 'AI Live';
+    if (replySource && replySource.includes('deepseek')) {
+      displaySource = 'DeepSeek AI';
+    } else if (replySource && replySource.includes('gemini')) {
+      displaySource = 'Gemini AI';
+    }
+
+    const assistantBubbleHtml = `
+      <div class="flex items-start gap-2.5">
+        <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+          👨‍💼
+        </div>
+        <div class="chat-bubble-assistant max-w-[88%] sm:max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1.5 pb-1 border-b border-slate-800/60">
+            <span class="font-bold flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              ${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Support]'}
+            </span>
+            <span class="text-slate-500">${timeNow} ✓✓</span>
+          </div>
+          <div class="ai-rich-message text-xs leading-relaxed">${renderFormattedAiMessage(rawReply)}</div>
+          <div class="mt-2.5 pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
+            <a href="${typeof window.getDynamicWhatsAppUrl === 'function' ? window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee') : 'https://wa.me/201107787049'}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-[10px] transition-colors border border-slate-700">
+              <span>💬</span>
+              <span>${isAr ? 'واتساب م. مصطفى' : 'WhatsApp'}</span>
+            </a>
+            <span class="text-[9px] font-mono text-emerald-400">${displaySource}</span>
+          </div>
+        </div>
+      </div>
+    `;
+
+    if (floatBox) {
+      const div = document.createElement('div');
+      div.innerHTML = assistantBubbleHtml;
+      floatBox.appendChild(div.firstElementChild);
+      floatBox.scrollTop = floatBox.scrollHeight;
+    }
+    if (simBox) {
+      const div = document.createElement('div');
+      div.innerHTML = assistantBubbleHtml;
+      simBox.appendChild(div.firstElementChild);
+      simBox.scrollTop = simBox.scrollHeight;
+    }
   }
 
   // Intelligent client-side response generator matching Egyptian tech customer service tone
@@ -1075,13 +1256,24 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
     return `أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋
 أنا أحمد من خدمة العملاء والمبيعات، سعيد جداً بتواصلك وتحت أمرك في أي استفسار:
-1. تصميم مواقع الشركات التعريفية (باقة 65$ بدومين uk. أو 75$ بدومين com. تشمل العربي والإنجليزي مع تجديد سنوي ثابت 40$).
-2. موظف الذكاء الاصطناعي البشري للواتساب وتليجرام للرد الفوري وتوليد عروض أسعار PDF.
-3. سيستمات إدارة الشحن وتتبع المناديب وتسوية الـ COD.
-4. تطبيقات الموبايل وأنظمة السوبرماركت والصيدليات.
-5. أتمتة الأعمال n8n وهندسة الـ APIs والـ Backend.
 
-تحب تستفسر عن تفاصيل خدمة معينة؟ أو تحب أحول حضرتك للواتساب للتأكيد مع البشمهندس مصطفى على 01107787049؟ 🚀`;
+1. **تصميم مواقع الشركات التعريفية**:
+   • باقة 65$ بدومين .uk أو 75$ بدومين .com شامل اللغتين والاستضافة السريعة.
+   • تجديد سنوي ثابت ومضمون: 40$ فقط سنوياً.
+
+2. **موظف الذكاء الاصطناعي البشري للواتساب**:
+   • ردود فورية مقنعة 24/7 بلهجة بشرية ودودة وتوليد عروض أسعار PDF رسمية.
+
+3. **سيستم إدارة الشحن واللوجستيات**:
+   • بوالص شحن باركود، تتبع المناديب لحظياً، وتسوية تحصيل الـ COD.
+
+4. **تطبيقات الموبايل وأنظمة الـ POS**:
+   • تطبيقات متكاملة للآيفون والأندرويد، ونظم كاشير للسوبرماركت والصيدليات.
+
+5. **أتمتة الأعمال n8n وهندسة الـ APIs**:
+   • مسارات ربط آلية متكاملة لربط متاجرك والأنظمة المحاسبية.
+
+تحب تستفسر عن تفاصيل خدمة معينة؟ أو تحب أساعدك في حجز باقة فوراً؟ 🚀`;
   }
 
   // --- Dynamic Mounting of Site-Wide Floating Customer Service AI Widget ---
@@ -1173,10 +1365,33 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
                 <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Customer Support]'}</span>
                 <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
               </div>
-              <p id="cs-welcome-text">${isAr 
-                ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
-                : 'Welcome to Eng. Mostafa Salah\'s website! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or custom systems, and I will assist you instantly! 🚀'
-              }</p>
+              <div id="cs-welcome-text" class="ai-rich-message text-xs leading-relaxed">
+                ${isAr 
+                  ? `<p class="mb-2">أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار.</p>
+                     <div class="space-y-1.5 my-2">
+                       <div class="ai-card-item">
+                         <span class="ai-card-badge">1</span>
+                         <div class="flex-1 text-slate-200 text-xs"><strong>باقة الموقع التعريفي:</strong> <span class="ai-price-tag">65$</span> بدومين .uk أو <span class="ai-price-tag">75$</span> بدومين .com شامل اللغتين والاستضافة.</div>
+                       </div>
+                       <div class="ai-card-item">
+                         <span class="ai-card-badge">2</span>
+                         <div class="flex-1 text-slate-200 text-xs"><strong>موظف الواتساب الذكي:</strong> ردود فورية بشرية وتوليد عروض أسعار PDF رسمية.</div>
+                       </div>
+                       <div class="ai-card-item">
+                         <span class="ai-card-badge">3</span>
+                         <div class="flex-1 text-slate-200 text-xs"><strong>سيستم الشحن والتطبيقات:</strong> بوالص، تتبع مناديب، وتحصيل الـ COD.</div>
+                       </div>
+                     </div>
+                     <p class="mt-2 text-emerald-400 font-medium">تحب أساعد حضرتك في تفاصيل أي باقة أو نظام؟ 🚀</p>`
+                  : `<p class="mb-2">Welcome to Eng. Mostafa Salah's website! 👋 I am Ahmed from Customer Service & Sales.</p>
+                     <div class="space-y-1.5 my-2">
+                       <div class="ai-card-item"><span class="ai-card-badge">1</span><div class="flex-1 text-xs"><strong>Corporate Websites:</strong> <span class="ai-price-tag">$65</span> or <span class="ai-price-tag">$75</span> bilingual with hosting.</div></div>
+                       <div class="ai-card-item"><span class="ai-card-badge">2</span><div class="flex-1 text-xs"><strong>WhatsApp AI Agent:</strong> 24/7 sales replies and PDF quotes.</div></div>
+                       <div class="ai-card-item"><span class="ai-card-badge">3</span><div class="flex-1 text-xs"><strong>Logistics & Apps:</strong> Courier tracking, waybills, and POS.</div></div>
+                     </div>
+                     <p class="mt-2 text-emerald-400 font-medium">Which service would you like to explore today? 🚀</p>`
+                }
+              </div>
             </div>
           </div>
         </div>
@@ -1517,9 +1732,30 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     } catch (e) {}
 
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
-    const welcome = isAr 
-      ? 'أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار عن خدماتنا أو أسعار باقاتنا (زي باقة الموقع التعريفي بـ 65$ أو 75$، موظف الواتساب الذكي، أو سيستمات الشحن وتطبيقات الموبايل). اسألني بالعربي أو الإنجليزي وهجاوبك فوراً! 🚀'
-      : 'Welcome to Eng. Mostafa Salah\'s website! 👋 I am Ahmed from Customer Service & Sales. Ask any questions in English or Arabic about our corporate packages, AI WhatsApp bots, or custom systems, and I will assist you instantly! 🚀';
+    const welcomeHtml = isAr 
+      ? `<p class="mb-2">أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار.</p>
+         <div class="space-y-1.5 my-2">
+           <div class="ai-card-item">
+             <span class="ai-card-badge">1</span>
+             <div class="flex-1 text-slate-200 text-xs"><strong>باقة الموقع التعريفي:</strong> <span class="ai-price-tag">65$</span> بدومين .uk أو <span class="ai-price-tag">75$</span> بدومين .com شامل اللغتين والاستضافة.</div>
+           </div>
+           <div class="ai-card-item">
+             <span class="ai-card-badge">2</span>
+             <div class="flex-1 text-slate-200 text-xs"><strong>موظف الواتساب الذكي:</strong> ردود فورية بشرية وتوليد عروض أسعار PDF رسمية.</div>
+           </div>
+           <div class="ai-card-item">
+             <span class="ai-card-badge">3</span>
+             <div class="flex-1 text-slate-200 text-xs"><strong>سيستم الشحن والتطبيقات:</strong> بوالص، تتبع مناديب، وتحصيل الـ COD.</div>
+           </div>
+         </div>
+         <p class="mt-2 text-emerald-400 font-medium">تحب أساعد حضرتك في تفاصيل أي باقة أو نظام؟ 🚀</p>`
+      : `<p class="mb-2">Welcome to Eng. Mostafa Salah's website! 👋 I am Ahmed from Customer Service & Sales.</p>
+         <div class="space-y-1.5 my-2">
+           <div class="ai-card-item"><span class="ai-card-badge">1</span><div class="flex-1 text-xs"><strong>Corporate Websites:</strong> <span class="ai-price-tag">$65</span> or <span class="ai-price-tag">$75</span> bilingual with hosting.</div></div>
+           <div class="ai-card-item"><span class="ai-card-badge">2</span><div class="flex-1 text-xs"><strong>WhatsApp AI Agent:</strong> 24/7 sales replies and PDF quotes.</div></div>
+           <div class="ai-card-item"><span class="ai-card-badge">3</span><div class="flex-1 text-xs"><strong>Logistics & Apps:</strong> Courier tracking, waybills, and POS.</div></div>
+         </div>
+         <p class="mt-2 text-emerald-400 font-medium">Which service would you like to explore today? 🚀</p>`;
 
     // Clear Floating Widget
     const floatBox = document.getElementById('floating-cs-chat-box');
@@ -1529,12 +1765,15 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
           <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
             👨‍💼
           </div>
-          <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
-            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
-              <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Customer Support]'}</span>
+          <div class="chat-bubble-assistant max-w-[88%] sm:max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1.5 pb-1 border-b border-slate-800/60">
+              <span class="font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                ${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Customer Support]'}
+              </span>
               <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
             </div>
-            <p>${welcome}</p>
+            <div class="ai-rich-message text-xs leading-relaxed">${welcomeHtml}</div>
           </div>
         </div>
       `;
@@ -1548,12 +1787,15 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
           <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
             🤖
           </div>
-          <div class="max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
-            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
-              <span class="font-bold">[${isAr ? 'موظف مبيعات م. مصطفى صلاح' : 'Eng. Mostafa Salah Sales AI'}]</span>
+          <div class="chat-bubble-assistant max-w-[88%] sm:max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1.5 pb-1 border-b border-slate-800/60">
+              <span class="font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                [${isAr ? 'موظف مبيعات م. مصطفى صلاح' : 'Eng. Mostafa Salah Sales AI'}]
+              </span>
               <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
             </div>
-            <p>${welcome}</p>
+            <div class="ai-rich-message text-xs leading-relaxed">${welcomeHtml}</div>
           </div>
         </div>
       `;
@@ -1842,21 +2084,24 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
         displaySource = 'Smart AI';
       }
 
-      // Build Assistant Bubble HTML
+      // Build Assistant Bubble HTML with Rich Card Formatting
       const assistantBubbleHtml = `
         <div class="flex items-start gap-2.5">
           <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
             👨‍💼
           </div>
-          <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
-            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
-              <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Support]'}</span>
+          <div class="chat-bubble-assistant max-w-[88%] sm:max-w-[85%] p-3.5 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1.5 pb-1 border-b border-slate-800/60">
+              <span class="font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                ${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Support]'}
+              </span>
               <span class="text-slate-500">${timeNow} ✓✓</span>
             </div>
-            <div class="whitespace-pre-line text-xs">${escapeHtml(aiReply)}</div>
+            <div class="ai-rich-message text-xs leading-relaxed space-y-1.5">${renderFormattedAiMessage(aiReply)}</div>
             ${extraActionBtn}
             <div class="mt-2.5 pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
-              <a href="${window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee')}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-[10px] transition-colors border border-slate-700">
+              <a href="${typeof window.getDynamicWhatsAppUrl === 'function' ? window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee') : 'https://wa.me/201107787049'}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-[10px] transition-colors border border-slate-700">
                 <span>💬</span>
                 <span>${isAr ? 'واتساب م. مصطفى' : 'WhatsApp'}</span>
               </a>
