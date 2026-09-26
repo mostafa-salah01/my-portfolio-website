@@ -241,9 +241,15 @@ function aiChatProxyPlugin(): Plugin {
           return;
         }
 
-        // 1. First priority: DeepSeek API directly via DEEPSEEK_API_KEY
-        const deepseekKey = process.env.DEEPSEEK_API_KEY;
-        if (deepseekKey && deepseekKey !== 'YOUR_DEEPSEEK_API_KEY' && deepseekKey.trim() !== '') {
+        // 1. First priority: DeepSeek API directly via DEEPSEEK_API_KEY (if a valid non-placeholder key is provided)
+        const deepseekKey = (process.env.DEEPSEEK_API_KEY || '').trim();
+        const isPlaceholderDeepseek = !deepseekKey || 
+          deepseekKey === 'YOUR_DEEPSEEK_API_KEY' || 
+          deepseekKey === 'YOUR_DEEPSEEK_API_KEY_HERE' || 
+          deepseekKey.includes('YOUR_DEEPSEEK') || 
+          deepseekKey.length < 15;
+
+        if (!isPlaceholderDeepseek) {
           try {
             const formattedHistory = history.slice(-10).map((h: any) => ({
               role: h.role === 'assistant' ? 'assistant' : 'user',
@@ -257,13 +263,13 @@ function aiChatProxyPlugin(): Plugin {
             ];
 
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 18000);
+            const timeoutId = setTimeout(() => controller.abort(), 12000);
 
             const dsResponse = await fetch('https://api.deepseek.com/chat/completions', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${deepseekKey.trim()}`
+                'Authorization': `Bearer ${deepseekKey}`
               },
               body: JSON.stringify({
                 model: 'deepseek-chat',
@@ -299,16 +305,11 @@ function aiChatProxyPlugin(): Plugin {
         }
 
         // 2. Second priority: Google Gemini API via @google/genai
-        const geminiKey = process.env.GEMINI_API_KEY;
-        if (geminiKey && geminiKey !== 'MY_GEMINI_API_KEY' && geminiKey.trim() !== '') {
+        const geminiKey = (process.env.GEMINI_API_KEY || '').trim();
+        if (geminiKey && geminiKey !== 'MY_GEMINI_API_KEY') {
           try {
             const ai = new GoogleGenAI({
-              apiKey: geminiKey.trim(),
-              httpOptions: {
-                headers: {
-                  'User-Agent': 'aistudio-build',
-                }
-              }
+              apiKey: geminiKey,
             });
 
             const contents: any[] = [];

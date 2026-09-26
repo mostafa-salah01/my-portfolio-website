@@ -762,6 +762,7 @@
   // --- Unified AI Customer Service & Sales Employee Engine (أحمد - خدمة العملاء) ---
   const CHAT_STORAGE_KEY = 'mostafa_salah_chat_history_v2';
   let chatHistory = [];
+  let isSendingAiMessage = false;
   try {
     const saved = sessionStorage.getItem(CHAT_STORAGE_KEY);
     if (saved) {
@@ -1167,12 +1168,30 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     }
 
     const form = document.getElementById('floating-cs-form');
-    if (form) {
-      form.onsubmit = function (e) {
+    const input = document.getElementById('floating-cs-input');
+    const sendBtn = document.getElementById('floating-cs-send-btn');
+
+    const handleFloatingSubmit = function (e) {
+      if (e) {
         e.preventDefault();
-        const input = document.getElementById('floating-cs-input');
-        if (input && input.value) {
-          window.sendAiCustomerServiceMessage(input.value, 'floating');
+        e.stopPropagation();
+      }
+      if (input && input.value && input.value.trim()) {
+        const textVal = input.value.trim();
+        window.sendAiCustomerServiceMessage(textVal, 'floating');
+      }
+    };
+
+    if (form) {
+      form.onsubmit = handleFloatingSubmit;
+    }
+    if (sendBtn) {
+      sendBtn.onclick = handleFloatingSubmit;
+    }
+    if (input) {
+      input.onkeydown = function (e) {
+        if (e.key === 'Enter') {
+          handleFloatingSubmit(e);
         }
       };
     }
@@ -1453,78 +1472,56 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     if (floatSendBtn) floatSendBtn.disabled = true;
     if (simSendBtn) simSendBtn.disabled = true;
 
-    // Build User Bubble HTML
-    const userBubbleHtml = `
-      <div class="flex items-start justify-end gap-2.5">
-        <div class="chat-bubble-user max-w-[85%] p-3 rounded-2xl rounded-tr-sm bg-emerald-600 text-white leading-relaxed shadow-sm">
-          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-100 font-mono mb-1">
-            <span class="font-bold">[${isAr ? 'أنت' : 'You'}]</span>
-            <span>${timeNow}</span>
-          </div>
-          <p>${escapeHtml(cleanText)}</p>
-        </div>
-        <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs shrink-0">
-          👤
-        </div>
-      </div>
-    `;
-
-    // Append to active boxes
-    if (sourceContext === 'floating' || !simBox) {
-      if (floatBox) {
-        const div = document.createElement('div');
-        div.innerHTML = userBubbleHtml;
-        floatBox.appendChild(div.firstElementChild);
-        floatBox.scrollTop = floatBox.scrollHeight;
-      }
-    } else {
-      if (simBox) {
-        const div = document.createElement('div');
-        div.innerHTML = userBubbleHtml;
-        simBox.appendChild(div.firstElementChild);
-        simBox.scrollTop = simBox.scrollHeight;
-      }
-    }
-
-    // Show active typing indicators
-    if (floatTyping) floatTyping.classList.remove('hidden');
-    if (simTyping) {
-      simTyping.classList.remove('hidden');
-      simTyping.classList.add('flex');
-    }
-
-    chatHistory.push({ role: 'user', content: cleanText });
-    persistChatHistory();
-
-    let aiReply = null;
-    let replySource = 'deepseek-api';
-
-    // 1. Send to server proxy (/api/chat) which prioritizes DeepSeek API
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: cleanText,
-          history: chatHistory.slice(-10)
-        })
-      });
+      // Build User Bubble HTML
+      const userBubbleHtml = `
+        <div class="flex items-start justify-end gap-2.5">
+          <div class="chat-bubble-user max-w-[85%] p-3 rounded-2xl rounded-tr-sm bg-emerald-600 text-white leading-relaxed shadow-sm">
+            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-100 font-mono mb-1">
+              <span class="font-bold">[${isAr ? 'أنت' : 'You'}]</span>
+              <span>${timeNow}</span>
+            </div>
+            <p>${escapeHtml(cleanText)}</p>
+          </div>
+          <div class="w-7 h-7 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs shrink-0">
+            👤
+          </div>
+        </div>
+      `;
 
-      if (response.ok) {
-        const data = await response.json();
-        if (data && data.success && data.reply) {
-          aiReply = data.reply;
-          replySource = data.source || 'deepseek-chat';
+      // Append to active boxes
+      if (sourceContext === 'floating' || !simBox) {
+        if (floatBox) {
+          const div = document.createElement('div');
+          div.innerHTML = userBubbleHtml;
+          floatBox.appendChild(div.firstElementChild);
+          floatBox.scrollTop = floatBox.scrollHeight;
+        }
+      } else {
+        if (simBox) {
+          const div = document.createElement('div');
+          div.innerHTML = userBubbleHtml;
+          simBox.appendChild(div.firstElementChild);
+          simBox.scrollTop = simBox.scrollHeight;
         }
       }
-    } catch (err) {
-      // Server error handled gracefully
-    }
 
-    // 2. Secondary fallback to /api/deepseek-chat directly if needed
-    if (!aiReply) {
+      // Show active typing indicators
+      if (floatTyping) floatTyping.classList.remove('hidden');
+      if (simTyping) {
+        simTyping.classList.remove('hidden');
+        simTyping.classList.add('flex');
+      }
+
+      chatHistory.push({ role: 'user', content: cleanText });
+      persistChatHistory();
+
+      let aiReply = null;
+      let replySource = 'smart-ai';
+
+      // 1. Send to server proxy (/api/chat) which prioritizes connected models
       try {
-        const dsResponse = await fetch('/api/deepseek-chat', {
+        const response = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1532,97 +1529,138 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
             history: chatHistory.slice(-10)
           })
         });
-        if (dsResponse.ok) {
-          const dsData = await dsResponse.json();
-          if (dsData && dsData.success && dsData.reply) {
-            aiReply = dsData.reply;
-            replySource = dsData.source || 'deepseek-api';
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data && data.success && data.reply) {
+            aiReply = data.reply;
+            replySource = data.source || 'ai-engine';
           }
         }
       } catch (err) {
-        // Fallback below
+        // Handled gracefully below
       }
-    }
 
-    // 3. Built-in intelligent Egyptian customer service fallback
-    if (!aiReply) {
-      aiReply = generateMostafaSalahAiResponse(cleanText, isAr ? 'ar' : 'en');
-      replySource = 'egyptian-customer-service-engine';
-    }
+      // 2. Secondary fallback to /api/deepseek-chat or /api/ai-customer-service if needed
+      if (!aiReply) {
+        try {
+          const altResponse = await fetch('/api/ai-customer-service', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              message: cleanText,
+              history: chatHistory.slice(-10)
+            })
+          });
+          if (altResponse.ok) {
+            const altData = await altResponse.json();
+            if (altData && altData.success && altData.reply) {
+              aiReply = altData.reply;
+              replySource = altData.source || 'ai-engine';
+            }
+          }
+        } catch (err) {
+          // Fallback below
+        }
+      }
 
-    // Hide typing indicators
-    if (floatTyping) floatTyping.classList.add('hidden');
-    if (simTyping) {
-      simTyping.classList.add('hidden');
-      simTyping.classList.remove('flex');
-    }
+      // 3. Built-in intelligent Egyptian customer service fallback
+      if (!aiReply) {
+        aiReply = generateMostafaSalahAiResponse(cleanText, isAr ? 'ar' : 'en');
+        replySource = 'egyptian-customer-service-engine';
+      }
 
-    chatHistory.push({ role: 'assistant', content: aiReply });
-    persistChatHistory();
+      // Hide typing indicators
+      if (floatTyping) floatTyping.classList.add('hidden');
+      if (simTyping) {
+        simTyping.classList.add('hidden');
+        simTyping.classList.remove('flex');
+      }
 
-    // Check if user text provides phone number or contact info for affiliate registration
-    const hasPhone = /(01[0125]\d{8}|\+?\d{10,15})/.test(cleanText.replace(/\s+/g, ''));
-    const isAffiliateChat = cleanText.includes('أفلييت') || cleanText.includes('افلييت') || cleanText.includes('تسويق') || cleanText.includes('عمولة') || cleanText.includes('مسوق') || cleanText.includes('30%') || cleanText.includes('affiliate');
+      chatHistory.push({ role: 'assistant', content: aiReply });
+      persistChatHistory();
 
-    let extraActionBtn = '';
-    if (hasPhone || isAffiliateChat) {
-      const waMsg = isAr 
-        ? `مرحباً مهندس مصطفى صلاح، أود الانضمام لبرنامج التسويق بالعمولة (30%).\nبياناتي وتفاصيلي من الشات:\n${cleanText}`
-        : `Hello Eng. Mostafa Salah, I would like to join the 30% Affiliate Program.\nMy details:\n${cleanText}`;
-      extraActionBtn = `
-        <div class="mt-2.5 pt-2 border-t border-emerald-500/30">
-          <a href="https://wa.me/201107787049?text=${encodeURIComponent(waMsg)}" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-md transition-transform hover:scale-[1.02]">
-            <span>🚀</span>
-            <span>${isAr ? 'تأكيد التسجيل كمسوق على واتساب المهندس مصطفى' : 'Confirm Affiliate Registration on WhatsApp'}</span>
-          </a>
+      // Check if user text provides phone number or contact info for affiliate registration
+      const hasPhone = /(01[0125]\d{8}|\+?\d{10,15})/.test(cleanText.replace(/\s+/g, ''));
+      const isAffiliateChat = cleanText.includes('أفلييت') || cleanText.includes('افلييت') || cleanText.includes('تسويق') || cleanText.includes('عمولة') || cleanText.includes('مسوق') || cleanText.includes('30%') || cleanText.includes('affiliate');
+
+      let extraActionBtn = '';
+      if (hasPhone || isAffiliateChat) {
+        const waMsg = isAr 
+          ? `مرحباً مهندس مصطفى صلاح، أود الانضمام لبرنامج التسويق بالعمولة (30%).\nبياناتي وتفاصيلي من الشات:\n${cleanText}`
+          : `Hello Eng. Mostafa Salah, I would like to join the 30% Affiliate Program.\nMy details:\n${cleanText}`;
+        extraActionBtn = `
+          <div class="mt-2.5 pt-2 border-t border-emerald-500/30">
+            <a href="https://wa.me/201107787049?text=${encodeURIComponent(waMsg)}" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-md transition-transform hover:scale-[1.02]">
+              <span>🚀</span>
+              <span>${isAr ? 'تأكيد التسجيل كمسوق على واتساب المهندس مصطفى' : 'Confirm Affiliate Registration on WhatsApp'}</span>
+            </a>
+          </div>
+        `;
+      }
+
+      // Determine clean source label
+      let displaySource = 'AI Live';
+      if (replySource.includes('deepseek')) {
+        displaySource = 'DeepSeek AI';
+      } else if (replySource.includes('gemini')) {
+        displaySource = 'Gemini AI';
+      } else {
+        displaySource = 'Smart AI';
+      }
+
+      // Build Assistant Bubble HTML
+      const assistantBubbleHtml = `
+        <div class="flex items-start gap-2.5">
+          <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
+            👨‍💼
+          </div>
+          <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
+            <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
+              <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Support]'}</span>
+              <span class="text-slate-500">${timeNow} ✓✓</span>
+            </div>
+            <div class="whitespace-pre-line text-xs">${escapeHtml(aiReply)}</div>
+            ${extraActionBtn}
+            <div class="mt-2.5 pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
+              <a href="${window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee')}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-[10px] transition-colors border border-slate-700">
+                <span>💬</span>
+                <span>${isAr ? 'واتساب م. مصطفى' : 'WhatsApp'}</span>
+              </a>
+              <span class="text-[9px] font-mono text-emerald-400">${displaySource}</span>
+            </div>
+          </div>
         </div>
       `;
-    }
 
-    // Build Assistant Bubble HTML
-    const assistantBubbleHtml = `
-      <div class="flex items-start gap-2.5">
-        <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs shrink-0">
-          👨‍💼
-        </div>
-        <div class="chat-bubble-assistant max-w-[85%] p-3 rounded-2xl rounded-tl-sm bg-slate-900 border border-emerald-500/30 text-slate-200 leading-relaxed shadow-sm">
-          <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1">
-            <span class="font-bold">${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Support]'}</span>
-            <span class="text-slate-500">${timeNow} ✓✓</span>
-          </div>
-          <div class="whitespace-pre-line text-xs">${escapeHtml(aiReply)}</div>
-          ${extraActionBtn}
-          <div class="mt-2.5 pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
-            <a href="${window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee')}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-[10px] transition-colors border border-slate-700">
-              <span>💬</span>
-              <span>${isAr ? 'واتساب م. مصطفى' : 'WhatsApp'}</span>
-            </a>
-            <span class="text-[9px] font-mono text-emerald-400">DeepSeek Live</span>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Append reply to active boxes
-    if (sourceContext === 'floating' || !simBox) {
-      if (floatBox) {
-        const div = document.createElement('div');
-        div.innerHTML = assistantBubbleHtml;
-        floatBox.appendChild(div.firstElementChild);
-        floatBox.scrollTop = floatBox.scrollHeight;
+      // Append reply to active boxes
+      if (sourceContext === 'floating' || !simBox) {
+        if (floatBox) {
+          const div = document.createElement('div');
+          div.innerHTML = assistantBubbleHtml;
+          floatBox.appendChild(div.firstElementChild);
+          floatBox.scrollTop = floatBox.scrollHeight;
+        }
+      } else {
+        if (simBox) {
+          const div = document.createElement('div');
+          div.innerHTML = assistantBubbleHtml;
+          simBox.appendChild(div.firstElementChild);
+          simBox.scrollTop = simBox.scrollHeight;
+        }
       }
-    } else {
-      if (simBox) {
-        const div = document.createElement('div');
-        div.innerHTML = assistantBubbleHtml;
-        simBox.appendChild(div.firstElementChild);
-        simBox.scrollTop = simBox.scrollHeight;
+    } catch (unexpectedError) {
+      console.error('Customer service message dispatch error:', unexpectedError);
+    } finally {
+      if (floatTyping) floatTyping.classList.add('hidden');
+      if (simTyping) {
+        simTyping.classList.add('hidden');
+        simTyping.classList.remove('flex');
       }
+      if (floatSendBtn) floatSendBtn.disabled = false;
+      if (simSendBtn) simSendBtn.disabled = false;
+      isSendingAiMessage = false;
     }
-
-    if (floatSendBtn) floatSendBtn.disabled = false;
-    if (simSendBtn) simSendBtn.disabled = false;
-    isSendingAiMessage = false;
   };
 
   // Backwards compatibility alias for existing simulation callers
@@ -1687,14 +1725,32 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
       };
     });
 
-    // In-page Chat simulator form submit
+    // In-page Chat simulator form submit & button click
     const simChatForm = document.getElementById('sim-chat-form');
-    if (simChatForm) {
-      simChatForm.onsubmit = function (e) {
+    const simInput = document.getElementById('sim-chat-input');
+    const simSendBtn = document.getElementById('sim-send-btn');
+
+    const handleSimulatorSubmit = function (e) {
+      if (e) {
         e.preventDefault();
-        const input = document.getElementById('sim-chat-input');
-        if (input && input.value) {
-          window.sendAiCustomerServiceMessage(input.value, 'simulator');
+        e.stopPropagation();
+      }
+      if (simInput && simInput.value && simInput.value.trim()) {
+        const textVal = simInput.value.trim();
+        window.sendAiCustomerServiceMessage(textVal, 'simulator');
+      }
+    };
+
+    if (simChatForm) {
+      simChatForm.onsubmit = handleSimulatorSubmit;
+    }
+    if (simSendBtn) {
+      simSendBtn.onclick = handleSimulatorSubmit;
+    }
+    if (simInput) {
+      simInput.onkeydown = function (e) {
+        if (e.key === 'Enter') {
+          handleSimulatorSubmit(e);
         }
       };
     }
