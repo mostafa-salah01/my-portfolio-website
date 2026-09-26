@@ -805,25 +805,20 @@
   function getDeepSeekClientKey() {
     let key = '';
 
-    // 1. Direct read from import.meta.env.VITE_DEEPSEEK_API_KEY
+    // 1. Direct read from window.DEEPSEEK_API_KEY or window.VITE_DEEPSEEK_API_KEY (injected by Vite / GitHub Secrets)
     try {
-      const viteKey = import.meta.env.VITE_DEEPSEEK_API_KEY;
-      if (viteKey && typeof viteKey === 'string' && viteKey.length > 15 && !viteKey.includes('YOUR_DEEPSEEK')) {
-        key = viteKey.trim();
+      if (typeof window !== 'undefined') {
+        if (window.DEEPSEEK_API_KEY && typeof window.DEEPSEEK_API_KEY === 'string' && window.DEEPSEEK_API_KEY.length > 15 && !window.DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
+          key = window.DEEPSEEK_API_KEY.trim();
+        } else if (window.VITE_DEEPSEEK_API_KEY && typeof window.VITE_DEEPSEEK_API_KEY === 'string' && window.VITE_DEEPSEEK_API_KEY.length > 15 && !window.VITE_DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
+          key = window.VITE_DEEPSEEK_API_KEY.trim();
+        } else if (window.__DEEPSEEK_API_KEY__ && typeof window.__DEEPSEEK_API_KEY__ === 'string' && window.__DEEPSEEK_API_KEY__.length > 15 && !window.__DEEPSEEK_API_KEY__.includes('YOUR_DEEPSEEK')) {
+          key = window.__DEEPSEEK_API_KEY__.trim();
+        }
       }
     } catch (e) {}
 
-    // 2. Direct read from DEEPSEEK_API_KEY (direct environment variable or build injection)
-    if (!key) {
-      try {
-        const directKey = typeof DEEPSEEK_API_KEY !== 'undefined' ? DEEPSEEK_API_KEY : '';
-        if (directKey && typeof directKey === 'string' && directKey.length > 15 && !directKey.includes('YOUR_DEEPSEEK')) {
-          key = directKey.trim();
-        }
-      } catch (e) {}
-    }
-
-    // 3. Direct read from process.env.DEEPSEEK_API_KEY
+    // 2. Direct read from process.env (Node / Vite replacement)
     if (!key) {
       try {
         if (typeof process !== 'undefined' && process && process.env) {
@@ -836,20 +831,7 @@
       } catch (e) {}
     }
 
-    // 4. Direct read from window.DEEPSEEK_API_KEY or window.__DEEPSEEK_API_KEY__
-    if (!key) {
-      try {
-        if (typeof window !== 'undefined') {
-          if (window.DEEPSEEK_API_KEY && window.DEEPSEEK_API_KEY.length > 15 && !window.DEEPSEEK_API_KEY.includes('YOUR_DEEPSEEK')) {
-            key = String(window.DEEPSEEK_API_KEY).trim();
-          } else if (window.__DEEPSEEK_API_KEY__ && window.__DEEPSEEK_API_KEY__.length > 15 && !window.__DEEPSEEK_API_KEY__.includes('YOUR_DEEPSEEK')) {
-            key = String(window.__DEEPSEEK_API_KEY__).trim();
-          }
-        }
-      } catch (e) {}
-    }
-
-    // 5. Injected build-time key placeholder
+    // 3. Injected build-time key placeholder
     if (!key || key.length < 15 || key.includes('YOUR_DEEPSEEK') || key.includes('__INJECTED_')) {
       const injectedKey = '__INJECTED_DEEPSEEK_KEY__';
       if (injectedKey && injectedKey.length > 15 && !injectedKey.includes('YOUR_DEEPSEEK') && !injectedKey.includes('__INJECTED_')) {
@@ -2030,6 +2012,48 @@ ${note ? 'ملاحظات: ' + note : ''}`;
   document.addEventListener('click', function(e) {
     const target = e.target;
     if (!target) return;
+
+    // Floating Chat Launcher Click
+    const floatLauncher = target.closest('#floating-ai-launcher');
+    if (floatLauncher) {
+      e.preventDefault();
+      window.toggleAiCustomerServiceChat();
+      return;
+    }
+
+    // Floating Chat Close / Minimize Button
+    const floatClose = target.closest('#floating-cs-close-btn');
+    if (floatClose) {
+      e.preventDefault();
+      window.toggleAiCustomerServiceChat(false);
+      return;
+    }
+
+    // Greeting Bubble Dismiss Button
+    const bubbleDismiss = target.closest('#bubble-dismiss-btn');
+    if (bubbleDismiss) {
+      e.preventDefault();
+      e.stopPropagation();
+      const bubble = document.getElementById('floating-ai-greeting-bubble');
+      if (bubble) {
+        bubble.classList.remove('show');
+        setTimeout(() => bubble.classList.add('hidden'), 250);
+      }
+      return;
+    }
+
+    // Greeting Bubble Open Chat (button or clicking the bubble)
+    const bubbleOpen = target.closest('#bubble-open-chat-btn, #floating-ai-greeting-bubble');
+    if (bubbleOpen) {
+      e.preventDefault();
+      const bubble = document.getElementById('floating-ai-greeting-bubble');
+      if (bubble) {
+        bubble.classList.remove('show');
+        bubble.classList.add('hidden');
+      }
+      window.toggleAiCustomerServiceChat(true);
+      return;
+    }
 
     // Affiliate Chat Openers
     const affChatBtn = target.closest('#affiliate-open-chat-btn');

@@ -11,29 +11,9 @@ function staticAssetsCopyPlugin(): Plugin {
       const deepseekKey = (process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || '').trim();
       const isValidKey = deepseekKey && deepseekKey.length > 15 && !deepseekKey.includes('YOUR_DEEPSEEK');
       if (isValidKey) {
-        return html.replace('<head>', `<head>\n  <script>window.DEEPSEEK_API_KEY = ${JSON.stringify(deepseekKey)}; window.__DEEPSEEK_API_KEY__ = window.DEEPSEEK_API_KEY;</script>`);
+        return html.replace('<head>', `<head>\n  <script>window.DEEPSEEK_API_KEY = ${JSON.stringify(deepseekKey)}; window.VITE_DEEPSEEK_API_KEY = window.DEEPSEEK_API_KEY; window.__DEEPSEEK_API_KEY__ = window.DEEPSEEK_API_KEY;</script>`);
       }
       return html;
-    },
-    configureServer(server) {
-      server.middlewares.use((req, res, next) => {
-        if (req.url && (req.url === '/script.js' || req.url.startsWith('/script.js?'))) {
-          const filePath = resolve(import.meta.dirname, 'script.js');
-          if (fs.existsSync(filePath)) {
-            let content = fs.readFileSync(filePath, 'utf8');
-            const deepseekKey = (process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || '').trim();
-            const isValidKey = deepseekKey && deepseekKey.length > 15 && !deepseekKey.includes('YOUR_DEEPSEEK');
-            const keyToInject = isValidKey ? deepseekKey : '';
-            content = content.replace(/import\.meta\.env\.VITE_DEEPSEEK_API_KEY/g, JSON.stringify(keyToInject));
-            content = content.replace(/import\.meta\.env\.DEEPSEEK_API_KEY/g, JSON.stringify(keyToInject));
-            content = content.replace(/__INJECTED_DEEPSEEK_KEY__/g, keyToInject);
-            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-            res.end(content);
-            return;
-          }
-        }
-        next();
-      });
     },
     closeBundle() {
       const deepseekKey = (process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || '').trim();
@@ -48,8 +28,6 @@ function staticAssetsCopyPlugin(): Plugin {
           if (file === 'script.js') {
             let content = fs.readFileSync(src, 'utf8');
             content = content.replace(/__INJECTED_DEEPSEEK_KEY__/g, keyToInject);
-            content = content.replace(/import\.meta\.env\.VITE_DEEPSEEK_API_KEY/g, JSON.stringify(keyToInject));
-            content = content.replace(/import\.meta\.env\.DEEPSEEK_API_KEY/g, JSON.stringify(keyToInject));
             fs.writeFileSync(dest, content, 'utf8');
           } else {
             fs.copyFileSync(src, dest);
