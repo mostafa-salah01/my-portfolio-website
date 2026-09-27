@@ -302,6 +302,92 @@ html.light .hero-showcase-hover-btn {
 }
 
 /* ==========================================================================
+   Mobile Navigation Dropdown Smooth Slide Animation Engine
+   ========================================================================== */
+#mobile-menu {
+  display: block !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  transform: translateY(-8px) scale(0.99);
+  pointer-events: none !important;
+  visibility: hidden !important;
+  will-change: max-height, opacity, transform;
+  border-bottom: 0 solid rgba(30, 41, 59, 0) !important;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.4s ease !important;
+}
+
+#mobile-menu.open {
+  max-height: 650px !important;
+  opacity: 1 !important;
+  overflow-y: auto !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 1.5rem !important;
+  transform: translateY(0) scale(1) !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.7) !important;
+  box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.75), 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+}
+
+@media (min-width: 1024px) {
+  #mobile-menu {
+    display: none !important;
+  }
+}
+
+html.light #mobile-menu {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+html.light #mobile-menu.open {
+  border-bottom: 1px solid #cbd5e1 !important;
+  box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.12) !important;
+}
+
+#mobile-menu-btn {
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, color 0.2s ease !important;
+}
+
+#mobile-menu-btn:active {
+  transform: scale(0.92) !important;
+}
+
+#mobile-menu-btn[aria-expanded="true"] {
+  border-color: rgba(16, 185, 129, 0.7) !important;
+  background-color: rgba(15, 23, 42, 1) !important;
+  color: #34d399 !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.25) !important;
+}
+
+html.light #mobile-menu-btn[aria-expanded="true"] {
+  border-color: #059669 !important;
+  background-color: #f1f5f9 !important;
+  color: #047857 !important;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.2) !important;
+}
+
+#mobile-menu a {
+  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease !important;
+  border-radius: 0.5rem;
+}
+
+#mobile-menu a:hover {
+  transform: translateX(-4px);
+}
+
+[dir="ltr"] #mobile-menu a:hover {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
    Floating AI Customer Service Employee Widget (ودجت موظف خدمة العملاء الذكي)
    ========================================================================== */
 @keyframes aiLauncherPulse {

@@ -186,31 +186,32 @@
           <span class="whatsapp-btn-text" data-en="Order Service" data-ar="طلب خدمة">طلب خدمة</span>
         </a>
 
-        <!-- Mobile Menu Toggle -->
-        <button type="button" id="mobile-menu-btn" data-action="toggle-mobile-menu" class="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer" aria-label="Open navigation menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" id="mobile-menu-btn" data-action="toggle-mobile-menu" class="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="w-6 h-6 menu-icon-bars" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg class="w-6 h-6 menu-icon-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
 
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-800 bg-slate-950/95 px-4 pt-2 pb-6 space-y-3">
-      <a href="#projects" data-action="toggle-mobile-menu" class="block py-2 text-slate-300 hover:text-emerald-400 font-semibold" data-en="Projects & Systems" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
+    <!-- Mobile Dropdown Menu (Smooth Slide-Down Animation) -->
+    <div id="mobile-menu" class="lg:hidden border-b border-slate-800 bg-slate-950/95 px-4 space-y-3 backdrop-blur-xl" aria-hidden="true">
+      <a href="#projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 font-semibold" data-en="Projects & Systems" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
       <div class="pr-2 border-r-2 border-emerald-500/40 space-y-2 text-xs">
-        <a href="corporate-website.html" class="block py-1 text-cyan-400 hover:underline" data-en="Corporate Website ($65 / $75)" data-ar="مواقع الشركات (65$ / 75$)">مواقع الشركات (65$ / 75$)</a>
-        <a href="whatsapp-ai-employee.html" class="block py-1 text-emerald-400 hover:underline" data-en="WhatsApp AI Employee" data-ar="موظف واتساب الذكي">موظف واتساب الذكي</a>
-        <a href="omnichannel-ai-agent.html" class="block py-1 text-cyan-400 hover:underline" data-en="Telegram & Messenger AI" data-ar="ذكاء تلجرام وماسنجر">ذكاء تلجرام وماسنجر</a>
-        <a href="smart-shipping-system.html" class="block py-1 text-indigo-400 hover:underline" data-en="Smart Shipping System" data-ar="سيستم الشحن واللوجستيات">سيستم الشحن واللوجستيات</a>
-        <a href="mobile-retail-apps.html" class="block py-1 text-amber-400 hover:underline" data-en="POS, ERP & Mobile Apps" data-ar="سيستمات المتاجر وتطبيقات الموبايل">سيستمات المتاجر وتطبيقات الموبايل</a>
-        <a href="n8n-automation.html" class="block py-1 text-emerald-400 hover:underline" data-en="n8n Automation Engine" data-ar="أتمتة الأعمال n8n">أتمتة الأعمال n8n</a>
-        <a href="backend-api-architecture.html" class="block py-1 text-cyan-400 hover:underline" data-en="Backend & API Architecture" data-ar="هندسة الخوادم والـ APIs">هندسة الخوادم والـ APIs</a>
+        <a href="corporate-website.html" class="mobile-nav-link block py-1 text-cyan-400 hover:underline" data-en="Corporate Website ($65 / $75)" data-ar="مواقع الشركات (65$ / 75$)">مواقع الشركات (65$ / 75$)</a>
+        <a href="whatsapp-ai-employee.html" class="mobile-nav-link block py-1 text-emerald-400 hover:underline" data-en="WhatsApp AI Employee" data-ar="موظف واتساب الذكي">موظف واتساب الذكي</a>
+        <a href="omnichannel-ai-agent.html" class="mobile-nav-link block py-1 text-cyan-400 hover:underline" data-en="Telegram & Messenger AI" data-ar="ذكاء تلجرام وماسنجر">ذكاء تلجرام وماسنجر</a>
+        <a href="smart-shipping-system.html" class="mobile-nav-link block py-1 text-indigo-400 hover:underline" data-en="Smart Shipping System" data-ar="سيستم الشحن واللوجستيات">سيستم الشحن واللوجستيات</a>
+        <a href="mobile-retail-apps.html" class="mobile-nav-link block py-1 text-amber-400 hover:underline" data-en="POS, ERP & Mobile Apps" data-ar="سيستمات المتاجر وتطبيقات الموبايل">سيستمات المتاجر وتطبيقات الموبايل</a>
+        <a href="n8n-automation.html" class="mobile-nav-link block py-1 text-emerald-400 hover:underline" data-en="n8n Automation Engine" data-ar="أتمتة الأعمال n8n">أتمتة الأعمال n8n</a>
+        <a href="backend-api-architecture.html" class="mobile-nav-link block py-1 text-cyan-400 hover:underline" data-en="Backend & API Architecture" data-ar="هندسة الخوادم والـ APIs">هندسة الخوادم والـ APIs</a>
       </div>
-      <a href="#solutions" data-action="toggle-mobile-menu" class="block py-2 text-slate-300 hover:text-emerald-400" data-en="Business Solutions" data-ar="حلول الشركات">حلول الشركات</a>
-      <a href="#architecture" data-action="toggle-mobile-menu" class="block py-2 text-slate-300 hover:text-emerald-400" data-en="Cloud Architecture" data-ar="المعمارية السحابية">المعمارية السحابية</a>
-      <a href="#workflow" data-action="toggle-mobile-menu" class="block py-2 text-slate-300 hover:text-emerald-400" data-en="Interactive Flow" data-ar="محاكي الأتمتة">محاكي الأتمتة</a>
-      <a href="#skills" data-action="toggle-mobile-menu" class="block py-2 text-slate-300 hover:text-emerald-400" data-en="Tech Stack" data-ar="المهارات والتقنيات">المهارات والتقنيات</a>
-      <a href="#about" data-action="toggle-mobile-menu" class="block py-2 text-slate-300 hover:text-emerald-400" data-en="About" data-ar="من أنا">من أنا</a>
+      <a href="#solutions" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Business Solutions" data-ar="حلول الشركات">حلول الشركات</a>
+      <a href="#architecture" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Cloud Architecture" data-ar="المعمارية السحابية">المعمارية السحابية</a>
+      <a href="#workflow" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Interactive Flow" data-ar="محاكي الأتمتة">محاكي الأتمتة</a>
+      <a href="#skills" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Tech Stack" data-ar="المهارات والتقنيات">المهارات والتقنيات</a>
+      <a href="#about" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="About" data-ar="من أنا">من أنا</a>
 
       <!-- Dedicated Mobile Quick Settings (Theme & Language Controls) -->
       <div class="pt-3 mt-3 border-t border-slate-800/80 flex items-center gap-3">

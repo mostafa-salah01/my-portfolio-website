@@ -723,15 +723,60 @@
     }, 3000);
   }
 
-  // --- Mobile Menu Toggle ---
+  // --- Mobile Menu Toggle & Smooth Slide Animation ---
+  window.isMobileMenuOpen = false;
+
+  window.openMobileMenu = function () {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('mobile-menu-btn');
+    if (!menu) return;
+
+    window.isMobileMenuOpen = true;
+    menu.classList.add('open');
+    menu.setAttribute('aria-hidden', 'false');
+
+    if (btn) {
+      btn.setAttribute('aria-expanded', 'true');
+      const iconBars = btn.querySelector('.menu-icon-bars');
+      const iconClose = btn.querySelector('.menu-icon-close');
+      if (iconBars) iconBars.classList.add('hidden');
+      if (iconClose) iconClose.classList.remove('hidden');
+    }
+  };
+
+  window.closeMobileMenu = function () {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('mobile-menu-btn');
+    if (!menu) return;
+
+    window.isMobileMenuOpen = false;
+    menu.classList.remove('open');
+    menu.setAttribute('aria-hidden', 'true');
+
+    if (btn) {
+      btn.setAttribute('aria-expanded', 'false');
+      const iconBars = btn.querySelector('.menu-icon-bars');
+      const iconClose = btn.querySelector('.menu-icon-close');
+      if (iconBars) iconBars.classList.remove('hidden');
+      if (iconClose) iconClose.classList.add('hidden');
+    }
+  };
+
   let lastMenuToggle = 0;
-  window.toggleMobileMenu = function () {
+  window.toggleMobileMenu = function (forceState) {
     const now = Date.now();
-    if (now - lastMenuToggle < 300) return;
+    if (now - lastMenuToggle < 200) return;
     lastMenuToggle = now;
+
     const menu = document.getElementById('mobile-menu');
     if (!menu) return;
-    menu.classList.toggle('hidden');
+
+    const shouldOpen = typeof forceState === 'boolean' ? forceState : !menu.classList.contains('open');
+    if (shouldOpen) {
+      window.openMobileMenu();
+    } else {
+      window.closeMobileMenu();
+    }
   };
 
   // --- Corporate Website Domain Option Selector ---
@@ -2207,8 +2252,8 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
       };
     });
 
-    // Mobile menu toggle direct listener
-    document.querySelectorAll('#mobile-menu-btn, [data-action="toggle-mobile-menu"]').forEach(btn => {
+    // Mobile menu toggle direct listener (buttons only)
+    document.querySelectorAll('#mobile-menu-btn, button[data-action="toggle-mobile-menu"]').forEach(btn => {
       btn.onclick = function (e) {
         if (e) {
           e.preventDefault();
@@ -2469,11 +2514,28 @@ ${note ? 'ملاحظات: ' + note : ''}`;
     }
 
     // Mobile Menu Toggle
-    const mobileBtn = target.closest('#mobile-menu-btn, [data-action="toggle-mobile-menu"]');
+    const mobileBtn = target.closest('#mobile-menu-btn, button[data-action="toggle-mobile-menu"]');
     if (mobileBtn) {
       e.preventDefault();
       window.toggleMobileMenu();
       return;
+    }
+
+    // Auto-Close Mobile Menu when clicking any link inside #mobile-menu
+    const mobileNavLink = target.closest('#mobile-menu a');
+    if (mobileNavLink) {
+      if (window.closeMobileMenu) {
+        window.closeMobileMenu();
+      }
+      // Natural navigation allowed - do not preventDefault
+      return;
+    }
+
+    // Auto-Close Mobile Menu when clicking outside header & menu
+    if (window.isMobileMenuOpen && !target.closest('#mobile-menu') && !target.closest('#mobile-menu-btn')) {
+      if (window.closeMobileMenu) {
+        window.closeMobileMenu();
+      }
     }
 
     // Clear Chat
@@ -2594,14 +2656,22 @@ ${note ? 'ملاحظات: ' + note : ''}`;
     }
   });
 
-  // --- Close modals on ESC or overlay click ---
+  // --- Close modals & mobile menu on ESC or overlay click ---
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       window.closeLightbox();
       window.closeProjectDetails();
       if (window.closeAffiliateModal) window.closeAffiliateModal();
+      if (window.closeMobileMenu) window.closeMobileMenu();
     }
   });
+
+  // --- Auto-close mobile menu on desktop resize ---
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 1024 && window.isMobileMenuOpen && window.closeMobileMenu) {
+      window.closeMobileMenu();
+    }
+  }, { passive: true });
 
   // --- Safe Unified App Initialization ---
   function initializeApp() {
