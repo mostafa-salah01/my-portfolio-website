@@ -153,10 +153,11 @@
 
       <!-- Nav Links (Center) -->
       <nav class="header-nav-links hidden lg:flex">
-        <a href="#projects" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Projects & Systems" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
-        <a href="#solutions" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Business Solutions" data-ar="حلول الشركات">حلول الشركات</a>
-        <a href="#architecture" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Cloud Architecture" data-ar="المعمارية السحابية">المعمارية السحابية</a>
-        <a href="#workflow" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Automation Simulator" data-ar="محاكي الأتمتة">محاكي الأتمتة</a>
+        <a href="#projects" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Projects & Portfolio" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
+        <a href="#solutions" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Services & Pricing" data-ar="الخدمات والأسعار">الخدمات والأسعار</a>
+        <a href="#ai-tiers" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
+        <a href="#partners" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Sales Partner" data-ar="برنامج الشركاء">برنامج الشركاء</a>
+        <a href="#architecture" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Architecture" data-ar="المعمارية السحابية">المعمارية السحابية</a>
         <a href="#skills" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Tech Stack" data-ar="المهارات والتقنيات">المهارات والتقنيات</a>
         <a href="#about" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="About" data-ar="من أنا">من أنا</a>
       </nav>
@@ -197,7 +198,7 @@
 
     <!-- Mobile Dropdown Menu (Smooth Slide-Down Animation) -->
     <div id="mobile-menu" class="lg:hidden border-b border-slate-800 bg-slate-950/95 px-4 space-y-3 backdrop-blur-xl" aria-hidden="true">
-      <a href="#projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 font-semibold" data-en="Projects & Systems" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
+      <a href="#projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 font-semibold" data-en="Projects & Portfolio" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
       <div class="pr-2 border-r-2 border-emerald-500/40 space-y-2 text-xs">
         <a href="corporate-website.html" class="mobile-nav-link block py-1 text-cyan-400 hover:underline" data-en="Corporate Website ($65 / $75)" data-ar="مواقع الشركات (65$ / 75$)">مواقع الشركات (65$ / 75$)</a>
         <a href="whatsapp-ai-employee.html" class="mobile-nav-link block py-1 text-emerald-400 hover:underline" data-en="WhatsApp AI Employee" data-ar="موظف واتساب الذكي">موظف واتساب الذكي</a>
@@ -207,7 +208,9 @@
         <a href="n8n-automation.html" class="mobile-nav-link block py-1 text-emerald-400 hover:underline" data-en="n8n Automation Engine" data-ar="أتمتة الأعمال n8n">أتمتة الأعمال n8n</a>
         <a href="backend-api-architecture.html" class="mobile-nav-link block py-1 text-cyan-400 hover:underline" data-en="Backend & API Architecture" data-ar="هندسة الخوادم والـ APIs">هندسة الخوادم والـ APIs</a>
       </div>
-      <a href="#solutions" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Business Solutions" data-ar="حلول الشركات">حلول الشركات</a>
+      <a href="#solutions" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 font-semibold" data-en="Services & Pricing" data-ar="الخدمات والأسعار">الخدمات والأسعار</a>
+      <a href="#ai-tiers" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="AI Employee Tiers" data-ar="باقات موظفي الذكاء">باقات موظفي الذكاء</a>
+      <a href="#partners" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Become a Sales Partner" data-ar="برنامج الشركاء المستقلين">برنامج الشركاء المستقلين</a>
       <a href="#architecture" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Cloud Architecture" data-ar="المعمارية السحابية">المعمارية السحابية</a>
       <a href="#workflow" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Interactive Flow" data-ar="محاكي الأتمتة">محاكي الأتمتة</a>
       <a href="#skills" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Tech Stack" data-ar="المهارات والتقنيات">المهارات والتقنيات</a>
@@ -747,173 +750,956 @@
     </div>
   </section>
 
-  <!-- Business Solutions Section -->
-  <section id="solutions" class="py-20 relative z-10 border-t border-slate-800/60 bg-slate-950/40">
+  <!-- Business Solutions & Transparent Services Pricing Section -->
+  <section id="solutions" class="py-24 relative z-10 border-t border-slate-800/60 bg-slate-950/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-cyan text-xs font-mono font-semibold mb-3">
-          <span>BUSINESS SOLUTIONS</span>
+          <span>SERVICES & STARTING PRICES (USD)</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-en="High-Impact Specialized Solutions" data-ar="حلول أعمال متخصصة تصنع فارقاً حقيقياً">
-          حلول أعمال متخصصة تصنع فارقاً حقيقياً
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-en="Specialized Services & Transparent Starting Pricing" data-ar="خدمات برمجية متخصصة وأسعار واضحة تبدأ من">
+          خدمات برمجية متخصصة وأسعار واضحة تبدأ من
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-3" data-en="Tailored architectures solving core operational bottlenecks for business owners and enterprises." data-ar="حلول مدروسة ومبرمجة لإنهاء التكاليف التشغيلية ومضاعفة المبيعات وأتمتة العمليات اليومية.">
-          حلول مدروسة ومبرمجة لإنهاء التكاليف التشغيلية ومضاعفة المبيعات وأتمتة العمليات اليومية.
+        <p class="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed" data-en="Enterprise-grade software and automation solutions for businesses in Egypt and worldwide. All prices are starting rates in USD." data-ar="حلول برمجية وأنظمة أتمتة مصممة لأصحاب الأعمال والشركات في مصر وجميع دول العالم بأسعار تبدأ من بالدولار الأمريكي.">
+          حلول برمجية وأنظمة أتمتة مصممة لأصحاب الأعمال والشركات في مصر وجميع دول العالم بأسعار تبدأ من بالدولار الأمريكي.
+        </p>
+
+        <!-- Billing Cycle Selector (Monthly / Annual with ~2 Months Discount) -->
+        <div class="mt-8 inline-flex items-center p-1 rounded-2xl bg-slate-900 border border-slate-800 shadow-inner">
+          <button type="button" data-action="toggle-billing" data-cycle="monthly" class="billing-cycle-btn px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer active bg-emerald-500 text-slate-950 shadow-md">
+            <span data-en="Monthly Subscriptions" data-ar="الاشتراك الشهري">الاشتراك الشهري</span>
+          </button>
+          <button type="button" data-action="toggle-billing" data-cycle="annual" class="billing-cycle-btn px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer bg-transparent text-slate-400 hover:text-white flex items-center gap-1.5">
+            <span data-en="Annual Subscriptions" data-ar="الاشتراك السنوي">الاشتراك السنوي</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold" data-en="Save ~2 Months" data-ar="وفر شهرين">وفر شهرين</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 9 Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 1. Corporate Website -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-cyan-500 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-cyan-500 text-slate-950 text-[10px] font-bold font-mono">
+            <span data-en="Starting from $65" data-ar="يبدأ من 65$">يبدأ من 65$</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <a href="corporate-website.html" class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl hover:scale-105 transition-transform block">
+                🌐
+              </a>
+              <span class="text-[10px] font-mono text-cyan-400 font-bold px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20" data-en="Base Package" data-ar="الباقة الأساسية">الباقة الأساسية</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Website" data-ar="تصميم موقع تعريفي للشركات">تصميم موقع تعريفي للشركات</a>
+            </h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Complete, high-speed corporate website in Arabic and English within the base package, including design, domain, cloud hosting, and continuous daily support." data-ar="موقع إلكتروني تعريفي متكامل وسريع لشركتك باللغتين العربية والإنجليزية معاً ضمن السعر الأساسي، شامل التصميم والدومين والاستضافة والصيانة اليومية.">
+              موقع إلكتروني تعريفي متكامل وسريع لشركتك باللغتين العربية والإنجليزية معاً ضمن السعر الأساسي، شامل التصميم والدومين والاستضافة والصيانة اليومية.
+            </p>
+
+            <!-- Pricing Box -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-cyan-500/20 mb-4">
+              <div class="text-xs text-slate-400 mb-0.5" data-en="Starting Price:" data-ar="السعر يبدأ من:">السعر يبدأ من:</div>
+              <div class="text-xl font-black text-cyan-300 font-mono flex items-baseline gap-1">
+                <span>$65</span>
+                <span class="text-xs text-slate-400 font-normal" data-en="USD (.uk) / $75 (.com)" data-ar="دولار (.uk) أو 75$ (.com)">دولار (.uk) أو 75$ (.com)</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1" data-en="Fixed Annual Renewal: $40 / year (includes domain, hosting & support)" data-ar="التجديد السنوي ثابت: 40$ سنوياً (شامل الدومين والاستضافة والدعم الفني)">
+                التجديد السنوي ثابت: 40$ سنوياً (شامل الدومين والاستضافة والدعم الفني)
+              </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Bilingual setup: Arabic & English included" data-ar="دعم اللغتين (العربية والإنجليزية معاً) مشمول">دعم اللغتين (العربية والإنجليزية معاً) مشمول</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="High-speed SSL Cloud SSD hosting included" data-ar="استضافة سحابية فائقة السرعة SSD + شهادة SSL">استضافة سحابية فائقة السرعة SSD + شهادة SSL</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Direct WhatsApp CTA & responsive design" data-ar="ربط مباشر بالواتساب وتصميم متجاوب 100%">ربط مباشر بالواتساب وتصميم متجاوب 100%</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Daily maintenance & support Sat-Thu" data-ar="صيانة ومتابعة يومية ودعم فني (السبت-الخميس)">صيانة ومتابعة يومية ودعم فني (السبت-الخميس)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800/80">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="corporate-website" class="w-full py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="corporate-website" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              </a>
+              <a href="corporate-website.html" class="py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold text-center transition-all">
+                <span data-en="Service Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. WhatsApp AI Employee -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-emerald-500 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 text-[10px] font-bold font-mono">
+            <span data-en="Starting from $39 / mo" data-ar="يبدأ من 39$ / شهر">يبدأ من 39$ / شهر</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <a href="whatsapp-ai-employee.html" class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl hover:scale-105 transition-transform block">
+                🤖
+              </a>
+              <span class="text-[10px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20" data-en="Monthly / Annual" data-ar="شهري / سنوي">شهري / سنوي</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <a href="whatsapp-ai-employee.html" class="hover:text-emerald-400 transition-colors" data-en="WhatsApp AI Employee" data-ar="موظف واتساب الذكي">موظف واتساب الذكي</a>
+            </h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Human-like AI sales & support agent available 24/7. Generates PDF quotes, answers product inquiries, and closes deals automatically." data-ar="موظف مبيعات ودعم ذكي بشري يعمل 24/7 دون توقف. يرسل عروض أسعار PDF، يشرح المنتجات والكتالوجات، ويثبت الطلبات.">
+              موظف مبيعات ودعم ذكي بشري يعمل 24/7 دون توقف. يرسل عروض أسعار PDF، يشرح المنتجات والكتالوجات، ويثبت الطلبات.
+            </p>
+
+            <!-- Pricing Box with Monthly & Annual Display -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-500/20 mb-4">
+              <div class="pricing-monthly-view">
+                <div class="text-xs text-slate-400 mb-0.5" data-en="Monthly Subscription:" data-ar="الاشتراك الشهري:">الاشتراك الشهري:</div>
+                <div class="text-xl font-black text-emerald-400 font-mono flex items-baseline gap-1">
+                  <span>$39</span>
+                  <span class="text-xs text-slate-400 font-normal" data-en="/ month (starting)" data-ar="/ شهرياً (سعر يبدأ من)">/ شهرياً (سعر يبدأ من)</span>
+                </div>
+              </div>
+              <div class="pricing-annual-view hidden">
+                <div class="text-xs text-emerald-400 mb-0.5 font-bold" data-en="Annual Subscription (Save 2 Months):" data-ar="الاشتراك السنوي (وفر شهرين):">الاشتراك السنوي (وفر شهرين):</div>
+                <div class="text-xl font-black text-emerald-400 font-mono flex items-baseline gap-1">
+                  <span>$390</span>
+                  <span class="text-xs text-slate-400 font-normal" data-en="/ year (equivalent to $32.5/mo)" data-ar="/ سنوياً (يعادل 32.5$/شهر)">/ سنوياً (يعادل 32.5$/شهر)</span>
+                </div>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1 leading-tight" data-en="Monthly rate depends on usage volume and required capabilities." data-ar="السعر الشهري يعتمد على حجم الاستخدام والإمكانيات والتكاملات المطلوبة.">
+                السعر الشهري يعتمد على حجم الاستخدام والإمكانيات والتكاملات المطلوبة.
+              </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="24/7 human-like conversational replies" data-ar="ردود بشرية ذكية ودودة وطبيعية 24/7">ردود بشرية ذكية ودودة وطبيعية 24/7</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Instant branded PDF quote generator" data-ar="توليد وإرسال عروض أسعار PDF بشعار شركتك">توليد وإرسال عروض أسعار PDF بشعار شركتك</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Customer data capture & CRM sync" data-ar="جمع بيانات العملاء والربط مع الـ CRM وقواعد البيانات">جمع بيانات العملاء والربط مع الـ CRM وقواعد البيانات</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Human handoff when needed" data-ar="تحويل المحادثة للموظف البشري عند الحاجة">تحويل المحادثة للموظف البشري عند الحاجة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800/80">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="whatsapp-ai-employee" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="whatsapp-ai-employee" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              </a>
+              <a href="whatsapp-ai-employee.html" class="py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-xs font-semibold text-center transition-all">
+                <span data-en="Service Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Messenger & Telegram AI Employee -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-cyan-500 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-cyan-500 text-slate-950 text-[10px] font-bold font-mono">
+            <span data-en="Starting from $39 / mo" data-ar="يبدأ من 39$ / شهر">يبدأ من 39$ / شهر</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <a href="omnichannel-ai-agent.html" class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl hover:scale-105 transition-transform block">
+                💬
+              </a>
+              <span class="text-[10px] font-mono text-cyan-400 font-bold px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20" data-en="Omnichannel AI" data-ar="متعدد القنوات">متعدد القنوات</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <a href="omnichannel-ai-agent.html" class="hover:text-cyan-400 transition-colors" data-en="Messenger & Telegram AI Employee" data-ar="موظف ماسنجر وتلجرام الذكي">موظف ماسنجر وتلجرام الذكي</a>
+            </h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Unified AI presence across Facebook Messenger and Telegram bots. Immediate responses, product recommendations, and automated customer qualification." data-ar="تواجد ذكي موحد عبر ماسنجر وتلجرام بوت. ردود فورية وشرح للخدمات والمنتجات وتأهيل فوري للعملاء المحتملين.">
+              تواجد ذكي موحد عبر ماسنجر وتلجرام بوت. ردود فورية وشرح للخدمات والمنتجات وتأهيل فوري للعملاء المحتملين.
+            </p>
+
+            <!-- Pricing Box -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-cyan-500/20 mb-4">
+              <div class="pricing-monthly-view">
+                <div class="text-xs text-slate-400 mb-0.5" data-en="Monthly Subscription:" data-ar="الاشتراك الشهري:">الاشتراك الشهري:</div>
+                <div class="text-xl font-black text-cyan-300 font-mono flex items-baseline gap-1">
+                  <span>$39</span>
+                  <span class="text-xs text-slate-400 font-normal" data-en="/ month (starting)" data-ar="/ شهرياً (سعر يبدأ من)">/ شهرياً (سعر يبدأ من)</span>
+                </div>
+              </div>
+              <div class="pricing-annual-view hidden">
+                <div class="text-xs text-cyan-400 mb-0.5 font-bold" data-en="Annual Subscription (Save 2 Months):" data-ar="الاشتراك السنوي (وفر شهرين):">الاشتراك السنوي (وفر شهرين):</div>
+                <div class="text-xl font-black text-cyan-300 font-mono flex items-baseline gap-1">
+                  <span>$390</span>
+                  <span class="text-xs text-slate-400 font-normal" data-en="/ year (equivalent to $32.5/mo)" data-ar="/ سنوياً (يعادل 32.5$/شهر)">/ سنوياً (يعادل 32.5$/شهر)</span>
+                </div>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1 leading-tight" data-en="Final price depends on usage volume and required integrations." data-ar="السعر النهائي حسب حجم الاستخدام والتكاملات المطلوبة.">
+                السعر النهائي حسب حجم الاستخدام والتكاملات المطلوبة.
+              </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Multi-platform Telegram & Messenger deployment" data-ar="تشغيل متكامل على تلجرام وماسنجر فيسبوك">تشغيل متكامل على تلجرام وماسنجر فيسبوك</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Rich interactive buttons & product carousels" data-ar="أزرار تفاعلية وقوائم كتالوج المنتجات">أزرار تفاعلية وقوائم كتالوج المنتجات</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Automated lead capture & follow-up" data-ar="تسجيل بيانات العملاء وتأهيلهم آلياً">تسجيل بيانات العملاء وتأهيلهم آلياً</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Live webhook sync with internal systems" data-ar="ربط لحظي مع أنظمة الشركة عبر Webhooks">ربط لحظي مع أنظمة الشركة عبر Webhooks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800/80">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="messenger-telegram-ai" class="w-full py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="messenger-telegram-ai" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              </a>
+              <a href="omnichannel-ai-agent.html" class="py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold text-center transition-all">
+                <span data-en="Service Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Smart Shipping & Courier Management System -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-indigo-500 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-indigo-500 text-white text-[10px] font-bold font-mono">
+            <span data-en="Starting from $99 / mo" data-ar="يبدأ من 99$ / شهر">يبدأ من 99$ / شهر</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <a href="smart-shipping-system.html" class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-2xl hover:scale-105 transition-transform block">
+                🚚
+              </a>
+              <span class="text-[10px] font-mono text-indigo-400 font-bold px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20" data-en="Logistics ERP" data-ar="إدارة اللوجستيات">إدارة اللوجستيات</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <a href="smart-shipping-system.html" class="hover:text-indigo-400 transition-colors" data-en="Smart Shipping & Courier System" data-ar="سيستم الشحن واللوجستيات والمناديب">سيستم الشحن واللوجستيات والمناديب</a>
+            </h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="End-to-end logistics platform: PDF waybill barcode generation, real-time WhatsApp delivery notifications, courier mobile flow, and automated COD ledger." data-ar="منظومة متكاملة لشركات الشحن والتجار: توليد بوالص PDF مع باركود، تتبع لحظي عبر واتساب، شاشات للمناديب، وتسوية أموال الدفع عند الاستلام COD.">
+              منظومة متكاملة لشركات الشحن والتجار: توليد بوالص PDF مع باركود، تتبع لحظي عبر واتساب، شاشات للمناديب، وتسوية أموال الدفع عند الاستلام COD.
+            </p>
+
+            <!-- Pricing Box -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-indigo-500/20 mb-4">
+              <div class="pricing-monthly-view">
+                <div class="text-xs text-slate-400 mb-0.5" data-en="Monthly Subscription:" data-ar="الاشتراك الشهري:">الاشتراك الشهري:</div>
+                <div class="text-xl font-black text-indigo-300 font-mono flex items-baseline gap-1">
+                  <span>$99</span>
+                  <span class="text-xs text-slate-400 font-normal" data-en="/ month (starting)" data-ar="/ شهرياً (سعر يبدأ من)">/ شهرياً (سعر يبدأ من)</span>
+                </div>
+              </div>
+              <div class="pricing-annual-view hidden">
+                <div class="text-xs text-indigo-400 mb-0.5 font-bold" data-en="Annual Subscription (Save 2 Months):" data-ar="الاشتراك السنوي (وفر شهرين):">الاشتراك السنوي (وفر شهرين):</div>
+                <div class="text-xl font-black text-indigo-300 font-mono flex items-baseline gap-1">
+                  <span>$990</span>
+                  <span class="text-xs text-slate-400 font-normal" data-en="/ year (equivalent to $82.5/mo)" data-ar="/ سنوياً (يعادل 82.5$/شهر)">/ سنوياً (يعادل 82.5$/شهر)</span>
+                </div>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1 leading-tight" data-en="Final price depends on couriers count, orders volume, tracking & COD features." data-ar="السعر النهائي حسب عدد المناديب، الطلبات، الخصائص، التتبع، COD والتكاملات المطلوبة.">
+                السعر النهائي حسب عدد المناديب، الطلبات، الخصائص، التتبع، COD والتكاملات المطلوبة.
+              </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <span class="text-indigo-400 font-bold shrink-0">✓</span> <span data-en="Instant printable PDF waybills with barcode & QR" data-ar="بوالص شحن PDF فورية مع باركود و QR للطباعة">بوالص شحن PDF فورية مع باركود و QR للطباعة</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-indigo-400 font-bold shrink-0">✓</span> <span data-en="Live customer shipment tracking via WhatsApp" data-ar="تتبع مباشر للشحنات للعملاء عبر رسائل واتساب">تتبع مباشر للشحنات للعملاء عبر رسائل واتساب</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-indigo-400 font-bold shrink-0">✓</span> <span data-en="Courier app & status update workflow" data-ar="شاشات مخصصة للمناديب لتحديث حالات الاستلام والتسليم">شاشات مخصصة للمناديب لتحديث حالات الاستلام والتسليم</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-indigo-400 font-bold shrink-0">✓</span> <span data-en="Driver COD settlement & daily financial ledger" data-ar="تسوية دقيقة لمبالغ التحصيل COD وتقارير الحسابات">تسوية دقيقة لمبالغ التحصيل COD وتقارير الحسابات</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800/80">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="smart-shipping-system" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="smart-shipping-system" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              </a>
+              <a href="smart-shipping-system.html" class="py-2 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 text-xs font-semibold text-center transition-all">
+                <span data-en="Service Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Business Automation – n8n -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-emerald-500 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 text-[10px] font-bold font-mono">
+            <span data-en="Starting from $59 / mo" data-ar="يبدأ من 59$ / شهر">يبدأ من 59$ / شهر</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <a href="n8n-automation.html" class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl hover:scale-105 transition-transform block">
+                ⚙️
+              </a>
+              <span class="text-[10px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20" data-en="Workflow Automation" data-ar="أتمتة الأعمال">أتمتة الأعمال</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <a href="n8n-automation.html" class="hover:text-emerald-400 transition-colors" data-en="Business Automation – n8n" data-ar="أتمتة الأعمال – n8n">أتمتة الأعمال – n8n</a>
+            </h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Automate recurring processes, sync databases with Google Sheets & CRMs, send instant notifications, and connect disparate APIs seamlessly." data-ar="أتمتة العمليات المتكررة، ربط قواعد البيانات بجوجل شيتس والأنظمة، إرسال الإشعارات التلقائية، وربط الـ APIs دون أخطاء يدوية.">
+              أتمتة العمليات المتكررة، ربط قواعد البيانات بجوجل شيتس والأنظمة، إرسال الإشعارات التلقائية، وربط الـ APIs دون أخطاء يدوية.
+            </p>
+
+            <!-- Pricing Box -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-500/20 mb-4">
+              <div class="pricing-monthly-view">
+                <div class="text-xs text-slate-400 mb-0.5" data-en="Monthly Subscription:" data-ar="الاشتراك الشهري:">الاشتراك الشهري:</div>
+                <div class="text-xl font-black text-emerald-400 font-mono flex items-baseline gap-1">
+                  <span>$59</span>
+                  <span class="text-xs text-slate-400 font-normal" data-en="/ month (starting)" data-ar="/ شهرياً (سعر يبدأ من)">/ شهرياً (سعر يبدأ من)</span>
+                </div>
+              </div>
+              <div class="pricing-annual-view hidden">
+                <div class="text-xs text-emerald-400 mb-0.5 font-bold" data-en="Annual Subscription (Save 2 Months):" data-ar="الاشتراك السنوي (وفر شهرين):">الاشتراك السنوي (وفر شهرين):</div>
+                <div class="text-xl font-black text-emerald-400 font-mono flex items-baseline gap-1">
+                  <span>$590</span>
+                  <span class="text-xs text-slate-400 font-normal" data-en="/ year (equivalent to $49/mo)" data-ar="/ سنوياً (يعادل 49$/شهر)">/ سنوياً (يعادل 49$/شهر)</span>
+                </div>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1 leading-tight" data-en="Final price depends on workflows count, integrations & operation volume." data-ar="السعر النهائي حسب عدد الـ Workflows والتكاملات وحجم التشغيل.">
+                السعر النهائي حسب عدد الـ Workflows والتكاملات وحجم التشغيل.
+              </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Custom self-hosted n8n infrastructure" data-ar="بنية تحتية سحابية مخصصة لـ n8n مع موثوقية 99.9%">بنية تحتية سحابية مخصصة لـ n8n مع موثوقية 99.9%</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Multi-app syncing (CRM, ERP, WhatsApp, Sheets)" data-ar="مزامنة بين الـ CRM وقواعد البيانات وشيتس والواتساب">مزامنة بين الـ CRM وقواعد البيانات وشيتس والواتساب</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Real-time webhooks & alert routing" data-ar="معالجة فورية للـ Webhooks وإرسال تنبيهات لحظية">معالجة فورية للـ Webhooks وإرسال تنبيهات لحظية</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Automatic retry and failure recovery" data-ar="إعادة محاولة ذاتية ومراقبة وتنبيه عند أي انقطاع">إعادة محاولة ذاتية ومراقبة وتنبيه عند أي انقطاع</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800/80">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="business-automation-n8n" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="business-automation-n8n" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              </a>
+              <a href="n8n-automation.html" class="py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-xs font-semibold text-center transition-all">
+                <span data-en="Service Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Custom Android & iOS App -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-purple-500 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-purple-500 text-white text-[10px] font-bold font-mono">
+            <span data-en="Starting from $399 / project" data-ar="يبدأ من 399$ / مشروع">يبدأ من 399$ / مشروع</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <a href="mobile-retail-apps.html" class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-2xl hover:scale-105 transition-transform block">
+                📱
+              </a>
+              <span class="text-[10px] font-mono text-purple-400 font-bold px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20" data-en="Project-Based" data-ar="تسليم مشروع">تسليم مشروع</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <a href="mobile-retail-apps.html" class="hover:text-purple-400 transition-colors" data-en="Custom Android & iOS App" data-ar="تطوير تطبيقات Android & iOS">تطوير تطبيقات Android & iOS</a>
+            </h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="High-performance native & hybrid mobile applications tailored to your business model, with modern UI/UX, push notifications, and store deployment." data-ar="تطبيقات موبايل سريعة وعصرية لنظامي أندرويد و iOS مصممة وفق نموذج عملك، شاملة لوحة التحكم والإشعارات والنشر على المتاجر.">
+              تطبيقات موبايل سريعة وعصرية لنظامي أندرويد و iOS مصممة وفق نموذج عملك، شاملة لوحة التحكم والإشعارات والنشر على المتاجر.
+            </p>
+
+            <!-- Pricing Box -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-purple-500/20 mb-4">
+              <div class="text-xs text-slate-400 mb-0.5" data-en="Starting Price:" data-ar="السعر يبدأ من:">السعر يبدأ من:</div>
+              <div class="text-xl font-black text-purple-300 font-mono flex items-baseline gap-1">
+                <span>$399</span>
+                <span class="text-xs text-slate-400 font-normal" data-en="/ project (starting rate)" data-ar="/ مشروع (سعر يبدأ من)">/ مشروع (سعر يبدأ من)</span>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1 leading-tight" data-en="Final price depends on screens count, features, backend complexity & APIs." data-ar="السعر النهائي حسب عدد الشاشات والخصائص والـ Backend والتكاملات المطلوبة.">
+                السعر النهائي حسب عدد الشاشات والخصائص والـ Backend والتكاملات المطلوبة.
+              </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <span class="text-purple-400 font-bold shrink-0">✓</span> <span data-en="Smooth cross-platform build (Android & iOS)" data-ar="تطوير موحد وسريع لنظامي Android و iOS">تطوير موحد وسريع لنظامي Android و iOS</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-purple-400 font-bold shrink-0">✓</span> <span data-en="Interactive push notifications & live alerts" data-ar="إشعارات لحظية Push Notifications للمستخدمين">إشعارات لحظية Push Notifications للمستخدمين</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-purple-400 font-bold shrink-0">✓</span> <span data-en="Secure cloud backend & admin dashboard" data-ar="لوحة تحكم سحابية لإدارة البيانات والمستخدمين">لوحة تحكم سحابية لإدارة البيانات والمستخدمين</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-purple-400 font-bold shrink-0">✓</span> <span data-en="Publishing on Google Play & App Store" data-ar="مساعدة كاملة في النشر على App Store و Google Play">مساعدة كاملة في النشر على App Store و Google Play</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800/80">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="custom-mobile-app" class="w-full py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="custom-mobile-app" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              </a>
+              <a href="mobile-retail-apps.html" class="py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-xs font-semibold text-center transition-all">
+                <span data-en="Service Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. POS / Supermarket / Pharmacy System -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-amber-500 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-amber-500 text-slate-950 text-[10px] font-bold font-mono">
+            <span data-en="Starting from $299 / project" data-ar="يبدأ من 299$ / مشروع">يبدأ من 299$ / مشروع</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <a href="mobile-retail-apps.html" class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl hover:scale-105 transition-transform block">
+                🏪
+              </a>
+              <span class="text-[10px] font-mono text-amber-400 font-bold px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20" data-en="Retail POS & ERP" data-ar="نقاط البيع والمتاجر">نقاط البيع والمتاجر</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <a href="mobile-retail-apps.html" class="hover:text-amber-400 transition-colors" data-en="POS / Supermarket / Pharmacy System" data-ar="سيستم نقاط البيع POS وسوبرماركت وصيدلية">سيستم نقاط البيع POS وسوبرماركت وصيدلية</a>
+            </h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Smart POS cashiers, barcode scanners, thermal receipt printers, pharmacy medicine expiry tracking, inventory audits, and daily profit analytics." data-ar="سيستم كاشير متقدم لنقاط البيع، ربط قارئات الباركود وطابعات الإيصالات، تتبع صلاحيات الأدوية والمخزون، وتقارير أرباح يومية.">
+              سيستم كاشير متقدم لنقاط البيع، ربط قارئات الباركود وطابعات الإيصالات، تتبع صلاحيات الأدوية والمخزون، وتقارير أرباح يومية.
+            </p>
+
+            <!-- Pricing Box -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-amber-500/20 mb-4">
+              <div class="text-xs text-slate-400 mb-0.5" data-en="Starting Price:" data-ar="السعر يبدأ من:">السعر يبدأ من:</div>
+              <div class="text-xl font-black text-amber-300 font-mono flex items-baseline gap-1">
+                <span>$299</span>
+                <span class="text-xs text-slate-400 font-normal" data-en="/ project (starting rate)" data-ar="/ مشروع (سعر يبدأ من)">/ مشروع (سعر يبدأ من)</span>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1 leading-tight" data-en="Final price depends on business type, branches count & required modules." data-ar="السعر النهائي حسب طبيعة النشاط، عدد الفروع، والخصائص المطلوبة.">
+                السعر النهائي حسب طبيعة النشاط، عدد الفروع، والخصائص المطلوبة.
+              </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <span class="text-amber-400 font-bold shrink-0">✓</span> <span data-en="Barcode scanner & thermal receipt printer integration" data-ar="ربط كامل بقوارئ الباركود وطابعات الكاشير والدرج">ربط كامل بقوارئ الباركود وطابعات الكاشير والدرج</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-amber-400 font-bold shrink-0">✓</span> <span data-en="Inventory batches, alerts & expiry date tracking" data-ar="إدارة المخزون وتواريخ الصلاحية والتنبيه بالنواقص">إدارة المخزون وتواريخ الصلاحية والتنبيه بالنواقص</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-amber-400 font-bold shrink-0">✓</span> <span data-en="Multi-cashier shifts & user permissions" data-ar="إدارة الورديات والكاشير وصلاحيات الموظفين">إدارة الورديات والكاشير وصلاحيات الموظفين</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-amber-400 font-bold shrink-0">✓</span> <span data-en="Financial & tax invoice reporting" data-ar="تقارير مالية تفصيلية وفواتير إلكترونية مبسطة">تقارير مالية تفصيلية وفواتير إلكترونية مبسطة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800/80">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="retail-pos-system" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="retail-pos-system" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              </a>
+              <a href="mobile-retail-apps.html" class="py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 text-xs font-semibold text-center transition-all">
+                <span data-en="Service Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Backend / API / Database Solutions -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-cyan-500 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-cyan-500 text-slate-950 text-[10px] font-bold font-mono">
+            <span data-en="Starting from $149" data-ar="يبدأ من 149$">يبدأ من 149$</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <a href="backend-api-architecture.html" class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl hover:scale-105 transition-transform block">
+                🗄️
+              </a>
+              <span class="text-[10px] font-mono text-cyan-400 font-bold px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20" data-en="Backend & API" data-ar="هندسة الخوادم">هندسة الخوادم</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <a href="backend-api-architecture.html" class="hover:text-cyan-400 transition-colors" data-en="Backend / API / Database Solutions" data-ar="حلول الخوادم والـ APIs وقواعد البيانات">حلول الخوادم والـ APIs وقواعد البيانات</a>
+            </h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Scalable RESTful & GraphQL APIs, secure database schema normalization, Swagger documentation, and high-performance server architecture." data-ar="بناء واجهات برمجية RESTful و GraphQL آمنة وسريعة، تصميم وتطبيع قواعد البيانات، توثيق Swagger، وضمان الأمان والسرعة.">
+              بناء واجهات برمجية RESTful و GraphQL آمنة وسريعة، تصميم وتطبيع قواعد البيانات، توثيق Swagger، وضمان الأمان والسرعة.
+            </p>
+
+            <!-- Pricing Box -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-cyan-500/20 mb-4">
+              <div class="text-xs text-slate-400 mb-0.5" data-en="Starting Price:" data-ar="السعر يبدأ من:">السعر يبدأ من:</div>
+              <div class="text-xl font-black text-cyan-300 font-mono flex items-baseline gap-1">
+                <span>$149</span>
+                <span class="text-xs text-slate-400 font-normal" data-en="USD (starting rate)" data-ar="دولار (سعر يبدأ من)">دولار (سعر يبدأ من)</span>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1 leading-tight" data-en="Final price depends on system scale, APIs count, database size & integrations." data-ar="السعر النهائي حسب حجم النظام وعدد الـ APIs وقواعد البيانات والتكاملات.">
+                السعر النهائي حسب حجم النظام وعدد الـ APIs وقواعد البيانات والتكاملات.
+              </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="High-throughput RESTful / GraphQL API endpoints" data-ar="واجهات REST / GraphQL عالية الأداء والاستجابة">واجهات REST / GraphQL عالية الأداء والاستجابة</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="PostgreSQL, MySQL & MongoDB architecture" data-ar="تصميم قواعد بيانات PostgreSQL و MongoDB مؤمنة">تصميم قواعد بيانات PostgreSQL و MongoDB مؤمنة</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Interactive Swagger / OpenAPI documentation" data-ar="توثيق برمجيات تفاعلي كامل عبر Swagger">توثيق برمجيات تفاعلي كامل عبر Swagger</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="JWT security, rate limiting & telemetry" data-ar="حماية JWT وتحديد معدل الطلبات والتشفير">حماية JWT وتحديد معدل الطلبات والتشفير</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800/80">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="backend-api-solutions" class="w-full py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="backend-api-solutions" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              </a>
+              <a href="backend-api-architecture.html" class="py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold text-center transition-all">
+                <span data-en="Service Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Custom Business System -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-emerald-500 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 text-[10px] font-bold font-mono">
+            <span data-en="Starting from $499 / project" data-ar="يبدأ من 499$ / مشروع">يبدأ من 499$ / مشروع</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl">
+                ☁️
+              </div>
+              <span class="text-[10px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20" data-en="Enterprise System" data-ar="سيستم شركات مخصص">سيستم شركات مخصص</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <span data-en="Custom Business System" data-ar="سيستم مخصص لإدارة الشركات والمؤسسات">سيستم مخصص لإدارة الشركات والمؤسسات</span>
+            </h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Custom enterprise web platforms solving your operational bottlenecks: multi-department workflows, human resource portals, sales pipelines, and tailored ERP logic." data-ar="أنظمة إدارة مخصصة تلبي احتياجات شركتك بدقة: ربط الإدارات، إدارة الموظفين، متابعة المبيعات والعملاء، وتخصيص دورة العمل وفق متطلباتك.">
+              أنظمة إدارة مخصصة تلبي احتياجات شركتك بدقة: ربط الإدارات، إدارة الموظفين، متابعة المبيعات والعملاء، وتخصيص دورة العمل وفق متطلباتك.
+            </p>
+
+            <!-- Pricing Box -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-500/20 mb-4">
+              <div class="text-xs text-slate-400 mb-0.5" data-en="Starting Price:" data-ar="السعر يبدأ من:">السعر يبدأ من:</div>
+              <div class="text-xl font-black text-emerald-400 font-mono flex items-baseline gap-1">
+                <span>$499</span>
+                <span class="text-xs text-slate-400 font-normal" data-en="/ project (starting rate)" data-ar="/ مشروع (سعر يبدأ من)">/ مشروع (سعر يبدأ من)</span>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1 leading-tight" data-en="Final price depends on enterprise size, custom modules & architecture." data-ar="السعر النهائي حسب حجم الشركة ومتطلبات النظام والتكاملات.">
+                السعر النهائي حسب حجم الشركة ومتطلبات النظام والتكاملات.
+              </div>
+            </div>
+
+            <!-- Core Features -->
+            <div class="space-y-1.5 mb-6 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Custom modules designed around your company operations" data-ar="بناء شاشات ودورات عمل مخصصة لطبيعة نشاطك">بناء شاشات ودورات عمل مخصصة لطبيعة نشاطك</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Granular role-based access control (RBAC)" data-ar="صلاحيات وأدوار متقدمة للمديرين والموظفين">صلاحيات وأدوار متقدمة للمديرين والموظفين</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Centralized analytics, logs & activity audit" data-ar="تقارير تحليلية مركزية وسجل كامل للعمليات">تقارير تحليلية مركزية وسجل كامل للعمليات</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Enterprise cloud security & automated backups" data-ar="أمان سحابي متقدم ونسخ احتياطي دوري آلي">أمان سحابي متقدم ونسخ احتياطي دوري آلي</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-800/80">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="custom-business-system" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="custom-business-system" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              </a>
+              <button type="button" data-action="open-customer-service-chat" class="py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-xs font-semibold text-center transition-all cursor-pointer">
+                <span data-en="Ask Ahmed AI" data-ar="اسأل الموظف أحمد">اسأل الموظف أحمد</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Requirement 3: Mandatory Pricing Note -->
+      <div class="mt-14 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-cyan-500/30 text-center max-w-4xl mx-auto shadow-xl">
+        <div class="flex items-center justify-center gap-2 text-cyan-400 font-bold text-sm mb-2 font-mono">
+          <span class="text-base">📌</span>
+          <span data-en="Important Pricing Notice" data-ar="ملاحظة مهمة بشأن الأسعار">ملاحظة مهمة بشأن الأسعار</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium" data-en="All prices are starting prices. Final pricing depends on project requirements, usage, integrations, features, and system size." data-ar="جميع الأسعار المذكورة هي أسعار تبدأ من، ويتم تحديد السعر النهائي حسب متطلبات المشروع وحجم الاستخدام والخصائص والتكاملات المطلوبة.">
+          جميع الأسعار المذكورة هي أسعار تبدأ من، ويتم تحديد السعر النهائي حسب متطلبات المشروع وحجم الاستخدام والخصائص والتكاملات المطلوبة.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    </div>
+  </section>
+
+  <!-- Section: Specialized AI Employee Tiers (Requirement 4) -->
+  <section id="ai-tiers" class="py-24 relative z-10 border-t border-slate-800/60 bg-slate-950/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-emerald text-xs font-mono font-semibold mb-3">
+          <span>AI WORKFORCE TIERS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-en="Specialized AI Employee Capability Tiers" data-ar="مستويات وباقات موظف الذكاء الاصطناعي">
+          مستويات وباقات موظف الذكاء الاصطناعي
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed" data-en="We do not offer AI as a one-size-fits-all bot. Choose the exact tier that fits your operational requirements and sales flow." data-ar="لا نقدم الذكاء الاصطناعي كخدمة واحدة ثابتة، بل مستويات ذكية متخصصة تتدرج حسب احتياجات عملك وحجم عملائك.">
+          لا نقدم الذكاء الاصطناعي كخدمة واحدة ثابتة، بل مستويات ذكية متخصصة تتدرج حسب احتياجات عملك وحجم عملائك.
+        </p>
+      </div>
+
+      <!-- 3 Tier Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
         
-        <!-- Solution 1: Corporate Website Package -->
-        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-cyan-500 relative">
-          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-cyan-500 text-slate-950 text-[10px] font-bold font-mono">
-            <span data-en="Bilingual · $65 (.uk) / $75 (.com)" data-ar="اللغتان معاً · 65$ (uk.) أو 75$ (com.)">اللغتان معاً · 65$ (uk.) أو 75$ (com.)</span>
-          </div>
+        <!-- Tier 1: AI Customer Service -->
+        <div class="glass-panel p-6 sm:p-8 flex flex-col justify-between border-t-2 border-t-cyan-500 relative">
           <div>
-            <a href="corporate-website.html" class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl mb-4 hover:scale-105 transition-transform block">
-              🌐
-            </a>
-            <h3 class="text-lg font-bold text-white mb-2">
-              <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Website Design & Setup" data-ar="تصميم وإعداد موقع تعريفي للشركات">تصميم وإعداد موقع تعريفي للشركات</a>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20" data-en="Tier 1 · Essential" data-ar="المستوى 1 · الأساسي">المستوى 1 · الأساسي</span>
+              <span class="text-2xl">🎧</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2" data-en="AI Customer Service" data-ar="موظف خدمة العملاء الذكي">
+              موظف خدمة العملاء الذكي
             </h3>
-            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Get a complete, ultra-fast corporate website for your business in both Arabic and English together within the base price, including design, domain, hosting, daily technical support, and ongoing maintenance." data-ar="احصل على موقع إلكتروني تعريفي متكامل وسريع لشركتك باللغتين العربية والإنجليزية معاً ضمن السعر الأساسي، شامل التصميم، الدومين، الاستضافة، ودعم فني وصيانة يومية طوال السنة الأولى.">
-              احصل على موقع إلكتروني تعريفي متكامل وسريع لشركتك باللغتين العربية والإنجليزية معاً ضمن السعر الأساسي، شامل التصميم، الدومين، الاستضافة، ودعم فني وصيانة يومية طوال السنة الأولى.
+            <p class="text-xs text-slate-300 leading-relaxed mb-6" data-en="Essential 24/7 client response, handling frequently asked questions, product info, customer intake, and smooth handover to staff." data-ar="الرد المستمر على العملاء 24/7، الإجابة عن كافة الأسئلة الشائعة، توضيح الخدمات والمنتجات، واستقبال بيانات العملاء وتحويل المحادثة.">
+              الرد المستمر على العملاء 24/7، الإجابة عن كافة الأسئلة الشائعة، توضيح الخدمات والمنتجات، واستقبال بيانات العملاء وتحويل المحادثة.
             </p>
-            <div class="space-y-1.5 mb-4 text-xs text-slate-300">
-              <div class="flex items-center gap-1.5">
-                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Bilingual setup included (Arabic & English together in base price)" data-ar="دعم وإعداد الموقع باللغتين (العربية والإنجليزية معاً) ضمن السعر الأساسي">دعم وإعداد الموقع باللغتين (العربية والإنجليزية معاً) ضمن السعر الأساسي</span>
+
+            <div class="p-4 rounded-xl bg-slate-900 border border-cyan-500/20 mb-6">
+              <div class="text-xs text-slate-400 mb-1" data-en="Starting from:" data-ar="يبدأ من:">يبدأ من:</div>
+              <div class="text-2xl font-black text-cyan-300 font-mono">
+                $39 <span class="text-xs text-slate-400 font-normal" data-en="/ month" data-ar="/ شهر">/ شهر</span>
               </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Option 1: Base package with official .uk domain ($65 USD / Year 1)" data-ar="الخيار الأول: الباقة الأساسية بدومين uk. رسمي (65$ للسنة الأولى)">الخيار الأول: الباقة الأساسية بدومين uk. رسمي (65$ للسنة الأولى)</span>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Option 2: Corporate package with official .com domain ($75 USD / Year 1)" data-ar="الخيار الثاني: باقة الشركات بدومين com. رسمي (75$ للسنة الأولى)">الخيار الثاني: باقة الشركات بدومين com. رسمي (75$ للسنة الأولى)</span>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="High-speed SSL Cloud Hosting + Direct WhatsApp CTA" data-ar="استضافة سحابية فائقة السرعة وSSL + ربط مباشر بالواتساب">استضافة سحابية فائقة السرعة وSSL + ربط مباشر بالواتساب</span>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-cyan-400 font-bold shrink-0">✓</span> <span data-en="Daily maintenance & continuous technical support Sat-Thu" data-ar="صيانة يومية ودعم فني مستمر ومتابعة يومية (السبت-الخميس)">صيانة يومية ودعم فني مستمر ومتابعة يومية (السبت-الخميس)</span>
+              <div class="text-[11px] text-slate-400 mt-1" data-en="Annual: $390 / year (Save 2 Months)" data-ar="السنوي: 390$ سنوياً (وفر شهرين)">
+                السنوي: 390$ سنوياً (وفر شهرين)
               </div>
             </div>
 
-            <!-- Renewal Notice Box -->
-            <div class="p-2.5 rounded-lg bg-slate-900/90 border border-cyan-500/20 text-[11px] mb-4">
-              <div class="text-cyan-400 font-bold font-mono mb-0.5" data-en="Year 1: $65 USD (.uk) / $75 USD (.com) - Bilingual Included" data-ar="السنة الأولى: 65$ (دومين uk.) أو 75$ (دومين com.) - اللغتان مشمولتان">السنة الأولى: 65$ (دومين uk.) أو 75$ (دومين com.) - اللغتان مشمولتان</div>
-              <div class="text-slate-400 text-[10px]" data-en="Fixed Annual Renewal: $40 USD / Year for all packages (includes domain renewal + technical support & daily maintenance + hosting)." data-ar="التجديد السنوي ثابت: 40$ سنوياً لجميع الباقات (شامل تجديد الدومين + الصيانة والدعم الفني + الاستضافة).">التجديد السنوي ثابت: 40$ سنوياً لجميع الباقات (شامل تجديد الدومين + الصيانة والدعم الفني + الاستضافة).</div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <a href="corporate-website.html" class="w-full py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 text-cyan-300 font-bold text-xs text-center transition-all flex items-center justify-center gap-1">
-              <span data-en="Explore Package & Specs" data-ar="استعراض تفاصيل وباقة الخدمة">استعراض تفاصيل وباقة الخدمة</span> &rarr;
-            </a>
-            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%85%D9%88%D9%82%D8%B9%20%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%8A%20%D9%84%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%20(65%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%A8%D8%AF%D9%88%D9%85%D9%8A%D9%86%20uk.%20%D8%A3%D9%88%2075%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%A8%D8%AF%D9%88%D9%85%D9%8A%D9%86%20com.)" target="_blank" rel="noopener noreferrer" data-service="corporate-website-package" class="w-full py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link block">
-              <span data-en="Order Package ($65 / $75)" data-ar="طلب الباقة (65$ / 75$)">طلب الباقة (65$ / 75$)</span>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Solution 2 -->
-        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-emerald-500">
-          <div>
-            <a href="whatsapp-ai-employee.html" class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 hover:scale-105 transition-transform block">
-              🤖
-            </a>
-            <h3 class="text-lg font-bold text-white mb-2">
-              <a href="whatsapp-ai-employee.html" class="hover:text-emerald-400 transition-colors" data-en="Human-Like AI Sales Staff" data-ar="موظف مبيعات وخدمة عملاء ذكي بشري">موظف مبيعات وخدمة عملاء ذكي بشري</a>
-            </h3>
-            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Operates 24/7 with zero vacations. Answers customers naturally, sends brochures and quotations, negotiates deals, and confirms orders directly." data-ar="يعمل 24 ساعة يومياً بدون إجازات. يتحدث بلهجة طبيعية دافئة، يرسل الصور وعروض الأسعار والكتالوجات فورياً، ويتفاوض ويثبت المبيعات في قواعد البيانات.">
-              يعمل 24 ساعة يومياً بدون إجازات. يتحدث بلهجة طبيعية دافئة، يرسل الصور وعروض الأسعار والكتالوجات فورياً، ويتفاوض ويثبت المبيعات في قواعد البيانات.
-            </p>
-            <div class="space-y-1.5 mb-6">
-              <div class="text-xs text-slate-300 flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Automated dispatch of photos & PDF quotes" data-ar="إرسال صور وعروض أسعار PDF تلقائياً">إرسال صور وعروض أسعار PDF تلقائياً</span>
+            <!-- Features Checklist -->
+            <div class="space-y-2.5 mb-6 text-xs text-slate-200">
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span>
+                <span data-en="24/7 instant customer reply & engagement" data-ar="الرد على العملاء 24/7 دون أي تأخير أو إجازات">الرد على العملاء 24/7 دون أي تأخير أو إجازات</span>
               </div>
-              <div class="text-xs text-slate-300 flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Human warmth indistinguishable from team" data-ar="أسلوب بشري طبيعي يصعب تفريقه">أسلوب بشري طبيعي يصعب تفريقه</span>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span>
+                <span data-en="Automated FAQ answering from custom knowledge" data-ar="الإجابة عن الأسئلة المتكررة بدقة وثقة">الإجابة عن الأسئلة المتكررة بدقة وثقة</span>
               </div>
-              <div class="text-xs text-slate-300 flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Instant reply within 2 seconds 24/7" data-ar="رد فوري خلال أقل من ثانيتين 24/7">رد فوري خلال أقل من ثانيتين 24/7</span>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span>
+                <span data-en="Product & service details presentation" data-ar="شرح معلومات الخدمات والمنتجات بأسلوب جذاب">شرح معلومات الخدمات والمنتجات بأسلوب جذاب</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span>
+                <span data-en="Customer contact & data intake" data-ar="استقبال وتسجيل بيانات العملاء بدقة">استقبال وتسجيل بيانات العملاء بدقة</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold shrink-0">✓</span>
+                <span data-en="Handoff to human staff when needed" data-ar="تحويل المحادثة للموظف البشري عند الحاجة">تحويل المحادثة للموظف البشري عند الحاجة</span>
               </div>
             </div>
           </div>
-          <div class="space-y-2">
-            <a href="whatsapp-ai-employee.html" class="w-full py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 font-bold text-xs text-center transition-all flex items-center justify-center gap-1">
-              <span data-en="Explore AI Employee & Live Demo" data-ar="استعراض موظف الذكاء والمحاكي">استعراض موظف الذكاء والمحاكي</span> &rarr;
+
+          <div class="space-y-2 pt-4 border-t border-slate-800">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="ai-customer-service" class="w-full py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
             </a>
-            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%B8%D9%81%20%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1%20%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A%20%D9%84%D9%88%D8%A7%D8%AA%D8%B3%D8%A7%D8%A8" target="_blank" rel="noopener noreferrer" data-service="whatsapp-ai-employee" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link block">
-              <span data-en="Inquire About AI Employee" data-ar="استفسر عن موظف الذكاء الاصطناعي">استفسر عن موظف الذكاء الاصطناعي</span>
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="ai-customer-service" class="w-full py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link block">
+              <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
             </a>
           </div>
         </div>
 
-        <!-- Solution 3 -->
-        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-indigo-500">
+        <!-- Tier 2: AI Business Assistant (Featured) -->
+        <div class="glass-panel p-6 sm:p-8 flex flex-col justify-between border-2 border-emerald-500 shadow-[0_0_35px_rgba(16,185,129,0.15)] relative">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-emerald-500 text-slate-950 text-[10px] font-bold font-mono uppercase tracking-wider shadow-md">
+            <span data-en="⭐ Most Popular Tier" data-ar="⭐ الباقة الأكثر طلباً">⭐ الباقة الأكثر طلباً</span>
+          </div>
           <div>
-            <a href="smart-shipping-system.html" class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 hover:scale-105 transition-transform block">
-              📦
-            </a>
-            <h3 class="text-lg font-bold text-white mb-2">
-              <a href="smart-shipping-system.html" class="hover:text-indigo-400 transition-colors" data-en="Smart Shipping & Logistics System" data-ar="سيستم الشحن واللوجستيات والمناديب">سيستم الشحن واللوجستيات والمناديب</a>
+            <div class="flex items-center justify-between mb-4 mt-1">
+              <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40" data-en="Tier 2 · Advanced" data-ar="المستوى 2 · المتقدم">المستوى 2 · المتقدم</span>
+              <span class="text-2xl">💼</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2" data-en="AI Business Assistant" data-ar="مساعد الأعمال الذكي المتطور">
+              مساعد الأعمال الذكي المتطور
             </h3>
-            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Full platform for couriers and merchants: instant waybill generation, live shipment tracking alerts via WhatsApp, and automatic Cash-on-Delivery (COD) financial reconciliation." data-ar="سيستم متكامل للشركات والمتاجر: توليد البوالص آلياً مع الباركود، تتبع الشحنات لحظياً عبر واتساب، شاشات للمناديب، وتسوية أموال الدفع عند الاستلام.">
-              سيستم متكامل للشركات والمتاجر: توليد البوالص آلياً مع الباركود، تتبع الشحنات لحظياً عبر واتساب، شاشات للمناديب، وتسوية أموال الدفع عند الاستلام.
+            <p class="text-xs text-slate-300 leading-relaxed mb-6" data-en="All essential features plus handling catalogs, PDFs, deep knowledge base, enriched client profiling, and third-party integrations." data-ar="كل مميزات الباقة الأساسية مع معالجة الكتالوجات والملفات، قاعدة معرفة معمقة، تصنيف بيانات العملاء، وتكاملات إضافية.">
+              كل مميزات الباقة الأساسية مع معالجة الكتالوجات والملفات، قاعدة معرفة معمقة، تصنيف بيانات العملاء، وتكاملات إضافية.
             </p>
-            <div class="space-y-1.5 mb-6">
-              <div class="text-xs text-slate-300 flex items-center gap-1.5">
-                <span class="text-indigo-400 font-bold shrink-0">✓</span> <span data-en="Printable PDF waybills with barcodes" data-ar="بوالص شحن PDF جاهزة للطباعة مع باركود">بوالص شحن PDF جاهزة للطباعة مع باركود</span>
+
+            <div class="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 mb-6">
+              <div class="text-xs text-slate-400 mb-1" data-en="Starting from:" data-ar="يبدأ من:">يبدأ من:</div>
+              <div class="text-2xl font-black text-emerald-400 font-mono">
+                $79 <span class="text-xs text-slate-400 font-normal" data-en="/ month" data-ar="/ شهر">/ شهر</span>
               </div>
-              <div class="text-xs text-slate-300 flex items-center gap-1.5">
-                <span class="text-indigo-400 font-bold shrink-0">✓</span> <span data-en="Live milestone tracking sent on WhatsApp" data-ar="إرسال تحديثات حالة الشحنة للعميل لحظياً">إرسال تحديثات حالة الشحنة للعميل لحظياً</span>
+              <div class="text-[11px] text-emerald-400 font-medium mt-1" data-en="Annual: $790 / year (Save 2 Months)" data-ar="السنوي: 790$ سنوياً (وفر شهرين)">
+                السنوي: 790$ سنوياً (وفر شهرين)
               </div>
-              <div class="text-xs text-slate-300 flex items-center gap-1.5">
-                <span class="text-indigo-400 font-bold shrink-0">✓</span> <span data-en="Driver COD settlement ledger" data-ar="تسوية حسابات المناديب والمبالغ (COD)">تسوية حسابات المناديب والمبالغ (COD)</span>
+            </div>
+
+            <!-- Features Checklist -->
+            <div class="space-y-2.5 mb-6 text-xs text-slate-200">
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span class="font-bold text-white" data-en="Includes all AI Customer Service features" data-ar="كل مميزات الباقة الأساسية السابقة">كل مميزات الباقة الأساسية السابقة</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="File & product catalogue understanding" data-ar="التعامل مع الكتالوجات والملفات والصور بذكاء">التعامل مع الكتالوجات والملفات والصور بذكاء</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="Advanced custom company knowledge base" data-ar="قاعدة معرفة متقدمة مخصصة لشركتك وسياساتك">قاعدة معرفة متقدمة مخصصة لشركتك وسياساتك</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="Enriched customer data collection & sorting" data-ar="جمع وتصنيف وتوثيق بيانات العملاء باحترافية">جمع وتصنيف وتوثيق بيانات العملاء باحترافية</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="Extended integrations with Sheets & Webhooks" data-ar="تكاملات إضافية مع جوجل شيتس وأنظمة الشركة">تكاملات إضافية مع جوجل شيتس وأنظمة الشركة</span>
               </div>
             </div>
           </div>
-          <div class="space-y-2">
-            <a href="smart-shipping-system.html" class="w-full py-2.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 border border-indigo-500/40 text-indigo-300 font-bold text-xs text-center transition-all flex items-center justify-center gap-1">
-              <span data-en="Explore Shipping System" data-ar="استعراض سيستم الشحن واللوجستيات">استعراض سيستم الشحن واللوجستيات</span> &rarr;
+
+          <div class="space-y-2 pt-4 border-t border-slate-800">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="ai-business-assistant" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5 shadow-md">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
             </a>
-            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B4%D8%AD%D9%86%20%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%AC%D8%B3%D8%AA%D9%8A%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer" data-service="smart-shipping-courier-system" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs text-center transition-all dynamic-whatsapp-link block">
-              <span data-en="Inquire About Shipping System" data-ar="استفسر عن سيستم الشحن">استفسر عن سيستم الشحن</span>
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="ai-business-assistant" class="w-full py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link block">
+              <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
             </a>
           </div>
         </div>
 
-        <!-- Solution 4 -->
-        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-amber-500">
+        <!-- Tier 3: AI Sales Employee -->
+        <div class="glass-panel p-6 sm:p-8 flex flex-col justify-between border-t-2 border-t-purple-500 relative">
           <div>
-            <a href="mobile-retail-apps.html" class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl mb-4 hover:scale-105 transition-transform block">
-              📱
-            </a>
-            <h3 class="text-lg font-bold text-white mb-2">
-              <a href="mobile-retail-apps.html" class="hover:text-amber-400 transition-colors" data-en="Idea to Production & Mobile Apps" data-ar="تحويل فكرتك لنظام وتطبيقات موبايل">تحويل فكرتك لنظام وتطبيقات موبايل</a>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20" data-en="Tier 3 · Sales Engine" data-ar="المستوى 3 · محرك المبيعات">المستوى 3 · محرك المبيعات</span>
+              <span class="text-2xl">💰</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2" data-en="AI Sales Employee" data-ar="موظف المبيعات الذكي الكامل">
+              موظف المبيعات الذكي الكامل
             </h3>
-            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Turning concepts into real products: Supermarket POS & Barcode cashiers, Pharmacy ERP with expiry control, and custom mobile apps launched on App Store & Google Play." data-ar="تحويل أي فكرة لواقع: أنظمة كاشير ونقاط بيع للسوبرماركت، سيستم صيدليات متكامل بتواريخ الصلاحية، ونشر تطبيقاتك رسمياً على المتاجر.">
-              تحويل أي فكرة لواقع: أنظمة كاشير ونقاط بيع للسوبرماركت، سيستم صيدليات متكامل بتواريخ الصلاحية، ونشر تطبيقاتك رسمياً على المتاجر.
+            <p class="text-xs text-slate-300 leading-relaxed mb-6" data-en="Full sales lifecycle management: lead follow-up, pitch decks, instant PDF quote generation, CRM integration, and automated closing steps." data-ar="إدارة محادثات ومراحل البيع بالكامل، متابعة العملاء المحتملين، تقديم العروض، إرسال عروض أسعار PDF، والربط الكامل مع الـ CRM.">
+              إدارة محادثات ومراحل البيع بالكامل، متابعة العملاء المحتملين، تقديم العروض، إرسال عروض أسعار PDF، والربط الكامل مع الـ CRM.
             </p>
-            <div class="space-y-1.5 mb-6">
-              <div class="text-xs text-slate-300 flex items-center gap-1.5">
-                <span class="text-amber-400 font-bold shrink-0">✓</span> <span data-en="POS integration with printers & scanners" data-ar="ربط قارئات الباركود وطابعات الكاشير">ربط قارئات الباركود وطابعات الكاشير</span>
+
+            <div class="p-4 rounded-xl bg-slate-900 border border-purple-500/20 mb-6">
+              <div class="text-xs text-slate-400 mb-1" data-en="Starting from:" data-ar="يبدأ من:">يبدأ من:</div>
+              <div class="text-2xl font-black text-purple-300 font-mono">
+                $149 <span class="text-xs text-slate-400 font-normal" data-en="/ month" data-ar="/ شهر">/ شهر</span>
               </div>
-              <div class="text-xs text-slate-300 flex items-center gap-1.5">
-                <span class="text-amber-400 font-bold shrink-0">✓</span> <span data-en="Inventory batches & expiry control" data-ar="إدارة المخزون وصلاحيات الأدوية">إدارة المخزون وصلاحيات الأدوية</span>
+              <div class="text-[11px] text-slate-400 mt-1" data-en="Annual: $1,490 / year (Save 2 Months)" data-ar="السنوي: 1,490$ سنوياً (وفر شهرين)">
+                السنوي: 1,490$ سنوياً (وفر شهرين)
               </div>
-              <div class="text-xs text-slate-300 flex items-center gap-1.5">
-                <span class="text-amber-400 font-bold shrink-0">✓</span> <span data-en="App publishing to Google Play & App Store" data-ar="نشر التطبيقات على Google Play و App Store">نشر التطبيقات على Google Play و App Store</span>
+            </div>
+
+            <!-- Features Checklist -->
+            <div class="space-y-2.5 mb-6 text-xs text-slate-200">
+              <div class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold shrink-0">✓</span>
+                <span data-en="End-to-end sales conversation management" data-ar="إدارة محادثات المبيعات والتفاوض الذكي بالكامل">إدارة محادثات المبيعات والتفاوض الذكي بالكامل</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold shrink-0">✓</span>
+                <span data-en="Proactive lead nurturing and smart follow-up" data-ar="متابعة العملاء المحتملين تلقائياً (Lead Follow-up)">متابعة العملاء المحتملين تلقائياً (Lead Follow-up)</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold shrink-0">✓</span>
+                <span data-en="Instant branded PDF quotations dispatched in chat" data-ar="تقديم المنتجات وتوليد عروض أسعار PDF فورياً">تقديم المنتجات وتوليد عروض أسعار PDF فورياً</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold shrink-0">✓</span>
+                <span data-en="Direct CRM, ERP & database real-time sync" data-ar="التكامل الكامل مع CRM أو أنظمة الشركة السحابية">التكامل الكامل مع CRM أو أنظمة الشركة السحابية</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold shrink-0">✓</span>
+                <span data-en="Automated sales funnels & order confirmation" data-ar="أتمتة مراحل البيع وإغلاق وتأكيد الصفقات">أتمتة مراحل البيع وإغلاق وتأكيد الصفقات</span>
               </div>
             </div>
           </div>
-          <div class="space-y-2">
-            <a href="mobile-retail-apps.html" class="w-full py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 font-bold text-xs text-center transition-all flex items-center justify-center gap-1">
-              <span data-en="Explore POS & Mobile Apps" data-ar="استعراض سيستمات وتطبيقات المتاجر">استعراض سيستمات وتطبيقات المتاجر</span> &rarr;
+
+          <div class="space-y-2 pt-4 border-t border-slate-800">
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="ai-sales-employee" class="w-full py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+              <span>📋</span>
+              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
             </a>
-            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%AC%D8%AF%D9%8A%D8%AF" target="_blank" rel="noopener noreferrer" data-service="idea-to-apps-supermarket-pharmacy" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link block">
-              <span data-en="Start Your App Project Now" data-ar="ابدأ تنفيذ فكرتك الآن">ابدأ تنفيذ فكرتك الآن</span>
+            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="ai-sales-employee" class="w-full py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link block">
+              <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
             </a>
           </div>
+        </div>
+
+      </div>
+
+      <!-- AI Tiers Final Pricing Notice -->
+      <div class="mt-8 text-center text-xs text-slate-400 max-w-2xl mx-auto" data-en="Final pricing for these packages depends on usage volume and required integrations." data-ar="الأسعار النهائية لهذه الباقات تعتمد على حجم الاستخدام والتكاملات المطلوبة.">
+        الأسعار النهائية لهذه الباقات تعتمد على حجم الاستخدام والتكاملات المطلوبة.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Freelance Sales Partner Program (Requirement 5) -->
+  <section id="partners" class="py-24 relative z-10 border-t border-slate-800/60 bg-slate-950/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-panel p-8 sm:p-12 border-t-2 border-t-emerald-500 shadow-2xl relative overflow-hidden">
+        <!-- Background subtle glow -->
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-emerald text-xs font-mono font-semibold mb-4">
+            <span>🤝 PARTNERSHIP OPPORTUNITY</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-en="🤝 Become a Freelance Sales Partner" data-ar="🤝 Become a Freelance Sales Partner (كن شريك مبيعات حر)">
+            🤝 Become a Freelance Sales Partner
+          </h2>
+          
+          <!-- Exact Required Partner Pitch Copy -->
+          <div class="mt-6 p-6 rounded-2xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm sm:text-base leading-relaxed space-y-3 text-start sm:text-center">
+            <p class="font-semibold text-white" data-en="Have access to business owners or know how to find potential clients?" data-ar="هل لديك وصول لأصحاب الشركات والأنشطة التجارية أو تعرف كيف تصل إلى عملاء محتملين؟">
+              Have access to business owners or know how to find potential clients?
+            </p>
+            <p data-en="Join our Freelance Sales Partner program and promote our software solutions independently." data-ar="انضم إلى برنامج شركاء المبيعات المستقلين وقم بالترويج لحلولنا البرمجية بشكل مستقل تماماً.">
+              Join our Freelance Sales Partner program and promote our software solutions independently.
+            </p>
+            <p class="text-emerald-400 font-bold" data-en="You bring the client — we handle the technical work, development and delivery." data-ar="أنت تجلب العميل — ونحن نتولى العمل الفني، التحليل، البرمجة، والتسليم الكامل.">
+              You bring the client — we handle the technical work, development and delivery.
+            </p>
+            <p class="text-slate-300 text-xs sm:text-sm" data-en="No fixed salary. No employment commitment. Work independently and earn commissions from successful deals." data-ar="لا يوجد راتب ثابت. لا يوجد التزام وظيفي. اعمل باستقلالية تامة واربح عمولات مجزية وفورية عن كل صفقة ناجحة.">
+              No fixed salary. No employment commitment. Work independently and earn commissions from successful deals.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Clarity Pillars -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="text-xl mb-2">👤</div>
+            <h4 class="text-xs font-bold text-white mb-1" data-en="Independent, Not an Employee" data-ar="شريك مستقل وليس موظفاً">شريك مستقل وليس موظفاً</h4>
+            <p class="text-[11px] text-slate-400 leading-relaxed" data-en="Full freedom to work whenever and however you wish with zero workplace commitments." data-ar="حرية كاملة في تنظيم وقتك وطريقتك دون أي قيود وظيفية أو شروط حضور.">
+              حرية كاملة في تنظيم وقتك وطريقتك دون أي قيود وظيفية أو شروط حضور.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="text-xl mb-2">💰</div>
+            <h4 class="text-xs font-bold text-white mb-1" data-en="High Cash Commissions" data-ar="عمولة مجزية وفورية">عمولة مجزية وفورية</h4>
+            <p class="text-[11px] text-slate-400 leading-relaxed" data-en="Earn cash commissions on every deal closed through your referral immediately." data-ar="أرباح فورية كاش عن كل تعاقد يتم من خلالك بمجرد إتمام الصفقة دون سقف.">
+              أرباح فورية كاش عن كل تعاقد يتم من خلالك بمجرد إتمام الصفقة دون سقف.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="text-xl mb-2">💡</div>
+            <h4 class="text-xs font-bold text-white mb-1" data-en="No Coding Skills Needed" data-ar="لا تحتاج مهارات برمجية">لا تحتاج مهارات برمجية</h4>
+            <p class="text-[11px] text-slate-400 leading-relaxed" data-en="Your core focus is connecting with potential clients; all technical work is our duty." data-ar="مهمتك الأساسية الوصول للعملاء وعرض الفرصة؛ كل التفاصيل التقنية علينا.">
+              مهمتك الأساسية الوصول للعملاء وعرض الفرصة؛ كل التفاصيل التقنية علينا.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="text-xl mb-2">🚀</div>
+            <h4 class="text-xs font-bold text-white mb-1" data-en="We Handle Delivery" data-ar="نتولى التنفيذ والتسليم">نتولى التنفيذ والتسليم</h4>
+            <p class="text-[11px] text-slate-400 leading-relaxed" data-en="We handle client analysis, coding, cloud deployment, and 24/7 technical support." data-ar="ندير دراسة المتطلبات، البرمجة، الربط السحابي، والتسليم والدعم للعميل.">
+              ندير دراسة المتطلبات، البرمجة، الربط السحابي، والتسليم والدعم للعميل.
+            </p>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="freelance-sales-partner" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm text-center shadow-lg transition-transform hover:scale-105 dynamic-whatsapp-link flex items-center justify-center gap-2">
+            <span>🤝</span>
+            <span data-en="Become a Partner" data-ar="Become a Partner (انضم كشريك الآن)">Become a Partner (انضم كشريك الآن)</span>
+          </a>
+          <button type="button" data-action="open-affiliate-modal" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white font-semibold text-sm transition-colors cursor-pointer flex items-center justify-center gap-2">
+            <span>📂</span>
+            <span data-en="View Partner Program Details" data-ar="استعراض تفاصيل البرنامج والحقيبة">استعراض تفاصيل البرنامج والحقيبة</span>
+          </button>
         </div>
 
       </div>
@@ -1411,10 +2197,10 @@
           </div>
           <div>
             <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold mb-0.5">
-              <span>PARTNERS PROGRAM · عمولة 30% كاش</span>
+              <span>FREELANCE SALES PARTNER · عمولة 30% كاش</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-extrabold text-white" data-en="Affiliate Market · Partners Program" data-ar="Affiliate Market · برنامج شركاء النجاح">
-              Affiliate Market · برنامج شركاء النجاح
+            <h3 class="text-xl sm:text-2xl font-extrabold text-white" data-en="🤝 Become a Freelance Sales Partner" data-ar="🤝 برنامج شريك المبيعات الحر المستقل">
+              🤝 Become a Freelance Sales Partner
             </h3>
           </div>
         </div>
@@ -1422,9 +2208,12 @@
       </div>
 
       <!-- Description Banner -->
-      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-        <p data-en="The Affiliate Market program is dedicated to marketers, brokers, and networkers who wish to refer business clients to Eng. Mostafa Salah's software solutions (corporate websites, WhatsApp AI employees, shipping systems, and mobile apps). Earn a flat, immediate 30% cash commission on every deal closed through your referral—with zero upfront cost and fast payouts." data-ar="برنامج Affiliate Market مخصص للمسوقين المستقلين، الوسطاء، وأصحاب العلاقات التجارية. سوق لخدمات وبرمجيات المهندس مصطفى صلاح (مواقع الشركات، موظفي الذكاء الاصطناعي، سيستمات الشحن، وتطبيقات الموبايل) واحصل على عمولة فورية مجزية قدرها 30% كاش عن كل تعاقد يتم من خلالك دون أي رسوم اشتراك أو شروط معقدة.">
-          برنامج Affiliate Market مخصص للمسوقين المستقلين، الوسطاء، وأصحاب العلاقات التجارية. سوق لخدمات وبرمجيات المهندس مصطفى صلاح (مواقع الشركات، موظفي الذكاء الاصطناعي، سيستمات الشحن، وتطبيقات الموبايل) واحصل على عمولة فورية مجزية قدرها 30% كاش عن كل تعاقد يتم من خلالك دون أي رسوم اشتراك أو شروط معقدة.
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 space-y-2">
+        <p class="font-bold text-white" data-en="Have access to business owners or know how to find potential clients?" data-ar="هل لديك وصول لأصحاب الشركات والأنشطة التجارية أو تعرف كيف تصل إلى عملاء محتملين؟">
+          Have access to business owners or know how to find potential clients?
+        </p>
+        <p data-en="Join our Freelance Sales Partner program and promote our software solutions independently. You bring the client — we handle the technical work, development and delivery. No fixed salary. No employment commitment. Work independently and earn commissions from successful deals." data-ar="انضم إلى برنامج شركاء المبيعات المستقلين وقم بالترويج لحلولنا البرمجية بشكل مستقل. أنت تجلب العميل — ونحن نتولى العمل الفني، التحليل، البرمجة، والتسليم الكامل. لا يوجد راتب ثابت ولا التزام وظيفي؛ اعمل باستقلالية تامة واربح عمولات مجزية وفورية عن كل صفقة ناجحة.">
+          انضم إلى برنامج شركاء المبيعات المستقلين وقم بالترويج لحلولنا البرمجية بشكل مستقل. أنت تجلب العميل — ونحن نتولى العمل الفني، التحليل، البرمجة، والتسليم الكامل. لا يوجد راتب ثابت ولا التزام وظيفي؛ اعمل باستقلالية تامة واربح عمولات مجزية وفورية عن كل صفقة ناجحة.
         </p>
       </div>
 
@@ -1487,8 +2276,8 @@
             <input id="affiliate-note" type="text" placeholder="سؤالك أو طلبك..." class="w-full h-9 px-3 text-xs rounded-lg bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
           </div>
           <button type="submit" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-[1.02] shadow-md cursor-pointer flex items-center justify-center gap-2">
-            <span>🚀</span>
-            <span data-en="Register & Receive 30% Sales Kit on WhatsApp" data-ar="تسجيل الانضمام واستلام الحقيبة التسويقية عبر واتساب (عمولة 30%)">تسجيل الانضمام واستلام الحقيبة التسويقية عبر واتساب (عمولة 30%)</span>
+            <span>🤝</span>
+            <span data-en="Become a Partner (Receive Sales Kit & 30% Commission)" data-ar="Become a Partner (تسجيل الانضمام واستلام الحقيبة وعمولة 30%)">Become a Partner (تسجيل الانضمام واستلام الحقيبة وعمولة 30%)</span>
           </button>
         </form>
       </div>

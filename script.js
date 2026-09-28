@@ -284,36 +284,95 @@
 
   const SERVICE_MESSAGES = {
     'general': {
-      ar: 'مرحباً مصطفى أود بدء مشروع برمجي معك',
-      en: 'Hello Mostafa I would like to start a software project with you'
+      ar: 'مرحباً مصطفى، أود بدء مشروع برمجي جديد معك والاستفسار عن الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello Mostafa, I’m interested in starting a software project and would like to know the suitable package and final price for my business.'
+    },
+    // 1. Corporate Website
+    'corporate-website': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ تصميم موقع تعريفي للشركات (Corporate Website) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Corporate Website and would like to know the suitable package and final price for my business.'
     },
     'corporate-website-package': {
-      ar: 'مرحباً مصطفى أود الاستفسار وحجز باقة تصميم موقع تعريفي للشركات (65$ بدومين .uk أو 75$ بدومين .com)',
-      en: 'Hello Mostafa I would like to inquire about and order the Corporate Website Package ($65 with .uk domain or $75 with .com domain)'
+      ar: 'مرحباً مصطفى، أنا مهتم بـ تصميم موقع تعريفي للشركات (Corporate Website) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Corporate Website and would like to know the suitable package and final price for my business.'
     },
-    'n8n-enterprise-orchestrator': {
-      ar: 'مرحباً مصطفى أود الاستفسار عن خدمة أتمتة الأعمال n8n',
-      en: 'Hello Mostafa I would like to inquire about n8n automation services'
-    },
-    'smart-shipping-courier-system': {
-      ar: 'مرحباً مصطفى أود الاستفسار عن سيستمات الشحن واللوجستيات',
-      en: 'Hello Mostafa I would like to inquire about smart shipping and logistics systems'
-    },
-    'idea-to-apps-supermarket-pharmacy': {
-      ar: 'مرحباً مصطفى أود الاستفسار عن تطوير تطبيق جديد',
-      en: 'Hello Mostafa I would like to inquire about developing a new application'
-    },
+    // 2. WhatsApp AI Employee
     'whatsapp-ai-employee': {
-      ar: 'مرحباً مصطفى أود الاستفسار عن موظف الذكاء الاصطناعي لواتساب',
-      en: 'Hello Mostafa I would like to inquire about building a human-like AI employee for WhatsApp'
+      ar: 'مرحباً مصطفى، أنا مهتم بـ موظف واتساب الذكي (WhatsApp AI Employee) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in WhatsApp AI Employee and would like to know the suitable package and final price for my business.'
+    },
+    // 3. Messenger & Telegram AI Employee
+    'messenger-telegram-ai': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Messenger & Telegram AI Employee and would like to know the suitable package and final price for my business.'
     },
     'telegram-messenger-ai-employees': {
-      ar: 'مرحباً مصطفى أود الاستفسار عن موظف الذكاء الاصطناعي لتلجرام وماسنجر',
-      en: 'Hello Mostafa I would like to inquire about AI employees for Telegram and Messenger'
+      ar: 'مرحباً مصطفى، أنا مهتم بـ موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Messenger & Telegram AI Employee and would like to know the suitable package and final price for my business.'
+    },
+    // 4. Smart Shipping & Courier System
+    'smart-shipping-system': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ سيستم الشحن واللوجستيات والمناديب الذكي (Smart Shipping System) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Smart Shipping & Courier Management System and would like to know the suitable package and final price for my business.'
+    },
+    'smart-shipping-courier-system': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ سيستم الشحن واللوجستيات والمناديب الذكي (Smart Shipping System) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Smart Shipping & Courier Management System and would like to know the suitable package and final price for my business.'
+    },
+    // 5. Business Automation – n8n
+    'business-automation-n8n': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ أتمتة الأعمال وسير العمليات – n8n وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Business Automation – n8n and would like to know the suitable package and final price for my business.'
+    },
+    'n8n-enterprise-orchestrator': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ أتمتة الأعمال وسير العمليات – n8n وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Business Automation – n8n and would like to know the suitable package and final price for my business.'
+    },
+    // 6. Custom Android & iOS App
+    'custom-mobile-app': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ تطوير تطبيقات أندرويد و iOS مخصصة (Custom Mobile App) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Custom Android & iOS App and would like to know the suitable package and final price for my business.'
+    },
+    'idea-to-apps-supermarket-pharmacy': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ تطوير تطبيقات أندرويد و iOS مخصصة (Custom Mobile App) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Custom Android & iOS App and would like to know the suitable package and final price for my business.'
+    },
+    // 7. POS / Supermarket / Pharmacy System
+    'retail-pos-system': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ سيستم نقاط البيع POS والمتاجر والصيدليات وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in POS / Supermarket / Pharmacy System and would like to know the suitable package and final price for my business.'
+    },
+    // 8. Backend / API / Database Solutions
+    'backend-api-solutions': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ حلول الخوادم وقواعد البيانات والـ APIs وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Backend / API / Database Solutions and would like to know the suitable package and final price for my business.'
     },
     'api-telemetry-dashboard': {
-      ar: 'مرحباً مصطفى، مهتم بتطوير وفحص أداء الـ Backend وواجهات الـ REST API',
-      en: 'Hello Mostafa I would like to inquire about backend development and REST API optimization'
+      ar: 'مرحباً مصطفى، أنا مهتم بـ حلول الخوادم وقواعد البيانات والـ APIs وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Backend / API / Database Solutions and would like to know the suitable package and final price for my business.'
+    },
+    // 9. Custom Business System
+    'custom-business-system': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ نظام مخصص لإدارة الشركات والمؤسسات (Custom Business System) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in Custom Business System and would like to know the suitable package and final price for my business.'
+    },
+    // AI Employee Tiers
+    'ai-customer-service': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ باقة موظف خدمة العملاء بالذكاء الاصطناعي (AI Customer Service - يبدأ من $39/شهر) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in AI Customer Service (Starting from $39/mo) and would like to know the suitable package and final price for my business.'
+    },
+    'ai-business-assistant': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ باقة مساعد الأعمال الذكي (AI Business Assistant - يبدأ من $79/شهر) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in AI Business Assistant (Starting from $79/mo) and would like to know the suitable package and final price for my business.'
+    },
+    'ai-sales-employee': {
+      ar: 'مرحباً مصطفى، أنا مهتم بـ باقة موظف المبيعات بالذكاء الاصطناعي (AI Sales Employee - يبدأ من $149/شهر) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
+      en: 'Hello, I’m interested in AI Sales Employee (Starting from $149/mo) and would like to know the suitable package and final price for my business.'
+    },
+    // Freelance Sales Partner Program
+    'freelance-sales-partner': {
+      ar: 'مرحباً مصطفى، أود الانضمام كشريك مبيعات حر (Freelance Sales Partner) والبدء في تسويق الحلول البرمجية بشكل مستقل.',
+      en: 'Hello Mostafa, I would like to join the Freelance Sales Partner program and promote software solutions independently.'
     }
   };
 
@@ -332,6 +391,38 @@
     document.querySelectorAll('.dynamic-whatsapp-link').forEach(el => {
       const serviceKey = el.getAttribute('data-service') || 'general';
       el.href = window.getDynamicWhatsAppUrl(targetLang, serviceKey);
+    });
+  };
+
+  // --- Billing Cycle Switcher (Monthly / Annual) ---
+  window.currentBillingCycle = 'monthly';
+  window.setBillingCycle = function(cycle) {
+    window.currentBillingCycle = cycle;
+    document.querySelectorAll('.billing-cycle-btn').forEach(btn => {
+      const targetCycle = btn.getAttribute('data-cycle');
+      if (targetCycle === cycle) {
+        btn.classList.add('active', 'bg-emerald-500', 'text-slate-950', 'shadow-md');
+        btn.classList.remove('bg-transparent', 'text-slate-400', 'hover:text-white');
+      } else {
+        btn.classList.remove('active', 'bg-emerald-500', 'text-slate-950', 'shadow-md');
+        btn.classList.add('bg-transparent', 'text-slate-400', 'hover:text-white');
+      }
+    });
+
+    document.querySelectorAll('.pricing-monthly-view').forEach(el => {
+      if (cycle === 'annual') {
+        el.classList.add('hidden');
+      } else {
+        el.classList.remove('hidden');
+      }
+    });
+
+    document.querySelectorAll('.pricing-annual-view').forEach(el => {
+      if (cycle === 'annual') {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
     });
   };
 
@@ -854,27 +945,53 @@
 
 دورك في التعريف بالخدمات وشرح البرمجيات:
 اشرح خدمات وأنظمة وحلول المهندس مصطفى صلاح بأسلوب بشري وسلس وجذاب.
-قاعدة بيانات الخدمات الرسمية:
-1. باقة تصميم الموقع التعريفي الاحترافي للشركات (Corporate Website Package):
-   - السعر: 65 دولار فقط للسنة الأولى مع دومين رسمي .uk شامل، أو 75 دولار فقط للسنة الأولى مع دومين رسمي .com شامل.
-   - اللغتان (العربية والإنجليزية معاً) مشمولتان في السعر مجاناً.
-   - استضافة سحابية سريعة SSD + شهادة أمان SSL مجانية للسنة الأولى.
-   - تجديد سنوي ثابت ومضمون: 40 دولار فقط سنوياً.
-2. موظف الذكاء الاصطناعي البشري (WhatsApp & Telegram AI Employee):
-   - ردود فورية مقنعة 24/7، توليد عروض أسعار رسمية PDF، إرسال الكتالوجات داخل الشات، وربط بقواعد البيانات ونظام n8n.
-3. سيستم الشحن واللوجستيات (Smart Shipping & Courier Management):
-   - إصدار بوالص الشحن PDF مع باركود وQR، تتبع المناديب لحظياً، وتسوية تحصيل الـ COD.
-4. تطبيقات الموبايل والمتاجر والأنظمة المخصصة (سوبرماركت، صيدليات، ERP، متاجر إلكترونية).
-5. أتمتة مسارات العمل n8n وهندسة الـ APIs والباك إند السحابي.
+جميع الأسعار المذكورة هي أسعار تبدأ من (Starting from) بالدولار الأمريكي، ويتم تحديد السعر النهائي حسب متطلبات كل مشروع وحجم الاستخدام والتكاملات المطلوبة.
 
-دورك في نظام الأفلييت والتسويق بالعمولة (Affiliate Program & Marketer Onboarding):
-1. إذا سأل المستخدم عن كيفية العمل معنا، أو التسويق لخدماتنا، أو الربح بالعمولة، أو برنامج الأفلييت:
-   - رحب به بحفاوة وشغف واشرح له نظام الأفلييت والشراكة (عمولة فورية 30% كاش عن كل تعاقد).
-   - موقع شركات تعريفي (75$): عمولتك فوراً 22.5$ كاش.
-   - سيستم شحن أو إدارة شركات (مثلاً 500$): عمولتك فوراً 150$ كاش.
-   - تطبيقات موبايل أو مشاريع مخصصة (مثلاً 1000$): عمولتك فوراً 300$ كاش.
-   - الدفع فوري بمجرد تعاقد العميل عبر إنستاباي أو فودافون كاش أو تحويل بنكي.
-2. اطلب بلطف الاسم ورقم الهاتف/واتساب وسجل بياناته فوراً واعرض رابط التواصل المباشر مع المهندس مصطفى صلاح (+201107787049).`;
+قاعدة بيانات الخدمات الرسمية وأسعار البداية (Starting Prices):
+1. تصميم موقع تعريفي للشركات (Corporate Website):
+   - يبدأ من 65$ (Starting from $65) للسنة الأولى بدومين رسمي .uk شامل، أو 75$ بدومين .com شامل.
+   - اللغتان (العربية والإنجليزية معاً) مشمولتان ضمن السعر الأساسي.
+   - استضافة سحابية فائقة السرعة SSD + شهادة أمان SSL مجانية.
+   - تجديد سنوي ثابت: 40 دولار فقط سنوياً (شامل الدومين والاستضافة والدعم الفني اليومي).
+2. موظف واتساب الذكي (WhatsApp AI Employee):
+   - يبدأ من 39$ شهرياً (Monthly: $39 / mo) أو 390$ سنوياً (Annual: $390 / yr مع خصم شهرين).
+   - السعر الشهري يعتمد على حجم الاستخدام والإمكانيات والتكاملات المطلوبة.
+   - رد فوري 24/7، إرسال عروض أسعار PDF والكتالوجات، تحويل المحادثات، وتكامل مع قواعد البيانات.
+3. موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI Employee):
+   - يبدأ من 39$ شهرياً (Monthly: $39 / mo) أو 390$ سنوياً (Annual: $390 / yr مع خصم شهرين).
+   - السعر النهائي حسب الاستخدام والتكاملات المطلوبة.
+4. سيستم الشحن واللوجستيات والمناديب الذكي (Smart Shipping & Courier Management System):
+   - يبدأ من 99$ شهرياً (Monthly: $99 / mo) أو 990$ سنوياً (Annual: $990 / yr مع خصم شهرين).
+   - السعر النهائي حسب عدد المناديب، الطلبات، الخصائص، التتبع، COD والتكاملات المطلوبة.
+   - بوالص شحن PDF مع باركود، تتبع لحظي عبر واتساب، تطبيق للمناديب، تسوية مبالغ التحصيل.
+5. أتمتة الأعمال وسير العمليات – n8n (Business Automation – n8n):
+   - يبدأ من 59$ شهرياً (Monthly: $59 / mo) أو 590$ سنوياً (Annual: $590 / yr مع خصم شهرين).
+   - السعر النهائي حسب عدد الـ Workflows والتكاملات وحجم التشغيل اليومي.
+6. تطوير تطبيقات أندرويد و iOS مخصصة (Custom Android & iOS App):
+   - يبدأ من 399$ للمشروع (Starting from $399 / project).
+   - السعر النهائي حسب عدد الشاشات والخصائص والـ Backend والتكاملات المطلوبة.
+7. سيستم نقاط البيع للمتاجر والصيدليات (POS / Supermarket / Pharmacy System):
+   - يبدأ من 299$ للمشروع (Starting from $299 / project).
+   - السعر النهائي حسب طبيعة النشاط والخصائص المطلوبة.
+8. حلول الخوادم وقواعد البيانات والـ APIs (Backend / API / Database Solutions):
+   - يبدأ من 149$ (Starting from $149).
+   - السعر النهائي حسب حجم النظام وعدد الـ APIs وقواعد البيانات المطلوبة.
+9. سيستم مخصص لإدارة الشركات والمؤسسات (Custom Business System):
+   - يبدأ من 499$ للمشروع (Starting from $499 / project).
+   - السعر النهائي حسب حجم الشركة ومتطلبات النظام.
+
+مستويات موظف الذكاء الاصطناعي (AI Employee Tiers):
+- المستوى الأول (AI Customer Service): يبدأ من 39$/شهرياً (رد 24/7، الأسئلة الشائعة، معلومات المنتجات، جمع البيانات، تحويل للموظف البشري).
+- المستوى الثاني (AI Business Assistant): يبدأ من 79$/شهرياً (كل مزايا الأساسية + التعامل مع الكتالوجات والملفات + قاعدة معرفة متقدمة + تكاملات إضافية).
+- المستوى الثالث (AI Sales Employee): يبدأ من 149$/شهرياً (إدارة محادثات المبيعات بالكامل، متابعة العملاء المحتملين، عروض أسعار PDF، ربط الـ CRM، أتمتة مراحل البيع).
+
+برنامج شركاء المبيعات المستقلين (Freelance Sales Partner Program):
+- العنوان: Become a Freelance Sales Partner (كن شريك مبيعات حر).
+- الشريك مستقل تماماً وليس موظفاً، لا يوجد راتب ثابت ولا التزام وظيفي.
+- لا يحتاج لأي مهارات برمجية؛ مهمته الوصول للعملاء وأصحاب الأنشطة والترويج للحلول.
+- نحن نتولى كافة الجوانب التقنية: التحليل، البرمجة، التنفيذ، التسليم، والدعم الفني.
+- يحصل الشريك على عمولة فورية مجزية (30% كاش) عن كل تعاقد ناجح يتم من خلاله.
+- للتقديم أو الاستفسار، يحول مباشرة للواتساب للتواصل مع م. مصطفى صلاح (+201107787049).`;
 
   function getDeepSeekClientKey() {
     let key = '';
@@ -2494,6 +2611,17 @@ ${note ? 'ملاحظات: ' + note : ''}`;
       }
       e.preventDefault();
       if (window.closeAffiliateModal) window.closeAffiliateModal();
+      return;
+    }
+
+    // Billing Cycle Toggle (Monthly / Annual)
+    const billingBtn = target.closest('.billing-cycle-btn, [data-action="toggle-billing"]');
+    if (billingBtn) {
+      e.preventDefault();
+      const cycle = billingBtn.getAttribute('data-cycle') || 'monthly';
+      if (window.setBillingCycle) {
+        window.setBillingCycle(cycle);
+      }
       return;
     }
 
