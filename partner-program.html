@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>برنامج شركاء المبيعات والأعمال المستقلين | Freelance Sales & Business Partner Program - Eng. Mostafa Salah</title>
+  <meta name="description" content="انضم كشريك أعمال ومبيعات حر ومستقل مع م. مصطفى صلاح. حوّل علاقاتك مع أصحاب الشركات إلى بيزنس مستمر وأرباح كاش قوية (30% وأكثر). أنت تجلب وتدير العميل ونحن نتولى التنفيذ والبرمجة بالكامل." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Security & Observatory Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https: ws: wss:; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="🤝 برنامج شركاء المبيعات والأعمال المستقلين | Freelance Business Partner" />
+  <meta property="og:description" content="حوّل علاقاتك وشبكتك مع أصحاب الشركات إلى أرباح كاش استثنائية. 30% عمولة فورية وبدون حاجة لأي مهارات برمجية." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" /></noscript>
+
+  <!-- Complete CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Synchronous Theme Initializer -->
+  <script src="theme-init.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-400 p-[1.5px] transition-transform group-hover:scale-105">
+          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+            <span class="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 text-lg">MS</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-white text-base sm:text-lg tracking-tight block leading-tight font-mono">Mostafa Salah</span>
+          <span class="text-[11px] text-emerald-400 block font-mono" data-en="Software & Systems Engineer" data-ar="مهندس برمجيات ونظم">مهندس برمجيات ونظم</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="index.html" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+          <span>&larr;</span>
+          <span data-en="Home" data-ar="الرئيسية">الرئيسية</span>
+        </a>
+        <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
+        <a href="whatsapp-ai-employee.html" class="hover:text-emerald-400 transition-colors" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
+        <a href="smart-shipping-system.html" class="hover:text-cyan-400 transition-colors" data-en="Logistics" data-ar="اللوجستيات">اللوجستيات</a>
+        <a href="partner-program.html" class="text-emerald-400 font-bold" data-en="Partner Program" data-ar="برنامج الشركاء">برنامج الشركاء</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button type="button" id="theme-toggle-btn" data-action="toggle-theme" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer" title="تبديل الثيم / Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <button type="button" id="lang-toggle-btn" data-action="toggle-language" class="px-3 py-2 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-xs font-mono font-bold text-emerald-400 hover:text-emerald-300 transition-all cursor-pointer">
+          <span id="lang-btn-text">EN</span>
+        </button>
+
+        <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85%20%D9%83%D8%B4%D8%B1%D9%8A%D9%83%20%D9%85%D8%A8%D9%8A%D8%B9%D8%A7%D8%AA%20%D9%88%D8%A3%D8%B9%D9%85%D8%A7%D9%84%20%D9%85%D8%B3%D8%AA%D9%82%D9%84%20(Freelance%20Business%20Partner)%20%D9%88%D8%A7%D8%B3%D8%AA%D9%84%D8%A7%D9%85%20%D8%A7%D9%84%D8%AD%D9%82%D9%8A%D8%A8%D8%A9%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D9%88%D9%84%D8%A9" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105">
+          <span>💬</span>
+          <span data-en="WhatsApp Direct" data-ar="واتساب م. مصطفى">واتساب م. مصطفى</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Top Hero Banner -->
+  <main class="flex-1 py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- Breadcrumb Navigation -->
+      <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+        <a href="index.html" class="hover:text-emerald-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>/</span>
+        <span class="text-emerald-400" data-en="Freelance Business Partner" data-ar="برنامج شركاء الأعمال">برنامج شركاء الأعمال</span>
+      </div>
+
+      <!-- Main Headline & Ambition Section -->
+      <div class="text-center max-w-4xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-emerald text-xs font-mono font-semibold">
+          <span>🤝 FREELANCE BUSINESS PARTNER PROGRAM</span>
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight" data-en="Turn Your Client Network Into a Highly Profitable Business" data-ar="حوّل علاقاتك مع العملاء والشركات إلى بيزنس مستمر وأرباح قوية">
+          حوّل علاقاتك مع العملاء والشركات إلى بيزنس مستمر وأرباح قوية
+        </h1>
+        
+        <p class="text-slate-300 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed" data-en="Join us as an independent Freelance Business Partner. You bring and manage the client relationship — our engineering team delivers the complete technical side behind the scenes." data-ar="انضم إلينا كشريك أعمال ومبيعات مستقل. أنت تجلب العميل وتدير العلاقة التجارية معه، وفريقنا الهندسي يتولى كامل التنفيذ التقني والبرمجة والتسليم خلف الكواليس.">
+          انضم إلينا كشريك أعمال ومبيعات مستقل. أنت تجلب العميل وتدير العلاقة التجارية معه، وفريقنا الهندسي يتولى كامل التنفيذ التقني والبرمجة والتسليم خلف الكواليس.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <a href="#register-partner" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm sm:text-base shadow-[0_0_30px_rgba(16,185,129,0.35)] transition-all hover:scale-105 flex items-center gap-2.5">
+            <span>🤝</span>
+            <span data-en="Join as a Partner Now" data-ar="انضم كشريك أعمال الآن">انضم كشريك أعمال الآن</span>
+          </a>
+          <a href="#profit-calculator" class="px-7 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white font-bold text-sm sm:text-base border border-slate-700 transition-all flex items-center gap-2">
+            <span>💰</span>
+            <span data-en="Explore Potential Profits" data-ar="حاسبة الأرباح والدخل المتوقع">حاسبة الأرباح والدخل المتوقع</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Core Principle Box (The Business Model) -->
+      <div class="glass-panel p-6 sm:p-10 border-t-2 border-t-emerald-500 relative overflow-hidden shadow-2xl">
+        <div class="absolute -top-32 -left-32 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto space-y-6 text-slate-200">
+          <div class="text-center">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3" data-en="How This Partnership Model Works" data-ar="طبيعة ونموذج الشراكة: لست مجرد مسوق إحالة">
+              طبيعة ونموذج الشراكة: لست مجرد مسوق إحالة
+            </h2>
+            <div class="inline-block px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-emerald-400 font-mono text-xs font-bold">
+              العميل ⟷ الشريك المستقل (أنت) ⟷ فريقنا التقني (م. مصطفى صلاح)
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-7 rounded-2xl bg-slate-900/90 border border-slate-800 text-sm sm:text-base leading-relaxed space-y-4">
+            <p class="font-bold text-white text-base sm:text-lg" data-en="You are not simply referring a client. You become part of the business relationship." data-ar="أنت لا تقوم بمجرد إحالة العميل إلينا، بل تصبح شريكاً وركناً أساسياً في العلاقة التجارية.">
+              أنت لا تقوم بمجرد إحالة العميل إلينا، بل تصبح شريكاً وركناً أساسياً في العلاقة التجارية.
+            </p>
+            <p data-en="You bring the client, understand their vision, and remain their trusted direct contact throughout agreement, execution, and delivery." data-ar="أنت تقوم بجلب العميل وتكون نقطة التواصل المباشرة معه طوال مراحل المشروع، بداية من فهم احتياجاته ومتطلباته وحتى متابعة الاتفاق والتنفيذ والتسليم.">
+              أنت تقوم بجلب العميل وتكون نقطة التواصل المباشرة معه طوال مراحل المشروع، بداية من فهم احتياجاته ومتطلباته وحتى متابعة الاتفاق والتنفيذ والتسليم.
+            </p>
+            <p class="text-emerald-400 font-bold" data-en="Our technical team handles the complete technical side — from analysis and architectural design to programming, integrations, testing, cloud deployment, and technical delivery." data-ar="فريقنا التقني يتولى تنفيذ الجانب الفني بالكامل، بداية من تحليل المتطلبات والتصميم والبرمجة والتكامل مع APIs وقواعد البيانات والاختبار وحتى النشر والتسليم والدعم الفني.">
+              فريقنا التقني يتولى تنفيذ الجانب الفني بالكامل، بداية من تحليل المتطلبات والتصميم والبرمجة والتكامل مع APIs وقواعد البيانات والاختبار وحتى النشر والتسليم والدعم الفني.
+            </p>
+            <p class="text-slate-400 text-xs sm:text-sm" data-en="You manage the business relationship with the client; we handle the complete technical execution behind the scenes." data-ar="أنت تدير العلاقة التجارية مع العميل، ونحن نتولى التنفيذ التقني بالكامل.">
+              أنت تدير العلاقة التجارية مع العميل، ونحن نتولى التنفيذ التقني بالكامل.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Pillars of Freedom & Authority -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-panel p-6 border-t-2 border-t-emerald-500 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4">
+              👤
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Independent Partner, Not an Employee" data-ar="شريك مستقل وليس موظفاً">
+              شريك مستقل وليس موظفاً
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-en="No fixed salary, no rigid shifts, no employment bureaucracy. You build your client portfolio with full autonomy and flexibility." data-ar="لا يوجد راتب ثابت ولا التزام وظيفي مقيد. تبني شبكة عملائك ومشاريعك بحرية تامة وتعمل متى وأينما شئت.">
+              لا يوجد راتب ثابت ولا التزام وظيفي مقيد. تبني شبكة عملائك ومشاريعك بحرية تامة وتعمل متى وأينما شئت.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-mono text-emerald-400 font-bold">
+            100% Autonomy & Freedom
+          </div>
+        </div>
+
+        <div class="glass-panel p-6 border-t-2 border-t-cyan-500 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl mb-4">
+              💡
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Zero Coding Skills Required" data-ar="لا تحتاج لأي خبرة برمجية">
+              لا تحتاج لأي خبرة برمجية
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-en="You don't write a single line of code. We deliver enterprise-grade code, databases, cloud architecture, and server management." data-ar="لا تحتاج لمعرفة كتابة سطر كود واحد. نحن نتولى البنية التحتية، الأكواد، قواعد البيانات، الذكاء الاصطناعي، والخوادم السحابية.">
+              لا تحتاج لمعرفة كتابة سطر كود واحد. نحن نتولى البنية التحتية، الأكواد، قواعد البيانات، الذكاء الاصطناعي، والخوادم السحابية.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-mono text-cyan-400 font-bold">
+            Zero Technical Burden
+          </div>
+        </div>
+
+        <div class="glass-panel p-6 border-t-2 border-t-purple-500 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-2xl mb-4">
+              💎
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Generous & Instant Payouts" data-ar="عمولات كاش فورية مجزية">
+              عمولات كاش فورية مجزية
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-en="Earn cash commissions (30% net and up to hundreds or thousands of dollars per deal) released immediately upon client payment stages." data-ar="تحصل على عمولتك (30% صافي كاش تصل لمئات وآلاف الدولارات للصفقة) فور سداد العميل ودون أي تأخير أو سقف للأرباح.">
+              تحصل على عمولتك (30% صافي كاش تصل لمئات وآلاف الدولارات للصفقة) فور سداد العميل ودون أي تأخير أو سقف للأرباح.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-mono text-purple-400 font-bold">
+            Uncapped Earning Potential
+          </div>
+        </div>
+
+        <div class="glass-panel p-6 border-t-2 border-t-amber-500 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl mb-4">
+              📂
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Complete Sales Kit & Backup" data-ar="حقيبة تسويقية ودعم فني متكامل">
+              حقيبة تسويقية ودعم فني متكامل
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-en="We provide branded PDF proposals, live working demos, price sheets, and real-time engineer support on WhatsApp to help you close." data-ar="نوفر لك عروض أسعار PDF احترافية، روابط لمشاريع حية لمعاينتها، ودعم هندسي مباشر عبر واتساب لمساعدتك في إتمام الصفقة.">
+              نوفر لك عروض أسعار PDF احترافية، روابط لمشاريع حية لمعاينتها، ودعم هندسي مباشر عبر واتساب لمساعدتك في إتمام الصفقة.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] font-mono text-amber-400 font-bold">
+            Live Demos & PDF Proposals
+          </div>
+        </div>
+      </div>
+
+      <!-- 7-Step Workflow (How It Works) -->
+      <div class="glass-panel p-6 sm:p-10 border-t-2 border-t-cyan-500">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-cyan text-xs font-mono font-semibold mb-3">
+            <span>7 CLEAR STEPS</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight" data-en="How It Works: Step-by-Step From Lead to Payout" data-ar="طريقة العمل: 7 خطوات واضحة من بداية العميل وحتى استلام العمولة">
+            طريقة العمل: 7 خطوات واضحة من بداية العميل وحتى استلام العمولة
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2" data-en="A streamlined, transparent operational workflow where roles are distinct and communication is seamless." data-ar="دورة عمل سلسة وشفافة تحدد مسؤولية كل طرف وتضمن لك تحصيل حقوقك وأرباحك باحترافية تامة.">
+            دورة عمل سلسة وشفافة تحدد مسؤولية كل طرف وتضمن لك تحصيل حقوقك وأرباحك باحترافية تامة.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Step 1 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-2xl font-black font-mono text-emerald-400">01</span>
+              <span class="text-xl">🎯</span>
+            </div>
+            <h4 class="text-base font-bold text-white mb-2" data-en="1️⃣ Find the Client" data-ar="1️⃣ الوصول إلى العميل">
+              1️⃣ الوصول إلى العميل
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Reach a business owner or company requiring a website, AI employee, mobile app, courier system, or automation." data-ar="تصل إلى عميل أو صاحب شركة يحتاج إلى موقع، تطبيق، نظام إدارة، حل AI ذكي، أو أتمتة لعملياته.">
+              تصل إلى عميل أو صاحب شركة يحتاج إلى موقع، تطبيق، نظام إدارة، حل AI ذكي، أو أتمتة لعملياته.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-2xl font-black font-mono text-emerald-400">02</span>
+              <span class="text-xl">👂</span>
+            </div>
+            <h4 class="text-base font-bold text-white mb-2" data-en="2️⃣ Understand the Requirement" data-ar="2️⃣ فهم الاحتياج">
+              2️⃣ فهم الاحتياج
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Connect directly with your client and understand their core objectives, pain points, and needed features." data-ar="تتواصل مع العميل وتفهم احتياجاته وطبيعة نشاطه والمشاكل التي يرغب في حلها عبر السيستم.">
+              تتواصل مع العميل وتفهم احتياجاته وطبيعة نشاطه والمشاكل التي يرغب في حلها عبر السيستم.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-2xl font-black font-mono text-emerald-400">03</span>
+              <span class="text-xl">📋</span>
+            </div>
+            <h4 class="text-base font-bold text-white mb-2" data-en="3️⃣ Share Requirements With Us" data-ar="3️⃣ مشاركة التفاصيل معنا">
+              3️⃣ مشاركة التفاصيل معنا
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Send project details to us on WhatsApp. We analyze the technical scope and prepare the best tailored solution and price." data-ar="ترسل لنا تفاصيل المشروع لنقوم بتحليل الجانب التقني، تحديد البنية المناسبة، وتقديم عرض سعر رسمي PDF.">
+              ترسل لنا تفاصيل المشروع لنقوم بتحليل الجانب التقني، تحديد البنية المناسبة، وتقديم عرض سعر رسمي PDF.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-2xl font-black font-mono text-cyan-400">04</span>
+              <span class="text-xl">⚙️</span>
+            </div>
+            <h4 class="text-base font-bold text-white mb-2" data-en="4️⃣ We Build Everything" data-ar="4️⃣ نحن نتولى التنفيذ والبرمجة">
+              4️⃣ نحن نتولى التنفيذ والبرمجة
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="Our engineering team builds, programs, integrates APIs, sets up databases, and performs end-to-end testing." data-ar="فريقنا التقني يتولى التطوير والتنفيذ بالكامل، من كتابة الأكواد والربط مع قواعد البيانات إلى الاختبار والنشر.">
+              فريقنا التقني يتولى التطوير والتنفيذ بالكامل، من كتابة الأكواد والربط مع قواعد البيانات إلى الاختبار والنشر.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-2xl font-black font-mono text-cyan-400">05</span>
+              <span class="text-xl">🤝</span>
+            </div>
+            <h4 class="text-base font-bold text-white mb-2" data-en="5️⃣ You Manage the Client Relationship" data-ar="5️⃣ أنت تدير العلاقة التجارية">
+              5️⃣ أنت تدير العلاقة التجارية
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="You remain the direct trusted point of contact for the client, updating them on progress and revisions." data-ar="تظل أنت نقطة التواصل المباشرة مع العميل، وتتابع معه مراحل المشروع، التعديلات، والاتفاق التجاري.">
+              تظل أنت نقطة التواصل المباشرة مع العميل، وتتابع معه مراحل المشروع، التعديلات، والاتفاق التجاري.
+            </p>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-2xl font-black font-mono text-purple-400">06</span>
+              <span class="text-xl">🚀</span>
+            </div>
+            <h4 class="text-base font-bold text-white mb-2" data-en="6️⃣ Delivery & Technical Support" data-ar="6️⃣ التسليم والدعم الفني">
+              6️⃣ التسليم والدعم الفني
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-en="We deliver the working solution to you to present to your client, backed by continuous post-launch maintenance." data-ar="نقوم بتسليم النظام أو الموقع جاهزاً لتقديمه للعميل، مع توفير الدعم الفني والصيانة المستمرة المتفق عليها.">
+              نقوم بتسليم النظام أو الموقع جاهزاً لتقديمه للعميل، مع توفير الدعم الفني والصيانة المستمرة المتفق عليها.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 7 Highlight Banner -->
+        <div class="mt-6 p-6 rounded-2xl bg-gradient-to-r from-emerald-950/60 to-slate-900 border border-emerald-500/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-2xl shrink-0">
+              💰
+            </div>
+            <div>
+              <h4 class="text-base sm:text-lg font-bold text-white" data-en="7️⃣ Earn Your Commission Promptly" data-ar="7️⃣ استلام عمولتك الكاش فوراً">
+                7️⃣ استلام عمولتك الكاش فوراً
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300" data-en="Receive your agreed cash commission according to project payment milestones via your preferred channel." data-ar="تحصل على عمولتك وفقاً لمراحل السداد المتفق عليها في عقد المشروع عبر إنستاباي، فودافون كاش، أو تحويل بنكي فوري.">
+                تحصل على عمولتك وفقاً لمراحل السداد المتفق عليها في عقد المشروع عبر إنستاباي، فودافون كاش، أو تحويل بنكي فوري.
+              </p>
+            </div>
+          </div>
+          <span class="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-black text-xs font-mono shrink-0">
+            30% Net Cash Commission
+          </span>
+        </div>
+      </div>
+
+      <!-- Real Earnings Breakdown & Profit Calculator Section (حاسبة الأرباح الاستثنائية) -->
+      <div id="profit-calculator" class="glass-panel p-6 sm:p-10 border-t-2 border-t-emerald-500">
+        <div class="text-center max-w-3xl mx-auto mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-emerald text-xs font-mono font-semibold mb-3">
+            <span>REALISTIC EARNINGS BREAKDOWN</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight" data-en="How Much Can You Earn As a Partner?" data-ar="كم يمكنك أن تربح كشريك مبيعات معنا؟ نظرة واقعية على الأرباح">
+            كم يمكنك أن تربح كشريك مبيعات معنا؟ نظرة واقعية على الأرباح
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-2xl mx-auto" data-en="All prices are starting prices. Final pricing depends on project requirements, usage, integrations, features, and system size." data-ar="جميع الأسعار المذكورة هي أسعار تبدأ من، ويتم تحديد السعر النهائي حسب متطلبات المشروع وحجم الاستخدام والخصائص والتكاملات المطلوبة.">
+            جميع الأسعار المذكورة هي أسعار تبدأ من، ويتم تحديد السعر النهائي حسب متطلبات المشروع وحجم الاستخدام والخصائص والتكاملات المطلوبة.
+          </p>
+        </div>
+
+        <!-- 3 Scenarios Cards (Potential Monthly Income) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <!-- Scenario 1: Moderate Start -->
+          <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">مستوى البداية المعتدل</span>
+                <span class="text-xl">🌱</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">3 مواقع تعريفي + موظف واتساب</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                إتمام 3 مواقع شركات صغيرة بدومينات مع اشتراك سنوي لموظف ذكاء اصطناعي واحد خلال الشهر.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800">
+              <div class="text-xs text-slate-400">صافي ربحك التقديري:</div>
+              <div class="text-2xl font-black text-emerald-400 font-mono mt-1">
+                ~$185 - $250+ <span class="text-xs text-slate-400 font-normal">كاش</span>
+              </div>
+              <div class="text-[11px] text-slate-500 mt-1">بمعدل عمل ساعات معدودة في الأسبوع</div>
+            </div>
+          </div>
+
+          <!-- Scenario 2: Active Partner -->
+          <div class="p-6 rounded-2xl bg-emerald-950/30 border-2 border-emerald-500 flex flex-col justify-between shadow-xl relative">
+            <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-bold text-[10px] font-mono">
+              الأكثر انتشاراً للمحترفين
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">شريك أعمال نشط</span>
+                <span class="text-xl">🚀</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">سيستم شحن + تطبيقين + موظفي ذكاء</h3>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                التعاقد مع شركة شحن أو لوجستيات، مع تطبيق متجر أو صيدلية، وحلول ذكاء اصطناعي مبيعات.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-emerald-500/30">
+              <div class="text-xs text-slate-400">صافي ربحك التقديري:</div>
+              <div class="text-3xl font-black text-emerald-400 font-mono mt-1">
+                ~$600 - $1,200+ <span class="text-xs text-slate-400 font-normal">كاش شهرياً</span>
+              </div>
+              <div class="text-[11px] text-emerald-400/80 mt-1 font-medium">دخل مستمر يوازي أو يفوق رواتب وظائف كاملة</div>
+            </div>
+          </div>
+
+          <!-- Scenario 3: High-Ticket Closer -->
+          <div class="p-6 rounded-2xl bg-slate-900 border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">مشاريع كبرى وأنظمة شركات</span>
+                <span class="text-xl">👑</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">نظام شركات مخصص (Custom System)</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                عقد سيستم مخصص متكامل لمؤسسة كبيرة أو تطبيق ضخم (من 1,500$ إلى 4,000$+).
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800">
+              <div class="text-xs text-slate-400">صافي ربحك في صفقة واحدة:</div>
+              <div class="text-2xl font-black text-purple-300 font-mono mt-1">
+                ~$450 - $1,500+ <span class="text-xs text-slate-400 font-normal">عن المشروع الواحد</span>
+              </div>
+              <div class="text-[11px] text-slate-500 mt-1">تسليم فوري للعمولة فور مراحل الدفع</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Commission Rates Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs sm:text-sm text-start border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 font-mono">
+                <th class="py-3 px-4 text-start">الخدمة أو الحل البرمجي</th>
+                <th class="py-3 px-4 text-start">سعر بداية الخدمة للعميل</th>
+                <th class="py-3 px-4 text-start text-emerald-400 font-bold">عمولتك الصافية (30% كاش)</th>
+                <th class="py-3 px-4 text-start">ملاحظات التشغيل والربح</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-white">موقع تعريفي احترافي للشركات (Corporate Website)</td>
+                <td class="py-3.5 px-4 font-mono text-emerald-400">يبدأ من 65$ (أو 75$ بدومين .com)</td>
+                <td class="py-3.5 px-4 font-mono font-bold text-emerald-400 text-base">تبدأ من 19.5$ - 22.5$ كاش</td>
+                <td class="py-3.5 px-4 text-slate-400">أسهل وأسرع باقة للإغلاق خلال 24 ساعة</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-white">موظف واتساب الذكي (WhatsApp AI Employee)</td>
+                <td class="py-3.5 px-4 font-mono text-emerald-400">يبدأ من 39$ / شهر (أو 390$ سنوياً)</td>
+                <td class="py-3.5 px-4 font-mono font-bold text-emerald-400 text-base">30% من قيمة التعاقد (117$ للاشتراك السنوي)</td>
+                <td class="py-3.5 px-4 text-slate-400">مطلوب بقوة لجميع الأنشطة والمتاجر</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-white">موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI)</td>
+                <td class="py-3.5 px-4 font-mono text-emerald-400">يبدأ من 39$ / شهر (أو 390$ سنوياً)</td>
+                <td class="py-3.5 px-4 font-mono font-bold text-emerald-400 text-base">30% من قيمة التعاقد</td>
+                <td class="py-3.5 px-4 text-slate-400">لأصحاب صفحات الفيسبوك وقنوات المبيعات</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-white">سيستم الشحن واللوجستيات الذكي (Smart Shipping System)</td>
+                <td class="py-3.5 px-4 font-mono text-emerald-400">يبدأ من 99$ / شهر (أو 990$ سنوياً)</td>
+                <td class="py-3.5 px-4 font-mono font-bold text-emerald-400 text-base">30% (تبدأ من 297$ للاشتراك السنوي)</td>
+                <td class="py-3.5 px-4 text-slate-400">لشركات الشحن ومكاتب التوزيع والتجار</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-white">أتمتة الأعمال وسير العمليات (Business Automation – n8n)</td>
+                <td class="py-3.5 px-4 font-mono text-emerald-400">يبدأ من 59$ / شهر (أو 590$ سنوياً)</td>
+                <td class="py-3.5 px-4 font-mono font-bold text-emerald-400 text-base">30% من قيمة التعاقد</td>
+                <td class="py-3.5 px-4 text-slate-400">للشركات الراغبة في ربط أنظمتها تلقائياً</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-white">تطبيقات أندرويد و iOS مخصصة (Custom Mobile App)</td>
+                <td class="py-3.5 px-4 font-mono text-emerald-400">يبدأ من 399$ للمشروع</td>
+                <td class="py-3.5 px-4 font-mono font-bold text-emerald-400 text-base">تبدأ من 120$+ وتصل لـ 400$+ كاش</td>
+                <td class="py-3.5 px-4 text-slate-400">حسب عدد الشاشات والـ Backend والتكامل</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-white">سيستم نقاط البيع للمتاجر والصيدليات (POS System)</td>
+                <td class="py-3.5 px-4 font-mono text-emerald-400">يبدأ من 299$ للمشروع</td>
+                <td class="py-3.5 px-4 font-mono font-bold text-emerald-400 text-base">تبدأ من 90$+ دولار كاش</td>
+                <td class="py-3.5 px-4 text-slate-400">للسوبرماركت ومحلات التجزئة والصيدليات</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-white">حلول الخوادم وقواعد البيانات (Backend / API Solutions)</td>
+                <td class="py-3.5 px-4 font-mono text-emerald-400">يبدأ من 149$</td>
+                <td class="py-3.5 px-4 font-mono font-bold text-emerald-400 text-base">تبدأ من 45$+ دولار كاش</td>
+                <td class="py-3.5 px-4 text-slate-400">حسب حجم النظام وقواعد البيانات المطلوبة</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 font-bold text-white">سيستم مخصص لإدارة الشركات (Custom Business System)</td>
+                <td class="py-3.5 px-4 font-mono text-emerald-400">يبدأ من 499$ للمشروع</td>
+                <td class="py-3.5 px-4 font-mono font-bold text-emerald-400 text-base">تبدأ من 150$+ وتصل لـ 1,000$+ كاش</td>
+                <td class="py-3.5 px-4 text-slate-400">مشاريع كبيرة ذات عائد مرتفع جداً</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Registration Form Section (نموذج الانضمام كشريك) -->
+      <div id="register-partner" class="glass-panel p-6 sm:p-10 max-w-3xl mx-auto border-t-2 border-t-emerald-500 shadow-2xl">
+        <div class="text-center mb-8">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-3xl mx-auto mb-4">
+            📝
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white" data-en="Apply to Become a Freelance Business Partner" data-ar="نموذج الانضمام الفوري كشريك أعمال ومبيعات مستقل">
+            نموذج الانضمام الفوري كشريك أعمال ومبيعات مستقل
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 max-w-xl mx-auto" data-en="Fill in your details below to receive your official sales kit, live showcase links, and direct WhatsApp onboarding with Eng. Mostafa Salah." data-ar="سجل بياناتك أدناه لاستلام الحقيبة التسويقية وعروض الأسعار الرسمية والبدء في التواصل والعمل فوراً.">
+            سجل بياناتك أدناه لاستلام الحقيبة التسويقية وعروض الأسعار الرسمية والبدء في التواصل والعمل فوراً.
+          </p>
+        </div>
+
+        <form id="affiliate-registration-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="affiliate-name" class="block text-xs font-semibold text-slate-300 mb-1.5" data-en="Full Name *" data-ar="الاسم الكريم *">الاسم الكريم *</label>
+              <input id="affiliate-name" type="text" required placeholder="أحمد محمد" class="w-full h-11 px-4 text-xs sm:text-sm rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" />
+            </div>
+
+            <div>
+              <label for="affiliate-phone" class="block text-xs font-semibold text-slate-300 mb-1.5" data-en="WhatsApp / Phone Number *" data-ar="رقم الواتساب / الهاتف للتواصل *">رقم الواتساب / الهاتف للتواصل *</label>
+              <input id="affiliate-phone" type="tel" required placeholder="01107787049" class="w-full h-11 px-4 text-xs sm:text-sm rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" dir="ltr" />
+            </div>
+          </div>
+
+          <div>
+            <label for="affiliate-channel" class="block text-xs font-semibold text-slate-300 mb-1.5" data-en="Your Network & Access to Clients" data-ar="طبيعة شبكة علاقاتك أو خبرتك في الوصول لأصحاب الأعمال">طبيعة شبكة علاقاتك أو خبرتك في الوصول لأصحاب الأعمال</label>
+            <input id="affiliate-channel" type="text" placeholder="مثال: لدي علاقات مع شركات شحن، محلات تجارية، أصحاب مصانع أو متاجر إلكترونية..." class="w-full h-11 px-4 text-xs sm:text-sm rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" />
+          </div>
+
+          <div>
+            <label for="affiliate-note" class="block text-xs font-semibold text-slate-300 mb-1.5" data-en="Notes, Expectations or Questions (Optional)" data-ar="أي استفسار أو تفاصيل إضافية (اختياري)">أي استفسار أو تفاصيل إضافية (اختياري)</label>
+            <textarea id="affiliate-note" rows="2" placeholder="هل لديك عميل جاهز حالياً؟ أو أي استفسار ترغب في توضيحه..." class="w-full p-4 text-xs sm:text-sm rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm sm:text-base shadow-[0_0_25px_rgba(16,185,129,0.35)] transition-all hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2">
+            <span>🤝</span>
+            <span data-en="Become a Partner Now (Receive Sales Kit & 30% Commission)" data-ar="انضم كشريك الآن واستلم الحقيبة التسويقية والعمولة الفورية">انضم كشريك الآن واستلم الحقيبة التسويقية والعمولة الفورية</span>
+          </button>
+        </form>
+
+        <!-- Direct WhatsApp Contact Box -->
+        <div class="mt-8 pt-6 border-t border-slate-800 text-center space-y-2">
+          <p class="text-xs text-slate-400">
+            أو تواصل مباشرة ودردش فوراً مع المهندس مصطفى صلاح عبر واتساب:
+          </p>
+          <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85%20%D9%83%D8%B4%D8%B1%D9%8A%D9%83%20%D9%85%D8%A8%D9%8A%D8%B9%D8%A7%D8%AA%20%D9%88%D8%A3%D8%B9%D9%85%D8%A7%D9%84%20%D9%85%D8%B3%D8%AA%D9%82%D9%84%20(Freelance%20Business%20Partner)%20%D9%88%D8%A7%D8%B3%D8%AA%D9%84%D8%A7%D9%85%20%D8%A7%D9%84%D8%AD%D9%82%D9%8A%D8%A8%D8%A9%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D9%88%D9%84%D8%A9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-400 hover:text-emerald-300 font-mono text-xs sm:text-sm font-bold border border-slate-800 transition-colors">
+            <span>💬</span>
+            <span>WhatsApp: +20 110 778 7049</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-800/80 bg-slate-950/80 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-white font-mono">&gt;_ Mostafa Salah</span>
+        <span>·</span>
+        <span>© 2026 Mostafa Salah. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400 font-medium">
+        <a href="index.html" class="hover:text-emerald-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>·</span>
+        <a href="privacy.html" class="hover:text-cyan-400 transition-colors" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+        <span>·</span>
+        <a href="terms.html" class="hover:text-emerald-400 transition-colors" data-en="Terms of Service" data-ar="الشروط والأحكام">الشروط والأحكام</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="app-toast" class="toast"></div>
+
+  <!-- Pure Vanilla Engine Script -->
+  <script src="script.js" defer></script>
+</body>
+</html>
