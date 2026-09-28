@@ -2410,20 +2410,20 @@
       <span class="text-[11px]">أحمد يكتب الآن...</span>
     </div>
 
-    <!-- Input Bar -->
+    <!-- Input Bar (Flexible Auto-Expanding with Crisp Readable Typography) -->
     <div class="p-3 bg-slate-900/95 border-t border-slate-800 shrink-0">
-      <form id="floating-cs-form" class="flex items-center gap-2">
-        <input 
+      <form id="floating-cs-form" class="flex items-end gap-2">
+        <textarea 
           id="floating-cs-input" 
-          type="text" 
+          rows="1"
           placeholder="اكتب سؤالك هنا لأحمد..." 
-          class="chat-input-box flex-1 h-10 px-3.5 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500/80 transition-colors"
+          class="chat-input-box flex-1 px-3.5 py-2.5 text-sm font-medium rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 transition-all resize-none leading-relaxed block"
           autocomplete="off"
-        />
+        ></textarea>
         <button 
           id="floating-cs-send-btn" 
           type="submit" 
-          class="h-10 px-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center justify-center shrink-0 shadow-sm"
+          class="h-[44px] px-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center justify-center shrink-0 shadow-sm self-end"
           title="إرسال"
         >
           <span>➤</span>

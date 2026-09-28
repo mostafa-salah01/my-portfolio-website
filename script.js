@@ -501,6 +501,12 @@
     if (csAgentStatus) csAgentStatus.textContent = lang === 'ar' ? 'م. مصطفى صلاح • يرد فوراً بلهجة بشرية' : 'Eng. Mostafa Salah • Human-like Replies';
     const floatInput = document.getElementById('floating-cs-input');
     if (floatInput) floatInput.placeholder = lang === 'ar' ? 'اكتب سؤالك هنا لأحمد...' : 'Type your question here...';
+    const simChatInput = document.getElementById('sim-chat-input');
+    if (simChatInput) {
+      simChatInput.placeholder = lang === 'ar'
+        ? (simChatInput.getAttribute('data-placeholder-ar') || 'اكتب استفسارك هنا لموظف مبيعات م. مصطفى صلاح...')
+        : (simChatInput.getAttribute('data-placeholder-en') || 'Type your question to Eng. Mostafa Salah AI Employee...');
+    }
 
     // Update Greeting Bubble text
     const bubbleName = document.getElementById('bubble-agent-name');
@@ -1583,20 +1589,20 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
           <span class="text-[11px]">${isAr ? 'أحمد يكتب الآن...' : 'Ahmed is typing...'}</span>
         </div>
 
-        <!-- Input Bar -->
+        <!-- Input Bar (Flexible Auto-Expanding with Crisp Readable Typography) -->
         <div class="p-3 bg-slate-900/95 border-t border-slate-800 shrink-0">
-          <form id="floating-cs-form" class="flex items-center gap-2">
-            <input 
+          <form id="floating-cs-form" class="flex items-end gap-2">
+            <textarea 
               id="floating-cs-input" 
-              type="text" 
+              rows="1" 
               placeholder="${isAr ? 'اكتب سؤالك هنا لأحمد...' : 'Type your question here...'}" 
-              class="chat-input-box flex-1 h-10 px-3.5 text-xs rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500/80 transition-colors"
+              class="chat-input-box flex-1 px-3.5 py-2.5 text-sm font-medium rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 transition-all resize-none leading-relaxed block" 
               autocomplete="off"
-            />
+            ></textarea>
             <button 
               id="floating-cs-send-btn" 
               type="submit" 
-              class="h-10 px-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center justify-center shrink-0 shadow-sm"
+              class="h-[44px] px-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 cursor-pointer flex items-center justify-center shrink-0 shadow-sm self-end" 
               title="${isAr ? 'إرسال' : 'Send'}"
             >
               <span>➤</span>
@@ -1694,8 +1700,16 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
       sendBtn.onclick = handleFloatingSubmit;
     }
     if (input) {
+      const resizeFloatingInput = function () {
+        input.style.height = 'auto';
+        const newH = Math.min(Math.max(input.scrollHeight, 44), 140);
+        input.style.height = newH + 'px';
+        input.style.overflowY = input.scrollHeight > 140 ? 'auto' : 'hidden';
+      };
+      input.addEventListener('input', resizeFloatingInput);
       input.onkeydown = function (e) {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
           handleFloatingSubmit(e);
         }
       };
@@ -1999,8 +2013,16 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
     const simInput = document.getElementById('sim-chat-input');
     const simSendBtn = document.getElementById('sim-send-btn');
 
-    if (floatInput) floatInput.value = '';
-    if (simInput) simInput.value = '';
+    if (floatInput) {
+      floatInput.value = '';
+      floatInput.style.height = 'auto';
+      floatInput.style.overflowY = 'hidden';
+    }
+    if (simInput) {
+      simInput.value = '';
+      simInput.style.height = 'auto';
+      simInput.style.overflowY = 'hidden';
+    }
     if (floatSendBtn) floatSendBtn.disabled = true;
     if (simSendBtn) simSendBtn.disabled = true;
 
@@ -2403,8 +2425,17 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
       simSendBtn.onclick = handleSimulatorSubmit;
     }
     if (simInput) {
+      const resizeSimInput = function () {
+        simInput.style.height = 'auto';
+        // Min 50px (single row), max 180px (multi-row) with smooth overflow
+        const newH = Math.min(Math.max(simInput.scrollHeight, 50), 180);
+        simInput.style.height = newH + 'px';
+        simInput.style.overflowY = simInput.scrollHeight > 180 ? 'auto' : 'hidden';
+      };
+      simInput.addEventListener('input', resizeSimInput);
       simInput.onkeydown = function (e) {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
           handleSimulatorSubmit(e);
         }
       };
