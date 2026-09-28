@@ -484,6 +484,7 @@ export default defineConfig(() => {
           omnichannelAiAgent: resolve(import.meta.dirname, 'omnichannel-ai-agent.html'),
           backendApiArchitecture: resolve(import.meta.dirname, 'backend-api-architecture.html'),
           affiliateMarket: resolve(import.meta.dirname, 'affiliate-market.html'),
+          partnerProgram: resolve(import.meta.dirname, 'partner-program.html'),
           privacy: resolve(import.meta.dirname, 'privacy.html'),
           privacyPolicy: resolve(import.meta.dirname, 'privacy-policy.html'),
           terms: resolve(import.meta.dirname, 'terms.html'),

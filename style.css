@@ -749,4 +749,54 @@ html.light .ai-rich-message .ai-card-badge {
   color: #059669;
 }
 
+/* ==========================================================================
+   Partner Teaser Component Layout (لوحة الشريك المستقل بالصفحة الرئيسية)
+   ========================================================================== */
+.partner-teaser-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.partner-teaser-row {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2rem !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.partner-teaser-main {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.partner-teaser-side {
+  width: 100% !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 1024px) {
+  .partner-teaser-row {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 2.5rem !important;
+  }
+  .partner-teaser-main {
+    flex: 1 1 62% !important;
+    max-width: 65% !important;
+  }
+  .partner-teaser-side {
+    flex: 0 0 32% !important;
+    width: 32% !important;
+    max-width: 380px !important;
+  }
+}
+
 
