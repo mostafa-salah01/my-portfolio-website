@@ -1,5 +1,5 @@
 /**
- * Mostafa Salah Portfolio - Synchronous Theme Initialization
+ * WebStack - Synchronous Theme Initialization
  * Executed in <head> to prevent Flash of Unstyled Content (FOUC)
  * Strictly conforms to Content Security Policy (no inline script needed)
  */

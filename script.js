@@ -1,5 +1,5 @@
 /**
- * Mostafa Salah Portfolio - Pure Vanilla JavaScript Engine
+ * WebStack - Pure Vanilla JavaScript Engine
  * Zero dependencies, ultra-fast, cross-browser compatible
  */
 
@@ -67,7 +67,7 @@
         'دعم فني وصيانة يومية مستمرة: متابعة مستمرة وتحديثات سريعة وإصلاحات تقنية فورية (من السبت إلى الخميس)',
         'تجديد سنوي ثابت: 40 دولار سنوياً لجميع الباقات (شامل تجديد الدومين + الصيانة والدعم الفني + الاستضافة السحابية)'
       ],
-      whatsappMsg: 'مرحباً مصطفى أود الاستفسار وحجز باقة تصميم موقع تعريفي للشركات (65$ بدومين uk. أو 75$ بدومين com.)'
+      whatsappMsg: 'مرحباً فريق WebStack أود الاستفسار وحجز باقة تصميم موقع تعريفي للشركات (65$ بدومين uk. أو 75$ بدومين com.)'
     },
     'whatsapp-ai-employee': {
       pageUrl: 'whatsapp-ai-employee.html',
@@ -92,7 +92,7 @@
         'إتقان فنون البيع، معالجة اعتراضات العملاء، واقتراح المنتجات التكميلية بذكاء',
         'تأكيد الطلبات لحظياً وتسجيل بيانات العميل في قاعدة البيانات وGoogle Sheets'
       ],
-      whatsappMsg: 'مرحباً مصطفى، مهتم ببرمجة موظف ذكاء اصطناعي بشري لواتساب يرسل صور وملفات وعروض أسعار'
+      whatsappMsg: 'مرحباً فريق WebStack، مهتم ببرمجة موظف ذكاء اصطناعي بشري لواتساب يرسل صور وملفات وعروض أسعار'
     },
     'human-ai-whatsapp-employee': {
       pageUrl: 'whatsapp-ai-employee.html',
@@ -117,7 +117,7 @@
         'إتقان فنون البيع، معالجة اعتراضات العملاء، واقتراح المنتجات التكميلية بذكاء',
         'تأكيد الطلبات لحظياً وتسجيل بيانات العميل في قاعدة البيانات وGoogle Sheets'
       ],
-      whatsappMsg: 'مرحباً مصطفى، مهتم ببرمجة موظف ذكاء اصطناعي بشري لواتساب يرسل صور وملفات وعروض أسعار'
+      whatsappMsg: 'مرحباً فريق WebStack، مهتم ببرمجة موظف ذكاء اصطناعي بشري لواتساب يرسل صور وملفات وعروض أسعار'
     },
     'telegram-messenger-ai-employees': {
       pageUrl: 'omnichannel-ai-agent.html',
@@ -142,7 +142,7 @@
         'الاستماع للرسائل الصوتية وفهمها والرد عليها بذكاء واحتراف',
         'تحويل ذكي للعميل لفريق الإدارة عند وصول صفقات كبرى أو طلبات مخصصة'
       ],
-      whatsappMsg: 'مرحباً مصطفى، مهتم ببرمجة موظف ذكاء اصطناعي لتلجرام وفيسبوك ماسنجر'
+      whatsappMsg: 'مرحباً فريق WebStack، مهتم ببرمجة موظف ذكاء اصطناعي لتلجرام وفيسبوك ماسنجر'
     },
     'smart-shipping-courier-system': {
       pageUrl: 'smart-shipping-system.html',
@@ -167,7 +167,7 @@
         'شاشات خاصة بالمناديب لتسجيل الاستلام وإثبات التسليم والتوقيع',
         'دفتر حسابات مالي لمطابقة مبالغ الدفع عند الاستلام والحسابات البنكية بدقة'
       ],
-      whatsappMsg: 'مرحباً مصطفى، أود الاستفسار عن سيستم الشحن واللوجستيات وإدارة المناديب والبوالص'
+      whatsappMsg: 'مرحباً فريق WebStack، أود الاستفسار عن سيستم الشحن واللوجستيات وإدارة المناديب والبوالص'
     },
     'idea-to-apps-supermarket-pharmacy': {
       pageUrl: 'mobile-retail-apps.html',
@@ -192,7 +192,7 @@
         'أنظمة كاشير ونقاط بيع للسوبرماركت مع ربط طابعات الفواتير وقارئات الباركود',
         'أنظمة صيدليات ذكية تتبع أرقام التشغيل، صلاحيات الأدوية، وحسابات الموردين'
       ],
-      whatsappMsg: 'مرحباً مصطفى، لدي فكرة مشروع وأريد تحويلها لنظام رقمي وتطبيقات أندرويد وآيفون'
+      whatsappMsg: 'مرحباً فريق WebStack، لدي فكرة مشروع وأريد تحويلها لنظام رقمي وتطبيقات أندرويد وآيفون'
     },
     'n8n-enterprise-orchestrator': {
       pageUrl: 'n8n-automation.html',
@@ -217,7 +217,7 @@
         'التحقق الأمني بالتوقيع المشفر HMAC-SHA256 لجميع الـ Webhooks الواردة',
         'سجلات تدقيق شاملة وبث تقارير فورية على بوتات تيليجرام'
       ],
-      whatsappMsg: 'مرحباً مصطفى، مهتم بخدمات أتمتة مسارات العمل والربط المؤسسي عبر n8n'
+      whatsappMsg: 'مرحباً فريق WebStack، مهتم بخدمات أتمتة مسارات العمل والربط المؤسسي عبر n8n'
     },
     'api-telemetry-dashboard': {
       pageUrl: 'backend-api-architecture.html',
@@ -242,7 +242,7 @@
         'تحليل كفاءة التخزين المؤقت في Redis ونسب إصابة الكاش',
         'متابعة تسليم الـ Webhooks وإعادة إرسال العمليات الفاشلة تلقائياً'
       ],
-      whatsappMsg: 'مرحباً مصطفى، مهتم بتطوير وفحص أداء الـ Backend وواجهات الـ REST API'
+      whatsappMsg: 'مرحباً فريق WebStack، مهتم بتطوير وفحص أداء الـ Backend وواجهات الـ REST API'
     }
   };
 
@@ -284,95 +284,104 @@
 
   const SERVICE_MESSAGES = {
     'general': {
-      ar: 'مرحباً مصطفى، أود بدء مشروع برمجي جديد معك والاستفسار عن الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello Mostafa, I’m interested in starting a software project and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أود بدء مشروع برمجي جديد معكم والاستفسار عن الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in starting a software project and would like to know the suitable package and details.'
+    },
+    // New: Custom E-Commerce Store (إنشاء المتاجر الإلكترونية)
+    'custom-ecommerce-store': {
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ باقة إنشاء المتاجر الإلكترونية المخصصة (تبدأ من 200$) وأود معرفة التفاصيل والبدء في المتجر.',
+      en: 'Hello WebStack team, I’m interested in the Custom E-Commerce Store package (Starting from $200) and would like to get started.'
+    },
+    'ecommerce-store': {
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ باقة إنشاء المتاجر الإلكترونية المخصصة (تبدأ من 200$) وأود معرفة التفاصيل والبدء في المتجر.',
+      en: 'Hello WebStack team, I’m interested in the Custom E-Commerce Store package (Starting from $200) and would like to get started.'
     },
     // 1. Corporate Website
     'corporate-website': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ تصميم موقع تعريفي للشركات (Corporate Website) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Corporate Website and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ تصميم موقع تعريفي للشركات (Corporate Website) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Corporate Website and would like to know the suitable package and details.'
     },
     'corporate-website-package': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ تصميم موقع تعريفي للشركات (Corporate Website) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Corporate Website and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ تصميم موقع تعريفي للشركات (Corporate Website) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Corporate Website and would like to know the suitable package and details.'
     },
     // 2. WhatsApp AI Employee
     'whatsapp-ai-employee': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ موظف واتساب الذكي (WhatsApp AI Employee) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in WhatsApp AI Employee and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ موظف واتساب الذكي (WhatsApp AI Employee) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in WhatsApp AI Employee and would like to know the suitable package and details.'
     },
     // 3. Messenger & Telegram AI Employee
     'messenger-telegram-ai': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Messenger & Telegram AI Employee and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Messenger & Telegram AI Employee and would like to know the suitable package and details.'
     },
     'telegram-messenger-ai-employees': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Messenger & Telegram AI Employee and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Messenger & Telegram AI Employee and would like to know the suitable package and details.'
     },
     // 4. Smart Shipping & Courier System
     'smart-shipping-system': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ سيستم الشحن واللوجستيات والمناديب الذكي (Smart Shipping System) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Smart Shipping & Courier Management System and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ سيستم الشحن واللوجستيات والمناديب الذكي (Smart Shipping System) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Smart Shipping & Courier Management System and would like to know the suitable package and details.'
     },
     'smart-shipping-courier-system': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ سيستم الشحن واللوجستيات والمناديب الذكي (Smart Shipping System) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Smart Shipping & Courier Management System and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ سيستم الشحن واللوجستيات والمناديب الذكي (Smart Shipping System) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Smart Shipping & Courier Management System and would like to know the suitable package and details.'
     },
     // 5. Business Automation – n8n
     'business-automation-n8n': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ أتمتة الأعمال وسير العمليات – n8n وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Business Automation – n8n and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ أتمتة الأعمال وسير العمليات – n8n وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Business Automation – n8n and would like to know the suitable package and details.'
     },
     'n8n-enterprise-orchestrator': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ أتمتة الأعمال وسير العمليات – n8n وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Business Automation – n8n and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ أتمتة الأعمال وسير العمليات – n8n وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Business Automation – n8n and would like to know the suitable package and details.'
     },
     // 6. Custom Android & iOS App
     'custom-mobile-app': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ تطوير تطبيقات أندرويد و iOS مخصصة (Custom Mobile App) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Custom Android & iOS App and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ تطوير تطبيقات أندرويد و iOS مخصصة (Custom Mobile App) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Custom Android & iOS App and would like to know the suitable package and details.'
     },
     'idea-to-apps-supermarket-pharmacy': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ تطوير تطبيقات أندرويد و iOS مخصصة (Custom Mobile App) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Custom Android & iOS App and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ تطوير تطبيقات أندرويد و iOS مخصصة (Custom Mobile App) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Custom Android & iOS App and would like to know the suitable package and details.'
     },
     // 7. POS / Supermarket / Pharmacy System
     'retail-pos-system': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ سيستم نقاط البيع POS والمتاجر والصيدليات وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in POS / Supermarket / Pharmacy System and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ سيستم نقاط البيع POS والمتاجر والصيدليات وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in POS / Supermarket / Pharmacy System and would like to know the suitable package and details.'
     },
     // 8. Backend / API / Database Solutions
     'backend-api-solutions': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ حلول الخوادم وقواعد البيانات والـ APIs وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Backend / API / Database Solutions and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ حلول الخوادم وقواعد البيانات والـ APIs وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Backend / API / Database Solutions and would like to know the suitable package and details.'
     },
     'api-telemetry-dashboard': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ حلول الخوادم وقواعد البيانات والـ APIs وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Backend / API / Database Solutions and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ حلول الخوادم وقواعد البيانات والـ APIs وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Backend / API / Database Solutions and would like to know the suitable package and details.'
     },
     // 9. Custom Business System
     'custom-business-system': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ نظام مخصص لإدارة الشركات والمؤسسات (Custom Business System) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in Custom Business System and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ نظام مخصص لإدارة الشركات والمؤسسات (Custom Business System) وأود معرفة الباقة المناسبة والتفاصيل.',
+      en: 'Hello WebStack team, I’m interested in Custom Business System and would like to know the suitable package and details.'
     },
     // AI Employee Tiers
     'ai-customer-service': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ باقة موظف خدمة العملاء بالذكاء الاصطناعي (AI Customer Service - يبدأ من $39/شهر) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in AI Customer Service (Starting from $39/mo) and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ باقة موظف خدمة العملاء بالذكاء الاصطناعي (AI Customer Service - يبدأ من $39/شهر) وأود معرفة التفاصيل.',
+      en: 'Hello WebStack team, I’m interested in AI Customer Service (Starting from $39/mo) and would like to know the details.'
     },
     'ai-business-assistant': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ باقة مساعد الأعمال الذكي (AI Business Assistant - يبدأ من $79/شهر) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in AI Business Assistant (Starting from $79/mo) and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ باقة مساعد الأعمال الذكي (AI Business Assistant - يبدأ من $79/شهر) وأود معرفة التفاصيل.',
+      en: 'Hello WebStack team, I’m interested in AI Business Assistant (Starting from $79/mo) and would like to know the details.'
     },
     'ai-sales-employee': {
-      ar: 'مرحباً مصطفى، أنا مهتم بـ باقة موظف المبيعات بالذكاء الاصطناعي (AI Sales Employee - يبدأ من $149/شهر) وأود معرفة الباقة المناسبة والسعر النهائي لعملي.',
-      en: 'Hello, I’m interested in AI Sales Employee (Starting from $149/mo) and would like to know the suitable package and final price for my business.'
+      ar: 'مرحباً فريق WebStack، أنا مهتم بـ باقة موظف المبيعات بالذكاء الاصطناعي (AI Sales Employee - يبدأ من $149/شهر) وأود معرفة التفاصيل.',
+      en: 'Hello WebStack team, I’m interested in AI Sales Employee (Starting from $149/mo) and would like to know the details.'
     },
     // Freelance Sales Partner Program
     'freelance-sales-partner': {
-      ar: 'مرحباً مصطفى، أود الانضمام كشريك مبيعات حر (Freelance Sales Partner) والبدء في تسويق الحلول البرمجية بشكل مستقل.',
-      en: 'Hello Mostafa, I would like to join the Freelance Sales Partner program and promote software solutions independently.'
+      ar: 'مرحباً فريق WebStack، أود الانضمام كشريك مبيعات حر (Freelance Sales Partner) والبدء في تسويق الحلول البرمجية بشكل مستقل.',
+      en: 'Hello WebStack team, I would like to join the Freelance Sales Partner program and promote software solutions independently.'
     }
   };
 
@@ -498,14 +507,14 @@
     const csAgentName = document.getElementById('cs-agent-name');
     if (csAgentName) csAgentName.textContent = lang === 'ar' ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support';
     const csAgentStatus = document.getElementById('cs-agent-status');
-    if (csAgentStatus) csAgentStatus.textContent = lang === 'ar' ? 'م. مصطفى صلاح • يرد فوراً بلهجة بشرية' : 'Eng. Mostafa Salah • Human-like Replies';
+    if (csAgentStatus) csAgentStatus.textContent = lang === 'ar' ? 'فريق WebStack • يرد فوراً بلهجة بشرية' : 'WebStack Team • Instant Replies';
     const floatInput = document.getElementById('floating-cs-input');
     if (floatInput) floatInput.placeholder = lang === 'ar' ? 'اكتب سؤالك هنا لأحمد...' : 'Type your question here...';
     const simChatInput = document.getElementById('sim-chat-input');
     if (simChatInput) {
       simChatInput.placeholder = lang === 'ar'
-        ? (simChatInput.getAttribute('data-placeholder-ar') || 'اكتب استفسارك هنا لموظف مبيعات م. مصطفى صلاح...')
-        : (simChatInput.getAttribute('data-placeholder-en') || 'Type your question to Eng. Mostafa Salah AI Employee...');
+        ? (simChatInput.getAttribute('data-placeholder-ar') || 'اكتب استفسارك هنا لفريق مبيعات WebStack...')
+        : (simChatInput.getAttribute('data-placeholder-en') || 'Type your question to WebStack Sales Team...');
     }
 
     // Update Greeting Bubble text
@@ -514,8 +523,8 @@
     const bubbleMsg = document.getElementById('bubble-msg-text');
     if (bubbleMsg) {
       bubbleMsg.textContent = lang === 'ar'
-        ? 'أهلاً بحضرتك يا فندم! 👋 أنا أحمد من خدمة العملاء، لو حابب تستفسر عن تفاصيل وأسعار باقاتنا (مثل باقة الموقع التعريفي بـ 65$ أو 75$) أو أي خدمة، أنا هنا في خدمتك في أي لحظة! 💬'
-        : 'Welcome to our website! 👋 I am Ahmed from Customer Service. If you have any questions about our packages ($65/$75) or custom systems, I am here to assist you anytime! 💬';
+        ? 'أهلاً بحضرتك يا فندم في WebStack! 👋 أنا أحمد من خدمة العملاء، لو حابب تستفسر عن باقة إنشاء المتاجر الإلكترونية بـ 200$، باقة مواقع الشركات (65$/75$) أو أي خدمة، أنا في خدمتك فوراً! 💬'
+        : 'Welcome to WebStack! 👋 I am Ahmed from Customer Support. If you have questions about Custom E-Commerce ($200), Corporate Sites ($65/$75) or custom systems, I am here to assist you anytime! 💬';
     }
     const bubbleBtn = document.getElementById('bubble-open-chat-btn');
     if (bubbleBtn) bubbleBtn.textContent = lang === 'ar' ? '💬 تحدث مع أحمد الآن' : '💬 Chat with Ahmed';
@@ -898,7 +907,7 @@
         orderBtnLabel.textContent = isArabic ? 'طلب الباقة بدومين uk. (65$)' : 'Order with .uk ($65)';
       }
       if (orderBtn) {
-        orderBtn.href = 'https://wa.me/201107787049?text=' + encodeURIComponent(isArabic ? 'مرحباً مصطفى أود حجز باقة الموقع التعريفي بدومين uk. بسعر 65 دولار' : 'Hello Mostafa I would like to order the Corporate Website Package with .uk domain ($65 USD)');
+        orderBtn.href = 'https://wa.me/201107787049?text=' + encodeURIComponent(isArabic ? 'مرحباً فريق WebStack أود حجز باقة الموقع التعريفي بدومين uk. بسعر 65 دولار' : 'Hello WebStack team I would like to order the Corporate Website Package with .uk domain ($65 USD)');
       }
     } else {
       cardCom.className = 'p-6 rounded-2xl border-2 border-emerald-500 bg-emerald-950/20 cursor-pointer transition-all hover:border-emerald-400 flex flex-col justify-between';
@@ -911,94 +920,84 @@
         orderBtnLabel.textContent = isArabic ? 'طلب الباقة بدومين com. (75$)' : 'Order with .com ($75)';
       }
       if (orderBtn) {
-        orderBtn.href = 'https://wa.me/201107787049?text=' + encodeURIComponent(isArabic ? 'مرحباً مصطفى أود حجز باقة الموقع التعريفي بدومين com. بسعر 75 دولار' : 'Hello Mostafa I would like to order the Corporate Website Package with .com domain ($75 USD)');
+        orderBtn.href = 'https://wa.me/201107787049?text=' + encodeURIComponent(isArabic ? 'مرحباً فريق WebStack أود حجز باقة الموقع التعريفي بدومين com. بسعر 75 دولار' : 'Hello WebStack team I would like to order the Corporate Website Package with .com domain ($75 USD)');
       }
     }
   };
 
   // --- Unified AI Customer Service & Sales Employee Engine (أحمد - خدمة العملاء) ---
-  const CHAT_STORAGE_KEY = 'mostafa_salah_chat_history_v2';
+  const CHAT_STORAGE_KEY = 'webstack_chat_history_v2';
   let chatHistory = [];
   let isSendingAiMessage = false;
 
-  const CUSTOMER_SERVICE_SYSTEM_PROMPT_CLIENT = `أنت موظف خدمة عملاء ودعم ومبيعات حقيقي وبشري 100% لموقع المهندس مصطفى صلاح (Eng. Mostafa Salah).
-اسمك "أحمد" من فريق خدمة العملاء والمبيعات للمهندس مصطفى صلاح.
+  const CUSTOMER_SERVICE_SYSTEM_PROMPT_CLIENT = `أنت موظف خدمة عملاء ودعم ومبيعات حقيقي وبشري 100% لشركة WebStack للحلول البرمجية والتحول الرقمي (WebStack Solutions).
+اسمك "أحمد" من فريق خدمة العملاء والمبيعات لشركة WebStack.
 
 تنبيه حاسم وإلزامي:
-هذا الموقع هو موقع شخصي ومهني تعريفي خاص بالمهندس مصطفى صلاح (مطور برمجيات ومهندس أتمتة وبناء أنظمة ذكية).
+هذا الموقع هو المنصة الرسمية لشركة WebStack للحلول البرمجية والأنظمة الذكية والمتاجر الإلكترونية.
 ممنوع نهائياً ومطلقاً ذكر كلمة أو اسم "صلاح لوجيستيكس" أو "صلاح لوجيستيك" أو "Salah Logistics" في أي جملة أو رد أو ترحيب على الإطلاق!
-أنت تمثل شخص وخدمات المهندس مصطفى صلاح وفريقه التقني فقط لا غير.
+أنت تمثل شركة WebStack وفريقها الهندسي والتقني المتخصص فقط لا غير.
 
 قواعد التنسيق البصري وترتيب الردود (إلزامي وحاسم جداً لسهولة القراءة والراحة البصرية):
 1. ممنوع نهائياً إرسال نصوص مكدسة أو كتل كلام صماء متداخلة ببعضها!
 2. التباعد والتنظيم: اترك دائماً سطراً فارغاً بين كل فكرة وأخرى، واجعل كل فقرة قصيرة ومريحة للنظر (2-3 أسطر كحد أقصى).
 3. عند استعراض الخدمات أو الباقات:
    - افصل كل خدمة في نقطة مرقمة واضحة ومستقلة: (1. ، 2. ، 3. ...)
-   - ابدأ كل خدمة بعنوان بارز بين علامتي نجوم مزدوجة مثل: **1. باقة الموقع التعريفي للشركات:**
+   - ابدأ كل خدمة بعنوان بارز بين علامتي نجوم مزدوجة مثل: **1. باقة إنشاء المتاجر الإلكترونية المخصصة (Custom E-Commerce Store):**
    - اكتب تحت كل خدمة بسطور قصيرة ومنظمة نقاطها الرئيسية:
-     - السعر: 65$ بدومين .uk أو 75$ بدومين .com
-     - التجديد السنوي: 40$ فقط
-     - الميزات: لغتان + استضافة سريعة + SSL مجاناً
+     - السعر: يبدأ من 200$ (متجر مبني من الصفر حسب احتياج النشاط)
+     - المزايا: دومين + استضافة سحابية سنة + عقد صيانة ودعم فني سنة كاملة
+     - التجديد السنوي: 100$ فقط في السنة في حال الرغبة في التجديد
    - اترك سطراً فارغاً بعد كل خدمة قبل الانتقال للخدمة التي تليها لتظهر كبطاقة مستقلة واضحة.
-4. الذكاء في العرض: إذا سأل العميل سؤالاً عاماً (مثل: "ممكن سؤال" أو "إيه خدماتكم")، لا تغرقه بجميع التفاصيل التقنية المعقدة دفعة واحدة؛ رحب به بلباقة واعرض الخدمات الأساسية بنقاط مرتبة ونظيفة، واسأله ما هو المشروع أو الفكرة التي يريد تنفيذها.
-5. استخدام الإيموجي الراقي للتوضيح والتمييز (مثل: 🌐 للمواقع، 🤖 لموظف الواتساب، 🚚 للشحن، 📱 للموبايل، 💰 للأسعار والأفلييت).
+4. الذكاء في العرض: إذا سأل العميل سؤالاً عاماً (مثل: "ممكن سؤال" أو "إيه خدماتكم")، رحب به بلباقة واعرض الخدمات الأساسية بنقاط مرتبة ونظيفة، واسأله ما هو المشروع أو النشاط التجاري الذي يريد تنفيذه.
+5. استخدام الإيموجي الراقي للتوضيح والتمييز (مثل: 🛍️ للمتاجر الإلكترونية، 🌐 للمواقع، 🤖 لموظف الواتساب، 🚚 للشحن، 📱 للموبايل، 💰 للأسعار والأفلييت).
 
 شخصيتك وأسلوبك الحقيقي ومحرك المبيعات (Persona & Sales Engine):
 1. أنت إنسان وبشري تماماً، ودود، محترم، لبق، راقي، وذكي. لست آلياً أو روبوتياً على الإطلاق، وتتجنب تماماً التكلف أو الإجابات الجامدة والمصطنعة.
 2. اللهجة الأساسية: مصرية راقية ومهذبة تناسب بيئة الأعمال والشركات (مثل: "أهلاً بحضرتك يا فندم"، "تمام يا فندم تحت أمرك"، "من عيوني"، "حاضر يا غالي"، "بص يا فندم...").
-3. ثنائي اللغة واحترافية المصطلحات (Code-Switching): أنت شخص مصري دارس وفاهم إنجليزي كويس جداً. إذا العميل كتب بالعربي ومدخل كلام إنجليزي أو مصطلحات تقنية (مثل: domain, hosting, SSL, system, dashboard, package, features, setup, backend, API, webhook, renewal, affiliate, commission)، تفهمه تماماً وترد عليه بلهجة مصرية ذكية مع استخدام المصطلحات الإنجليزية بعفوية وطبيعية.
+3. ثنائي اللغة واحترافية المصطلحات (Code-Switching): أنت شخص مصري دارس وفاهم إنجليزي كويس جداً. تفهم المصطلحات التقنية والتجارية وترد بعفوية واحترافية.
 4. التكيف التلقائي مع جميع اللغات (إنجليزي، فرانكو، عربي فصحى، لهجة خليجية، فرنسي، إلخ).
 
-دورك في التعريف بالخدمات وشرح البرمجيات:
-اشرح خدمات وأنظمة وحلول المهندس مصطفى صلاح بأسلوب بشري وسلس وجذاب.
-جميع الأسعار المذكورة هي أسعار تبدأ من (Starting from) بالدولار الأمريكي، ويتم تحديد السعر النهائي حسب متطلبات كل مشروع وحجم الاستخدام والتكاملات المطلوبة.
+دورك في التعريف بالخدمات وشرح البرمجيات لشركة WebStack:
+اشرح خدمات وأنظمة وحلول WebStack بأسلوب بشري وسلس وجذاب.
+جميع الأسعار المذكورة هي أسعار تبدأ من (Starting from) بالدولار الأمريكي.
 
-قاعدة بيانات الخدمات الرسمية وأسعار البداية (Starting Prices):
-1. تصميم موقع تعريفي للشركات (Corporate Website):
-   - يبدأ من 65$ (Starting from $65) للسنة الأولى بدومين رسمي .uk شامل، أو 75$ بدومين .com شامل.
+قاعدة بيانات الخدمات الرسمية لشركة WebStack وأسعار البداية:
+1. إنشاء وبرمجة المتاجر الإلكترونية المخصصة (Custom E-Commerce Store Development):
+   - يبدأ من 200$ (Starting from $200 USD) شاملة كامل متطلبات السنة الأولى.
+   - المتجر بيتعمل بالكامل من الصفر (Custom from scratch) ومخصص حسب احتياج وطبيعة النشاط التجاري لضمان أعلى سرعة وتحويل وملاءمة تامة.
+   - مميزات تجارة إلكترونية كاملة: سلة تسوق، بوابات دفع إلكترونية متعددة، نظام إدارة مخزون وطلبات، حسابات عملاء، تتبع الشحنات، إشعارات تلقائية، دعم اللغتين والعملات المتعددة.
+   - مشمول داخل الباقة مجاناً: استضافة سحابية فائقة السرعة SSD + اسم دومين رسمي خاص لمدة سنة كاملة.
+   - عقد صيانة ومتابعة ودعم فني متخصص مستمر لمدة سنة كاملة.
+   - التجديد السنوي اختياري: 100 دولار فقط في السنة (يشمل تجديد الاستضافة السحابية والدومين وعقد الصيانة والدعم الفني السنوي).
+2. تصميم موقع تعريفي للشركات (Corporate Website):
+   - يبدأ من 65$ بدومين .uk شامل، أو 75$ بدومين .com شامل.
    - اللغتان (العربية والإنجليزية معاً) مشمولتان ضمن السعر الأساسي.
    - استضافة سحابية فائقة السرعة SSD + شهادة أمان SSL مجانية.
-   - تجديد سنوي ثابت: 40 دولار فقط سنوياً (شامل الدومين والاستضافة والدعم الفني اليومي).
-2. موظف واتساب الذكي (WhatsApp AI Employee):
-   - يبدأ من 39$ شهرياً (Monthly: $39 / mo) أو 390$ سنوياً (Annual: $390 / yr مع خصم شهرين).
-   - السعر الشهري يعتمد على حجم الاستخدام والإمكانيات والتكاملات المطلوبة.
-   - رد فوري 24/7، إرسال عروض أسعار PDF والكتالوجات، تحويل المحادثات، وتكامل مع قواعد البيانات.
-3. موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI Employee):
-   - يبدأ من 39$ شهرياً (Monthly: $39 / mo) أو 390$ سنوياً (Annual: $390 / yr مع خصم شهرين).
-   - السعر النهائي حسب الاستخدام والتكاملات المطلوبة.
-4. سيستم الشحن واللوجستيات والمناديب الذكي (Smart Shipping & Courier Management System):
-   - يبدأ من 99$ شهرياً (Monthly: $99 / mo) أو 990$ سنوياً (Annual: $990 / yr مع خصم شهرين).
-   - السعر النهائي حسب عدد المناديب، الطلبات، الخصائص، التتبع، COD والتكاملات المطلوبة.
-   - بوالص شحن PDF مع باركود، تتبع لحظي عبر واتساب، تطبيق للمناديب، تسوية مبالغ التحصيل.
-5. أتمتة الأعمال وسير العمليات – n8n (Business Automation – n8n):
-   - يبدأ من 59$ شهرياً (Monthly: $59 / mo) أو 590$ سنوياً (Annual: $590 / yr مع خصم شهرين).
-   - السعر النهائي حسب عدد الـ Workflows والتكاملات وحجم التشغيل اليومي.
-6. تطوير تطبيقات أندرويد و iOS مخصصة (Custom Android & iOS App):
-   - يبدأ من 399$ للمشروع (Starting from $399 / project).
-   - السعر النهائي حسب عدد الشاشات والخصائص والـ Backend والتكاملات المطلوبة.
-7. سيستم نقاط البيع للمتاجر والصيدليات (POS / Supermarket / Pharmacy System):
-   - يبدأ من 299$ للمشروع (Starting from $299 / project).
-   - السعر النهائي حسب طبيعة النشاط والخصائص المطلوبة.
-8. حلول الخوادم وقواعد البيانات والـ APIs (Backend / API / Database Solutions):
-   - يبدأ من 149$ (Starting from $149).
-   - السعر النهائي حسب حجم النظام وعدد الـ APIs وقواعد البيانات المطلوبة.
-9. سيستم مخصص لإدارة الشركات والمؤسسات (Custom Business System):
-   - يبدأ من 499$ للمشروع (Starting from $499 / project).
-   - السعر النهائي حسب حجم الشركة ومتطلبات النظام.
-
-مستويات موظف الذكاء الاصطناعي (AI Employee Tiers):
-- المستوى الأول (AI Customer Service): يبدأ من 39$/شهرياً (رد 24/7، الأسئلة الشائعة، معلومات المنتجات، جمع البيانات، تحويل للموظف البشري).
-- المستوى الثاني (AI Business Assistant): يبدأ من 79$/شهرياً (كل مزايا الأساسية + التعامل مع الكتالوجات والملفات + قاعدة معرفة متقدمة + تكاملات إضافية).
-- المستوى الثالث (AI Sales Employee): يبدأ من 149$/شهرياً (إدارة محادثات المبيعات بالكامل، متابعة العملاء المحتملين، عروض أسعار PDF، ربط الـ CRM، أتمتة مراحل البيع).
+   - تجديد سنوي ثابت: 40 دولار فقط سنوياً (شامل الدومين والاستضافة والدعم الفني).
+3. موظف واتساب الذكي (WhatsApp AI Employee):
+   - يبدأ من 39$ شهرياً أو 390$ سنوياً (خصم شهرين).
+   - رد فوري 24/7 بلهجة بشرية، إرسال عروض أسعار PDF والكتالوجات، تحويل المحادثات، وتكامل مع قواعد البيانات.
+4. موظف ماسنجر وتلجرام الذكي (Messenger & Telegram AI Employee):
+   - يبدأ من 39$ شهرياً أو 390$ سنوياً.
+5. سيستم الشحن واللوجستيات والمناديب الذكي (Smart Shipping & Courier Management System):
+   - يبدأ من 99$ شهرياً أو 990$ سنوياً.
+   - بوالص شحن PDF مع باركود، تتبع لحظي عبر واتساب، تطبيق للمناديب، تسوية مبالغ التحصيل COD.
+6. أتمتة الأعمال وسير العمليات – n8n (Business Automation – n8n):
+   - يبدأ من 59$ شهرياً أو 590$ سنوياً.
+7. تطوير تطبيقات أندرويد و iOS مخصصة (Custom Android & iOS App):
+   - يبدأ من 399$ للمشروع.
+8. سيستم نقاط البيع للمتاجر والصيدليات (POS / Supermarket / Pharmacy System):
+   - يبدأ من 299$ للمشروع.
+9. حلول الخوادم وقواعد البيانات والـ APIs (Backend / API / Database Solutions):
+   - يبدأ من 149$.
+10. سيستم مخصص لإدارة الشركات والمؤسسات (Custom Business System):
+   - يبدأ من 499$ للمشروع.
 
 برنامج شركاء المبيعات المستقلين (Freelance Sales Partner Program):
-- العنوان: Become a Freelance Sales Partner (كن شريك مبيعات حر).
-- توجد صفحة مخصصة مستقلة وشاملة لشرح الأرباح وحاسبة الدخل المتوقع: partner-program.html
-- الشريك مستقل تماماً وليس موظفاً، لا يوجد راتب ثابت ولا التزام وظيفي.
-- لا يحتاج لأي مهارات برمجية؛ مهمته الوصول للعملاء وأصحاب الأنشطة والترويج للحلول.
-- نحن نتولى كافة الجوانب التقنية: التحليل، البرمجة، التنفيذ، التسليم، والدعم الفني.
-- يحصل الشريك على عمولة فورية مجزية (30% كاش) عن كل تعاقد ناجح يتم من خلاله.
-- للتقديم أو الاستفسار، يحول مباشرة للواتساب للتواصل مع م. مصطفى صلاح (+201107787049) أو زيارة partner-program.html.`;
+- انضمام كشريك مبيعات حر بعمولة 30% كاش فورية عن كل تعاقد ناجح.
+- نوفر الحقيبة التسويقية ونماذج عروض الأسعار الرسمية وروابط المعاينة الحية.
+- للتواصل أو التقديم، يحول مباشرة للواتساب للتواصل مع فريق WebStack (+201107787049) أو زيارة partner-program.html.`;
 
   function getDeepSeekClientKey() {
     let key = '';
@@ -1242,7 +1241,7 @@
           <div class="mt-2.5 pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
             <a href="${typeof window.getDynamicWhatsAppUrl === 'function' ? window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee') : 'https://wa.me/201107787049'}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-[10px] transition-colors border border-slate-700">
               <span>💬</span>
-              <span>${isAr ? 'واتساب م. مصطفى' : 'WhatsApp'}</span>
+              <span>${isAr ? 'واتساب WebStack' : 'WhatsApp'}</span>
             </a>
             <span class="text-[9px] font-mono text-emerald-400">${displaySource}</span>
           </div>
@@ -1265,7 +1264,7 @@
   }
 
   // Intelligent client-side response generator matching Egyptian tech customer service tone
-  function generateMostafaSalahAiResponse(userText, lang) {
+  function generateWebStackAiResponse(userText, lang) {
     const text = (userText || '').toLowerCase();
     const isEn = lang === 'en' || (/^[a-zA-Z0-9\s.,?!'"@#$%^&*()_+-=:;/<>]+$/.test(userText.trim()) && !/[\u0600-\u06FF]/.test(userText));
 
@@ -1274,22 +1273,64 @@
     if (hasPhone) {
       if (isEn) {
         return `Awesome! 🌟 I have recorded your contact details.
-I have prepared a direct fast-track link to Eng. Mostafa Salah on WhatsApp (+201107787049) so you can receive the official sales kit, quotation templates, and confirm your 30% affiliate registration right away.
+I have prepared a direct fast-track link to the WebStack engineering team on WhatsApp (+201107787049) so you can receive the official sales kit, quotation templates, and confirm your onboarding right away.
 
 I'm still right here with you—what questions or systems would you like to explore next? 🚀`;
       }
       return `تمام جداً يا غالي! 🌟 سجلت بياناتك ورقم تواصلك بنجاح.
-دلوقتي تقدر تضغط على الزرار بالأسفل للتأكيد الفوري مع البشمهندس مصطفى صلاح على الواتساب (01107787049) عشان تستلم الحقيبة التسويقية ونماذج عروض الأسعار وتبدأ فوراً تحقق أرباحك الـ 30%.
+دلوقتي تقدر تضغط على الزرار بالأسفل للتأكيد الفوري مع فريق WebStack على الواتساب (01107787049) عشان تستلم الحقيبة التسويقية أو عرض السعر ونبدأ فوراً.
 
-وأنا مكمل معاك هنا خطوة بخطوة—تحب تركز في البداية على تسويق المواقع التعريفية ولا موظف الواتساب وسيستمات الشركات؟ 🚀`;
+وأنا مكمل معاك هنا خطوة بخطوة—تحب تركز في البداية على المتجر الإلكتروني ولا المواقع التعريفية ولا موظف الواتساب وسيستمات الشركات؟ 🚀`;
+    }
+
+    // E-Commerce Store Development (إنشاء المتاجر الإلكترونية من الصفر)
+    if (text.includes('متجر') || text.includes('متاجر') || text.includes('ecommerce') || text.includes('e-commerce') || text.includes('store') || text.includes('سلة') || text.includes('200') || text.includes('منتجات')) {
+      if (isEn) {
+        return `Hello! 🛍️ Here are the full details for the Custom E-Commerce Store Package by WebStack:
+1. Starting Price:
+   • Starting from $200 USD for the complete store package.
+2. What makes our stores powerful:
+   • Built 100% from scratch tailored precisely to your specific business model and product catalog (no cookie-cutter templates).
+   • High-conversion checkout, shopping cart, and multi-gateway online payments (Cards, Wallets, COD).
+   • Complete admin dashboard: inventory sync, order tracking, automated customer notifications, and bilingual (AR/EN) support.
+3. Included for 1 Full Year:
+   • Official custom domain name included.
+   • High-speed cloud SSD hosting included.
+   • Dedicated maintenance contract & continuous technical support for 1 full year.
+4. Annual Renewal:
+   • Only $100 USD flat per year after the first year (covers cloud hosting, domain renewal, full maintenance contract & tech support).
+
+Would you like to discuss your store requirements or reserve your package? Contact us on WhatsApp (+201107787049)! 🚀`;
+      }
+      return `يا هلا بيك يا فندم! 🌟
+بص يا فندم، باقة **إنشاء المتاجر الإلكترونية المخصصة (Custom E-Commerce Store)** من شركة WebStack متفصلة ومجهزة بالكامل لتكبير مبيعاتك:
+
+1. **السعر والبدء:**
+   • السعر يبدأ من **200 دولار فقط** للباقة الشاملة.
+
+2. **المميزات الفنية والبرمجية:**
+   • المتجر بيتعمل بالكامل من الصفر (Custom from scratch) ومخصص حسب احتياج وطبيعة نشاطك التجاري ومنتجاتك.
+   • سلة تسوق سريعة، تجربة مستخدم سلسة وعالية التحويل، وبوابات دفع إلكترونية متعددة (بطاقات، محافظ إلكترونية، ودفع عند الاستلام).
+   • لوحة تحكم إدارية شاملة: إدارة المخزون، تتبع الطلبات، إشعارات تلقائية، دعم اللغتين والعملات المتعددة.
+
+3. **المشمول داخل الباقة مجاناً لمدة سنة كاملة:**
+   • اسم نطاق (دومين) رسمي خاص بمتجرك.
+   • استضافة سحابية فائقة السرعة SSD ومؤمنة بشهادة SSL.
+   • **عقد صيانة ومتابعة ودعم فني متخصص لمدة سنة كاملة** مع الباقة.
+
+4. **التجديد السنوي بعد السنة الأولى:**
+   • التجديد اختياري بـ **100 دولار فقط في السنة** (يشمل تجديد الاستضافة السحابية والدومين وعقد الصيانة والدعم الفني السنوي).
+
+تحب نبدأ نحدد نوع منتجاتك ونفصل المتجر على مقاس نشاطك؟ أو تحب تتواصل معانا مباشرة على الواتساب؟ 🚀`;
     }
 
     // Affiliate & Marketing Program Inquiries
     if (text.includes('أفلييت') || text.includes('افلييت') || text.includes('تسويق') || text.includes('عمولة') || text.includes('مسوق') || text.includes('اشتغل') || text.includes('شغل') || text.includes('ربح') || text.includes('30%') || text.includes('affiliate') || text.includes('commission') || text.includes('marketer') || text.includes('partner')) {
       if (isEn) {
-        return `Welcome to the Eng. Mostafa Salah 30% Affiliate & Growth Program! 🚀💰
+        return `Welcome to the WebStack 30% Affiliate & Growth Program! 🚀💰
 Here is how you earn high immediate payouts with us:
 1. Instant 30% Cash Commission on every client or project closed through you.
+   • Custom E-Commerce Store ($200): You get $60 instant cash commission!
    • Corporate Website Package ($75): You get $22.50 instant cash.
    • WhatsApp AI Employee / CRM Systems: 30% immediate payout.
    • Custom Logistics & Dispatch Systems ($500+): You get $150+ cash.
@@ -1299,13 +1340,14 @@ Here is how you earn high immediate payouts with us:
 
 To get registered as an authorized affiliate partner right now:
 Could you please share your Name and Phone/WhatsApp number?
-You can also connect directly with Eng. Mostafa Salah on WhatsApp: https://wa.me/201107787049`;
+You can also connect directly with WebStack on WhatsApp: https://wa.me/201107787049`;
       }
-      return `يا هلا بيك يا فندم! 🌟 شرف كبير لينا، وبرنامج التسويق بالعمولة (30% Affiliate Program) مع المهندس مصطفى صلاح هو فرصتك الذهبية لتحقيق دخل ممتاز وفوري:
+      return `يا هلا بيك يا فندم! 🌟 شرف كبير لينا، وبرنامج التسويق بالعمولة (30% Affiliate Program) مع شركة WebStack هو فرصتك الذهبية لتحقيق دخل ممتاز وفوري:
 
 💰 نظام العمولة والأرباح:
 • ليك عمولة فورية 30% كاش عن كل عميل أو مشروع يتعاقد عن طريقك!
 • أمثلة مباشرة:
+  - متجر إلكتروني مخصص (200$): عمولتك فوراً 60 دولار كاش!
   - باقة موقع الشركات (75$): عمولتك فوراً 22.5 دولار كاش.
   - موظف الواتساب الذكي وعروض الأسعار: 30% من قيمة الباقة فوراً.
   - سيستم الشحن واللوجستيات (مثلاً 500$): عمولتك فوراً 150 دولار كاش!
@@ -1317,12 +1359,12 @@ You can also connect directly with Eng. Mostafa Salah on WhatsApp: https://wa.me
 
 📝 عشان نسجلك كمسوق معتمد ونبدأ فوراً:
 ممكن بعد إذنك اسمك الكريم ورقم هاتفك/واتساب؟
-(وفوراً هنسجل بياناتك ونحولك للواتساب الخاص بالبشمهندس مصطفى صلاح 01107787049 عشان تستلم المواد التسويقية وتبدأ فوراً). تحب تركز على تسويق المواقع ولا موظفي الذكاء الاصطناعي؟`;
+(وفوراً هنسجل بياناتك ونحولك للواتساب الخاص بفريق WebStack 01107787049 عشان تستلم المواد التسويقية وتبدأ فوراً). تحب تركز على تسويق المتاجر والمواقع ولا موظفي الذكاء الاصطناعي؟`;
     }
 
     if (text.includes('سعر') || text.includes('باقة') || text.includes('موقع') || text.includes('price') || text.includes('quote') || text.includes('website') || text.includes('cost') || text.includes('65') || text.includes('75') || text.includes('تجديد') || text.includes('renewal')) {
       if (isEn) {
-        return `Hello! 🌟 Here are the official details for the Corporate Website Package with Eng. Mostafa Salah:
+        return `Hello! 🌟 Here are the official details for the Corporate Website Package with WebStack:
 1. First-Year Price:
    • Only $65 USD with official .uk domain included.
    • Or $75 USD with official .com domain included.
@@ -1336,7 +1378,7 @@ You can also connect directly with Eng. Mostafa Salah on WhatsApp: https://wa.me
 Would you like to reserve your package or check domain name availability now? Contact us directly on WhatsApp (+201107787049)! 🚀`;
       }
       return `أهلاً بحضرتك يا فندم! 🌟
-بص يا فندم، باقة الموقع التعريفي الاحترافي للشركات مع م. مصطفى صلاح تفاصيلها واضحة وممتازة:
+بص يا فندم، باقة الموقع التعريفي الاحترافي للشركات مع WebStack تفاصيلها واضحة وممتازة:
 1. السعر للسنة الأولى:
    • 65 دولار فقط بدومين .uk رسمي شامل.
    • أو 75 دولار فقط بدومين .com رسمي شامل.
@@ -1358,7 +1400,7 @@ Would you like to reserve your package or check domain name availability now? Co
 • Seamlessly syncs customer inquiries to your database, ERP, and n8n pipelines.
 • Delivers instant notifications to managers for hot leads and confirmed orders.
 
-Would you like us to customize this AI employee for your business workflow? Message Eng. Mostafa directly on WhatsApp (+201107787049)! 🚀`;
+Would you like us to customize this AI employee for your business workflow? Message WebStack directly on WhatsApp (+201107787049)! 🚀`;
       }
       return `يا هلا بحضرتك يا فندم! 🤖
 خدمة موظف الذكاء الاصطناعي البشري للواتساب وتليجرام بتوفر عليك وقت ومصاريف وتضاعف مبيعاتك:
@@ -1381,7 +1423,7 @@ Would you like us to customize this AI employee for your business workflow? Mess
 Customizable to fit your exact fleet size. Contact us on WhatsApp (+201107787049) for a live walkthrough! 🚀`;
       }
       return `يا مرحباً بحضرتك يا فندم! 🚚
-سيستم الشحن وإدارة المناديب الذكي من المهندس مصطفى صلاح بيشمل كل اللي محتاجه لإدارة أسطولك:
+سيستم الشحن وإدارة المناديب الذكي من شركة WebStack بيشمل كل اللي محتاجه لإدارة أسطولك:
 • لوحة تحكم سحابية لإدارة آلاف الشحنات، إصدار بوالص الشحن (Waybills) بباركود وQR، وتوزيع المناديب جغرافياً.
 • تطبيق موبايل للمناديب لتحديث حالات التوصيل وتأكيد الاستلام والتوقيع الإلكتروني.
 • تسوية دقيقة لمبالغ الدفع عند الاستلام (COD) وتقارير أرباح يومية.
@@ -1415,7 +1457,7 @@ Tell us about your project idea on WhatsApp (+201107787049) to get started! 🚀
 • Auto-recovery logic and retry policies for Webhooks with 99.9% uptime.
 • Ultra-fast REST/GraphQL backend architecture with PostgreSQL, Redis, and Docker.
 
-We can automate any repetitive operational task for your business! Message Eng. Mostafa on WhatsApp (+201107787049).`;
+We can automate any repetitive operational task for your business! Message WebStack on WhatsApp (+201107787049).`;
       }
       return `أهلاً بحضرتك يا فندم! ⚡
 إحنا متخصصين في أتمتة مسارات العمل وهندسة الـ APIs والـ Backend:
@@ -1427,37 +1469,40 @@ We can automate any repetitive operational task for your business! Message Eng. 
     }
 
     if (isEn) {
-      return `Welcome to Eng. Mostafa Salah's website! 👋 I'm Ahmed from Customer Service & Support.
-We provide end-to-end software and automation solutions under Eng. Mostafa Salah:
-1. Corporate Website Packages ($65 USD for .uk / $75 USD for .com, bilingual AR/EN included, $40 fixed annual renewal).
-2. Human-like AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
-3. Smart Logistics & Courier Dispatch Platforms with live waybills & COD tracking.
-4. Mobile Retail Apps & E-Commerce Systems (Android & iOS).
-5. n8n Enterprise Workflow Automation & Backend APIs.
+      return `Welcome to WebStack! 👋 I'm Ahmed from Customer Service & Support.
+We provide specialized software, custom e-commerce stores, and AI solutions:
+1. Custom E-Commerce Stores (Starting from $200 USD, built from scratch, 1 year domain + hosting + maintenance included, $100/yr renewal).
+2. Corporate Website Packages ($65 USD for .uk / $75 USD for .com, bilingual AR/EN included, $40 fixed annual renewal).
+3. Human-like AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
+4. Smart Logistics & Courier Dispatch Platforms with live waybills & COD tracking.
+5. Mobile Retail Apps & POS Systems (Android & iOS).
+6. n8n Enterprise Workflow Automation & Backend APIs.
 
-How can I help you today? You can also message Eng. Mostafa directly on WhatsApp (+201107787049)! 🚀`;
+How can I help you today? You can also message WebStack directly on WhatsApp (+201107787049)! 🚀`;
     }
 
-    return `أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋
+    return `أهلاً بحضرتك يا فندم في شركة WebStack للحلول البرمجية! 👋
 أنا أحمد من خدمة العملاء والمبيعات، سعيد جداً بتواصلك وتحت أمرك في أي استفسار:
 
-1. **تصميم مواقع الشركات التعريفية**:
-   • باقة 65$ بدومين .uk أو 75$ بدومين .com شامل اللغتين والاستضافة السريعة.
-   • تجديد سنوي ثابت ومضمون: 40$ فقط سنوياً.
+1. **إنشاء المتاجر الإلكترونية المخصصة (Custom E-Commerce)**:
+   • يبدأ من 200$ شامل استضافة ودومين وعقد صيانة ودعم فني لسنة، وتجديد سنوي اختياري بـ 100$.
 
-2. **موظف الذكاء الاصطناعي البشري للواتساب**:
+2. **تصميم مواقع الشركات التعريفية**:
+   • باقة 65$ بدومين .uk أو 75$ بدومين .com شامل اللغتين والاستضافة السريعة وتجديد بـ 40$.
+
+3. **موظف الذكاء الاصطناعي البشري للواتساب**:
    • ردود فورية مقنعة 24/7 بلهجة بشرية ودودة وتوليد عروض أسعار PDF رسمية.
 
-3. **سيستم إدارة الشحن واللوجستيات**:
+4. **سيستم إدارة الشحن واللوجستيات**:
    • بوالص شحن باركود، تتبع المناديب لحظياً، وتسوية تحصيل الـ COD.
 
-4. **تطبيقات الموبايل وأنظمة الـ POS**:
+5. **تطبيقات الموبايل وأنظمة الـ POS**:
    • تطبيقات متكاملة للآيفون والأندرويد، ونظم كاشير للسوبرماركت والصيدليات.
 
-5. **أتمتة الأعمال n8n وهندسة الـ APIs**:
+6. **أتمتة الأعمال n8n وهندسة الـ APIs**:
    • مسارات ربط آلية متكاملة لربط متاجرك والأنظمة المحاسبية.
 
-تحب تستفسر عن تفاصيل خدمة معينة؟ أو تحب أساعدك في حجز باقة فوراً؟ 🚀`;
+تحب تستفسر عن تفاصيل المتجر الإلكتروني أو أي باقة؟ أو تحب أساعدك في حجز طلبك فوراً؟ 🚀`;
   }
 
   // --- Dynamic Mounting of Site-Wide Floating Customer Service AI Widget ---
@@ -1505,7 +1550,7 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
                 <span class="chat-header-title font-bold text-sm text-white" id="cs-agent-name">${isAr ? 'أحمد - خدمة العملاء' : 'Ahmed - AI Support'}</span>
                 <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[9px]">AI Live</span>
               </div>
-              <span class="text-[11px] text-slate-400 block font-mono" id="cs-agent-status">${isAr ? 'م. مصطفى صلاح • يرد فوراً بلهجة بشرية' : 'Eng. Mostafa Salah • Human-like Replies'}</span>
+              <span class="text-[11px] text-slate-400 block font-mono" id="cs-agent-status">${isAr ? 'فريق WebStack • يرد فوراً بلهجة بشرية' : 'WebStack Team • Instant Replies'}</span>
             </div>
           </div>
           <div class="flex items-center gap-1.5">
@@ -1523,6 +1568,9 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
         <!-- Quick Chips -->
         <div class="p-2.5 bg-slate-950/60 border-b border-slate-800/80 flex items-center gap-1.5 overflow-x-auto text-[11px] shrink-0 no-scrollbar">
+          <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 transition-colors cursor-pointer" data-question="ما هي تفاصيل باقة إنشاء المتاجر الإلكترونية بـ 200 دولار ومميزات الدومين والاستضافة وعقد الصيانة؟">
+            🛍️ متجر إلكتروني (200$)
+          </button>
           <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-purple-300 border border-purple-500/30 transition-colors cursor-pointer" data-question="عايز تفاصيل نظام الأفلييت والتسويق بالعمولة 30% وإزاي أبدأ معاكم كمسوق؟">
             🤝 نظام الأفلييت (30%)
           </button>
@@ -1531,9 +1579,6 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
           </button>
           <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 transition-colors cursor-pointer" data-question="عايز موظف ذكاء اصطناعي لواتساب يرسل عروض أسعار PDF ويرد على العملاء">
             💬 موظف واتساب الذكي
-          </button>
-          <button type="button" class="floating-quick-chip shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 transition-colors cursor-pointer" data-question="ما هي مميزات سيستم الشحن واللوجستيات وتتبع المناديب؟">
-            🚚 سيستم الشحن
           </button>
         </div>
 
@@ -1551,27 +1596,27 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
               </div>
               <div id="cs-welcome-text" class="ai-rich-message text-xs leading-relaxed">
                 ${isAr 
-                  ? `<p class="mb-2">أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار.</p>
+                  ? `<p class="mb-2">أهلاً بحضرتك يا فندم في شركة WebStack للحلول البرمجية! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار.</p>
                      <div class="space-y-1.5 my-2">
                        <div class="ai-card-item">
                          <span class="ai-card-badge">1</span>
-                         <div class="flex-1 text-slate-200 text-xs"><strong>باقة الموقع التعريفي:</strong> <span class="ai-price-tag">65$</span> بدومين .uk أو <span class="ai-price-tag">75$</span> بدومين .com شامل اللغتين والاستضافة.</div>
+                         <div class="flex-1 text-slate-200 text-xs"><strong>المتاجر الإلكترونية المخصصة:</strong> تبدأ من <span class="ai-price-tag">200$</span> متجر من الصفر شامل دومين واستضافة وصيانة لسنة كاملة.</div>
                        </div>
                        <div class="ai-card-item">
                          <span class="ai-card-badge">2</span>
-                         <div class="flex-1 text-slate-200 text-xs"><strong>موظف الواتساب الذكي:</strong> ردود فورية بشرية وتوليد عروض أسعار PDF رسمية.</div>
+                         <div class="flex-1 text-slate-200 text-xs"><strong>باقة الموقع التعريفي:</strong> <span class="ai-price-tag">65$</span> بدومين .uk أو <span class="ai-price-tag">75$</span> بدومين .com شامل اللغتين والاستضافة.</div>
                        </div>
                        <div class="ai-card-item">
                          <span class="ai-card-badge">3</span>
-                         <div class="flex-1 text-slate-200 text-xs"><strong>سيستم الشحن والتطبيقات:</strong> بوالص، تتبع مناديب، وتحصيل الـ COD.</div>
+                         <div class="flex-1 text-slate-200 text-xs"><strong>موظف الواتساب وسيستمات الشحن:</strong> ردود ذكية 24/7 وبوالص شحن وتطبيقات موبايل.</div>
                        </div>
                      </div>
                      <p class="mt-2 text-emerald-400 font-medium">تحب أساعد حضرتك في تفاصيل أي باقة أو نظام؟ 🚀</p>`
-                  : `<p class="mb-2">Welcome to Eng. Mostafa Salah's website! 👋 I am Ahmed from Customer Service & Sales.</p>
+                  : `<p class="mb-2">Welcome to WebStack! 👋 I am Ahmed from Customer Service & Sales.</p>
                      <div class="space-y-1.5 my-2">
-                       <div class="ai-card-item"><span class="ai-card-badge">1</span><div class="flex-1 text-xs"><strong>Corporate Websites:</strong> <span class="ai-price-tag">$65</span> or <span class="ai-price-tag">$75</span> bilingual with hosting.</div></div>
-                       <div class="ai-card-item"><span class="ai-card-badge">2</span><div class="flex-1 text-xs"><strong>WhatsApp AI Agent:</strong> 24/7 sales replies and PDF quotes.</div></div>
-                       <div class="ai-card-item"><span class="ai-card-badge">3</span><div class="flex-1 text-xs"><strong>Logistics & Apps:</strong> Courier tracking, waybills, and POS.</div></div>
+                       <div class="ai-card-item"><span class="ai-card-badge">1</span><div class="flex-1 text-xs"><strong>Custom E-Commerce Store:</strong> <span class="ai-price-tag">$200</span> built from scratch with domain, hosting & 1-yr maintenance.</div></div>
+                       <div class="ai-card-item"><span class="ai-card-badge">2</span><div class="flex-1 text-xs"><strong>Corporate Websites:</strong> <span class="ai-price-tag">$65</span> or <span class="ai-price-tag">$75</span> bilingual with hosting.</div></div>
+                       <div class="ai-card-item"><span class="ai-card-badge">3</span><div class="flex-1 text-xs"><strong>WhatsApp AI & Logistics:</strong> 24/7 sales agent and dispatch systems.</div></div>
                      </div>
                      <p class="mt-2 text-emerald-400 font-medium">Which service would you like to explore today? 🚀</p>`
                 }
@@ -1614,7 +1659,7 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
               <span>💬</span>
               <span>${isAr ? 'تحويل للمحادثة عبر واتساب' : 'Switch to WhatsApp'}</span>
             </a>
-            <span class="font-mono text-slate-500">م. مصطفى صلاح</span>
+            <span class="font-mono text-slate-500">شركة WebStack</span>
           </div>
         </div>
       `;
@@ -1925,27 +1970,27 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
     const welcomeHtml = isAr 
-      ? `<p class="mb-2">أهلاً بحضرتك يا فندم في موقع المهندس مصطفى صلاح! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار.</p>
+      ? `<p class="mb-2">أهلاً بحضرتك يا فندم في شركة WebStack للحلول البرمجية! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار.</p>
          <div class="space-y-1.5 my-2">
            <div class="ai-card-item">
              <span class="ai-card-badge">1</span>
-             <div class="flex-1 text-slate-200 text-xs"><strong>باقة الموقع التعريفي:</strong> <span class="ai-price-tag">65$</span> بدومين .uk أو <span class="ai-price-tag">75$</span> بدومين .com شامل اللغتين والاستضافة.</div>
+             <div class="flex-1 text-slate-200 text-xs"><strong>المتاجر الإلكترونية المخصصة:</strong> تبدأ من <span class="ai-price-tag">200$</span> متجر من الصفر شامل دومين واستضافة وصيانة لسنة كاملة.</div>
            </div>
            <div class="ai-card-item">
              <span class="ai-card-badge">2</span>
-             <div class="flex-1 text-slate-200 text-xs"><strong>موظف الواتساب الذكي:</strong> ردود فورية بشرية وتوليد عروض أسعار PDF رسمية.</div>
+             <div class="flex-1 text-slate-200 text-xs"><strong>باقة الموقع التعريفي:</strong> <span class="ai-price-tag">65$</span> بدومين .uk أو <span class="ai-price-tag">75$</span> بدومين .com شامل اللغتين والاستضافة.</div>
            </div>
            <div class="ai-card-item">
              <span class="ai-card-badge">3</span>
-             <div class="flex-1 text-slate-200 text-xs"><strong>سيستم الشحن والتطبيقات:</strong> بوالص، تتبع مناديب، وتحصيل الـ COD.</div>
+             <div class="flex-1 text-slate-200 text-xs"><strong>موظف الواتساب وسيستمات الشحن:</strong> ردود ذكية 24/7 وبوالص شحن وتطبيقات موبايل.</div>
            </div>
          </div>
          <p class="mt-2 text-emerald-400 font-medium">تحب أساعد حضرتك في تفاصيل أي باقة أو نظام؟ 🚀</p>`
-      : `<p class="mb-2">Welcome to Eng. Mostafa Salah's website! 👋 I am Ahmed from Customer Service & Sales.</p>
+      : `<p class="mb-2">Welcome to WebStack! 👋 I am Ahmed from Customer Service & Sales.</p>
          <div class="space-y-1.5 my-2">
-           <div class="ai-card-item"><span class="ai-card-badge">1</span><div class="flex-1 text-xs"><strong>Corporate Websites:</strong> <span class="ai-price-tag">$65</span> or <span class="ai-price-tag">$75</span> bilingual with hosting.</div></div>
-           <div class="ai-card-item"><span class="ai-card-badge">2</span><div class="flex-1 text-xs"><strong>WhatsApp AI Agent:</strong> 24/7 sales replies and PDF quotes.</div></div>
-           <div class="ai-card-item"><span class="ai-card-badge">3</span><div class="flex-1 text-xs"><strong>Logistics & Apps:</strong> Courier tracking, waybills, and POS.</div></div>
+           <div class="ai-card-item"><span class="ai-card-badge">1</span><div class="flex-1 text-xs"><strong>Custom E-Commerce Store:</strong> <span class="ai-price-tag">$200</span> built from scratch with domain, hosting & 1-yr maintenance.</div></div>
+           <div class="ai-card-item"><span class="ai-card-badge">2</span><div class="flex-1 text-xs"><strong>Corporate Websites:</strong> <span class="ai-price-tag">$65</span> or <span class="ai-price-tag">$75</span> bilingual with hosting.</div></div>
+           <div class="ai-card-item"><span class="ai-card-badge">3</span><div class="flex-1 text-xs"><strong>WhatsApp AI & Logistics:</strong> 24/7 sales agent and dispatch systems.</div></div>
          </div>
          <p class="mt-2 text-emerald-400 font-medium">Which service would you like to explore today? 🚀</p>`;
 
@@ -1983,7 +2028,7 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
             <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1.5 pb-1 border-b border-slate-800/60">
               <span class="font-bold flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                [${isAr ? 'موظف مبيعات م. مصطفى صلاح' : 'Eng. Mostafa Salah Sales AI'}]
+                [${isAr ? 'موظف مبيعات WebStack' : 'WebStack Sales AI'}]
               </span>
               <span class="text-slate-500">${isAr ? 'متصل الآن' : 'Online'}</span>
             </div>
@@ -2237,7 +2282,7 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
 
       // 5. Built-in intelligent Egyptian customer service fallback
       if (!aiReply) {
-        aiReply = generateMostafaSalahAiResponse(cleanText, isAr ? 'ar' : 'en');
+        aiReply = generateWebStackAiResponse(cleanText, isAr ? 'ar' : 'en');
         replySource = 'egyptian-customer-service-engine';
 
         if (isStaticSite && !directKey) {
@@ -2262,13 +2307,13 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
       let extraActionBtn = '';
       if (hasPhone || isAffiliateChat) {
         const waMsg = isAr 
-          ? `مرحباً مهندس مصطفى صلاح، أود الانضمام لبرنامج التسويق بالعمولة (30%).\nبياناتي وتفاصيلي من الشات:\n${cleanText}`
-          : `Hello Eng. Mostafa Salah, I would like to join the 30% Affiliate Program.\nMy details:\n${cleanText}`;
+          ? `مرحباً فريق WebStack، أود الانضمام لبرنامج التسويق بالعمولة (30%).\nبياناتي وتفاصيلي من الشات:\n${cleanText}`
+          : `Hello WebStack Team, I would like to join the 30% Affiliate Program.\nMy details:\n${cleanText}`;
         extraActionBtn = `
           <div class="mt-2.5 pt-2 border-t border-emerald-500/30">
             <a href="https://wa.me/201107787049?text=${encodeURIComponent(waMsg)}" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-md transition-transform hover:scale-[1.02]">
               <span>🚀</span>
-              <span>${isAr ? 'تأكيد التسجيل كمسوق على واتساب المهندس مصطفى' : 'Confirm Affiliate Registration on WhatsApp'}</span>
+              <span>${isAr ? 'تأكيد التسجيل كمسوق على واتساب فريق WebStack' : 'Confirm Affiliate Registration on WhatsApp'}</span>
             </a>
           </div>
         `;
@@ -2301,9 +2346,9 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
             <div class="ai-rich-message text-xs leading-relaxed space-y-1.5">${renderFormattedAiMessage(aiReply)}</div>
             ${extraActionBtn}
             <div class="mt-2.5 pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
-              <a href="${typeof window.getDynamicWhatsAppUrl === 'function' ? window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'whatsapp-ai-employee') : 'https://wa.me/201107787049'}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-[10px] transition-colors border border-slate-700">
+              <a href="${typeof window.getDynamicWhatsAppUrl === 'function' ? window.getDynamicWhatsAppUrl(isAr ? 'ar' : 'en', 'general') : 'https://wa.me/201107787049'}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-[10px] transition-colors border border-slate-700">
                 <span>💬</span>
-                <span>${isAr ? 'واتساب م. مصطفى' : 'WhatsApp'}</span>
+                <span>${isAr ? 'واتساب WebStack' : 'WhatsApp'}</span>
               </a>
               <span class="text-[9px] font-mono text-emerald-400">${displaySource}</span>
             </div>
@@ -2489,7 +2534,7 @@ How can I help you today? You can also message Eng. Mostafa directly on WhatsApp
           return;
         }
 
-        const msgText = `مرحباً مهندس مصطفى صلاح، أود التسجيل في برنامج التسويق بالعمولة (30%).
+        const msgText = `مرحباً فريق WebStack، أود التسجيل في برنامج التسويق بالعمولة (30%).
 الاسم: ${name}
 الهاتف / واتساب: ${phone}
 طريقة التسويق والخبرة: ${channel}
@@ -2497,7 +2542,7 @@ ${note ? 'ملاحظات: ' + note : ''}`;
 
         // Save into chat session memory so Ahmed continues smoothly
         chatHistory.push({ role: 'user', content: `أرغب بالانضمام كمسوق بالعمولة (30%). اسمي: ${name}، ورقمي: ${phone}، وطريقة تسويقي: ${channel}.` });
-        chatHistory.push({ role: 'assistant', content: `أهلاً بك يا ${name}! 🌟 تم تسجيل بياناتك في نظام التسويق بالعمولة 30% بنجاح. بياناتك جاهزة وجاري تحويلك لواتساب المهندس مصطفى صلاح (01107787049) لاستلام المواد التسويقية ونماذج العروض والبدء فوراً. وأنا في خدمتك هنا في أي وقت!` });
+        chatHistory.push({ role: 'assistant', content: `أهلاً بك يا ${name}! 🌟 تم تسجيل بياناتك في نظام التسويق بالعمولة 30% بنجاح. بياناتك جاهزة وجاري تحويلك لواتساب فريق WebStack (01107787049) لاستلام المواد التسويقية ونماذج العروض والبدء فوراً. وأنا في خدمتك هنا في أي وقت!` });
         persistChatHistory();
 
         window.showToast('تم تسجيل بياناتك بنجاح! جاري تحويلك للواتساب للتأكيد واستلام الحقيبة التسويقية 🚀', 'success');
