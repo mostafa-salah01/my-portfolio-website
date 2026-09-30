@@ -363,6 +363,7 @@
         <!-- Filter Category Tabs -->
         <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
           <button data-category="all" class="filter-tab active" data-en="All Work" data-ar="جميع الأنظمة">جميع الأنظمة</button>
+          <button data-category="ecommerce" class="filter-tab" data-en="E-Commerce Stores ($95-$145)" data-ar="المتاجر الإلكترونية (95$-145$)">المتاجر الإلكترونية (95$-145$)</button>
           <button data-category="web-development" class="filter-tab" data-en="Corporate Websites ($65-$75)" data-ar="مواقع الشركات التعريفية (65$-75$)">مواقع الشركات التعريفية (65$-75$)</button>
           <button data-category="ai-employee" class="filter-tab" data-en="AI Employees (WhatsApp/Telegram)" data-ar="موظفو الذكاء الاصطناعي">موظفو الذكاء الاصطناعي</button>
           <button data-category="shipping" class="filter-tab" data-en="Smart Shipping & Logistics" data-ar="سيستم الشحن واللوجستيات">سيستم الشحن واللوجستيات</button>
@@ -374,6 +375,74 @@
 
       <!-- Projects Grid -->
       <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Featured Service: Smart E-Commerce Store Platform ($95 / $145 Package) -->
+        <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col border-t-2 border-t-emerald-500" data-project-category="ecommerce">
+          <a href="ecommerce-store.html" class="block project-img-wrapper group">
+            <picture>
+              <source srcset="assets/images/ecommerce_store_showcase_1790760849729.webp" type="image/webp" />
+              <img src="assets/images/ecommerce_store_showcase_1790760849729.jpg" alt="Smart E-Commerce Store Platform" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            </picture>
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-emerald text-xs font-mono font-bold">$95 (Starter) / $145 (Pro)</div>
+            <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-emerald-500/90 text-slate-950 text-[11px] font-bold font-mono">
+              <span data-en="Unbeatable Value" data-ar="أعلى قيمة مقابل السعر">أعلى قيمة مقابل السعر</span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-3.5 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold text-xs" data-en="🚀 View Dedicated Page" data-ar="🚀 فتح صفحة المتجر المستقلة">🚀 فتح صفحة المتجر المستقلة</span>
+            </div>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="text-xl font-bold text-white">
+                  <a href="ecommerce-store.html" class="hover:text-emerald-400 transition-colors" data-en="Smart E-Commerce Store Design & Automated Setup" data-ar="تصميم وإعداد متجر إلكتروني ذكي متكامل ومخصص">تصميم وإعداد متجر إلكتروني ذكي متكامل ومخصص</a>
+                </h3>
+              </div>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4" data-en="Launch your complete e-commerce brand: high-conversion storefront, payment gateways (Cards/Wallets/ValU), automated barcode waybills, abandoned cart recovery, and WhatsApp AI integration starting from just $95!" data-ar="امتلك متجرك الإلكتروني الاحترافي: واجهة سريعة فائقة التحويل، بوابات دفع إلكتروني (فيزا/محافظ/تقسيط) + دفع عند الاستلام، أتمتة بوالص الشحن بالباركود، واسترجاع السلات المتروكة يبدأ من 95$ فقط!">
+                امتلك متجرك الإلكتروني الاحترافي: واجهة سريعة فائقة التحويل، بوابات دفع إلكتروني (فيزا/محافظ/تقسيط) + دفع عند الاستلام، أتمتة بوالص الشحن بالباركود، واسترجاع السلات المتروكة يبدأ من 95$ فقط!
+              </p>
+              
+              <!-- Key Features Highlights -->
+              <div class="space-y-1.5 mb-4 text-xs text-slate-300">
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span data-en="Full Payment Coverage: Visa, Wallets, InstaPay, ValU & COD" data-ar="تغطية كاملة للدفع: فيزا، محافظ كاش، إنستاباي، تقسيط، ودفع عند الاستلام">تغطية كاملة للدفع: فيزا، محافظ كاش، إنستاباي، تقسيط، ودفع عند الاستلام</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span data-en="1-Click Automated Courier Waybills with Scannable Barcode" data-ar="طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر واحدة">طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر واحدة</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span data-en="WhatsApp AI Integration: Order notifications & cart recovery" data-ar="تكامل موظف واتساب الذكي لإرسال الفواتير واسترجاع السلات المتروكة">تكامل موظف واتساب الذكي لإرسال الفواتير واسترجاع السلات المتروكة</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span data-en="Includes Domain + Fast SSD Cloud Hosting + SSL + 1-Year Support" data-ar="شامل الدومين + استضافة سحابية فائقة السرعة + SSL + دعم فني وصيانة سنة">شامل الدومين + استضافة سحابية فائقة السرعة + SSL + دعم فني وصيانة سنة</span>
+                </div>
+              </div>
+
+              <!-- Value Pricing Callout Box -->
+              <div class="p-3 rounded-lg bg-slate-900/90 border border-emerald-500/30 text-xs mb-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between font-mono font-bold mb-1 gap-1">
+                  <span class="text-emerald-400" data-en="Starter: $95 · Pro Growth Suite: $145" data-ar="باقة المتجر الأساسي: 95$ · باقة النمو المتكاملة: 145$">باقة المتجر الأساسي: 95$ · باقة النمو المتكاملة: 145$</span>
+                </div>
+                <div class="text-slate-400 text-[11px]" data-en="Market cost exceeds $1,800+. You save over 90% with full store ownership & zero monthly fees." data-ar="قيمة السوق تتجاوز 1800$+. وفر أكثر من 90% مع ملكية متجرك بالكامل وبدون أي اشتراكات شهرية.">
+                  قيمة السوق تتجاوز 1800$+. وفر أكثر من 90% مع ملكية متجرك بالكامل وبدون أي اشتراكات شهرية.
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+              <a href="ecommerce-store.html" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1">
+                <span data-en="View Store Details" data-ar="عرض تفاصيل وباقة المتجر">عرض تفاصيل وباقة المتجر</span> &rarr;
+              </a>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%20(95$%20/%20145$)" target="_blank" rel="noopener noreferrer" data-service="ecommerce-store-package" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 dynamic-whatsapp-link">
+                <span data-en="Order Store ($95 / $145)" data-ar="طلب المتجر (95$ / 145$)">طلب المتجر (95$ / 145$)</span>
+              </a>
+            </div>
+          </div>
+        </div>
         
         <!-- Featured Service: Corporate Website Design & Setup ($65 / $75 Package) -->
         <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col border-t-2 border-t-cyan-500" data-project-category="web-development">

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart E-Commerce Store Design & Setup | تصميم وإعداد متجر إلكتروني متكامل عالي التحويل - Mostafa Salah</title>
+  <meta name="description" content="احصل على متجر إلكتروني متكامل وسريع ومصمم خصيصاً لمضاعفة مبيعاتك. يشمل بوابات الدفع، ربط الشحن، موظف واتساب للطلبات، دومين واستضافة سحابية، بأعلى قيمة مقابل سعر يبدأ من 95$ فقط." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Content Security Policy & Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https: ws: wss:; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Smart E-Commerce Store Design & Setup | متجر إلكتروني ذكي متكامل" />
+  <meta property="og:description" content="متجر إلكتروني فائق السرعة بميزات احترافية: بوابات دفع، تكامل شحن، موظف واتساب للمبيعات، وقيمة استثنائية تبدأ من 95$ فقط." />
+  <meta property="og:image" content="assets/images/ecommerce_store_showcase_1790760849729.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" /></noscript>
+
+  <!-- Complete CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Synchronous Theme Initializer -->
+  <script src="theme-init.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-400 p-[1.5px] transition-transform group-hover:scale-105">
+          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+            <span class="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 text-lg">MS</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-white text-base sm:text-lg tracking-tight block leading-tight font-mono">Mostafa Salah</span>
+          <span class="text-[11px] text-emerald-400 block font-mono" data-en="Software & Systems Engineer" data-ar="مهندس برمجيات ونظم">مهندس برمجيات ونظم</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="index.html" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+          <span>&larr;</span>
+          <span data-en="Home" data-ar="الرئيسية">الرئيسية</span>
+        </a>
+        <a href="ecommerce-store.html" class="text-emerald-400 font-bold" data-en="E-Commerce Store" data-ar="المتجر الإلكتروني">المتجر الإلكتروني</a>
+        <a href="corporate-website.html" class="hover:text-emerald-400 transition-colors" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
+        <a href="whatsapp-ai-employee.html" class="hover:text-emerald-400 transition-colors" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
+        <a href="smart-shipping-system.html" class="hover:text-emerald-400 transition-colors" data-en="Logistics" data-ar="اللوجستيات">اللوجستيات</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button type="button" id="theme-toggle-btn" data-action="toggle-theme" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer" title="تبديل الثيم / Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <button type="button" id="lang-toggle-btn" data-action="toggle-language" class="px-3 py-2 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-xs font-mono font-bold text-emerald-400 hover:text-emerald-300 transition-all cursor-pointer">
+          <span id="lang-btn-text">EN</span>
+        </button>
+
+        <a id="nav-order-btn" href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%20(95$%20/%20145$)" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 shadow-md shadow-emerald-500/20">
+          <span>🛍️</span>
+          <span data-en="Order Store Pack ($95 / $145)" data-ar="طلب باقة المتجر (95$ / 145$)">طلب باقة المتجر (95$ / 145$)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Breadcrumb Navigation -->
+      <div class="flex items-center gap-2 text-xs font-mono text-slate-400 mb-6">
+        <a href="index.html" class="hover:text-emerald-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>/</span>
+        <a href="index.html#projects" class="hover:text-emerald-400 transition-colors" data-en="Services" data-ar="الخدمات">الخدمات</a>
+        <span>/</span>
+        <span class="text-emerald-400" data-en="Smart E-Commerce Store" data-ar="المتجر الإلكتروني الذكي">المتجر الإلكتروني الذكي</span>
+      </div>
+
+      <!-- Hero Header Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-4">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span data-en="High-Conversion Storefront · Unbeatable Value for Money" data-ar="متجر عالي التحويل للمبيعات · أعلى قيمة مقابل السعر في السوق">متجر عالي التحويل للمبيعات · أعلى قيمة مقابل السعر في السوق</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4" data-en="Custom Smart E-Commerce Store Design & Automated Setup" data-ar="تصميم وإعداد متجر إلكتروني ذكي متكامل ومخصص لمضاعفة مبيعاتك">تصميم وإعداد متجر إلكتروني ذكي متكامل ومخصص لمضاعفة مبيعاتك</h1>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6" data-en="Launch your complete e-commerce brand with enterprise-grade speed and seamless customer journeys. Includes custom responsive storefront, online payment gateways + Cash on Delivery (COD), automated shipping & barcode waybill generation, abandoned cart recovery, and optional WhatsApp AI employee integration — starting from just $95!" data-ar="امتلك متجرك الإلكتروني الاحترافي الجاهز للبيع الفوري بأعلى سرعة وتحويل. يشمل تصميم واجهة مخصصة لعلامتك التجارية، ربط جميع بوابات الدفع الإلكتروني والدفع عند الاستلام، أتمتة بوالص الشحن، استعادة السلات المتروكة، مع إمكانية ربط موظف واتساب ذكي لمتابعة الطلبات، كل ذلك بقيمة استثنائية تفوق تكلفة السوق بأضعاف وتبدأ من 95$ فقط!">امتلك متجرك الإلكتروني الاحترافي الجاهز للبيع الفوري بأعلى سرعة وتحويل. يشمل تصميم واجهة مخصصة لعلامتك التجارية، ربط جميع بوابات الدفع الإلكتروني والدفع عند الاستلام، أتمتة بوالص الشحن، استعادة السلات المتروكة، مع إمكانية ربط موظف واتساب ذكي لمتابعة الطلبات، كل ذلك بقيمة استثنائية تفوق تكلفة السوق بأضعاف وتبدأ من 95$ فقط!</p>
+
+          <!-- Key Points Badges -->
+          <div class="flex flex-wrap gap-2.5 mb-6 text-xs font-mono">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-emerald-400 font-bold" data-en="💳 Cards, Wallets, ValU & COD" data-ar="💳 فيزا، محافظ كاش، تقسيط، ودفع عند الاستلام">💳 فيزا، محافظ كاش، تقسيط، ودفع عند الاستلام</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 font-bold" data-en="🚚 1-Click Barcode Waybills" data-ar="🚚 إصدار بوالص الشحن بنقرة واحدة">🚚 إصدار بوالص الشحن بنقرة واحدة</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-amber-400 font-bold" data-en="🤖 WhatsApp Abandoned Cart AI" data-ar="🤖 استرجاع السلات المتروكة آلياً">🤖 استرجاع السلات المتروكة آلياً</span>
+          </div>
+
+          <!-- Direct CTA -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%20(95$%20/%20145$)" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-emerald-500/20">
+              <span>🚀</span>
+              <span data-en="Book Store Setup on WhatsApp" data-ar="احجز متجرك الإلكتروني عبر واتساب">احجز متجرك الإلكتروني عبر واتساب</span>
+            </a>
+            <a href="#packages" class="px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-bold text-sm border border-slate-800 transition-colors">
+              <span data-en="Compare Packages ($95 vs $145)" data-ar="مقارنة الباقات والأسعار">مقارنة الباقات والأسعار</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Image Showcase -->
+        <div class="lg:col-span-5">
+          <div class="glass-panel p-2 rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-500/10 group">
+            <div class="relative overflow-hidden rounded-xl aspect-video bg-slate-900">
+              <picture>
+                <source srcset="assets/images/ecommerce_store_showcase_1790760849729.webp" type="image/webp" />
+                <img src="assets/images/ecommerce_store_showcase_1790760849729.jpg" alt="Smart E-Commerce Store Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="eager" width="800" height="450" />
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono">
+                <span class="px-2.5 py-1 rounded-md bg-slate-950/90 text-emerald-400 border border-emerald-500/30">Conversion Rate: 4.8%</span>
+                <span class="px-2.5 py-1 rounded-md bg-emerald-500 text-slate-950 font-bold">100% Turnkey Solution</span>
+              </div>
+            </div>
+            <div class="p-3 text-center text-xs text-slate-400 font-mono">
+              <span data-en="Designed for ultra-fast checkout on mobile and desktop" data-ar="واجهة سريعة وخفيفة مصممة لإنهاء الشراء بأقل من 60 ثانية">واجهة سريعة وخفيفة مصممة لإنهاء الشراء بأقل من 60 ثانية</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unbeatable Value-for-Money Showcase (قيمة حقيقية ساحقة مقابل سعر رمزي) -->
+      <section class="mb-16">
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-2 border-emerald-500/40 relative overflow-hidden bg-gradient-to-b from-slate-900/90 to-slate-950/95">
+          <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="max-w-3xl mb-8">
+            <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-2" data-en="Unbeatable Value Equation" data-ar="معادلة القيمة الخارقة مقابل السعر">معادلة القيمة الخارقة مقابل السعر</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3" data-en="Why Pay $1,800+ When You Get Higher Quality Starting at $95?" data-ar="لماذا تدفع أكثر من 1800$ بينما تحصل على جودة أعلى وتكامل أذكى يبدأ من 95$ فقط؟">لماذا تدفع أكثر من 1800$ بينما تحصل على جودة أعلى وتكامل أذكى يبدأ من 95$ فقط؟</h2>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="In traditional software houses and web agencies, setting up an e-commerce platform with automated payments, courier waybills, and WhatsApp bots costs between $1,500 and $2,500. Here is an honest comparison of the massive value you receive:" data-ar="في شركات البرمجيات ووكالات التسويق، يكلف بناء متجر إلكتروني متكامل يربط الدفع الإلكتروني والشحن وبوالص الباركود وبوتات الواتساب ما بين 1500$ إلى 2500$. إليك كشف الحساب الصادق للقيمة الهائلة التي تحصل عليها معنا:">في شركات البرمجيات ووكالات التسويق، يكلف بناء متجر إلكتروني متكامل يربط الدفع الإلكتروني والشحن وبوالص الباركود وبوتات الواتساب ما بين 1500$ إلى 2500$. إليك كشف الحساب الصادق للقيمة الهائلة التي تحصل عليها معنا:</p>
+          </div>
+
+          <!-- Value Breakdown Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <!-- Item 1 -->
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-xs font-mono text-slate-400 mb-1" data-en="Custom Storefront Design" data-ar="تصميم الواجهة وسرعة التصفح">تصميم الواجهة وسرعة التصفح</div>
+              <div class="text-xs text-rose-400 line-through font-mono mb-2" data-en="Market Cost: ~$500" data-ar="سعر السوق: ~500$">سعر السوق: ~500$</div>
+              <div class="text-sm font-bold text-white mb-1" data-en="Included in Base Pack" data-ar="مشمول بالكامل مجاناً">مشمول بالكامل مجاناً</div>
+              <p class="text-[11px] text-slate-300 leading-normal" data-en="Optimized for mobile conversions, zero lagging, instant checkout." data-ar="واجهة خفيفة سريعة تفتح بأقل من ثانية بدون أي تهنيج أو ثقل.">واجهة خفيفة سريعة تفتح بأقل من ثانية بدون أي تهنيج أو ثقل.</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-xs font-mono text-slate-400 mb-1" data-en="Multi Payment Gateways" data-ar="بوابات الدفع الإلكتروني">بوابات الدفع الإلكتروني</div>
+              <div class="text-xs text-rose-400 line-through font-mono mb-2" data-en="Market Cost: ~$400" data-ar="سعر السوق: ~400$">سعر السوق: ~400$</div>
+              <div class="text-sm font-bold text-white mb-1" data-en="Included & Pre-configured" data-ar="جاهزة ومضبوطة مسبقاً">جاهزة ومضبوطة مسبقاً</div>
+              <p class="text-[11px] text-slate-300 leading-normal" data-en="Visa, Mastercard, Mobile Wallets, and Installment options." data-ar="فيزا، ماستركارد، محافظ كاش، خيارات التقسيط، والدفع عند الاستلام.">فيزا، ماستركارد، محافظ كاش، خيارات التقسيط، والدفع عند الاستلام.</p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-xs font-mono text-slate-400 mb-1" data-en="Courier & Barcode System" data-ar="بوالص الشحن والباركود">بوالص الشحن والباركود</div>
+              <div class="text-xs text-rose-400 line-through font-mono mb-2" data-en="Market Cost: ~$350" data-ar="سعر السوق: ~350$">سعر السوق: ~350$</div>
+              <div class="text-sm font-bold text-white mb-1" data-en="1-Click PDF Generation" data-ar="طباعة البوليصة بضغطة زر">طباعة البوليصة بضغطة زر</div>
+              <p class="text-[11px] text-slate-300 leading-normal" data-en="Export AWB printable labels with barcodes directly to couriers." data-ar="إصدار تلقائي لبوالص الشحن PDF الجاهزة للطباعة واللصق على الطرد.">إصدار تلقائي لبوالص الشحن PDF الجاهزة للطباعة واللصق على الطرد.</p>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-xs font-mono text-slate-400 mb-1" data-en="WhatsApp AI Sales Engine" data-ar="موظف واتساب المبيعات">موظف واتساب المبيعات</div>
+              <div class="text-xs text-rose-400 line-through font-mono mb-2" data-en="Market Cost: ~$450" data-ar="سعر السوق: ~450$">سعر السوق: ~450$</div>
+              <div class="text-sm font-bold text-white mb-1" data-en="Available in Pro Pack" data-ar="متاح في باقة برو (145$)">متاح في باقة برو (145$)</div>
+              <p class="text-[11px] text-slate-300 leading-normal" data-en="Sends order confirmations and recovers lost carts 24/7." data-ar="يرسل تأكيدات الطلبات للعميل على واتساب ويسترجع السلات المتروكة.">يرسل تأكيدات الطلبات للعميل على واتساب ويسترجع السلات المتروكة.</p>
+            </div>
+          </div>
+
+          <!-- Financial Summary Box -->
+          <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <div class="text-xs font-mono text-emerald-400 font-bold mb-1" data-en="Total Value Received: $1,700+" data-ar="إجمالي القيمة التي تستلمها: أكثر من 1700 دولار">إجمالي القيمة التي تستلمها: أكثر من 1700 دولار</div>
+              <div class="text-slate-200 text-xs sm:text-sm" data-en="You invest only $95 or $145 once, saving over 90% with zero hidden subscription fees or vendor lock-in." data-ar="أنت تدفع 95$ أو 145$ لمرة واحدة فقط، وتوفر أكثر من 90% من ميزانيتك مع ملكية كاملة لمتجرك ودون أي اشتراكات خفية.">أنت تدفع 95$ أو 145$ لمرة واحدة فقط، وتوفر أكثر من 90% من ميزانيتك مع ملكية كاملة لمتجرك ودون أي اشتراكات خفية.</div>
+            </div>
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%BA%D9%84%D8%A7%D9%84%20%D8%B9%D8%B1%D8%B6%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shrink-0 transition-transform hover:scale-105">
+              <span data-en="Claim Store Offer Now" data-ar="احصل على العرض والبدء الفوري">احصل على العرض والبدء الفوري</span> &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Capabilities & Features Grid (المميزات والحلول المتكاملة) -->
+      <section class="mb-16">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-2" data-en="Engineered For Conversions" data-ar="مبني خصيصاً لتحقيق أعلى مبيعات">مبني خصيصاً لتحقيق أعلى مبيعات</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight" data-en="6 Pillars That Turn Visitors Into Paying Customers" data-ar="6 ركائز تقنية تجعل متجرك آلة لإنتاج المبيعات">6 ركائز تقنية تجعل متجرك آلة لإنتاج المبيعات</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Pillar 1 -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-lg mb-4 text-emerald-400">
+              ⚡
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Instant 1-Second Page Load" data-ar="سرعة فتح خارقة (أقل من ثانية)">سرعة فتح خارقة (أقل من ثانية)</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Engineered with clean lightweight code and high-performance cloud CDN caching. No heavy plugins that slow down mobile shoppers, preventing bounce rates." data-ar="كود برمجي نقي وخفيف جداً مع توزيع كاش سحابي عالمي (CDN). العميل يفتح المتجر ويتنقل بين المنتجات بلمح البصر دون أي بطء يضيع المبيعات.">كود برمجي نقي وخفيف جداً مع توزيع كاش سحابي عالمي (CDN). العميل يفتح المتجر ويتنقل بين المنتجات بلمح البصر دون أي بطء يضيع المبيعات.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-lg mb-4 text-cyan-400">
+              💳
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Full Payment Coverage" data-ar="تغطية كاملة لجميع طرق الدفع">تغطية كاملة لجميع طرق الدفع</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Accept Visa, Mastercard, Meeza, Vodafone Cash, InstaPay, mobile wallets, and Buy-Now-Pay-Later (ValU, Sympl, Tabby, Tamara) plus Cash on Delivery with SMS/WhatsApp confirmation." data-ar="قبول الدفع بالبطاقات البنكية، المحافظ الإلكترونية، إنستاباي، بوابات التقسيط (ValU / Tabby)، بالإضافة لخيار الدفع عند الاستلام الذكي مع التأكيد التلقائي.">قبول الدفع بالبطاقات البنكية، المحافظ الإلكترونية، إنستاباي، بوابات التقسيط (ValU / Tabby)، بالإضافة لخيار الدفع عند الاستلام الذكي مع التأكيد التلقائي.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-lg mb-4 text-indigo-400">
+              🚚
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Integrated Courier Logistics" data-ar="ربط شركات الشحن وبوالص الباركود">ربط شركات الشحن وبوالص الباركود</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Print professional PDF waybills with scannable barcodes in one click. Automatically calculate shipping rates based on governorates or zones." data-ar="طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر واحدة لتسليمها للمندوب، مع حساب تكاليف الشحن تلقائياً بحسب المحافظة أو الدولة.">طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر واحدة لتسليمها للمندوب، مع حساب تكاليف الشحن تلقائياً بحسب المحافظة أو الدولة.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-lg mb-4 text-amber-400">
+              🤖
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Automated WhatsApp AI Sales" data-ar="أتمتة مبيعات الواتساب الذكية">أتمتة مبيعات الواتساب الذكية</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Send instant order receipts to your customer's WhatsApp, alert them about shipping updates, and automatically re-engage visitors who left products in their carts." data-ar="إرسال فاتورة وتفاصيل الطلب للعميل على واتساب فور إتمام الشراء، وإشعارهم بحالة الشحنة، مع استرجاع السلات المتروكة تلقائياً لمضاعفة الأرباح.">إرسال فاتورة وتفاصيل الطلب للعميل على واتساب فور إتمام الشراء، وإشعارهم بحالة الشحنة، مع استرجاع السلات المتروكة تلقائياً لمضاعفة الأرباح.</p>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-lg mb-4 text-rose-400">
+              📊
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Ad Pixels & Analytics Ready" data-ar="ربط دقيق لبيكسل إعلانات فيسبوك وتيك توك">ربط دقيق لبيكسل إعلانات فيسبوك وتيك توك</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Pre-configured with Meta Pixel, TikTok Pixel, Google Analytics 4, and Conversion API (CAPI) for precise ROAS tracking and maximum ad campaign return." data-ar="ربط دقيق وشامل لبيكسل فيسبوك، تيك توك، وسناب شات مع تفعيل Conversion API لضمان تتبع مبيعات الحملات الإعلانية بدقة 100% وخفض تكلفة الشراء.">ربط دقيق وشامل لبيكسل فيسبوك، تيك توك، وسناب شات مع تفعيل Conversion API لضمان تتبع مبيعات الحملات الإعلانية بدقة 100% وخفض تكلفة الشراء.</p>
+          </div>
+
+          <!-- Pillar 6 -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-lg mb-4 text-purple-400">
+              🌐
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Bilingual & Effortless Dashboard" data-ar="لوحة تحكم عربية سهلة وبسيطة">لوحة تحكم عربية سهلة وبسيطة</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Manage products, variations (sizes/colors), discounts, coupons, and orders from your phone or laptop with a crystal-clear Arabic & English dashboard." data-ar="إضافة وتعديل المنتجات، الألوان، المقاسات، كوبونات الخصم، ومتابعة الأرباح وحالات الطلبات بكل سهولة من موبايلك أو الكمبيوتر بلوحة تحكم عربية واضحة.">إضافة وتعديل المنتجات، الألوان، المقاسات، كوبونات الخصم، ومتابعة الأرباح وحالات الطلبات بكل سهولة من موبايلك أو الكمبيوتر بلوحة تحكم عربية واضحة.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Store Simulator (تجربة متجر حي تفاعلية) -->
+      <section class="mb-16">
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-emerald-500/30 bg-slate-900/60">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
+            <div>
+              <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block" data-en="Interactive Experience" data-ar="تجربة تفاعلية حية">تجربة تفاعلية حية</span>
+              <h2 class="text-xl sm:text-2xl font-bold text-white" data-en="Live Storefront Checkout Simulator" data-ar="محاكي تجربة الشراء الفوري في المتجر">محاكي تجربة الشراء الفوري في المتجر</h2>
+            </div>
+            <div class="text-xs text-slate-400 font-mono">
+              <span data-en="Try adding product, applying coupon, & ordering" data-ar="جرب إضافة منتج، تطبيق كوبون، ومحاكاة الطلب الفوري">جرب إضافة منتج، تطبيق كوبون، ومحاكاة الطلب الفوري</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Demo Product Preview -->
+            <div class="lg:col-span-6 bg-slate-950/80 rounded-xl p-5 border border-slate-800">
+              <div class="flex items-center justify-between mb-3 text-xs font-mono text-slate-400">
+                <span>DEMO STORE #1042</span>
+                <span class="text-emerald-400">● In Stock (جاهز للشحن)</span>
+              </div>
+              <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden relative mb-4 border border-slate-800/80">
+                <picture>
+                  <source srcset="assets/images/ecommerce_store_showcase_1790760849729.webp" type="image/webp" />
+                  <img src="assets/images/ecommerce_store_showcase_1790760849729.jpg" alt="Demo Product Item" class="w-full h-full object-cover" />
+                </picture>
+                <div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-bold text-[10px] font-mono">
+                  -20% خصم إضافي
+                </div>
+              </div>
+
+              <h4 class="font-bold text-white text-base mb-1" id="demo-prod-name">سماعة لاسلكية ذكية فائقة النقاء Pro Sound</h4>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">عزل ضوضاء نشط، بطارية تدوم 40 ساعة، متوافقة مع جميع الهواتف الذكية.</p>
+
+              <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+                <div>
+                  <span class="text-xs text-slate-400 block line-through">450 ج.م</span>
+                  <span class="text-lg font-bold text-emerald-400 font-mono" id="demo-prod-price">360 ج.م</span>
+                </div>
+                <button type="button" id="demo-add-cart-btn" class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 flex items-center gap-1.5 cursor-pointer">
+                  <span>🛒</span>
+                  <span id="demo-cart-btn-label">إضافة إلى السلة</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Demo Checkout & Order Slip Simulator -->
+            <div class="lg:col-span-6 bg-slate-950/80 rounded-xl p-5 border border-slate-800">
+              <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-800">
+                <h4 class="font-bold text-white text-sm flex items-center gap-2">
+                  <span>🛍️</span>
+                  <span>سلة الشراء وتأكيد الطلب الفوري</span>
+                </h4>
+                <span class="text-xs font-mono text-emerald-400" id="demo-cart-counter">العناصر: 0</span>
+              </div>
+
+              <!-- Cart Summary -->
+              <div id="demo-cart-content" class="mb-4">
+                <div class="text-center py-6 text-slate-500 text-xs" id="demo-empty-msg">
+                  السلة فارغة حالياً. اضغط على "إضافة إلى السلة" لتجربة التفاعل!
+                </div>
+                <div id="demo-active-cart" class="hidden space-y-3">
+                  <div class="flex items-center justify-between text-xs p-2 rounded-lg bg-slate-900 border border-slate-800">
+                    <div>
+                      <span class="font-bold text-slate-200 block">سماعة Pro Sound (عدد 1)</span>
+                      <span class="text-[10px] text-slate-400">توصيل سريع لباب المنزل</span>
+                    </div>
+                    <span class="font-mono font-bold text-emerald-400">360 ج.م</span>
+                  </div>
+
+                  <!-- Coupon Input -->
+                  <div class="flex gap-2">
+                    <input type="text" id="demo-coupon-input" placeholder="كود الخصم (جرب: SAVE10)" class="flex-1 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white uppercase font-mono focus:outline-none focus:border-emerald-500" />
+                    <button type="button" id="demo-apply-coupon-btn" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-bold border border-slate-700 transition-colors cursor-pointer">تطبيق</button>
+                  </div>
+                  <div id="demo-coupon-msg" class="text-[11px] font-mono text-emerald-400 hidden">✓ تم تطبيق كود الخصم (خصم 10% إضافي)</div>
+
+                  <!-- Financial Math -->
+                  <div class="space-y-1 text-xs text-slate-300 pt-2 border-t border-slate-800">
+                    <div class="flex justify-between">
+                      <span>قيمة المنتجات:</span>
+                      <span class="font-mono" id="demo-subtotal">360 ج.م</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>تكلفة الشحن:</span>
+                      <span class="font-mono text-emerald-400">مجاني لفترة محدودة</span>
+                    </div>
+                    <div class="flex justify-between font-bold text-white text-sm pt-1 border-t border-slate-800">
+                      <span>الإجمالي المطلوب:</span>
+                      <span class="font-mono text-emerald-400" id="demo-total">360 ج.م</span>
+                    </div>
+                  </div>
+
+                  <!-- Checkout Form -->
+                  <div class="space-y-2 pt-2">
+                    <input type="text" id="demo-cust-name" placeholder="اسم العميل (مثال: محمد أحمد)" class="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-emerald-500" value="محمد أحمد" />
+                    <input type="tel" id="demo-cust-phone" placeholder="رقم الهاتف للتوصيل" class="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-emerald-500" value="01012345678" />
+                    <select id="demo-payment-method" class="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-200 focus:outline-none focus:border-emerald-500">
+                      <option value="cod">الدفع عند الاستلام (Cash on Delivery)</option>
+                      <option value="card">البطاقة البنكية (Visa / MasterCard)</option>
+                      <option value="wallet">محفظة إلكترونية (فودافون كاش / إنستاباي)</option>
+                    </select>
+
+                    <button type="button" id="demo-complete-order-btn" class="w-full py-2.5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-bold text-xs hover:opacity-95 transition-transform hover:scale-[1.01] shadow-md shadow-emerald-500/20 cursor-pointer">
+                      تأكيد الطلب وتوليد البوليصة الفورية 🚀
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Order Success Banner Preview -->
+              <div id="demo-order-success" class="hidden p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-center space-y-2">
+                <div class="text-2xl">🎉</div>
+                <div class="font-bold text-white text-sm">تم تأكيد الطلب #9401 بنجاح!</div>
+                <p class="text-xs text-slate-300">تم إرسال رسالة واتساب للعميل برقم البوليصة وتفاصيل الفاتورة، وجاري تجهيز الشحنة للمندوب.</p>
+                <div class="p-2 rounded bg-slate-900/90 border border-slate-800 font-mono text-[11px] text-emerald-400 text-right">
+                  AWB: #EG-9401-EXP · COD: 324 ج.م · Status: Ready to Ship
+                </div>
+                <button type="button" id="demo-reset-btn" class="text-[11px] text-slate-400 hover:text-white underline cursor-pointer mt-2">
+                  إعادة تجربة المحاكي مرة أخرى
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Packages Section (باقات الأسعار والقيمة) -->
+      <section id="packages" class="mb-16">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-2" data-en="Transparent Pricing" data-ar="أسعار واضحة وبسيطة">أسعار واضحة وبسيطة</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3" data-en="Choose Your E-Commerce Growth Package" data-ar="اختر باقة إطلاق وتطوير متجرك الإلكتروني">اختر باقة إطلاق وتطوير متجرك الإلكتروني</h2>
+          <p class="text-slate-300 text-xs sm:text-sm" data-en="No hidden fees. Full store ownership. Year 1 includes domain, high-speed hosting, and technical maintenance." data-ar="بدون أي مصاريف خفية، مع ملكية كاملة لمتجرك وقاعدة بياناتك، ودعم فني وصيانة مجانية للسنة الأولى.">بدون أي مصاريف خفية، مع ملكية كاملة لمتجرك وقاعدة بياناتك، ودعم فني وصيانة مجانية للسنة الأولى.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+          
+          <!-- Package 1: Starter Store Pack -->
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono font-bold" data-en="Starter Store" data-ar="باقة الانطلاق السريع">باقة الانطلاق السريع</span>
+                <span class="text-xs font-mono text-slate-400">جاهز خلال 3 أيام</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2" data-en="Starter Store Package" data-ar="باقة المتجر الأساسي الجاهز">باقة المتجر الأساسي الجاهز</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-6" data-en="Ideal for small merchants, boutique brands, and startups looking to sell online with a clean, fast storefront." data-ar="مثالية للأنشطة الناشئة، البراندات المحلية، والتجار الراغبين في بدء البيع الإلكتروني باحترافية وتكلفة اقتصادية.">مثالية للأنشطة الناشئة، البراندات المحلية، والتجار الراغبين في بدء البيع الإلكتروني باحترافية وتكلفة اقتصادية.</p>
+
+              <!-- Price Tag -->
+              <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 mb-6">
+                <div class="text-3xl font-black text-white font-mono flex items-baseline gap-1">
+                  <span>95$</span>
+                  <span class="text-xs font-normal text-slate-400">/ للسنة الأولى شاملة</span>
+                </div>
+                <div class="text-[11px] text-slate-400 mt-1 font-mono">
+                  (شامل حجز الدومين + استضافة سحابية + شهادة الأمان SSL)
+                </div>
+              </div>
+
+              <!-- Feature List -->
+              <div class="space-y-2.5 text-xs text-slate-300 mb-8">
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>متجر إلكتروني سريع ومتجاوب بالكامل مع الموبايل والكمبيوتر</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>دومين رسمي مجاني لمدة سنة كاملة (.uk أو .com متاح)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>ربط بوابات الدفع الإلكتروني (فيزا، كاش، إنستاباي) + دفع عند الاستلام</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>لوحة تحكم عربية سهلة لإدارة المنتجات والمخزون والأسعار</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>إدخال وتنسيق أول 50 منتج مجاناً للبدء الفوري</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>صيانة ودعم فني يومي مستمر طوال السنة الأولى</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%20(95$)" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-2 border border-slate-700 transition-colors">
+                <span>طلب باقة المتجر الأساسي (95$)</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Package 2: Pro Growth Store Pack (Featured) -->
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl border-2 border-emerald-500/80 flex flex-col justify-between relative shadow-xl shadow-emerald-500/10 bg-gradient-to-b from-slate-900 to-slate-950">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-emerald-500 text-slate-950 font-bold font-mono text-[10px] uppercase tracking-wider shadow">
+              ⭐ الأكثر طلباً وأعلى قيمة للمبيعات
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-4 mt-2">
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-mono font-bold" data-en="Pro Growth Store" data-ar="باقة المتجر الاحترافي المتكامل">باقة المتجر الاحترافي المتكامل</span>
+                <span class="text-xs font-mono text-emerald-400 font-bold">جاهز خلال 5 أيام</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2" data-en="Pro Growth E-Commerce Suite" data-ar="باقة النمو والأتمتة الشاملة">باقة النمو والأتمتة الشاملة</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-6" data-en="Designed for serious brands and high-volume sellers needing automated courier waybills, WhatsApp follow-ups, and precise ad pixels." data-ar="الحل الشامل للتجار والشركات الراغبة في أتمتة كاملة للشحن وبوالص الباركود وموظف واتساب الذكي وتتبع دقيق للإعلانات الممولة.">الحل الشامل للتجار والشركات الراغبة في أتمتة كاملة للشحن وبوالص الباركود وموظف واتساب الذكي وتتبع دقيق للإعلانات الممولة.</p>
+
+              <!-- Price Tag -->
+              <div class="p-4 rounded-xl bg-slate-900/90 border border-emerald-500/40 mb-6">
+                <div class="text-3xl font-black text-emerald-400 font-mono flex items-baseline gap-1">
+                  <span>145$</span>
+                  <span class="text-xs font-normal text-slate-300">/ للسنة الأولى شاملة</span>
+                </div>
+                <div class="text-[11px] text-slate-300 mt-1 font-mono">
+                  (شامل كل الميزات + أتمتة الشحن + بيكسل الإعلانات + تكامل واتساب)
+                </div>
+              </div>
+
+              <!-- Feature List -->
+              <div class="space-y-2.5 text-xs text-slate-200 mb-8">
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span class="font-bold text-white">كل ما تشمله باقة المتجر الأساسي بالكامل</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>أتمتة بوالص الشحن:</strong> طباعة بوالص PDF بالباركود وتسليم المندوب بنقرة واحدة</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>تكامل موظف واتساب الذكي:</strong> تأكيد فوري للطلبات ومتابعة السلات المتروكة</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>ربط بيكسل الإعلانات (Meta, TikTok, CAPI):</strong> تتبع دقيق لأرباح الإعلانات</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>نظام متقدم للكوبونات وأكواد الخصم والعروض المؤقتة وخصم الكميات</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>دعم كامل للغتين (العربية والإنجليزية) والعملات المتعددة</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>دعم فني ذو أولوية وصيانة ومتابعة يومية طوال السنة</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%20(145$)" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-transform hover:scale-105 shadow-lg shadow-emerald-500/25">
+                <span>🚀 طلب الباقة الاحترافية الشاملة (145$)</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions (الأسئلة الشائعة) -->
+      <section class="mb-16">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-2" data-en="Got Questions?" data-ar="استفسارات شائعة">استفسارات شائعة</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight" data-en="Frequently Asked Questions" data-ar="كل ما تحتاج معرفته عن المتجر الإلكتروني">كل ما تحتاج معرفته عن المتجر الإلكتروني</h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          <div class="glass-panel p-5 rounded-xl border border-slate-800">
+            <h3 class="font-bold text-white text-sm mb-2">هل أحتاج لخبرة برمجية لإدارة المتجر وإضافة المنتجات؟</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">أبداً! نوفر لك لوحة تحكم عربية فائقة السهولة والوضوح. يمكنك إضافة أي منتج، كتابة سعره، ورفع صوره من موبايلك في دقيقة واحدة، كما نقدم لك فيديو تدريبي مسجل ومتابعة شخصية لشرح كل تفصيلة.</p>
+          </div>
+
+          <div class="glass-panel p-5 rounded-xl border border-slate-800">
+            <h3 class="font-bold text-white text-sm mb-2">كم تبلغ تكلفة التجديد السنوي بعد انتهاء السنة الأولى؟</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">التجديد السنوي ثابت واقتصادي جداً: 50 دولار فقط سنوياً، وهذا المبلغ يغطي بالكامل تجديد الدومين الرسمي + الاستضافة السحابية السريعة + شهادة الأمان SSL + استمرار الدعم الفني والصيانة.</p>
+          </div>
+
+          <div class="glass-panel p-5 rounded-xl border border-slate-800">
+            <h3 class="font-bold text-white text-sm mb-2">كيف تعمل بوابات الدفع الإلكتروني والدفع عند الاستلام؟</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">نقوم بتهيئة وربط بوابات الدفع الرسمية (مثل فواتيرك، باي موب PayMob، كاشير، سترايب، أو غيرها) لتستقبل أموالك في حسابك البنكي أو محفظتك مباشرة. أما بالنسبة للدفع عند الاستلام (COD)، فيتم تسجيل الطلب وتوليد بوليصة الشحن تلقائياً.</p>
+          </div>
+
+          <div class="glass-panel p-5 rounded-xl border border-slate-800">
+            <h3 class="font-bold text-white text-sm mb-2">هل المتجر ملكي بالكامل؟ أم مرتبط باشتراكات شهرية؟</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">المتجر ملكك بنسبة 100%، وتملك كامل بيانات عملائك ومنتجاتك. لا نأخذ منك أي نسبة من المبيعات، ولا توجد أي رسوم أو اشتراكات شهرية إجبارية على عكس منصات المتاجر الأخرى.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Call to Action Box -->
+      <section class="mb-12">
+        <div class="glass-panel p-8 sm:p-10 rounded-2xl border border-emerald-500/30 text-center relative overflow-hidden bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-950">
+          <div class="max-w-2xl mx-auto space-y-4">
+            <div class="inline-block p-3 rounded-full bg-emerald-500/10 text-2xl text-emerald-400 mb-2">
+              🛍️
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
+              جاهز لإطلاق متجرك الإلكتروني ومضاعفة مبيعاتك اليوم؟
+            </h2>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
+              تواصل مباشرة مع المهندس مصطفى صلاح عبر واتساب لمناقشة طبيعة منتجاتك والبدء الفوري في تصميم وبرمجة متجرك المتكامل.
+            </p>
+            <div class="pt-4 flex flex-wrap justify-center items-center gap-4">
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A8%D8%AF%D8%A1%20%D9%81%D9%8A%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%85%D8%AA%D8%AC%D8%B1%D9%8A%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-emerald-500/25">
+                <span>💬</span>
+                <span>تواصل على واتساب المهندس مصطفى (01107787049)</span>
+              </a>
+              <a href="index.html" class="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-bold text-sm border border-slate-800 transition-colors">
+                العودة للصفحة الرئيسية
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
+      <div>
+        <span>&copy; 2026 Mostafa Salah. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="index.html" class="hover:text-emerald-400 transition-colors">الرئيسية</a>
+        <a href="corporate-website.html" class="hover:text-emerald-400 transition-colors">مواقع الشركات</a>
+        <a href="whatsapp-ai-employee.html" class="hover:text-emerald-400 transition-colors">موظفو الذكاء</a>
+        <a href="smart-shipping-system.html" class="hover:text-emerald-400 transition-colors">سيستم الشحن</a>
+        <a href="privacy.html" class="hover:text-emerald-400 transition-colors">الخصوصية</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Script -->
+  <script src="script.js"></script>
+</body>
+</html>
