@@ -516,6 +516,7 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: resolve(import.meta.dirname, 'index.html'),
+          ecommerceStore: resolve(import.meta.dirname, 'ecommerce-store.html'),
           corporateWebsite: resolve(import.meta.dirname, 'corporate-website.html'),
           whatsappAiEmployee: resolve(import.meta.dirname, 'whatsapp-ai-employee.html'),
           n8nAutomation: resolve(import.meta.dirname, 'n8n-automation.html'),

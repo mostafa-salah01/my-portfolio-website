@@ -138,6 +138,10 @@
       <!-- Nav Links (Center) -->
       <nav class="header-nav-links hidden lg:flex">
         <a href="#projects" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Projects & Portfolio" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
+        <a href="ecommerce-store.html" class="nav-item text-emerald-400 hover:text-emerald-300 font-bold transition-colors py-1.5 px-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-1.5 shadow-sm" data-en="🛍️ E-Commerce Store ($95)" data-ar="🛍️ متجر إلكتروني (95$)">
+          <span>🛍️</span>
+          <span data-en="E-Commerce Store ($95)" data-ar="متجر إلكتروني (95$)">متجر إلكتروني (95$)</span>
+        </a>
         <a href="#solutions" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Services & Pricing" data-ar="الخدمات والأسعار">الخدمات والأسعار</a>
         <a href="#ai-tiers" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
         <a href="#partners" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Sales Partner" data-ar="برنامج الشركاء">برنامج الشركاء</a>
@@ -184,6 +188,10 @@
     <div id="mobile-menu" class="lg:hidden border-b border-slate-800 bg-slate-950/95 px-4 space-y-3 backdrop-blur-xl" aria-hidden="true">
       <a href="#projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 font-semibold" data-en="Projects & Portfolio" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
       <div class="pr-2 border-r-2 border-emerald-500/40 space-y-2 text-xs">
+        <a href="ecommerce-store.html" class="mobile-nav-link block py-1.5 text-emerald-400 font-bold hover:underline flex items-center justify-between" data-en="🛍️ Smart E-Commerce Store ($95 / $145)" data-ar="🛍️ تصميم متجر إلكتروني متكامل (95$ / 145$)">
+          <span>🛍️ تصميم متجر إلكتروني متكامل (95$ / 145$)</span>
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">صفحة مخصصة</span>
+        </a>
         <a href="corporate-website.html" class="mobile-nav-link block py-1 text-cyan-400 hover:underline" data-en="Corporate Website ($65 / $75)" data-ar="مواقع الشركات (65$ / 75$)">مواقع الشركات (65$ / 75$)</a>
         <a href="whatsapp-ai-employee.html" class="mobile-nav-link block py-1 text-emerald-400 hover:underline" data-en="WhatsApp AI Employee" data-ar="موظف واتساب الذكي">موظف واتساب الذكي</a>
         <a href="omnichannel-ai-agent.html" class="mobile-nav-link block py-1 text-cyan-400 hover:underline" data-en="Telegram & Messenger AI" data-ar="ذكاء تلجرام وماسنجر">ذكاء تلجرام وماسنجر</a>
@@ -380,8 +388,7 @@
         <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col border-t-2 border-t-emerald-500" data-project-category="ecommerce">
           <a href="ecommerce-store.html" class="block project-img-wrapper group">
             <picture>
-              <source srcset="assets/images/ecommerce_store_showcase_1790760849729.webp" type="image/webp" />
-              <img src="assets/images/ecommerce_store_showcase_1790760849729.jpg" alt="Smart E-Commerce Store Platform" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+              <img src="assets/images/ecommerce_store_mockup_1790763328969.jpg" alt="Smart E-Commerce Store Platform" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
             </picture>
             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-emerald text-xs font-mono font-bold">$95 (Starter) / $145 (Pro)</div>
             <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-emerald-500/90 text-slate-950 text-[11px] font-bold font-mono">
@@ -899,68 +906,103 @@
         </div>
 
         <!-- 2. Custom E-Commerce Store (إنشاء المتاجر الإلكترونية) -->
-        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-emerald-400 relative group">
-          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-[10px] font-bold font-mono">
-            <span data-en="Starting from $200" data-ar="يبدأ من 200$">يبدأ من 200$</span>
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-emerald-400 relative group overflow-hidden">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-[10px] font-bold font-mono z-10 shadow-sm">
+            <span data-en="Starting from $95 (Save 90%)" data-ar="يبدأ من 95$ (توفير 90%)">يبدأ من 95$ (توفير 90%)</span>
           </div>
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">
-                🛍️
+            <!-- Professional E-Commerce Store Showcase Image & Direct Link to Dedicated Page -->
+            <a href="ecommerce-store.html" class="block mb-4 overflow-hidden rounded-xl border border-emerald-500/30 group/img relative shadow-lg bg-slate-950">
+              <img src="assets/images/ecommerce_store_mockup_1790763328969.jpg" alt="تصميم متجر إلكتروني ذكي متكامل" class="w-full h-44 object-cover group-hover/img:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="600" height="338" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-emerald-500/90 text-slate-950 text-[10px] font-mono font-bold">
+                <span data-en="Starter: $95 · Pro: $145" data-ar="الأساسي: 95$ · المتقدم: 145$">الأساسي: 95$ · المتقدم: 145$</span>
               </div>
-              <span class="text-[10px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20" data-en="E-Commerce Store" data-ar="المتاجر الإلكترونية">المتاجر الإلكترونية</span>
+              <div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-[11px]">
+                <span class="text-emerald-300 font-bold flex items-center gap-1 group-hover/img:text-emerald-200">
+                  <span data-en="🚀 Click to view full store page" data-ar="🚀 اضغط لفتح صفحة شرح المتجر">🚀 اضغط لفتح صفحة شرح المتجر</span> &rarr;
+                </span>
+                <span class="px-2 py-0.5 rounded bg-slate-900/90 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">
+                  <span data-en="High Conversion" data-ar="عالي التحويل">عالي التحويل</span>
+                </span>
+              </div>
+            </a>
+
+            <div class="flex items-center justify-between mb-4">
+              <a href="ecommerce-store.html" class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl group-hover:scale-105 transition-transform block" title="فتح صفحة المتجر">
+                🛍️
+              </a>
+              <a href="ecommerce-store.html" class="text-[10px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors" data-en="E-Commerce Store Page &rarr;" data-ar="صفحة المتجر الإلكتروني &larr;">صفحة المتجر الإلكتروني &larr;</a>
             </div>
+            
             <h3 class="text-lg font-bold text-white mb-2">
-              <span data-en="Custom E-Commerce Store Development" data-ar="إنشاء وبرمجة المتاجر الإلكترونية">إنشاء وبرمجة المتاجر الإلكترونية</span>
+              <a href="ecommerce-store.html" class="hover:text-emerald-400 transition-colors flex items-center justify-between group-hover:text-emerald-300" data-en="Custom E-Commerce Store Design & Setup" data-ar="إنشاء وبرمجة المتاجر الإلكترونية والمنصات الذكية">
+                <span>إنشاء وبرمجة المتاجر الإلكترونية والمنصات الذكية</span>
+                <span class="text-xs text-emerald-400 opacity-80 group-hover:translate-x-[-3px] transition-transform">&larr;</span>
+              </a>
             </h3>
-            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Complete online store built from scratch tailored specifically to your business niche, with custom features, high conversion design, and seamless cart & checkout." data-ar="متجر إلكتروني احترافي مبني بالكامل من الصفر ومخصص حسب احتياجات نشاطك التجاري، بمميزات متقدمة وتصميم سريع وعالي التحويل.">
-              متجر إلكتروني احترافي مبني بالكامل من الصفر ومخصص حسب احتياجات نشاطك التجاري، بمميزات متقدمة وتصميم سريع وعالي التحويل.
+            
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Complete, high-conversion online store tailored to your niche. Includes cards & wallets payment gateways, scannable barcode shipping waybills, abandoned cart recovery, and WhatsApp AI integration starting from just $95!" data-ar="امتلك متجرك الإلكتروني الاحترافي الكامل بأحدث معايير السرعة والتحويل: بوابات دفع إلكتروني (فيزا/محافظ/إنستاباي/تقسيط)، طباعة بوالص الشحن بالباركود، استرجاع السلات المتروكة، مع تملك المتجر 100% بدون اشتراكات شهرية أو عمولات!">
+              امتلك متجرك الإلكتروني الاحترافي الكامل بأحدث معايير السرعة والتحويل: بوابات دفع إلكتروني (فيزا/محافظ/إنستاباي/تقسيط)، طباعة بوالص الشحن بالباركود، استرجاع السلات المتروكة، مع تملك المتجر 100% بدون اشتراكات شهرية أو عمولات!
             </p>
 
-            <!-- Pricing Box -->
-            <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-500/20 mb-4">
-              <div class="text-xs text-slate-400 mb-0.5" data-en="Starting Price:" data-ar="السعر يبدأ من:">السعر يبدأ من:</div>
-              <div class="text-xl font-black text-emerald-400 font-mono flex items-baseline gap-1">
-                <span>$200</span>
-                <span class="text-xs text-slate-400 font-normal" data-en="USD (First Year Included)" data-ar="دولار (شاملة السنة الأولى)">دولار (شاملة السنة الأولى)</span>
+            <!-- Prominent Direct Button to Store Page -->
+            <a href="ecommerce-store.html" class="w-full mb-4 py-2 px-3 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 hover:text-emerald-200 text-xs font-bold text-center transition-all flex items-center justify-center gap-1.5 shadow-sm">
+              <span>📖</span>
+              <span data-en="Explore Full Store Services & Features" data-ar="استعراض كامل ميزات وباقات المتجر بالتفصيل">استعراض كامل ميزات وباقات المتجر بالتفصيل</span>
+              <span>&rarr;</span>
+            </a>
+
+            <!-- Unbeatable Value Pricing Box -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-500/25 mb-4">
+              <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                <span data-en="Unbeatable Value Price:" data-ar="سعر باقات المتجر:">سعر باقات المتجر:</span>
+                <span class="text-[10px] text-emerald-400 font-mono font-bold" data-en="Market: $1,800+" data-ar="قيمة السوق: 1800$+">قيمة السوق: 1800$+</span>
               </div>
-              <div class="text-[11px] text-emerald-300/90 mt-1 leading-snug" data-en="Renewal: $100 / year (includes annual hosting, domain, maintenance & technical support)" data-ar="التجديد السنوي: 100$ سنوياً في حال التجديد (شامل الاستضافة والدومين وعقد الصيانة والدعم الفني)">
-                التجديد السنوي: 100$ سنوياً في حال التجديد (شامل الاستضافة والدومين وعقد الصيانة والدعم الفني)
+              <div class="text-lg font-black text-emerald-400 font-mono flex items-baseline gap-1">
+                <span>$95</span>
+                <span class="text-xs text-slate-300 font-normal" data-en="(Starter) · $145 (Pro Suite)" data-ar="(الأساسي) · 145$ (باقة النمو Pro) · 200$ (مخصص)"> (الأساسي) · 145$ (باقة النمو Pro) · 200$ (مخصص)</span>
+              </div>
+              <div class="text-[11px] text-emerald-300/90 mt-1.5 leading-snug" data-en="Real market value exceeds $1,800+. You save over 90% with 100% store ownership, domain, hosting, and 1 year full technical support included." data-ar="قيمة السوق الحقيقية تتجاوز 1,800$+. وفر أكثر من 90% مع ملكية متجرك بالكامل مدى الحياة وشامل الدومين والاستضافة وعقد الصيانة لسنة.">
+                قيمة السوق الحقيقية تتجاوز 1,800$+. وفر أكثر من 90% مع ملكية متجرك بالكامل مدى الحياة وشامل الدومين والاستضافة وعقد الصيانة لسنة.
               </div>
             </div>
 
             <!-- Core Features -->
             <div class="space-y-1.5 mb-6 text-xs text-slate-300">
               <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Built from scratch tailored to your exact business needs" data-ar="متجر مبني من الصفر ومخصص بالكامل حسب طبيعة عملك">متجر مبني من الصفر ومخصص بالكامل حسب طبيعة عملك</span>
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Full payment gateways: Visa, Wallets, InstaPay, ValU & COD" data-ar="تغطية دفع شاملة: فيزا، محافظ كاش، إنستاباي، تقسيط، ودفع عند الاستلام">تغطية دفع شاملة: فيزا، محافظ كاش، إنستاباي، تقسيط، ودفع عند الاستلام</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Domain name & high-speed cloud hosting included for 1 full year" data-ar="اسم دومين رسمي + استضافة سحابية سريعة مشمولة لمدة سنة">اسم دومين رسمي + استضافة سحابية سريعة مشمولة لمدة سنة</span>
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Automated PDF courier waybills with barcodes" data-ar="طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر">طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Full maintenance contract & dedicated technical support for 1 year" data-ar="عقد صيانة ومتابعة ودعم فني متخصص لمدة سنة كاملة">عقد صيانة ومتابعة ودعم فني متخصص لمدة سنة كاملة</span>
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="WhatsApp AI sales assistant & abandoned cart recovery" data-ar="موظف واتساب ذكي لإرسال الفواتير واسترجاع السلات المتروكة">موظف واتساب ذكي لإرسال الفواتير واسترجاع السلات المتروكة</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Fixed renewal: $100/yr for domain, hosting, maintenance & support" data-ar="تجديد العقد سنوياً بـ 100$ فقط (استضافة، دومين، صيانة ودعم)">تجديد العقد سنوياً بـ 100$ فقط (استضافة، دومين، صيانة ودعم)</span>
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Official domain + high-speed Cloud SSD hosting + SSL for 1 full year" data-ar="اسم دومين رسمي + استضافة سحابية فائقة السرعة SSD + شهادة SSL لمدة سنة">اسم دومين رسمي + استضافة سحابية فائقة السرعة SSD + شهادة SSL لمدة سنة</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Fast checkout, payment gateways & inventory sync" data-ar="إدارة سلة المشتريات، بوابات الدفع وربط المخزون">إدارة سلة المشتريات، بوابات الدفع وربط المخزون</span>
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Full maintenance contract & daily technical support included" data-ar="عقد صيانة دورية ومتابعة ودعم فني متخصص لمدة سنة كاملة">عقد صيانة دورية ومتابعة ودعم فني متخصص لمدة سنة كاملة</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Easy bilingual Arabic dashboard for products & order management" data-ar="لوحة تحكم عربية سهلة وبسيطة لإدارة المنتجات والمخزون والطلبات">لوحة تحكم عربية سهلة وبسيطة لإدارة المنتجات والمخزون والطلبات</span>
               </div>
             </div>
           </div>
 
           <div class="space-y-2 pt-4 border-t border-slate-800/80">
-            <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="custom-ecommerce-store" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5">
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%20(95$%20/%20145$)" target="_blank" rel="noopener noreferrer" data-service="custom-ecommerce-store" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5 shadow-sm">
               <span>📋</span>
-              <span data-en="Request a Quote" data-ar="طلب عرض سعر">طلب عرض سعر</span>
+              <span data-en="Order Store Package ($95 / $145)" data-ar="طلب باقة المتجر (95$ / 145$)">طلب باقة المتجر (95$ / 145$)</span>
             </a>
             <div class="grid grid-cols-2 gap-2">
-              <a href="https://wa.me/201107787049" target="_blank" rel="noopener noreferrer" data-service="custom-ecommerce-store" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AA%D8%AD%D8%AF%D8%AB%20%D9%85%D8%B9%20%D8%AE%D8%A8%D9%8A%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9" target="_blank" rel="noopener noreferrer" data-service="custom-ecommerce-store" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
                 <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
               </a>
-              <button type="button" data-action="open-customer-service-chat" class="py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-xs font-semibold text-center transition-all cursor-pointer">
-                <span data-en="Ask Ahmed AI" data-ar="اسأل الموظف أحمد">اسأل الموظف أحمد</span>
-              </button>
+              <a href="ecommerce-store.html" class="py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-xs font-bold text-center transition-all flex items-center justify-center gap-1 shadow-sm">
+                <span data-en="Store Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              </a>
             </div>
           </div>
         </div>
@@ -2223,7 +2265,7 @@
 
       <!-- Quick Services Links -->
       <div class="flex flex-wrap items-center justify-center gap-3 text-slate-400 text-xs font-mono">
-        <a href="#solutions" class="hover:text-emerald-400 text-emerald-400 font-bold transition-colors" data-en="E-Commerce Stores ($200)" data-ar="المتاجر الإلكترونية (200$)">المتاجر الإلكترونية (200$)</a>
+        <a href="ecommerce-store.html" class="hover:text-emerald-400 text-emerald-400 font-bold transition-colors" data-en="E-Commerce Stores ($95-$145)" data-ar="المتاجر الإلكترونية (95$-145$)">المتاجر الإلكترونية (95$-145$)</a>
         <span>·</span>
         <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Websites ($65/$75)" data-ar="مواقع الشركات (65$/75$)">مواقع الشركات (65$/75$)</a>
         <span>·</span>
