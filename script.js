@@ -947,7 +947,8 @@
    - اكتب تحت كل خدمة بسطور قصيرة ومنظمة نقاطها الرئيسية:
      - السعر: يبدأ من 200$ (متجر مبني من الصفر حسب احتياج النشاط)
      - المزايا: دومين + استضافة سحابية سنة + عقد صيانة ودعم فني سنة كاملة
-     - التجديد السنوي: 100$ فقط في السنة في حال الرغبة في التجديد
+     - التجديد السنوي: 140$ فقط في السنة في حال الرغبة في التجديد
+     - خيارات دفع مرنة: اشتراك شهري سحابي (25$ إلى 35$ شهرياً) بدون تكلفة شراء مقدماً، وتقسيط 0% فوائد على 3 أو 6 أو 12 شهر.
    - اترك سطراً فارغاً بعد كل خدمة قبل الانتقال للخدمة التي تليها لتظهر كبطاقة مستقلة واضحة.
 4. الذكاء في العرض: إذا سأل العميل سؤالاً عاماً (مثل: "ممكن سؤال" أو "إيه خدماتكم")، رحب به بلباقة واعرض الخدمات الأساسية بنقاط مرتبة ونظيفة، واسأله ما هو المشروع أو النشاط التجاري الذي يريد تنفيذه.
 5. استخدام الإيموجي الراقي للتوضيح والتمييز (مثل: 🛍️ للمتاجر الإلكترونية، 🌐 للمواقع، 🤖 لموظف الواتساب، 🚚 للشحن، 📱 للموبايل، 💰 للأسعار والأفلييت).
@@ -969,7 +970,9 @@
    - مميزات تجارة إلكترونية كاملة: سلة تسوق، بوابات دفع إلكترونية متعددة، نظام إدارة مخزون وطلبات، حسابات عملاء، تتبع الشحنات، إشعارات تلقائية، دعم اللغتين والعملات المتعددة.
    - مشمول داخل الباقة مجاناً: استضافة سحابية فائقة السرعة SSD + اسم دومين رسمي خاص لمدة سنة كاملة.
    - عقد صيانة ومتابعة ودعم فني متخصص مستمر لمدة سنة كاملة.
-   - التجديد السنوي اختياري: 100 دولار فقط في السنة (يشمل تجديد الاستضافة السحابية والدومين وعقد الصيانة والدعم الفني السنوي).
+   - التجديد السنوي اختياري: 140 دولار فقط في السنة (يشمل تجديد الاستضافة السحابية والدومين وعقد الصيانة والدعم الفني السنوي).
+   - نظام الاشتراك الشهري (لو العميل مش عايز يشتري تمليك كامل مقدماً): متاح اشتراك شهري مرن يبدأ من 25$ شهرياً للباقة الأساسية، أو 35$ شهرياً للباقة الاحترافية الشاملة (بدون دفع تكلفة شراء مقدماً، وإلغاء في أي وقت، شامل الدومين والاستضافة والصيانة).
+   - نظام التقسيط المريح (0% فوائد): إمكانية تقسيط تكلفة المتجر على 3 شهور (67$ أو 93$)، أو 6 شهور (34$ أو 47$)، أو 12 شهر (18$ أو 25$) عبر تابي (Tabby)، تمارا (Tamara)، فاليو (ValU)، أو البطاقات الائتمانية البنكية.
 2. تصميم موقع تعريفي للشركات (Corporate Website):
    - يبدأ من 65$ بدومين .uk شامل، أو 75$ بدومين .com شامل.
    - اللغتان (العربية والإنجليزية معاً) مشمولتان ضمن السعر الأساسي.
@@ -1298,7 +1301,10 @@ I'm still right here with you—what questions or systems would you like to expl
    • High-speed cloud SSD hosting included.
    • Dedicated maintenance contract & continuous technical support for 1 full year.
 4. Annual Renewal:
-   • Only $100 USD flat per year after the first year (covers cloud hosting, domain renewal, full maintenance contract & tech support).
+   • Only $140 USD flat per year after the first year (covers cloud hosting, domain renewal, full maintenance contract & tech support).
+5. Flexible Monthly & Installment Options:
+   • Monthly SaaS Plans: Start from $25/mo (Starter) or $35/mo (Pro) with zero upfront purchase fee, cancel anytime.
+   • 0% Interest Installments: Split over 3, 6, or 12 months (e.g. from $18/mo on 12 months or 3 installments of $67/mo via Tabby, Tamara, ValU, or bank cards).
 
 Would you like to discuss your store requirements or reserve your package? Contact us on WhatsApp (+201107787049)! 🚀`;
       }
@@ -1319,7 +1325,17 @@ Would you like to discuss your store requirements or reserve your package? Conta
    • **عقد صيانة ومتابعة ودعم فني متخصص لمدة سنة كاملة** مع الباقة.
 
 4. **التجديد السنوي بعد السنة الأولى:**
-   • التجديد اختياري بـ **100 دولار فقط في السنة** (يشمل تجديد الاستضافة السحابية والدومين وعقد الصيانة والدعم الفني السنوي).
+   • التجديد اختياري بـ **140 دولار فقط في السنة** (يشمل تجديد الاستضافة السحابية والدومين وعقد الصيانة والدعم الفني السنوي).
+
+5. **أنظمة الاشتراك الشهري (لو مش حابب تشتري تمليك كامل مقدماً):**
+   • باقة شهرية تبدأ من **25$ شهرياً** للأساسي، أو **35$ شهرياً** للاحترافي الشامل.
+   • بدون أي تكلفة شراء أو تأسيس مقدماً، مع استضافة ودومين ودعم وصيانة مستمرة، وإلغاء في أي وقت.
+
+6. **أنظمة التقسيط المريح بدون فوائد (0% فوائد):**
+   • تقسيط على 3 شهور (67$ لمتجر 200$ | 93$ لمتجر 280$).
+   • تقسيط على 6 شهور (34$ لمتجر 200$ | 47$ لمتجر 280$).
+   • تقسيط على 12 شهراً (18$ لمتجر 200$ | 25$ لمتجر 280$).
+   • متاح عبر تابي (Tabby)، تمارا (Tamara)، فاليو (ValU)، سيمبل (Sympl)، وبطاقات البنوك الائتمانية.
 
 تحب نبدأ نحدد نوع منتجاتك ونفصل المتجر على مقاس نشاطك؟ أو تحب تتواصل معانا مباشرة على الواتساب؟ 🚀`;
     }
@@ -1360,6 +1376,82 @@ You can also connect directly with WebStack on WhatsApp: https://wa.me/201107787
 📝 عشان نسجلك كمسوق معتمد ونبدأ فوراً:
 ممكن بعد إذنك اسمك الكريم ورقم هاتفك/واتساب؟
 (وفوراً هنسجل بياناتك ونحولك للواتساب الخاص بفريق WebStack 01107787049 عشان تستلم المواد التسويقية وتبدأ فوراً). تحب تركز على تسويق المتاجر والمواقع ولا موظفي الذكاء الاصطناعي؟`;
+    }
+
+    // Installment Plans Inquiry (أنظمة وخيارات التقسيط المريح)
+    if (text.includes('تقسيط') || text.includes('اقساط') || text.includes('أقساط') || text.includes('قسط') || text.includes('installment') || text.includes('bnpl') || text.includes('تابي') || text.includes('تمارا') || text.includes('فاليو') || text.includes('سيمبل')) {
+      if (isEn) {
+        return `Hello! 💳 WebStack offers 0% Interest Installment Plans for our Custom E-Commerce Stores:
+1. 3-Month Plan (0% Interest):
+   • Starter Store ($200): Only $67 / month
+   • Pro Growth Suite ($280): Only $93 / month
+2. 6-Month Plan:
+   • Starter Store ($200): Only $34 / month
+   • Pro Growth Suite ($280): Only $47 / month
+3. 12-Month Plan (Lowest Monthly Installment):
+   • Starter Store ($200): Only $18 / month
+   • Pro Growth Suite ($280): Only $25 / month
+Supported Partners: Tabby, Tamara, ValU, Sympl, and all major Bank Credit Cards.
+Would you like to start your store with easy installments today? Chat with us on WhatsApp (+201107787049)! 🚀`;
+      }
+      return `أهلاً بحضرتك يا فندم! 💳 يسعدنا جداً توفير أنظمة تقسيط مريحة بدون فوائد (0% فوائد) لتبدأ متجرك بدون أي ضغط على ميزانيتك:
+
+1. **نظام التقسيط على 3 شهور (0% فوائد):**
+   • باقة المتجر الأساسي (200$): قسط شهري 67 دولار فقط.
+   • باقة المتجر الاحترافي (280$): قسط شهري 93 دولار فقط.
+
+2. **نظام التقسيط على 6 شهور (نصف سنوي مريح):**
+   • باقة المتجر الأساسي (200$): قسط شهري 34 دولار فقط.
+   • باقة المتجر الاحترافي (280$): قسط شهري 47 دولار فقط.
+
+3. **نظام التقسيط على 12 شهراً (أقل عبء شهري ممكن):**
+   • باقة المتجر الأساسي (200$): قسط شهري 18 دولار فقط.
+   • باقة المتجر الاحترافي (280$): قسط شهري 25 دولار فقط.
+
+🏦 **طرق التقسيط المعتمدة:**
+• متاح عبر تابي (Tabby) وتمارا (Tamara).
+• متاح عبر فاليو (ValU) وسيمبل (Sympl).
+• متاح بجميع البطاقات الائتمانية البنكية (Visa / MasterCard) أو التقسيط المباشر.
+
+تحب نحجز لحضرتك المتجر بأي نظام تقسيط تفضله؟ تقدر تكلمنا فوراً على الواتساب 01107787049 ونبدأ في نفس اليوم! 🚀`;
+    }
+
+    // Monthly SaaS Subscription Plans (باقات الاشتراك الشهري للعميل اللي مش عايز يشتري)
+    if (text.includes('اشتراك شهري') || (text.includes('شهري') && (text.includes('متجر') || text.includes('اشتراك') || text.includes('باقة') || text.includes('سعر'))) || text.includes('مش عايز اشتري') || text.includes('بدون شراء') || text.includes('monthly') || text.includes('subscription')) {
+      if (isEn) {
+        return `Hello! 🔄 If you prefer not to purchase a full lifetime license upfront, WebStack provides flexible Monthly Cloud SaaS Subscriptions with zero setup fees:
+1. Starter Monthly Plan ($25 USD / month):
+   • Complete, ultra-fast online store storefront.
+   • Custom domain name + high-speed cloud hosting included.
+   • Online payment gateways + Cash on Delivery (COD).
+   • Full Arabic/English admin dashboard.
+   • Free maintenance, security updates, and daily support.
+   • Cancel or upgrade anytime with 0 penalty!
+2. Pro Growth Monthly Plan ($35 USD / month):
+   • Everything in Starter + automated barcode shipping waybills.
+   • WhatsApp AI sales engine integration & abandoned cart recovery.
+   • Meta & TikTok ad pixels + Conversion API (CAPI).
+   • Priority dedicated technical support.
+Would you like to activate your monthly subscription today? Message us on WhatsApp (+201107787049)! 🚀`;
+      }
+      return `أهلاً بحضرتك يا فندم! 🔄 لو حضرتك مش حابب تدفع تكلفة شراء كاملة مقدماً، شركة WebStack بتوفرلك أنظمة اشتراك شهري سحابية مرنة جداً وبدون أي تكلفة تأسيس أو شراء مسبق:
+
+1. **الاشتراك الشهري الأساسي (25$ شهرياً فقط):**
+   • متجر إلكتروني متكامل سريع جاهز لاستقبال الطلبات والبيع فوراً.
+   • اسم نطاق (دومين) + استضافة سحابية فائقة السرعة مشمولان طوال فترة الاشتراك.
+   • ربط بوابات الدفع الإلكتروني (فيزا، كاش، إنستاباي) + دفع عند الاستلام.
+   • لوحة تحكم عربية لإدارة المنتجات والطلبات والمخزون.
+   • دعم فني وصيانة دورية وتحديثات أمنية مستمرة.
+   • إلغاء الاشتراك متاح في أي وقت بدون أي شروط جزائية أو عقود ملزمة!
+
+2. **الاشتراك الشهري الاحترافي الشامل (35$ شهرياً فقط):**
+   • كل مميزات الباقة الأساسية بالكامل.
+   • أتمتة بوالص الشحن PDF بالباركود وتسليم المناديب بنقرة واحدة.
+   • موظف واتساب الذكي لتأكيد الطلبات واسترجاع السلات المتروكة آلياً.
+   • ربط دقيق لبيكسل إعلانات فيسبوك وتيك توك مع Conversion API.
+   • دعم فني ذو أولوية ومتابعة دورية مستمرة.
+
+تحب نبدأ نفعل لحضرتك المتجر بالاشتراك الشهري فوراً؟ تواصل معنا على الواتساب 01107787049 والبدء خلال 24 ساعة! 🚀`;
     }
 
     if (text.includes('سعر') || text.includes('باقة') || text.includes('موقع') || text.includes('price') || text.includes('quote') || text.includes('website') || text.includes('cost') || text.includes('65') || text.includes('75') || text.includes('تجديد') || text.includes('renewal')) {
@@ -1471,7 +1563,7 @@ We can automate any repetitive operational task for your business! Message WebSt
     if (isEn) {
       return `Welcome to WebStack! 👋 I'm Ahmed from Customer Service & Support.
 We provide specialized software, custom e-commerce stores, and AI solutions:
-1. Custom E-Commerce Stores (Starting from $200 USD, built from scratch, 1 year domain + hosting + maintenance included, $100/yr renewal).
+1. Custom E-Commerce Stores (Starting from $200 USD, built from scratch, 1 year domain + hosting + maintenance included, $140/yr renewal · Monthly SaaS from $25/mo · 0% installments available).
 2. Corporate Website Packages ($65 USD for .uk / $75 USD for .com, bilingual AR/EN included, $40 fixed annual renewal).
 3. Human-like AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
 4. Smart Logistics & Courier Dispatch Platforms with live waybills & COD tracking.
@@ -1485,7 +1577,7 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
 أنا أحمد من خدمة العملاء والمبيعات، سعيد جداً بتواصلك وتحت أمرك في أي استفسار:
 
 1. **إنشاء المتاجر الإلكترونية المخصصة (Custom E-Commerce)**:
-   • يبدأ من 200$ شامل استضافة ودومين وعقد صيانة ودعم فني لسنة، وتجديد سنوي اختياري بـ 100$.
+   • يبدأ من 200$ شامل استضافة ودومين وعقد صيانة ودعم فني لسنة، وتجديد سنوي اختياري بـ 140$ (ومتاح أيضاً اشتراك شهري من 25$ وتقسيط مريح 0% فوائد).
 
 2. **تصميم مواقع الشركات التعريفية**:
    • باقة 65$ بدومين .uk أو 75$ بدومين .com شامل اللغتين والاستضافة السريعة وتجديد بـ 40$.
@@ -2414,6 +2506,7 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
   function attachDirectListeners() {
     // Mount floating customer service widget
     mountFloatingAiCustomerServiceWidget();
+    initEcommercePricingTabsAndCalculator();
 
     // Theme toggle direct listener
     document.querySelectorAll('#theme-toggle-btn, [data-action="toggle-theme"], .theme-toggle-btn').forEach(btn => {
@@ -2877,6 +2970,79 @@ ${note ? 'ملاحظات: ' + note : ''}`;
       window.closeMobileMenu();
     }
   }, { passive: true });
+
+  // --- E-Commerce Pricing Plan Tabs & Installment Calculator ---
+  function initEcommercePricingTabsAndCalculator() {
+    const tabOwnership = document.getElementById('tab-btn-ownership');
+    const tabMonthly = document.getElementById('tab-btn-monthly');
+    const tabInstallments = document.getElementById('tab-btn-installments');
+
+    const paneOwnership = document.getElementById('pane-ownership');
+    const paneMonthly = document.getElementById('pane-monthly');
+    const paneInstallments = document.getElementById('pane-installments');
+
+    if (tabOwnership && paneOwnership) {
+      const tabs = [
+        { btn: tabOwnership, pane: paneOwnership },
+        { btn: tabMonthly, pane: paneMonthly },
+        { btn: tabInstallments, pane: paneInstallments }
+      ];
+
+      function activateTab(index) {
+        tabs.forEach((item, i) => {
+          if (!item.btn || !item.pane) return;
+          if (i === index) {
+            item.btn.classList.add('active', 'bg-emerald-500', 'text-slate-950', 'shadow-md');
+            item.btn.classList.remove('text-slate-300', 'hover:bg-slate-800');
+            item.pane.classList.remove('hidden');
+          } else {
+            item.btn.classList.remove('active', 'bg-emerald-500', 'text-slate-950', 'shadow-md');
+            item.btn.classList.add('text-slate-300', 'hover:bg-slate-800');
+            item.pane.classList.add('hidden');
+          }
+        });
+      }
+
+      tabs.forEach((item, idx) => {
+        if (item.btn) {
+          item.btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            activateTab(idx);
+          });
+        }
+      });
+    }
+
+    // Installment Calculator
+    const calcPlan = document.getElementById('calc-plan-select');
+    const calcMonths = document.getElementById('calc-months-select');
+    const calcResultMonthly = document.getElementById('calc-result-monthly');
+    const calcResultSummary = document.getElementById('calc-result-summary');
+    const calcWhatsappBtn = document.getElementById('calc-whatsapp-btn');
+
+    function updateCalculator() {
+      if (!calcPlan || !calcMonths || !calcResultMonthly) return;
+      const total = parseInt(calcPlan.value, 10) || 200;
+      const months = parseInt(calcMonths.value, 10) || 3;
+      const monthly = Math.round(total / months);
+      const planName = total === 280 ? 'باقة المتجر الاحترافي (280$)' : 'باقة المتجر الأساسي (200$)';
+
+      calcResultMonthly.textContent = monthly + '$';
+      if (calcResultSummary) {
+        calcResultSummary.textContent = 'إجمالي المبلغ: ' + total + '$ موزعة على ' + months + ' أقساط متساوية (' + monthly + '$ شهرياً) بدون أي فوائد.';
+      }
+      if (calcWhatsappBtn) {
+        const msg = 'مرحباً مصطفى، أود حجز ' + planName + ' بنظام التقسيط على ' + months + ' شهور بقسط شهري ' + monthly + '$ تقريباً (0% فوائد).';
+        calcWhatsappBtn.href = 'https://wa.me/201107787049?text=' + encodeURIComponent(msg);
+      }
+    }
+
+    if (calcPlan && calcMonths) {
+      calcPlan.addEventListener('change', updateCalculator);
+      calcMonths.addEventListener('change', updateCalculator);
+      updateCalculator();
+    }
+  }
 
   // --- Safe Unified App Initialization ---
   function initializeApp() {
