@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart E-Commerce Store Design & Setup | تصميم وإعداد متجر إلكتروني متكامل عالي التحويل - WebStack</title>
-  <meta name="description" content="احصل على متجر إلكتروني متكامل وسريع ومصمم خصيصاً لمضاعفة مبيعاتك. يشمل بوابات الدفع، ربط الشحن، موظف واتساب للطلبات، دومين واستضافة سحابية، بأعلى قيمة مقابل سعر يبدأ من 200$ فقط." />
+  <title>Custom E-Commerce Store Development (PHP & MySQL) | برمجة متجر إلكتروني مخصص - WebStack</title>
+  <meta name="description" content="برمجة وتطوير متجر إلكتروني مخصص من الصفر بلغة PHP وقاعدة بيانات MySQL. استشارات متخصصة خطوة بخطوة، ربط جميع بوابات الدفع، دعم فني وصيانة سنوية، يبدأ من 200 دولار بقيمة برمجية استثنائية." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
-  <!-- Content Security Policy & Security Headers -->
+  <!-- Content Security Policy & Mozilla Observatory Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https: ws: wss:; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests;" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -15,9 +15,9 @@
 
   <!-- OpenGraph Metadata -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Smart E-Commerce Store Design & Setup | متجر إلكتروني ذكي متكامل" />
-  <meta property="og:description" content="متجر إلكتروني فائق السرعة بميزات احترافية: بوابات دفع، تكامل شحن، موظف واتساب للمبيعات، وقيمة استثنائية تبدأ من 200$ فقط." />
-  <meta property="og:image" content="assets/images/ecommerce_store_mockup_1790763328969.jpg" />
+  <meta property="og:title" content="Custom E-Commerce Store (PHP & MySQL) | برمجة متجر إلكتروني مخصص - WebStack" />
+  <meta property="og:description" content="متجر إلكتروني مخصص بالكامل من الصفر بلغة PHP وقاعدة بيانات MySQL يبدأ من 200$ شامل الاستشارات، بوابات الدفع، الاستضافة والدعم الفني." />
+  <meta property="og:image" content="assets/images/ecommerce_store_showcase.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
   <!-- Complete CSS Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Synchronous Theme Initializer -->
+  <!-- Theme Initializer -->
   <script src="theme-init.js"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
@@ -45,7 +45,7 @@
         </div>
         <div>
           <span class="font-bold text-white text-base sm:text-lg tracking-tight block leading-tight font-mono">WebStack</span>
-          <span class="text-[11px] text-emerald-400 block font-mono" data-en="Software & Digital Solutions" data-ar="حلول البرمجيات والأنظمة">حلول البرمجيات والأنظمة</span>
+          <span class="text-[11px] text-emerald-400 block font-mono" data-en="Software & Digital Solutions" data-ar="حلول البرمجيات والمتاجر والذكاء">حلول البرمجيات والمتاجر والذكاء</span>
         </div>
       </a>
 
@@ -55,7 +55,7 @@
           <span>&larr;</span>
           <span data-en="Home" data-ar="الرئيسية">الرئيسية</span>
         </a>
-        <a href="ecommerce-store.html" class="text-emerald-400 font-bold" data-en="E-Commerce Store" data-ar="المتجر الإلكتروني">المتجر الإلكتروني</a>
+        <a href="ecommerce-store.html" class="text-emerald-400 font-bold" data-en="E-Commerce Store" data-ar="المتاجر الإلكترونية">المتاجر الإلكترونية</a>
         <a href="corporate-website.html" class="hover:text-emerald-400 transition-colors" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
         <a href="whatsapp-ai-employee.html" class="hover:text-emerald-400 transition-colors" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
         <a href="smart-shipping-system.html" class="hover:text-emerald-400 transition-colors" data-en="Logistics" data-ar="اللوجستيات">اللوجستيات</a>
@@ -63,6 +63,12 @@
 
       <!-- Action Controls -->
       <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Facebook Page Button -->
+        <a href="https://www.facebook.com/profile.php?id=61595189300053&locale=ar_AR" target="_blank" rel="noopener noreferrer" class="h-9 px-2.5 sm:px-3 rounded-xl border border-blue-500/40 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 hover:text-blue-300 transition-all hidden md:flex items-center justify-center gap-1.5 text-xs font-semibold shadow-sm shrink-0 whitespace-nowrap" title="صفحة الفيسبوك الرسمية">
+          <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span data-en="Facebook" data-ar="فيسبوك">فيسبوك</span>
+        </a>
+
         <button type="button" id="theme-toggle-btn" data-action="toggle-theme" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer" title="تبديل الثيم / Toggle Theme">
           <span id="theme-icon">🌙</span>
         </button>
@@ -71,9 +77,9 @@
           <span id="lang-btn-text">EN</span>
         </button>
 
-        <a id="nav-order-btn" href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%20(يبدأ%20من%20200$)" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 shadow-md shadow-emerald-500/20">
-          <span>🛍️</span>
-          <span data-en="Order Store Pack (From $200)" data-ar="طلب باقة المتجر (تبدأ من 200$)">طلب باقة المتجر (تبدأ من 200$)</span>
+        <a id="nav-order-btn" href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%88%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20(PHP%20%26%20MySQL)%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 shadow-md">
+          <span>💬</span>
+          <span data-en="Order Custom Store ($200)" data-ar="طلب متجر مخصص (200$)">طلب متجر مخصص (200$)</span>
         </a>
       </div>
     </div>
@@ -82,866 +88,928 @@
   <!-- Main Content -->
   <main class="flex-1 py-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
+      
       <!-- Breadcrumb Navigation -->
       <div class="flex items-center gap-2 text-xs font-mono text-slate-400 mb-6">
         <a href="index.html" class="hover:text-emerald-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
         <span>/</span>
-        <a href="index.html#projects" class="hover:text-emerald-400 transition-colors" data-en="Services" data-ar="الخدمات">الخدمات</a>
+        <a href="index.html#solutions" class="hover:text-emerald-400 transition-colors" data-en="Services" data-ar="الخدمات">الخدمات</a>
         <span>/</span>
-        <span class="text-emerald-400" data-en="Smart E-Commerce Store" data-ar="المتجر الإلكتروني الذكي">المتجر الإلكتروني الذكي</span>
+        <span class="text-emerald-400" data-en="Custom E-Commerce Store (PHP & MySQL)" data-ar="متجر إلكتروني مخصص (PHP & MySQL)">متجر إلكتروني مخصص (PHP & MySQL)</span>
       </div>
 
       <!-- Hero Header Section -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
         <div class="lg:col-span-7">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-4">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span data-en="High-Conversion Storefront · Unbeatable Value for Money" data-ar="متجر عالي التحويل للمبيعات · أعلى قيمة مقابل السعر في السوق">متجر عالي التحويل للمبيعات · أعلى قيمة مقابل السعر في السوق</span>
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span data-en="100% Custom Built from Scratch" data-ar="مبني برمجياً من الصفر 100%">مبني برمجياً من الصفر 100%</span>
+            </span>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold">
+              PHP 8+ & MySQL
+            </span>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono font-bold">
+              <span data-en="Starts from $200" data-ar="يبدأ من 200$">يبدأ من 200$</span>
+            </span>
           </div>
-          <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4" data-en="Custom Smart E-Commerce Store Design & Automated Setup" data-ar="تصميم وإعداد متجر إلكتروني ذكي متكامل ومخصص لمضاعفة مبيعاتك">تصميم وإعداد متجر إلكتروني ذكي متكامل ومخصص لمضاعفة مبيعاتك</h1>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6" data-en="Launch your complete e-commerce brand with enterprise-grade speed and seamless customer journeys. Includes custom responsive storefront, online payment gateways + Cash on Delivery (COD), automated shipping & barcode waybill generation, abandoned cart recovery, and optional WhatsApp AI employee integration — starting from just $200!" data-ar="امتلك متجرك الإلكتروني الاحترافي الجاهز للبيع الفوري بأعلى سرعة وتحويل. يشمل تصميم واجهة مخصصة لعلامتك التجارية، ربط جميع بوابات الدفع الإلكتروني والدفع عند الاستلام، أتمتة بوالص الشحن، استعادة السلات المتروكة، مع إمكانية ربط موظف واتساب ذكي لمتابعة الطلبات، كل ذلك بقيمة استثنائية تفوق تكلفة السوق بأضعاف وتبدأ من 200$ فقط!">امتلك متجرك الإلكتروني الاحترافي الجاهز للبيع الفوري بأعلى سرعة وتحويل. يشمل تصميم واجهة مخصصة لعلامتك التجارية، ربط جميع بوابات الدفع الإلكتروني والدفع عند الاستلام، أتمتة بوالص الشحن، استعادة السلات المتروكة، مع إمكانية ربط موظف واتساب ذكي لمتابعة الطلبات، كل ذلك بقيمة استثنائية تفوق تكلفة السوق بأضعاف وتبدأ من 200$ فقط!</p>
 
-          <!-- Key Points Badges -->
-          <div class="flex flex-wrap gap-2.5 mb-6 text-xs font-mono">
-            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-emerald-400 font-bold" data-en="💳 Cards, Wallets, ValU & COD" data-ar="💳 فيزا، محافظ كاش، تقسيط، ودفع عند الاستلام">💳 فيزا، محافظ كاش، تقسيط، ودفع عند الاستلام</span>
-            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 font-bold" data-en="🚚 1-Click Barcode Waybills" data-ar="🚚 إصدار بوالص الشحن بنقرة واحدة">🚚 إصدار بوالص الشحن بنقرة واحدة</span>
-            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-amber-400 font-bold" data-en="🤖 WhatsApp Abandoned Cart AI" data-ar="🤖 استرجاع السلات المتروكة آلياً">🤖 استرجاع السلات المتروكة آلياً</span>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4" data-en="Custom E-Commerce Store Built from Scratch with PHP & MySQL" data-ar="برمجة متجر إلكتروني مخصص من الصفر بلغة PHP وقاعدة بيانات MySQL">
+            برمجة متجر إلكتروني مخصص من الصفر بلغة PHP وقاعدة بيانات MySQL
+          </h1>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6" data-en="We engineer your online store from the ground up tailored to your business model, without ready-made templates or restricted platforms. Includes dedicated consultation sessions walking step-by-step with you to analyze your workflow, seamless payment gateways, full operational control, and 1 full year of hosting, domain, and technical support." data-ar="نصمم ونبرمج متجرك الإلكتروني بالكامل من الصفر كوداً مخصصاً لاحتياجات تجارتك، بدون قوالب جاهزة أو قيود المنصات المؤجرة. نوفر لك جلسات استشارية متخصصة بنمشي فيها معك خطوة بخطوة لحد ما نحلل ونفهم طبيعة خدمتك وتجارتك ماشية إزاي، مع ربط جميع بوابات الدفع، وإدارة كل العمليات داخل متجرك، مع دومين واستضافة سحابية ودعم فني وصيانة لمدة سنة كاملة.">
+            نصمم ونبرمج متجرك الإلكتروني بالكامل من الصفر كوداً مخصصاً لاحتياجات تجارتك، بدون قوالب جاهزة أو قيود المنصات المؤجرة. نوفر لك جلسات استشارية متخصصة بنمشي فيها معك خطوة بخطوة لحد ما نحلل ونفهم طبيعة خدمتك وتجارتك ماشية إزاي، مع ربط جميع بوابات الدفع، وإدارة كل العمليات داخل متجرك، مع دومين واستضافة سحابية ودعم فني وصيانة لمدة سنة كاملة.
+          </p>
+
+          <!-- Core Value Badges Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8 text-xs font-mono">
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2">
+              <span class="text-emerald-400 text-base">⚡</span>
+              <div>
+                <div class="font-bold text-white" data-en="Pure Custom Code" data-ar="كود خاص أصيل">كود خاص أصيل</div>
+                <div class="text-[10px] text-slate-400">Zero WP / No SaaS</div>
+              </div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2">
+              <span class="text-cyan-400 text-base">💳</span>
+              <div>
+                <div class="font-bold text-white" data-en="All Payment Gateways" data-ar="جميع بوابات الدفع">جميع بوابات الدفع</div>
+                <div class="text-[10px] text-slate-400">Mada, Visa, ApplePay, COD</div>
+              </div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2 col-span-2 sm:col-span-1">
+              <span class="text-amber-400 text-base">🤝</span>
+              <div>
+                <div class="font-bold text-white" data-en="Step-by-Step Consult" data-ar="استشارات تفصيلية">استشارات تفصيلية</div>
+                <div class="text-[10px] text-slate-400">Workflow Discovery</div>
+              </div>
+            </div>
           </div>
 
-          <!-- Direct CTA -->
-          <div class="flex flex-wrap items-center gap-4">
-            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%20(يبدأ%20من%20200$)" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-emerald-500/20">
-              <span>🚀</span>
-              <span data-en="Book Store Setup on WhatsApp" data-ar="احجز متجرك الإلكتروني عبر واتساب">احجز متجرك الإلكتروني عبر واتساب</span>
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%88%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20(PHP%20%26%20MySQL)%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-transform hover:scale-105 shadow-lg flex items-center gap-2">
+              <span>💬</span>
+              <span data-en="Order Custom Store ($200)" data-ar="طلب المتجر المخصص (يبدأ من 200$)">طلب المتجر المخصص (يبدأ من 200$)</span>
             </a>
-            <a href="#packages" class="px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-bold text-sm border border-slate-800 transition-colors">
-              <span data-en="Compare Packages (From $200)" data-ar="مقارنة الباقات والأسعار (تبدأ من 200$)">مقارنة الباقات والأسعار (تبدأ من 200$)</span>
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AC%D9%84%D8%B3%D8%A9%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AA%D8%AE%D8%B5%D8%B5%D8%A9%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20(PHP%20%26%20MySQL)" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-sm font-semibold transition-all">
+              <span data-en="Book Free Consultation" data-ar="حجز جلسة استشارة مجانية">حجز جلسة استشارة مجانية</span>
             </a>
           </div>
         </div>
 
-        <!-- Hero Image Showcase -->
+        <!-- Hero Visual Showcase -->
         <div class="lg:col-span-5">
-          <div class="glass-panel p-2 rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-500/10 group">
-            <div class="relative overflow-hidden rounded-xl aspect-video bg-slate-900">
-              <picture>
-                <img src="assets/images/ecommerce_store_mockup_1790763328969.jpg" alt="Smart E-Commerce Store Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="eager" width="800" height="450" />
-              </picture>
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono">
-                <span class="px-2.5 py-1 rounded-md bg-slate-950/90 text-emerald-400 border border-emerald-500/30">Conversion Rate: 4.8%</span>
-                <span class="px-2.5 py-1 rounded-md bg-emerald-500 text-slate-950 font-bold">100% Turnkey Solution</span>
+          <div class="glass-panel p-2 rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl relative group">
+            <img src="assets/images/ecommerce_store_showcase.jpg" alt="Custom PHP MySQL E-Commerce Platform" class="w-full h-auto rounded-xl object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+            <div class="absolute bottom-4 right-4 left-4 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-800 text-xs">
+              <div class="flex items-center justify-between font-mono font-bold text-white mb-1">
+                <span class="text-emerald-400">PHP 8.3 & MySQL DB</span>
+                <span class="text-cyan-300">100% Clean Architecture</span>
               </div>
-            </div>
-            <div class="p-3 text-center text-xs text-slate-400 font-mono">
-              <span data-en="Designed for ultra-fast checkout on mobile and desktop" data-ar="واجهة سريعة وخفيفة مصممة لإنهاء الشراء بأقل من 60 ثانية">واجهة سريعة وخفيفة مصممة لإنهاء الشراء بأقل من 60 ثانية</span>
+              <div class="text-slate-400 text-[11px]" data-en="Fully responsive storefront + comprehensive admin control panel." data-ar="واجهة متجر سريعة متجاوبة مع الهواتف + لوحة تحكم إدارية شاملة للمدير.">
+                واجهة متجر سريعة متجاوبة مع الهواتف + لوحة تحكم إدارية شاملة للمدير.
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Unbeatable Value-for-Money Showcase (قيمة حقيقية ساحقة مقابل سعر رمزي) -->
+      <!-- Live Demo Stores Showcase Section (نسخ ديمو حية لمتاجر تم تنفيذها بالفعل) -->
       <section class="mb-16">
-        <div class="glass-panel p-6 sm:p-8 rounded-2xl border-2 border-emerald-500/40 relative overflow-hidden bg-gradient-to-b from-slate-900/90 to-slate-950/95">
-          <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono font-bold mb-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>LIVE INTERACTIVE PRODUCTION DEMOS</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white" data-en="Explore Our Live Store Demos (Click to Experience)" data-ar="نماذج حية لمتاجر منفذة (عاين واختبر المتجر لايف)">
+            نماذج حية لمتاجر منفذة (عاين واختبر المتجر لايف)
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2" data-en="Check out live interactive demo stores built for different industries: beauty, athletic gear, and luxury perfumes. Experience the speed, smooth cart, and clean interfaces yourself." data-ar="إليك نسخ ديمو تفاعلية حية حقيقية لمتاجر في قطاعات مختلفة: التجميل والعناية، الأزياء والمعدات الرياضية، والعطور الفاخرة. اضغط لتجربة المتجر مباشرة ومعاينة السرعة وسهولة إتمام الطلب بنفسك.">
+            إليك نسخ ديمو تفاعلية حية حقيقية لمتاجر في قطاعات مختلفة: التجميل والعناية، الأزياء والمعدات الرياضية، والعطور الفاخرة. اضغط لتجربة المتجر مباشرة ومعاينة السرعة وسهولة إتمام الطلب بنفسك.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div class="max-w-3xl mb-8">
-            <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-2" data-en="Unbeatable Value Equation" data-ar="معادلة القيمة الخارقة مقابل السعر">معادلة القيمة الخارقة مقابل السعر</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3" data-en="Why Pay $1,800+ When You Get Higher Quality Starting at $200?" data-ar="لماذا تدفع أكثر من 1800$ بينما تحصل على جودة أعلى وتكامل أذكى يبدأ من 200$ فقط؟">لماذا تدفع أكثر من 1800$ بينما تحصل على جودة أعلى وتكامل أذكى يبدأ من 200$ فقط؟</h2>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="In traditional software houses and web agencies, setting up an e-commerce platform with automated payments, courier waybills, and WhatsApp bots costs between $1,500 and $2,500. Here is an honest comparison of the massive value you receive:" data-ar="في شركات البرمجيات ووكالات التسويق، يكلف بناء متجر إلكتروني متكامل يربط الدفع الإلكتروني والشحن وبوالص الباركود وبوتات الواتساب ما بين 1500$ إلى 2500$. إليك كشف الحساب الصادق للقيمة الهائلة التي تحصل عليها معنا:">في شركات البرمجيات ووكالات التسويق، يكلف بناء متجر إلكتروني متكامل يربط الدفع الإلكتروني والشحن وبوالص الباركود وبوتات الواتساب ما بين 1500$ إلى 2500$. إليك كشف الحساب الصادق للقيمة الهائلة التي تحصل عليها معنا:</p>
-          </div>
-
-          <!-- Value Breakdown Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <!-- Item 1 -->
-            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
-              <div class="text-xs font-mono text-slate-400 mb-1" data-en="Custom Storefront Design" data-ar="تصميم الواجهة وسرعة التصفح">تصميم الواجهة وسرعة التصفح</div>
-              <div class="text-xs text-rose-400 line-through font-mono mb-2" data-en="Market Cost: ~$500" data-ar="سعر السوق: ~500$">سعر السوق: ~500$</div>
-              <div class="text-sm font-bold text-white mb-1" data-en="Included in Base Pack" data-ar="مشمول بالكامل مجاناً">مشمول بالكامل مجاناً</div>
-              <p class="text-[11px] text-slate-300 leading-normal" data-en="Optimized for mobile conversions, zero lagging, instant checkout." data-ar="واجهة خفيفة سريعة تفتح بأقل من ثانية بدون أي تهنيج أو ثقل.">واجهة خفيفة سريعة تفتح بأقل من ثانية بدون أي تهنيج أو ثقل.</p>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
-              <div class="text-xs font-mono text-slate-400 mb-1" data-en="Multi Payment Gateways" data-ar="بوابات الدفع الإلكتروني">بوابات الدفع الإلكتروني</div>
-              <div class="text-xs text-rose-400 line-through font-mono mb-2" data-en="Market Cost: ~$400" data-ar="سعر السوق: ~400$">سعر السوق: ~400$</div>
-              <div class="text-sm font-bold text-white mb-1" data-en="Included & Pre-configured" data-ar="جاهزة ومضبوطة مسبقاً">جاهزة ومضبوطة مسبقاً</div>
-              <p class="text-[11px] text-slate-300 leading-normal" data-en="Visa, Mastercard, Mobile Wallets, and Installment options." data-ar="فيزا، ماستركارد، محافظ كاش، خيارات التقسيط، والدفع عند الاستلام.">فيزا، ماستركارد، محافظ كاش، خيارات التقسيط، والدفع عند الاستلام.</p>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
-              <div class="text-xs font-mono text-slate-400 mb-1" data-en="Courier & Barcode System" data-ar="بوالص الشحن والباركود">بوالص الشحن والباركود</div>
-              <div class="text-xs text-rose-400 line-through font-mono mb-2" data-en="Market Cost: ~$350" data-ar="سعر السوق: ~350$">سعر السوق: ~350$</div>
-              <div class="text-sm font-bold text-white mb-1" data-en="1-Click PDF Generation" data-ar="طباعة البوليصة بضغطة زر">طباعة البوليصة بضغطة زر</div>
-              <p class="text-[11px] text-slate-300 leading-normal" data-en="Export AWB printable labels with barcodes directly to couriers." data-ar="إصدار تلقائي لبوالص الشحن PDF الجاهزة للطباعة واللصق على الطرد.">إصدار تلقائي لبوالص الشحن PDF الجاهزة للطباعة واللصق على الطرد.</p>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
-              <div class="text-xs font-mono text-slate-400 mb-1" data-en="WhatsApp AI Sales Engine" data-ar="موظف واتساب المبيعات">موظف واتساب المبيعات</div>
-              <div class="text-xs text-rose-400 line-through font-mono mb-2" data-en="Market Cost: ~$450" data-ar="سعر السوق: ~450$">سعر السوق: ~450$</div>
-              <div class="text-sm font-bold text-white mb-1" data-en="Available in Pro Pack" data-ar="متاح في باقة برو (280$)">متاح في باقة برو (280$)</div>
-              <p class="text-[11px] text-slate-300 leading-normal" data-en="Sends order confirmations and recovers lost carts 24/7." data-ar="يرسل تأكيدات الطلبات للعميل على واتساب ويسترجع السلات المتروكة.">يرسل تأكيدات الطلبات للعميل على واتساب ويسترجع السلات المتروكة.</p>
-            </div>
-          </div>
-
-          <!-- Financial Summary Box -->
-          <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <!-- Demo Store 1: Voltedge Beauty -->
+          <div class="glass-panel overflow-hidden rounded-2xl flex flex-col justify-between border-t-2 border-t-pink-500 group shadow-lg">
             <div>
-              <div class="text-xs font-mono text-emerald-400 font-bold mb-1" data-en="Total Value Received: $1,700+" data-ar="إجمالي القيمة التي تستلمها: أكثر من 1700 دولار">إجمالي القيمة التي تستلمها: أكثر من 1700 دولار</div>
-              <div class="text-slate-200 text-xs sm:text-sm" data-en="You invest only $200 or $280 once, saving over 85% with zero hidden subscription fees or vendor lock-in." data-ar="أنت تدفع 200$ أو 280$ لمرة واحدة فقط، وتوفر أكثر من 85% من ميزانيتك مع ملكية كاملة لمتجرك ودون أي اشتراكات خفية أو عمولات شهرية.">أنت تدفع 200$ أو 280$ لمرة واحدة فقط، وتوفر أكثر من 85% من ميزانيتك مع ملكية كاملة لمتجرك ودون أي اشتراكات خفية أو عمولات شهرية.</div>
+              <a href="https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="block relative overflow-hidden aspect-video bg-slate-900">
+                <img src="assets/images/demo_beauty_store.jpg" alt="Voltedge Beauty E-Commerce Store Demo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="450" />
+                <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-emerald-500 text-slate-950 text-[10px] font-mono font-bold shadow flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-950 animate-ping"></span>
+                  <span data-en="Live Demo 🌐" data-ar="ديمو حي 🌐">ديمو حي 🌐</span>
+                </div>
+                <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-pink-500 text-white text-[10px] font-bold font-mono">
+                  مستحضرات تجميل وعناية
+                </div>
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-3.5 py-1.5 rounded-lg bg-pink-500 text-white font-bold text-xs shadow-md" data-en="🔗 Open Live Demo" data-ar="🔗 فتح الديمو الحي">🔗 فتح الديمو الحي</span>
+                </div>
+              </a>
+
+              <div class="p-5">
+                <h3 class="text-base sm:text-lg font-bold text-white mb-1.5">
+                  <a href="https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors" data-en="Voltedge Beauty Store" data-ar="متجر مستحضرات التجميل (Voltedge Beauty)">متجر مستحضرات التجميل (Voltedge Beauty)</a>
+                </h3>
+                <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Luxury turn-key beauty and cosmetics storefront demo featuring smooth product cards, instant cart drawer, and high-conversion mobile checkout." data-ar="نسخة ديمو حية لمتجر إلكتروني فاخر لمستحضرات التجميل والمكياج والعناية بالبشرة، بتصميم وردي راقٍ وسلة مشتريات جانبية سريعة ودفع آمن.">
+                  نسخة ديمو حية لمتجر إلكتروني فاخر لمستحضرات التجميل والمكياج والعناية بالبشرة، بتصميم وردي راقٍ وسلة مشتريات جانبية سريعة ودفع آمن.
+                </p>
+
+                <div class="space-y-1.5 mb-4 text-[11px] text-slate-300">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-pink-400 font-bold shrink-0">✓</span>
+                    <span data-en="Optimized for skincare, makeup, and personal care brands" data-ar="مهيأ لبراندات العناية بالبشرة والمكياج والمنتجات الفاخرة">مهيأ لبراندات العناية بالبشرة والمكياج والمنتجات الفاخرة</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-pink-400 font-bold shrink-0">✓</span>
+                    <span data-en="Fast slide-in cart drawer with instant subtotal calculation" data-ar="سلة مشتريات منزلقة مع حساب فوري للإجمالي والشحن">سلة مشتريات منزلقة مع حساب فوري للإجمالي والشحن</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-pink-400 font-bold shrink-0">✓</span>
+                    <span data-en="Payment ready: Mada, Visa, ApplePay & Tabby split" data-ar="جاهز لربط مدى، فيزا، أبل باي وتابي لتقسيط الدفع">جاهز لربط مدى، فيزا، أبل باي وتابي لتقسيط الدفع</span>
+                  </div>
+                </div>
+
+                <!-- Link Display Box -->
+                <div class="p-2.5 rounded-lg bg-slate-900 border border-pink-500/20 text-[10px] font-mono text-pink-300 truncate mb-4">
+                  🔗 <a href="https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="hover:underline">mostafa-salah01.github.io/voltedge-beauty</a>
+                </div>
+              </div>
             </div>
-            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%BA%D9%84%D8%A7%D9%84%20%D8%B9%D8%B1%D8%B6%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shrink-0 transition-transform hover:scale-105">
-              <span data-en="Claim Store Offer Now" data-ar="احصل على العرض والبدء الفوري">احصل على العرض والبدء الفوري</span> &rarr;
+
+            <div class="p-5 pt-0 border-t border-slate-800/80 flex items-center justify-between gap-2 mt-2">
+              <a href="https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-pink-400 hover:text-pink-300 transition-colors flex items-center gap-1">
+                <span data-en="Live Preview" data-ar="معاينة حية">معاينة حية</span> ↗
+              </a>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%AF%D9%8A%D9%85%D9%88%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D9%8A%D9%84%20(Voltedge%20Beauty)%20%D9%88%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-pink-500 hover:bg-pink-400 text-white font-bold text-xs transition-transform hover:scale-105 shadow">
+                <span data-en="Order Similar ($200)" data-ar="طلب متجر مماثل (200$)">طلب متجر مماثل (200$)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Demo Store 2: Voltedge Sports -->
+          <div class="glass-panel overflow-hidden rounded-2xl flex flex-col justify-between border-t-2 border-t-amber-500 group shadow-lg">
+            <div>
+              <a href="https://mostafa-salah01.github.io/voltedge-sports/?fbclid" target="_blank" rel="noopener noreferrer" class="block relative overflow-hidden aspect-video bg-slate-900">
+                <img src="assets/images/demo_sports_store.jpg" alt="Voltedge Sports Apparel E-Commerce Store Demo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="450" />
+                <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-emerald-500 text-slate-950 text-[10px] font-mono font-bold shadow flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-950 animate-ping"></span>
+                  <span data-en="Live Demo 🌐" data-ar="ديمو حي 🌐">ديمو حي 🌐</span>
+                </div>
+                <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-amber-500 text-slate-950 text-[10px] font-bold font-mono">
+                  أزياء ومعدات رياضية
+                </div>
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-3.5 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold text-xs shadow-md" data-en="🔗 Open Live Demo" data-ar="🔗 فتح الديمو الحي">🔗 فتح الديمو الحي</span>
+                </div>
+              </a>
+
+              <div class="p-5">
+                <h3 class="text-base sm:text-lg font-bold text-white mb-1.5">
+                  <a href="https://mostafa-salah01.github.io/voltedge-sports/?fbclid" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors" data-en="Voltedge Sports Store" data-ar="متجر الملابس الرياضية (Voltedge Sports)">متجر الملابس الرياضية (Voltedge Sports)</a>
+                </h3>
+                <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Dynamic sportswear and fitness gear store demo with interactive size/color picker, instant stock status, and rapid mobile checkout." data-ar="نسخة ديمو حية لمتجر إلكتروني رياضي احترافي للملابس والأحذية الرياضية ومعدات التدريب، يدعم المقاسات والألوان وتنبيهات المخزون.">
+                  نسخة ديمو حية لمتجر إلكتروني رياضي احترافي للملابس والأحذية الرياضية ومعدات التدريب، يدعم المقاسات والألوان وتنبيهات المخزون.
+                </p>
+
+                <div class="space-y-1.5 mb-4 text-[11px] text-slate-300">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-amber-400 font-bold shrink-0">✓</span>
+                    <span data-en="Interactive size, color & variant selector" data-ar="محرك تفاعلي لاختيار المقاس واللون وحساب السعر فورياً">محرك تفاعلي لاختيار المقاس واللون وحساب السعر فورياً</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-amber-400 font-bold shrink-0">✓</span>
+                    <span data-en="Smart filtering by sport, category, and price range" data-ar="فلترة ذكية حسب نوع الرياضة، الماركة، ونطاق الأسعار">فلترة ذكية حسب نوع الرياضة، الماركة، ونطاق الأسعار</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-amber-400 font-bold shrink-0">✓</span>
+                    <span data-en="Engineered for high conversions and mobile velocity" data-ar="مصمم خصيصاً للسرعة الفائقة وزيادة المبيعات على الموبايل">مصمم خصيصاً للسرعة الفائقة وزيادة المبيعات على الموبايل</span>
+                  </div>
+                </div>
+
+                <!-- Link Display Box -->
+                <div class="p-2.5 rounded-lg bg-slate-900 border border-amber-500/20 text-[10px] font-mono text-amber-300 truncate mb-4">
+                  🔗 <a href="https://mostafa-salah01.github.io/voltedge-sports/?fbclid" target="_blank" rel="noopener noreferrer" class="hover:underline">mostafa-salah01.github.io/voltedge-sports</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 pt-0 border-t border-slate-800/80 flex items-center justify-between gap-2 mt-2">
+              <a href="https://mostafa-salah01.github.io/voltedge-sports/?fbclid" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1">
+                <span data-en="Live Preview" data-ar="معاينة حية">معاينة حية</span> ↗
+              </a>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%AF%D9%8A%D9%85%D9%88%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9%20(Voltedge%20Sports)%20%D9%88%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 shadow">
+                <span data-en="Order Similar ($200)" data-ar="طلب متجر مماثل (200$)">طلب متجر مماثل (200$)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Demo Store 3: Voltedge Perfumes -->
+          <div class="glass-panel overflow-hidden rounded-2xl flex flex-col justify-between border-t-2 border-t-indigo-500 group shadow-lg">
+            <div>
+              <a href="https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="block relative overflow-hidden aspect-video bg-slate-900">
+                <img src="assets/images/demo_perfumes_store.jpg" alt="Voltedge Luxury Perfumes E-Commerce Store Demo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="450" />
+                <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-emerald-500 text-slate-950 text-[10px] font-mono font-bold shadow flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-950 animate-ping"></span>
+                  <span data-en="Live Demo 🌐" data-ar="ديمو حي 🌐">ديمو حي 🌐</span>
+                </div>
+                <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-indigo-500 text-white text-[10px] font-bold font-mono">
+                  عطور وبخور فاخرة
+                </div>
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-3.5 py-1.5 rounded-lg bg-indigo-500 text-white font-bold text-xs shadow-md" data-en="🔗 Open Live Demo" data-ar="🔗 فتح الديمو الحي">🔗 فتح الديمو الحي</span>
+                </div>
+              </a>
+
+              <div class="p-5">
+                <h3 class="text-base sm:text-lg font-bold text-white mb-1.5">
+                  <a href="https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition-colors" data-en="Voltedge Perfumes Store" data-ar="متجر العطور والبخور (Voltedge Perfumes)">متجر العطور والبخور (Voltedge Perfumes)</a>
+                </h3>
+                <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Royal fragrance boutique demo showcasing fragrance pyramid notes, bottle size selectors, luxury packaging add-ons, and instant checkout." data-ar="نسخة ديمو حية لمتجر إلكتروني ملكي فاخر للعطور والعود والبخور، يستعرض نوتات الهرم العطري وخيارات أحجام الزجاجات وباقات الهدايا.">
+                  نسخة ديمو حية لمتجر إلكتروني ملكي فاخر للعطور والعود والبخور، يستعرض نوتات الهرم العطري وخيارات أحجام الزجاجات وباقات الهدايا.
+                </p>
+
+                <div class="space-y-1.5 mb-4 text-[11px] text-slate-300">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-indigo-400 font-bold shrink-0">✓</span>
+                    <span data-en="Fragrance pyramid display (top, heart & base notes)" data-ar="عرض النوتات العطرية والمكونات وتفاصيل الثبات والفوحان">عرض النوتات العطرية والمكونات وتفاصيل الثبات والفوحان</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-indigo-400 font-bold shrink-0">✓</span>
+                    <span data-en="Bottle sizing (50ml / 100ml) & gift box bundling" data-ar="اختيار سعة الزجاجة وإضافة تغليف الهدايا وبطاقات الإهداء">اختيار سعة الزجاجة وإضافة تغليف الهدايا وبطاقات الإهداء</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-indigo-400 font-bold shrink-0">✓</span>
+                    <span data-en="Royal dark aesthetic that builds immense brand trust" data-ar="تصميم ملكي داكن يعزز مصداقية وهوية البراند الفاخر">تصميم ملكي داكن يعزز مصداقية وهوية البراند الفاخر</span>
+                  </div>
+                </div>
+
+                <!-- Link Display Box -->
+                <div class="p-2.5 rounded-lg bg-slate-900 border border-indigo-500/20 text-[10px] font-mono text-indigo-300 truncate mb-4">
+                  🔗 <a href="https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="hover:underline">mostafa-salah01.github.io/voltedge-perfumes</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 pt-0 border-t border-slate-800/80 flex items-center justify-between gap-2 mt-2">
+              <a href="https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1">
+                <span data-en="Live Preview" data-ar="معاينة حية">معاينة حية</span> ↗
+              </a>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%AF%D9%8A%D9%85%D9%88%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%B9%D8%B7%D9%88%D8%B1%20(Voltedge%20Perfumes)%20%D9%88%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-transform hover:scale-105 shadow">
+                <span data-en="Order Similar ($200)" data-ar="طلب متجر مماثل (200$)">طلب متجر مماثل (200$)</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Official Facebook Page Banner Card (رابط صفحة الفيسبوك الرسمية) -->
+      <section class="mb-16">
+        <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-blue-950/60 via-slate-900 to-slate-950 border border-blue-500/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-lg">
+              <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <div>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-mono font-bold mb-1">
+                <span>OFFICIAL FACEBOOK PAGE</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-white" data-en="Visit Our Official Facebook Page" data-ar="تابع صفحتنا الرسمية على فيسبوك">
+                تابع صفحتنا الرسمية على فيسبوك
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-xl leading-relaxed" data-en="Follow our latest store launches, project showcases, client reviews, and direct social updates on our verified Facebook page." data-ar="شاهد أحدث المتاجر المنفذة، آراء وتجارب العملاء، الشروحات والتحديثات الدورية وتواصل معنا مباشرة عبر صفحة فيسبوك الرسمية.">
+                شاهد أحدث المتاجر المنفذة، آراء وتجارب العملاء، الشروحات والتحديثات الدورية وتواصل معنا مباشرة عبر صفحة فيسبوك الرسمية.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 shrink-0 w-full md:w-auto">
+            <a href="https://www.facebook.com/profile.php?id=61595189300053&locale=ar_AR" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm transition-transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span data-en="Open Facebook Page" data-ar="زيارة صفحة الفيسبوك">زيارة صفحة الفيسبوك</span>
+              <span>↗</span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Key Capabilities & Features Grid (المميزات والحلول المتكاملة) -->
+      <!-- The 6 Detailed Core Pillars Section (الأعمدة الستة التفصيلية التي طلبها العميل) -->
       <section class="mb-16">
-        <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-2" data-en="Engineered For Conversions" data-ar="مبني خصيصاً لتحقيق أعلى مبيعات">مبني خصيصاً لتحقيق أعلى مبيعات</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight" data-en="6 Pillars That Turn Visitors Into Paying Customers" data-ar="6 ركائز تقنية تجعل متجرك آلة لإنتاج المبيعات">6 ركائز تقنية تجعل متجرك آلة لإنتاج المبيعات</h2>
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono font-bold mb-2">
+            <span>COMPREHENSIVE VALUE BREAKDOWN</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white" data-en="Everything You Need to Know About Our Custom Store Service" data-ar="كل ما تود معرفته عن خدمة المتجر المخصص (إجابات تفصيلية ودقيقة)">
+            كل ما تود معرفته عن خدمة المتجر المخصص (إجابات تفصيلية ودقيقة)
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2" data-en="Direct answers to what we deliver, your competitive power, the true benefits of owning an e-commerce platform, what you personally gain, our turnkey service, and our exclusive guarantees." data-ar="شرح مفصل وواضح: إحنا بنقدم إيه، قوة العميل وهتستفاد إيه، إيه الاستفادة من المتجر، هو هيستفيد إيه كتاجر، إيه الخدمة اللي هنقدمها له، وإيه المميزات الحصرية اللي بنديها له.">
+            شرح مفصل وواضح: إحنا بنقدم إيه، قوة العميل وهتستفاد إيه، إيه الاستفادة من المتجر، هو هيستفيد إيه كتاجر، إيه الخدمة اللي هنقدمها له، وإيه المميزات الحصرية اللي بنديها له.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Pillar 1: What We Offer -->
+          <div class="glass-panel p-6 sm:p-7 rounded-2xl border-t-2 border-t-emerald-400 relative">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                1️⃣
+              </span>
+              <div>
+                <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider" data-en="WHAT WE OFFER" data-ar="ماذا نقدم نحن؟">ماذا نقدم نحن؟</span>
+                <h3 class="text-lg font-bold text-white" data-en="1. What Exactly Do We Offer?" data-ar="1. إحنا بنقدم إيه؟">1. إحنا بنقدم إيه؟</h3>
+              </div>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3" data-en="We deliver a 100% custom-coded e-commerce platform built from scratch with modern PHP 8 and a relational MySQL database. No generic templates, no rented platforms that withhold your code, and no technical limitations." data-ar="بنقدملك متجر إلكتروني مبرمج بالكامل من الصفر لحسابك الخاص بلغة PHP وقاعدة بيانات MySQL المنظمة والسريعة. بدون أي قوالب ووردبريس بطيئة أو منصات مؤجرة تفرض قيوداً على تجارتك، مع ملكية كاملة 100% للكود وقاعدة البيانات.">
+              بنقدملك متجر إلكتروني مبرمج بالكامل من الصفر لحسابك الخاص بلغة PHP وقاعدة بيانات MySQL المنظمة والسريعة. بدون أي قوالب ووردبريس بطيئة أو منصات مؤجرة تفرض قيوداً على تجارتك، مع ملكية كاملة 100% للكود وقاعدة البيانات.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> برمجة مخصصة لاحتياجات نشاطك وفكرتك بدقة</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> لوحة تحكم إدارية خاصة بك لإدارة كل تفصيلة</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> دومين رسمي واستضافة سحابية فائقة السرعة SSD</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2: Client Power & Competitive Edge -->
+          <div class="glass-panel p-6 sm:p-7 rounded-2xl border-t-2 border-t-cyan-400 relative">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0">
+                2️⃣
+              </span>
+              <div>
+                <span class="text-[10px] font-mono text-cyan-400 font-bold uppercase tracking-wider" data-en="CLIENT POWER" data-ar="قوة العميل وتفوقه">قوة العميل وتفوقه</span>
+                <h3 class="text-lg font-bold text-white" data-en="2. What Power Does the Client Gain?" data-ar="2. قوة العميل هيستفاد إيه؟">2. قوة العميل هيستفاد إيه؟</h3>
+              </div>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3" data-en="You gain total business independence and digital authority. You own your customer records, customer phone numbers, sales data, and pricing strategy without worrying about third-party platform policy changes or sudden account freezes." data-ar="قوة العميل تكمن في الاستقلال الرقمي الكامل: أنت صاحب السيادة على متجرك وبيانات زبائنك وأرقام هواتفهم وسجل مشترياتهم بدون وسيط يتحكم فيك، مع سرعة تصفح فائقة تعطي انطباعاً مؤسسياً قوياً وتزيد من مصداقية براندك أمام المنافسين.">
+              قوة العميل تكمن في الاستقلال الرقمي الكامل: أنت صاحب السيادة على متجرك وبيانات زبائنك وأرقام هواتفهم وسجل مشترياتهم بدون وسيط يتحكم فيك، مع سرعة تصفح فائقة تعطي انطباعاً مؤسسياً قوياً وتزيد من مصداقية براندك أمام المنافسين.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-bold">✓</span> سيطرة مطلقة على قرارات متجرك وأسعارك بدون شروط</li>
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-bold">✓</span> سرعة تحميل أقل من 0.8 ثانية تمنح العميل تجربة شراء ممتعة</li>
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-bold">✓</span> حماية تامة لبياناتك ضد المنافسين ومنصات الطرف الثالث</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 3: E-Commerce Store Strategic Benefits -->
+          <div class="glass-panel p-6 sm:p-7 rounded-2xl border-t-2 border-t-indigo-400 relative">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl shrink-0">
+                3️⃣
+              </span>
+              <div>
+                <span class="text-[10px] font-mono text-indigo-400 font-bold uppercase tracking-wider" data-en="STORE BENEFITS" data-ar="استفادة المتجر التجاري">استفادة المتجر التجاري</span>
+                <h3 class="text-lg font-bold text-white" data-en="3. What is the Benefit of Having the Store?" data-ar="3. إيه الاستفادة من المتجر؟">3. إيه الاستفادة من المتجر؟</h3>
+              </div>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3" data-en="Your physical shop or social media page is limited by working hours and geographic location. Your custom online store is an open storefront 24 hours a day, 7 days a week, receiving orders and accepting payments even while you sleep." data-ar="الاستفادة من المتجر هي كسر كل الحواجز الجغرافية والزمنية: متجرك يبيع 24 ساعة يومياً بدون توقف في كافة المحافظات والدول، ويستقبل الدفع الإلكتروني فورياً، ويصدر بوالص الشحن والفواتير آلياً دون الحاجة لتدخل يدوي في كل طلب.">
+              الاستفادة من المتجر هي كسر كل الحواجز الجغرافية والزمنية: متجرك يبيع 24 ساعة يومياً بدون توقف في كافة المحافظات والدول، ويستقبل الدفع الإلكتروني فورياً، ويصدر بوالص الشحن والفواتير آلياً دون الحاجة لتدخل يدوي في كل طلب.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2"><span class="text-indigo-400 font-bold">✓</span> مضاعفة حجم المبيعات عبر الوصول لجمهور واسع ومستهدف</li>
+              <li class="flex items-center gap-2"><span class="text-indigo-400 font-bold">✓</span> أتمتة كاملة لإصدار الفواتير وبوالص الشحن وحساب الضرائب</li>
+              <li class="flex items-center gap-2"><span class="text-indigo-400 font-bold">✓</span> توفير تكاليف إيجار المعارض والموظفين الإضافيين</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 4: Direct Client Value & ROI -->
+          <div class="glass-panel p-6 sm:p-7 rounded-2xl border-t-2 border-t-amber-400 relative">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                4️⃣
+              </span>
+              <div>
+                <span class="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider" data-en="DIRECT ROI" data-ar="العائد والربح المباشر">العائد والربح المباشر</span>
+                <h3 class="text-lg font-bold text-white" data-en="4. What Does the Client Personally Gain?" data-ar="4. هو هيستفيد إيه كتاجر؟">4. هو هيستفيد إيه كتاجر؟</h3>
+              </div>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3" data-en="Direct financial savings exceeding $1,000 annually compared to monthly subscriptions and sales commissions. Every single dollar of your sales enters your bank account directly without any deductions." data-ar="يستفيد التاجر وفراً مالياً سنوياً ضخماً يفوق 1000$ سنوياً مقارنة باشتراكات المنصات المؤجرة، فكل قرش من مبيعاتك يدخل حسابك البنكي مباشرة بدون خصم 1.5% أو 2% عمولات، مع امتلاك أصل رقمي حقيقي يرتفع ثمنه مع نمو تجارتك.">
+              يستفيد التاجر وفراً مالياً سنوياً ضخماً يفوق 1000$ سنوياً مقارنة باشتراكات المنصات المؤجرة، فكل قرش من مبيعاتك يدخل حسابك البنكي مباشرة بدون خصم 1.5% أو 2% عمولات، مع امتلاك أصل رقمي حقيقي يرتفع ثمنه مع نمو تجارتك.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2"><span class="text-amber-400 font-bold">✓</span> 0% عمولات على المبيعات للأبد (أرباحك لك وحدك 100%)</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400 font-bold">✓</span> قاعدة بيانات لعملائك تستخدمها لإعادة الاستهداف ومضاعفة الشراء</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400 font-bold">✓</span> راحة بال بفضل المتابعة والصيانة الفنية المستمرة من فريقنا</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 5: Our Turnkey Service Scope -->
+          <div class="glass-panel p-6 sm:p-7 rounded-2xl border-t-2 border-t-emerald-400 relative">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                5️⃣
+              </span>
+              <div>
+                <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider" data-en="SERVICE SCOPE" data-ar="تفاصيل الخدمة المتكاملة">تفاصيل الخدمة المتكاملة</span>
+                <h3 class="text-lg font-bold text-white" data-en="5. What Service Do We Provide Him?" data-ar="5. إيه الخدمة اللي هنقدمها له بالتفصيل؟">5. إيه الخدمة اللي هنقدمها له بالتفصيل؟</h3>
+              </div>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3" data-en="A turnkey, end-to-end service: discovery consultations walking step-by-step to map your workflow, custom PHP/MySQL engineering, payment gateway integration, courier & waybill setups, staff training, and 1 full year of hosting and support." data-ar="نقدم له خدمة متكاملة (تسليم مفتاح): بنبدأ بجلسات استشارية بنمشي معاه خطوة بخطوة لحد ما نعرف تفاصيل خدمته وتجارته ماشية إزاي، ثم نصمم الواجهات، ونبرمج كود PHP وقاعدة بيانات MySQL، ونربط جميع بوابات الدفع والشحن، وندربه على لوحة التحكم، ونمنحه استضافة ودومين ودعم سنة كاملة.">
+              نقدم له خدمة متكاملة (تسليم مفتاح): بنبدأ بجلسات استشارية بنمشي معاه خطوة بخطوة لحد ما نعرف تفاصيل خدمته وتجارته ماشية إزاي، ثم نصمم الواجهات، ونبرمج كود PHP وقاعدة بيانات MySQL، ونربط جميع بوابات الدفع والشحن، وندربه على لوحة التحكم، ونمنحه استضافة ودومين ودعم سنة كاملة.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> جلسات استشارية تفصيلية لفهم وهندسة دورة متجرك</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> ربط جميع بوابات الدفع (مدى، فيزا، أبل باي، تابي، تمارا، إنستاباي)</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> تجهيز منظومة الفواتير وبوالص الشحن وتدريب فريقك عليها</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 6: Exclusive Features & Guarantees -->
+          <div class="glass-panel p-6 sm:p-7 rounded-2xl border-t-2 border-t-cyan-400 relative">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0">
+                6️⃣
+              </span>
+              <div>
+                <span class="text-[10px] font-mono text-cyan-400 font-bold uppercase tracking-wider" data-en="EXCLUSIVE PERKS" data-ar="المميزات الحصرية والضمانات">المميزات الحصرية والضمانات</span>
+                <h3 class="text-lg font-bold text-white" data-en="6. What Exclusive Features Do We Give Him?" data-ar="6. إيه المميزات اللي بنديها له؟">6. إيه المميزات اللي بنديها له؟</h3>
+              </div>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3" data-en="Unmatched price-to-value ratio starting at only $200 USD for Year 1 all-inclusive, a transparent and guaranteed fixed renewal of $100/year, enterprise cybersecurity shielding against injections, and dedicated human support." data-ar="بنديله قيمة استثنائية تبدأ من 200 دولار فقط للسنة الأولى شاملة كل شيء، مع ضمان تجديد سنوي ثابت بـ 100$ فقط بدون أي زيادات خفية، وأمان سيبراني متقدم، وعقد دعم فني يومي مباشر وصيانة سريعة تضمن استقرار متجرك دائماً.">
+              بنديله قيمة استثنائية تبدأ من 200 دولار فقط للسنة الأولى شاملة كل شيء، مع ضمان تجديد سنوي ثابت بـ 100$ فقط بدون أي زيادات خفية، وأمان سيبراني متقدم، وعقد دعم فني يومي مباشر وصيانة سريعة تضمن استقرار متجرك دائماً.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 border-t border-slate-800/80 pt-3">
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-bold">✓</span> سعر يبدأ من 200$ بقيمة برمجية تفوق 1000$ في السوق</li>
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-bold">✓</span> تجديد سنوي ثابت: 100$ سنوياً شامل الدومين والاستضافة والدعم</li>
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-bold">✓</span> دعم فني مباشر واستشارات مستمرة لا تنقطع بعد تسليم المتجر</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Why Custom PHP & MySQL is High Value (المقارنة وإبراز القيمة الاستثنائية) -->
+      <section class="mb-16">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono font-bold mb-2">
+            <span>HIGH PERCEIVED VALUE</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white" data-en="Why Custom PHP & MySQL Delivers Immense Real Value" data-ar="لماذا المتجر المخصص بـ PHP & MySQL يعطيك قيمة تفوق الـ 200$ بأضعاف؟">
+            لماذا المتجر المخصص بـ PHP & MySQL يعطيك قيمة تفوق الـ 200$ بأضعاف؟
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2" data-en="Unlike monthly rental platforms that eat your margins, our custom solution gives you 100% ownership and zero commission on your orders." data-ar="مقارنة بالمنصات المؤجرة شهرياً التي تقتطع من أرباحك وتلزمك بقوالب ضيقة، متجرك معنا ملكك بالكامل بدون عمولات وبدون رسوم تشغيل شهرية.">
+            مقارنة بالمنصات المؤجرة شهرياً التي تقتطع من أرباحك وتلزمك بقوالب ضيقة، متجرك معنا ملكك بالكامل بدون عمولات وبدون رسوم تشغيل شهرية.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Column 1: Our Custom PHP/MySQL Store -->
+          <div class="glass-panel p-6 rounded-2xl border-2 border-emerald-500/60 bg-emerald-950/20 relative">
+            <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-[10px] font-mono font-bold">
+              <span data-en="WebStack Custom" data-ar="متجر WebStack المخصص">متجر WebStack المخصص</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" data-en="Custom PHP & MySQL Store" data-ar="متجر مخصص (PHP & MySQL)">متجر مخصص (PHP & MySQL)</h3>
+            <div class="text-2xl font-black text-emerald-400 font-mono mb-4">
+              $200 <span class="text-xs text-slate-400 font-normal" data-en="Starts at · 1st Year All-Inclusive" data-ar="يبدأ من · شامل كل شيء سنة كاملة">يبدأ من · شامل كل شيء سنة كاملة</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-slate-200">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="100% Source code & database ownership" data-ar="ملكية كاملة للكود وقاعدة البيانات لك وحدك">ملكية كاملة للكود وقاعدة البيانات لك وحدك</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="0% sales commission forever" data-ar="0% عمولات على مبيعاتك (كل أرباحك لك)">0% عمولات على مبيعاتك (كل أرباحك لك)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="Blazing speed: loads in under 0.8 seconds" data-ar="سرعة فائقة: تحميل المتجر في أقل من 0.8 ثانية">سرعة فائقة: تحميل المتجر في أقل من 0.8 ثانية</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="Domain + Fast Cloud Hosting included for year 1" data-ar="دومين رسمي + استضافة سحابية سريعة سنة مجاناً">دومين رسمي + استضافة سحابية سريعة سنة مجاناً</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="Tailored precisely to your custom business logic" data-ar="مخصص برمجياً 100% حسب فكرة وطبيعة نشاطك">مخصص برمجياً 100% حسب فكرة وطبيعة نشاطك</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                <span data-en="Guaranteed annual renewal: $100/yr for all services" data-ar="تجديد سنوي ثابت بـ 100$ فقط شامل كل شيء">تجديد سنوي ثابت بـ 100$ فقط شامل كل شيء</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2: SaaS Platforms (Shopify, Salla, Zid) -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800 bg-slate-900/50">
+            <h3 class="text-lg font-bold text-slate-300 mb-2" data-en="Rental SaaS (Shopify / Salla)" data-ar="المنصات المؤجرة (شوبيفاي / سلة)">المنصات المؤجرة (شوبيفاي / سلة)</h3>
+            <div class="text-2xl font-black text-rose-400 font-mono mb-4">
+              $400 - $1200+ <span class="text-xs text-slate-400 font-normal" data-en="/ year + commissions" data-ar="/ سنوياً + عمولات بيع">/ سنوياً + عمولات بيع</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-slate-400">
+              <li class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold shrink-0">✗</span>
+                <span data-en="You do not own the software or database" data-ar="لا تملك الكود ولا قاعدة البيانات (إيجار شهري)">لا تملك الكود ولا قاعدة البيانات (إيجار شهري)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold shrink-0">✗</span>
+                <span data-en="1.5% to 2% transaction commission on sales" data-ar="اقتطاع عمولات على كل عملية بيع تتم على المتجر">اقتطاع عمولات على كل عملية بيع تتم على المتجر</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold shrink-0">✗</span>
+                <span data-en="Rigid templates; high cost for any custom modification" data-ar="قوالب جامدة وأسعار خيالية لأي تعديل مخصص">قوالب جامدة وأسعار خيالية لأي تعديل مخصص</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold shrink-0">✗</span>
+                <span data-en="Paid apps needed for basic essential functions" data-ar="تطبيقات وإضافات شهرية مدفوعة لأبسط الميزات">تطبيقات وإضافات شهرية مدفوعة لأبسط الميزات</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: WordPress / WooCommerce -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800 bg-slate-900/50">
+            <h3 class="text-lg font-bold text-slate-300 mb-2" data-en="WordPress & WooCommerce" data-ar="ووردبريس / ووكومرس">ووردبريس / ووكومرس</h3>
+            <div class="text-2xl font-black text-amber-400 font-mono mb-4">
+              $350 - $600+ <span class="text-xs text-slate-400 font-normal" data-en="/ year (hosting + plugins)" data-ar="/ سنوياً (إضافات واستضافة)">/ سنوياً (إضافات واستضافة)</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-slate-400">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold shrink-0">✗</span>
+                <span data-en="Bloated code and slow database queries" data-ar="كود بطيء وقاعدة بيانات معقدة تستهلك السيرفر">كود بطيء وقاعدة بيانات معقدة تستهلك السيرفر</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold shrink-0">✗</span>
+                <span data-en="Constant plugin conflicts and security vulnerabilities" data-ar="تعارض دائم بين الإضافات وثغرات أمنية متكررة">تعارض دائم بين الإضافات وثغرات أمنية متكررة</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold shrink-0">✗</span>
+                <span data-en="High maintenance headache whenever WordPress updates" data-ar="توقف الموقع المفاجئ عند تحديث القوالب أو الإضافات">توقف الموقع المفاجئ عند تحديث القوالب أو الإضافات</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold shrink-0">✗</span>
+                <span data-en="Requires expensive specialized hosting to avoid crashes" data-ar="يتطلب استضافة باهظة لتفادي بطء سلة المشتريات">يتطلب استضافة باهظة لتفادي بطء سلة المشتريات</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step-by-Step Consulting & Development Methodology (رحلتنا الاستشارية والتقنية معك) -->
+      <section class="mb-16">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono font-bold mb-2">
+            <span>CONSULTATIVE METHODOLOGY</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white" data-en="Our Step-by-Step Consulting & Technical Process" data-ar="رحلتنا معك: استشارات تفصيلية بنمشي معاك خطوة بخطوة">
+            رحلتنا معك: استشارات تفصيلية بنمشي معاك خطوة بخطوة
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2" data-en="We do not just hand you a generic template. We sit down with you, analyze your exact business flow, and engineer every table and function to serve your sales." data-ar="نحن لا نعطيك قالباً جاهزاً ونتركك، بل نبدأ بجلسات استشارية حقيقية ندرس فيها طبيعة عملك ونفهم دورة طلباتك وعملاءك ثم نبني النظام المخصص لهم.">
+            نحن لا نعطيك قالباً جاهزاً ونتركك، بل نبدأ بجلسات استشارية حقيقية ندرس فيها طبيعة عملك ونفهم دورة طلباتك وعملاءك ثم نبني النظام المخصص لهم.
+          </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Pillar 1 -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-lg mb-4 text-emerald-400">
-              ⚡
+          <!-- Step 1 -->
+          <div class="glass-panel p-6 rounded-2xl border-t-2 border-t-emerald-400 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-mono font-black text-sm flex items-center justify-center">01</span>
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">DISCOVERY</span>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2" data-en="Consultation & Business Workflow Analysis" data-ar="جلسة استشارية وتحليل نموذج العمل">جلسة استشارية وتحليل نموذج العمل</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="We hold consulting sessions to understand your trade, target market, product types, variations, pricing policies, and unique client expectations." data-ar="جلسات استشارية تفصيلية بنمشي معاك فيها خطوة بخطوة لحد ما نعرف طبيعة خدمتك وتجارتك ماشية إزاي، تصنيف المنتجات، خيارات الشحن، وسلوك المشترين.">
+                جلسات استشارية تفصيلية بنمشي معاك فيها خطوة بخطوة لحد ما نعرف طبيعة خدمتك وتجارتك ماشية إزاي، تصنيف المنتجات، خيارات الشحن، وسلوك المشترين.
+              </p>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2" data-en="Instant 1-Second Page Load" data-ar="سرعة فتح خارقة (أقل من ثانية)">سرعة فتح خارقة (أقل من ثانية)</h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Engineered with clean lightweight code and high-performance cloud CDN caching. No heavy plugins that slow down mobile shoppers, preventing bounce rates." data-ar="كود برمجي نقي وخفيف جداً مع توزيع كاش سحابي عالمي (CDN). العميل يفتح المتجر ويتنقل بين المنتجات بلمح البصر دون أي بطء يضيع المبيعات.">كود برمجي نقي وخفيف جداً مع توزيع كاش سحابي عالمي (CDN). العميل يفتح المتجر ويتنقل بين المنتجات بلمح البصر دون أي بطء يضيع المبيعات.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-emerald-400 font-mono">
+              💡 فهم دقيق ومفصل قبل كتابة سطر كود واحد
+            </div>
           </div>
 
-          <!-- Pillar 2 -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-lg mb-4 text-cyan-400">
-              💳
+          <!-- Step 2 -->
+          <div class="glass-panel p-6 rounded-2xl border-t-2 border-t-cyan-400 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 font-mono font-black text-sm flex items-center justify-center">02</span>
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">DATABASE BLUEPRINT</span>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2" data-en="Custom MySQL Architecture Design" data-ar="هندسة قاعدة بيانات MySQL مخصصة">هندسة قاعدة بيانات MySQL مخصصة</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="We structure customized relational MySQL tables for products, inventory, orders, customer profiles, and transaction logs without any bloated fields." data-ar="تصميم وهيكلة جداول MySQL مترابطة ومنظمة خصيصاً لمنتجاتك، إدارة المخزون، سجل العملاء، والطلبات لتتحمل آلاف العمليات اليومية بسلاسة تامة.">
+                تصميم وهيكلة جداول MySQL مترابطة ومنظمة خصيصاً لمنتجاتك، إدارة المخزون، سجل العملاء، والطلبات لتتحمل آلاف العمليات اليومية بسلاسة تامة.
+              </p>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2" data-en="Full Payment Coverage" data-ar="تغطية كاملة لجميع طرق الدفع">تغطية كاملة لجميع طرق الدفع</h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Accept Visa, Mastercard, Meeza, Vodafone Cash, InstaPay, mobile wallets, and Buy-Now-Pay-Later (ValU, Sympl, Tabby, Tamara) plus Cash on Delivery with SMS/WhatsApp confirmation." data-ar="قبول الدفع بالبطاقات البنكية، المحافظ الإلكترونية، إنستاباي، بوابات التقسيط (ValU / Tabby)، بالإضافة لخيار الدفع عند الاستلام الذكي مع التأكيد التلقائي.">قبول الدفع بالبطاقات البنكية، المحافظ الإلكترونية، إنستاباي، بوابات التقسيط (ValU / Tabby)، بالإضافة لخيار الدفع عند الاستلام الذكي مع التأكيد التلقائي.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-cyan-400 font-mono">
+              🗄️ استعلامات MySQL فائقة السرعة وأمان تام
+            </div>
           </div>
 
-          <!-- Pillar 3 -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
-            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-lg mb-4 text-indigo-400">
-              🚚
+          <!-- Step 3 -->
+          <div class="glass-panel p-6 rounded-2xl border-t-2 border-t-indigo-400 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 font-mono font-black text-sm flex items-center justify-center">03</span>
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">CLEAN CODE</span>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2" data-en="PHP Back-End & High-Conversion Front-End" data-ar="برمجة كود PHP الأصيل وواجهة التحويل">برمجة كود PHP الأصيل وواجهة التحويل</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="Clean PHP 8 programming with modern lightweight frontend (Tailwind/JS) ensuring frictionless navigation, instant product search, and intuitive cart experience." data-ar="برمجة منطق المتجر بلغة PHP 8 بتنظيم هندسي متين، مع واجهات حديثة فائقة الجاذبية تزيد معدلات الشراء وتقلل هجر سلة المشتريات.">
+                برمجة منطق المتجر بلغة PHP 8 بتنظيم هندسي متين، مع واجهات حديثة فائقة الجاذبية تزيد معدلات الشراء وتقلل هجر سلة المشتريات.
+              </p>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2" data-en="Integrated Courier Logistics" data-ar="ربط شركات الشحن وبوالص الباركود">ربط شركات الشحن وبوالص الباركود</h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Print professional PDF waybills with scannable barcodes in one click. Automatically calculate shipping rates based on governorates or zones." data-ar="طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر واحدة لتسليمها للمندوب، مع حساب تكاليف الشحن تلقائياً بحسب المحافظة أو الدولة.">طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر واحدة لتسليمها للمندوب، مع حساب تكاليف الشحن تلقائياً بحسب المحافظة أو الدولة.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-indigo-400 font-mono">
+              ⚡ كود نقي بدون أوزان زائدة أو إضافات بطيئة
+            </div>
           </div>
 
-          <!-- Pillar 4 -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-lg mb-4 text-amber-400">
-              🤖
+          <!-- Step 4 -->
+          <div class="glass-panel p-6 rounded-2xl border-t-2 border-t-amber-400 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-mono font-black text-sm flex items-center justify-center">04</span>
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">GATEWAYS & LOGISTICS</span>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2" data-en="Payment Gateways & Shipping Integration" data-ar="ربط جميع بوابات الدفع والشحن">ربط جميع بوابات الدفع والشحن</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="Integration with all desired payment gateways (Visa, Mada, Apple Pay, Tamara, Tabby, Vodafone Cash, PayPal) plus automatic shipping calculation." data-ar="ربط شامل لبوابات الدفع الإلكترونية المحلية والعالمية، وحساب تكاليف الشحن حسب المحافظات والمدن، والدفع عند الاستلام.">
+                ربط شامل لبوابات الدفع الإلكترونية المحلية والعالمية، وحساب تكاليف الشحن حسب المحافظات والمدن، والدفع عند الاستلام.
+              </p>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2" data-en="Automated WhatsApp AI Sales" data-ar="أتمتة مبيعات الواتساب الذكية">أتمتة مبيعات الواتساب الذكية</h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Send instant order receipts to your customer's WhatsApp, alert them about shipping updates, and automatically re-engage visitors who left products in their carts." data-ar="إرسال فاتورة وتفاصيل الطلب للعميل على واتساب فور إتمام الشراء، وإشعارهم بحالة الشحنة، مع استرجاع السلات المتروكة تلقائياً لمضاعفة الأرباح.">إرسال فاتورة وتفاصيل الطلب للعميل على واتساب فور إتمام الشراء، وإشعارهم بحالة الشحنة، مع استرجاع السلات المتروكة تلقائياً لمضاعفة الأرباح.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-amber-400 font-mono">
+              💳 تجربة دفع آمنة وسلسة بضغطة زر
+            </div>
           </div>
 
-          <!-- Pillar 5 -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
-            <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-lg mb-4 text-rose-400">
+          <!-- Step 5 -->
+          <div class="glass-panel p-6 rounded-2xl border-t-2 border-t-emerald-400 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-mono font-black text-sm flex items-center justify-center">05</span>
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">DEPLOYMENT</span>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2" data-en="Security, Testing & Cloud Launch" data-ar="الأمان، الاختبارات والإطلاق السحابي">الأمان، الاختبارات والإطلاق السحابي</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="Rigorous SQL injection prevention, CSRF/XSS protection, speed optimization, official domain connection, and SSL deployment on SSD cloud hosting." data-ar="فحص أمني صارم ضد ثغرات الاختراق، شهادات أمان SSL مجانية، واختبار كامل لعمليات الشراء الوهمية قبل تسليم المتجر لايف.">
+                فحص أمني صارم ضد ثغرات الاختراق، شهادات أمان SSL مجانية، واختبار كامل لعمليات الشراء الوهمية قبل تسليم المتجر لايف.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-emerald-400 font-mono">
+              🛡️ حماية متقدمة واستقرار 99.9%
+            </div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="glass-panel p-6 rounded-2xl border-t-2 border-t-cyan-400 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 font-mono font-black text-sm flex items-center justify-center">06</span>
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">SUPPORT & TRAINING</span>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2" data-en="Staff Training & 1-Year Technical Support" data-ar="التدريب والدعم الفني طوال السنة الأولى">التدريب والدعم الفني طوال السنة الأولى</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="Full training on managing products, orders, and clients through the dashboard, backed by a 1-year maintenance contract and direct technical support." data-ar="تدريبك وتدريب فريقك على إدارة المنتجات والطلبات وتتبع المخزون بسهولة، مع دعم فني مستمر وصيانة ومتابعة يومية طوال السنة الأولى.">
+                تدريبك وتدريب فريقك على إدارة المنتجات والطلبات وتتبع المخزون بسهولة، مع دعم فني مستمر وصيانة ومتابعة يومية طوال السنة الأولى.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-cyan-400 font-mono">
+              🤝 دعم فني متخصص لا يتركك وحدك أبداً
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Payment Gateways Showcase (جميع بوابات الدفع الإلكترونية) -->
+      <section class="mb-16">
+        <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 shadow-xl">
+          <div class="text-center max-w-2xl mx-auto mb-8">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono font-bold mb-2 inline-block">
+              SEAMLESS CHECKOUT
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white" data-en="All Local & Global Payment Gateways Supported" data-ar="ربط جميع بوابات الدفع المحلية والعالمية">
+              ربط جميع بوابات الدفع المحلية والعالمية
+            </h2>
+            <p class="text-slate-300 text-xs sm:text-sm mt-2" data-en="Whatever your country or preferred payment processors, we integrate them directly into your PHP/MySQL store so customers pay with total trust." data-ar="أياً كانت دولتك أو بوابات الدفع التي تفضلها، نقوم بربطها وتكاملها مباشرة مع متجرك لتمكين عملائك من الدفع بأعلى مستويات الثقة والأمان.">
+              أياً كانت دولتك أو بوابات الدفع التي تفضلها، نقوم بربطها وتكاملها مباشرة مع متجرك لتمكين عملائك من الدفع بأعلى مستويات الثقة والأمان.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center font-mono">
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-2xl mb-1">💳</div>
+              <div class="font-bold text-white text-sm">Mada / مدى</div>
+              <div class="text-[11px] text-slate-400">السعودية والخليج</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-2xl mb-1"></div>
+              <div class="font-bold text-white text-sm">Apple Pay</div>
+              <div class="text-[11px] text-slate-400">دفع فوري بلمسة واحدة</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-2xl mb-1">🌐</div>
+              <div class="font-bold text-white text-sm">Visa & Mastercard</div>
+              <div class="text-[11px] text-slate-400">بطاقات الائتمان عالمياً</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-2xl mb-1">🛍️</div>
+              <div class="font-bold text-white text-sm">Tabby & Tamara</div>
+              <div class="text-[11px] text-slate-400">تقسيط المشتريات</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-2xl mb-1">📱</div>
+              <div class="font-bold text-white text-sm">InstaPay / إنستاباي</div>
+              <div class="text-[11px] text-slate-400">التحويل اللحظي في مصر</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-2xl mb-1">💼</div>
+              <div class="font-bold text-white text-sm">Vodafone Cash & Wallets</div>
+              <div class="text-[11px] text-slate-400">المحافظ الإلكترونية الذكية</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-2xl mb-1">🌍</div>
+              <div class="font-bold text-white text-sm">PayPal & Stripe</div>
+              <div class="text-[11px] text-slate-400">الدفع الدولي لجميع العملات</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-2xl mb-1">📦</div>
+              <div class="font-bold text-white text-sm">Cash on Delivery (COD)</div>
+              <div class="text-[11px] text-slate-400">الدفع عند الاستلام مع بوليصة</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Everything Runs on the Store (كل شيء يتم على المتجر) -->
+      <section class="mb-16">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono font-bold mb-2">
+            <span>COMPLETE IN-STORE OPERATIONS</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white" data-en="Everything Runs Directly Inside Your Custom Store" data-ar="كل شيء يتم ويدار بالكامل على متجرك الإلكتروني">
+            كل شيء يتم ويدار بالكامل على متجرك الإلكتروني
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2" data-en="From adding products and managing stock to printing PDF invoices and tracking courier deliveries, all features are integrated within your own platform." data-ar="من إضافة المنتجات وتعديل الأسعار وإدارة المخزون، حتى إصدار الفواتير وبوالص الشحن وتتبع أرباح المبيعات، كل العمليات تتم بنقرة زر في لوحتك الخاصة.">
+            من إضافة المنتجات وتعديل الأسعار وإدارة المخزون، حتى إصدار الفواتير وبوالص الشحن وتتبع أرباح المبيعات، كل العمليات تتم بنقرة زر في لوحتك الخاصة.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-panel p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl shrink-0">
               📊
             </div>
-            <h3 class="text-lg font-bold text-white mb-2" data-en="Ad Pixels & Analytics Ready" data-ar="ربط دقيق لبيكسل إعلانات فيسبوك وتيك توك">ربط دقيق لبيكسل إعلانات فيسبوك وتيك توك</h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Pre-configured with Meta Pixel, TikTok Pixel, Google Analytics 4, and Conversion API (CAPI) for precise ROAS tracking and maximum ad campaign return." data-ar="ربط دقيق وشامل لبيكسل فيسبوك، تيك توك، وسناب شات مع تفعيل Conversion API لضمان تتبع مبيعات الحملات الإعلانية بدقة 100% وخفض تكلفة الشراء.">ربط دقيق وشامل لبيكسل فيسبوك، تيك توك، وسناب شات مع تفعيل Conversion API لضمان تتبع مبيعات الحملات الإعلانية بدقة 100% وخفض تكلفة الشراء.</p>
-          </div>
-
-          <!-- Pillar 6 -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-colors">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-lg mb-4 text-purple-400">
-              🌐
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2" data-en="Bilingual & Effortless Dashboard" data-ar="لوحة تحكم عربية سهلة وبسيطة">لوحة تحكم عربية سهلة وبسيطة</h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-en="Manage products, variations (sizes/colors), discounts, coupons, and orders from your phone or laptop with a crystal-clear Arabic & English dashboard." data-ar="إضافة وتعديل المنتجات، الألوان، المقاسات، كوبونات الخصم، ومتابعة الأرباح وحالات الطلبات بكل سهولة من موبايلك أو الكمبيوتر بلوحة تحكم عربية واضحة.">إضافة وتعديل المنتجات، الألوان، المقاسات، كوبونات الخصم، ومتابعة الأرباح وحالات الطلبات بكل سهولة من موبايلك أو الكمبيوتر بلوحة تحكم عربية واضحة.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Interactive Store Simulator (تجربة متجر حي تفاعلية) -->
-      <section class="mb-16">
-        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-emerald-500/30 bg-slate-900/60">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
             <div>
-              <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block" data-en="Interactive Experience" data-ar="تجربة تفاعلية حية">تجربة تفاعلية حية</span>
-              <h2 class="text-xl sm:text-2xl font-bold text-white" data-en="Live Storefront Checkout Simulator" data-ar="محاكي تجربة الشراء الفوري في المتجر">محاكي تجربة الشراء الفوري في المتجر</h2>
-            </div>
-            <div class="text-xs text-slate-400 font-mono">
-              <span data-en="Try adding product, applying coupon, & ordering" data-ar="جرب إضافة منتج، تطبيق كوبون، ومحاكاة الطلب الفوري">جرب إضافة منتج، تطبيق كوبون، ومحاكاة الطلب الفوري</span>
+              <h3 class="text-base font-bold text-white mb-1" data-en="Comprehensive Custom Admin Dashboard" data-ar="لوحة تحكم إدارية خاصة وشاملة">لوحة تحكم إدارية خاصة وشاملة</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="A secure, clean dashboard designed for you to view orders, daily sales totals, revenue charts, customer contact data, and export records effortlessly." data-ar="لوحة تحكم مخصصة بالكامل تمنحك رؤية فورية للطلبات الواردة، إجمالي المبيعات، تقارير الأرباح، وبيانات العملاء مع إمكانية التصدير بسهولة.">
+                لوحة تحكم مخصصة بالكامل تمنحك رؤية فورية للطلبات الواردة، إجمالي المبيعات، تقارير الأرباح، وبيانات العملاء مع إمكانية التصدير بسهولة.
+              </p>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <!-- Demo Product Preview -->
-            <div class="lg:col-span-6 bg-slate-950/80 rounded-xl p-5 border border-slate-800">
-              <div class="flex items-center justify-between mb-3 text-xs font-mono text-slate-400">
-                <span>DEMO STORE #1042</span>
-                <span class="text-emerald-400">● In Stock (جاهز للشحن)</span>
-              </div>
-              <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden relative mb-4 border border-slate-800/80">
-                <picture>
-                  <source srcset="assets/images/ecommerce_store_showcase_1790760849729.webp" type="image/webp" />
-                  <img src="assets/images/ecommerce_store_showcase_1790760849729.jpg" alt="Demo Product Item" class="w-full h-full object-cover" />
-                </picture>
-                <div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-bold text-[10px] font-mono">
-                  -20% خصم إضافي
-                </div>
-              </div>
-
-              <h4 class="font-bold text-white text-base mb-1" id="demo-prod-name">سماعة لاسلكية ذكية فائقة النقاء Pro Sound</h4>
-              <p class="text-xs text-slate-300 leading-relaxed mb-4">عزل ضوضاء نشط، بطارية تدوم 40 ساعة، متوافقة مع جميع الهواتف الذكية.</p>
-
-              <div class="flex items-center justify-between pt-3 border-t border-slate-800">
-                <div>
-                  <span class="text-xs text-slate-400 block line-through">450 ج.م</span>
-                  <span class="text-lg font-bold text-emerald-400 font-mono" id="demo-prod-price">360 ج.م</span>
-                </div>
-                <button type="button" id="demo-add-cart-btn" class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 flex items-center gap-1.5 cursor-pointer">
-                  <span>🛒</span>
-                  <span id="demo-cart-btn-label">إضافة إلى السلة</span>
-                </button>
-              </div>
+          <div class="glass-panel p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl shrink-0">
+              📦
             </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1" data-en="Smart Inventory & Stock Alert Engine" data-ar="نظام المخزون والتنبيه الآلي بنفاد الكمية">نظام المخزون والتنبيه الآلي بنفاد الكمية</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="Automatic deduction of product quantities on order confirmation, support for size/color variants, and instant low-stock notifications." data-ar="خصم تلقائي للكميات مع كل طلب ناجح، دعم المقاسات والألوان والمواصفات المختلفة، مع إشعارات فورية عند اقتراب نفاد كمية أي منتج.">
+                خصم تلقائي للكميات مع كل طلب ناجح، دعم المقاسات والألوان والمواصفات المختلفة، مع إشعارات فورية عند اقتراب نفاد كمية أي منتج.
+              </p>
+            </div>
+          </div>
 
-            <!-- Demo Checkout & Order Slip Simulator -->
-            <div class="lg:col-span-6 bg-slate-950/80 rounded-xl p-5 border border-slate-800">
-              <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-800">
-                <h4 class="font-bold text-white text-sm flex items-center gap-2">
-                  <span>🛍️</span>
-                  <span>سلة الشراء وتأكيد الطلب الفوري</span>
-                </h4>
-                <span class="text-xs font-mono text-emerald-400" id="demo-cart-counter">العناصر: 0</span>
-              </div>
+          <div class="glass-panel p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl shrink-0">
+              🧾
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1" data-en="Instant Automated PDF Invoices & Waybills" data-ar="فواتير وبوالص شحن PDF تلقائية">فواتير وبوالص شحن PDF تلقائية</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="Branded PDF invoices generated instantly upon checkout, complete with QR code, tax breakdown, and shipping labels ready for delivery couriers." data-ar="توليد فواتير إلكترونية PDF فورية بشعار متجرك وتفاصيل الضرائب والخصومات، مع تجهيز بوالص الشحن لتسليمها فوراً لشركات التوصيل.">
+                توليد فواتير إلكترونية PDF فورية بشعار متجرك وتفاصيل الضرائب والخصومات، مع تجهيز بوالص الشحن لتسليمها فوراً لشركات التوصيل.
+              </p>
+            </div>
+          </div>
 
-              <!-- Cart Summary -->
-              <div id="demo-cart-content" class="mb-4">
-                <div class="text-center py-6 text-slate-500 text-xs" id="demo-empty-msg">
-                  السلة فارغة حالياً. اضغط على "إضافة إلى السلة" لتجربة التفاعل!
-                </div>
-                <div id="demo-active-cart" class="hidden space-y-3">
-                  <div class="flex items-center justify-between text-xs p-2 rounded-lg bg-slate-900 border border-slate-800">
-                    <div>
-                      <span class="font-bold text-slate-200 block">سماعة Pro Sound (عدد 1)</span>
-                      <span class="text-[10px] text-slate-400">توصيل سريع لباب المنزل</span>
-                    </div>
-                    <span class="font-mono font-bold text-emerald-400">360 ج.م</span>
-                  </div>
-
-                  <!-- Coupon Input -->
-                  <div class="flex gap-2">
-                    <input type="text" id="demo-coupon-input" placeholder="كود الخصم (جرب: SAVE10)" class="flex-1 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white uppercase font-mono focus:outline-none focus:border-emerald-500" />
-                    <button type="button" id="demo-apply-coupon-btn" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-bold border border-slate-700 transition-colors cursor-pointer">تطبيق</button>
-                  </div>
-                  <div id="demo-coupon-msg" class="text-[11px] font-mono text-emerald-400 hidden">✓ تم تطبيق كود الخصم (خصم 10% إضافي)</div>
-
-                  <!-- Financial Math -->
-                  <div class="space-y-1 text-xs text-slate-300 pt-2 border-t border-slate-800">
-                    <div class="flex justify-between">
-                      <span>قيمة المنتجات:</span>
-                      <span class="font-mono" id="demo-subtotal">360 ج.م</span>
-                    </div>
-                    <div class="flex justify-between">
-                      <span>تكلفة الشحن:</span>
-                      <span class="font-mono text-emerald-400">مجاني لفترة محدودة</span>
-                    </div>
-                    <div class="flex justify-between font-bold text-white text-sm pt-1 border-t border-slate-800">
-                      <span>الإجمالي المطلوب:</span>
-                      <span class="font-mono text-emerald-400" id="demo-total">360 ج.م</span>
-                    </div>
-                  </div>
-
-                  <!-- Checkout Form -->
-                  <div class="space-y-2 pt-2">
-                    <input type="text" id="demo-cust-name" placeholder="اسم العميل (مثال: محمد أحمد)" class="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-emerald-500" value="محمد أحمد" />
-                    <input type="tel" id="demo-cust-phone" placeholder="رقم الهاتف للتوصيل" class="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-emerald-500" value="01012345678" />
-                    <select id="demo-payment-method" class="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-200 focus:outline-none focus:border-emerald-500">
-                      <option value="cod">الدفع عند الاستلام (Cash on Delivery)</option>
-                      <option value="card">البطاقة البنكية (Visa / MasterCard)</option>
-                      <option value="wallet">محفظة إلكترونية (فودافون كاش / إنستاباي)</option>
-                      <option value="bnpl">تقسيط مريح 0% فوائد (تابي / تمارا / فاليو)</option>
-                    </select>
-
-                    <button type="button" id="demo-complete-order-btn" class="w-full py-2.5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-bold text-xs hover:opacity-95 transition-transform hover:scale-[1.01] shadow-md shadow-emerald-500/20 cursor-pointer">
-                      تأكيد الطلب وتوليد البوليصة الفورية 🚀
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Order Success Banner Preview -->
-              <div id="demo-order-success" class="hidden p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-center space-y-2">
-                <div class="text-2xl">🎉</div>
-                <div class="font-bold text-white text-sm">تم تأكيد الطلب #9401 بنجاح!</div>
-                <p class="text-xs text-slate-300">تم إرسال رسالة واتساب للعميل برقم البوليصة وتفاصيل الفاتورة، وجاري تجهيز الشحنة للمندوب.</p>
-                <div class="p-2 rounded bg-slate-900/90 border border-slate-800 font-mono text-[11px] text-emerald-400 text-right">
-                  AWB: #EG-9401-EXP · COD: 324 ج.م · Status: Ready to Ship
-                </div>
-                <button type="button" id="demo-reset-btn" class="text-[11px] text-slate-400 hover:text-white underline cursor-pointer mt-2">
-                  إعادة تجربة المحاكي مرة أخرى
-                </button>
-              </div>
+          <div class="glass-panel p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-2xl shrink-0">
+              🎟️
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white mb-1" data-en="Discount Coupons & Promotional Engine" data-ar="كوبونات الخصم والعروض الترويجية">كوبونات الخصم والعروض الترويجية</h3>
+              <p class="text-slate-300 text-xs leading-relaxed" data-en="Create percentage or fixed-amount discount coupons, free-shipping thresholds, flash sales timers, and special customer loyalty perks." data-ar="إنشاء كوبونات خصم بنسبة مئوية أو قيمة ثابتة، شحن مجاني عند حد معين من الشراء، وعدادات العروض الترويجية لزيادة المبيعات.">
+                إنشاء كوبونات خصم بنسبة مئوية أو قيمة ثابتة، شحن مجاني عند حد معين من الشراء، وعدادات العروض الترويجية لزيادة المبيعات.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Pricing Packages Section (باقات الأسعار والقيمة وأنظمة الدفع والتقسيط) -->
-      <section id="packages" class="mb-16">
-        <div class="text-center max-w-2xl mx-auto mb-8">
-          <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-2" data-en="Flexible Payment & Pricing Models" data-ar="أنظمة دفع وأسعار مرنة تناسب الجميع">أنظمة دفع وأسعار مرنة تناسب الجميع</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3" data-en="Choose Your E-Commerce Plan (Ownership · Monthly · Installments)" data-ar="اختر نظام الدفع الأنسب لنشاطك (شراء لمرة واحدة · اشتراك شهري مرن · تقسيط مريح)">اختر نظام الدفع الأنسب لنشاطك (شراء لمرة واحدة · اشتراك شهري مرن · تقسيط مريح)</h2>
-          <p class="text-slate-300 text-xs sm:text-sm" data-en="Full transparency. Choose full ownership with low annual renewal ($140/yr), flexible monthly subscription ($25-$35/mo), or 0% interest installment plans." data-ar="شفافية كاملة: اختر التملك الكامل لمرة واحدة مع تجديد سنوي مخفض (140$ سنوياً)، أو الاشتراك الشهري المرن بدون تكلفة شراء مقدماً (من 25$ إلى 35$ شهرياً)، أو التقسيط المريح بدون فوائد.">شفافية كاملة: اختر التملك الكامل لمرة واحدة مع تجديد سنوي مخفض (140$ سنوياً)، أو الاشتراك الشهري المرن بدون تكلفة شراء مقدماً (من 25$ إلى 35$ شهرياً)، أو التقسيط المريح بدون فوائد.</p>
-        </div>
+      <!-- Transparent Pricing & High Value Package Details (تفاصيل الباقة والاستثمار) -->
+      <section class="mb-16">
+        <div class="glass-panel p-8 sm:p-10 rounded-3xl border-2 border-emerald-500/50 bg-gradient-to-b from-slate-900/90 to-slate-950 relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
 
-        <!-- Plan Type Tabs Switcher -->
-        <div class="flex justify-center mb-10">
-          <div class="inline-flex p-1.5 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl max-w-full overflow-x-auto gap-1">
-            <button type="button" id="tab-btn-ownership" class="plan-tab-btn active px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer bg-emerald-500 text-slate-950 shadow-md">
-              👑 باقات التملك مدى الحياة (شراء لمرة واحدة)
-            </button>
-            <button type="button" id="tab-btn-monthly" class="plan-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-slate-300 hover:text-white transition-all cursor-pointer hover:bg-slate-800">
-              🔄 باقات الاشتراك الشهري (بدون شراء مقدماً)
-            </button>
-            <button type="button" id="tab-btn-installments" class="plan-tab-btn px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-slate-300 hover:text-white transition-all cursor-pointer hover:bg-slate-800">
-              💳 أنظمة التقسيط المريح (0% فوائد)
-            </button>
-          </div>
-        </div>
-
-        <!-- Tab Pane 1: Full Ownership Packages (شراء لمرة واحدة) -->
-        <div id="pane-ownership" class="plan-tab-pane">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch mb-8">
-            
-            <!-- Package 1: Starter Store Pack -->
-            <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
-              <div>
-                <div class="flex items-center justify-between mb-4">
-                  <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono font-bold" data-en="Starter Store" data-ar="باقة الانطلاق السريع">باقة الانطلاق السريع</span>
-                  <span class="text-xs font-mono text-slate-400">جاهز خلال 3 أيام</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-2" data-en="Starter Store Package" data-ar="باقة المتجر الأساسي الجاهز">باقة المتجر الأساسي الجاهز</h3>
-                <p class="text-slate-400 text-xs leading-relaxed mb-6" data-en="Ideal for small merchants, boutique brands, and startups looking to sell online with a clean, fast storefront." data-ar="مثالية للأنشطة الناشئة، البراندات المحلية، والتجار الراغبين في بدء البيع الإلكتروني باحترافية وتكلفة اقتصادية.">مثالية للأنشطة الناشئة، البراندات المحلية، والتجار الراغبين في بدء البيع الإلكتروني باحترافية وتكلفة اقتصادية.</p>
-
-                <!-- Price Tag -->
-                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 mb-6">
-                  <div class="text-3xl font-black text-white font-mono flex items-baseline gap-1">
-                    <span>200$</span>
-                    <span class="text-xs font-normal text-slate-400">/ للسنة الأولى شاملة</span>
-                  </div>
-                  <div class="text-[11px] text-emerald-400 mt-1 font-mono font-semibold">
-                    التجديد السنوي بعد السنة الأولى: 140$ فقط سنوياً (اختياري)
-                  </div>
-                  <div class="text-[10px] text-slate-400 mt-1">
-                    (متاح أيضاً بالتقسيط: 3 دفعات بـ 67$ أو ابتداءً من 18$ شهرياً)
-                  </div>
-                </div>
-
-                <!-- Feature List -->
-                <div class="space-y-2.5 text-xs text-slate-300 mb-8">
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span>متجر إلكتروني سريع ومتجاوب بالكامل مع الموبايل والكمبيوتر</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span>دومين رسمي مجاني لمدة سنة كاملة (.uk أو .com متاح)</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span>ربط بوابات الدفع الإلكتروني (فيزا، كاش، إنستاباي) + دفع عند الاستلام</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span>لوحة تحكم عربية سهلة لإدارة المنتجات والمخزون والأسعار</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span>إدخال وتنسيق أول 50 منتج مجاناً للبدء الفوري</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span>صيانة ودعم فني يومي مستمر طوال السنة الأولى</span>
-                  </div>
-                </div>
+          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-8 pb-8 border-b border-slate-800">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono font-bold mb-3">
+                <span>🌟 ALL-INCLUSIVE PACKAGE</span>
               </div>
-
-              <div>
-                <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%20(200$)" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-2 border border-slate-700 transition-colors">
-                  <span>طلب باقة المتجر الأساسي (200$)</span>
-                  <span>&rarr;</span>
-                </a>
-              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2" data-en="Full Custom E-Commerce Package (PHP & MySQL)" data-ar="باقة المتجر الإلكتروني المخصص المتكاملة (PHP & MySQL)">
+                باقة المتجر الإلكتروني المخصص المتكاملة (PHP & MySQL)
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed" data-en="You get an enterprise-grade custom platform built from scratch, with 100% code ownership, consultations, domain, high-speed hosting, and technical support included in Year 1." data-ar="تحصل على نظام رقمي مؤسسي مبرمج بالكامل من الصفر لحسابك الخاص، مع ملكية الكود 100%، استشارات تحليلية لدورة عملك، دومين رسمي، استضافة سريعة، ودعم فني وصيانة سنة كاملة.">
+                تحصل على نظام رقمي مؤسسي مبرمج بالكامل من الصفر لحسابك الخاص، مع ملكية الكود 100%، استشارات تحليلية لدورة عملك، دومين رسمي، استضافة سريعة، ودعم فني وصيانة سنة كاملة.
+              </p>
             </div>
 
-            <!-- Package 2: Pro Growth Store Pack (Featured) -->
-            <div class="glass-panel p-6 sm:p-8 rounded-2xl border-2 border-emerald-500/80 flex flex-col justify-between relative shadow-xl shadow-emerald-500/10 bg-gradient-to-b from-slate-900 to-slate-950">
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-emerald-500 text-slate-950 font-bold font-mono text-[10px] uppercase tracking-wider shadow">
-                ⭐ الأكثر طلباً وأعلى قيمة للمبيعات
-              </div>
-
-              <div>
-                <div class="flex items-center justify-between mb-4 mt-2">
-                  <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-mono font-bold" data-en="Pro Growth Store" data-ar="باقة المتجر الاحترافي المتكامل">باقة المتجر الاحترافي المتكامل</span>
-                  <span class="text-xs font-mono text-emerald-400 font-bold">جاهز خلال 5 أيام</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-2" data-en="Pro Growth E-Commerce Suite" data-ar="باقة النمو والأتمتة الشاملة">باقة النمو والأتمتة الشاملة</h3>
-                <p class="text-slate-300 text-xs leading-relaxed mb-6" data-en="Designed for serious brands and high-volume sellers needing automated courier waybills, WhatsApp follow-ups, and precise ad pixels." data-ar="الحل الشامل للتجار والشركات الراغبة في أتمتة كاملة للشحن وبوالص الباركود وموظف واتساب الذكي وتتبع دقيق للإعلانات الممولة.">الحل الشامل للتجار والشركات الراغبة في أتمتة كاملة للشحن وبوالص الباركود وموظف واتساب الذكي وتتبع دقيق للإعلانات الممولة.</p>
-
-                <!-- Price Tag -->
-                <div class="p-4 rounded-xl bg-slate-900/90 border border-emerald-500/40 mb-6">
-                  <div class="text-3xl font-black text-emerald-400 font-mono flex items-baseline gap-1">
-                    <span>280$</span>
-                    <span class="text-xs font-normal text-slate-300">/ للسنة الأولى شاملة</span>
-                  </div>
-                  <div class="text-[11px] text-emerald-300 mt-1 font-mono font-semibold">
-                    التجديد السنوي بعد السنة الأولى: 140$ فقط سنوياً (اختياري)
-                  </div>
-                  <div class="text-[10px] text-slate-300 mt-1">
-                    (متاح أيضاً بالتقسيط: 3 دفعات بـ 93$ أو ابتداءً من 25$ شهرياً)
-                  </div>
-                </div>
-
-                <!-- Feature List -->
-                <div class="space-y-2.5 text-xs text-slate-200 mb-8">
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span class="font-bold text-white">كل ما تشمله باقة المتجر الأساسي بالكامل</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span><strong>أتمتة بوالص الشحن:</strong> طباعة بوالص PDF بالباركود وتسليم المندوب بنقرة واحدة</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span><strong>تكامل موظف واتساب الذكي:</strong> تأكيد فوري للطلبات ومتابعة السلات المتروكة</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span><strong>ربط بيكسل الإعلانات (Meta, TikTok, CAPI):</strong> تتبع دقيق لأرباح الإعلانات</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span>نظام متقدم للكوبونات وأكواد الخصم والعروض المؤقتة وخصم الكميات</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span>دعم كامل للغتين (العربية والإنجليزية) والعملات المتعددة</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-emerald-400 font-bold">✓</span>
-                    <span>دعم فني ذو أولوية وصيانة ومتابعة يومية طوال السنة</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%20(280$)" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-transform hover:scale-105 shadow-lg shadow-emerald-500/25">
-                  <span>🚀 طلب الباقة الاحترافية الشاملة (280$)</span>
-                  <span>&rarr;</span>
-                </a>
-              </div>
+            <div class="p-6 rounded-2xl bg-slate-950 border border-emerald-500/40 text-center shrink-0 w-full sm:w-auto">
+              <div class="text-xs text-slate-400 font-mono" data-en="Investment Starts From:" data-ar="الاستثمار يبدأ من:">الاستثمار يبدأ من:</div>
+              <div class="text-4xl sm:text-5xl font-black text-emerald-400 font-mono my-2">$200</div>
+              <div class="text-xs text-slate-300 font-semibold" data-en="USD · Year 1 All-Inclusive" data-ar="دولار · شامل السنة الأولى بالكامل">دولار · شامل السنة الأولى بالكامل</div>
+              <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] text-emerald-300 font-mono" data-en="Renewal: $100 / Year Fixed" data-ar="التجديد السنوي ثابت: 100$ فقط">التجديد السنوي ثابت: 100$ فقط</div>
             </div>
-
           </div>
 
-          <!-- Renewal Details Callout Banner -->
-          <div class="max-w-4xl mx-auto p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-lg text-emerald-400 shrink-0">
-                🔄
-              </div>
-              <div class="text-xs">
-                <span class="font-bold text-white block">سعر التجديد السنوي ثابت: 140 دولار سنوياً لجميع الباقات</span>
-                <span class="text-slate-300">يغطي تجديد الدومين الرسمي + الاستضافة السحابية السريعة + شهادة SSL + عقد الصيانة والتحديثات والدعم الفني السنوي.</span>
-              </div>
+          <!-- Feature Breakdown Checklist -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-slate-200 mb-8">
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+              <span data-en="Custom PHP 8+ and MySQL Architecture" data-ar="برمجة كود PHP 8+ وقاعدة بيانات MySQL مخصصة">برمجة كود PHP 8+ وقاعدة بيانات MySQL مخصصة</span>
             </div>
-            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%A7%D9%82%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D9%88%D8%A7%D9%84%D8%AA%D8%AC%D8%AF%D9%8A%D8%AF%20%D8%A7%D9%84%D8%B3%D9%86%D9%88%D9%8A%20140$" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 font-bold text-xs shrink-0 border border-slate-700 transition-colors">
-              استفسار عن التجديد
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+              <span data-en="Built 100% from scratch — Zero ready-made templates" data-ar="مبني من الصفر 100% بدون أي قوالب ووردبريس أو منصات مؤجرة">مبني من الصفر 100% بدون أي قوالب ووردبريس أو منصات مؤجرة</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+              <span data-en="Step-by-step business & technical consultations" data-ar="جلسات استشارية تفصيلية لتحليل وفهم دورة عمل متجرك">جلسات استشارية تفصيلية لتحليل وفهم دورة عمل متجرك</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+              <span data-en="All payment gateways (Mada, Visa, ApplePay, COD, etc.)" data-ar="ربط جميع بوابات الدفع (مدى، فيزا، أبل باي، إنستاباي، والتحصيل)">ربط جميع بوابات الدفع (مدى، فيزا، أبل باي، إنستاباي، والتحصيل)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+              <span data-en="Official domain name included for 1 full year" data-ar="اسم دومين رسمي خاص بمتجرك مشمول للسنة الأولى">اسم دومين رسمي خاص بمتجرك مشمول للسنة الأولى</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+              <span data-en="High-speed SSL Cloud SSD hosting included for year 1" data-ar="استضافة سحابية فائقة السرعة SSD + شهادة SSL لمدة سنة">استضافة سحابية فائقة السرعة SSD + شهادة SSL لمدة سنة</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+              <span data-en="Comprehensive admin control panel & stock sync" data-ar="لوحة تحكم متكاملة لإدارة المنتجات، الطلبات، والمخزون">لوحة تحكم متكاملة لإدارة المنتجات، الطلبات، والمخزون</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+              <span data-en="Automated PDF invoices & waybills generation" data-ar="توليد فواتير وبوالص شحن PDF تلقائياً بشعار متجرك">توليد فواتير وبوالص شحن PDF تلقائياً بشعار متجرك</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold text-sm">✓</span>
+              <span data-en="Continuous daily maintenance & rapid technical support" data-ar="عقد صيانة ومتابعة يومية ودعم فني متخصص طوال السنة">عقد صيانة ومتابعة يومية ودعم فني متخصص طوال السنة</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+            <div class="text-xs text-slate-300">
+              <span class="font-bold text-emerald-400">💡 التجديد السنوي ثابت: 100$ سنوياً فقط</span>
+              <span class="block text-slate-400 text-[11px] mt-0.5">يشمل تجديد الدومين، الاستضافة السحابية SSD، شهادة SSL، والصيانة والدعم الفني السنوي دون أي زيادات خفية.</span>
+            </div>
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%88%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20(PHP%20%26%20MySQL)%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 shrink-0 shadow-md flex items-center gap-2">
+              <span>🚀</span>
+              <span data-en="Order Store Now ($200)" data-ar="طلب المتجر المخصص الآن (200$)">طلب المتجر المخصص الآن (200$)</span>
             </a>
           </div>
         </div>
-
-        <!-- Tab Pane 2: Monthly Subscriptions (لو العميل مش عايز يشتري) -->
-        <div id="pane-monthly" class="plan-tab-pane hidden">
-          <div class="max-w-4xl mx-auto mb-8 p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-center">
-            <h4 class="font-bold text-white text-sm mb-1">💡 لا ترغب في دفع تكلفة الشراء الكاملة مقدماً؟</h4>
-            <p class="text-xs text-slate-300">ابدأ الآن بدون أي تكلفة شراء أو تأسيس مقدماً، بنظام الاشتراك الشهري السحابي المرن، متضمناً الاستضافة والدومين والدعم الفني مع حرية الإلغاء أو الترقية في أي وقت بدون التزامات طويلة الأجل!</p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch mb-8">
-            
-            <!-- Monthly Plan 1: Starter Monthly -->
-            <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-cyan-500/40 transition-all">
-              <div>
-                <div class="flex items-center justify-between mb-4">
-                  <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono font-bold">اشتراك شهري مرن</span>
-                  <span class="text-xs font-mono text-slate-400">بدون عقد ملزم</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-2">الاشتراك الشهري الأساسي</h3>
-                <p class="text-slate-400 text-xs leading-relaxed mb-6">الحل الأمثل لاختبار فكرتك التجارية وبدء البيع فوراً بأقل تكلفة تشغيلية شهرية دون دفع مئات الدولارات مقدماً.</p>
-
-                <!-- Monthly Price Tag -->
-                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 mb-6">
-                  <div class="text-3xl font-black text-cyan-400 font-mono flex items-baseline gap-1">
-                    <span>25$</span>
-                    <span class="text-xs font-normal text-slate-300">/ شهرياً فقط</span>
-                  </div>
-                  <div class="text-[11px] text-emerald-400 mt-1 font-mono font-semibold">
-                    ✓ 0$ تكلفة تأسيس أو شراء مسبق
-                  </div>
-                  <div class="text-[10px] text-slate-400 mt-1">
-                    إلغاء الاشتراك متاح في أي شهر بدون أي شروط جزائية
-                  </div>
-                </div>
-
-                <!-- Monthly Features -->
-                <div class="space-y-2.5 text-xs text-slate-300 mb-8">
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span>متجر إلكتروني متكامل سريع جاهز لاستقبال الطلبات فوراً</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span>اسم دومين + استضافة سحابية سريعة مشمولة طوال فترة الاشتراك</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span>ربط بوابات الدفع الإلكتروني، المحافظ، والدفع عند الاستلام</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span>لوحة تحكم كاملة بالعربية لإدارة المنتجات والطلبات والمخزون</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span>صيانة دورية وتحديثات أمنية وتوافق مستمر</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span>دعم فني سريع عبر واتساب طوال فترة الاشتراك</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%AF%D8%A1%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%A7%D9%84%D8%B4%D9%87%D8%B1%D9%8A%20%D9%84%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20(25$%20%D8%B4%D9%87%D8%B1%D9%8A%D8%A7%D9%8B)" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 hover:text-white font-bold text-xs flex items-center justify-center gap-2 border border-cyan-500/30 transition-colors">
-                  <span>بدء الاشتراك الشهري الأساسي (25$/شهر)</span>
-                  <span>&rarr;</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Monthly Plan 2: Pro Growth Monthly -->
-            <div class="glass-panel p-6 sm:p-8 rounded-2xl border-2 border-cyan-500/80 flex flex-col justify-between relative shadow-xl shadow-cyan-500/10 bg-gradient-to-b from-slate-900 to-slate-950">
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-cyan-500 text-slate-950 font-bold font-mono text-[10px] uppercase tracking-wider shadow">
-                ⚡ باقة القوة والأتمتة الكاملة
-              </div>
-
-              <div>
-                <div class="flex items-center justify-between mb-4 mt-2">
-                  <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-mono font-bold">شهري احترافي شامل</span>
-                  <span class="text-xs font-mono text-cyan-400 font-bold">أتمتة + شحن + واتساب</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-2">الاشتراك الشهري الاحترافي الشامل</h3>
-                <p class="text-slate-300 text-xs leading-relaxed mb-6">الحل المتكامل للتجار الذين يطلقون حملات إعلانية ويحتاجون أتمتة بوالص الشحن وموظف واتساب للمبيعات مع دفع شهري مرن.</p>
-
-                <!-- Monthly Price Tag -->
-                <div class="p-4 rounded-xl bg-slate-900/90 border border-cyan-500/40 mb-6">
-                  <div class="text-3xl font-black text-cyan-400 font-mono flex items-baseline gap-1">
-                    <span>35$</span>
-                    <span class="text-xs font-normal text-slate-300">/ شهرياً فقط</span>
-                  </div>
-                  <div class="text-[11px] text-emerald-400 mt-1 font-mono font-semibold">
-                    ✓ 0$ تكلفة تأسيس أو شراء مسبق
-                  </div>
-                  <div class="text-[10px] text-slate-300 mt-1">
-                    شامل الأتمتة الكاملة والدعم الفني ذو الأولوية
-                  </div>
-                </div>
-
-                <!-- Monthly Features -->
-                <div class="space-y-2.5 text-xs text-slate-200 mb-8">
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span class="font-bold text-white">كل مميزات الاشتراك الأساسي بالكامل</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span><strong>أتمتة بوالص الشحن:</strong> طباعة بوالص PDF بالباركود بنقرة واحدة</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span><strong>موظف واتساب الذكي:</strong> تأكيد فوري ومتابعة السلات المتروكة تلقائياً</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span><strong>ربط دقيق لبيكسل الإعلانات:</strong> فيسبوك وتيك توك مع Conversion API</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span>نظام متقدم للكوبونات والعروض المؤقتة وخصم الكميات</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold">✓</span>
-                    <span>أولوية قصوى في الدعم الفني وتحديثات البرمجيات أسبوعياً</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%B4%D9%87%D8%B1%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9%20(35$%20%D8%B4%D9%87%D8%B1%D9%8A%D8%A7%D9%8B)" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-transform hover:scale-105 shadow-lg shadow-cyan-500/25">
-                  <span>🚀 بدء الاشتراك الشهري الاحترافي (35$/شهر)</span>
-                  <span>&rarr;</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Tab Pane 3: Installment Plans (أنظمة التقسيط 0% فوائد) -->
-        <div id="pane-installments" class="plan-tab-pane hidden">
-          <div class="max-w-4xl mx-auto mb-8 p-4 rounded-xl bg-purple-500/10 border border-purple-500/30 text-center">
-            <h4 class="font-bold text-white text-sm mb-1">💳 امتلك متجرك بالكامل وقسّط المبلغ بدون فوائد (0% فوائد إضافية)</h4>
-            <p class="text-xs text-slate-300">نوفر لك أنظمة تقسيط ميسرة على 3، 6، أو 12 شهراً عبر خدمات التقسيط المعتمدة أو البطاقات البنكية دون أي ضغط على ميزانيتك.</p>
-          </div>
-
-          <!-- 3 Installment Term Cards -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch mb-8">
-            
-            <!-- Plan 3 Months -->
-            <div class="glass-panel p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-purple-500/50 transition-all">
-              <div>
-                <span class="px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[11px] font-mono font-bold block w-fit mb-3">تقسيط على 3 شهور</span>
-                <h4 class="text-lg font-bold text-white mb-2">3 دفعات ميسرة (0% فوائد)</h4>
-                <p class="text-slate-400 text-xs leading-relaxed mb-4">قسّم تكلفة المتجر على 3 دفعات شهرية متساوية دون أي رسوم أو فوائد إضافية.</p>
-
-                <div class="space-y-3 p-3 rounded-xl bg-slate-900/90 border border-slate-800 mb-6">
-                  <div class="flex justify-between items-center text-xs">
-                    <span class="text-slate-300">المتجر الأساسي (200$):</span>
-                    <span class="font-mono font-bold text-emerald-400 text-sm">67$ / شهر</span>
-                  </div>
-                  <div class="flex justify-between items-center text-xs pt-2 border-t border-slate-800">
-                    <span class="text-slate-300">المتجر الاحترافي (280$):</span>
-                    <span class="font-mono font-bold text-cyan-400 text-sm">93$ / شهر</span>
-                  </div>
-                </div>
-
-                <div class="text-[11px] text-slate-400 space-y-1 mb-4">
-                  <div>✓ متاح عبر تابي (Tabby) وتمارا (Tamara)</div>
-                  <div>✓ متاح عبر فاليو (ValU) وسيمبل (Sympl)</div>
-                  <div>✓ متاح بالبطاقات الائتمانية لجميع البنوك</div>
-                </div>
-              </div>
-
-              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%82%D8%B3%D9%8A%D8%B7%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%B9%D9%84%D9%89%203%20%D8%AF%D9%81%D8%B9%D8%A7%D8%AA%20(3%20%D8%B4%D9%87%D9%88%D8%B1)" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-purple-500/20 hover:bg-purple-500 text-purple-300 hover:text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 border border-purple-500/40 transition-colors">
-                <span>طلب التقسيط (3 شهور)</span> &rarr;
-              </a>
-            </div>
-
-            <!-- Plan 6 Months -->
-            <div class="glass-panel p-6 rounded-2xl border-2 border-purple-500/80 flex flex-col justify-between relative shadow-lg shadow-purple-500/10 bg-gradient-to-b from-slate-900 to-slate-950">
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-purple-500 text-slate-950 font-bold font-mono text-[10px] uppercase tracking-wider shadow">
-                ⭐ الأكثر توازناً
-              </div>
-
-              <div>
-                <span class="px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[11px] font-mono font-bold block w-fit mb-3 mt-1">تقسيط على 6 شهور</span>
-                <h4 class="text-lg font-bold text-white mb-2">أقساط نصف سنوية مريحة</h4>
-                <p class="text-slate-400 text-xs leading-relaxed mb-4">أفضل توازن بين تدفق نقدي سلس وقسط شهري منخفض يناسب نمو تجارتك.</p>
-
-                <div class="space-y-3 p-3 rounded-xl bg-slate-900 border border-purple-500/30 mb-6">
-                  <div class="flex justify-between items-center text-xs">
-                    <span class="text-slate-300">المتجر الأساسي (200$):</span>
-                    <span class="font-mono font-bold text-emerald-400 text-sm">34$ / شهر</span>
-                  </div>
-                  <div class="flex justify-between items-center text-xs pt-2 border-t border-slate-800">
-                    <span class="text-slate-300">المتجر الاحترافي (280$):</span>
-                    <span class="font-mono font-bold text-cyan-400 text-sm">47$ / شهر</span>
-                  </div>
-                </div>
-
-                <div class="text-[11px] text-slate-300 space-y-1 mb-4">
-                  <div>✓ متوافق مع فاليو (ValU) وسيمبل</div>
-                  <div>✓ متوافق مع تقسيط بطاقات البنوك 0% فوائد</div>
-                  <div>✓ استلام فوري للمتجر وبدء البيع من أول أسبوع</div>
-                </div>
-              </div>
-
-              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%82%D8%B3%D9%8A%D8%B7%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%B9%D9%84%D9%89%206%20%D8%B4%D9%87%D9%88%D8%B1" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 transition-transform hover:scale-105 shadow-md shadow-purple-500/25">
-                <span>طلب التقسيط (6 شهور)</span> &rarr;
-              </a>
-            </div>
-
-            <!-- Plan 12 Months -->
-            <div class="glass-panel p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-purple-500/50 transition-all">
-              <div>
-                <span class="px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[11px] font-mono font-bold block w-fit mb-3">تقسيط على 12 شهراً</span>
-                <h4 class="text-lg font-bold text-white mb-2">أقل قسط شهري على الإطلاق</h4>
-                <p class="text-slate-400 text-xs leading-relaxed mb-4">ابدأ نشاطك بأقل عبء ممكن وادفع قسطاً رمزياً شهرياً على مدار عام كامل.</p>
-
-                <div class="space-y-3 p-3 rounded-xl bg-slate-900/90 border border-slate-800 mb-6">
-                  <div class="flex justify-between items-center text-xs">
-                    <span class="text-slate-300">المتجر الأساسي (200$):</span>
-                    <span class="font-mono font-bold text-emerald-400 text-sm">18$ / شهر</span>
-                  </div>
-                  <div class="flex justify-between items-center text-xs pt-2 border-t border-slate-800">
-                    <span class="text-slate-300">المتجر الاحترافي (280$):</span>
-                    <span class="font-mono font-bold text-cyan-400 text-sm">25$ / شهر</span>
-                  </div>
-                </div>
-
-                <div class="text-[11px] text-slate-400 space-y-1 mb-4">
-                  <div>✓ متاح بجميع البطاقات الائتمانية البنكية</div>
-                  <div>✓ متاح بنظام التقسيط التعاقدي المباشر</div>
-                  <div>✓ شامل الصيانة والدعم طوال فترة التقسيط</div>
-                </div>
-              </div>
-
-              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%82%D8%B3%D9%8A%D8%B7%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%B9%D9%84%D9%89%2012%20%D8%B4%D9%87%D8%B1" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-purple-500/20 hover:bg-purple-500 text-purple-300 hover:text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 border border-purple-500/40 transition-colors">
-                <span>طلب التقسيط (12 شهر)</span> &rarr;
-              </a>
-            </div>
-
-          </div>
-
-          <!-- Interactive Installment Calculator Widget -->
-          <div class="max-w-4xl mx-auto p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-              <div>
-                <h4 class="font-bold text-white text-base flex items-center gap-2">
-                  <span>🧮</span>
-                  <span>حاسبة أقساط المتجر التفاعلية الفورية</span>
-                </h4>
-                <p class="text-xs text-slate-400 mt-1">اختر الباقة ومدة السداد لتعرف قسطك الشهري بدقة وبدون أي فوائد خفية:</p>
-              </div>
-              <div class="flex items-center gap-2 text-xs font-mono text-purple-400 bg-purple-500/10 px-3 py-1.5 rounded-lg border border-purple-500/30">
-                <span>0% فوائد إضافية</span>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              <div>
-                <label for="calc-plan-select" class="block text-xs text-slate-300 mb-1.5 font-bold">1. اختر باقة المتجر:</label>
-                <select id="calc-plan-select" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:outline-none focus:border-purple-500">
-                  <option value="200" selected>باقة المتجر الأساسي (200$ إجمالي)</option>
-                  <option value="280">باقة النمو والأتمتة الشاملة (280$ إجمالي)</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="calc-months-select" class="block text-xs text-slate-300 mb-1.5 font-bold">2. اختر مدة التقسيط:</label>
-                <select id="calc-months-select" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:outline-none focus:border-purple-500">
-                  <option value="3" selected>3 أشهر (3 دفعات ميسرة)</option>
-                  <option value="6">6 أشهر (نصف سنوي مريح)</option>
-                  <option value="12">12 شهراً (أقل قسط شهري)</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Math Summary -->
-            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div>
-                <div class="text-xs text-slate-400 mb-1">القسط الشهري التقديري:</div>
-                <div class="text-2xl sm:text-3xl font-black text-emerald-400 font-mono flex items-baseline gap-1.5">
-                  <span id="calc-result-monthly">67$</span>
-                  <span class="text-xs text-slate-300 font-normal">/ شهرياً</span>
-                </div>
-                <div class="text-[11px] text-slate-400 mt-1 font-mono" id="calc-result-summary">
-                  إجمالي المبلغ: 200$ موزعة على 3 أقساط متساوية بدون أي فوائد.
-                </div>
-              </div>
-
-              <a id="calc-whatsapp-btn" href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A8%D8%A7%D9%84%D8%AA%D9%82%D8%B3%D9%8A%D8%B7%20(200$%20%D8%B9%D9%84%D9%89%203%20%D8%B4%D9%87%D9%88%D8%B1)" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center gap-2 transition-transform hover:scale-105 shrink-0 shadow-lg shadow-emerald-500/20">
-                <span>طلب هذا القسط عبر واتساب</span> &rarr;
-              </a>
-            </div>
-
-            <!-- Installment Partners Supported -->
-            <div class="mt-4 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
-              <span class="font-mono text-[11px]">طرق وشركاء التقسيط المدعومة:</span>
-              <div class="flex flex-wrap items-center gap-2 font-mono text-[10px]">
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">تابي (Tabby)</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">تمارا (Tamara)</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">فاليو (ValU)</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">سيمبل (Sympl)</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">تقسيط فيزا وماستركارد البنكية</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">تقسيط مباشر</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </section>
 
-      <!-- Frequently Asked Questions (الأسئلة الشائعة) -->
+      <!-- FAQ Section (الأسئلة الشائعة) -->
       <section class="mb-16">
         <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-2" data-en="Got Questions?" data-ar="استفسارات شائعة">استفسارات شائعة</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight" data-en="Frequently Asked Questions" data-ar="كل ما تحتاج معرفته عن المتجر الإلكتروني">كل ما تحتاج معرفته عن المتجر الإلكتروني</h2>
+          <h2 class="text-2xl font-extrabold text-white" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة حول المتجر المخصص">الأسئلة الشائعة حول المتجر المخصص</h2>
         </div>
 
-        <div class="max-w-3xl mx-auto space-y-4">
+        <div class="space-y-4 max-w-3xl mx-auto text-xs sm:text-sm">
           <div class="glass-panel p-5 rounded-xl border border-slate-800">
-            <h3 class="font-bold text-white text-sm mb-2">هل أحتاج لخبرة برمجية لإدارة المتجر وإضافة المنتجات؟</h3>
-            <p class="text-slate-300 text-xs leading-relaxed">أبداً! نوفر لك لوحة تحكم عربية فائقة السهولة والوضوح. يمكنك إضافة أي منتج، كتابة سعره، ورفع صوره من موبايلك في دقيقة واحدة، كما نقدم لك فيديو تدريبي مسجل ومتابعة شخصية لشرح كل تفصيلة.</p>
+            <h3 class="font-bold text-white mb-2" data-en="Why is building with PHP and MySQL better than Shopify or WordPress?" data-ar="لماذا المتجر المخصص بلغة PHP وقاعدة بيانات MySQL أفضل من شوبيفاي أو ووردبريس؟">لماذا المتجر المخصص بلغة PHP وقاعدة بيانات MySQL أفضل من شوبيفاي أو ووردبريس؟</h3>
+            <p class="text-slate-300 leading-relaxed text-xs" data-en="With custom PHP & MySQL, you own the entire platform and data forever. You pay 0% commission on orders, avoid expensive monthly subscriptions, and get lightning-fast page loading tailored exactly to your unique customer journey without template bloat." data-ar="لأنك تملك الكود وقاعدة البيانات بالكامل 100% دون أي تبعية، ولا تدفع أي اشتراكات شهرية متزايدة أو عمولات على مبيعاتك، وسرعة تصفح المتجر وإتمام الطلب تكون فائقة السرعة وبدون بطء أو ثغرات الإضافات الجاهزة.">لأنك تملك الكود وقاعدة البيانات بالكامل 100% دون أي تبعية، ولا تدفع أي اشتراكات شهرية متزايدة أو عمولات على مبيعاتك، وسرعة تصفح المتجر وإتمام الطلب تكون فائقة السرعة وبدون بطء أو ثغرات الإضافات الجاهزة.</p>
           </div>
 
           <div class="glass-panel p-5 rounded-xl border border-slate-800">
-            <h3 class="font-bold text-white text-sm mb-2">كم تبلغ تكلفة التجديد السنوي بعد انتهاء السنة الأولى؟</h3>
-            <p class="text-slate-300 text-xs leading-relaxed">التجديد السنوي ثابت واقتصادي جداً: 140 دولار فقط سنوياً، وهذا المبلغ يغطي بالكامل تجديد الدومين الرسمي + الاستضافة السحابية السريعة فائقة الأداء + شهادة الأمان SSL + استمرار الدعم الفني والصيانة والتحديثات الدورية دون أي تكاليف سيرفرات باهظة.</p>
+            <h3 class="font-bold text-white mb-2" data-en="What does the step-by-step consultation session cover?" data-ar="ما الذي تشمله الجلسة الاستشارية ومتابعتكم خطوة بخطوة؟">ما الذي تشمله الجلسة الاستشارية ومتابعتكم خطوة بخطوة؟</h3>
+            <p class="text-slate-300 leading-relaxed text-xs" data-en="We sit down with you to explore your product catalog, shipping zones, client payment behaviors, and operational cycle, transforming your exact trade needs into an optimized technical architecture." data-ar="نجلس معك لنفهم بدقة طبيعة تجارتك: أنواع المنتجات، خيارات الشحن والتوصيل، طرق الدفع التي يفضلها عملاؤك، وطريقة متابعتك للطلبات، لنهندس المتجر وقاعدة البيانات وفق هذا المسار بالضبط.">نجلس معك لنفهم بدقة طبيعة تجارتك: أنواع المنتجات، خيارات الشحن والتوصيل، طرق الدفع التي يفضلها عملاؤك، وطريقة متابعتك للطلبات، لنهندس المتجر وقاعدة البيانات وفق هذا المسار بالضبط.</p>
           </div>
 
           <div class="glass-panel p-5 rounded-xl border border-slate-800">
-            <h3 class="font-bold text-white text-sm mb-2">هل تتوفر أنظمة اشتراك شهري في حال عدم الرغبة في الشراء الكامل مقدماً؟</h3>
-            <p class="text-slate-300 text-xs leading-relaxed">نعم بكل تأكيد! نوفر باقات اشتراك شهري مرنة تبدأ من 25$ شهرياً للباقة الأساسية، أو 35$ شهرياً للباقة الاحترافية الشاملة، متضمنة الاستضافة السحابية واسم النطاق والدعم الفني، مع إمكانية الترقية أو الإلغاء في أي وقت دون أي شروط جزائية.</p>
-          </div>
-
-          <div class="glass-panel p-5 rounded-xl border border-slate-800">
-            <h3 class="font-bold text-white text-sm mb-2">هل توجد أنظمة تقسيط مريحة لتكلفة المتجر؟</h3>
-            <p class="text-slate-300 text-xs leading-relaxed">نعم! نوفر أنظمة تقسيط مريحة ومرنة بدون فوائد (0% فوائد إضافية) على 3 أشهر، 6 أشهر، أو حتى 12 شهراً عبر خدمات تابي (Tabby)، تمارا (Tamara)، فاليو (ValU)، سيمبل (Sympl) أو عبر البطاقات الائتمانية البنكية، لتبدأ تجارتك فوراً وبأقل عبء مالي ممكن.</p>
-          </div>
-
-          <div class="glass-panel p-5 rounded-xl border border-slate-800">
-            <h3 class="font-bold text-white text-sm mb-2">كيف تعمل بوابات الدفع الإلكتروني والدفع عند الاستلام؟</h3>
-            <p class="text-slate-300 text-xs leading-relaxed">نقوم بتهيئة وربط بوابات الدفع الرسمية (مثل فواتيرك، باي موب PayMob، كاشير، سترايب، أو غيرها) لتستقبل أموالك في حسابك البنكي أو محفظتك مباشرة. أما بالنسبة للدفع عند الاستلام (COD)، فيتم تسجيل الطلب وتوليد بوليصة الشحن تلقائياً.</p>
-          </div>
-
-          <div class="glass-panel p-5 rounded-xl border border-slate-800">
-            <h3 class="font-bold text-white text-sm mb-2">هل المتجر ملكي بالكامل؟ أم مرتبط باشتراكات إجبارية؟</h3>
-            <p class="text-slate-300 text-xs leading-relaxed">في باقات التملك، المتجر ملكك بنسبة 100%، وتملك كامل بيانات عملائك ومنتجاتك. لا نأخذ منك أي نسبة من المبيعات، ولا توجد أي رسوم أو اشتراكات شهرية إجبارية على عكس منصات المتاجر الأخرى. وإذا فضلت الاشتراك الشهري، فهو خيار متاح ومرن بالكامل.</p>
+            <h3 class="font-bold text-white mb-2" data-en="What are the renewal fees after Year 1?" data-ar="ما هي تكاليف التجديد بعد انتهاء السنة الأولى؟">ما هي تكاليف التجديد بعد انتهاء السنة الأولى؟</h3>
+            <p class="text-slate-300 leading-relaxed text-xs" data-en="Annual renewal is fixed at only $100 USD / year, covering official domain renewal, high-speed SSD cloud hosting, security SSL certificate, and continuous daily technical support and maintenance." data-ar="التجديد السنوي ثابت ومضمون بـ 100 دولار سنوياً فقط، ويشمل تجديد الدومين الرسمي، الاستضافة السحابية السريعة، شهادة الأمان، وعقد الصيانة والدعم الفني السنوي دون أي زيادات خفية.">التجديد السنوي ثابت ومضمون بـ 100 دولار سنوياً فقط، ويشمل تجديد الدومين الرسمي، الاستضافة السحابية السريعة، شهادة الأمان، وعقد الصيانة والدعم الفني السنوي دون أي زيادات خفية.</p>
           </div>
         </div>
       </section>
 
-      <!-- Final Call to Action Box -->
-      <section class="mb-12">
-        <div class="glass-panel p-8 sm:p-10 rounded-2xl border border-emerald-500/30 text-center relative overflow-hidden bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-950">
-          <div class="max-w-2xl mx-auto space-y-4">
-            <div class="inline-block p-3 rounded-full bg-emerald-500/10 text-2xl text-emerald-400 mb-2">
-              🛍️
-            </div>
-            <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-              جاهز لإطلاق متجرك الإلكتروني ومضاعفة مبيعاتك اليوم؟
-            </h2>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
-              تواصل مباشرة مع المهندس مصطفى صلاح عبر واتساب لمناقشة طبيعة منتجاتك والبدء الفوري في تصميم وبرمجة متجرك المتكامل.
-            </p>
-            <div class="pt-4 flex flex-wrap justify-center items-center gap-4">
-              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A8%D8%AF%D8%A1%20%D9%81%D9%8A%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%85%D8%AA%D8%AC%D8%B1%D9%8A%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-emerald-500/25">
-                <span>💬</span>
-                <span>تواصل على واتساب المهندس مصطفى (01107787049)</span>
-              </a>
-              <a href="index.html" class="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-bold text-sm border border-slate-800 transition-colors">
-                العودة للصفحة الرئيسية
-              </a>
-            </div>
+      <!-- Return Navigation -->
+      <section class="pt-8 border-t border-slate-800">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <a href="index.html" class="text-xs font-mono text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+            <span>&larr;</span>
+            <span data-en="Return to Home Portfolio" data-ar="الرجوع للرئيسية ومعرض الأعمال">الرجوع للرئيسية ومعرض الأعمال</span>
+          </a>
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="text-slate-500 font-mono" data-en="Explore other systems:" data-ar="استكشف أنظمة أخرى:">استكشف أنظمة أخرى:</span>
+            <a href="corporate-website.html" class="text-emerald-400 hover:underline" data-en="Corporate Websites" data-ar="مواقع الشركات">مواقع الشركات</a>
+            <span>·</span>
+            <a href="whatsapp-ai-employee.html" class="text-emerald-400 hover:underline" data-en="AI Employee" data-ar="موظف الذكاء الاصطناعي">موظف الذكاء الاصطناعي</a>
+            <span>·</span>
+            <a href="smart-shipping-system.html" class="text-emerald-400 hover:underline" data-en="Shipping System" data-ar="سيستم الشحن">سيستم الشحن</a>
           </div>
         </div>
       </section>
@@ -950,22 +1018,29 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800/80 bg-slate-950 py-10 transition-colors">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
-      <div>
-        <span>&copy; 2026 WebStack. All rights reserved.</span>
+  <footer class="py-10 border-t border-slate-800/80 bg-slate-950/80 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-white font-mono">&gt;_ WebStack</span>
+        <span>·</span>
+        <span>© 2026 WebStack. All rights reserved.</span>
       </div>
-      <div class="flex items-center gap-6">
-        <a href="index.html" class="hover:text-emerald-400 transition-colors">الرئيسية</a>
-        <a href="corporate-website.html" class="hover:text-emerald-400 transition-colors">مواقع الشركات</a>
-        <a href="whatsapp-ai-employee.html" class="hover:text-emerald-400 transition-colors">موظفو الذكاء</a>
-        <a href="smart-shipping-system.html" class="hover:text-emerald-400 transition-colors">سيستم الشحن</a>
-        <a href="privacy.html" class="hover:text-emerald-400 transition-colors">الخصوصية</a>
+      <div class="flex items-center gap-4 text-slate-400 font-medium">
+        <a href="index.html" class="hover:text-emerald-400 transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <span>·</span>
+        <a href="affiliate-market.html" class="hover:text-emerald-400 transition-colors flex items-center gap-1" title="Affiliate Market">
+          <span>💼</span>
+          <span data-en="Affiliate Market" data-ar="Affiliate Market">Affiliate Market</span>
+        </a>
+        <span>·</span>
+        <a href="privacy.html" class="hover:text-emerald-400 transition-colors" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+        <span>·</span>
+        <a href="terms.html" class="hover:text-emerald-400 transition-colors" data-en="Terms of Service" data-ar="الشروط والأحكام">الشروط والأحكام</a>
       </div>
     </div>
   </footer>
 
-  <!-- Interactive JavaScript Script -->
-  <script src="script.js"></script>
+  <!-- Script Engine -->
+  <script src="script.js" defer></script>
 </body>
 </html>

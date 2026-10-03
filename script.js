@@ -69,6 +69,115 @@
       ],
       whatsappMsg: 'مرحباً فريق WebStack أود الاستفسار وحجز باقة تصميم موقع تعريفي للشركات (65$ بدومين uk. أو 75$ بدومين com.)'
     },
+    'custom-ecommerce-store': {
+      pageUrl: 'ecommerce-store.html',
+      titleEn: 'Custom E-Commerce Store (PHP & MySQL)',
+      titleAr: 'برمجة متجر إلكتروني مخصص (PHP & MySQL)',
+      taglineEn: '100% Custom Built from Scratch · PHP & MySQL · Step-by-Step Consultations · All Payment Gateways · Starts from $200',
+      taglineAr: 'مبني من الصفر 100% · بلغة PHP وقاعدة بيانات MySQL · استشارات تفصيلية خطوة بخطوة · جميع بوابات الدفع · يبدأ من 200$',
+      image: 'assets/images/ecommerce_store_showcase.jpg',
+      category: 'web-development',
+      metricsEn: 'Starts from $200 · High Enterprise Value · Renewal: $100/Year',
+      metricsAr: 'يبدأ من 200$ · قيمة برمجية وتجارية استثنائية · التجديد: 100$ سنوياً',
+      tech: ['PHP 8+ Backend', 'Custom MySQL Relational DB', 'Zero Templates (100% Custom)', 'All Payment Gateways', 'Instant Cart & Inventory', 'Annual Renewal $100/Year'],
+      featuresEn: [
+        '100% custom-coded solution with PHP & MySQL without bloated templates or third-party platform rent',
+        'In-depth consultation sessions walking step-by-step with you to understand your exact business workflow',
+        'Integration with all payment gateways: Mada, Visa, Mastercard, Apple Pay, Tabby, Tamara, InstaPay & COD',
+        'Complete in-store operations: customized dashboard, stock sync, PDF invoices, discount engine & customer CRM',
+        'Official domain name + SSD high-speed cloud hosting included for the entire first year',
+        'Dedicated technical support and continuous daily maintenance contract included for 1 full year',
+        'Fixed annual renewal: $100 USD / year covering domain, hosting, SSL, and ongoing technical support'
+      ],
+      featuresAr: [
+        'برمجة كود خاص من الصفر بلغة PHP وقاعدة بيانات MySQL دون أي قوالب ووردبريس أو منصات مؤجرة تقتطع عمولات',
+        'جلسات استشارية تفصيلية بنمشي معاك فيها خطوة بخطوة لحد ما نعرف طبيعة خدمتك وتجارتك ماشية إزاي',
+        'ربط جميع بوابات الدفع الإلكترونية: مدى، فيزا، ماستركارد، أبل باي، تابي، تمارا، إنستاباي، والمحافظ والدفع عند الاستلام',
+        'كل العمليات تدار داخل المتجر: لوحة تحكم مخصصة، مزامنة المخزون، فواتير وبوالص PDF، وكوبونات الخصم وسجل العملاء',
+        'اسم دومين رسمي خاص بمتجرك + استضافة سحابية فائقة السرعة SSD مشمولة للسنة الأولى بالكامل',
+        'دعم فني متخصص ومتابعة وصيانة مستمرة طوال السنة الأولى لضمان أعلى استقرار وأمان',
+        'تجديد سنوي ثابت بـ 100 دولار سنوياً لجميع خدمات الاستضافة والدومين والصيانة والدعم'
+      ],
+      whatsappMsg: 'مرحباً فريق WebStack، أود حجز استشارة وطلب خدمة برمجة متجر إلكتروني مخصص (PHP & MySQL) بسعر يبدأ من 200 دولار'
+    },
+    'voltedge-beauty': {
+      pageUrl: 'https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home',
+      externalUrl: 'https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home',
+      titleEn: 'Voltedge Beauty — Cosmetics & Skincare Live Store Demo',
+      titleAr: 'متجر مستحضرات التجميل والعناية بالبشرة (Voltedge Beauty) - ديمو حي',
+      taglineEn: 'Luxury cosmetics & skincare turnkey store with instant cart and mobile checkout',
+      taglineAr: 'ديمو متجر إلكتروني فاخر لمستحضرات التجميل والعناية بالبشرة والمكياج مع سلة ذكية ودفع فوري',
+      image: 'assets/images/demo_beauty_store.jpg',
+      category: 'ecommerce-demos',
+      metricsEn: 'Live Production Demo · 100% Interactive',
+      metricsAr: 'ديمو إنتاجي مباشر · تفاعلي بالكامل 100%',
+      tech: ['E-Commerce Front', 'Responsive UI', 'Instant Cart Drawer', 'Beauty Catalog', 'Payment Ready'],
+      featuresEn: [
+        'Specialized luxury design customized for skincare, cosmetics and premium beauty lines',
+        'High-conversion mobile UX with instant cart drawer and fast product filtering',
+        'Multi-currency and local/global payment gateways integration ready (Mada, Visa, ApplePay)',
+        'Full product detail pages with ingredients, usage steps, and customer review showcases'
+      ],
+      featuresAr: [
+        'تصميم فاخر وعصري مخصص لمنتجات التجميل والعناية بالبشرة والماركات الراقية',
+        'تجربة مستخدم فائقة السرعة مع سلة مشتريات جانبية سريعة وفلاتر ذكية للتصنيفات',
+        'جاهزية تامة للربط مع بوابات الدفع الإلكترونية: مدى، فيزا، أبل باي، وتابي وتقسيط المشتريات',
+        'صفحات منتجات مفصلة تشمل المكونات وطريقة الاستخدام وتقييمات العملاء'
+      ],
+      whatsappMsg: 'مرحباً فريق WebStack، شفت ديمو متجر التجميل (Voltedge Beauty) وأرغب في برمجة متجر مماثل لنشاطي بسعر يبدأ من 200 دولار'
+    },
+    'voltedge-sports': {
+      pageUrl: 'https://mostafa-salah01.github.io/voltedge-sports/?fbclid',
+      externalUrl: 'https://mostafa-salah01.github.io/voltedge-sports/?fbclid',
+      titleEn: 'Voltedge Sports — Athletic Gear & Apparel Live Store Demo',
+      titleAr: 'متجر الأزياء والمعدات الرياضية (Voltedge Sports) - ديمو حي',
+      taglineEn: 'High-energy sportswear e-commerce store with dynamic sizing and stock sync',
+      taglineAr: 'ديمو متجر رياضي عالي الحيوية للملابس الرياضية والأحذية ومعدات اللياقة مع محرك مقاسات ذكي',
+      image: 'assets/images/demo_sports_store.jpg',
+      category: 'ecommerce-demos',
+      metricsEn: 'Live Production Demo · 100% Interactive',
+      metricsAr: 'ديمو إنتاجي مباشر · تفاعلي بالكامل 100%',
+      tech: ['Athletic E-Commerce', 'Variant Matrix (Sizes/Colors)', 'Fast Filter', 'Stock Alerts', 'Mobile Velocity'],
+      featuresEn: [
+        'Dynamic size, color, and fit matrix with real-time stock availability badges',
+        'Multi-sport category browsing (running, gym, football, training gear)',
+        'Frictionless mobile one-page checkout optimized for sports enthusiasts',
+        'Integration ready for automated parcel waybills and Cash-on-Delivery (COD)'
+      ],
+      featuresAr: [
+        'محرك لاختيار المقاسات والألوان المتعددة مع تنبيهات فورية بحالة وتوفر المخزون',
+        'تصفح سريع ومريح حسب نوع الرياضة: الجري، الجيم، كرة القدم، والملابس الرياضية',
+        'إتمام طلب بلمسة واحدة مهندس خصيصاً للسرعة العالية ومعدلات التحويل المرتفعة على الموبايل',
+        'جاهزية للربط مع بوالص الشحن السريع وتسوية الدفع عند الاستلام'
+      ],
+      whatsappMsg: 'مرحباً فريق WebStack، شفت ديمو متجر الرياضة (Voltedge Sports) وأرغب في برمجة متجر مماثل لنشاطي بسعر يبدأ من 200 دولار'
+    },
+    'voltedge-perfumes': {
+      pageUrl: 'https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home',
+      externalUrl: 'https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home',
+      titleEn: 'Voltedge Perfumes — Luxury Fragrances & Oud Live Store Demo',
+      titleAr: 'متجر العطور الملكية والبخور الفاخر (Voltedge Perfumes) - ديمو حي',
+      taglineEn: 'Royal luxury fragrance boutique demo with fragrance pyramid and gift bundling',
+      taglineAr: 'ديمو متجر ملكي فخم للعطور الشرقية والغربية والعود والبخور مع استعراض الهرم العطري وباقات الهدايا',
+      image: 'assets/images/demo_perfumes_store.jpg',
+      category: 'ecommerce-demos',
+      metricsEn: 'Live Production Demo · 100% Interactive',
+      metricsAr: 'ديمو إنتاجي مباشر · تفاعلي بالكامل 100%',
+      tech: ['Luxury UI', 'Fragrance Pyramid', 'Bottle Sizes (50/100ml)', 'Gift Sets', 'Premium Dark UX'],
+      featuresEn: [
+        'Royal aesthetic showcasing top, heart, and base fragrance pyramid notes',
+        'Bottle capacity selector (50ml / 100ml / Extrait) with dynamic price calculation',
+        'Luxury gift box packaging add-on and greeting card personalizations',
+        'Secure multi-gateway checkout with automated branded PDF order confirmation'
+      ],
+      featuresAr: [
+        'واجهة ملكية فاخرة تستعرض نوتات الهرم العطري (القمة، القلب، والقاعدة) باحتراف',
+        'اختيار أحجام الزجاجات (50ml / 100ml) وحساب السعر آلياً وفورياً',
+        'إمكانية إضافة علب الهدايا الفاخرة وتخصيص بطاقات الإهداء بلمسة راقية',
+        'دفع إلكتروني آمن مع فواتير PDF فورية تؤكد تفاصيل ومحتوى الطلب'
+      ],
+      whatsappMsg: 'مرحباً فريق WebStack، شفت ديمو متجر العطور (Voltedge Perfumes) وأرغب في برمجة متجر مماثل لنشاطي بسعر يبدأ من 200 دولار'
+    },
     'whatsapp-ai-employee': {
       pageUrl: 'whatsapp-ai-employee.html',
       titleEn: 'Human-Like AI Sales & Support Employee for WhatsApp',
@@ -641,8 +750,9 @@
 
     // Filter project cards
     document.querySelectorAll('.project-card-item').forEach(card => {
-      const cardCat = card.getAttribute('data-project-category');
-      if (category === 'all' || cardCat === category) {
+      const cardCat = card.getAttribute('data-project-category') || '';
+      const categories = cardCat.split(/\s+/);
+      if (category === 'all' || categories.includes(category) || cardCat === category) {
         card.style.display = 'block';
         setTimeout(() => { card.style.opacity = '1'; }, 20);
       } else {
@@ -947,8 +1057,7 @@
    - اكتب تحت كل خدمة بسطور قصيرة ومنظمة نقاطها الرئيسية:
      - السعر: يبدأ من 200$ (متجر مبني من الصفر حسب احتياج النشاط)
      - المزايا: دومين + استضافة سحابية سنة + عقد صيانة ودعم فني سنة كاملة
-     - التجديد السنوي: 140$ فقط في السنة في حال الرغبة في التجديد
-     - خيارات دفع مرنة: اشتراك شهري سحابي (25$ إلى 35$ شهرياً) بدون تكلفة شراء مقدماً، وتقسيط 0% فوائد على 3 أو 6 أو 12 شهر.
+     - التجديد السنوي: 100$ فقط في السنة في حال الرغبة في التجديد
    - اترك سطراً فارغاً بعد كل خدمة قبل الانتقال للخدمة التي تليها لتظهر كبطاقة مستقلة واضحة.
 4. الذكاء في العرض: إذا سأل العميل سؤالاً عاماً (مثل: "ممكن سؤال" أو "إيه خدماتكم")، رحب به بلباقة واعرض الخدمات الأساسية بنقاط مرتبة ونظيفة، واسأله ما هو المشروع أو النشاط التجاري الذي يريد تنفيذه.
 5. استخدام الإيموجي الراقي للتوضيح والتمييز (مثل: 🛍️ للمتاجر الإلكترونية، 🌐 للمواقع، 🤖 لموظف الواتساب، 🚚 للشحن، 📱 للموبايل، 💰 للأسعار والأفلييت).
@@ -970,9 +1079,7 @@
    - مميزات تجارة إلكترونية كاملة: سلة تسوق، بوابات دفع إلكترونية متعددة، نظام إدارة مخزون وطلبات، حسابات عملاء، تتبع الشحنات، إشعارات تلقائية، دعم اللغتين والعملات المتعددة.
    - مشمول داخل الباقة مجاناً: استضافة سحابية فائقة السرعة SSD + اسم دومين رسمي خاص لمدة سنة كاملة.
    - عقد صيانة ومتابعة ودعم فني متخصص مستمر لمدة سنة كاملة.
-   - التجديد السنوي اختياري: 140 دولار فقط في السنة (يشمل تجديد الاستضافة السحابية والدومين وعقد الصيانة والدعم الفني السنوي).
-   - نظام الاشتراك الشهري (لو العميل مش عايز يشتري تمليك كامل مقدماً): متاح اشتراك شهري مرن يبدأ من 25$ شهرياً للباقة الأساسية، أو 35$ شهرياً للباقة الاحترافية الشاملة (بدون دفع تكلفة شراء مقدماً، وإلغاء في أي وقت، شامل الدومين والاستضافة والصيانة).
-   - نظام التقسيط المريح (0% فوائد): إمكانية تقسيط تكلفة المتجر على 3 شهور (67$ أو 93$)، أو 6 شهور (34$ أو 47$)، أو 12 شهر (18$ أو 25$) عبر تابي (Tabby)، تمارا (Tamara)، فاليو (ValU)، أو البطاقات الائتمانية البنكية.
+   - التجديد السنوي اختياري: 100 دولار فقط في السنة (يشمل تجديد الاستضافة السحابية والدومين وعقد الصيانة والدعم الفني السنوي).
 2. تصميم موقع تعريفي للشركات (Corporate Website):
    - يبدأ من 65$ بدومين .uk شامل، أو 75$ بدومين .com شامل.
    - اللغتان (العربية والإنجليزية معاً) مشمولتان ضمن السعر الأساسي.
@@ -1286,58 +1393,45 @@ I'm still right here with you—what questions or systems would you like to expl
 وأنا مكمل معاك هنا خطوة بخطوة—تحب تركز في البداية على المتجر الإلكتروني ولا المواقع التعريفية ولا موظف الواتساب وسيستمات الشركات؟ 🚀`;
     }
 
-    // E-Commerce Store Development (إنشاء المتاجر الإلكترونية من الصفر)
-    if (text.includes('متجر') || text.includes('متاجر') || text.includes('ecommerce') || text.includes('e-commerce') || text.includes('store') || text.includes('سلة') || text.includes('200') || text.includes('منتجات')) {
+    // E-Commerce Store Development (إنشاء المتاجر الإلكترونية من الصفر - PHP & MySQL)
+    if (text.includes('متجر') || text.includes('متاجر') || text.includes('ecommerce') || text.includes('e-commerce') || text.includes('store') || text.includes('سلة') || text.includes('200') || text.includes('php') || text.includes('mysql') || text.includes('بوابات دفع')) {
       if (isEn) {
-        return `Hello! 🛍️ Here are the full details for the Custom E-Commerce Store Package by WebStack:
-1. Starting Price:
-   • Starting from $200 USD for the complete store package.
-2. What makes our stores powerful:
-   • Built 100% from scratch tailored precisely to your specific business model and product catalog (no cookie-cutter templates).
-   • High-conversion checkout, shopping cart, and multi-gateway online payments (Cards, Wallets, COD).
-   • Complete admin dashboard: inventory sync, order tracking, automated customer notifications, and bilingual (AR/EN) support.
-3. Included for 1 Full Year:
-   • Official custom domain name included.
-   • High-speed cloud SSD hosting included.
-   • Dedicated maintenance contract & continuous technical support for 1 full year.
-4. Annual Renewal:
-   • Only $140 USD flat per year after the first year (covers cloud hosting, domain renewal, full maintenance contract & tech support).
-5. Flexible Monthly & Installment Options:
-   • Monthly SaaS Plans: Start from $25/mo (Starter) or $35/mo (Pro) with zero upfront purchase fee, cancel anytime.
-   • 0% Interest Installments: Split over 3, 6, or 12 months (e.g. from $18/mo on 12 months or 3 installments of $67/mo via Tabby, Tamara, ValU, or bank cards).
+        return `Hello! 🛍️ Here are the full details for the Custom E-Commerce Store Platform by WebStack:
+1. Technology & Foundation:
+   • 100% Custom Built from scratch using modern PHP 8+ and MySQL relational database (Zero WordPress, zero bloated templates).
+2. Step-by-Step Consulting & Discovery:
+   • We conduct in-depth consultation sessions walking step-by-step with you to analyze your exact business model, product workflows, and customer journeys before coding.
+3. Complete In-Store Operations & All Payment Gateways:
+   • Integration with all local & global payment gateways: Mada, Visa, Mastercard, Apple Pay, Tabby, Tamara, InstaPay, Wallets, and Cash on Delivery.
+   • Everything is managed directly on the store: custom admin dashboard, stock sync & low inventory alerts, automated PDF invoices, and customer database.
+4. Immense Value Starting at Just $200 USD:
+   • Full source code and database ownership, 0% platform sales commissions forever.
+   • Includes official domain name + high-speed SSD cloud hosting for Year 1.
+   • Dedicated technical support and continuous daily maintenance contract for 1 full year.
+   • Fixed annual renewal: Only $100 USD / year (covers domain, SSD hosting, SSL, and ongoing technical support).
 
-Would you like to discuss your store requirements or reserve your package? Contact us on WhatsApp (+201107787049)! 🚀`;
+Would you like to book a free consultation or reserve your store package? Contact us on WhatsApp (+201107787049)! 🚀`;
       }
       return `يا هلا بيك يا فندم! 🌟
-بص يا فندم، باقة **إنشاء المتاجر الإلكترونية المخصصة (Custom E-Commerce Store)** من شركة WebStack متفصلة ومجهزة بالكامل لتكبير مبيعاتك:
+بص يا فندم، باقة **إنشاء وبرمجة المتاجر الإلكترونية المخصصة (Custom E-Commerce Store)** من شركة WebStack متفصلة ومبنية بالكامل لتعطيك قيمة استثنائية تفوق تكلفتها بمراحل:
 
-1. **السعر والبدء:**
-   • السعر يبدأ من **200 دولار فقط** للباقة الشاملة.
+1. **التقنية المعتمدة وبناء من الصفر 100%:**
+   • المتجر مبرمج ومبني بالكامل من الصفر بلغة **PHP (إصدار 8+)** وقاعدة بيانات **MySQL** منظمة ومترابطة، بدون أي قوالب ووردبريس أو منصات مؤجرة بطيئة. الكود وقاعدة البيانات ملكك بالكامل.
 
-2. **المميزات الفنية والبرمجية:**
-   • المتجر بيتعمل بالكامل من الصفر (Custom from scratch) ومخصص حسب احتياج وطبيعة نشاطك التجاري ومنتجاتك.
-   • سلة تسوق سريعة، تجربة مستخدم سلسة وعالية التحويل، وبوابات دفع إلكترونية متعددة (بطاقات، محافظ إلكترونية، ودفع عند الاستلام).
-   • لوحة تحكم إدارية شاملة: إدارة المخزون، تتبع الطلبات، إشعارات تلقائية، دعم اللغتين والعملات المتعددة.
+2. **جلسات استشارية تفصيلية خطوة بخطوة:**
+   • بنمشي معاك خطوة بخطوة في جلسات عمل واستشارات متخصصة لحد ما نعرف طبيعة خدمتك وتجارتك ماشية إزاي، ونفهم دورة طلباتك، خيارات الشحن، وسلوك المشترين لنهندس النظام وفق احتياجك بالضبط.
 
-3. **المشمول داخل الباقة مجاناً لمدة سنة كاملة:**
-   • اسم نطاق (دومين) رسمي خاص بمتجرك.
-   • استضافة سحابية فائقة السرعة SSD ومؤمنة بشهادة SSL.
-   • **عقد صيانة ومتابعة ودعم فني متخصص لمدة سنة كاملة** مع الباقة.
+3. **جميع بوابات الدفع الإلكترونية:**
+   • ربط وتكامل مع جميع بوابات الدفع: مدى، فيزا، ماستركارد، أبل باي (Apple Pay)، تابي، تمارا للتقسيط، إنستاباي، المحافظ الإلكترونية، والدفع عند الاستلام.
 
-4. **التجديد السنوي بعد السنة الأولى:**
-   • التجديد اختياري بـ **140 دولار فقط في السنة** (يشمل تجديد الاستضافة السحابية والدومين وعقد الصيانة والدعم الفني السنوي).
+4. **كل العمليات تدار وتتم مباشرة على المتجر:**
+   • لوحة تحكم إدارية خاصة ومخصصة لك، إدارة المخزون والتنبيه الآلي بنفاد الكميات، سلة تسوق فائقة السرعة، توليد فواتير وبوالص شحن PDF تلقائياً، وإدارة سجل العملاء والطلبات.
 
-5. **أنظمة الاشتراك الشهري (لو مش حابب تشتري تمليك كامل مقدماً):**
-   • باقة شهرية تبدأ من **25$ شهرياً** للأساسي، أو **35$ شهرياً** للاحترافي الشامل.
-   • بدون أي تكلفة شراء أو تأسيس مقدماً، مع استضافة ودومين ودعم وصيانة مستمرة، وإلغاء في أي وقت.
+5. **قيمة برمجية وتجارية عالية جداً تبدأ من 200 دولار:**
+   • السعر يبدأ من **200 دولار فقط** شاملة برمجة المتجر، الاستشارات، اسم دومين رسمي، استضافة سحابية فائقة السرعة SSD، و**عقد صيانة ومتابعة ودعم فني متخصص لمدة سنة كاملة**.
+   • التجديد السنوي ثابت ومضمون بـ **100 دولار فقط سنوياً** في حال الرغبة بالتجديد (شامل الدومين، الاستضافة، الصيانة والدعم).
 
-6. **أنظمة التقسيط المريح بدون فوائد (0% فوائد):**
-   • تقسيط على 3 شهور (67$ لمتجر 200$ | 93$ لمتجر 280$).
-   • تقسيط على 6 شهور (34$ لمتجر 200$ | 47$ لمتجر 280$).
-   • تقسيط على 12 شهراً (18$ لمتجر 200$ | 25$ لمتجر 280$).
-   • متاح عبر تابي (Tabby)، تمارا (Tamara)، فاليو (ValU)، سيمبل (Sympl)، وبطاقات البنوك الائتمانية.
-
-تحب نبدأ نحدد نوع منتجاتك ونفصل المتجر على مقاس نشاطك؟ أو تحب تتواصل معانا مباشرة على الواتساب؟ 🚀`;
+تحب نبدأ بجلسة استشارية سريعة نحدد فيها تفاصيل متجرك ونفصله على مقاس تجارتك؟ تواصل معنا مباشرة عبر الواتساب (01107787049) في أي وقت! 🚀`;
     }
 
     // Affiliate & Marketing Program Inquiries
@@ -1376,82 +1470,6 @@ You can also connect directly with WebStack on WhatsApp: https://wa.me/201107787
 📝 عشان نسجلك كمسوق معتمد ونبدأ فوراً:
 ممكن بعد إذنك اسمك الكريم ورقم هاتفك/واتساب؟
 (وفوراً هنسجل بياناتك ونحولك للواتساب الخاص بفريق WebStack 01107787049 عشان تستلم المواد التسويقية وتبدأ فوراً). تحب تركز على تسويق المتاجر والمواقع ولا موظفي الذكاء الاصطناعي؟`;
-    }
-
-    // Installment Plans Inquiry (أنظمة وخيارات التقسيط المريح)
-    if (text.includes('تقسيط') || text.includes('اقساط') || text.includes('أقساط') || text.includes('قسط') || text.includes('installment') || text.includes('bnpl') || text.includes('تابي') || text.includes('تمارا') || text.includes('فاليو') || text.includes('سيمبل')) {
-      if (isEn) {
-        return `Hello! 💳 WebStack offers 0% Interest Installment Plans for our Custom E-Commerce Stores:
-1. 3-Month Plan (0% Interest):
-   • Starter Store ($200): Only $67 / month
-   • Pro Growth Suite ($280): Only $93 / month
-2. 6-Month Plan:
-   • Starter Store ($200): Only $34 / month
-   • Pro Growth Suite ($280): Only $47 / month
-3. 12-Month Plan (Lowest Monthly Installment):
-   • Starter Store ($200): Only $18 / month
-   • Pro Growth Suite ($280): Only $25 / month
-Supported Partners: Tabby, Tamara, ValU, Sympl, and all major Bank Credit Cards.
-Would you like to start your store with easy installments today? Chat with us on WhatsApp (+201107787049)! 🚀`;
-      }
-      return `أهلاً بحضرتك يا فندم! 💳 يسعدنا جداً توفير أنظمة تقسيط مريحة بدون فوائد (0% فوائد) لتبدأ متجرك بدون أي ضغط على ميزانيتك:
-
-1. **نظام التقسيط على 3 شهور (0% فوائد):**
-   • باقة المتجر الأساسي (200$): قسط شهري 67 دولار فقط.
-   • باقة المتجر الاحترافي (280$): قسط شهري 93 دولار فقط.
-
-2. **نظام التقسيط على 6 شهور (نصف سنوي مريح):**
-   • باقة المتجر الأساسي (200$): قسط شهري 34 دولار فقط.
-   • باقة المتجر الاحترافي (280$): قسط شهري 47 دولار فقط.
-
-3. **نظام التقسيط على 12 شهراً (أقل عبء شهري ممكن):**
-   • باقة المتجر الأساسي (200$): قسط شهري 18 دولار فقط.
-   • باقة المتجر الاحترافي (280$): قسط شهري 25 دولار فقط.
-
-🏦 **طرق التقسيط المعتمدة:**
-• متاح عبر تابي (Tabby) وتمارا (Tamara).
-• متاح عبر فاليو (ValU) وسيمبل (Sympl).
-• متاح بجميع البطاقات الائتمانية البنكية (Visa / MasterCard) أو التقسيط المباشر.
-
-تحب نحجز لحضرتك المتجر بأي نظام تقسيط تفضله؟ تقدر تكلمنا فوراً على الواتساب 01107787049 ونبدأ في نفس اليوم! 🚀`;
-    }
-
-    // Monthly SaaS Subscription Plans (باقات الاشتراك الشهري للعميل اللي مش عايز يشتري)
-    if (text.includes('اشتراك شهري') || (text.includes('شهري') && (text.includes('متجر') || text.includes('اشتراك') || text.includes('باقة') || text.includes('سعر'))) || text.includes('مش عايز اشتري') || text.includes('بدون شراء') || text.includes('monthly') || text.includes('subscription')) {
-      if (isEn) {
-        return `Hello! 🔄 If you prefer not to purchase a full lifetime license upfront, WebStack provides flexible Monthly Cloud SaaS Subscriptions with zero setup fees:
-1. Starter Monthly Plan ($25 USD / month):
-   • Complete, ultra-fast online store storefront.
-   • Custom domain name + high-speed cloud hosting included.
-   • Online payment gateways + Cash on Delivery (COD).
-   • Full Arabic/English admin dashboard.
-   • Free maintenance, security updates, and daily support.
-   • Cancel or upgrade anytime with 0 penalty!
-2. Pro Growth Monthly Plan ($35 USD / month):
-   • Everything in Starter + automated barcode shipping waybills.
-   • WhatsApp AI sales engine integration & abandoned cart recovery.
-   • Meta & TikTok ad pixels + Conversion API (CAPI).
-   • Priority dedicated technical support.
-Would you like to activate your monthly subscription today? Message us on WhatsApp (+201107787049)! 🚀`;
-      }
-      return `أهلاً بحضرتك يا فندم! 🔄 لو حضرتك مش حابب تدفع تكلفة شراء كاملة مقدماً، شركة WebStack بتوفرلك أنظمة اشتراك شهري سحابية مرنة جداً وبدون أي تكلفة تأسيس أو شراء مسبق:
-
-1. **الاشتراك الشهري الأساسي (25$ شهرياً فقط):**
-   • متجر إلكتروني متكامل سريع جاهز لاستقبال الطلبات والبيع فوراً.
-   • اسم نطاق (دومين) + استضافة سحابية فائقة السرعة مشمولان طوال فترة الاشتراك.
-   • ربط بوابات الدفع الإلكتروني (فيزا، كاش، إنستاباي) + دفع عند الاستلام.
-   • لوحة تحكم عربية لإدارة المنتجات والطلبات والمخزون.
-   • دعم فني وصيانة دورية وتحديثات أمنية مستمرة.
-   • إلغاء الاشتراك متاح في أي وقت بدون أي شروط جزائية أو عقود ملزمة!
-
-2. **الاشتراك الشهري الاحترافي الشامل (35$ شهرياً فقط):**
-   • كل مميزات الباقة الأساسية بالكامل.
-   • أتمتة بوالص الشحن PDF بالباركود وتسليم المناديب بنقرة واحدة.
-   • موظف واتساب الذكي لتأكيد الطلبات واسترجاع السلات المتروكة آلياً.
-   • ربط دقيق لبيكسل إعلانات فيسبوك وتيك توك مع Conversion API.
-   • دعم فني ذو أولوية ومتابعة دورية مستمرة.
-
-تحب نبدأ نفعل لحضرتك المتجر بالاشتراك الشهري فوراً؟ تواصل معنا على الواتساب 01107787049 والبدء خلال 24 ساعة! 🚀`;
     }
 
     if (text.includes('سعر') || text.includes('باقة') || text.includes('موقع') || text.includes('price') || text.includes('quote') || text.includes('website') || text.includes('cost') || text.includes('65') || text.includes('75') || text.includes('تجديد') || text.includes('renewal')) {
@@ -1563,7 +1581,7 @@ We can automate any repetitive operational task for your business! Message WebSt
     if (isEn) {
       return `Welcome to WebStack! 👋 I'm Ahmed from Customer Service & Support.
 We provide specialized software, custom e-commerce stores, and AI solutions:
-1. Custom E-Commerce Stores (Starting from $200 USD, built from scratch, 1 year domain + hosting + maintenance included, $140/yr renewal · Monthly SaaS from $25/mo · 0% installments available).
+1. Custom E-Commerce Stores (Starting from $200 USD, built from scratch, 1 year domain + hosting + maintenance included, $100/yr renewal).
 2. Corporate Website Packages ($65 USD for .uk / $75 USD for .com, bilingual AR/EN included, $40 fixed annual renewal).
 3. Human-like AI Employees for WhatsApp & Telegram with instant PDF quotation generator.
 4. Smart Logistics & Courier Dispatch Platforms with live waybills & COD tracking.
@@ -1577,7 +1595,7 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
 أنا أحمد من خدمة العملاء والمبيعات، سعيد جداً بتواصلك وتحت أمرك في أي استفسار:
 
 1. **إنشاء المتاجر الإلكترونية المخصصة (Custom E-Commerce)**:
-   • يبدأ من 200$ شامل استضافة ودومين وعقد صيانة ودعم فني لسنة، وتجديد سنوي اختياري بـ 140$ (ومتاح أيضاً اشتراك شهري من 25$ وتقسيط مريح 0% فوائد).
+   • يبدأ من 200$ شامل استضافة ودومين وعقد صيانة ودعم فني لسنة، وتجديد سنوي اختياري بـ 100$.
 
 2. **تصميم مواقع الشركات التعريفية**:
    • باقة 65$ بدومين .uk أو 75$ بدومين .com شامل اللغتين والاستضافة السريعة وتجديد بـ 40$.
@@ -2506,7 +2524,6 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
   function attachDirectListeners() {
     // Mount floating customer service widget
     mountFloatingAiCustomerServiceWidget();
-    initEcommercePricingTabsAndCalculator();
 
     // Theme toggle direct listener
     document.querySelectorAll('#theme-toggle-btn, [data-action="toggle-theme"], .theme-toggle-btn').forEach(btn => {
@@ -2970,79 +2987,6 @@ ${note ? 'ملاحظات: ' + note : ''}`;
       window.closeMobileMenu();
     }
   }, { passive: true });
-
-  // --- E-Commerce Pricing Plan Tabs & Installment Calculator ---
-  function initEcommercePricingTabsAndCalculator() {
-    const tabOwnership = document.getElementById('tab-btn-ownership');
-    const tabMonthly = document.getElementById('tab-btn-monthly');
-    const tabInstallments = document.getElementById('tab-btn-installments');
-
-    const paneOwnership = document.getElementById('pane-ownership');
-    const paneMonthly = document.getElementById('pane-monthly');
-    const paneInstallments = document.getElementById('pane-installments');
-
-    if (tabOwnership && paneOwnership) {
-      const tabs = [
-        { btn: tabOwnership, pane: paneOwnership },
-        { btn: tabMonthly, pane: paneMonthly },
-        { btn: tabInstallments, pane: paneInstallments }
-      ];
-
-      function activateTab(index) {
-        tabs.forEach((item, i) => {
-          if (!item.btn || !item.pane) return;
-          if (i === index) {
-            item.btn.classList.add('active', 'bg-emerald-500', 'text-slate-950', 'shadow-md');
-            item.btn.classList.remove('text-slate-300', 'hover:bg-slate-800');
-            item.pane.classList.remove('hidden');
-          } else {
-            item.btn.classList.remove('active', 'bg-emerald-500', 'text-slate-950', 'shadow-md');
-            item.btn.classList.add('text-slate-300', 'hover:bg-slate-800');
-            item.pane.classList.add('hidden');
-          }
-        });
-      }
-
-      tabs.forEach((item, idx) => {
-        if (item.btn) {
-          item.btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            activateTab(idx);
-          });
-        }
-      });
-    }
-
-    // Installment Calculator
-    const calcPlan = document.getElementById('calc-plan-select');
-    const calcMonths = document.getElementById('calc-months-select');
-    const calcResultMonthly = document.getElementById('calc-result-monthly');
-    const calcResultSummary = document.getElementById('calc-result-summary');
-    const calcWhatsappBtn = document.getElementById('calc-whatsapp-btn');
-
-    function updateCalculator() {
-      if (!calcPlan || !calcMonths || !calcResultMonthly) return;
-      const total = parseInt(calcPlan.value, 10) || 200;
-      const months = parseInt(calcMonths.value, 10) || 3;
-      const monthly = Math.round(total / months);
-      const planName = total === 280 ? 'باقة المتجر الاحترافي (280$)' : 'باقة المتجر الأساسي (200$)';
-
-      calcResultMonthly.textContent = monthly + '$';
-      if (calcResultSummary) {
-        calcResultSummary.textContent = 'إجمالي المبلغ: ' + total + '$ موزعة على ' + months + ' أقساط متساوية (' + monthly + '$ شهرياً) بدون أي فوائد.';
-      }
-      if (calcWhatsappBtn) {
-        const msg = 'مرحباً مصطفى، أود حجز ' + planName + ' بنظام التقسيط على ' + months + ' شهور بقسط شهري ' + monthly + '$ تقريباً (0% فوائد).';
-        calcWhatsappBtn.href = 'https://wa.me/201107787049?text=' + encodeURIComponent(msg);
-      }
-    }
-
-    if (calcPlan && calcMonths) {
-      calcPlan.addEventListener('change', updateCalculator);
-      calcMonths.addEventListener('change', updateCalculator);
-      updateCalculator();
-    }
-  }
 
   // --- Safe Unified App Initialization ---
   function initializeApp() {

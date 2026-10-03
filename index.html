@@ -136,22 +136,28 @@
       </a>
 
       <!-- Nav Links (Center) -->
-      <nav class="header-nav-links hidden lg:flex">
-        <a href="#projects" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Projects & Portfolio" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
-        <a href="ecommerce-store.html" class="nav-item text-emerald-400 hover:text-emerald-300 font-bold transition-colors py-1.5 px-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-1.5 shadow-sm" data-en="🛍️ E-Commerce Store (From $200)" data-ar="🛍️ متجر إلكتروني (يبدأ من 200$)">
-          <span>🛍️</span>
-          <span data-en="E-Commerce Store (From $200)" data-ar="متجر إلكتروني (يبدأ من 200$)">متجر إلكتروني (يبدأ من 200$)</span>
+      <nav class="header-nav-links hidden lg:flex items-center gap-4">
+        <a href="ecommerce-store.html" class="nav-item flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-400 font-bold transition-all shadow-[0_0_12px_rgba(16,185,129,0.2)] hover:scale-105" title="صفحة المتاجر الإلكترونية المخصصة">
+          <span class="text-base">🛍️</span>
+          <span data-en="E-Commerce Store" data-ar="المتجر الإلكتروني">المتجر الإلكتروني</span>
+          <span class="px-1.5 py-0.2 rounded bg-emerald-400 text-slate-950 text-[10px] font-mono font-black animate-pulse">200$</span>
         </a>
+        <a href="#projects" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Projects & Portfolio" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
         <a href="#solutions" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Services & Pricing" data-ar="الخدمات والأسعار">الخدمات والأسعار</a>
         <a href="#ai-tiers" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="AI Employees" data-ar="موظفو الذكاء">موظفو الذكاء</a>
         <a href="#partners" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Sales Partner" data-ar="برنامج الشركاء">برنامج الشركاء</a>
         <a href="#architecture" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Architecture" data-ar="المعمارية السحابية">المعمارية السحابية</a>
-        <a href="#skills" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="Tech Stack" data-ar="المهارات والتقنيات">المهارات والتقنيات</a>
         <a href="#about" class="nav-item hover:text-emerald-400 transition-colors py-1.5 px-2" data-en="About WebStack" data-ar="عن WebStack">عن WebStack</a>
       </nav>
 
       <!-- Actions Container (Left side in RTL) -->
       <div class="header-actions-group">
+        <!-- Facebook Page Button -->
+        <a href="https://www.facebook.com/profile.php?id=61595189300053&locale=ar_AR" target="_blank" rel="noopener noreferrer" class="h-10 px-2.5 sm:px-3 rounded-xl border border-blue-500/40 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 hover:text-blue-300 transition-all hidden md:flex items-center justify-center gap-1.5 text-xs font-semibold shadow-sm shrink-0 whitespace-nowrap" title="صفحة الفيسبوك الرسمية">
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span data-en="Facebook" data-ar="فيسبوك">فيسبوك</span>
+        </a>
+
         <!-- Theme Toggle Button (Dark / Light) -->
         <button type="button" id="theme-toggle-btn" data-action="toggle-theme" class="h-10 p-2 sm:px-3 rounded-xl border border-slate-700/80 bg-slate-900/80 hover:bg-slate-800 text-slate-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm shrink-0 whitespace-nowrap" title="Toggle Theme" aria-label="Toggle theme">
           <span id="theme-btn-icon" class="text-base select-none">🌙</span>
@@ -186,12 +192,16 @@
 
     <!-- Mobile Dropdown Menu (Smooth Slide-Down Animation) -->
     <div id="mobile-menu" class="lg:hidden border-b border-slate-800 bg-slate-950/95 px-4 space-y-3 backdrop-blur-xl" aria-hidden="true">
+      <a href="ecommerce-store.html" class="mobile-nav-link flex items-center justify-between p-2.5 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 font-bold" data-en="🛍️ Custom E-Commerce Store ($200)" data-ar="🛍️ متجر إلكتروني مخصص (200$)">
+        <span class="flex items-center gap-2">
+          <span>🛍️</span>
+          <span>متجر إلكتروني مخصص</span>
+        </span>
+        <span class="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 text-xs font-mono font-black">200$</span>
+      </a>
       <a href="#projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 font-semibold" data-en="Projects & Portfolio" data-ar="الأنظمة والمشاريع">الأنظمة والمشاريع</a>
       <div class="pr-2 border-r-2 border-emerald-500/40 space-y-2 text-xs">
-        <a href="ecommerce-store.html" class="mobile-nav-link block py-1.5 text-emerald-400 font-bold hover:underline flex items-center justify-between" data-en="🛍️ Smart E-Commerce Store (From $200)" data-ar="🛍️ تصميم متجر إلكتروني متكامل (يبدأ من 200$)">
-          <span>🛍️ تصميم متجر إلكتروني متكامل (يبدأ من 200$)</span>
-          <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">صفحة مخصصة</span>
-        </a>
+        <a href="ecommerce-store.html" class="mobile-nav-link block py-1 text-emerald-400 font-bold hover:underline" data-en="🛍️ E-Commerce Platform ($200)" data-ar="🛍️ المتاجر الإلكترونية (200$)">🛍️ المتاجر الإلكترونية (200$)</a>
         <a href="corporate-website.html" class="mobile-nav-link block py-1 text-cyan-400 hover:underline" data-en="Corporate Website ($65 / $75)" data-ar="مواقع الشركات (65$ / 75$)">مواقع الشركات (65$ / 75$)</a>
         <a href="whatsapp-ai-employee.html" class="mobile-nav-link block py-1 text-emerald-400 hover:underline" data-en="WhatsApp AI Employee" data-ar="موظف واتساب الذكي">موظف واتساب الذكي</a>
         <a href="omnichannel-ai-agent.html" class="mobile-nav-link block py-1 text-cyan-400 hover:underline" data-en="Telegram & Messenger AI" data-ar="ذكاء تلجرام وماسنجر">ذكاء تلجرام وماسنجر</a>
@@ -203,10 +213,12 @@
       <a href="#solutions" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400 font-semibold" data-en="Services & Pricing" data-ar="الخدمات والأسعار">الخدمات والأسعار</a>
       <a href="#ai-tiers" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="AI Employee Tiers" data-ar="باقات موظفي الذكاء">باقات موظفي الذكاء</a>
       <a href="#partners" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Become a Sales Partner" data-ar="برنامج الشركاء المستقلين">برنامج الشركاء المستقلين</a>
-      <a href="#architecture" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Cloud Architecture" data-ar="المعمارية السحابية">المعمارية السحابية</a>
-      <a href="#workflow" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Interactive Flow" data-ar="محاكي الأتمتة">محاكي الأتمتة</a>
-      <a href="#skills" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="Tech Stack" data-ar="المهارات والتقنيات">المهارات والتقنيات</a>
-      <a href="#about" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="About" data-ar="من أنا">من أنا</a>
+      <a href="https://www.facebook.com/profile.php?id=61595189300053&locale=ar_AR" target="_blank" rel="noopener noreferrer" class="mobile-nav-link flex items-center gap-2 py-2 text-blue-400 font-semibold hover:underline">
+        <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <span data-en="Official Facebook Page" data-ar="صفحة الفيسبوك الرسمية">صفحة الفيسبوك الرسمية</span>
+        <span>↗</span>
+      </a>
+      <a href="#about" class="mobile-nav-link block py-2 text-slate-300 hover:text-emerald-400" data-en="About WebStack" data-ar="عن WebStack">عن WebStack</a>
 
       <!-- Dedicated Mobile Quick Settings (Theme & Language Controls) -->
       <div class="pt-3 mt-3 border-t border-slate-800/80 flex items-center gap-3">
@@ -278,6 +290,44 @@
             <span class="px-3 py-1 rounded-lg badge-indigo text-xs font-mono font-medium">Smart Shipping & COD</span>
             <span class="px-3 py-1 rounded-lg badge-amber text-xs font-mono font-medium">Google Play & App Store</span>
             <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-mono font-medium">n8n & Enterprise Solutions</span>
+          </div>
+
+          <!-- Quick Services Fast Access Gateway with Prominent Store Icon -->
+          <div class="pt-4 border-t border-slate-800/80">
+            <div class="text-[11px] text-slate-400 font-mono mb-2.5 flex items-center gap-1.5">
+              <span class="text-emerald-400">⚡</span>
+              <span data-en="Direct Access to Specialized Services & Live Demos:" data-ar="أيقونات الدخول المباشر للخدمات والمتاجر الحية:">أيقونات الدخول المباشر للخدمات والمتاجر الحية:</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <a href="ecommerce-store.html" class="p-2.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border-2 border-emerald-500/50 text-slate-100 flex items-center gap-2.5 group transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] hover:scale-105" title="صفحة المتاجر الإلكترونية المخصصة">
+                <span class="text-2xl group-hover:scale-110 transition-transform shrink-0">🛍️</span>
+                <div class="leading-tight">
+                  <div class="font-extrabold text-xs text-emerald-400" data-en="E-Commerce Store" data-ar="المتجر الإلكتروني">المتجر الإلكتروني</div>
+                  <div class="text-[10px] text-slate-300 font-mono font-bold">PHP & MySQL · $200</div>
+                </div>
+              </a>
+              <a href="corporate-website.html" class="p-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-slate-100 flex items-center gap-2.5 group transition-all hover:scale-105" title="مواقع الشركات التعريفية">
+                <span class="text-2xl group-hover:scale-110 transition-transform shrink-0">🌐</span>
+                <div class="leading-tight">
+                  <div class="font-bold text-xs text-cyan-300" data-en="Corporate Sites" data-ar="مواقع الشركات">مواقع الشركات</div>
+                  <div class="text-[10px] text-slate-400 font-mono">Bilingual · $65/$75</div>
+                </div>
+              </a>
+              <a href="whatsapp-ai-employee.html" class="p-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-slate-100 flex items-center gap-2.5 group transition-all hover:scale-105" title="موظف واتساب الذكي">
+                <span class="text-2xl group-hover:scale-110 transition-transform shrink-0">🤖</span>
+                <div class="leading-tight">
+                  <div class="font-bold text-xs text-emerald-300" data-en="WhatsApp AI" data-ar="موظف واتساب">موظف واتساب</div>
+                  <div class="text-[10px] text-slate-400 font-mono">24/7 Human Sales</div>
+                </div>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61595189300053&locale=ar_AR" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600/25 border border-blue-500/40 text-slate-100 flex items-center gap-2.5 group transition-all hover:scale-105" title="صفحة الفيسبوك الرسمية">
+                <span class="text-2xl text-blue-400 group-hover:scale-110 transition-transform shrink-0">📘</span>
+                <div class="leading-tight">
+                  <div class="font-bold text-xs text-blue-300" data-en="Facebook Page" data-ar="صفحة فيسبوك">صفحة فيسبوك</div>
+                  <div class="text-[10px] text-slate-400 font-mono">Live Demos & News</div>
+                </div>
+              </a>
+            </div>
           </div>
 
         </div>
@@ -371,8 +421,8 @@
         <!-- Filter Category Tabs -->
         <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
           <button data-category="all" class="filter-tab active" data-en="All Work" data-ar="جميع الأنظمة">جميع الأنظمة</button>
-          <button data-category="ecommerce" class="filter-tab" data-en="E-Commerce Stores (From $200)" data-ar="المتاجر الإلكترونية (تبدأ من 200$)">المتاجر الإلكترونية (تبدأ من 200$)</button>
-          <button data-category="web-development" class="filter-tab" data-en="Corporate Websites ($65-$75)" data-ar="مواقع الشركات التعريفية (65$-75$)">مواقع الشركات التعريفية (65$-75$)</button>
+          <button data-category="web-development" class="filter-tab" data-en="Websites & E-Commerce Stores" data-ar="المواقع والمتاجر الإلكترونية">المواقع والمتاجر الإلكترونية</button>
+          <button data-category="ecommerce-demos" class="filter-tab" data-en="🛍️ Live Store Demos" data-ar="🛍️ ديمو المتاجر الحية">🛍️ ديمو المتاجر الحية</button>
           <button data-category="ai-employee" class="filter-tab" data-en="AI Employees (WhatsApp/Telegram)" data-ar="موظفو الذكاء الاصطناعي">موظفو الذكاء الاصطناعي</button>
           <button data-category="shipping" class="filter-tab" data-en="Smart Shipping & Logistics" data-ar="سيستم الشحن واللوجستيات">سيستم الشحن واللوجستيات</button>
           <button data-category="mobile-apps" class="filter-tab" data-en="Supermarket, Pharmacy & Mobile Apps" data-ar="أنظمة وتطبيقات الموبايل">أنظمة وتطبيقات الموبايل</button>
@@ -383,16 +433,14 @@
 
       <!-- Projects Grid -->
       <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- Featured Service: Smart E-Commerce Store Platform (From $200 Package) -->
-        <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col border-t-2 border-t-emerald-500" data-project-category="ecommerce">
+        
+        <!-- Featured Service 1: Custom E-Commerce Store (PHP & MySQL) - Starts $200 -->
+        <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col border-t-2 border-t-emerald-400" data-project-category="web-development ecommerce-demos">
           <a href="ecommerce-store.html" class="block project-img-wrapper group">
-            <picture>
-              <img src="assets/images/ecommerce_store_mockup_1790763328969.jpg" alt="Smart E-Commerce Store Platform" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
-            </picture>
-            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-emerald text-xs font-mono font-bold">$200 (Starting Price)</div>
-            <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-emerald-500/90 text-slate-950 text-[11px] font-bold font-mono">
-              <span data-en="Unbeatable Value" data-ar="أعلى قيمة مقابل السعر">أعلى قيمة مقابل السعر</span>
+            <img src="assets/images/ecommerce_store_showcase.jpg" alt="Custom PHP MySQL E-Commerce Store Platform" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md badge-emerald text-xs font-mono font-bold">$200 (Starts From)</div>
+            <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-cyan-500/90 text-slate-950 text-[11px] font-bold font-mono">
+              PHP 8+ & MySQL
             </div>
             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span class="px-3.5 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold text-xs" data-en="🚀 View Dedicated Page" data-ar="🚀 فتح صفحة المتجر المستقلة">🚀 فتح صفحة المتجر المستقلة</span>
@@ -402,50 +450,262 @@
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
                 <h3 class="text-xl font-bold text-white">
-                  <a href="ecommerce-store.html" class="hover:text-emerald-400 transition-colors" data-en="Smart E-Commerce Store Design & Automated Setup" data-ar="تصميم وإعداد متجر إلكتروني ذكي متكامل ومخصص">تصميم وإعداد متجر إلكتروني ذكي متكامل ومخصص</a>
+                  <a href="ecommerce-store.html" class="hover:text-emerald-400 transition-colors" data-en="Custom E-Commerce Store Platform (PHP & MySQL)" data-ar="برمجة متجر إلكتروني مخصص (PHP & MySQL)">برمجة متجر إلكتروني مخصص (PHP & MySQL)</a>
                 </h3>
               </div>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4" data-en="Launch your complete e-commerce brand: high-conversion storefront, payment gateways (Cards/Wallets/ValU), automated barcode waybills, abandoned cart recovery, and WhatsApp AI integration starting from just $200!" data-ar="امتلك متجرك الإلكتروني الاحترافي: واجهة سريعة فائقة التحويل، بوابات دفع إلكتروني (فيزا/محافظ/تقسيط) + دفع عند الاستلام، أتمتة بوالص الشحن بالباركود، واسترجاع السلات المتروكة يبدأ من 200$ فقط!">
-                امتلك متجرك الإلكتروني الاحترافي: واجهة سريعة فائقة التحويل، بوابات دفع إلكتروني (فيزا/محافظ/تقسيط) + دفع عند الاستلام، أتمتة بوالص الشحن بالباركود، واسترجاع السلات المتروكة يبدأ من 200$ فقط!
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4" data-en="100% custom-built online store with PHP & MySQL without ready templates. Includes dedicated step-by-step business workflow consultations, all payment gateways, and 1 full year of domain, hosting, and technical support." data-ar="متجر إلكتروني مخصص بالكامل من الصفر بلغة PHP وقاعدة بيانات MySQL بدون قوالب جاهزة. يشمل جلسات استشارية تفصيلية بنمشي معاك فيها خطوة بخطوة لحد ما نعرف طبيعة خدمتك وتجارتك ماشية إزاي، مع ربط جميع بوابات الدفع، وإدارة كافة العمليات على المتجر، ودعم فني وصيانة سنة كاملة.">
+                متجر إلكتروني مخصص بالكامل من الصفر بلغة PHP وقاعدة بيانات MySQL بدون قوالب جاهزة. يشمل جلسات استشارية تفصيلية بنمشي معاك فيها خطوة بخطوة لحد ما نعرف طبيعة خدمتك وتجارتك ماشية إزاي، مع ربط جميع بوابات الدفع، وإدارة كافة العمليات على المتجر، ودعم فني وصيانة سنة كاملة.
               </p>
               
               <!-- Key Features Highlights -->
               <div class="space-y-1.5 mb-4 text-xs text-slate-300">
                 <div class="flex items-center gap-2">
                   <span class="text-emerald-400 font-bold">✓</span>
-                  <span data-en="Full Payment Coverage: Visa, Wallets, InstaPay, ValU & COD" data-ar="تغطية كاملة للدفع: فيزا، محافظ كاش، إنستاباي، تقسيط، ودفع عند الاستلام">تغطية كاملة للدفع: فيزا، محافظ كاش، إنستاباي، تقسيط، ودفع عند الاستلام</span>
+                  <span data-en="100% Custom code (PHP & MySQL) — Zero ready-made templates" data-ar="مبني برمجياً من الصفر (PHP & MySQL) بدون أي قوالب ووردبريس أو منصات مؤجرة">مبني برمجياً من الصفر (PHP & MySQL) بدون أي قوالب ووردبريس أو منصات مؤجرة</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <span class="text-emerald-400 font-bold">✓</span>
-                  <span data-en="1-Click Automated Courier Waybills with Scannable Barcode" data-ar="طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر واحدة">طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر واحدة</span>
+                  <span data-en="Consultations walking step-by-step to analyze your workflow" data-ar="جلسات استشارية تفصيلية لتحليل وهندسة مسار متجرك خطوة بخطوة">جلسات استشارية تفصيلية لتحليل وهندسة مسار متجرك خطوة بخطوة</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <span class="text-emerald-400 font-bold">✓</span>
-                  <span data-en="WhatsApp AI Integration: Order notifications & cart recovery" data-ar="تكامل موظف واتساب الذكي لإرسال الفواتير واسترجاع السلات المتروكة">تكامل موظف واتساب الذكي لإرسال الفواتير واسترجاع السلات المتروكة</span>
+                  <span data-en="All payment gateways: Mada, Visa/Mastercard, Apple Pay, Tabby, Tamara, InstaPay" data-ar="ربط جميع بوابات الدفع: مدى، فيزا، ماستركارد، أبل باي، تابي، تمارا، وإنستاباي">ربط جميع بوابات الدفع: مدى، فيزا، ماستركارد، أبل باي، تابي، تمارا، وإنستاباي</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <span class="text-emerald-400 font-bold">✓</span>
-                  <span data-en="Includes Domain + Fast SSD Cloud Hosting + SSL + 1-Year Support" data-ar="شامل الدومين + استضافة سحابية فائقة السرعة + SSL + دعم فني وصيانة سنة">شامل الدومين + استضافة سحابية فائقة السرعة + SSL + دعم فني وصيانة سنة</span>
+                  <span data-en="Everything runs on the store: custom dashboard, stock sync, PDF invoices" data-ar="كل شيء يتم ويدار على المتجر: لوحة تحكم، إدارة مخزون، وفواتير وبوالص PDF">كل شيء يتم ويدار على المتجر: لوحة تحكم، إدارة مخزون، وفواتير وبوالص PDF</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span data-en="Full technical support & daily maintenance contract for 1 full year" data-ar="عقد صيانة ومتابعة يومية ودعم فني متخصص لمدة سنة كاملة مشمول">عقد صيانة ومتابعة يومية ودعم فني متخصص لمدة سنة كاملة مشمول</span>
                 </div>
               </div>
 
-              <!-- Value Pricing Callout Box -->
+              <!-- Pricing & Value Callout Box -->
               <div class="p-3 rounded-lg bg-slate-900/90 border border-emerald-500/30 text-xs mb-4">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between font-mono font-bold mb-1 gap-1">
-                  <span class="text-emerald-400" data-en="Starting Price: $200 (Full 1st Year) · Renewal: $140/yr" data-ar="السعر يبدأ من: 200$ (شاملة السنة الأولى) · والتجديد: 140$ سنوياً">السعر يبدأ من: 200$ (شاملة السنة الأولى) · والتجديد: 140$ سنوياً</span>
+                <div class="flex items-center justify-between font-mono font-bold mb-1">
+                  <span class="text-emerald-400" data-en="Starts at $200 USD (Year 1 All-Inclusive)" data-ar="السعر يبدأ من 200$ (شامل السنة الأولى بالكامل)">السعر يبدأ من 200$ (شامل السنة الأولى بالكامل)</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">قيمة عالية استثنائية</span>
                 </div>
-                <div class="text-slate-400 text-[11px]" data-en="Flexible options: Full ownership with $140/yr renewal, monthly subscription from $25/mo, or 0% interest installments (3-12 mos)." data-ar="خيارات مرنة: تملك كامل مع تجديد 140$ سنوياً، أو اشتراك شهري من 25$ شهرياً، أو تقسيط مريح 0% فوائد (3 إلى 12 شهر).">
-                  خيارات مرنة: تملك كامل مع تجديد 140$ سنوياً، أو اشتراك شهري من 25$ شهرياً، أو تقسيط مريح 0% فوائد (3 إلى 12 شهر).
+                <div class="text-slate-400 text-[11px]" data-en="Full code ownership, zero sales commissions, domain & cloud hosting included. Renewal: $100/yr." data-ar="ملكية كاملة للكود وقاعدة البيانات، 0% عمولات على مبيعاتك، مع دومين واستضافة سحابية سريعة. التجديد السنوي ثابت: 100$/سنة.">
+                  ملكية كاملة للكود وقاعدة البيانات، 0% عمولات على مبيعاتك، مع دومين واستضافة سحابية سريعة. التجديد السنوي ثابت: 100$/سنة.
                 </div>
               </div>
             </div>
 
             <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
               <a href="ecommerce-store.html" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1">
-                <span data-en="View Store Details" data-ar="عرض تفاصيل وباقة المتجر">عرض تفاصيل وباقة المتجر</span> &rarr;
+                <span data-en="View Service Page" data-ar="عرض تفاصيل المتجر المخصص">عرض تفاصيل المتجر المخصص</span> &rarr;
               </a>
-              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%20(200$)" target="_blank" rel="noopener noreferrer" data-service="ecommerce-store-package" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 dynamic-whatsapp-link">
-                <span data-en="Order Store (From $200)" data-ar="طلب المتجر (يبدأ من 200$)">طلب المتجر (يبدأ من 200$)</span>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%88%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20(PHP%20%26%20MySQL)%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" data-service="custom-ecommerce-store" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105 dynamic-whatsapp-link">
+                <span data-en="Order Store ($200)" data-ar="طلب المتجر (200$)">طلب المتجر (200$)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Demo Store 1: Voltedge Beauty & Skincare Store -->
+        <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col border-t-2 border-t-pink-500" data-project-category="web-development ecommerce-demos">
+          <a href="https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="block project-img-wrapper group">
+            <img src="assets/images/demo_beauty_store.jpg" alt="Voltedge Beauty & Skincare Live Demo Store" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-emerald-500 text-slate-950 text-xs font-mono font-bold flex items-center gap-1 shadow-md">
+              <span class="w-2 h-2 rounded-full bg-slate-950 animate-ping"></span>
+              <span data-en="Live Store Demo 🌐" data-ar="نسخة ديمو حية 🌐">نسخة ديمو حية 🌐</span>
+            </div>
+            <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-pink-500/90 text-white text-[11px] font-bold font-mono">
+              تجميل وعناية بالبشرة
+            </div>
+            <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-pink-500 text-white font-bold text-xs shadow-lg flex items-center gap-1.5" data-en="🔗 Open Live Demo Store" data-ar="🔗 تجربة ومعاينة الديمو الحي">🔗 تجربة ومعاينة الديمو الحي</span>
+            </div>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="text-xl font-bold text-white">
+                  <a href="https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors" data-en="Voltedge Beauty — Cosmetics & Skincare Store" data-ar="متجر مستحضرات التجميل والعناية (Voltedge Beauty)">متجر مستحضرات التجميل والعناية (Voltedge Beauty)</a>
+                </h3>
+              </div>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4" data-en="A live turnkey luxury e-commerce store demo for cosmetics, skincare, and beauty products. Features elegant product showcases, ingredient highlights, instant cart drawer, and high-conversion mobile checkout." data-ar="نسخة ديمو تفاعلية حية لمتجر إلكتروني فاخر لمستحضرات التجميل والعناية بالبشرة والمكياج، بتصميم وردي راقٍ، تصفح سريع للمنتجات وتصنيفاتها، سلة مشتريات منزلقة ذكية، وإتمام طلب سلس بلمسة واحدة.">
+                نسخة ديمو تفاعلية حية لمتجر إلكتروني فاخر لمستحضرات التجميل والعناية بالبشرة والمكياج، بتصميم وردي راقٍ، تصفح سريع للمنتجات وتصنيفاتها، سلة مشتريات منزلقة ذكية، وإتمام طلب سلس بلمسة واحدة.
+              </p>
+              
+              <!-- Key Features Highlights -->
+              <div class="space-y-1.5 mb-4 text-xs text-slate-300">
+                <div class="flex items-center gap-2">
+                  <span class="text-pink-400 font-bold">✓</span>
+                  <span data-en="Live URL: mostafa-salah01.github.io/voltedge-beauty" data-ar="رابط الديمو الحي: mostafa-salah01.github.io/voltedge-beauty">رابط الديمو الحي: mostafa-salah01.github.io/voltedge-beauty</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-pink-400 font-bold">✓</span>
+                  <span data-en="Modern luxury UI specialized for skincare & cosmetics" data-ar="واجهة مستخدم فائقة الفخامة والأناقة مخصصة لمنتجات التجميل">واجهة مستخدم فائقة الفخامة والأناقة مخصصة لمنتجات التجميل</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-pink-400 font-bold">✓</span>
+                  <span data-en="Instant cart drawer & frictionless checkout" data-ar="سلة مشتريات جانبية سريعة وحساب آلي للشحن والضرائب">سلة مشتريات جانبية سريعة وحساب آلي للشحن والضرائب</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-pink-400 font-bold">✓</span>
+                  <span data-en="Ready to connect with Mada, Visa, ApplePay & Tabby" data-ar="جاهز للربط مع مدى، فيزا، أبل باي، وتابي وتقسيط المشتريات">جاهز للربط مع مدى، فيزا، أبل باي، وتابي وتقسيط المشتريات</span>
+                </div>
+              </div>
+
+              <!-- Live Domain Badge Box -->
+              <div class="p-3 rounded-lg bg-slate-900/90 border border-pink-500/30 text-xs mb-4">
+                <div class="flex items-center justify-between font-mono font-bold text-pink-400 text-[11px] mb-1">
+                  <span>🌐 Live Production Demo</span>
+                  <span class="text-emerald-400">100% Interactive</span>
+                </div>
+                <div class="text-slate-400 text-[11px]" data-en="Niche: Beauty, Cosmetics, Skincare & Luxury Personal Care." data-ar="المجال: مستحضرات التجميل، منتجات العناية بالبشرة، والبراندات الفاخرة.">
+                  المجال: مستحضرات التجميل، منتجات العناية بالبشرة، والبراندات الفاخرة.
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+              <a href="https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-pink-400 hover:text-pink-300 transition-colors flex items-center gap-1">
+                <span data-en="Explore Live Demo" data-ar="معاينة وتجربة المتجر">معاينة وتجربة المتجر</span> &rarr;
+              </a>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%AF%D9%8A%D9%85%D9%88%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D9%8A%D9%84%20(Voltedge%20Beauty)%20%D9%88%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg bg-pink-500 hover:bg-pink-400 text-white font-bold text-xs transition-transform hover:scale-105">
+                <span data-en="Order Similar Store ($200)" data-ar="طلب متجر مماثل (200$)">طلب متجر مماثل (200$)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Demo Store 2: Voltedge Sports & Athletic Wear Store -->
+        <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col border-t-2 border-t-amber-500" data-project-category="web-development ecommerce-demos">
+          <a href="https://mostafa-salah01.github.io/voltedge-sports/?fbclid" target="_blank" rel="noopener noreferrer" class="block project-img-wrapper group">
+            <img src="assets/images/demo_sports_store.jpg" alt="Voltedge Sports & Athletic Gear Live Demo Store" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-emerald-500 text-slate-950 text-xs font-mono font-bold flex items-center gap-1 shadow-md">
+              <span class="w-2 h-2 rounded-full bg-slate-950 animate-ping"></span>
+              <span data-en="Live Store Demo 🌐" data-ar="نسخة ديمو حية 🌐">نسخة ديمو حية 🌐</span>
+            </div>
+            <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-amber-500 text-slate-950 text-[11px] font-bold font-mono">
+              أزياء ومعدات رياضية
+            </div>
+            <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs shadow-lg flex items-center gap-1.5" data-en="🔗 Open Live Demo Store" data-ar="🔗 تجربة ومعاينة الديمو الحي">🔗 تجربة ومعاينة الديمو الحي</span>
+            </div>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="text-xl font-bold text-white">
+                  <a href="https://mostafa-salah01.github.io/voltedge-sports/?fbclid" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors" data-en="Voltedge Sports — Athletic Gear & Fitness Store" data-ar="متجر الملابس والمعدات الرياضية (Voltedge Sports)">متجر الملابس والمعدات الرياضية (Voltedge Sports)</a>
+                </h3>
+              </div>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4" data-en="A high-energy live e-commerce store demo for athletic apparel, running shoes, and fitness gear. Features dynamic size/color selectors, instant stock badges, fast cart, and seamless mobile UX." data-ar="نسخة ديمو تفاعلية حية لمتجر إلكتروني رياضي احترافي عالي الحيوية للملابس الرياضية والأحذية ومعدات الجيم، يدعم محرك اختيار المقاسات والألوان المتعددة مع تنبيهات فورية بحالة المخزون وإتمام شراء فائق السرعة.">
+                نسخة ديمو تفاعلية حية لمتجر إلكتروني رياضي احترافي عالي الحيوية للملابس الرياضية والأحذية ومعدات الجيم، يدعم محرك اختيار المقاسات والألوان المتعددة مع تنبيهات فورية بحالة المخزون وإتمام شراء فائق السرعة.
+              </p>
+              
+              <!-- Key Features Highlights -->
+              <div class="space-y-1.5 mb-4 text-xs text-slate-300">
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span data-en="Live URL: mostafa-salah01.github.io/voltedge-sports" data-ar="رابط الديمو الحي: mostafa-salah01.github.io/voltedge-sports">رابط الديمو الحي: mostafa-salah01.github.io/voltedge-sports</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span data-en="Interactive size, color & variant selector" data-ar="اختيار المقاسات والألوان وتحديث الكمية والسعر فورياً">اختيار المقاسات والألوان وتحديث الكمية والسعر فورياً</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span data-en="Fast filtering by sport, category, and price range" data-ar="فلاتر سريعة حسب الرياضة، النوع، ونطاق الأسعار">فلاتر سريعة حسب الرياضة، النوع، ونطاق الأسعار</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span data-en="Designed for maximum conversions and mobile velocity" data-ar="مهندس لسرعة خرافية على الهواتف ومعدلات شراء مرتفعة">مهندس لسرعة خرافية على الهواتف ومعدلات شراء مرتفعة</span>
+                </div>
+              </div>
+
+              <!-- Live Domain Badge Box -->
+              <div class="p-3 rounded-lg bg-slate-900/90 border border-amber-500/30 text-xs mb-4">
+                <div class="flex items-center justify-between font-mono font-bold text-amber-400 text-[11px] mb-1">
+                  <span>🌐 Live Production Demo</span>
+                  <span class="text-emerald-400">100% Interactive</span>
+                </div>
+                <div class="text-slate-400 text-[11px]" data-en="Niche: Sports Apparel, Footwear, Gym Gear & Fitness Brands." data-ar="المجال: الملابس الرياضية، الأحذية، معدات اللياقة البدنية والنوادي.">
+                  المجال: الملابس الرياضية، الأحذية، معدات اللياقة البدنية والنوادي.
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+              <a href="https://mostafa-salah01.github.io/voltedge-sports/?fbclid" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1">
+                <span data-en="Explore Live Demo" data-ar="معاينة وتجربة المتجر">معاينة وتجربة المتجر</span> &rarr;
+              </a>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%AF%D9%8A%D9%85%D9%88%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9%20(Voltedge%20Sports)%20%D9%88%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition-transform hover:scale-105">
+                <span data-en="Order Similar Store ($200)" data-ar="طلب متجر مماثل (200$)">طلب متجر مماثل (200$)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Demo Store 3: Voltedge Perfumes & Luxury Fragrances Store -->
+        <div class="project-card-item project-card glass-panel overflow-hidden flex flex-col border-t-2 border-t-indigo-500" data-project-category="web-development ecommerce-demos">
+          <a href="https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="block project-img-wrapper group">
+            <img src="assets/images/demo_perfumes_store.jpg" alt="Voltedge Luxury Perfumes Live Demo Store" class="project-img group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="800" height="450" />
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-emerald-500 text-slate-950 text-xs font-mono font-bold flex items-center gap-1 shadow-md">
+              <span class="w-2 h-2 rounded-full bg-slate-950 animate-ping"></span>
+              <span data-en="Live Store Demo 🌐" data-ar="نسخة ديمو حية 🌐">نسخة ديمو حية 🌐</span>
+            </div>
+            <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-indigo-500 text-white text-[11px] font-bold font-mono">
+              عطور وبخور فاخرة
+            </div>
+            <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-indigo-500 text-white font-bold text-xs shadow-lg flex items-center gap-1.5" data-en="🔗 Open Live Demo Store" data-ar="🔗 تجربة ومعاينة الديمو الحي">🔗 تجربة ومعاينة الديمو الحي</span>
+            </div>
+          </a>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="text-xl font-bold text-white">
+                  <a href="https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition-colors" data-en="Voltedge Perfumes — Luxury Fragrances Store" data-ar="متجر العطور الفاخرة والبخور (Voltedge Perfumes)">متجر العطور الفاخرة والبخور (Voltedge Perfumes)</a>
+                </h3>
+              </div>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4" data-en="A royal luxury e-commerce store demo designed for perfumes, oriental ouds, and premium fragrances. Features fragrance pyramid notes, bottle size options, luxury gift packaging add-ons, and instant checkout." data-ar="نسخة ديمو تفاعلية حية لمتجر إلكتروني ملكي فخم مخصص للبرفانات والعطور الشرقية والغربية والعود والبخور، يستعرض نوتات الهرم العطري وخيارات أحجام الزجاجات وباقات الهدايا الفاخرة، مع دفع آمن وسريع.">
+                نسخة ديمو تفاعلية حية لمتجر إلكتروني ملكي فخم مخصص للبرفانات والعطور الشرقية والغربية والعود والبخور، يستعرض نوتات الهرم العطري وخيارات أحجام الزجاجات وباقات الهدايا الفاخرة، مع دفع آمن وسريع.
+              </p>
+              
+              <!-- Key Features Highlights -->
+              <div class="space-y-1.5 mb-4 text-xs text-slate-300">
+                <div class="flex items-center gap-2">
+                  <span class="text-indigo-400 font-bold">✓</span>
+                  <span data-en="Live URL: mostafa-salah01.github.io/voltedge-perfumes" data-ar="رابط الديمو الحي: mostafa-salah01.github.io/voltedge-perfumes">رابط الديمو الحي: mostafa-salah01.github.io/voltedge-perfumes</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-indigo-400 font-bold">✓</span>
+                  <span data-en="Fragrance pyramid display (top, heart & base notes)" data-ar="استعراض النوتات العطرية والمكونات وخيارات التغليف الفاخر">استعراض النوتات العطرية والمكونات وخيارات التغليف الفاخر</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-indigo-400 font-bold">✓</span>
+                  <span data-en="Bottle sizing & luxury gift set bundling" data-ar="اختيار أحجام الزجاجات (50ml / 100ml) وبطاقات الإهداء">اختيار أحجام الزجاجات (50ml / 100ml) وبطاقات الإهداء</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-indigo-400 font-bold">✓</span>
+                  <span data-en="Royal dark aesthetic that builds immense brand trust" data-ar="تصميم ملكي داكن يمنح براندك هيبة ومصداقية استثنائية">تصميم ملكي داكن يمنح براندك هيبة ومصداقية استثنائية</span>
+                </div>
+              </div>
+
+              <!-- Live Domain Badge Box -->
+              <div class="p-3 rounded-lg bg-slate-900/90 border border-indigo-500/30 text-xs mb-4">
+                <div class="flex items-center justify-between font-mono font-bold text-indigo-400 text-[11px] mb-1">
+                  <span>🌐 Live Production Demo</span>
+                  <span class="text-emerald-400">100% Interactive</span>
+                </div>
+                <div class="text-slate-400 text-[11px]" data-en="Niche: Luxury Perfumes, Oriental Ouds, Bukhoor & Fragrance Gifts." data-ar="المجال: العطور الفاخرة، العود الشرقي، البخور، وهدايا البرفانات.">
+                  المجال: العطور الفاخرة، العود الشرقي، البخور، وهدايا البرفانات.
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+              <a href="https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1">
+                <span data-en="Explore Live Demo" data-ar="معاينة وتجربة المتجر">معاينة وتجربة المتجر</span> &rarr;
+              </a>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%B4%D9%88%D9%81%D8%AA%20%D8%AF%D9%8A%D9%85%D9%88%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%B9%D8%B7%D9%88%D8%B1%20(Voltedge%20Perfumes)%20%D9%88%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-xs transition-transform hover:scale-105">
+                <span data-en="Order Similar Store ($200)" data-ar="طلب متجر مماثل (200$)">طلب متجر مماثل (200$)</span>
               </a>
             </div>
           </div>
@@ -905,103 +1165,82 @@
           </div>
         </div>
 
-        <!-- 2. Custom E-Commerce Store (إنشاء المتاجر الإلكترونية) -->
-        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-emerald-400 relative group overflow-hidden">
-          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-[10px] font-bold font-mono z-10 shadow-sm">
-            <span data-en="Starting from $200" data-ar="يبدأ من 200$">يبدأ من 200$</span>
+        <!-- 2. Custom E-Commerce Store (إنشاء وبرمجة المتاجر الإلكترونية - PHP & MySQL) -->
+        <div class="glass-panel p-6 flex flex-col justify-between border-t-2 border-t-emerald-400 relative group">
+          <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-[10px] font-bold font-mono shadow-md">
+            <span data-en="Starts from $200 · High Value" data-ar="يبدأ من 200$ · قيمة برمجية عالية">يبدأ من 200$ · قيمة برمجية عالية</span>
           </div>
           <div>
-            <!-- Professional E-Commerce Store Showcase Image & Direct Link to Dedicated Page -->
-            <a href="ecommerce-store.html" class="block mb-4 overflow-hidden rounded-xl border border-emerald-500/30 group/img relative shadow-lg bg-slate-950">
-              <img src="assets/images/ecommerce_store_mockup_1790763328969.jpg" alt="تصميم متجر إلكتروني ذكي متكامل" class="w-full h-44 object-cover group-hover/img:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="600" height="338" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
-              <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-emerald-500/90 text-slate-950 text-[10px] font-mono font-bold">
-                <span data-en="Starts at $200 · Full 1st Year" data-ar="يبدأ من 200$ · شاملة السنة الأولى">يبدأ من 200$ · شاملة السنة الأولى</span>
-              </div>
-              <div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-[11px]">
-                <span class="text-emerald-300 font-bold flex items-center gap-1 group-hover/img:text-emerald-200">
-                  <span data-en="🚀 Click to view full store page" data-ar="🚀 اضغط لفتح صفحة شرح المتجر">🚀 اضغط لفتح صفحة شرح المتجر</span> &rarr;
-                </span>
-                <span class="px-2 py-0.5 rounded bg-slate-900/90 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">
-                  <span data-en="High Conversion" data-ar="عالي التحويل">عالي التحويل</span>
-                </span>
-              </div>
-            </a>
-
             <div class="flex items-center justify-between mb-4">
-              <a href="ecommerce-store.html" class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl group-hover:scale-105 transition-transform block" title="فتح صفحة المتجر">
+              <a href="ecommerce-store.html" class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl group-hover:scale-105 transition-transform block">
                 🛍️
               </a>
-              <a href="ecommerce-store.html" class="text-[10px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors" data-en="E-Commerce Store Page &rarr;" data-ar="صفحة المتجر الإلكتروني &larr;">صفحة المتجر الإلكتروني &larr;</a>
+              <div class="flex items-center gap-1.5">
+                <span class="text-[10px] font-mono text-cyan-300 font-bold px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20">PHP & MySQL</span>
+                <span class="text-[10px] font-mono text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20" data-en="100% Custom" data-ar="من الصفر 100%">من الصفر 100%</span>
+              </div>
             </div>
-            
             <h3 class="text-lg font-bold text-white mb-2">
-              <a href="ecommerce-store.html" class="hover:text-emerald-400 transition-colors flex items-center justify-between group-hover:text-emerald-300" data-en="Custom E-Commerce Store Design & Setup" data-ar="إنشاء وبرمجة المتاجر الإلكترونية والمنصات الذكية">
-                <span>إنشاء وبرمجة المتاجر الإلكترونية والمنصات الذكية</span>
-                <span class="text-xs text-emerald-400 opacity-80 group-hover:translate-x-[-3px] transition-transform">&larr;</span>
-              </a>
+              <a href="ecommerce-store.html" class="hover:text-emerald-400 transition-colors" data-en="Custom E-Commerce Store (PHP & MySQL)" data-ar="برمجة متجر إلكتروني مخصص (PHP & MySQL)">برمجة متجر إلكتروني مخصص (PHP & MySQL)</a>
             </h3>
-            
-            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="Complete, high-conversion online store tailored to your niche. Includes cards & wallets payment gateways, scannable barcode shipping waybills, abandoned cart recovery, and WhatsApp AI integration starting from just $200!" data-ar="امتلك متجرك الإلكتروني الاحترافي الكامل بأحدث معايير السرعة والتحويل: بوابات دفع إلكتروني (فيزا/محافظ/إنستاباي/تقسيط)، طباعة بوالص الشحن بالباركود، استرجاع السلات المتروكة، مع تملك المتجر 100% بدون اشتراكات شهرية أو عمولات!">
-              امتلك متجرك الإلكتروني الاحترافي الكامل بأحدث معايير السرعة والتحويل: بوابات دفع إلكتروني (فيزا/محافظ/إنستاباي/تقسيط)، طباعة بوالص الشحن بالباركود، استرجاع السلات المتروكة، مع تملك المتجر 100% بدون اشتراكات شهرية أو عمولات!
+            <p class="text-slate-300 text-xs leading-relaxed mb-4" data-en="A full-featured e-commerce platform custom-built from scratch with PHP & MySQL database. Tailored to your exact business needs with dedicated consultations, all payment gateways, and continuous technical support." data-ar="متجر إلكتروني متكامل مبني ومبرمج بالكامل من الصفر بلغة PHP وقاعدة بيانات MySQL خصيصاً لاحتياجات نشاطك بدون قوالب جاهزة. يشمل جلسات استشارية متخصصة بنمشي معاك فيها خطوة بخطوة لحد ما نعرف طبيعة خدمتك وتجارتك ماشية إزاي، مع ربط جميع بوابات الدفع الإلكترونية، ودعم فني وصيانة مستمرة.">
+              متجر إلكتروني متكامل مبني ومبرمج بالكامل من الصفر بلغة PHP وقاعدة بيانات MySQL خصيصاً لاحتياجات نشاطك بدون قوالب جاهزة. يشمل جلسات استشارية متخصصة بنمشي معاك فيها خطوة بخطوة لحد ما نعرف طبيعة خدمتك وتجارتك ماشية إزاي، مع ربط جميع بوابات الدفع الإلكترونية، ودعم فني وصيانة مستمرة.
             </p>
 
-            <!-- Prominent Direct Button to Store Page -->
-            <a href="ecommerce-store.html" class="w-full mb-4 py-2 px-3 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 hover:text-emerald-200 text-xs font-bold text-center transition-all flex items-center justify-center gap-1.5 shadow-sm">
-              <span>📖</span>
-              <span data-en="Explore Full Store Services & Features" data-ar="استعراض كامل ميزات وباقات المتجر بالتفصيل">استعراض كامل ميزات وباقات المتجر بالتفصيل</span>
-              <span>&rarr;</span>
-            </a>
-
-            <!-- Unbeatable Value Pricing Box -->
-            <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-500/25 mb-4">
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                <span data-en="Starting Price:" data-ar="السعر يبدأ من:">السعر يبدأ من:</span>
-                <span class="text-[10px] text-emerald-400 font-mono font-bold" data-en="Market: $1,800+" data-ar="قيمة السوق: 1800$+">قيمة السوق: 1800$+</span>
+            <!-- Pricing & Value Callout Box -->
+            <div class="p-3.5 rounded-xl bg-slate-900/95 border border-emerald-500/30 mb-4 shadow-inner">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="text-slate-400 font-medium" data-en="Investment Starts At:" data-ar="قيمة الاستثمار تبدأ من:">قيمة الاستثمار تبدأ من:</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold" data-en="High Enterprise Value" data-ar="قيمة تفوق التكلفة بمراحل">قيمة تفوق التكلفة بمراحل</span>
               </div>
-              <div class="text-xl font-black text-emerald-400 font-mono flex items-baseline gap-1">
+              <div class="text-2xl font-black text-emerald-400 font-mono flex items-baseline gap-1.5">
                 <span>$200</span>
                 <span class="text-xs text-slate-300 font-normal" data-en="USD (First Year Included)" data-ar="دولار (شاملة السنة الأولى)">دولار (شاملة السنة الأولى)</span>
               </div>
-              <div class="text-[11px] text-emerald-300/90 mt-1.5 leading-snug" data-en="Renewal: $140 / year (includes annual hosting, domain, maintenance & technical support). Monthly subscription from $25/mo & 0% installments (3-12 mos) available." data-ar="التجديد السنوي: 140$ سنوياً في حال التجديد (شامل الاستضافة والدومين وعقد الصيانة والدعم الفني). متاح أيضاً اشتراك شهري من 25$ وتقسيط بدون فوائد.">
-                التجديد السنوي: 140$ سنوياً في حال التجديد (شامل الاستضافة والدومين وعقد الصيانة والدعم الفني). متاح أيضاً اشتراك شهري من 25$ وتقسيط بدون فوائد.
+              <p class="text-[11px] text-slate-300 mt-1.5 leading-snug" data-en="Full source code & MySQL ownership, 0% platform sales commission, free domain, fast hosting, consultations & 1 year support." data-ar="ملكية كاملة للكود وقاعدة البيانات، 0% عمولات على مبيعاتك، مع دومين رسمي واستضافة سحابية فائقة السرعة واستشارات ودعم فني طوال السنة الأولى.">
+                ملكية كاملة للكود وقاعدة البيانات، 0% عمولات على مبيعاتك، مع دومين رسمي واستضافة سحابية فائقة السرعة واستشارات ودعم فني طوال السنة الأولى.
+              </p>
+              <div class="text-[10px] text-emerald-300/90 mt-1.5 pt-1.5 border-t border-slate-800" data-en="Fixed Annual Renewal: $100 / year (includes cloud hosting, domain, continuous maintenance & dedicated support)" data-ar="التجديد السنوي ثابت: 100$ سنوياً في حال التجديد (شامل الاستضافة السحابية وتجديد الدومين وعقد الصيانة والدعم الفني)">
+                التجديد السنوي ثابت: 100$ سنوياً في حال التجديد (شامل الاستضافة السحابية وتجديد الدومين وعقد الصيانة والدعم الفني)
               </div>
             </div>
 
-            <!-- Core Features -->
+            <!-- Core Features (Detailed per user request) -->
             <div class="space-y-1.5 mb-6 text-xs text-slate-300">
-              <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Full payment gateways: Visa, Wallets, InstaPay, ValU & COD" data-ar="تغطية دفع شاملة: فيزا، محافظ كاش، إنستاباي، تقسيط، ودفع عند الاستلام">تغطية دفع شاملة: فيزا، محافظ كاش، إنستاباي، تقسيط، ودفع عند الاستلام</span>
+              <div class="flex items-start gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                <span data-en="Built with PHP & MySQL from scratch — 100% custom without ready templates" data-ar="مبني بلغة PHP وقاعدة بيانات MySQL من الصفر 100% بدون أي قوالب جاهزة">مبني بلغة PHP وقاعدة بيانات MySQL من الصفر 100% بدون أي قوالب جاهزة</span>
               </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Automated PDF courier waybills with barcodes" data-ar="طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر">طباعة بوالص الشحن الرسمية PDF مع الباركود بضغطة زر</span>
+              <div class="flex items-start gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                <span data-en="Dedicated consultation sessions: we walk step-by-step to analyze your workflow" data-ar="جلسات استشارية بنمشي معاك فيها خطوة بخطوة لحد ما نعرف خدمتك ماشية إزاي">جلسات استشارية بنمشي معاك فيها خطوة بخطوة لحد ما نعرف خدمتك ماشية إزاي</span>
               </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="WhatsApp AI sales assistant & abandoned cart recovery" data-ar="موظف واتساب ذكي لإرسال الفواتير واسترجاع السلات المتروكة">موظف واتساب ذكي لإرسال الفواتير واسترجاع السلات المتروكة</span>
+              <div class="flex items-start gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                <span data-en="All payment gateways: Mada, Visa/Mastercard, Tabby, Tamara, Meeza, InstaPay, PayPal" data-ar="ربط جميع بوابات الدفع الإلكترونية: مدى، فيزا، ماستركارد، تابي، تمارا، إنستاباي، باي بال">ربط جميع بوابات الدفع الإلكترونية: مدى، فيزا، ماستركارد، تابي، تمارا، إنستاباي، باي بال</span>
               </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Official domain + high-speed Cloud SSD hosting + SSL for 1 full year" data-ar="اسم دومين رسمي + استضافة سحابية فائقة السرعة SSD + شهادة SSL لمدة سنة">اسم دومين رسمي + استضافة سحابية فائقة السرعة SSD + شهادة SSL لمدة سنة</span>
+              <div class="flex items-start gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                <span data-en="Everything runs on the store: custom dashboard, stock sync, instant cart & invoices" data-ar="كل شيء يتم على المتجر: لوحة تحكم مخصصة، إدارة المخزون، سلة تسوق، وفواتير فورية">كل شيء يتم على المتجر: لوحة تحكم مخصصة، إدارة المخزون، سلة تسوق، وفواتير فورية</span>
               </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Full maintenance contract & daily technical support included" data-ar="عقد صيانة دورية ومتابعة ودعم فني متخصص لمدة سنة كاملة">عقد صيانة دورية ومتابعة ودعم فني متخصص لمدة سنة كاملة</span>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-emerald-400 font-bold shrink-0">✓</span> <span data-en="Easy bilingual Arabic dashboard for products & order management" data-ar="لوحة تحكم عربية سهلة وبسيطة لإدارة المنتجات والمخزون والطلبات">لوحة تحكم عربية سهلة وبسيطة لإدارة المنتجات والمخزون والطلبات</span>
+              <div class="flex items-start gap-1.5">
+                <span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                <span data-en="Full technical support & maintenance contract included for 1 full year" data-ar="دعم فني متخصص ومتابعة مستمرة وصيانة طوال السنة الأولى لضمان أعلى أداء">دعم فني متخصص ومتابعة مستمرة وصيانة طوال السنة الأولى لضمان أعلى أداء</span>
               </div>
             </div>
           </div>
 
           <div class="space-y-2 pt-4 border-t border-slate-800/80">
-            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%20(يبدأ%20من%20200$)" target="_blank" rel="noopener noreferrer" data-service="custom-ecommerce-store" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5 shadow-sm">
+            <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%88%D8%B7%D9%84%D8%A8%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A8%D8%B1%D9%85%D8%AC%D8%A9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20(PHP%20%26%20MySQL)%20%D8%A8%D8%B3%D8%B9%D8%B1%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%20200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" data-service="custom-ecommerce-store" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs text-center transition-all dynamic-whatsapp-link flex items-center justify-center gap-1.5 shadow-md">
               <span>📋</span>
-              <span data-en="Order Store Package (From $200)" data-ar="طلب باقة المتجر (يبدأ من 200$)">طلب باقة المتجر (يبدأ من 200$)</span>
+              <span data-en="Order Custom Store ($200)" data-ar="طلب المتجر المخصص (200$)">طلب المتجر المخصص (200$)</span>
             </a>
             <div class="grid grid-cols-2 gap-2">
-              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AA%D8%AD%D8%AF%D8%AB%20%D9%85%D8%B9%20%D8%AE%D8%A8%D9%8A%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AC%D8%B1%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9" target="_blank" rel="noopener noreferrer" data-service="custom-ecommerce-store" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
-                <span data-en="Talk to a Specialist" data-ar="تحدث مع خبير">تحدث مع خبير</span>
+              <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20WebStack%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AC%D9%84%D8%B3%D8%A9%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AA%D8%AE%D8%B5%D8%B5%D8%A9%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20(PHP%20%26%20MySQL)" target="_blank" rel="noopener noreferrer" data-service="custom-ecommerce-store" class="py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold text-center transition-all dynamic-whatsapp-link">
+                <span data-en="Book Consultation" data-ar="جلسة استشارة مجانية">جلسة استشارة مجانية</span>
               </a>
-              <a href="ecommerce-store.html" class="py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-xs font-bold text-center transition-all flex items-center justify-center gap-1 shadow-sm">
-                <span data-en="Store Page" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
+              <a href="ecommerce-store.html" class="py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-xs font-semibold text-center transition-all flex items-center justify-center gap-1">
+                <span data-en="Service Details" data-ar="صفحة الخدمة">صفحة الخدمة</span> &rarr;
               </a>
             </div>
           </div>
@@ -2215,7 +2454,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         
         <!-- WhatsApp Card -->
         <div class="glass-panel p-8 text-center flex flex-col justify-between border-t-2 border-t-emerald-500">
@@ -2229,6 +2468,22 @@
           </div>
           <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D8%A3%D9%88%D8%AF%20%D8%A8%D8%AF%D8%A1%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%B9%D9%83" target="_blank" rel="noopener noreferrer" id="contact-whatsapp-cta" class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all dynamic-whatsapp-link flex items-center justify-center">
             <span data-en="Chat on WhatsApp Now" data-ar="فتح شات واتساب الآن">فتح شات واتساب الآن</span>
+          </a>
+        </div>
+
+        <!-- Official Facebook Page Card -->
+        <div class="glass-panel p-8 text-center flex flex-col justify-between border-t-2 border-t-blue-500">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-3xl mx-auto mb-6 text-blue-400">
+              <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2" data-en="Official Facebook Page" data-ar="صفحة الفيسبوك الرسمية">صفحة الفيسبوك الرسمية</h3>
+            <p class="text-slate-300 text-sm mb-4" data-en="Follow our latest store demos, live projects, videos, and customer reviews on Facebook." data-ar="تابع أحدث المتاجر الحية، المشاريع المنفذة، الفيديوهات التوضيحية وتحديثات الأعمال.">تابع أحدث المتاجر الحية، المشاريع المنفذة، الفيديوهات التوضيحية وتحديثات الأعمال.</p>
+            <div class="text-blue-400 font-mono font-bold text-base mb-6">WebStack Solutions</div>
+          </div>
+          <a href="https://www.facebook.com/profile.php?id=61595189300053&locale=ar_AR" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all flex items-center justify-center gap-2">
+            <span>🌐</span>
+            <span data-en="Visit Facebook Page" data-ar="زيارة صفحة فيسبوك">زيارة صفحة فيسبوك</span>
           </a>
         </div>
 
@@ -2265,7 +2520,7 @@
 
       <!-- Quick Services Links -->
       <div class="flex flex-wrap items-center justify-center gap-3 text-slate-400 text-xs font-mono">
-        <a href="ecommerce-store.html" class="hover:text-emerald-400 text-emerald-400 font-bold transition-colors" data-en="E-Commerce Stores (From $200)" data-ar="المتاجر الإلكترونية (تبدأ من 200$)">المتاجر الإلكترونية (تبدأ من 200$)</a>
+        <a href="ecommerce-store.html" class="hover:text-emerald-400 text-emerald-400 font-bold transition-colors" data-en="Custom E-Commerce Store ($200)" data-ar="المتاجر الإلكترونية (200$)">المتاجر الإلكترونية (200$)</a>
         <span>·</span>
         <a href="corporate-website.html" class="hover:text-cyan-400 transition-colors" data-en="Corporate Websites ($65/$75)" data-ar="مواقع الشركات (65$/75$)">مواقع الشركات (65$/75$)</a>
         <span>·</span>
