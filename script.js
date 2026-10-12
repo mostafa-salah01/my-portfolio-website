@@ -709,8 +709,8 @@
     const now = new Date().toTimeString().split(' ')[0];
 
     const inLog = document.createElement('div');
-    inLog.className = 'log-entry text-cyan-400';
-    inLog.innerHTML = `<span class="text-slate-500 font-mono text-xs">[${now}]</span> <span class="text-amber-400 font-bold">[CUSTOMER CHAT]</span> ${
+    inLog.className = 'log-entry text-slate-300';
+    inLog.innerHTML = `<span class="text-slate-500 font-mono text-xs">[${now}]</span> <span class="text-rose-400 font-bold" style="color: var(--primary, #C8374A);">[CUSTOMER CHAT]</span> ${
       currentLang === 'ar'
         ? `رسالة واتساب: "محتاج تفاصيل وصور وعرض سعر المنتج #${orderId}". موظف الذكاء الاصطناعي يحلل الطلب...`
         : `WhatsApp inquiry: "Need specs, photos & quote for item #${orderId}". AI Employee analyzing...`
@@ -721,8 +721,8 @@
     setTimeout(() => {
       const replyTime = new Date().toTimeString().split(' ')[0];
       const replyLog = document.createElement('div');
-      replyLog.className = 'log-entry text-emerald-400';
-      replyLog.innerHTML = `<span class="text-slate-500 font-mono text-xs">[${replyTime}]</span> <span class="text-emerald-400 font-bold">[HUMAN AI REPLY]</span> ${
+      replyLog.className = 'log-entry text-amber-300';
+      replyLog.innerHTML = `<span class="text-slate-500 font-mono text-xs">[${replyTime}]</span> <span class="text-amber-400 font-bold" style="color: var(--gold, #D4A64A);">[HUMAN AI REPLY]</span> ${
         currentLang === 'ar'
           ? `تم إرسال رد بشري طبيعي + صورة المنتج + عرض سعر PDF في 38ms! تم تأكيد اهتمام العميل بنجاح.`
           : `Human-tone conversational reply + Product Photo + PDF quote dispatched in 38ms! Customer converted.`
@@ -1037,8 +1037,99 @@
 
   // --- Unified AI Customer Service & Sales Employee Engine (أحمد - خدمة العملاء) ---
   const CHAT_STORAGE_KEY = 'webstack_chat_history_v2';
+  const AI_DISCLOSED_KEY = 'webstack_ai_disclosed_v1';
   let chatHistory = [];
   let isSendingAiMessage = false;
+  let hasDisclosedAi = false;
+  let visitorMessageCount = 0;
+
+  try {
+    hasDisclosedAi = sessionStorage.getItem(AI_DISCLOSED_KEY) === 'true';
+    const savedCount = sessionStorage.getItem('webstack_visitor_msg_count');
+    if (savedCount) visitorMessageCount = parseInt(savedCount, 10) || 0;
+  } catch (e) {}
+
+  // Helper: Direct AI / Bot question detection
+  function isDirectAiQuestion(text) {
+    if (!text) return false;
+    const t = text.trim().toLowerCase();
+    const arPattern = /(هل\s*(انت|أنت|هو)\s*(بوت|روبوت|ذكاء\s*اصطناعي|ai|آلي|الي|بشري|إنسان|انسان|حقيقي|موظف\s*حقيقي))|((انت|أنت)\s*(بوت|روبوت|ذكاء\s*اصطناعي|ai|آلي|الي|إنسان|انسان|بشري|حقيقي))|((هو\s*انت|هو\s*أنت)\s*(بوت|روبوت|ذكاء|ai|إنسان|انسان|حقيقي))|(بتكلم\s*(مع\s*)?(بوت|ذكاء|روبوت|إنسان|انسان))|(معايا\s*(بوت|ذكاء|إنسان|انسان|روبوت))|(شات\s*بوت)|(ذكاء\s*اصطناعي\s*ولا\s*بشري)|(إنسان\s*ولا\s*ذكاء)|(بشر\s*ولا\s*روبوت)/i;
+    const enPattern = /(are\s*you|r\s*u)\s*(a\s*)?(bot|robot|ai|artificial\s*intelligence|human|real\s*person|real\s*human|real\s*employee)|are\s*you\s*real|am\s*i\s*talking\s*to\s*(a\s*)?(bot|ai|human|robot)/i;
+    return arPattern.test(t) || enPattern.test(t);
+  }
+
+  // Helper: Post-disclosure UI transformation
+  function updateChatUiToPostDisclosure(isAr) {
+    const newStatusText = isAr ? 'مساعد ذكي • متاح 24/7' : 'AI Assistant • Available 24/7';
+    const csAgentStatus = document.getElementById('cs-agent-status');
+    if (csAgentStatus) csAgentStatus.textContent = newStatusText;
+
+    const launcherStatus = document.getElementById('launcher-status-text');
+    if (launcherStatus) launcherStatus.textContent = newStatusText;
+
+    document.querySelectorAll('#floating-ai-window .chat-header span.font-mono, #floating-ai-window .chat-header .text-\\[9px\\], #floating-ai-window span.bg-emerald-500\\/20').forEach(el => {
+      el.textContent = 'AI';
+      el.style.borderColor = 'var(--gold, #D4A64A)';
+      el.style.color = 'var(--gold, #D4A64A)';
+    });
+
+    document.querySelectorAll('#floating-ai-window .text-slate-500, #floating-ai-window .chat-header span.text-emerald-400').forEach(el => {
+      if (el.textContent.includes('متصل') || el.textContent.includes('Online')) {
+        el.textContent = isAr ? 'مساعد ذكي • متاح 24/7' : 'AI Assistant • 24/7';
+      }
+    });
+  }
+
+  // Helper: Reveal Elegant AI Disclosure Card
+  function showAiDisclosureCard(sourceContext) {
+    if (hasDisclosedAi) return;
+    hasDisclosedAi = true;
+    try {
+      sessionStorage.setItem(AI_DISCLOSED_KEY, 'true');
+    } catch(e) {}
+
+    const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
+    const floatBox = document.getElementById('floating-cs-chat-box');
+    const simBox = document.getElementById('sim-chat-box');
+
+    const cardHtml = `
+      <div class="ai-disclosure-card my-3 p-3.5 sm:p-4 rounded-2xl border transition-all animate-fade-in" style="background: var(--card, #1F1114); border-color: var(--gold, #D4A64A); box-shadow: 0 4px 20px rgba(212, 166, 74, 0.25);">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-xl">🎭</span>
+          <span class="font-bold text-xs uppercase tracking-wide font-mono" style="color: var(--gold, #D4A64A);">
+            ${isAr ? 'كشف ذكي وتوضيح تجربة المحادثة' : 'AI Experience Disclosure'}
+          </span>
+        </div>
+        <p class="text-xs leading-relaxed mb-3 font-medium" style="color: var(--text, #F3E9E4);">
+          ${isAr 
+            ? '🎭 مفاجأة! أنا أحمد، موظف WebStack الذكي (ذكاء اصطناعي). عرفت تفرّق؟ ده بالظبط اللي ممكن نبنيه لشركتك: موظف يرد على عملائك 24/7 بأسلوب طبيعي ويحوّلهم لفريقك وقت ما يحتاجوا.'
+            : '🎭 Surprise! I am Ahmed, WebStack’s AI Smart Employee. Could you tell the difference? This is exactly what we can build for your business: an employee who answers your clients 24/7 naturally and hands them off to your team whenever needed.'}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-2 pt-2.5 border-t" style="border-color: var(--border, #3A1F25);">
+          <a href="https://wa.me/201107787049?text=${encodeURIComponent(isAr ? 'مرحباً فريق WebStack، أود طلب وبرمجة موظف ذكاء اصطناعي لشركتي مثل الموظف أحمد' : 'Hello WebStack team, I would like to order an AI smart employee for my company like Ahmed')}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-3 rounded-xl text-center text-xs font-bold transition-transform hover:scale-[1.02] shadow-sm flex items-center justify-center gap-1.5" style="background: var(--primary, #C8374A); color: #fff;">
+            <span>🚀</span>
+            <span>${isAr ? 'اطلب موظفًا ذكيًا لشركتي' : 'Order AI Employee for My Business'}</span>
+          </a>
+          <a href="https://wa.me/201107787049?text=${encodeURIComponent(isAr ? 'مرحباً فريق WebStack، أرغب في التحدث مع فريقكم بخصوص مشروعي' : 'Hello WebStack team, I would like to speak directly with your team regarding my project')}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-3 rounded-xl text-center text-xs font-bold transition-all border flex items-center justify-center gap-1.5" style="background: transparent; border-color: var(--gold, #D4A64A); color: var(--gold, #D4A64A);">
+            <span>👥</span>
+            <span>${isAr ? 'تحدث مع فريقنا' : 'Speak with Our Team'}</span>
+          </a>
+        </div>
+      </div>
+    `;
+
+    [floatBox, simBox].forEach(box => {
+      if (box) {
+        const wrap = document.createElement('div');
+        wrap.innerHTML = cardHtml;
+        box.appendChild(wrap.firstElementChild);
+        box.scrollTop = box.scrollHeight;
+      }
+    });
+
+    updateChatUiToPostDisclosure(isAr);
+  }
+
 
   const CUSTOMER_SERVICE_SYSTEM_PROMPT_CLIENT = `أنت موظف خدمة عملاء ودعم ومبيعات حقيقي وبشري 100% لشركة WebStack للحلول البرمجية والتحول الرقمي (WebStack Solutions).
 اسمك "أحمد" من فريق خدمة العملاء والمبيعات لشركة WebStack.
@@ -1913,6 +2004,9 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
 
     // Restore prior conversation memory from sessionStorage across page navigation
     restoreChatHistoryToBoxes();
+    if (hasDisclosedAi) {
+      updateChatUiToPostDisclosure(isAr);
+    }
   }
 
   function restoreChatHistoryToBoxes() {
@@ -2068,7 +2162,14 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
       const input = document.getElementById('floating-cs-input');
       if (input) setTimeout(() => input.focus(), 150);
     } else {
-      win.classList.remove('open');
+      if (visitorMessageCount >= 2 && !hasDisclosedAi) {
+        showAiDisclosureCard('floating');
+        setTimeout(() => {
+          win.classList.remove('open');
+        }, 1800);
+      } else {
+        win.classList.remove('open');
+      }
     }
   };
 
@@ -2154,6 +2255,16 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
     if (!userText || !userText.trim() || isSendingAiMessage) return;
     const cleanText = userText.trim();
     isSendingAiMessage = true;
+    visitorMessageCount++;
+    try {
+      sessionStorage.setItem('webstack_visitor_msg_count', String(visitorMessageCount));
+    } catch(e) {}
+
+    // Check contact data and question intent
+    const hasPhone = /(01[0125]\d{8}|\+?\d{10,15})/.test(cleanText.replace(/\s+/g, ''));
+    const hasEmail = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(cleanText);
+    const isAffiliateChat = cleanText.includes('أفلييت') || cleanText.includes('افلييت') || cleanText.includes('تسويق') || cleanText.includes('عمولة') || cleanText.includes('مسوق') || cleanText.includes('30%') || cleanText.includes('affiliate');
+    const isDirectQuestion = isDirectAiQuestion(cleanText);
 
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
     const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -2215,6 +2326,14 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
           simBox.scrollTop = simBox.scrollHeight;
         }
       }
+
+      // Prior disclosure before saving visitor data (name, phone, email)
+      if ((hasPhone || hasEmail) && !hasDisclosedAi) {
+        setTimeout(() => {
+          showAiDisclosureCard(sourceContext);
+        }, 250);
+      }
+
 
       // Show active typing indicators
       if (floatTyping) floatTyping.classList.remove('hidden');
@@ -2325,8 +2444,17 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
         return null;
       }
 
+      
+      // Check if user is asking directly if Ahmed is a bot/AI/human
+      if (isDirectQuestion) {
+        aiReply = isAr
+          ? 'أهلاً بحضرتك يا فندم! بصراحة وبكل شفافية: أنا أحمد، موظف ذكاء اصطناعي (AI) تم تطويري وهندستي بواسطة فريق WebStack للرد على استفسارات عملائنا وخدمتكم بأسلوب بشري طبيعي 24/7 وبأعلى دقة.'
+          : 'Hello! With complete honesty and transparency: I am Ahmed, an AI employee developed and engineered by the WebStack team to assist clients with a natural human style 24/7.';
+        replySource = 'ai-transparency';
+      }
+
       // 1. Direct DeepSeek API call if on static production site (GitHub Pages / custom domain)
-      if (isStaticSite && directKey && directKey.length > 15) {
+      if (!aiReply && isStaticSite && directKey && directKey.length > 15) {
         const dsResult = await requestDeepSeek(directKey);
         if (dsResult && dsResult.reply) {
           aiReply = dsResult.reply;
@@ -2449,9 +2577,9 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
             <div class="flex items-center justify-between gap-4 text-[10px] text-emerald-400 font-mono mb-1.5 pb-1 border-b border-slate-800/60">
               <span class="font-bold flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                ${isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Support]'}
+                ${hasDisclosedAi ? 'AI' : (isAr ? 'أحمد [خدمة العملاء]' : 'Ahmed [Support]')}
               </span>
-              <span class="text-slate-500">${timeNow} ✓✓</span>
+              <span class="text-slate-500">${hasDisclosedAi ? (isAr ? 'مساعد ذكي • متاح 24/7' : 'AI Assistant • 24/7') : `${timeNow} ✓✓`}</span>
             </div>
             <div class="ai-rich-message text-xs leading-relaxed space-y-1.5">${renderFormattedAiMessage(aiReply)}</div>
             ${extraActionBtn}
@@ -2460,7 +2588,7 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
                 <span>💬</span>
                 <span>${isAr ? 'واتساب WebStack' : 'WhatsApp'}</span>
               </a>
-              <span class="text-[9px] font-mono text-emerald-400">${displaySource}</span>
+              <span class="text-[9px] font-mono text-emerald-400">${hasDisclosedAi ? 'AI Engine' : displaySource}</span>
             </div>
           </div>
         </div>
@@ -2481,6 +2609,25 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
           simBox.appendChild(div.firstElementChild);
           simBox.scrollTop = simBox.scrollHeight;
         }
+      }
+
+      // Check disclosure triggers after assistant reply
+      const replyAsksContactData = /رقم\s*(تليفون|هاتف|موبايل|واتساب)|(اسم\s*حضرتك)|(بيانات\s*التواصل)|(إيميل|ايميل|بريدك)|(phone|email|contact\s*details)/i.test(aiReply);
+      if (isDirectQuestion) {
+        // Honesty upon direct question: Ahmed replied truthfully, now show disclosure card
+        setTimeout(() => {
+          showAiDisclosureCard(sourceContext);
+        }, 350);
+      } else if (visitorMessageCount >= 5 && !hasDisclosedAi) {
+        // After 5 visitor messages
+        setTimeout(() => {
+          showAiDisclosureCard(sourceContext);
+        }, 400);
+      } else if (replyAsksContactData && !hasDisclosedAi) {
+        // Before chat asks visitor for data
+        setTimeout(() => {
+          showAiDisclosureCard(sourceContext);
+        }, 300);
       }
     } catch (unexpectedError) {
       console.error('Customer service message dispatch error:', unexpectedError);
@@ -2624,6 +2771,14 @@ How can I help you today? You can also message WebStack directly on WhatsApp (+2
       };
     }
 
+    // Direct listener for WhatsApp clicks inside chat to trigger AI disclosure
+    document.addEventListener('click', function (e) {
+      const waBtnInsideChat = e.target.closest('#floating-ai-window a[href*="wa.me"], #sim-chat-box a[href*="wa.me"], .chat-bubble-assistant a[href*="wa.me"], #floating-ai-window a[href*="whatsapp"], #sim-chat-box a[href*="whatsapp"]');
+      if (waBtnInsideChat && !hasDisclosedAi) {
+        showAiDisclosureCard();
+      }
+    });
+
     // Affiliate Program Registration Form
     const affForm = document.getElementById('affiliate-registration-form');
     if (affForm) {
@@ -2667,6 +2822,12 @@ ${note ? 'ملاحظات: ' + note : ''}`;
 
   // --- Global Event Delegation (Zero inline onclick for 100% strict CSP) ---
   document.addEventListener('click', function(e) {
+    // Detect clicking WhatsApp CTA inside chat to trigger AI disclosure
+    const waInChat = target.closest('#floating-ai-window a[href*="wa.me"], #sim-chat-box a[href*="wa.me"]');
+    if (waInChat && !hasDisclosedAi) {
+      showAiDisclosureCard();
+    }
+
     const target = e.target;
     if (!target) return;
 
