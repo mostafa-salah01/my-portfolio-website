@@ -939,62 +939,7 @@
     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
   </a>
 
-  <!-- Floating Smart Assistant (Ahmed) Launcher Button -->
-  <button type="button" id="chat-launcher-btn" class="chat-launcher-btn" aria-label="Open AI Assistant">
-    <div class="w-8 h-8 rounded-full bg-[#4F6BFF] text-white flex items-center justify-center font-bold text-sm shrink-0">
-      🤖
-    </div>
-    <div class="flex flex-col text-start">
-      <div class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-        <span id="launcher-title-text" data-en="Ahmed | Smart Assistant" data-ar="أحمد | مساعد ذكي">أحمد | مساعد ذكي</span>
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-      </div>
-      <div class="text-[10px] text-slate-500" data-en="Online • Ask anything" data-ar="متصل الآن • اسأل عن خدماتنا">متصل الآن • اسأل عن خدماتنا</div>
-    </div>
-  </button>
 
-  <!-- Floating Chatbot Window (Smart Assistant) -->
-  <div id="chat-modal-window" class="chat-modal-window" role="dialog" aria-labelledby="cs-agent-name" aria-modal="true">
-    
-    <div class="chat-window-header">
-      <div class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-full bg-white text-[#4F6BFF] flex items-center justify-center font-bold text-sm">
-          🤖
-        </div>
-        <div>
-          <div id="cs-agent-name" class="font-bold text-sm leading-tight text-white" data-en="Ahmed - Smart Assistant" data-ar="أحمد - مساعد ذكي">أحمد - مساعد ذكي</div>
-          <div id="cs-agent-status" class="text-[11px] text-blue-100 font-medium" data-en="WebStack Support · Instant Replies" data-ar="فريق WebStack · استجابة فورية">فريق WebStack · استجابة فورية</div>
-        </div>
-      </div>
-      <button type="button" id="chat-close-btn" class="w-8 h-8 rounded-lg hover:bg-white/20 flex items-center justify-center text-white text-lg cursor-pointer" aria-label="Close Chat">
-        ✕
-      </button>
-    </div>
-
-    <!-- Messages Container -->
-    <div id="chat-messages-container" class="chat-messages-container">
-      <div class="chat-bubble-bot">
-        <span data-en="Hello! 👋 I'm Ahmed, your smart assistant at WebStack. How can I assist you with custom e-commerce stores, corporate websites, or custom software solutions?" data-ar="أهلاً بك في WebStack! 👋 أنا أحمد، مساعدك الذكي. كيف يمكنني مساعدتك في استفسارات المتاجر الإلكترونية، مواقع الشركات، أو الحصول على عرض سعر مخصص؟">أهلاً بك في WebStack! 👋 أنا أحمد، مساعدك الذكي. كيف يمكنني مساعدتك في استفسارات المتاجر الإلكترونية، مواقع الشركات، أو الحصول على عرض سعر مخصص؟</span>
-      </div>
-    </div>
-
-    <!-- Quick Action Buttons -->
-    <div class="chat-quick-actions">
-      <button type="button" class="chat-quick-btn" data-query="عايز تفاصيل إنشاء متجر إلكتروني مخصص">🛍️ متجر إلكتروني</button>
-      <button type="button" class="chat-quick-btn" data-query="عايز تفاصيل تصميم موقع تعريفي للشركة">🌐 موقع شركات</button>
-      <button type="button" class="chat-quick-btn" data-query="عايز أعرف كل خدمات WebStack البرمجية">⚡ كل الخدمات</button>
-      <button type="button" class="chat-quick-btn" data-query="عايز عرض سعر مخصص لمشروعي">💰 عرض سعر مخصص</button>
-    </div>
-
-    <!-- Input Bar -->
-    <form id="chat-form" class="chat-input-bar">
-      <input type="text" id="floating-cs-input" class="chat-input-field" placeholder="اكتب استفسارك هنا لأحمد..." data-placeholder-ar="اكتب استفسارك هنا لأحمد..." data-placeholder-en="Type your question to Ahmed..." />
-      <button type="submit" class="chat-send-btn" aria-label="Send Message">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
-      </button>
-    </form>
-
-  </div>
 
   <!-- Vanilla JavaScript Engine -->
   <script src="script.js"></script>

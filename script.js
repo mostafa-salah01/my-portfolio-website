@@ -1676,14 +1676,17 @@ How can I assist you with your project today? You can also message WebStack dire
       launcher.setAttribute('role', 'button');
       launcher.setAttribute('aria-label', isAr ? 'فتح محادثة موظف خدمة العملاء الذكي' : 'Open AI Customer Service Chat');
       launcher.innerHTML = `
-        <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/60 text-base shrink-0">
-          <span>👨‍💼</span>
-          <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
-          <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full"></span>
+        <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 border border-blue-200 text-sm shrink-0">
+          <span>🤖</span>
+          <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
+          <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full"></span>
         </div>
         <div class="flex flex-col text-start leading-tight">
-          <span class="font-bold text-xs text-white" id="launcher-title-text">${isAr ? 'خدمة العملاء | أحمد' : 'AI Customer Support'}</span>
-          <span class="text-[10px] text-emerald-400 font-mono" id="launcher-status-text">${isAr ? 'متصل الآن ⚡' : 'Online ⚡'}</span>
+          <div class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+            <span id="launcher-title-text">${isAr ? 'أحمد | مساعد ذكي' : 'Ahmed | Smart Assistant'}</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          </div>
+          <span class="text-[10px] text-slate-500" id="launcher-status-text">${isAr ? 'متصل الآن • اسأل عن خدماتنا' : 'Online • Ask anything'}</span>
         </div>
       `;
       document.body.appendChild(launcher);
@@ -1930,6 +1933,9 @@ How can I assist you with your project today? You can also message WebStack dire
         if (e) e.stopPropagation();
         greetingBubble.classList.remove('show');
         setTimeout(() => greetingBubble.classList.add('hidden'), 300);
+        try {
+          sessionStorage.setItem('webstack_chat_stuck_shown', 'true');
+        } catch(err) {}
       };
     }
 
@@ -2048,52 +2054,121 @@ How can I assist you with your project today? You can also message WebStack dire
     }
   }
 
-  // Setup Proactive 5-Second Greeting on Movement & Homepage Side-docking
-  let proactiveGreetingScheduled = false;
-  function setupProactiveCustomerServiceGreeting() {
-    const path = (window.location.pathname || '').toLowerCase();
-    const isHomepage = path === '' || path === '/' || path.endsWith('/index.html') || path.endsWith('/index') || path.endsWith('/');
+  // Tracking dismissal of AI Chat by visitor
+  let chatDismissedByUser = false;
+  let hasShownStuckHint = false;
+  try {
+    chatDismissedByUser = sessionStorage.getItem('webstack_chat_dismissed') === 'true';
+    hasShownStuckHint = sessionStorage.getItem('webstack_chat_stuck_shown') === 'true';
+  } catch(e) {}
 
-    // 1. Homepage on Desktop/Tablet (>= 768px): Show chat on the side automatically after 1.2s
-    if (isHomepage && window.innerWidth >= 768) {
-      setTimeout(() => {
-        const win = document.getElementById('floating-ai-window');
-        if (win && !win.classList.contains('open')) {
-          window.toggleAiCustomerServiceChat(true);
-        }
-      }, 1200);
-    }
+  let hesitationDetectorBound = false;
+  function setupHesitationDetector() {
+    if (hesitationDetectorBound || hasShownStuckHint) return;
+    hesitationDetectorBound = true;
 
-    // 2. Proactive 5-Second Greeting for visitors (on mobile, other pages, or if closed)
-    if (proactiveGreetingScheduled) return;
-    proactiveGreetingScheduled = true;
+    let lastInteractionTime = Date.now();
+    let scrollReversals = 0;
+    let lastScrollY = window.scrollY;
 
-    const triggerGreetingBubble = () => {
+    function triggerStuckHint(contextMsg) {
+      if (hasShownStuckHint) return;
       const win = document.getElementById('floating-ai-window');
       const bubble = document.getElementById('floating-ai-greeting-bubble');
-      if (win && !win.classList.contains('open') && bubble && !bubble.classList.contains('show')) {
-        bubble.classList.remove('hidden');
-        setTimeout(() => {
-          bubble.classList.add('show');
-          playGentleGreetingChime();
-        }, 50);
+      if (win && win.classList.contains('open')) return;
+      if (!bubble) return;
+
+      hasShownStuckHint = true;
+      try {
+        sessionStorage.setItem('webstack_chat_stuck_shown', 'true');
+      } catch(err) {}
+
+      const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
+      const bubbleMsg = document.getElementById('bubble-msg-text');
+      if (bubbleMsg) {
+        bubbleMsg.textContent = contextMsg || (isAr 
+          ? 'لاحظت أنك تتصفح خدماتنا.. محتار في اختيار الخدمة أو مش عارف تبدأ منين؟ 🤔 أنا أحمد في خدمتك لمساعدتك خطوة بخطوة!'
+          : 'Still exploring or unsure where to start? 🤔 I am Ahmed, ready to assist and guide you step by step!');
+      }
+      bubble.classList.remove('hidden');
+      setTimeout(() => {
+        bubble.classList.add('show');
+        playGentleGreetingChime();
+      }, 50);
+
+      // Auto-hide after 12 seconds if not clicked so it doesn't disturb visitor
+      setTimeout(() => {
+        if (bubble && bubble.classList.contains('show')) {
+          bubble.classList.remove('show');
+          setTimeout(() => bubble.classList.add('hidden'), 300);
+        }
+      }, 12000);
+    }
+
+    // 1. Inactivity trigger: 65 seconds of idle browsing without taking action after closing chat
+    const inactivityCheck = setInterval(() => {
+      if (hasShownStuckHint) {
+        clearInterval(inactivityCheck);
+        return;
+      }
+      if (Date.now() - lastInteractionTime >= 65000) {
+        triggerStuckHint();
+        clearInterval(inactivityCheck);
+      }
+    }, 10000);
+
+    // 2. Hesitation scroll trigger: back and forth scrolling without taking action (looking for something)
+    const onHesitationScroll = () => {
+      lastInteractionTime = Date.now();
+      const currentY = window.scrollY;
+      if (Math.abs(currentY - lastScrollY) > 400) {
+        scrollReversals++;
+        lastScrollY = currentY;
+        if (scrollReversals >= 4) {
+          triggerStuckHint();
+        }
       }
     };
 
-    // Guaranteed 5-second automatic countdown from load
-    setTimeout(triggerGreetingBubble, 5000);
-
-    // Also trigger faster (after 3 seconds) if the visitor interacts with the page
-    const onUserActivity = function () {
-      ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(ev => {
-        window.removeEventListener(ev, onUserActivity);
-      });
-      setTimeout(triggerGreetingBubble, 3000);
+    // 3. Exit Intent Detection (Desktop cursor moving towards browser top navigation)
+    const onMouseLeaveDoc = (e) => {
+      if (e.clientY <= 12 && !hasShownStuckHint) {
+        triggerStuckHint();
+      }
     };
 
-    ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(ev => {
-      window.addEventListener(ev, onUserActivity, { passive: true });
-    });
+    const resetUserTimer = () => {
+      lastInteractionTime = Date.now();
+    };
+
+    window.addEventListener('scroll', onHesitationScroll, { passive: true });
+    window.addEventListener('click', resetUserTimer, { passive: true });
+    window.addEventListener('keydown', resetUserTimer, { passive: true });
+    document.addEventListener('mouseleave', onMouseLeaveDoc);
+  }
+
+  // Setup Proactive Greeting: Initiates conversation after exactly 2 MINUTES (120,000 ms)
+  let proactiveGreetingScheduled = false;
+  function setupProactiveCustomerServiceGreeting() {
+    if (proactiveGreetingScheduled) return;
+    proactiveGreetingScheduled = true;
+
+    // If user already dismissed chat during this session, do not auto-open, only monitor hesitation
+    if (chatDismissedByUser) {
+      setupHesitationDetector();
+      return;
+    }
+
+    // 2-minute timer (120,000 ms)
+    const TWO_MINUTES_MS = 120000;
+    setTimeout(() => {
+      const win = document.getElementById('floating-ai-window');
+      // Only auto-open if user has not explicitly dismissed it and it's not already open
+      if (!chatDismissedByUser && win && !win.classList.contains('open')) {
+        playGentleGreetingChime();
+        window.toggleAiCustomerServiceChat(true);
+      }
+    }, TWO_MINUTES_MS);
   }
 
   window.toggleAiCustomerServiceChat = function (forceState) {
@@ -2114,14 +2189,13 @@ How can I assist you with your project today? You can also message WebStack dire
       const input = document.getElementById('floating-cs-input');
       if (input) setTimeout(() => input.focus(), 150);
     } else {
-      if (visitorMessageCount >= 2 && !hasDisclosedAi) {
-        showAiDisclosureCard('floating');
-        setTimeout(() => {
-          win.classList.remove('open');
-        }, 1800);
-      } else {
-        win.classList.remove('open');
-      }
+      // Mark as dismissed by user when closed
+      try {
+        sessionStorage.setItem('webstack_chat_dismissed', 'true');
+      } catch (err) {}
+      chatDismissedByUser = true;
+      win.classList.remove('open');
+      setupHesitationDetector();
     }
   };
 
@@ -2133,29 +2207,22 @@ How can I assist you with your project today? You can also message WebStack dire
 
     const isAr = (document.documentElement.lang || currentLang || 'ar') === 'ar';
     const welcomeHtml = isAr 
-      ? `<p class="mb-2">أهلاً بحضرتك يا فندم في شركة WebStack للحلول البرمجية! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار.</p>
-         <div class="space-y-1.5 my-2">
-           <div class="ai-card-item">
-             <span class="ai-card-badge">1</span>
-             <div class="flex-1 text-slate-200 text-xs"><strong>المتاجر الإلكترونية المخصصة:</strong> تبدأ من <span class="ai-price-tag">200$</span> متجر من الصفر شامل دومين واستضافة وصيانة لسنة كاملة.</div>
+      ? `<p class="mb-2">أهلاً بحضرتك في شركة WebStack للحلول البرمجية! 👋 أنا أحمد من خدمة العملاء والمبيعات، تحت أمرك في أي استفسار.</p>
+         <div class="space-y-2 my-2">
+           <div class="p-2 rounded-lg bg-indigo-50 border border-indigo-100 text-slate-700 text-xs">
+             <strong class="text-indigo-900 block mb-0.5">🛍️ المتاجر الإلكترونية المخصصة:</strong> برمجة من الصفر (PHP & MySQL) بدون قوالب جاهزة و0% عمولات على مبيعاتك.
            </div>
-           <div class="ai-card-item">
-             <span class="ai-card-badge">2</span>
-             <div class="flex-1 text-slate-200 text-xs"><strong>باقة الموقع التعريفي:</strong> <span class="ai-price-tag">65$</span> بدومين .uk أو <span class="ai-price-tag">75$</span> بدومين .com شامل اللغتين والاستضافة.</div>
-           </div>
-           <div class="ai-card-item">
-             <span class="ai-card-badge">3</span>
-             <div class="flex-1 text-slate-200 text-xs"><strong>موظف الواتساب وسيستمات الشحن:</strong> ردود ذكية 24/7 وبوالص شحن وتطبيقات موبايل.</div>
+           <div class="p-2 rounded-lg bg-teal-50 border border-teal-100 text-slate-700 text-xs">
+             <strong class="text-teal-900 block mb-0.5">💼 مواقع الشركات الاحترافية:</strong> تصميم مميز بلغتين (عربي وإنجليزي)، سرعة فائقة، حماية SSL، ودعم فني مستمر.
            </div>
          </div>
-         <p class="mt-2 text-emerald-400 font-medium">تحب أساعد حضرتك في تفاصيل أي باقة أو نظام؟ 🚀</p>`
+         <p class="mt-2 text-indigo-600 font-semibold">تحب أساعدك في طلب استشارة أو عرض سعر مخصص؟ 🚀</p>`
       : `<p class="mb-2">Welcome to WebStack! 👋 I am Ahmed from Customer Service & Sales.</p>
-         <div class="space-y-1.5 my-2">
-           <div class="ai-card-item"><span class="ai-card-badge">1</span><div class="flex-1 text-xs"><strong>Custom E-Commerce Store:</strong> <span class="ai-price-tag">$200</span> built from scratch with domain, hosting & 1-yr maintenance.</div></div>
-           <div class="ai-card-item"><span class="ai-card-badge">2</span><div class="flex-1 text-xs"><strong>Corporate Websites:</strong> <span class="ai-price-tag">$65</span> or <span class="ai-price-tag">$75</span> bilingual with hosting.</div></div>
-           <div class="ai-card-item"><span class="ai-card-badge">3</span><div class="flex-1 text-xs"><strong>WhatsApp AI & Logistics:</strong> 24/7 sales agent and dispatch systems.</div></div>
+         <div class="space-y-2 my-2">
+           <div class="p-2 rounded-lg bg-indigo-50 border border-indigo-100 text-xs"><strong>Custom E-Commerce:</strong> Built from scratch with PHP & MySQL, full payment gateways, and 0% sales commission.</div>
+           <div class="p-2 rounded-lg bg-teal-50 border border-teal-100 text-xs"><strong>Corporate Websites:</strong> Bilingual (AR/EN), fast SSD cloud hosting, and SSL included.</div>
          </div>
-         <p class="mt-2 text-emerald-400 font-medium">Which service would you like to explore today? 🚀</p>`;
+         <p class="mt-2 text-indigo-600 font-semibold">How can I assist you with a custom quote today? 🚀</p>`;
 
     // Clear Floating Widget
     const floatBox = document.getElementById('floating-cs-chat-box');
@@ -2851,6 +2918,9 @@ ${note ? 'ملاحظات: ' + note : ''}`;
         bubble.classList.remove('show');
         setTimeout(() => bubble.classList.add('hidden'), 250);
       }
+      try {
+        sessionStorage.setItem('webstack_chat_stuck_shown', 'true');
+      } catch(err) {}
       return;
     }
 

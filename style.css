@@ -347,10 +347,12 @@ body {
   text-decoration: none;
 }
 [dir="rtl"] .whatsapp-float-btn {
-  left: 1.5rem;
+  left: 1.5rem !important;
+  right: auto !important;
 }
 [dir="ltr"] .whatsapp-float-btn {
-  right: 1.5rem;
+  left: 1.5rem !important;
+  right: auto !important;
 }
 .whatsapp-float-btn:hover {
   transform: scale(1.08);
@@ -375,11 +377,11 @@ body {
   cursor: pointer;
   transition: all 0.25s ease;
 }
-[dir="rtl"] .chat-launcher-btn {
-  right: 1.5rem;
-}
+.chat-launcher-btn,
+[dir="rtl"] .chat-launcher-btn,
 [dir="ltr"] .chat-launcher-btn {
-  left: 1.5rem;
+  right: 1.5rem !important;
+  left: auto !important;
 }
 .chat-launcher-btn:hover {
   transform: translateY(-2px);
@@ -387,10 +389,14 @@ body {
   box-shadow: var(--shadow-hover);
 }
 
-.chat-modal-window {
+.chat-modal-window,
+[dir="rtl"] .chat-modal-window,
+[dir="ltr"] .chat-modal-window {
   position: fixed;
   bottom: 5.5rem;
-  z-index: 50;
+  right: 1.5rem !important;
+  left: auto !important;
+  z-index: 95;
   width: calc(100vw - 2rem);
   max-width: 24rem;
   height: 32rem;
@@ -402,12 +408,6 @@ body {
   display: none;
   flex-direction: column;
   overflow: hidden;
-}
-[dir="rtl"] .chat-modal-window {
-  right: 1rem;
-}
-[dir="ltr"] .chat-modal-window {
-  left: 1rem;
 }
 .chat-modal-window.open {
   display: flex;
@@ -567,36 +567,40 @@ body {
   padding: 1.5rem;
 }
 
-/* Floating AI Customer Service Widget - SaaS Light Design */
-#floating-ai-launcher {
+/* Floating AI Customer Service Widget - Positioned on the RIGHT as requested */
+#floating-ai-launcher,
+[dir="rtl"] #floating-ai-launcher,
+[dir="ltr"] #floating-ai-launcher {
   position: fixed;
-  bottom: 1.25rem;
+  bottom: 1.5rem;
+  right: 1.5rem !important;
+  left: auto !important;
   z-index: 90;
   display: flex;
   align-items: center;
   gap: 0.625rem;
   padding: 0.625rem 1.125rem;
-  background: var(--primary-gradient);
-  color: #FFFFFF;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  color: var(--text-heading);
   border-radius: 9999px;
-  box-shadow: 0 10px 25px -5px rgba(79, 107, 255, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-[dir="rtl"] #floating-ai-launcher {
-  left: 1.25rem;
-}
-[dir="ltr"] #floating-ai-launcher {
-  right: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 #floating-ai-launcher:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px -5px rgba(79, 107, 255, 0.5);
+  box-shadow: 0 14px 28px -4px rgba(79, 107, 255, 0.25);
+  border-color: var(--primary);
 }
 
-#floating-ai-window {
+#floating-ai-window,
+[dir="rtl"] #floating-ai-window,
+[dir="ltr"] #floating-ai-window {
   position: fixed;
-  bottom: 5.25rem;
+  bottom: 5.5rem;
+  right: 1.5rem !important;
+  left: auto !important;
   z-index: 95;
   width: calc(100vw - 2rem);
   max-width: 25rem;
@@ -610,20 +614,18 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
-[dir="rtl"] #floating-ai-window {
-  left: 1.25rem;
-}
-[dir="ltr"] #floating-ai-window {
-  right: 1.25rem;
-}
 #floating-ai-window.open {
   display: flex;
   animation: chatWindowPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#floating-ai-greeting-bubble {
+#floating-ai-greeting-bubble,
+[dir="rtl"] #floating-ai-greeting-bubble,
+[dir="ltr"] #floating-ai-greeting-bubble {
   position: fixed;
-  bottom: 5.25rem;
+  bottom: 5.5rem;
+  right: 1.5rem !important;
+  left: auto !important;
   z-index: 89;
   max-width: 21rem;
   background: #FFFFFF;
@@ -633,14 +635,42 @@ body {
   box-shadow: var(--shadow-hover);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-[dir="rtl"] #floating-ai-greeting-bubble {
-  left: 1.25rem;
-}
-[dir="ltr"] #floating-ai-greeting-bubble {
-  right: 1.25rem;
-}
 #floating-ai-greeting-bubble.show {
   display: block;
+}
+
+@media (max-width: 640px) {
+  #floating-ai-launcher,
+  [dir="rtl"] #floating-ai-launcher,
+  [dir="ltr"] #floating-ai-launcher {
+    right: 1rem !important;
+    left: auto !important;
+    bottom: 1rem !important;
+  }
+  #floating-ai-window,
+  [dir="rtl"] #floating-ai-window,
+  [dir="ltr"] #floating-ai-window {
+    right: 1rem !important;
+    left: auto !important;
+    bottom: 4.75rem !important;
+    width: calc(100vw - 2rem) !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+  #floating-ai-greeting-bubble,
+  [dir="rtl"] #floating-ai-greeting-bubble,
+  [dir="ltr"] #floating-ai-greeting-bubble {
+    right: 1rem !important;
+    left: auto !important;
+    bottom: 4.75rem !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+  .whatsapp-float-btn,
+  [dir="rtl"] .whatsapp-float-btn,
+  [dir="ltr"] .whatsapp-float-btn {
+    left: 1rem !important;
+    right: auto !important;
+    bottom: 1rem !important;
+  }
 }
 
 /* Reduced motion preference */
