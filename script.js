@@ -68,28 +68,80 @@
     'clean-almithalia': {
       pageUrl: 'https://clean-almithalia.salah-logistics.uk/',
       externalUrl: 'https://clean-almithalia.salah-logistics.uk/',
-      titleEn: 'Clean Al-Mithalia — Comprehensive Cleaning & Pest Control Corporate Website',
-      titleAr: 'شركة كلين المثالية - خدمات النظافة الشاملة ومكافحة الحشرات بالمنطقة الشرقية',
-      taglineEn: 'Live Production Corporate Platform · Instant WhatsApp Service Booking · Local SEO Domination',
-      taglineAr: 'سابقة أعمال حية تم تسليمها للعميل · حجز فوري عبر واتساب · استضافة سحابية فائقة السرعة',
+      titleEn: 'Clean Al-Mithalia Website',
+      titleAr: 'موقع كلين المثالية (شركة كلين المثاليين)',
+      taglineEn: 'The official website for Clean Al-Mithalia - Cleaning, pest control, insulation & plumbing in Eastern Province, KSA. Crafted by WebStack.',
+      taglineAr: 'الموقع الرسمي لشركة كلين المثالية - خدمات التنظيف ومكافحة الحشرات والعزل والصرف في المنطقة الشرقية بالمملكة العربية السعودية. صمم بواسطة ويب ستاك.',
       image: 'assets/images/clean_almithalia_showcase.jpg',
       category: 'web-development',
-      metricsEn: 'Live Production Client · High Lead Conversion',
-      metricsAr: 'سابقة أعمال حية · تحويل مبيعات فوري',
+      metricsEn: 'Official Production Platform · Fast Mobile Booking',
+      metricsAr: 'سابقة أعمال رسمية · حجز فوري ومباشر',
       tech: ['Bilingual Corporate Web', 'Local SEO Engine', 'Fast Mobile Flow', 'Direct WhatsApp Leads', 'Cloud Hosting + SSL'],
       featuresEn: [
-        'Full corporate identity presentation for residential, commercial, and pest control services',
+        'Official website for Clean Al-Mithalia (شركة كلين المثاليين) in Eastern Province, Saudi Arabia',
+        'Comprehensive sections for cleaning, pest control, tank insulation, and plumbing',
         'Direct mobile WhatsApp quote and booking workflows converting visitors into paying clients',
-        'Optimized for search engines across Eastern Province cities (Dammam, Khobar, Jubail, Ahsa)',
-        '100% responsive, high-speed mobile UX with clean modern aesthetics'
+        'High performance responsive design crafted with precision by WebStack'
       ],
       featuresAr: [
-        'واجهة رسمية راقية وشاملة لخدمات النظافة السكنية، مكافحة الحشرات، عزل الخزانات، وغسيل المجالس',
+        'الموقع الرسمي لشركة كلين المثالية (شركة كلين المثاليين) بالمنطقة الشرقية بالمملكة العربية السعودية',
+        'أقسام شاملة لخدمات التنظيف، مكافحة الحشرات، عزل الخزانات، والصرف الصحي',
         'أزرار تواصل واتساب ذكية لتحويل زوار الموقع لطلبات تعاقد فورية',
-        'تهيئة قوية لمحركات البحث (SEO) لمدن المنطقة الشرقية (الدمام، الخبر، الجبيل، الأحساء)',
-        'سرعة تصفح فائقة وتجاوب تام مع كافة شاشات الهواتف الذكية'
+        'تصميم سريع ومتجاوب بالكامل تم بناؤه وتطويره بواسطة ويب ستاك'
       ],
       whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع شركة كلين المثالية وأرغب في تصميم موقع مماثل لشركتي'
+    },
+    'elsharkawy-farm': {
+      pageUrl: 'http://elsharkawy-farm.salah-logistics.uk/',
+      externalUrl: 'http://elsharkawy-farm.salah-logistics.uk/',
+      titleEn: 'Elsharkawy Farm Products',
+      titleAr: 'مزرعة الشرقاوي (منتجات مزارع الشرقاوي)',
+      taglineEn: 'Interactive storefront for dairy & farm-fresh products (Arabic/English) with hero video & WhatsApp ordering',
+      taglineAr: 'متجر منتجات الألبان والمزارع (عربي/إنجليزي) مع فيديو رئيسي وإمكانية الطلب عبر واتساب',
+      image: 'assets/images/elsharkawy_farm_showcase.jpg',
+      category: 'ecommerce-demos',
+      metricsEn: 'Interactive Live Storefront · Video Hero',
+      metricsAr: 'متجر حي تفاعلي · فيديو رئيسي وطلب واتساب',
+      tech: ['HTML5', 'CSS3', 'JavaScript', 'Video Hero Background', 'WhatsApp Checkout', 'Bilingual AR/EN'],
+      featuresEn: [
+        'Interactive storefront for farm butter, ghee, authentic cheeses, and fresh dairy products',
+        'Full bilingual support (Arabic/English) with high-definition video hero background',
+        'One-click WhatsApp direct order placement for retail home delivery and wholesale supply',
+        'Lightweight, ultra-fast loading speed with clean vanilla code architecture'
+      ],
+      featuresAr: [
+        'متجر تفاعلي لمنتجات الزبدة الفلاحي، السمن البلدي، الأجبان الطبيعية، والألبان الطازجة',
+        'دعم كامل للغتين (العربية والإنجليزية) مع فيديو تعريفي رئيسي عالي الجودة',
+        'طلب فوري بلمسة واحدة عبر الواتساب للطلبات المنزلية ولتوريدات الجملة',
+        'سرعة تصفح فائقة وخفة استثنائية مبنية بكود برمجي نظيف'
+      ],
+      whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع مزرعة الشرقاوي وأرغب في متجر مماثل لمنتجاتي'
+    },
+    'handasiya-aluminum': {
+      pageUrl: 'http://handasiya-aluminum.salah-logistics.uk/',
+      externalUrl: 'http://handasiya-aluminum.salah-logistics.uk/',
+      titleEn: 'Al Handasiya Aluminum (Maadi, Cairo)',
+      titleAr: 'الشركة الهندسية للألوميتال (عرب المعادي، القاهرة)',
+      taglineEn: 'Production website (Arabic/English) for aluminum workshop in Maadi: windows, doors, facades, kitchens & gallery',
+      taglineAr: 'موقع إلكتروني باللغتين لورشة ألوميتال بالمعادي: شبابيك، أبواب، واجهات ومطابخ مع معرض مشاريع وتواصل واتساب',
+      image: 'assets/images/handasiya_aluminum_showcase.jpg',
+      category: 'web-development',
+      metricsEn: 'Live Workshop Platform · Project Gallery',
+      metricsAr: 'سابقة أعمال حية · معرض مشاريع واتصال فوري',
+      tech: ['HTML5', 'CSS3', 'JavaScript', 'Project Gallery', 'Interactive Maps', 'WhatsApp Contact'],
+      featuresEn: [
+        'Complete presentation for windows, doors, structural facades, custom kitchens, and shutters',
+        'Dedicated project photo gallery showing real executed architectural installations',
+        'Bilingual Arabic/English interface serving homeowners, interior designers, and contractors',
+        'Instant quotation requests and map location routing for customer visits'
+      ],
+      featuresAr: [
+        'استعراض شامل لقطاعات الشبابيك، الأبواب، الواجهات المعمارية، المطابخ، وشيش الحصيرة والتندات',
+        'معرض صور للمشاريع والأعمال المنفذة على أرض الواقع بالمعادي وكافة أنحاء القاهرة',
+        'واجهة متجاوبة باللغتين العربية والإنجليزية لخدمة الأفراد ومهندسي الديكور والمقاولين',
+        'طلب مقايسة فوري وخريطة للوصول المباشر والتواصل عبر الواتساب والاتصال'
+      ],
+      whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع الشركة الهندسية للألوميتال وأرغب في تصميم موقع مماثل لنشاطي'
     },
     'custom-ecommerce-store': {
       pageUrl: 'ecommerce-store.html',
@@ -437,6 +489,14 @@
     'clean-almithalia': {
       ar: 'مرحباً فريق WebStack، أود الاستفسار وطلب عرض سعر مخصص لتصميم موقع مماثل لشركة كلين المثالية.',
       en: 'Hello WebStack team, I would like to request a tailored quote for a corporate website similar to Clean Al-Mithalia.'
+    },
+    'elsharkawy-farm': {
+      ar: 'مرحباً فريق WebStack، أود الاستفسار وطلب عرض سعر لمتجر إلكتروني مماثل لمتجر مزرعة الشرقاوي.',
+      en: 'Hello WebStack team, I would like to request a quote for an online storefront similar to Elsharkawy Farm Products.'
+    },
+    'handasiya-aluminum': {
+      ar: 'مرحباً فريق WebStack، أود الاستفسار وطلب عرض سعر لتصميم موقع مماثل للشركة الهندسية للألوميتال.',
+      en: 'Hello WebStack team, I would like to request a quote for a website similar to Al Handasiya Aluminum.'
     },
     // 2. WhatsApp AI Employee
     'whatsapp-ai-employee': {
@@ -3034,20 +3094,21 @@ ${note ? 'ملاحظات: ' + note : ''}`;
     }
 
     // FAQ Accordion Toggle
-    const faqBtn = target.closest('.faq-btn');
+    const faqBtn = target.closest('.faq-btn, .faq-toggle');
     if (faqBtn) {
       e.preventDefault();
       const parent = faqBtn.closest('.faq-item') || faqBtn.parentElement;
-      const answer = parent.querySelector('.faq-answer');
+      const answer = parent ? parent.querySelector('.faq-answer, .faq-content') : null;
       const icon = faqBtn.querySelector('.faq-icon');
-      const isExpanded = faqBtn.getAttribute('aria-expanded') === 'true';
+      const isExpanded = (faqBtn.getAttribute('aria-expanded') === 'true') || (parent && parent.classList.contains('active'));
 
       // Close all other FAQ items for a clean accordion effect
-      document.querySelectorAll('.faq-btn').forEach(btn => {
+      document.querySelectorAll('.faq-btn, .faq-toggle').forEach(btn => {
         if (btn !== faqBtn) {
           btn.setAttribute('aria-expanded', 'false');
           const p = btn.closest('.faq-item') || btn.parentElement;
-          const a = p ? p.querySelector('.faq-answer') : null;
+          if (p) p.classList.remove('active');
+          const a = p ? p.querySelector('.faq-answer, .faq-content') : null;
           const ic = btn.querySelector('.faq-icon');
           if (a) a.classList.add('hidden');
           if (ic) ic.classList.remove('rotate-180');
@@ -3056,10 +3117,12 @@ ${note ? 'ملاحظات: ' + note : ''}`;
 
       if (isExpanded) {
         faqBtn.setAttribute('aria-expanded', 'false');
+        if (parent) parent.classList.remove('active');
         if (answer) answer.classList.add('hidden');
         if (icon) icon.classList.remove('rotate-180');
       } else {
         faqBtn.setAttribute('aria-expanded', 'true');
+        if (parent) parent.classList.add('active');
         if (answer) answer.classList.remove('hidden');
         if (icon) icon.classList.add('rotate-180');
       }
