@@ -3004,27 +3004,34 @@ ${note ? 'ملاحظات: ' + note : ''}`;
     }
 
     // FAQ Accordion Toggle
-    const faqBtn = target.closest('.faq-toggle, .faq-btn');
+    const faqBtn = target.closest('.faq-btn');
     if (faqBtn) {
       e.preventDefault();
       const parent = faqBtn.closest('.faq-item') || faqBtn.parentElement;
-      const isExpanded = parent ? parent.classList.contains('active') : (faqBtn.getAttribute('aria-expanded') === 'true');
+      const answer = parent.querySelector('.faq-answer');
+      const icon = faqBtn.querySelector('.faq-icon');
+      const isExpanded = faqBtn.getAttribute('aria-expanded') === 'true';
 
       // Close all other FAQ items for a clean accordion effect
-      document.querySelectorAll('.faq-toggle, .faq-btn').forEach(btn => {
+      document.querySelectorAll('.faq-btn').forEach(btn => {
         if (btn !== faqBtn) {
           btn.setAttribute('aria-expanded', 'false');
           const p = btn.closest('.faq-item') || btn.parentElement;
-          if (p) p.classList.remove('active');
+          const a = p ? p.querySelector('.faq-answer') : null;
+          const ic = btn.querySelector('.faq-icon');
+          if (a) a.classList.add('hidden');
+          if (ic) ic.classList.remove('rotate-180');
         }
       });
 
       if (isExpanded) {
         faqBtn.setAttribute('aria-expanded', 'false');
-        if (parent) parent.classList.remove('active');
+        if (answer) answer.classList.add('hidden');
+        if (icon) icon.classList.remove('rotate-180');
       } else {
         faqBtn.setAttribute('aria-expanded', 'true');
-        if (parent) parent.classList.add('active');
+        if (answer) answer.classList.remove('hidden');
+        if (icon) icon.classList.add('rotate-180');
       }
       return;
     }
