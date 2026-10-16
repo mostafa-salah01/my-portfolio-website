@@ -2931,14 +2931,35 @@ ${note ? 'ملاحظات: ' + note : ''}`;
 
   // --- Global Event Delegation (Zero inline onclick for 100% strict CSP) ---
   document.addEventListener('click', function(e) {
+    const target = e.target;
+    if (!target) return;
+
     // Detect clicking WhatsApp CTA inside chat to trigger AI disclosure
     const waInChat = target.closest('#floating-ai-window a[href*="wa.me"], #sim-chat-box a[href*="wa.me"]');
     if (waInChat && !hasDisclosedAi) {
       showAiDisclosureCard();
     }
 
-    const target = e.target;
-    if (!target) return;
+    // Direct Project Card Click (Clicking anywhere on card or image takes user directly to live project)
+    const projectCard = target.closest('[data-project-link]');
+    if (projectCard && !target.closest('button, input, textarea, select')) {
+      const href = projectCard.getAttribute('data-project-link');
+      const clickedLink = target.closest('a');
+      // If user clicked the card body or the image link, open the project
+      if (!clickedLink || clickedLink.classList.contains('project-card-image-link') || clickedLink === projectCard) {
+        if (clickedLink && clickedLink.href) {
+          // let the anchor handle it naturally
+        } else if (href) {
+          e.preventDefault();
+          if (href.startsWith('http')) {
+            window.open(href, '_blank', 'noopener,noreferrer');
+          } else {
+            window.location.href = href;
+          }
+          return;
+        }
+      }
+    }
 
     // Floating Chat Launcher Click
     const floatLauncher = target.closest('#floating-ai-launcher');
