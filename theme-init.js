@@ -1,10 +1,13 @@
 /**
- * WebStack - Light Theme Initialization
- * Pure light mode across all pages. Zero dark mode to avoid FOUC.
+ * WebStack - Luxury Theme Initialization
+ * Enforces prestigious dark luxury aesthetic with Gold & Red royal accents.
  */
 (function() {
   try {
-    document.documentElement.classList.add('light');
-    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+    if (typeof window !== 'undefined' && window.localStorage) {
+      window.localStorage.setItem('portfolio_theme', 'dark');
+    }
   } catch (e) {}
 })();

@@ -741,16 +741,16 @@
     }
   });
 
-  // --- Theme Enforcement (Pure Light Mode Only - Anti-Slop Zero Dark Mode) ---
+  // --- Theme Enforcement (Dark Luxury Aesthetic with Gold & Red Accents) ---
   window.setTheme = function (theme) {
-    currentTheme = 'light';
-    safeSetStorage('portfolio_theme', 'light');
-    document.documentElement.classList.add('light');
-    document.documentElement.classList.remove('dark');
+    currentTheme = 'dark';
+    safeSetStorage('portfolio_theme', 'dark');
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
   };
 
   window.toggleTheme = function () {
-    window.setTheme('light');
+    window.setTheme('dark');
   };
 
   // --- Terminal Simulator ---
