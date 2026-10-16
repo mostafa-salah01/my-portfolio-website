@@ -65,6 +65,32 @@
       ],
       whatsappMsg: 'مرحباً فريق WebStack أود الاستفسار وطلب عرض سعر مخصص لتصميم موقع تعريفي للشركات'
     },
+    'clean-almithalia': {
+      pageUrl: 'https://clean-almithalia.salah-logistics.uk/',
+      externalUrl: 'https://clean-almithalia.salah-logistics.uk/',
+      titleEn: 'Clean Al-Mithalia — Comprehensive Cleaning & Pest Control Corporate Website',
+      titleAr: 'شركة كلين المثالية - خدمات النظافة الشاملة ومكافحة الحشرات بالمنطقة الشرقية',
+      taglineEn: 'Live Production Corporate Platform · Instant WhatsApp Service Booking · Local SEO Domination',
+      taglineAr: 'سابقة أعمال حية تم تسليمها للعميل · حجز فوري عبر واتساب · استضافة سحابية فائقة السرعة',
+      image: 'assets/images/clean_almithalia_showcase.jpg',
+      category: 'web-development',
+      metricsEn: 'Live Production Client · High Lead Conversion',
+      metricsAr: 'سابقة أعمال حية · تحويل مبيعات فوري',
+      tech: ['Bilingual Corporate Web', 'Local SEO Engine', 'Fast Mobile Flow', 'Direct WhatsApp Leads', 'Cloud Hosting + SSL'],
+      featuresEn: [
+        'Full corporate identity presentation for residential, commercial, and pest control services',
+        'Direct mobile WhatsApp quote and booking workflows converting visitors into paying clients',
+        'Optimized for search engines across Eastern Province cities (Dammam, Khobar, Jubail, Ahsa)',
+        '100% responsive, high-speed mobile UX with clean modern aesthetics'
+      ],
+      featuresAr: [
+        'واجهة رسمية راقية وشاملة لخدمات النظافة السكنية، مكافحة الحشرات، عزل الخزانات، وغسيل المجالس',
+        'أزرار تواصل واتساب ذكية لتحويل زوار الموقع لطلبات تعاقد فورية',
+        'تهيئة قوية لمحركات البحث (SEO) لمدن المنطقة الشرقية (الدمام، الخبر، الجبيل، الأحساء)',
+        'سرعة تصفح فائقة وتجاوب تام مع كافة شاشات الهواتف الذكية'
+      ],
+      whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع شركة كلين المثالية وأرغب في تصميم موقع مماثل لشركتي'
+    },
     'custom-ecommerce-store': {
       pageUrl: 'ecommerce-store.html',
       titleEn: 'Custom E-Commerce Store (PHP & MySQL)',
@@ -407,6 +433,10 @@
     'corporate-website-package': {
       ar: 'مرحباً فريق WebStack، أود الاستفسار وطلب عرض سعر مخصص لتصميم موقع تعريفي للشركة.',
       en: 'Hello WebStack team, I’m interested in a corporate website and would like to request a tailored quote.'
+    },
+    'clean-almithalia': {
+      ar: 'مرحباً فريق WebStack، أود الاستفسار وطلب عرض سعر مخصص لتصميم موقع مماثل لشركة كلين المثالية.',
+      en: 'Hello WebStack team, I would like to request a tailored quote for a corporate website similar to Clean Al-Mithalia.'
     },
     // 2. WhatsApp AI Employee
     'whatsapp-ai-employee': {
