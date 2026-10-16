@@ -24,12 +24,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: |
           rm -f package-lock.json
-          npm install --no-package-lock
+          npm install --legacy-peer-deps --no-package-lock
 
       - name: Build site with Vite
         env:
@@ -44,7 +44,7 @@ jobs:
 
       - name: Deploy to gh-pages branch (fallback)
         uses: peaceiris/actions-gh-pages@v4
-        if: always()
+        if: success()
         continue-on-error: true
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
