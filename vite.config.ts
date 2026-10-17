@@ -1,6 +1,7 @@
 import { defineConfig, Plugin } from 'vite';
 import { resolve } from 'path';
 import fs from 'fs';
+import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { GoogleGenAI } from '@google/genai';
 
@@ -20,18 +21,12 @@ function staticAssetsCopyPlugin(): Plugin {
       const isValidKey = deepseekKey && deepseekKey.length > 15 && !deepseekKey.includes('YOUR_DEEPSEEK');
       const keyToInject = isValidKey ? deepseekKey : '';
 
-      const filesToCopy = ['script.js', 'theme-init.js', 'style.css', 'CNAME', 'sitemap.xml', 'google7da3f41b1c6a9b4a.html', 'robots.txt'];
+      const filesToCopy = ['theme-init.js', 'style.css', 'CNAME', 'sitemap.xml', 'google7da3f41b1c6a9b4a.html', 'robots.txt'];
       for (const file of filesToCopy) {
         const src = resolve(import.meta.dirname, file);
         const dest = resolve(import.meta.dirname, 'dist', file);
         if (fs.existsSync(src)) {
-          if (file === 'script.js') {
-            let content = fs.readFileSync(src, 'utf8');
-            content = content.replace(/__INJECTED_DEEPSEEK_KEY__/g, keyToInject);
-            fs.writeFileSync(dest, content, 'utf8');
-          } else {
-            fs.copyFileSync(src, dest);
-          }
+          fs.copyFileSync(src, dest);
         }
       }
     }
@@ -360,6 +355,7 @@ export default defineConfig(() => {
       '__DEEPSEEK_API_KEY__': JSON.stringify(process.env.DEEPSEEK_API_KEY || process.env.VITE_DEEPSEEK_API_KEY || ''),
     },
     plugins: [
+      react(),
       tailwindcss(),
       staticAssetsCopyPlugin(),
       aiChatProxyPlugin(),
@@ -398,21 +394,6 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: resolve(import.meta.dirname, 'index.html'),
-          services: resolve(import.meta.dirname, 'services.html'),
-          ecommerceStore: resolve(import.meta.dirname, 'ecommerce-store.html'),
-          corporateWebsite: resolve(import.meta.dirname, 'corporate-website.html'),
-          whatsappAiEmployee: resolve(import.meta.dirname, 'whatsapp-ai-employee.html'),
-          n8nAutomation: resolve(import.meta.dirname, 'n8n-automation.html'),
-          smartShippingSystem: resolve(import.meta.dirname, 'smart-shipping-system.html'),
-          mobileRetailApps: resolve(import.meta.dirname, 'mobile-retail-apps.html'),
-          omnichannelAiAgent: resolve(import.meta.dirname, 'omnichannel-ai-agent.html'),
-          backendApiArchitecture: resolve(import.meta.dirname, 'backend-api-architecture.html'),
-          affiliateMarket: resolve(import.meta.dirname, 'affiliate-market.html'),
-          partnerProgram: resolve(import.meta.dirname, 'partner-program.html'),
-          privacy: resolve(import.meta.dirname, 'privacy.html'),
-          privacyPolicy: resolve(import.meta.dirname, 'privacy-policy.html'),
-          terms: resolve(import.meta.dirname, 'terms.html'),
-          termsOfService: resolve(import.meta.dirname, 'terms-of-service.html'),
         },
       },
     },
