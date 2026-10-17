@@ -50,18 +50,33 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
         {/* Modal Body */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
           {/* Showcase Image */}
-          <div className="relative rounded-xl overflow-hidden border border-amber-500/20 bg-slate-950 aspect-video max-h-72 w-full group">
+          <div 
+            className={`relative rounded-xl overflow-hidden border border-amber-500/20 bg-slate-950 aspect-video max-h-72 w-full group ${project.liveUrl ? 'cursor-pointer' : ''}`}
+            onClick={() => {
+              if (project.liveUrl) {
+                window.open(project.liveUrl, '_blank', 'noopener,noreferrer');
+              }
+            }}
+            title={project.liveUrl ? (isAr ? 'اضغط لفتح المتجر أو الموقع الحي مباشرة' : 'Click to open live site') : undefined}
+          >
             <img
               src={project.image}
               alt={title}
               className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
               onError={(e) => {
-                // fallback to ecommerce placeholder
-                (e.target as HTMLImageElement).src = '/assets/images/ecommerce_store_showcase.jpg';
+                (e.target as HTMLImageElement).src = '/assets/images/ecommerce_store_main.jpg';
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-              <span className="text-xs font-mono font-bold text-amber-300 bg-slate-950/80 px-3 py-1 rounded-lg border border-amber-500/30">
+            {project.liveUrl && (
+              <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                <span className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white font-bold text-xs flex items-center gap-1.5 shadow-xl">
+                  <span>{isAr ? 'اضغط لفتح المتجر الحي ↗' : 'Click to Open Live Store ↗'}</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </span>
+              </div>
+            )}
+            <div className="absolute bottom-3 start-3 z-10 pointer-events-none">
+              <span className="text-xs font-mono font-bold text-amber-300 bg-slate-950/85 px-3 py-1 rounded-lg border border-amber-500/30">
                 {metrics}
               </span>
             </div>

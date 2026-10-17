@@ -48,50 +48,48 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-6" aria-label="Main Navigation">
+        <nav className="hidden lg:flex items-center gap-5" aria-label="Main Navigation">
           <button
-            onClick={() => handleNavClick('home', 'services')}
+            onClick={() => handleNavClick('home')}
             className={`text-sm font-semibold transition-colors cursor-pointer ${
-              activeTab === 'home' ? 'text-slate-200 hover:text-amber-300' : 'text-slate-400 hover:text-white'
+              activeTab === 'home' ? 'text-amber-300 font-bold' : 'text-slate-300 hover:text-white'
             }`}
           >
-            {isAr ? 'خدماتنا' : 'Services'}
+            {isAr ? 'المتاجر والمواقع' : 'Stores & Websites'}
           </button>
 
           <button
-            onClick={() => handleNavClick('home', 'portfolio')}
-            className={`text-sm font-semibold transition-colors cursor-pointer ${
-              activeTab === 'home' ? 'text-slate-200 hover:text-amber-300' : 'text-slate-400 hover:text-white'
-            }`}
+            onClick={() => handleNavClick('home', 'client-work')}
+            className="text-sm font-semibold text-slate-300 hover:text-amber-300 transition-colors cursor-pointer"
           >
-            {isAr ? 'أعمالنا' : 'Portfolio'}
+            {isAr ? 'سابقة الأعمال الحية' : 'Live Client Work'}
           </button>
 
           <button
-            onClick={() => handleNavClick('home', 'how-it-works')}
-            className="text-sm font-semibold text-slate-200 hover:text-amber-300 transition-colors cursor-pointer"
+            onClick={() => handleNavClick('home', 'store-demos')}
+            className="text-sm font-semibold text-slate-300 hover:text-amber-300 transition-colors cursor-pointer"
           >
-            {isAr ? 'كيف نشتغل' : 'How We Work'}
+            {isAr ? 'ديموهات المتاجر' : 'Store Demos'}
           </button>
 
           <button
-            onClick={() => handleNavClick('home', 'faq')}
-            className="text-sm font-semibold text-slate-200 hover:text-amber-300 transition-colors cursor-pointer"
+            onClick={() => handleNavClick('home', 'store-features')}
+            className="text-sm font-semibold text-slate-300 hover:text-amber-300 transition-colors cursor-pointer"
           >
-            {isAr ? 'أسئلة شائعة' : 'FAQ'}
+            {isAr ? 'مواصفات المتجر' : 'Store Architecture'}
           </button>
 
-          {/* Highlighted Link to All Services Directory */}
+          {/* Highlighted Link to Dedicated Other Services Page */}
           <button
-            onClick={() => handleNavClick('services')}
+            onClick={() => handleNavClick('other-services')}
             className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl border text-sm font-bold transition-all hover:scale-105 cursor-pointer shadow-sm ${
-              activeTab === 'services'
+              activeTab === 'other-services'
                 ? 'bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)]'
                 : 'bg-slate-900/90 hover:bg-slate-800 border-amber-500/35 text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.15)]'
             }`}
           >
             <LayoutGrid className="w-4 h-4 text-amber-400" />
-            <span>{isAr ? 'كل الخدمات البرمجية' : 'All Services'}</span>
+            <span>{isAr ? 'الخدمات والأنظمة الأخرى' : 'Other Systems & Services'}</span>
             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_6px_rgba(244,63,94,0.8)]"></span>
           </button>
         </nav>
@@ -138,35 +136,42 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
       {mobileMenuOpen && (
         <div className="lg:hidden border-b border-amber-500/20 bg-[#0B0F19]/98 px-5 py-4 space-y-3 backdrop-blur-2xl shadow-2xl animate-in fade-in duration-200">
           <button
-            onClick={() => handleNavClick('services')}
+            onClick={() => handleNavClick('other-services')}
             className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-amber-500/30 text-amber-300 font-bold cursor-pointer text-start"
           >
             <span className="flex items-center gap-2">
               <LayoutGrid className="w-5 h-5 text-amber-400" />
-              <span>{isAr ? 'دليل كل الخدمات البرمجية' : 'All Software Services Directory'}</span>
+              <span>{isAr ? 'الخدمات والأنظمة الأخرى' : 'Other Systems & Services'}</span>
             </span>
             <ArrowRight className="w-4 h-4 text-amber-400 rtl:rotate-180" />
           </button>
 
           <button
-            onClick={() => handleNavClick('home', 'services')}
+            onClick={() => handleNavClick('home')}
             className="w-full block py-2 text-start text-slate-200 font-semibold hover:text-amber-300 cursor-pointer"
           >
-            {isAr ? 'خدماتنا الرئيسية' : 'Main Services'}
+            {isAr ? 'المتاجر الإلكترونية والمواقع' : 'E-Commerce & Websites'}
           </button>
 
           <button
-            onClick={() => handleNavClick('home', 'portfolio')}
+            onClick={() => handleNavClick('home', 'client-work')}
             className="w-full block py-2 text-start text-slate-200 font-semibold hover:text-amber-300 cursor-pointer"
           >
-            {isAr ? 'أعمالنا ونماذج المعاينة' : 'Our Work & Live Demos'}
+            {isAr ? 'سابقة الأعمال الحية' : 'Live Client Work'}
           </button>
 
           <button
-            onClick={() => handleNavClick('home', 'how-it-works')}
+            onClick={() => handleNavClick('home', 'store-demos')}
             className="w-full block py-2 text-start text-slate-200 font-semibold hover:text-amber-300 cursor-pointer"
           >
-            {isAr ? 'كيف نشتغل (خطوة بخطوة)' : 'How We Work (Step by Step)'}
+            {isAr ? 'ديموهات المتاجر الجاهزة' : 'Live Store Demos'}
+          </button>
+
+          <button
+            onClick={() => handleNavClick('home', 'store-features')}
+            className="w-full block py-2 text-start text-slate-200 font-semibold hover:text-amber-300 cursor-pointer"
+          >
+            {isAr ? 'مواصفات ومعمارية المتجر' : 'Store Specs & Features'}
           </button>
 
           <button

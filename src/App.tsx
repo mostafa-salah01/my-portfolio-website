@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
 import { AiChatWidget } from './components/AiChatWidget';
 import { HomeView } from './views/HomeView';
-import { ServicesView } from './views/ServicesView';
+import { OtherServicesView } from './views/OtherServicesView';
 import { ServiceDetailView } from './views/ServiceDetailView';
 import { StaticPagesView } from './views/StaticPagesView';
 import { ProjectItem } from './data/projects';
@@ -24,11 +24,11 @@ export const App: React.FC = () => {
   const getTabFromHash = (): string => {
     const hash = window.location.hash.replace(/^#\/?/, '').split('?')[0];
     if (!hash) return 'home';
-    if (['services', 'ecommerce-store', 'corporate-website', 'whatsapp-ai-employee', 'smart-shipping-system', 'mobile-retail-apps', 'n8n-automation', 'omnichannel-ai-agent', 'backend-api-architecture', 'partner-program', 'privacy', 'terms'].includes(hash)) {
+    if (['other-services', 'services', 'ecommerce-store', 'corporate-website', 'whatsapp-ai-employee', 'smart-shipping-system', 'mobile-retail-apps', 'n8n-automation', 'omnichannel-ai-agent', 'backend-api-architecture', 'partner-program', 'privacy', 'terms'].includes(hash)) {
       return hash;
     }
-    // If it's an anchor like #portfolio or #faq or #services
-    if (['portfolio', 'faq', 'how-it-works'].includes(hash)) {
+    // If it's an anchor on the Home page
+    if (['client-work', 'store-demos', 'store-services', 'store-features', 'portfolio', 'faq', 'how-it-works'].includes(hash)) {
       return 'home';
     }
     return 'home';
@@ -56,13 +56,13 @@ export const App: React.FC = () => {
 
       // Check if there is an anchor to scroll to
       const hash = window.location.hash.replace(/^#\/?/, '');
-      if (['services', 'portfolio', 'how-it-works', 'faq'].includes(hash)) {
+      if (['client-work', 'store-demos', 'store-services', 'store-features', 'portfolio', 'how-it-works', 'faq'].includes(hash)) {
         setTimeout(() => {
           const el = document.getElementById(hash);
           if (el) {
             el.scrollIntoView({ behavior: 'smooth' });
           }
-        }, 100);
+        }, 120);
       }
     };
 
@@ -77,13 +77,17 @@ export const App: React.FC = () => {
   const handleNavigate = (tab: string, anchor?: string) => {
     setActiveTab(tab);
     if (anchor) {
-      window.location.hash = `#${anchor}`;
+      if (activeTab !== 'home' && tab === 'home') {
+        window.location.hash = `#${anchor}`;
+      } else {
+        window.location.hash = `#${anchor}`;
+      }
       setTimeout(() => {
         const el = document.getElementById(anchor);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 100);
+      }, 120);
     } else {
       window.location.hash = tab === 'home' ? '' : `#${tab}`;
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -101,11 +105,12 @@ export const App: React.FC = () => {
       );
     }
 
-    if (activeTab === 'services') {
+    if (activeTab === 'other-services' || activeTab === 'services') {
       return (
-        <ServicesView
+        <OtherServicesView
           lang={lang}
           onNavigate={handleNavigate}
+          onSelectProject={(project) => setSelectedProject(project)}
         />
       );
     }
@@ -120,7 +125,7 @@ export const App: React.FC = () => {
       );
     }
 
-    // Otherwise, it's a specific service detail view
+    // Otherwise, it's a specific service deep-dive view
     return (
       <ServiceDetailView
         slug={activeTab}
@@ -139,7 +144,7 @@ export const App: React.FC = () => {
       <div className="fixed top-48 -right-24 w-[600px] h-[600px] blob-pastel-teal pointer-events-none z-0"></div>
       <div className="fixed top-96 -left-24 w-[600px] h-[600px] blob-pastel-peach pointer-events-none z-0"></div>
 
-      {/* Main App Layout */}
+      {/* Main App Header */}
       <Header
         lang={lang}
         onToggleLang={toggleLanguage}
@@ -147,10 +152,12 @@ export const App: React.FC = () => {
         onNavigate={handleNavigate}
       />
 
+      {/* Dynamic Views */}
       <main className="relative z-10 min-h-[calc(100vh-280px)]">
         {renderCurrentView()}
       </main>
 
+      {/* Comprehensive Footer */}
       <Footer
         lang={lang}
         onNavigate={handleNavigate}

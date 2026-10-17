@@ -26,12 +26,12 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
     titleAr: 'متجر لاروز (Larose Store) - متجر إلكتروني حي',
     taglineEn: 'Live production e-commerce store for luxury fashion, cosmetics and lifestyle with smart cart and instant checkout',
     taglineAr: 'متجر إلكتروني حي متكامل للأزياء الراقية ومستحضرات التجميل مع سلة ذكية ودفع إلكتروني سريع',
-    image: '/assets/images/demo_beauty_store.jpg',
+    image: '/assets/images/ecommerce_store_main.jpg',
     category: 'ecommerce-demos',
-    categoryLabelEn: 'Live E-Commerce Demo',
-    categoryLabelAr: 'ديمو متجر إلكتروني حي',
+    categoryLabelEn: 'Live Production Store',
+    categoryLabelAr: 'متجر إلكتروني حي',
     metricsEn: 'Live Client Platform · 100% Production Ready',
-    metricsAr: 'منصة عميل حية · جاهزية إنتاجية كاملة',
+    metricsAr: 'متجر حي رئيسي · جاهزية كاملة للشراء',
     tech: ['Custom E-Commerce', 'PHP & MySQL Architecture', 'Instant Cart Drawer', 'Payment Integrations', 'Cloud Hosting + SSL'],
     featuresEn: [
       'Live production e-commerce store engineered by WebStack for Larose',
@@ -48,6 +48,35 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
     liveUrl: 'https://larose.salah-logistics.uk/',
     whatsappMsg: 'مرحباً فريق WebStack، شاهدت متجر لاروز (Larose Store) https://larose.salah-logistics.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
     badge: 'سابق أعمال حي'
+  },
+  {
+    id: 'alkemma-decor',
+    titleEn: 'Al Kemma Decor — Luxury Interior Design & Contracting',
+    titleAr: 'شركة القمة للديكور والمقاولات العامة والتشطيبات',
+    taglineEn: 'Official corporate website for Al Kemma Decor: interior design, architectural contracting & luxury fitouts in Cairo & Gulf',
+    taglineAr: 'الموقع الرسمي لشركة القمة للديكور والمقاولات: تصميم داخلي، تشطيبات فاخرة، ومعرض مشاريع هندسية متكامل',
+    image: '/assets/images/alkemma_decor_showcase.jpg',
+    category: 'web-development',
+    categoryLabelEn: 'Corporate Website',
+    categoryLabelAr: 'موقع شركة رسمي',
+    metricsEn: 'Official Live Website · Project Showcase',
+    metricsAr: 'سابقة أعمال حية · معرض أعمال وتشطيبات',
+    tech: ['Corporate Architecture', 'Bilingual Engine', 'Fast Responsive UI', 'Interactive Portfolio', 'Direct WhatsApp Quotes'],
+    featuresEn: [
+      'Official corporate website crafted for Al Kemma Decor and general contracting',
+      'High-definition architectural project galleries and interior design showcase',
+      'Direct mobile quote requests and immediate consultation booking flow',
+      'Responsive luxury aesthetics optimized for mobile, tablet, and desktop'
+    ],
+    featuresAr: [
+      'الموقع الرسمي لشركة القمة للديكور والمقاولات العامة والتشطيبات الفاخرة',
+      'معرض صور ومشاريع عالي الجودة يستعرض الفيلات والوحدات المنفذة',
+      'حجز مقايسات واستشارات فورية عبر أزرار الواتساب التفاعلية',
+      'تصميم راقٍ يعكس فخامة الهوية المعمارية للشركة مع سرعة تصفح فائقة'
+    ],
+    liveUrl: 'https://alkemma-decor.salah-logistics.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع شركة القمة للديكور وأرغب في تصميم موقع مماثل لشركتي',
+    badge: 'موقع حي'
   },
   {
     id: 'clean-almithalia',
@@ -77,72 +106,6 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
     liveUrl: 'https://clean-almithalia.salah-logistics.uk/',
     whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع شركة كلين المثالية وأرغب في تصميم موقع مماثل لشركتي',
     badge: 'منفذ لعميل'
-  },
-  {
-    id: 'custom-ecommerce-store',
-    titleEn: 'Custom E-Commerce Store (PHP & MySQL Architecture)',
-    titleAr: 'برمجة متجر إلكتروني مخصص من الصفر (PHP & MySQL)',
-    taglineEn: '100% Handcrafted from Scratch · Clean PHP & MySQL · Step-by-Step Consultations · Zero Template Bloat',
-    taglineAr: 'مبني من الصفر 100% · بلغة PHP وقاعدة بيانات MySQL · استشارات تفصيلية خطوة بخطوة · جميع بوابات الدفع',
-    image: '/assets/images/ecommerce_store_showcase.jpg',
-    category: 'web-development',
-    categoryLabelEn: 'Custom E-Commerce',
-    categoryLabelAr: 'متجر إلكتروني مخصص',
-    metricsEn: 'Handcrafted From Scratch · 0% Sales Commission · High Velocity',
-    metricsAr: 'مبرمج من الصفر · 0% عمولات على مبيعاتك · سرعة فائقة',
-    tech: ['PHP 8+ Backend', 'Custom MySQL Relational DB', 'Zero Templates (100% Custom)', 'All Payment Gateways', 'Instant Cart & Inventory', 'Ongoing Support'],
-    featuresEn: [
-      '100% custom-coded solution with PHP & MySQL without bloated templates or third-party platform commissions',
-      'In-depth consultation sessions walking step-by-step with you to understand your exact business workflow',
-      'Integration with all payment gateways: Mada, Visa, Apple Pay, Tabby, Tamara, InstaPay & COD',
-      'Complete in-store operations: customized dashboard, stock sync, PDF invoices, discount engine & customer CRM',
-      'Official domain name + SSD high-speed cloud hosting included',
-      'Dedicated technical support and continuous daily maintenance contract to ensure uptime'
-    ],
-    featuresAr: [
-      'برمجة كود خاص من الصفر بلغة PHP وقاعدة بيانات MySQL دون أي قوالب ووردبريس أو منصات مؤجرة تقتطع عمولات',
-      'جلسات استشارية تفصيلية بنمشي معاك فيها خطوة بخطوة لحد ما نعرف طبيعة خدمتك وتجارتك ماشية إزاي',
-      'ربط جميع بوابات الدفع الإلكترونية: مدى، فيزا، ماستركارد، أبل باي، تابي، تمارا، إنستاباي، والدفع عند الاستلام',
-      'كل العمليات تدار داخل المتجر: لوحة تحكم مخصصة، مزامنة المخزون، فواتير وبوالص PDF، وسجل العملاء',
-      'اسم دومين رسمي خاص بمتجرك + استضافة سحابية فائقة السرعة SSD مشمولة بالكامل',
-      'دعم فني متخصص ومتابعة وصيانة مستمرة لضمان أعلى استقرار وأمان'
-    ],
-    pageUrl: 'ecommerce-store',
-    whatsappMsg: 'مرحباً فريق WebStack، أود حجز استشارة وطلب عرض سعر مخصص لبرمجة متجر إلكتروني',
-    badge: 'خدمة رئيسية'
-  },
-  {
-    id: 'corporate-website-package',
-    titleEn: 'Professional Bilingual Corporate Website Package',
-    titleAr: 'تصميم وإعداد موقع تعريفي احترافي للشركات (ثنائي اللغة)',
-    taglineEn: 'Bilingual (Arabic & English Included) · Custom Made · Cloud Hosting & SSL Included',
-    taglineAr: 'دعم كامل للغتين (عربي وإنجليزي معاً مشمولان) · تصميم مخصص · استضافة سحابية وشهادة أمان SSL',
-    image: '/assets/images/watermarked_img_3971138867213192952.jpg',
-    category: 'web-development',
-    categoryLabelEn: 'Corporate Website',
-    categoryLabelAr: 'مواقع الشركات',
-    metricsEn: 'Bilingual AR/EN Included · Fast SSD Hosting · Ongoing Support',
-    metricsAr: 'اللغتان معاً مشمولتان · استضافة SSD سريعة · دعم فني مستمر',
-    tech: ['Bilingual AR/EN Included', 'Custom Domain', 'High-Speed Cloud Hosting + SSL', 'WhatsApp Direct CTA', 'Ongoing Maintenance'],
-    featuresEn: [
-      'Full bilingual support included: professional site architecture and content in both Arabic and English together',
-      'Official custom domain name included with high-speed cloud hosting',
-      'Multi-page responsive UI: 100% optimized for mobile, tablet, and desktop screens with ultra-fast performance',
-      'High-speed cloud hosting + SSL: fast SSD cloud hosting with free security SSL certificate included',
-      'Direct WhatsApp integration: interactive smart buttons connecting customer inquiries instantly to WhatsApp',
-      'Ongoing technical support & maintenance: active support and rapid updates'
-    ],
-    featuresAr: [
-      'دعم كامل للغتين: إعداد وتصميم الموقع باللغتين (العربية والإنجليزية معاً) بتنسيق راقٍ ومتجاوب',
-      'اسم نطاق رسمي خاص بشركتك مع استضافة سحابية فائقة السرعة SSD',
-      'تصميم متعدد الصفحات ومستجيب: متوافق بالكامل مع جميع الشاشات (موبايل، تابلت، وكمبيوتر) بسرعة تحميل فائقة',
-      'استضافة سحابية فائقة السرعة والأمان (SSL): استضافة سحابية مؤمنة بشهادة أمان SSL',
-      'ربط مباشر بالواتساب: أزرار تواصل تفاعلية ذكية لتحويل استفسارات العملاء مباشرة لمحادثة واتساب',
-      'دعم فني وصيانة مستمرة: متابعة مستمرة وتحديثات سريعة وإصلاحات تقنية فورية'
-    ],
-    pageUrl: 'corporate-website',
-    whatsappMsg: 'مرحباً فريق WebStack أود الاستفسار وطلب عرض سعر مخصص لتصميم موقع تعريفي للشركات',
-    badge: 'الأكثر طلباً'
   },
   {
     id: 'elsharkawy-farm',
@@ -203,6 +166,35 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
     badge: 'ورشة معمارية'
   },
   {
+    id: 'voltedge-perfumes',
+    titleEn: 'Voltedge Perfumes — Luxury Fragrances & Oud Live Store Demo',
+    titleAr: 'متجر العطور الملكية والبخور الفاخر (Voltedge Perfumes) - ديمو حي',
+    taglineEn: 'Royal luxury fragrance boutique demo with fragrance pyramid and gift bundling',
+    taglineAr: 'ديمو متجر ملكي فخم للعطور الشرقية والغربية والعود والبخور مع استعراض الهرم العطري وباقات الهدايا',
+    image: '/assets/images/demo_perfumes_store.jpg',
+    category: 'ecommerce-demos',
+    categoryLabelEn: 'Live Store Demo',
+    categoryLabelAr: 'ديمو متجر حي',
+    metricsEn: 'Live Production Demo · 100% Interactive',
+    metricsAr: 'ديمو إنتاجي مباشر · تفاعلي بالكامل',
+    tech: ['Luxury UI', 'Fragrance Pyramid', 'Bottle Sizes (50/100ml)', 'Gift Sets', 'Premium UX'],
+    featuresEn: [
+      'Royal aesthetic showcasing top, heart, and base fragrance pyramid notes',
+      'Bottle capacity selector (50ml / 100ml / Extrait) with dynamic price calculation',
+      'Luxury gift box packaging add-on and greeting card personalizations',
+      'Secure multi-gateway checkout with automated branded PDF order confirmation'
+    ],
+    featuresAr: [
+      'واجهة ملكية فاخرة تستعرض نوتات الهرم العطري (القمة، القلب، والقاعدة) باحتراف',
+      'اختيار أحجام الزجاجات (50ml / 100ml) وحساب السعر آلياً وفورياً',
+      'إمكانية إضافة علب الهدايا الفاخرة وتخصيص بطاقات الإهداء بلمسة راقية',
+      'دفع إلكتروني آمن مع فواتير PDF فورية تؤكد تفاصيل ومحتوى الطلب'
+    ],
+    liveUrl: 'https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر العطور (Voltedge Perfumes) وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
+    badge: 'ديمو عطور'
+  },
+  {
     id: 'voltedge-beauty',
     titleEn: 'Voltedge Beauty — Cosmetics & Skincare Live Store Demo',
     titleAr: 'متجر مستحضرات التجميل والعناية بالبشرة (Voltedge Beauty) - ديمو حي',
@@ -259,35 +251,6 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
     liveUrl: 'https://mostafa-salah01.github.io/voltedge-sports/?fbclid',
     whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر الرياضة (Voltedge Sports) وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
     badge: 'ديمو رياضي'
-  },
-  {
-    id: 'voltedge-perfumes',
-    titleEn: 'Voltedge Perfumes — Luxury Fragrances & Oud Live Store Demo',
-    titleAr: 'متجر العطور الملكية والبخور الفاخر (Voltedge Perfumes) - ديمو حي',
-    taglineEn: 'Royal luxury fragrance boutique demo with fragrance pyramid and gift bundling',
-    taglineAr: 'ديمو متجر ملكي فخم للعطور الشرقية والغربية والعود والبخور مع استعراض الهرم العطري وباقات الهدايا',
-    image: '/assets/images/demo_perfumes_store.jpg',
-    category: 'ecommerce-demos',
-    categoryLabelEn: 'Live Store Demo',
-    categoryLabelAr: 'ديمو متجر حي',
-    metricsEn: 'Live Production Demo · 100% Interactive',
-    metricsAr: 'ديمو إنتاجي مباشر · تفاعلي بالكامل',
-    tech: ['Luxury UI', 'Fragrance Pyramid', 'Bottle Sizes (50/100ml)', 'Gift Sets', 'Premium UX'],
-    featuresEn: [
-      'Royal aesthetic showcasing top, heart, and base fragrance pyramid notes',
-      'Bottle capacity selector (50ml / 100ml / Extrait) with dynamic price calculation',
-      'Luxury gift box packaging add-on and greeting card personalizations',
-      'Secure multi-gateway checkout with automated branded PDF order confirmation'
-    ],
-    featuresAr: [
-      'واجهة ملكية فاخرة تستعرض نوتات الهرم العطري (القمة، القلب، والقاعدة) باحتراف',
-      'اختيار أحجام الزجاجات (50ml / 100ml) وحساب السعر آلياً وفورياً',
-      'إمكانية إضافة علب الهدايا الفاخرة وتخصيص بطاقات الإهداء بلمسة راقية',
-      'دفع إلكتروني آمن مع فواتير PDF فورية تؤكد تفاصيل ومحتوى الطلب'
-    ],
-    liveUrl: 'https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home',
-    whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر العطور (Voltedge Perfumes) وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
-    badge: 'ديمو عطور'
   },
   {
     id: 'whatsapp-ai-employee',
@@ -475,6 +438,8 @@ export interface ServiceItem {
   fullDescEn: string;
   fullDescAr: string;
   icon: string;
+  image: string;
+  liveUrl?: string;
   taglineEn: string;
   taglineAr: string;
   keyPointsEn: string[];
@@ -492,13 +457,15 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: 'custom-ecommerce',
     slug: 'ecommerce-store',
     pageTab: 'ecommerce-store',
-    titleEn: 'Custom E-Commerce Store (PHP & MySQL)',
+    titleEn: 'Custom E-Commerce Store (PHP & MySQL Architecture)',
     titleAr: 'إنشاء وبرمجة المتاجر الإلكترونية المخصصة (PHP & MySQL)',
     shortDescEn: '100% Handcrafted from scratch with clean PHP & MySQL. Zero templates, all payment gateways, and 0% sales commission.',
     shortDescAr: 'برمجة مخصصة 100% من الصفر بكود PHP وقواعد MySQL بدون قوالب جاهزة، ربط جميع بوابات الدفع، و0% عمولات على مبيعاتك.',
     fullDescEn: 'We engineer your online store from the ground up tailored to your business model, without ready-made templates or restricted platforms. Includes dedicated consultation sessions walking step-by-step with you to analyze your workflow, seamless payment gateways, full operational control, and full year of hosting, domain, and technical support.',
     fullDescAr: 'نصمم ونبرمج متجرك الإلكتروني بالكامل من الصفر كوداً مخصصاً لاحتياجات تجارتك، بدون قوالب جاهزة أو قيود المنصات المؤجرة. نوفر لك جلسات استشارية متخصصة بنمشي فيها معك خطوة بخطوة لحد ما نحلل ونفهم طبيعة خدمتك وتجارتك ماشية إزاي، مع ربط جميع بوابات الدفع، وإدارة كل العمليات داخل متجرك، مع دومين واستضافة سحابية ودعم فني وصيانة مستمرة.',
     icon: 'ShoppingBag',
+    image: '/assets/images/ecommerce_store_main.jpg',
+    liveUrl: 'https://larose.salah-logistics.uk/',
     taglineEn: 'Every merchant has their unique workflow — built with zero templates',
     taglineAr: 'كل تاجر له نظامه الخاص — مبني بكود نظيف وبدون قوالب معلبة',
     keyPointsEn: [
@@ -544,6 +511,8 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescEn: 'A high-impact, premium corporate web presence designed to establish undeniable enterprise authority and convert decision-makers. Includes full bilingual support out of the box, lightning-fast SSD cloud hosting, official corporate domain, SSL certificate, and direct WhatsApp integration.',
     fullDescAr: 'موقع تعريفي احترافي فاخر مصمم ليعكس ثقل شركتك ويبني ثقة فورية لدى عملائك وشركائك. يشمل دعماً كاملاً للغتين العربية والإنجليزية معاً، استضافة سحابية فائقة السرعة، اسم نطاق رسمي، شهادة أمان SSL، وربطاً مباشراً مع محادثات واتساب.',
     icon: 'Globe',
+    image: '/assets/images/corporate_web_package_1790064802558.jpg',
+    liveUrl: 'https://clean-almithalia.salah-logistics.uk/',
     taglineEn: 'Bilingual AR/EN included · Fast Cloud Hosting · Official Domain',
     taglineAr: 'اللغتان معاً مشمولتان · استضافة سريعة · اسم نطاق رسمي',
     keyPointsEn: [
@@ -589,6 +558,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescEn: 'Deploy a tireless, courteous AI employee trained on your exact company knowledge base. Communicates naturally in Egyptian or Gulf dialect, dispatches PDF brochures, quotations and product photos directly in chat, and escalates complex inquiries gracefully to your human sales reps.',
     fullDescAr: 'وظف في شركتك مساعداً ذكياً مدرباً على كافة منتجاتك وخدماتك يعمل 24 ساعة بدون انقطاع. يرد بنبرة عفوية ومحترمة تفهم اللهجات المختلفة، يرسل ملفات الـ PDF وصور المنتجات وروابط الحجز داخل الشات، مع إمكانية تحويل العميل للموظف البشري في أي لحظة.',
     icon: 'Bot',
+    image: '/assets/images/ai_whatsapp_agent_1789851518713.jpg',
     taglineEn: 'Friendly 24/7 responses · Instant file dispatch · Smooth human escalation',
     taglineAr: 'ردود طبيعية 24/7 · إرسال فوري للملفات والكتالوجات · تحويل للموظف البشري',
     keyPointsEn: [
@@ -634,6 +604,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescEn: 'A complete end-to-end platform engineered for e-commerce brands, courier companies, and fulfillment centers. Automates waybill creation, driver dispatch, live tracking via WhatsApp & SMS, and exact cash reconciliation.',
     fullDescAr: 'منظومة متكاملة لشركات الشحن ومتاجر التجارة الإلكترونية ومراكز التوزيع. تصدر بوالص الشحن آلياً، تدير تحركات المناديب، توفر بوابات تتبع للعملاء، وتضبط تسويات المبالغ المالية المحصلة عند الاستلام.',
     icon: 'Truck',
+    image: '/assets/images/logistics_sync_hub_1789849655051.jpg',
     taglineEn: 'Printable waybills · Courier tracking · COD financial ledger',
     taglineAr: 'بوالص شحن PDF · تتبع المناديب · تسوية تحصيل COD',
     keyPointsEn: [
@@ -679,6 +650,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescEn: 'From initial prototype to official app store approval, we build high-performance native-feel applications and integrated point-of-sale systems with receipt printers, barcode readers, and offline capabilities.',
     fullDescAr: 'من الفكرة حتى النشر والاعتماد على متاجر التطبيقات، نبرمج تطبيقات موبايل سريعة وأنظمة نقاط بيع متكاملة متصلة بطابعات الفواتير وقارئات الباركود وأجهزة الكاشير مع دعم العمل بدون إنترنت.',
     icon: 'Smartphone',
+    image: '/assets/images/mobile_erp_apps_1789851533593.jpg',
     taglineEn: 'Google Play & App Store approval · Cashier POS · Inventory Batches',
     taglineAr: 'اعتماد المتاجر الرسمية · كاشير ونقاط بيع · تتبع الصلاحيات والتشغيلات',
     keyPointsEn: [
@@ -724,6 +696,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescEn: 'Design, deploy, and maintain self-hosted enterprise automation pipelines using n8n and modern webhooks. Handle thousands of events daily with guaranteed retries and continuous audit logging.',
     fullDescAr: 'تصميم وتنفيذ مسارات أتمتة مؤسسية ذاتية الاستضافة عبر n8n. معالجة آلاف الأحداث والطلبات يومياً مع إعادة المحاولة التلقائية عند حدوث أي خطأ، ومتابعة الأداء من خلال تقارير لحظية.',
     icon: 'Cpu',
+    image: '/assets/images/n8n_workflow_canvas_1789849612939.jpg',
     taglineEn: 'Event-driven pipelines · Error resilience · Multi-system synchronization',
     taglineAr: 'مسارات بيانات فورية · معالجة الأخطاء تلقائياً · ربط شامل للأنظمة',
     keyPointsEn: [
@@ -769,6 +742,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescEn: 'Architect robust backends designed to withstand heavy traffic spikes. Built using clean patterns, optimal relational schemas (PostgreSQL / MySQL), Redis caching, and real-time monitoring.',
     fullDescAr: 'هندسة نظم خلفية صلبة قادرة على استيعاب آلاف الزوار والطلبات المتزامنة بدون بطء أو انهيار، باستخدام أفضل الممارسات البرمجية وقواعد البيانات السريعة والتخزين المؤقت في Redis.',
     icon: 'Database',
+    image: '/assets/images/api_telemetry_hub_1789849643910.jpg',
     taglineEn: 'Sub-100ms response times · Relational integrity · Zero downtime',
     taglineAr: 'استجابة فائقة السرعة · أمان البيانات · استقرار السيرفرات',
     keyPointsEn: [
@@ -874,3 +848,23 @@ export const HOW_IT_WORKS_STEPS = [
     descEn: 'Production deployment with official domain, SSL cloud infrastructure, admin handover, and active ongoing support.'
   }
 ];
+
+// 1. Live production client projects (المواقع والمتاجر الحية المنفذة لعملائنا)
+export const CLIENT_PROJECTS: ProjectItem[] = PORTFOLIO_PROJECTS.filter((p) =>
+  ['larose-store', 'alkemma-decor', 'clean-almithalia', 'elsharkawy-farm', 'handasiya-aluminum'].includes(p.id)
+);
+
+// 2. Interactive turnkey demo stores (المتاجر الاستعراضية الجاهزة للمعاينة)
+export const DEMO_STORES: ProjectItem[] = PORTFOLIO_PROJECTS.filter((p) =>
+  ['voltedge-perfumes', 'voltedge-beauty', 'voltedge-sports'].includes(p.id)
+);
+
+// 3. Core website & store services for the Home page
+export const CORE_WEB_SERVICES: ServiceItem[] = SERVICES_DATA.filter((s) =>
+  ['custom-ecommerce', 'corporate-websites'].includes(s.id)
+);
+
+// 4. Other specialized services for the dedicated second page
+export const OTHER_SERVICES_LIST: ServiceItem[] = SERVICES_DATA.filter((s) =>
+  ['ai-employees', 'smart-shipping', 'mobile-pos-apps', 'n8n-automation', 'backend-architecture'].includes(s.id)
+);

@@ -123,6 +123,17 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
               </li>
               <li>
                 <a
+                  href="https://alkemma-decor.salah-logistics.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>{isAr ? 'موقع شركة القمة للديكور' : 'Al Kemma Decor (Live)'}</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://clean-almithalia.salah-logistics.uk/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -134,10 +145,10 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('services')}
+                  onClick={() => onNavigate('other-services')}
                   className="hover:text-amber-300 transition-colors text-start cursor-pointer text-amber-300 font-bold"
                 >
-                  {isAr ? 'دليل جميع الخدمات البرمجية' : 'All Services Directory'}
+                  {isAr ? 'صفحة الأنظمة والخدمات الأخرى ↗' : 'Other Systems & Services ↗'}
                 </button>
               </li>
               <li>

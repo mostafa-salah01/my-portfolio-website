@@ -47,11 +47,15 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
         {/* Back Link */}
         <div className="mb-6">
           <button
-            onClick={() => onNavigate('services')}
+            onClick={() => onNavigate(slug === 'ecommerce-store' || slug === 'corporate-website' ? 'home' : 'other-services')}
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-slate-400 hover:text-amber-300 transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
-            <span>{isAr ? 'العودة لدليل جميع الخدمات' : 'Back to All Services'}</span>
+            <span>
+              {slug === 'ecommerce-store' || slug === 'corporate-website'
+                ? (isAr ? 'العودة للرئيسية (المتاجر والمواقع)' : 'Back to Home (Stores & Websites)')
+                : (isAr ? 'العودة لقائمة الخدمات والأنظمة الأخرى' : 'Back to Other Systems & Services')}
+            </span>
           </button>
         </div>
 
@@ -191,29 +195,45 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
               {relatedProjects.map((p) => (
                 <div
                   key={p.id}
-                  className="rounded-2xl bg-[#0B0F19] border border-amber-500/20 overflow-hidden flex flex-col justify-between hover:border-amber-400/50 transition-all group"
+                  className="rounded-2xl bg-[#0B0F19] border border-amber-500/20 overflow-hidden flex flex-col justify-between hover:border-amber-400/50 transition-all group cursor-pointer"
+                  onClick={() => {
+                    if (p.liveUrl) {
+                      window.open(p.liveUrl, '_blank', 'noopener,noreferrer');
+                    } else {
+                      onSelectProject(p);
+                    }
+                  }}
+                  title={isAr ? `اضغط لمعاينة ${p.titleAr} مباشرة` : `Click to open ${p.titleEn} directly`}
                 >
-                  <div className="aspect-video w-full bg-slate-950 overflow-hidden">
+                  <div className="relative aspect-video w-full bg-slate-950 overflow-hidden">
                     <img
                       src={p.image}
                       alt={isAr ? p.titleAr : p.titleEn}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2">
+                      <span className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                        <span>{isAr ? 'فتح الرابط الحي ↗' : 'Open Live Link ↗'}</span>
+                      </span>
+                    </div>
                   </div>
                   <div className="p-4 flex-1">
-                    <h3 className="text-sm sm:text-base font-bold text-white mb-1">
+                    <h3 className="text-sm sm:text-base font-bold text-white mb-1 group-hover:text-amber-300 transition-colors">
                       {isAr ? p.titleAr : p.titleEn}
                     </h3>
                     <p className="text-xs text-slate-300 line-clamp-2 mb-3">
                       {isAr ? p.taglineAr : p.taglineEn}
                     </p>
                   </div>
-                  <div className="p-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+                  <div 
+                    className="p-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <button
                       onClick={() => onSelectProject(p)}
                       className="text-xs font-bold text-amber-300 hover:text-white cursor-pointer"
                     >
-                      {isAr ? 'التفاصيل' : 'Details'}
+                      {isAr ? 'المواصفات' : 'Specs'}
                     </button>
                     {p.liveUrl && (
                       <a
@@ -222,7 +242,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
                         rel="noopener noreferrer"
                         className="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1"
                       >
-                        <span>{isAr ? 'معاينة حية' : 'Live Demo'}</span>
+                        <span>{isAr ? 'زيارة الموقع الحي' : 'Visit Live'}</span>
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     )}
