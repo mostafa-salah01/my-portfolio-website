@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
             onClick={() => handleNavClick('home', 'store-demos')}
             className="text-sm font-semibold text-slate-300 hover:text-amber-300 transition-colors cursor-pointer"
           >
-            {isAr ? 'ديموهات المتاجر' : 'Store Demos'}
+            {isAr ? 'المتاجر الحية' : 'Live Stores'}
           </button>
 
           <button
@@ -164,7 +164,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
             onClick={() => handleNavClick('home', 'store-demos')}
             className="w-full block py-2 text-start text-slate-200 font-semibold hover:text-amber-300 cursor-pointer"
           >
-            {isAr ? 'ديموهات المتاجر الجاهزة' : 'Live Store Demos'}
+            {isAr ? 'المتاجر الإلكترونية الحية' : 'Live Turnkey Stores'}
           </button>
 
           <button

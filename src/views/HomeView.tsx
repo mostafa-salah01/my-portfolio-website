@@ -29,7 +29,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
     'مواقع تعريفية احترافية للشركات (ثنائية اللغة)',
     '0% عمولات على مبيعات متجرك للأبد',
     'ربط جميع بوابات الدفع (مدى، فيزا، أبل باي، تابي، تمارا)',
-    'سابقة أعمال حية ونماذج ديمو تفاعلية'
+    'سابقة أعمال حية ومتاجر ومواقع تفاعلية'
   ];
 
   const rolesEn = [
@@ -37,7 +37,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
     'Bilingual Corporate Websites (Arabic & English Included)',
     '0% Sales Commission on Your Store Forever',
     'All Payment Gateways (Mada, Visa, Apple Pay, Tabby, Tamara)',
-    'Live Client Showcases & Interactive Turnkey Demos'
+    'Live Client Showcases & Interactive Turnkey Stores'
   ];
 
   const [roleIndex, setRoleIndex] = useState(0);
@@ -316,20 +316,20 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
         </div>
       </section>
 
-      {/* 3. SECTION 2: INTERACTIVE LIVE STORE DEMOS (نماذج وديموهات المتاجر الإلكترونية الجاهزة للمعاينة) */}
+      {/* 3. SECTION 2: INTERACTIVE LIVE STORES (متاجر إلكترونية حية جاهزة للمعاينة المباشرة) */}
       <section id="store-demos" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24 border-t border-amber-500/15">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-mono font-bold mb-3">
             <ShoppingBag className="w-3.5 h-3.5 text-rose-400" />
-            <span>{isAr ? 'متاجر ديمو جاهزة للمعاينة الفورية' : 'Turnkey Live Store Demos'}</span>
+            <span>{isAr ? 'متاجر إلكترونية حية للتصفح والشراء' : 'Turnkey Live Production Stores'}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
-            {isAr ? 'نماذج متاجر إلكترونية حية جاهزة للتصفح والشراء' : 'Interactive E-Commerce Store Demos Ready to Explore'}
+            {isAr ? 'متاجر إلكترونية حية جاهزة للتصفح والشراء' : 'Interactive E-Commerce Live Stores Ready to Explore'}
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
             {isAr
-              ? 'تصفح عينات حية لمتاجر الأثاث والديكور، الأزياء الكاجوال، فساتين الأتيليه الفاخرة، العطور الملكية، والملابس الرياضية والتجميل. انقر على أي صورة للدخول للمتجر مباشرة وتجربة السلة والدفع الإلكتروني.'
-              : 'Explore ready-to-test live store demos for Furniture, Casual Fashion, Haute Couture, Fragrances, Sportswear, and Cosmetics. Click any image to test live carts and checkout.'}
+              ? 'تصفح متاجر حية للأثاث والديكور، الأزياء الكاجوال، فساتين الأتيليه الفاخرة، العطور الملكية، والملابس الرياضية والتجميل. انقر على أي صورة للدخول للمتجر مباشرة وتجربة السلة والدفع الإلكتروني.'
+              : 'Explore ready-to-test live stores for Furniture, Casual Fashion, Haute Couture, Fragrances, Sportswear, and Cosmetics. Click any image to test live carts and checkout.'}
           </p>
         </div>
 
@@ -346,7 +346,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
                 title={isAr ? `اضغط للدخول إلى ${projectTitle} مباشرة` : `Click to enter ${projectTitle} directly`}
               >
                 <div>
-                  {/* Clickable Image with direct live demo overlay */}
+                  {/* Clickable Image with direct live store overlay */}
                   <div className="relative aspect-video w-full overflow-hidden bg-slate-950">
                     <img
                       src={project.image}
@@ -358,16 +358,16 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
                       }}
                     />
 
-                    {/* Live Demo Click Prompt Overlay */}
+                    {/* Live Store Click Prompt Overlay */}
                     <div className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
                       <div className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white font-bold text-xs flex items-center gap-2 shadow-xl transform -translate-y-2 group-hover:translate-y-0 transition-transform">
-                        <span>{isAr ? 'اضغط لتجربة المتجر الحي ↗' : 'Test Live Store Demo ↗'}</span>
+                        <span>{isAr ? 'اضغط لتجربة المتجر الحي ↗' : 'Visit Live Store ↗'}</span>
                       </div>
                     </div>
 
                     <div className="absolute top-2.5 end-2.5">
                       <span className="px-2.5 py-1 rounded-md bg-rose-600/90 text-white text-[10px] font-bold font-mono shadow-md">
-                        {isAr ? 'ديمو حي تفاعلي ↗' : 'LIVE DEMO ↗'}
+                        {isAr ? 'متجر حي تفاعلي ↗' : 'LIVE STORE ↗'}
                       </span>
                     </div>
 
@@ -415,7 +415,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
                     className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 font-bold text-xs border border-amber-500/30 transition-all hover:scale-105"
                   >
                     <Eye className="w-3.5 h-3.5 text-amber-400" />
-                    <span>{isAr ? 'معاينة المتجر الحي' : 'Test Live Demo'}</span>
+                    <span>{isAr ? 'زيارة المتجر الحي' : 'Visit Live Store'}</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
 

@@ -107,7 +107,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
           <div>
             <h4 className="text-white font-bold text-sm mb-4 font-mono flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]"></span>
-              <span>{isAr ? 'روابط وسابقة أعمال' : 'Portfolio & Demos'}</span>
+              <span>{isAr ? 'روابط ومشاريع حية' : 'Portfolio & Live Stores'}</span>
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>

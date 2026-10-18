@@ -103,7 +103,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
                 onClick={() => onNavigate('home', 'portfolio')}
                 className="px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-amber-300 font-bold text-sm sm:text-base border border-amber-500/30 transition-all flex items-center gap-2 cursor-pointer shadow-sm"
               >
-                <span>{isAr ? 'معاينة النماذج الحية' : 'View Live Demos'}</span>
+                <span>{isAr ? 'معاينة المتاجر والمواقع الحية' : 'View Live Stores & Sites'}</span>
                 <ArrowRight className="w-4 h-4 rtl:rotate-180" />
               </button>
             </div>
@@ -188,7 +188,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
         {relatedProjects.length > 0 && (
           <div className="my-16">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-6 text-center">
-              {isAr ? 'سابقة أعمال ونماذج مرتبطة بهذه الخدمة' : 'Related Production Showcases & Demos'}
+              {isAr ? 'سابقة أعمال ومشاريع حية مرتبطة بهذه الخدمة' : 'Related Live Production Showcases'}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

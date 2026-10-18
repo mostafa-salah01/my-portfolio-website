@@ -156,7 +156,7 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
 
     if (lower.includes('شحن') || lower.includes('لوجست') || lower.includes('shipping') || lower.includes('courier')) {
       if (isEn) {
-        return `Our Smart Shipping & Courier Management Platform features:\n• Printable PDF waybills with high-density barcodes & QR codes.\n• Driver proof-of-delivery mobile interface with signatures.\n• Live tracking portal with automated WhatsApp/SMS customer updates.\n• Cash-on-Delivery (COD) financial reconciliation ledger.\n\nContact us on WhatsApp (+201107787049) for a customized demo! 🚀`;
+        return `Our Smart Shipping & Courier Management Platform features:\n• Printable PDF waybills with high-density barcodes & QR codes.\n• Driver proof-of-delivery mobile interface with signatures.\n• Live tracking portal with automated WhatsApp/SMS customer updates.\n• Cash-on-Delivery (COD) financial reconciliation ledger.\n\nContact us on WhatsApp (+201107787049) for a live preview and consultation! 🚀`;
       }
       return `أهلاً بحضرتك! 🚚\nسيستم الشحن واللوجستيات من WebStack بيوفر لك:\n• إصدار بوالص شحن PDF مع باركود وQR متوافق قياسياً.\n• شاشات للمناديب لتسجيل الاستلام وإثبات التسليم والتوقيع.\n• بوابة تتبع حية للعميل مع إشعارات واتساب لحظية.\n• تسوية دقيقة لمبالغ التحصيل عند الاستلام (COD) والمطابقات البنكية.\n\nتفضل بالتواصل معنا على واتساب (+201107787049) لمناقشة تفاصيل نظامك! 🚀`;
     }

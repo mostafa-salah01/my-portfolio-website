@@ -247,7 +247,7 @@ export const OtherServicesView: React.FC<OtherServicesViewProps> = ({
           </h3>
           <p className="text-sm text-slate-300 max-w-xl mx-auto mb-6">
             {isAr
-              ? 'تصفح صفحتنا الرئيسية المخصصة بالكامل لإنشاء المتاجر الإلكترونية وسابقة الأعمال الحية والديموهات.'
+              ? 'تصفح صفحتنا الرئيسية المخصصة بالكامل لإنشاء المتاجر الإلكترونية وسابقة الأعمال الحية والمواقع المنفذة.'
               : 'Explore our dedicated home page focused exclusively on handcrafted e-commerce stores and live showcases.'}
           </p>
           <button

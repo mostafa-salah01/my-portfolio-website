@@ -196,16 +196,16 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
   },
   {
     id: 'voltedge-perfumes',
-    titleEn: 'Voltedge Perfumes — Luxury Fragrances & Oud Live Store Demo',
-    titleAr: 'متجر العطور الملكية والبخور الفاخر (Voltedge Perfumes) - ديمو حي',
-    taglineEn: 'Royal luxury fragrance boutique demo with fragrance pyramid and gift bundling',
-    taglineAr: 'ديمو متجر ملكي فخم للعطور الشرقية والغربية والعود والبخور مع استعراض الهرم العطري وباقات الهدايا',
+    titleEn: 'Voltedge Perfumes — Luxury Fragrances & Oud Live Store',
+    titleAr: 'متجر العطور الملكية والبخور الفاخر (Voltedge Perfumes) - متجر إلكتروني حي',
+    taglineEn: 'Royal luxury fragrance boutique with fragrance pyramid and gift bundling',
+    taglineAr: 'متجر ملكي فخم للعطور الشرقية والغربية والعود والبخور مع استعراض الهرم العطري وباقات الهدايا',
     image: '/assets/images/demo_perfumes_store.jpg',
     category: 'ecommerce-demos',
-    categoryLabelEn: 'Live Store Demo',
-    categoryLabelAr: 'ديمو متجر حي',
-    metricsEn: 'Live Production Demo · 100% Interactive',
-    metricsAr: 'ديمو إنتاجي مباشر · تفاعلي بالكامل',
+    categoryLabelEn: 'Live Production Store',
+    categoryLabelAr: 'متجر إلكتروني حي',
+    metricsEn: 'Live Production Store · 100% Interactive',
+    metricsAr: 'متجر إلكتروني حي · تفاعلي بالكامل',
     tech: ['Luxury UI', 'Fragrance Pyramid', 'Bottle Sizes (50/100ml)', 'Gift Sets', 'Premium UX'],
     featuresEn: [
       'Royal aesthetic showcasing top, heart, and base fragrance pyramid notes',
@@ -220,21 +220,21 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
       'دفع إلكتروني آمن مع فواتير PDF فورية تؤكد تفاصيل ومحتوى الطلب'
     ],
     liveUrl: 'http://perfumes.codix.uk/',
-    whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر العطور (Voltedge Perfumes) http://perfumes.codix.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
-    badge: 'ديمو عطور'
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت متجر العطور (Voltedge Perfumes) http://perfumes.codix.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
+    badge: 'متجر عطور'
   },
   {
     id: 'voltedge-beauty',
-    titleEn: 'Voltedge Beauty — Cosmetics & Skincare Live Store Demo',
-    titleAr: 'متجر مستحضرات التجميل والعناية بالبشرة (Voltedge Beauty) - ديمو حي',
-    taglineEn: 'Luxury cosmetics & skincare turnkey store with instant cart and mobile checkout',
-    taglineAr: 'ديمو متجر إلكتروني فاخر لمستحضرات التجميل والعناية بالبشرة والمكياج مع سلة ذكية ودفع فوري',
+    titleEn: 'Voltedge Beauty — Cosmetics & Skincare Live Store',
+    titleAr: 'متجر مستحضرات التجميل والعناية بالبشرة (Voltedge Beauty) - متجر إلكتروني حي',
+    taglineEn: 'Luxury cosmetics & skincare store with instant cart and mobile checkout',
+    taglineAr: 'متجر إلكتروني فاخر لمستحضرات التجميل والعناية بالبشرة والمكياج مع سلة ذكية ودفع فوري',
     image: '/assets/images/demo_beauty_store.jpg',
     category: 'ecommerce-demos',
-    categoryLabelEn: 'Live Store Demo',
-    categoryLabelAr: 'ديمو متجر حي',
-    metricsEn: 'Live Production Demo · 100% Interactive',
-    metricsAr: 'ديمو إنتاجي مباشر · تفاعلي بالكامل',
+    categoryLabelEn: 'Live Production Store',
+    categoryLabelAr: 'متجر إلكتروني حي',
+    metricsEn: 'Live Production Store · 100% Interactive',
+    metricsAr: 'متجر إلكتروني حي · تفاعلي بالكامل',
     tech: ['E-Commerce Front', 'Responsive UI', 'Instant Cart Drawer', 'Beauty Catalog', 'Payment Ready'],
     featuresEn: [
       'Specialized luxury design customized for skincare, cosmetics and premium beauty lines',
@@ -249,21 +249,21 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
       'صفحات منتجات مفصلة تشمل المكونات وطريقة الاستخدام وتقييمات العملاء'
     ],
     liveUrl: 'https://mostafa-salah01.github.io/voltedge-beauty/?fbclid#/home',
-    whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر التجميل (Voltedge Beauty) وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
-    badge: 'ديمو تجميل'
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت متجر التجميل (Voltedge Beauty) وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
+    badge: 'متجر تجميل'
   },
   {
     id: 'voltedge-sports',
-    titleEn: 'Voltedge Sports — Athletic Gear & Apparel Live Store Demo',
-    titleAr: 'متجر الأزياء والمعدات الرياضية (Voltedge Sports) - ديمو حي',
+    titleEn: 'Voltedge Sports — Athletic Gear & Apparel Live Store',
+    titleAr: 'متجر الأزياء والمعدات الرياضية (Voltedge Sports) - متجر إلكتروني حي',
     taglineEn: 'High-energy sportswear e-commerce store with dynamic sizing and stock sync',
-    taglineAr: 'ديمو متجر رياضي عالي الحيوية للملابس الرياضية والأحذية ومعدات اللياقة مع محرك مقاسات ذكي',
+    taglineAr: 'متجر رياضي عالي الحيوية للملابس الرياضية والأحذية ومعدات اللياقة مع محرك مقاسات ذكي',
     image: '/assets/images/demo_sports_store.jpg',
     category: 'ecommerce-demos',
-    categoryLabelEn: 'Live Store Demo',
-    categoryLabelAr: 'ديمو متجر حي',
-    metricsEn: 'Live Production Demo · 100% Interactive',
-    metricsAr: 'ديمو إنتاجي مباشر · تفاعلي بالكامل',
+    categoryLabelEn: 'Live Production Store',
+    categoryLabelAr: 'متجر إلكتروني حي',
+    metricsEn: 'Live Production Store · 100% Interactive',
+    metricsAr: 'متجر إلكتروني حي · تفاعلي بالكامل',
     tech: ['Athletic E-Commerce', 'Variant Matrix (Sizes/Colors)', 'Fast Filter', 'Stock Alerts', 'Mobile Velocity'],
     featuresEn: [
       'Dynamic size, color, and fit matrix with real-time stock availability badges',
@@ -278,8 +278,8 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
       'جاهزية للربط مع بوالص الشحن السريع وتسوية الدفع عند الاستلام'
     ],
     liveUrl: 'https://voltedge-sports.codix.uk/',
-    whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر الرياضة (Voltedge Sports) https://voltedge-sports.codix.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
-    badge: 'ديمو رياضي'
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت متجر الرياضة (Voltedge Sports) https://voltedge-sports.codix.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
+    badge: 'متجر رياضي'
   },
   {
     id: 'voltedge-furniture',
