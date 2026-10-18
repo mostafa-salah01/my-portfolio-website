@@ -137,6 +137,35 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
     badge: 'منفذ لعميل'
   },
   {
+    id: 'nabd-clinic',
+    titleEn: 'Nabd Medical Care — Specialized Clinics & Healthcare Center',
+    titleAr: 'المراكز الطبية والعيادات - نبض للرعاية الطبية',
+    taglineEn: 'Official platform for Nabd Medical Care: online doctor appointments across 12 specialties, clinic visits & tele-consultations in Cairo',
+    taglineAr: 'الموقع الرسمي لمركز نبض للرعاية الطبية: حجز استشارات وكشف طبي في 12 تخصصاً مع نخبة الأطباء والاستشاريين',
+    image: '/assets/images/nabd_clinic_showcase.jpg',
+    category: 'web-development',
+    categoryLabelEn: 'Medical Center & Clinics',
+    categoryLabelAr: 'مركز طبي وعيادات',
+    metricsEn: 'Live Healthcare Platform · 12 Specialties',
+    metricsAr: 'سابقة أعمال حية · 12 تخصصاً طبياً',
+    tech: ['Medical Architecture', 'Online Booking Engine', 'Tele-Consultation Flow', 'Bilingual UI', 'Emergency Hotline & WhatsApp'],
+    featuresEn: [
+      'Official web platform for Nabd Medical Care & multi-specialty polyclinic engineered by WebStack',
+      'Instant online appointment booking for 12 departments (Internal Medicine, Cardiology, Pediatrics, Orthopedics, etc.)',
+      'Hybrid booking flow supporting in-clinic attendance or video tele-consultations from home',
+      'High-credibility medical UX with rapid loading speed, doctor profile cards, and direct emergency hotline triggers'
+    ],
+    featuresAr: [
+      'الموقع الرسمي لمركز نبض للرعاية الطبية والعيادات التخصصية بالقاهرة تم تطويره بواسطة WebStack',
+      'منظومة حجز مواعيد إلكترونية سهلة ومباشرة لـ 12 تخصصاً طبياً (باطنة، قلب، أطفال، عظام، وجلدية)',
+      'خيارات متعددة للكشف بالعيادات أو حجز استشارة فيديو أونلاين وتواصل فوري عبر واتساب والخط الساخن',
+      'تصميم طبي معتمد يعزز ثقة المرضى وسرعة تصفح فائقة متوافقة مع كافة الهواتف الذكية'
+    ],
+    liveUrl: 'http://nabd-clinic.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع مركز نبض للرعاية الطبية http://nabd-clinic.codix.uk/ وأرغب في تنفيذ موقع طبي متكامل لمركزي / عيادتي',
+    badge: 'مركز طبي'
+  },
+  {
     id: 'elsharkawy-farm',
     titleEn: 'Elsharkawy Farm Fresh Products',
     titleAr: 'مزرعة الشرقاوي (منتجات مزارع الشرقاوي)',
@@ -967,7 +996,7 @@ export const HOW_IT_WORKS_STEPS = [
 
 // 1. Live production client projects (المواقع والمتاجر الحية المنفذة لعملائنا)
 export const CLIENT_PROJECTS: ProjectItem[] = PORTFOLIO_PROJECTS.filter((p) =>
-  ['larose-store', 'alkemma-decor', 'egypt-builders', 'clean-almithalia', 'elsharkawy-farm', 'handasiya-aluminum'].includes(p.id)
+  ['larose-store', 'alkemma-decor', 'egypt-builders', 'clean-almithalia', 'nabd-clinic', 'elsharkawy-farm', 'handasiya-aluminum'].includes(p.id)
 );
 
 // 2. Interactive turnkey demo stores (المتاجر الاستعراضية الجاهزة للمعاينة)
