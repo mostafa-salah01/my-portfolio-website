@@ -328,8 +328,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
             {isAr
-              ? 'تصفح عينات حية لمتاجر العطور ومستحضرات التجميل والأزياء الرياضية. انقر على أي صورة للدخول للمتجر مباشرة وتجربة السلة والدفع الإلكتروني.'
-              : 'Explore ready-to-test live store demos for Fragrances, Cosmetics, and Sportswear. Click any image to test live carts and checkout.'}
+              ? 'تصفح عينات حية لمتاجر الأثاث والديكور، الأزياء الكاجوال، فساتين الأتيليه الفاخرة، العطور الملكية، والملابس الرياضية والتجميل. انقر على أي صورة للدخول للمتجر مباشرة وتجربة السلة والدفع الإلكتروني.'
+              : 'Explore ready-to-test live store demos for Furniture, Casual Fashion, Haute Couture, Fragrances, Sportswear, and Cosmetics. Click any image to test live carts and checkout.'}
           </p>
         </div>
 

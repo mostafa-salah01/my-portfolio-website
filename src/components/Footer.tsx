@@ -123,6 +123,39 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
               </li>
               <li>
                 <a
+                  href="https://voltedge-store.salah-logistics.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>{isAr ? 'معرض VoltEdge للأثاث 2026' : 'VoltEdge Furniture (Live)'}</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://voltedge-fashion.codix.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>{isAr ? 'متجر VoltEdge Fashion' : 'VoltEdge Fashion (Live)'}</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://voltedge-atelier.codix.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>{isAr ? 'فولت إيدج أتيليه (VoltEdge Atelier)' : 'VoltEdge Atelier (Live)'}</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://alkemma.codix.uk/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -151,6 +184,28 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
                   className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
                 >
                   <span>{isAr ? 'موقع كلين المثالية (بالسعودية)' : 'Clean Al-Mithalia (KSA)'}</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://perfumes.codix.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>{isAr ? 'متجر العطور (VoltEdge Perfumes)' : 'VoltEdge Perfumes (Live)'}</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://voltedge-sports.codix.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>{isAr ? 'متجر الرياضة (VoltEdge Sports)' : 'VoltEdge Sports (Live)'}</span>
                   <ExternalLink className="w-3 h-3 text-amber-400" />
                 </a>
               </li>

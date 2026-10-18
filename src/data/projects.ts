@@ -219,8 +219,8 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
       'إمكانية إضافة علب الهدايا الفاخرة وتخصيص بطاقات الإهداء بلمسة راقية',
       'دفع إلكتروني آمن مع فواتير PDF فورية تؤكد تفاصيل ومحتوى الطلب'
     ],
-    liveUrl: 'https://mostafa-salah01.github.io/voltedge-perfumes/?fbclid#/home',
-    whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر العطور (Voltedge Perfumes) وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
+    liveUrl: 'http://perfumes.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر العطور (Voltedge Perfumes) http://perfumes.codix.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
     badge: 'ديمو عطور'
   },
   {
@@ -277,9 +277,96 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
       'إتمام طلب بلمسة واحدة مهندس خصيصاً للسرعة العالية ومعدلات التحويل المرتفعة على الموبايل',
       'جاهزية للربط مع بوالص الشحن السريع وتسوية الدفع عند الاستلام'
     ],
-    liveUrl: 'https://mostafa-salah01.github.io/voltedge-sports/?fbclid',
-    whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر الرياضة (Voltedge Sports) وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
+    liveUrl: 'https://voltedge-sports.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت ديمو متجر الرياضة (Voltedge Sports) https://voltedge-sports.codix.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
     badge: 'ديمو رياضي'
+  },
+  {
+    id: 'voltedge-furniture',
+    titleEn: 'VoltEdge Furniture — Luxury Home & Office Living 2026',
+    titleAr: 'معرض VoltEdge للأثاث العصري 2026',
+    taglineEn: 'Bespoke modern living: luxury salons, master bedrooms, executive desks & kids suites with natural beech wood craftsmanship',
+    taglineAr: 'أثاث راقٍ ومودرن: أنتريهات، غرف نوم ماستر، مكاتب، نيش، وغرف أطفال مصنعة من أخشاب الزان الطبيعي بأعلى معايير الحرفية',
+    image: '/assets/images/voltedge_furniture_showcase.jpg',
+    category: 'ecommerce-demos',
+    categoryLabelEn: 'Live Furniture Store',
+    categoryLabelAr: 'متجر أثاث حي',
+    metricsEn: 'Live Production Store · Natural Beech Wood',
+    metricsAr: 'متجر حي تفاعلي · أخشاب زان طبيعي',
+    tech: ['Modern Furniture UI', 'Bespoke Wood Catalog', 'Instant Order Cart', 'Mobile Responsive', 'Nationwide Delivery'],
+    featuresEn: [
+      'Comprehensive catalog spanning living rooms, master bedrooms, executive desks, and children suites',
+      'Manufactured from natural beech wood with premium anti-stain upholstery and durable finishes',
+      'Interactive browsing with custom dimensions and bespoke upholstery color customization',
+      'Support for Cash on Delivery, Vodafone Cash, InstaPay, and fast delivery to all Egyptian governorates'
+    ],
+    featuresAr: [
+      'تشكيلة متكاملة تشمل أنتريهات وركنات، غرف نوم ماستر، مكاتب عملية، نيش وبوفيه، كراسي وفوتيهات، وغرف أطفال',
+      'تصنيع فاخر من أخشاب الزان الطبيعي وقماش مستورد مضاد للبقع والماء بأعلى معايير الحرفية المصرية',
+      'تجربة تصفح تفاعلية مع إمكانية معاينة القطع واختيار الألوان والمقاسات الخاصة مباشرة',
+      'دعم الدفع عند الاستلام، فودافون كاش، وإنستاباي مع شحن سريع يغطي كافة المحافظات'
+    ],
+    liveUrl: 'https://voltedge-store.salah-logistics.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت معرض VoltEdge للأثاث العصري https://voltedge-store.salah-logistics.uk/ وأرغب في برمجة متجر أثاث وديكور مماثل لنشاطي',
+    badge: 'متجر أثاث'
+  },
+  {
+    id: 'voltedge-fashion',
+    titleEn: 'VoltEdge Fashion — Casual & Summer Apparel Live Store',
+    titleAr: 'متجر أزياء وفاشون كاجوال VoltEdge',
+    taglineEn: 'Radiant elegance: exclusive summer collection for men, women & accessories with natural fabrics and inspection on delivery',
+    taglineAr: 'أناقة مشرقة: تشكيلة الصيف الفاخرة للرجال والنساء والإكسسوارات بخامات طبيعية، مع شحن سريع ومعاينة عند الاستلام',
+    image: '/assets/images/voltedge_fashion_showcase.jpg',
+    category: 'ecommerce-demos',
+    categoryLabelEn: 'Live Fashion Store',
+    categoryLabelAr: 'متجر أزياء حي',
+    metricsEn: 'Live Fashion Platform · Nationwide Delivery',
+    metricsAr: 'متجر فاشون حي · شحن لجميع المحافظات',
+    tech: ['Modern Apparel E-Commerce', 'Size & Color Matrix', 'Fast Checkout Drawer', 'WhatsApp Sync', 'Inspection on Delivery'],
+    featuresEn: [
+      'Dedicated collections for Men, Women, Accessories, and exclusive summer capsule drops',
+      'Natural premium fabrics: breathable linen, silk blends, and genuine handcrafted leather',
+      'Modern shopping flow with instant drawer cart, fast WhatsApp ordering, and inspection on delivery',
+      'Fast shipping covering all Egyptian governorates with dedicated 24/7 customer service'
+    ],
+    featuresAr: [
+      'أقسام مخصصة لملابس الرجال، ملابس النساء، الإكسسوارات، والتشكيلات الصيفية الحصرية',
+      'خامات طبيعية منتقاة من الكتان الطبيعي والحرير والجلد الأصيل المريح في الاستخدام اليومي',
+      'تجربة تسوق عصرية مع سلة سريعة وطلب فوري عبر واتساب ودعم كامل للمعاينة عند الاستلام',
+      'شحن سريع لجميع محافظات مصر مع خدمة عملاء ودعم فني متواصل'
+    ],
+    liveUrl: 'http://voltedge-fashion.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت متجر VoltEdge Fashion http://voltedge-fashion.codix.uk/ وأرغب في برمجة متجر ملابس وأزياء مماثل لنشاطي',
+    badge: 'متجر أزياء'
+  },
+  {
+    id: 'voltedge-atelier',
+    titleEn: 'VoltEdge Atelier — Haute Couture & Bridal Gowns Live Store',
+    titleAr: 'فولت إيدج أتيليه (VoltEdge Atelier) - دار الأزياء الراقية',
+    taglineEn: 'Haute Couture House (Riyadh — Paris): bespoke bridal & evening gowns with artisanal embroidery and royal Mikado silk',
+    taglineAr: 'دار الأزياء الراقية (الرياض — باريس): فساتين سهرة وزفاف بحرفية التطريز اليدوي وأجود أقمشة الحرير والـ Mikado الملكي',
+    image: '/assets/images/voltedge_atelier_showcase.jpg',
+    category: 'ecommerce-demos',
+    categoryLabelEn: 'Haute Couture Live Store',
+    categoryLabelAr: 'أتيليه وأزياء راقية',
+    metricsEn: 'Haute Couture Atelier · Bespoke Embroidery',
+    metricsAr: 'أتيليه حي راقٍ · تطريز يدوي وحرير ملكي',
+    tech: ['Haute Couture Architecture', 'Bespoke Atelier UX', 'Fabric Details (Mikado & Silk)', 'VIP Consultation Flow', 'Tailored Sizing'],
+    featuresEn: [
+      'Royal bridal and evening gown collections engineered with French-Arabian haute couture elegance',
+      'Handcrafted intricate embroidery with imported mulberry silk and royal Mikado fabrics',
+      'Ivory & matte gold luxury palette with bespoke measurements and private VIP booking flow',
+      'Smart luxury cart with atelier consultation request and direct designer communication'
+    ],
+    featuresAr: [
+      'تصاميم فساتين سهرة وزفاف ملكية ومجموعات كوتور حصرية تُحاكي الفخامة والذوق الرفيع',
+      'حرفية التطريز اليدوي الدقيق مع خامات حرير التوت والـ Mikado الملكي المستورد',
+      'واجهة برمجية فائقة الرقي باللون العاجي والذهبي مع إمكانية طلب المقاسات الخاصة والاستشارات',
+      'سلة مشتريات ذكية، إمكانية حجز جلسة قياس، وتواصل مباشر مع مصممي الأتيليه'
+    ],
+    liveUrl: 'http://voltedge-atelier.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت متجر VoltEdge Atelier http://voltedge-atelier.codix.uk/ وأرغب في برمجة متجر أزياء راقية وأتيليه مماثل لنشاطي',
+    badge: 'دار أزياء راقية'
   },
   {
     id: 'whatsapp-ai-employee',
@@ -885,7 +972,14 @@ export const CLIENT_PROJECTS: ProjectItem[] = PORTFOLIO_PROJECTS.filter((p) =>
 
 // 2. Interactive turnkey demo stores (المتاجر الاستعراضية الجاهزة للمعاينة)
 export const DEMO_STORES: ProjectItem[] = PORTFOLIO_PROJECTS.filter((p) =>
-  ['voltedge-perfumes', 'voltedge-beauty', 'voltedge-sports'].includes(p.id)
+  [
+    'voltedge-furniture',
+    'voltedge-fashion',
+    'voltedge-atelier',
+    'voltedge-perfumes',
+    'voltedge-sports',
+    'voltedge-beauty'
+  ].includes(p.id)
 );
 
 // 3. Core website & store services for the Home page
