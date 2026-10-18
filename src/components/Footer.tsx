@@ -123,12 +123,23 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
               </li>
               <li>
                 <a
-                  href="https://alkemma-decor.salah-logistics.uk/"
+                  href="https://alkemma.codix.uk/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
                 >
                   <span>{isAr ? 'موقع شركة القمة للديكور' : 'Al Kemma Decor (Live)'}</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://egypt-builders.codix.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>{isAr ? 'موقع شركة إيجيبت بيلدرز' : 'Egypt Builders (Live)'}</span>
                   <ExternalLink className="w-3 h-3 text-amber-400" />
                 </a>
               </li>

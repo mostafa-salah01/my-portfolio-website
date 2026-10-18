@@ -245,7 +245,11 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
                     {/* Prominent Click Prompt Overlay */}
                     <div className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
                       <div className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white font-bold text-xs flex items-center gap-2 shadow-xl transform -translate-y-2 group-hover:translate-y-0 transition-transform">
-                        <span>{isAr ? 'اضغط لفتح المتجر الحي مباشرة' : 'Open Live Store Now'}</span>
+                        <span>
+                          {isAr
+                            ? (project.category === 'ecommerce-demos' ? 'اضغط لفتح المتجر الحي مباشرة' : 'اضغط لفتح الموقع الحي مباشرة')
+                            : (project.category === 'ecommerce-demos' ? 'Open Live Store Now' : 'Open Live Website Now')}
+                        </span>
                         <ExternalLink className="w-4 h-4" />
                       </div>
                     </div>

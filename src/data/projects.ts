@@ -26,7 +26,7 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
     titleAr: 'متجر لاروز (Larose Store) - متجر إلكتروني حي',
     taglineEn: 'Live production e-commerce store for luxury fashion, cosmetics and lifestyle with smart cart and instant checkout',
     taglineAr: 'متجر إلكتروني حي متكامل للأزياء الراقية ومستحضرات التجميل مع سلة ذكية ودفع إلكتروني سريع',
-    image: '/assets/images/ecommerce_store_main.jpg',
+    image: '/assets/images/larose_beauty_showcase.jpg',
     category: 'ecommerce-demos',
     categoryLabelEn: 'Live Production Store',
     categoryLabelAr: 'متجر إلكتروني حي',
@@ -74,8 +74,37 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
       'حجز مقايسات واستشارات فورية عبر أزرار الواتساب التفاعلية',
       'تصميم راقٍ يعكس فخامة الهوية المعمارية للشركة مع سرعة تصفح فائقة'
     ],
-    liveUrl: 'https://alkemma-decor.salah-logistics.uk/',
-    whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع شركة القمة للديكور وأرغب في تصميم موقع مماثل لشركتي',
+    liveUrl: 'https://alkemma.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع شركة القمة للديكور https://alkemma.codix.uk/ وأرغب في تصميم موقع مماثل لشركتي',
+    badge: 'موقع حي'
+  },
+  {
+    id: 'egypt-builders',
+    titleEn: 'Egypt Builders (EB) — General Contracting & Engineering',
+    titleAr: 'شركة إيجيبت بيلدرز (Egypt Builders) - مقاولات عامة وبناء',
+    taglineEn: 'Official corporate website for Egypt Builders: civil engineering, turn-key construction, architecture & infrastructure',
+    taglineAr: 'الموقع الرسمي لشركة إيجيبت بيلدرز (EB): مقاولات عامة، إنشاءات متكاملة، استشارات هندسية وتشطيبات كبرى',
+    image: '/assets/images/egypt_builders_showcase.jpg',
+    category: 'web-development',
+    categoryLabelEn: 'Corporate Website',
+    categoryLabelAr: 'موقع شركة رسمي',
+    metricsEn: 'Official Live Platform · Engineering Portfolio',
+    metricsAr: 'سابقة أعمال حية · مشاريع إنشائية كبرى',
+    tech: ['Corporate Architecture', 'High-Speed CDN', 'Bilingual UI', 'Project Galleries', 'Direct WhatsApp RFQ'],
+    featuresEn: [
+      'Official corporate web platform built by WebStack for Egypt Builders (EB)',
+      'High-definition architectural project portfolios across commercial & residential construction',
+      'Direct mobile RFQ and tender quotation workflows for enterprise clients',
+      'Bilingual Arabic/English presentation optimized for corporate credibility'
+    ],
+    featuresAr: [
+      'الموقع الرسمي لشركة إيجيبت بيلدرز للإنشاءات والمقاولات العامة صمم بواسطة WebStack',
+      'معرض هندسي متكامل للمشاريع الإنشائية والتجارية والسكنية وأعمال البنية التحتية',
+      'طلب عروض أسعار ومقايسات مباشرة عبر أزرار التواصل التفاعلية والواتساب',
+      'واجهة رسمية راقية متجاوبة بالكامل لتعزيز المصداقية لدى العملاء والشركات'
+    ],
+    liveUrl: 'https://egypt-builders.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع شركة إيجيبت بيلدرز (Egypt Builders) https://egypt-builders.codix.uk/ وأرغب في تنفيذ موقع رسمي لشركتي',
     badge: 'موقع حي'
   },
   {
@@ -464,7 +493,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescEn: 'We engineer your online store from the ground up tailored to your business model, without ready-made templates or restricted platforms. Includes dedicated consultation sessions walking step-by-step with you to analyze your workflow, seamless payment gateways, full operational control, and full year of hosting, domain, and technical support.',
     fullDescAr: 'نصمم ونبرمج متجرك الإلكتروني بالكامل من الصفر كوداً مخصصاً لاحتياجات تجارتك، بدون قوالب جاهزة أو قيود المنصات المؤجرة. نوفر لك جلسات استشارية متخصصة بنمشي فيها معك خطوة بخطوة لحد ما نحلل ونفهم طبيعة خدمتك وتجارتك ماشية إزاي، مع ربط جميع بوابات الدفع، وإدارة كل العمليات داخل متجرك، مع دومين واستضافة سحابية ودعم فني وصيانة مستمرة.',
     icon: 'ShoppingBag',
-    image: '/assets/images/ecommerce_store_main.jpg',
+    image: '/assets/images/larose_beauty_showcase.jpg',
     liveUrl: 'https://larose.salah-logistics.uk/',
     taglineEn: 'Every merchant has their unique workflow — built with zero templates',
     taglineAr: 'كل تاجر له نظامه الخاص — مبني بكود نظيف وبدون قوالب معلبة',
@@ -851,7 +880,7 @@ export const HOW_IT_WORKS_STEPS = [
 
 // 1. Live production client projects (المواقع والمتاجر الحية المنفذة لعملائنا)
 export const CLIENT_PROJECTS: ProjectItem[] = PORTFOLIO_PROJECTS.filter((p) =>
-  ['larose-store', 'alkemma-decor', 'clean-almithalia', 'elsharkawy-farm', 'handasiya-aluminum'].includes(p.id)
+  ['larose-store', 'alkemma-decor', 'egypt-builders', 'clean-almithalia', 'elsharkawy-farm', 'handasiya-aluminum'].includes(p.id)
 );
 
 // 2. Interactive turnkey demo stores (المتاجر الاستعراضية الجاهزة للمعاينة)

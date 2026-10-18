@@ -30,8 +30,14 @@ const QUICK_PROMPTS_EN = [
 
 export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasUserClosed, setHasUserClosed] = useState(false);
+  const [showHesitationPrompt, setShowHesitationPrompt] = useState(false);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const lastActivityRef = useRef(Date.now());
+  const autoOpenTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const idleCheckIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
@@ -54,6 +60,67 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
       scrollToBottom();
     }
   }, [messages, isOpen]);
+
+  // 1. Auto-open after 2 minutes (120,000 ms) with warm greeting if user hasn't closed it
+  useEffect(() => {
+    autoOpenTimerRef.current = setTimeout(() => {
+      setIsOpen((alreadyOpen) => {
+        if (!alreadyOpen && !hasUserClosed) {
+          setMessages((prev) => {
+            if (prev.some((m) => m.id === 'auto-2min-greeting')) return prev;
+            return [
+              ...prev,
+              {
+                id: 'auto-2min-greeting',
+                role: 'assistant',
+                content:
+                  lang === 'ar'
+                    ? 'أهلاً بك مجدداً يا فندم! 👋\nأنا أحمد، موظف المبيعات والدعم الفني في WebStack.\n\nلاحظت تصفحك لخدماتنا وسابقة أعمالنا.. يسعدني مساعدتك في اختيار الباقة الأنسب لمشروعك، أو حساب التكلفة الدقيقة لمتجرك أو موقعك المخصص من الصفر 100% بدون أي قوالب معلبة! كيف يمكنني مساعدتك؟'
+                    : 'Hello again! 👋\nI am Ahmed, your dedicated WebStack support & sales engineer.\n\nI noticed you browsing our solutions.. Would you like any assistance regarding your custom website or store project?',
+                timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+              }
+            ];
+          });
+          return true;
+        }
+        return alreadyOpen;
+      });
+    }, 120000); // 2 minutes
+
+    return () => {
+      if (autoOpenTimerRef.current) clearTimeout(autoOpenTimerRef.current);
+    };
+  }, [hasUserClosed, lang]);
+
+  // 2. Track activity and detect hesitation/idle if user closed chat
+  useEffect(() => {
+    const recordActivity = () => {
+      lastActivityRef.current = Date.now();
+    };
+
+    window.addEventListener('mousemove', recordActivity, { passive: true });
+    window.addEventListener('scroll', recordActivity, { passive: true });
+    window.addEventListener('keydown', recordActivity, { passive: true });
+    window.addEventListener('click', recordActivity, { passive: true });
+
+    idleCheckIntervalRef.current = setInterval(() => {
+      if (hasUserClosed && !isOpen && !showHesitationPrompt) {
+        const idleDuration = Date.now() - lastActivityRef.current;
+        // User has been idle / hesitant on the page for 50 seconds after closing
+        if (idleDuration >= 50000) {
+          setShowHesitationPrompt(true);
+        }
+      }
+    }, 10000);
+
+    return () => {
+      window.removeEventListener('mousemove', recordActivity);
+      window.removeEventListener('scroll', recordActivity);
+      window.removeEventListener('keydown', recordActivity);
+      window.removeEventListener('click', recordActivity);
+      if (idleCheckIntervalRef.current) clearInterval(idleCheckIntervalRef.current);
+    };
+  }, [hasUserClosed, isOpen, showHesitationPrompt]);
 
   const generateLocalResponse = (text: string): string => {
     const lower = text.toLowerCase();
@@ -173,11 +240,62 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
 
   return (
     <>
-      {/* Floating Toggle Button */}
+      {/* Hesitation Prompt: Appears on the right ONLY if user closed chat and has been stuck / hesitant */}
+      {showHesitationPrompt && !isOpen && (
+        <div className="fixed bottom-24 right-6 z-50 max-w-xs sm:max-w-sm animate-in fade-in slide-in-from-bottom-2 duration-300 !left-auto">
+          <div className="bg-[#0B0F19] text-white p-3.5 rounded-2xl border border-amber-400/60 shadow-[0_15px_40px_rgba(0,0,0,0.85)] relative">
+            <button
+              onClick={() => setShowHesitationPrompt(false)}
+              className="absolute top-2.5 start-2.5 text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition-colors"
+              aria-label="Close prompt"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+            <div className="flex items-start gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#DC2626] to-[#D97706] flex items-center justify-center shrink-0 mt-0.5 text-white shadow-md">
+                <Bot className="w-4 h-4" />
+              </div>
+              <div className="text-xs pe-4">
+                <div className="font-bold text-amber-300 mb-1 flex items-center gap-1.5">
+                  <span>{lang === 'ar' ? 'هل محتار في خطوتك القادمة؟' : 'Need help with your next step?'}</span>
+                  <Sparkles className="w-3 h-3 text-amber-400" />
+                </div>
+                <p className="text-slate-300 text-[11px] leading-relaxed mb-2.5">
+                  {lang === 'ar'
+                    ? 'أنا هنا لمساعدتك! تفضل بسؤالي عن أي استفسار أو لمعرفة تكلفة مشروعك بدقة بدون أي التزام.'
+                    : 'I am here to help! Ask me anything about your project requirements or get a quick tailored cost estimate.'}
+                </p>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      setShowHesitationPrompt(false);
+                      setIsOpen(true);
+                    }}
+                    className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white text-[11px] font-bold shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                  >
+                    {lang === 'ar' ? 'تحدث مع أحمد الآن' : 'Chat with Ahmed'}
+                  </button>
+                  <button
+                    onClick={() => setShowHesitationPrompt(false)}
+                    className="px-2.5 py-1.5 rounded-xl text-slate-400 hover:text-white text-[11px] transition-colors cursor-pointer"
+                  >
+                    {lang === 'ar' ? 'لاحقاً' : 'Later'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Floating Toggle Button (Always anchored to the RIGHT) */}
       {!isOpen && (
         <button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 end-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-gradient-to-r from-[#DC2626] via-[#B91C1C] to-[#D97706] text-white font-bold text-sm shadow-[0_10px_30px_rgba(220,38,38,0.4)] border border-amber-400/40 hover:scale-105 transition-all group cursor-pointer"
+          onClick={() => {
+            setIsOpen(true);
+            setShowHesitationPrompt(false);
+          }}
+          className="fixed bottom-6 right-6 z-50 !left-auto flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-gradient-to-r from-[#DC2626] via-[#B91C1C] to-[#D97706] text-white font-bold text-sm shadow-[0_10px_30px_rgba(220,38,38,0.4)] border border-amber-400/40 hover:scale-105 transition-all group cursor-pointer"
           aria-label="Open AI Customer Service"
         >
           <div className="relative">
@@ -194,9 +312,9 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
         </button>
       )}
 
-      {/* Chat Window Modal */}
+      {/* Chat Window Modal (Always anchored to the RIGHT) */}
       {isOpen && (
-        <div className="fixed bottom-4 end-4 sm:bottom-6 sm:end-6 z-50 w-[95vw] sm:w-[410px] h-[580px] max-h-[85vh] rounded-2xl bg-[#0B0F19] border border-amber-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.85)] flex flex-col overflow-hidden backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 !left-auto w-[95vw] sm:w-[410px] h-[580px] max-h-[85vh] rounded-2xl bg-[#0B0F19] border border-amber-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.85)] flex flex-col overflow-hidden backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-200">
           
           {/* Header */}
           <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-900 to-[#1A1215] border-b border-amber-500/20 flex items-center justify-between">
@@ -221,7 +339,12 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
 
             <div className="flex items-center gap-1.5">
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  setHasUserClosed(true);
+                  setShowHesitationPrompt(false);
+                  lastActivityRef.current = Date.now();
+                }}
                 className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
                 aria-label="Close chat"
               >
