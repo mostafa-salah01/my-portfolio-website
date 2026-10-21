@@ -137,6 +137,35 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
     badge: 'منفذ لعميل'
   },
   {
+    id: 'alayyash-contracting',
+    titleEn: 'AYASH Construction & Waterproofing (Dammam, KSA)',
+    titleAr: 'شركة عياش للمقاولات والعزل (الدمام، السعودية)',
+    taglineEn: 'Official corporate platform for AYASH Construction: luxury villa fitouts, roof & foam thermal insulation, certified by SCA in Dammam',
+    taglineAr: 'الموقع الرسمي لشركة عياش للمقاولات بالدمام: تشطيبات فلل راقية، عوازل أسطح وفوم وخزانات، معتمد من الهيئة السعودية للمقاولين',
+    image: '/assets/images/alayyash_showcase.jpg',
+    category: 'web-development',
+    categoryLabelEn: 'Certified Contracting Web',
+    categoryLabelAr: 'مقاولات وعوازل كبرى',
+    metricsEn: 'Live Client Platform · Certified SCA',
+    metricsAr: 'سابقة أعمال حية · معتمد من SCA',
+    tech: ['Corporate Architecture', 'Bilingual Engine', 'Fast Responsive UI', 'Saudi Contractors Authority (SCA)', 'Direct WhatsApp RFQ'],
+    featuresEn: [
+      'Official digital platform engineered by WebStack for AYASH Construction & Insulation in Eastern Province, KSA',
+      'Comprehensive showcase for foam & roof waterproofing, tank insulation, epoxy, luxury villa finishing and commercial towers',
+      'Highlighting official accreditation from the Saudi Contractors Authority (SCA) to maximize investor credibility',
+      'Direct quotation request workflows, instant WhatsApp inquiry buttons, and optimized Core Web Vitals'
+    ],
+    featuresAr: [
+      'الموقع الرسمي لشركة عياش للمقاولات والعزل بالمنطقة الشرقية بالمملكة العربية السعودية صُمم بواسطة WebStack',
+      'استعراض شامل لخدمات عزل الفوم والأسطح والخزانات، الإيبوكسي، تشطيبات الفلل الفاخرة والأبراج التجارية',
+      'إبراز الاعتماد الرسمي من الهيئة السعودية للمقاولين (SCA) لتعزيز موثوقية الشركة أمام العملاء وكبار المستثمرين',
+      'أزرار اتصال وطلب عروض أسعار مباشرة عبر واتساب مع سرعة تصفح فائقة على كافة الأجهزة والهواتف'
+    ],
+    liveUrl: 'https://alayyash.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت موقع شركة عياش للمقاولات https://alayyash.codix.uk/ وأرغب في تنفيذ موقع رسمي احترافي لشركتي',
+    badge: 'مقاولات وعزل'
+  },
+  {
     id: 'nabd-clinic',
     titleEn: 'Nabd Medical Care — Specialized Clinics & Healthcare Center',
     titleAr: 'المراكز الطبية والعيادات - نبض للرعاية الطبية',
@@ -996,7 +1025,7 @@ export const HOW_IT_WORKS_STEPS = [
 
 // 1. Live production client projects (المواقع والمتاجر الحية المنفذة لعملائنا)
 export const CLIENT_PROJECTS: ProjectItem[] = PORTFOLIO_PROJECTS.filter((p) =>
-  ['larose-store', 'alkemma-decor', 'egypt-builders', 'clean-almithalia', 'nabd-clinic', 'elsharkawy-farm', 'handasiya-aluminum'].includes(p.id)
+  ['larose-store', 'alkemma-decor', 'alayyash-contracting', 'egypt-builders', 'clean-almithalia', 'nabd-clinic', 'elsharkawy-farm', 'handasiya-aluminum'].includes(p.id)
 );
 
 // 2. Interactive turnkey demo stores (المتاجر الاستعراضية الجاهزة للمعاينة)

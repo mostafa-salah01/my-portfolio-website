@@ -178,6 +178,17 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
               </li>
               <li>
                 <a
+                  href="https://alayyash.codix.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>{isAr ? 'شركة عياش للمقاولات (بالسعودية)' : 'AYASH Construction (KSA)'}</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://clean-almithalia.salah-logistics.uk/"
                   target="_blank"
                   rel="noopener noreferrer"
