@@ -161,6 +161,13 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
       return `أهلاً بحضرتك! 🚚\nسيستم الشحن واللوجستيات من WebStack بيوفر لك:\n• إصدار بوالص شحن PDF مع باركود وQR متوافق قياسياً.\n• شاشات للمناديب لتسجيل الاستلام وإثبات التسليم والتوقيع.\n• بوابة تتبع حية للعميل مع إشعارات واتساب لحظية.\n• تسوية دقيقة لمبالغ التحصيل عند الاستلام (COD) والمطابقات البنكية.\n\nتفضل بالتواصل معنا على واتساب (+201107787049) لمناقشة تفاصيل نظامك! 🚀`;
     }
 
+    if (lower.includes('عمار') || lower.includes('ammar') || lower.includes('تواصل') || lower.includes('رقم') || lower.includes('هاتف') || lower.includes('اتصال') || lower.includes('موبايل') || lower.includes('contact') || lower.includes('phone') || lower.includes('call')) {
+      if (isEn) {
+        return `Here are our direct team contacts:\n\n• Eng. Ammar (Technical & Engineering Consultant): +20 155 566 8194 (WhatsApp: https://wa.me/201555668194)\n• WebStack Management & Projects: +20 110 778 7049 (WhatsApp: https://wa.me/201107787049)\n\nFeel free to chat with Eng. Ammar directly for tailored technical advice and instant pricing! 🚀`;
+      }
+      return `يسعدنا تواصلك مع فريقنا الهندسي والإداري مباشرة:\n\n• م/ عمار (استشارات تقنية وهندسية ومبيعات): 01555668194 (+201555668194)\n  واتساب مباشر: https://wa.me/201555668194\n\n• إدارة WebStack وخدمة العملاء: 01107787049 (+201107787049)\n  واتساب مباشر: https://wa.me/201107787049\n\nتفضل بمراسلة م/ عمار أو فريق الإدارة لمناقشة مشروعك والحصول على عرض سعر فوري! 🚀`;
+    }
+
     if (lower.includes('أعمال') || lower.includes('سابقة') || lower.includes('portfolio') || lower.includes('لاروز') || lower.includes('larose') || lower.includes('القمة') || lower.includes('alkemma') || lower.includes('كلين') || lower.includes('ديمو') || lower.includes('demo')) {
       if (isEn) {
         return `Here are our live client platforms & turnkey demos:
@@ -479,16 +486,28 @@ You can click any showcase card on our homepage to test the live platform direct
             </form>
 
             <div className="flex items-center justify-between mt-2 text-[10px] text-slate-500 px-1">
-              <span>{lang === 'ar' ? 'WebStack AI Support Engine' : 'WebStack AI Support Engine'}</span>
-              <a
-                href={whatsappEscalationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-amber-400 hover:underline flex items-center gap-1 font-bold"
-              >
-                <span>{lang === 'ar' ? 'تحويل للموظف البشري' : 'Human Escalation'}</span>
-                <span>&rarr;</span>
-              </a>
+              <span>{lang === 'ar' ? 'تحويل للموظف البشري:' : 'Human Escalation:'}</span>
+              <div className="flex items-center gap-2 font-bold">
+                <a
+                  href="https://wa.me/201555668194"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:underline flex items-center gap-1"
+                  title="م/ عمار: 01555668194"
+                >
+                  <span>{lang === 'ar' ? 'م/ عمار' : 'Eng. Ammar'}</span>
+                </a>
+                <span className="text-slate-600">·</span>
+                <a
+                  href={whatsappEscalationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-amber-400 hover:underline flex items-center gap-1"
+                  title="الإدارة: 01107787049"
+                >
+                  <span>{lang === 'ar' ? 'الإدارة' : 'Management'}</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

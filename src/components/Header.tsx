@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, X, Globe, MessageCircle, ArrowRight, LayoutGrid } from 'lucide-react';
+import { Menu, X, Globe, MessageCircle, ArrowRight, LayoutGrid, Phone } from 'lucide-react';
+import { TEAM_CONTACTS } from '../data/projects';
 
 interface HeaderProps {
   lang: 'ar' | 'en';
@@ -181,16 +182,43 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
             {isAr ? 'الأسئلة الشائعة وتحديد التكلفة' : 'FAQ & Pricing Model'}
           </button>
 
-          <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
-            <a
-              href="https://www.facebook.com/profile.php?id=61595189300053&locale=ar_AR"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-semibold text-blue-400 flex items-center gap-1.5"
-            >
-              <span>{isAr ? 'صفحة الفيسبوك الرسمية' : 'Official Facebook Page'}</span>
-            </a>
-            <span className="text-xs text-amber-400 font-mono">+201107787049</span>
+          <div className="pt-3 border-t border-slate-800 space-y-2">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-amber-300 font-bold">{isAr ? 'م/ عمار (استشارات تقنية):' : 'Eng. Ammar (Tech):'}</span>
+              <a
+                href={TEAM_CONTACTS.engAmmar.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 font-mono font-bold flex items-center gap-1 hover:underline"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span dir="ltr">01555668194</span>
+              </a>
+            </div>
+
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-slate-400">{isAr ? 'فريق WebStack:' : 'WebStack Team:'}</span>
+              <a
+                href={TEAM_CONTACTS.management.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-300 font-mono flex items-center gap-1 hover:text-white"
+              >
+                <MessageCircle className="w-3.5 h-3.5 text-amber-400" />
+                <span dir="ltr">01107787049</span>
+              </a>
+            </div>
+
+            <div className="pt-2 flex items-center justify-between border-t border-slate-800/60">
+              <a
+                href="https://www.facebook.com/profile.php?id=61595189300053&locale=ar_AR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-blue-400 flex items-center gap-1"
+              >
+                <span>{isAr ? 'صفحة الفيسبوك الرسمية' : 'Official Facebook Page'}</span>
+              </a>
+            </div>
           </div>
         </div>
       )}

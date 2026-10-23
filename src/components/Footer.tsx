@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageCircle, ShieldCheck, Mail, MapPin, ExternalLink, Code2 } from 'lucide-react';
+import { MessageCircle, ShieldCheck, Mail, MapPin, ExternalLink, Code2, Phone } from 'lucide-react';
+import { TEAM_CONTACTS } from '../data/projects';
 
 interface FooterProps {
   lang: 'ar' | 'en';
@@ -266,38 +267,88 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
             </ul>
           </div>
 
-          {/* Direct Support & Contact */}
+          {/* Direct Support & Team Contacts */}
           <div>
             <h4 className="text-white font-bold text-sm mb-4 font-mono flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              <span>{isAr ? 'التواصل المباشر' : 'Direct Contact'}</span>
+              <span>{isAr ? 'فريق العمل والتواصل المباشر' : 'Direct Contacts & Team'}</span>
             </h4>
             <div className="space-y-3 text-xs sm:text-sm">
-              <a
-                href="https://wa.me/201107787049"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-mono font-bold"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span dir="ltr">+20 110 778 7049</span>
-              </a>
-
-              <div className="flex items-start gap-2 text-slate-400">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <span>{isAr ? 'القاهرة، جمهورية مصر العربية' : 'Cairo, Egypt'}</span>
+              
+              {/* Eng. Ammar */}
+              <div className="p-3 rounded-xl bg-slate-900/90 border border-amber-500/25 space-y-1.5 shadow-sm">
+                <div className="text-xs font-bold text-amber-300 flex items-center justify-between">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>{isAr ? TEAM_CONTACTS.engAmmar.nameAr : TEAM_CONTACTS.engAmmar.nameEn}</span>
+                  </span>
+                  <span className="text-[10px] text-slate-400 font-mono">
+                    {isAr ? 'مهندس تقني' : 'Tech Engineer'}
+                  </span>
+                </div>
+                <div className="text-[11px] text-slate-400">
+                  {isAr ? TEAM_CONTACTS.engAmmar.roleAr : TEAM_CONTACTS.engAmmar.roleEn}
+                </div>
+                <div className="flex items-center gap-2 pt-1 border-t border-slate-800/80">
+                  <a
+                    href={TEAM_CONTACTS.engAmmar.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-1 px-2 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 font-mono font-bold text-xs transition-colors"
+                    title={isAr ? 'تواصل واتساب مع م/ عمار' : 'WhatsApp Eng. Ammar'}
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span dir="ltr">01555668194</span>
+                  </a>
+                  <a
+                    href={TEAM_CONTACTS.engAmmar.telUrl}
+                    className="inline-flex items-center justify-center p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors"
+                    title={isAr ? 'اتصال مباشر' : 'Call'}
+                  >
+                    <Phone className="w-3.5 h-3.5 text-amber-400" />
+                  </a>
+                </div>
               </div>
 
-              <div className="flex items-center gap-2 text-slate-400">
-                <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" />
-                <span>{isAr ? 'دعم فني وضمان استقرار مستمر' : 'Active Technical Support'}</span>
+              {/* Management & Sales */}
+              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5 shadow-sm">
+                <div className="text-xs font-bold text-slate-200 flex items-center justify-between">
+                  <span>{isAr ? TEAM_CONTACTS.management.nameAr : TEAM_CONTACTS.management.nameEn}</span>
+                </div>
+                <div className="text-[11px] text-slate-400">
+                  {isAr ? TEAM_CONTACTS.management.roleAr : TEAM_CONTACTS.management.roleEn}
+                </div>
+                <div className="flex items-center gap-2 pt-1 border-t border-slate-800/80">
+                  <a
+                    href={TEAM_CONTACTS.management.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-1 px-2 rounded-lg bg-slate-800 hover:bg-slate-750 text-amber-300 font-mono font-bold text-xs transition-colors"
+                    title={isAr ? 'واتساب إدارة WebStack' : 'WhatsApp WebStack'}
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span dir="ltr">01107787049</span>
+                  </a>
+                  <a
+                    href={TEAM_CONTACTS.management.telUrl}
+                    className="inline-flex items-center justify-center p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors"
+                    title={isAr ? 'اتصال مباشر' : 'Call'}
+                  >
+                    <Phone className="w-3.5 h-3.5 text-slate-300" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2 text-slate-400 pt-1">
+                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <span>{isAr ? 'القاهرة، جمهورية مصر العربية' : 'Cairo, Egypt'}</span>
               </div>
 
               <a
                 href="https://www.facebook.com/profile.php?id=61595189300053&locale=ar_AR"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600/15 border border-blue-500/30 text-blue-400 hover:text-blue-300 text-xs font-semibold transition-colors mt-2"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600/15 border border-blue-500/30 text-blue-400 hover:text-blue-300 text-xs font-semibold transition-colors mt-1"
               >
                 <span>{isAr ? 'صفحة الفيسبوك الرسمية' : 'Official Facebook'}</span>
                 <ExternalLink className="w-3 h-3" />

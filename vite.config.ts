@@ -71,7 +71,9 @@ const CUSTOMER_SERVICE_SYSTEM_PROMPT = `أنت "أحمد"، مساعد ذكي و
    - أتمتة مسارات العمل المؤسسية عبر n8n
    - هندسة الـ Backend وواجهات برمجة التطبيقات REST APIs
 
-رقم واتساب المباشر لفريق WebStack: +201107787049 (أو 01107787049).`;
+أرقام التواصل الرسمية لفريق WebStack:
+• م/ عمار (استشارات تقنية وهندسية ومبيعات): +201555668194 (أو 01555668194)
+• إدارة WebStack والمبيعات: +201107787049 (أو 01107787049)`;
 
 function generateLocalSmartResponse(userText: string): string {
   const text = (userText || '').toLowerCase();

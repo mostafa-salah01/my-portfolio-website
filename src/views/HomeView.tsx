@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Sparkles, ArrowRight, ShieldCheck, ShoppingBag, Globe, CheckCircle2, 
   MessageCircle, ExternalLink, ChevronDown, ChevronUp, Layers, HelpCircle,
-  Cpu, Truck, Smartphone, Eye, ArrowUpRight
+  Cpu, Truck, Smartphone, Eye, ArrowUpRight, Phone
 } from 'lucide-react';
 import { 
   CLIENT_PROJECTS, 
@@ -11,7 +11,8 @@ import {
   FAQ_ITEMS, 
   HOW_IT_WORKS_STEPS, 
   ProjectItem,
-  ServiceItem
+  ServiceItem,
+  TEAM_CONTACTS
 } from '../data/projects';
 
 interface HomeViewProps {
@@ -817,25 +818,95 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
       {/* 9. Final Bottom CTA */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-tr from-[#0B0F19] via-slate-900 to-[#1A1208] border border-amber-500/35 text-center shadow-2xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold mb-4">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>{isAr ? 'فريق العمل جاهز للتواصل والاستشارة الفورية' : 'Engineering Team Available 24/7'}</span>
+          </div>
+
           <h2 className="text-2xl sm:text-4xl font-black text-white mb-4">
             {isAr ? 'جاهز لإطلاق متجرك أو موقعك بنظام خاص 100%؟' : 'Ready to Launch Your 100% Custom Store or Website?'}
           </h2>
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed">
             {isAr
-              ? 'تواصل معنا الآن عبر الواتساب لمناقشة فكرة مشروعك، والحصول على جلسة استشارية مجانية وعرض سعر مخصص ودقيق.'
-              : 'Contact our engineering team now via WhatsApp to discuss your commerce blueprint and receive a free consultation.'}
+              ? 'تواصل مباشرة مع مهندسينا لمناقشة فكرة مشروعك، والحصول على جلسة استشارية مجانية وعرض سعر مخصص ودقيق.'
+              : 'Contact our engineering team directly via WhatsApp to discuss your commerce blueprint and receive a free consultation.'}
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={generalQuoteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-[#DC2626] via-[#B91C1C] to-[#D97706] text-white font-extrabold text-base shadow-[0_10px_35px_rgba(220,38,38,0.45)] hover:scale-105 active:scale-95 transition-all flex items-center gap-2.5 cursor-pointer"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>{isAr ? 'تواصل معنا عبر واتساب الآن (+201107787049)' : 'Contact Us on WhatsApp (+201107787049)'}</span>
-            </a>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            {/* Eng. Ammar Card */}
+            <div className="p-5 rounded-2xl bg-slate-900/90 border border-amber-500/30 text-start flex flex-col justify-between hover:border-amber-400/60 transition-all shadow-md group">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="font-extrabold text-white text-base flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>{isAr ? TEAM_CONTACTS.engAmmar.nameAr : TEAM_CONTACTS.engAmmar.nameEn}</span>
+                  </div>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    {isAr ? 'استشارات تقنية' : 'Tech Engineer'}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 mb-4">
+                  {isAr ? 'تواصل مباشر لمناقشة التفاصيل الهندسية والبرمجية لمتجرك أو موقعك.' : 'Direct contact for architecture and technical specifications.'}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 pt-3 border-t border-slate-800">
+                <a
+                  href={TEAM_CONTACTS.engAmmar.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:scale-[1.02] transition-transform"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>{isAr ? 'واتساب: 01555668194' : 'WhatsApp: 01555668194'}</span>
+                </a>
+                <a
+                  href={TEAM_CONTACTS.engAmmar.telUrl}
+                  className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white transition-colors"
+                  title={isAr ? 'اتصال مباشر' : 'Direct Call'}
+                >
+                  <Phone className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* Management & Sales Card */}
+            <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-700 text-start flex flex-col justify-between hover:border-amber-400/50 transition-all shadow-md group">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="font-extrabold text-white text-base">
+                    <span>{isAr ? TEAM_CONTACTS.management.nameAr : TEAM_CONTACTS.management.nameEn}</span>
+                  </div>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-800 text-slate-300 border border-slate-700">
+                    {isAr ? 'الإدارة والمبيعات' : 'Management'}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 mb-4">
+                  {isAr ? 'تواصل مع إدارة المشاريع للاستفسار عن الباقات والعقود والأسعار.' : 'Inquire about packages, contracts, and commercial terms.'}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 pt-3 border-t border-slate-800">
+                <a
+                  href={TEAM_CONTACTS.management.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#D97706] hover:from-[#B91C1C] hover:to-[#B45309] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:scale-[1.02] transition-transform"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>{isAr ? 'واتساب: 01107787049' : 'WhatsApp: 01107787049'}</span>
+                </a>
+                <a
+                  href={TEAM_CONTACTS.management.telUrl}
+                  className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white transition-colors"
+                  title={isAr ? 'اتصال مباشر' : 'Direct Call'}
+                >
+                  <Phone className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
