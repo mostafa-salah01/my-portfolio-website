@@ -271,30 +271,65 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
           <div>
             <h4 className="text-white font-bold text-sm mb-4 font-mono flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              <span>{isAr ? 'فريق العمل والتواصل المباشر' : 'Direct Contacts & Team'}</span>
+              <span>{isAr ? 'فريق الإدارة والمبيعات (تواصل مباشر)' : 'Management & Sales Team'}</span>
             </h4>
             <div className="space-y-3 text-xs sm:text-sm">
               
-              {/* Eng. Ammar */}
-              <div className="p-3 rounded-xl bg-slate-900/90 border border-amber-500/25 space-y-1.5 shadow-sm">
+              {/* Primary Management & Sales Line */}
+              <div className="p-3 rounded-xl bg-slate-900/90 border border-amber-500/35 space-y-1.5 shadow-sm">
                 <div className="text-xs font-bold text-amber-300 flex items-center justify-between">
                   <span className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>{isAr ? TEAM_CONTACTS.management.nameAr : TEAM_CONTACTS.management.nameEn}</span>
+                  </span>
+                  <span className="text-[10px] text-amber-300 font-mono font-bold px-1.5 py-0.5 rounded bg-amber-500/15 border border-amber-500/30">
+                    {isAr ? 'الخط الأساسي والرسمي' : 'Primary Line'}
+                  </span>
+                </div>
+                <div className="text-[11px] text-slate-300">
+                  {isAr ? TEAM_CONTACTS.management.roleAr : TEAM_CONTACTS.management.roleEn}
+                </div>
+                <div className="flex items-center gap-2 pt-1 border-t border-slate-800/80">
+                  <a
+                    href={TEAM_CONTACTS.management.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg bg-gradient-to-r from-[#DC2626] to-[#D97706] hover:from-[#B91C1C] hover:to-[#B45309] text-white font-mono font-bold text-xs transition-colors shadow-sm"
+                    title={isAr ? 'واتساب إدارة WebStack (الخط الأساسي)' : 'WhatsApp WebStack (Primary Line)'}
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span dir="ltr">01107787049</span>
+                  </a>
+                  <a
+                    href={TEAM_CONTACTS.management.telUrl}
+                    className="inline-flex items-center justify-center p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white transition-colors"
+                    title={isAr ? 'اتصال مباشر' : 'Call'}
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Eng. Ammar - Management & Sales Team */}
+              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5 shadow-sm">
+                <div className="text-xs font-bold text-slate-200 flex items-center justify-between">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
                     <span>{isAr ? TEAM_CONTACTS.engAmmar.nameAr : TEAM_CONTACTS.engAmmar.nameEn}</span>
                   </span>
                   <span className="text-[10px] text-slate-400 font-mono">
-                    {isAr ? 'مهندس تقني' : 'Tech Engineer'}
+                    {isAr ? 'إدارة ومبيعات' : 'Sales & Mgmt'}
                   </span>
                 </div>
                 <div className="text-[11px] text-slate-400">
-                  {isAr ? TEAM_CONTACTS.engAmmar.roleAr : TEAM_CONTACTS.engAmmar.roleEn}
+                  {isAr ? 'تواصل إداري واستفسارات المبيعات والتعاقدات' : 'Sales inquiries, contracts & administrative contact'}
                 </div>
                 <div className="flex items-center gap-2 pt-1 border-t border-slate-800/80">
                   <a
                     href={TEAM_CONTACTS.engAmmar.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-1 px-2 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 font-mono font-bold text-xs transition-colors"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-1 px-2 rounded-lg bg-slate-800 hover:bg-slate-750 text-emerald-400 font-mono font-bold text-xs transition-colors border border-slate-700/60"
                     title={isAr ? 'تواصل واتساب مع م/ عمار' : 'WhatsApp Eng. Ammar'}
                   >
                     <MessageCircle className="w-3.5 h-3.5" />
@@ -305,36 +340,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
                     className="inline-flex items-center justify-center p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors"
                     title={isAr ? 'اتصال مباشر' : 'Call'}
                   >
-                    <Phone className="w-3.5 h-3.5 text-amber-400" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Management & Sales */}
-              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5 shadow-sm">
-                <div className="text-xs font-bold text-slate-200 flex items-center justify-between">
-                  <span>{isAr ? TEAM_CONTACTS.management.nameAr : TEAM_CONTACTS.management.nameEn}</span>
-                </div>
-                <div className="text-[11px] text-slate-400">
-                  {isAr ? TEAM_CONTACTS.management.roleAr : TEAM_CONTACTS.management.roleEn}
-                </div>
-                <div className="flex items-center gap-2 pt-1 border-t border-slate-800/80">
-                  <a
-                    href={TEAM_CONTACTS.management.whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-1 px-2 rounded-lg bg-slate-800 hover:bg-slate-750 text-amber-300 font-mono font-bold text-xs transition-colors"
-                    title={isAr ? 'واتساب إدارة WebStack' : 'WhatsApp WebStack'}
-                  >
-                    <MessageCircle className="w-3.5 h-3.5" />
-                    <span dir="ltr">01107787049</span>
-                  </a>
-                  <a
-                    href={TEAM_CONTACTS.management.telUrl}
-                    className="inline-flex items-center justify-center p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors"
-                    title={isAr ? 'اتصال مباشر' : 'Call'}
-                  >
-                    <Phone className="w-3.5 h-3.5 text-slate-300" />
+                    <Phone className="w-3.5 h-3.5 text-slate-400" />
                   </a>
                 </div>
               </div>

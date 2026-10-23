@@ -1050,26 +1050,26 @@ export const OTHER_SERVICES_LIST: ServiceItem[] = SERVICES_DATA.filter((s) =>
   ['ai-employees', 'smart-shipping', 'mobile-pos-apps', 'n8n-automation', 'backend-architecture'].includes(s.id)
 );
 
-// 5. Official Team & Engineering Contacts
+// 5. Official Team & Management Contacts
 export const TEAM_CONTACTS = {
-  engAmmar: {
-    nameAr: 'م/ عمار',
-    nameEn: 'Eng. Ammar',
-    roleAr: 'استشارات تقنية وهندسية ومبيعات',
-    roleEn: 'Technical & Engineering Consultant',
-    phone: '01555668194',
-    phoneIntl: '+20 155 566 8194',
-    whatsappUrl: 'https://wa.me/201555668194?text=' + encodeURIComponent('مرحباً م/ عمار، أود الاستفسار والحصول على استشارة وعرض سعر لمشروعي البرمجي.'),
-    telUrl: 'tel:+201555668194'
-  },
   management: {
-    nameAr: 'فريق WebStack (الإدارة والمبيعات)',
-    nameEn: 'WebStack Management & Sales',
-    roleAr: 'إدارة المشاريع وعروض الأسعار',
-    roleEn: 'Project Management & Sales',
+    nameAr: 'إدارة WebStack والمبيعات (الخط الأساسي)',
+    nameEn: 'WebStack Management & Sales (Primary Line)',
+    roleAr: 'الخط الأساسي للإدارة والمبيعات وعروض الأسعار',
+    roleEn: 'Primary Line for Management, Sales & Custom Quotes',
     phone: '01107787049',
     phoneIntl: '+20 110 778 7049',
-    whatsappUrl: 'https://wa.me/201107787049?text=' + encodeURIComponent('مرحباً فريق WebStack، أود الاستفسار وطلب استشارة وعرض سعر لمشروعي.'),
+    whatsappUrl: 'https://wa.me/201107787049?text=' + encodeURIComponent('مرحباً إدارة WebStack، أود الاستفسار وطلب عرض سعر لمشروعي.'),
     telUrl: 'tel:+201107787049'
+  },
+  engAmmar: {
+    nameAr: 'م/ عمار (فريق الإدارة والمبيعات)',
+    nameEn: 'Eng. Ammar (Management & Sales Team)',
+    roleAr: 'فريق الإدارة والمبيعات والتعاقدات',
+    roleEn: 'Management, Sales & Commercial Inquiries',
+    phone: '01555668194',
+    phoneIntl: '+20 155 566 8194',
+    whatsappUrl: 'https://wa.me/201555668194?text=' + encodeURIComponent('مرحباً م/ عمار، أود الاستفسار بخصوص عروض الأسعار وباقات المتاجر والمواقع.'),
+    telUrl: 'tel:+201555668194'
   }
 };

@@ -184,7 +184,23 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
 
           <div className="pt-3 border-t border-slate-800 space-y-2">
             <div className="flex items-center justify-between text-xs">
-              <span className="text-amber-300 font-bold">{isAr ? 'م/ عمار (استشارات تقنية):' : 'Eng. Ammar (Tech):'}</span>
+              <span className="text-amber-300 font-bold flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>{isAr ? 'إدارة WebStack (الخط الأساسي):' : 'WebStack Mgmt (Primary):'}</span>
+              </span>
+              <a
+                href={TEAM_CONTACTS.management.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-300 font-mono font-bold flex items-center gap-1 hover:underline"
+              >
+                <MessageCircle className="w-3.5 h-3.5 text-amber-400" />
+                <span dir="ltr">01107787049</span>
+              </a>
+            </div>
+
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-slate-300 font-medium">{isAr ? 'م/ عمار (إدارة ومبيعات):' : 'Eng. Ammar (Sales & Mgmt):'}</span>
               <a
                 href={TEAM_CONTACTS.engAmmar.whatsappUrl}
                 target="_blank"
@@ -193,19 +209,6 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 <span dir="ltr">01555668194</span>
-              </a>
-            </div>
-
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-slate-400">{isAr ? 'فريق WebStack:' : 'WebStack Team:'}</span>
-              <a
-                href={TEAM_CONTACTS.management.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-300 font-mono flex items-center gap-1 hover:text-white"
-              >
-                <MessageCircle className="w-3.5 h-3.5 text-amber-400" />
-                <span dir="ltr">01107787049</span>
               </a>
             </div>
 

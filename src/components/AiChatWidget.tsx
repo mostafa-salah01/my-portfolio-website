@@ -190,10 +190,10 @@ You can click any showcase card on our homepage to test the live platform direct
     }
 
     if (isEn) {
-      return `Welcome to WebStack! 👋 I'm Ahmed, your smart assistant.\nAt WebStack, "Every client has their own dedicated system" — custom-built with clean code:\n1. Custom E-Commerce Stores (PHP & MySQL, all payment gateways, 0% commissions).\n2. Corporate Bilingual Websites (Arabic & English, fast hosting, SSL).\n3. Natural AI Employees (WhatsApp & Telegram 24/7).\n4. Smart Shipping & Courier Logistics Platforms.\n5. Custom Mobile Apps & POS Systems.\n\nHow can I help you today? You can also message our team directly on WhatsApp (+201107787049) for a custom quotation! 🚀`;
+      return `Welcome to WebStack! 👋 I'm Ahmed, your smart assistant.\nAt WebStack, "Every client has their own dedicated system" — custom-built with clean code:\n1. Custom E-Commerce Stores (PHP & MySQL, all payment gateways, 0% commissions).\n2. Corporate Bilingual Websites (Arabic & English, fast hosting, SSL).\n3. Natural AI Employees (WhatsApp & Telegram 24/7).\n4. Smart Shipping & Courier Logistics Platforms.\n5. Custom Mobile Apps & POS Systems.\n\nHow can I help you today? You can contact our Management & Sales team directly on WhatsApp (+201107787049) or Eng. Ammar (+201555668194) for a custom quotation! 🚀`;
     }
 
-    return `أهلاً بحضرتك يا فندم في شركة WebStack للحلول البرمجية! 👋\nأنا أحمد، مساعدك الذكي:\n\nفي WebStack نؤمن بأن: "كل عميل له نظامه الخاص":\n1. المتاجر الإلكترونية المخصصة: برمجة من الصفر بلغة PHP وقواعد بيانات MySQL بدون قوالب جاهزة و0% عمولات على مبيعاتك.\n2. المواقع الإلكترونية للشركات: تصميم احترافي باللغتين العربية والإنجليزية مع سرعة عالية واستضافة سحابية مؤمنة.\n3. موظفو الذكاء الاصطناعي: ردود طبيعية على مدار الساعة وإرسال ملفات وكتالوجات وعروض أسعار PDF مع تحويل للموظف البشري.\n4. سيستمات الشحن واللوجستيات: إصدار بوالص الشحن، تتبع المناديب، وتسوية تحصيل الـ COD.\n5. تطبيقات الموبايل وأنظمة الكاشير POS وإدارة الشركات.\n\nأي هذه الحلول ترغب في الاستفسار عنها؟ ويمكنك دائماً التواصل مباشرة مع مهندسينا عبر واتساب على (+201107787049) لاستلام عرض سعر مخصص! 🚀`;
+    return `أهلاً بحضرتك يا فندم في شركة WebStack للحلول البرمجية! 👋\nأنا أحمد، مساعدك الذكي:\n\nفي WebStack نؤمن بأن: "كل عميل له نظامه الخاص":\n1. المتاجر الإلكترونية المخصصة: برمجة من الصفر بلغة PHP وقواعد بيانات MySQL بدون قوالب جاهزة و0% عمولات على مبيعاتك.\n2. المواقع الإلكترونية للشركات: تصميم احترافي باللغتين العربية والإنجليزية مع سرعة عالية واستضافة سحابية مؤمنة.\n3. موظفو الذكاء الاصطناعي: ردود طبيعية على مدار الساعة وإرسال ملفات وكتالوجات وعروض أسعار PDF مع تحويل للموظف البشري.\n4. سيستمات الشحن واللوجستيات: إصدار بوالص الشحن، تتبع المناديب، وتسوية تحصيل الـ COD.\n5. تطبيقات الموبايل وأنظمة الكاشير POS وإدارة الشركات.\n\nأي هذه الحلول ترغب في الاستفسار عنها؟ ويمكنك دائماً التواصل مباشرة مع فريق الإدارة والمبيعات عبر واتساب على الخط الأساسي (+201107787049) أو م/ عمار (+201555668194) لاستلام عرض سعر مخصص! 🚀`;
   };
 
   const sendMessage = async (textToSend?: string) => {
@@ -486,26 +486,27 @@ You can click any showcase card on our homepage to test the live platform direct
             </form>
 
             <div className="flex items-center justify-between mt-2 text-[10px] text-slate-500 px-1">
-              <span>{lang === 'ar' ? 'تحويل للموظف البشري:' : 'Human Escalation:'}</span>
+              <span>{lang === 'ar' ? 'فريق الإدارة والمبيعات:' : 'Management & Sales:'}</span>
               <div className="flex items-center gap-2 font-bold">
-                <a
-                  href="https://wa.me/201555668194"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-emerald-400 hover:underline flex items-center gap-1"
-                  title="م/ عمار: 01555668194"
-                >
-                  <span>{lang === 'ar' ? 'م/ عمار' : 'Eng. Ammar'}</span>
-                </a>
-                <span className="text-slate-600">·</span>
                 <a
                   href={whatsappEscalationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-400 hover:underline flex items-center gap-1"
-                  title="الإدارة: 01107787049"
+                  title="الخط الأساسي للإدارة والمبيعات: 01107787049"
                 >
-                  <span>{lang === 'ar' ? 'الإدارة' : 'Management'}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                  <span>{lang === 'ar' ? 'الخط الأساسي (01107787049)' : 'Primary (01107787049)'}</span>
+                </a>
+                <span className="text-slate-600">·</span>
+                <a
+                  href="https://wa.me/201555668194"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:underline flex items-center gap-1"
+                  title="م/ عمار (فريق الإدارة والمبيعات): 01555668194"
+                >
+                  <span>{lang === 'ar' ? 'م/ عمار (01555668194)' : 'Eng. Ammar'}</span>
                 </a>
               </div>
             </div>
