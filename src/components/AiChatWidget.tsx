@@ -161,6 +161,27 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
       return `أهلاً بحضرتك! 🚚\nسيستم الشحن واللوجستيات من WebStack بيوفر لك:\n• إصدار بوالص شحن PDF مع باركود وQR متوافق قياسياً.\n• شاشات للمناديب لتسجيل الاستلام وإثبات التسليم والتوقيع.\n• بوابة تتبع حية للعميل مع إشعارات واتساب لحظية.\n• تسوية دقيقة لمبالغ التحصيل عند الاستلام (COD) والمطابقات البنكية.\n\nتفضل بالتواصل معنا على واتساب (+201107787049) لمناقشة تفاصيل نظامك! 🚀`;
     }
 
+    if (lower.includes('أعمال') || lower.includes('سابقة') || lower.includes('portfolio') || lower.includes('لاروز') || lower.includes('larose') || lower.includes('القمة') || lower.includes('alkemma') || lower.includes('كلين') || lower.includes('ديمو') || lower.includes('demo')) {
+      if (isEn) {
+        return `Here are our live client platforms & turnkey demos:
+• Larose Store (Live Fashion & Cosmetics Store): https://larose.salah-logistics.uk/
+• Al Kemma Decor (Luxury Interior Design & Contracting): https://alkemma-decor.salah-logistics.uk/
+• Clean Al-Mithalia (Corporate Services in KSA): https://clean-almithalia.salah-logistics.uk/
+• Elsharkawy Farm (Farm-Fresh Dairy Storefront): http://elsharkawy-farm.salah-logistics.uk/
+• Interactive Demos: Fragrance, Beauty, and Sportswear stores available on our Home page!
+
+You can click any showcase card on our homepage to test the live platform directly. Feel free to contact us on WhatsApp (+201107787049) to build your own custom store! 🚀`;
+      }
+      return `يسعدني جداً استعراض سابقة أعمالنا الحية على أرض الواقع:
+• متجر لاروز (Larose Store): متجر إلكتروني حي متكامل للعطور ومستحضرات التجميل والأزياء: https://larose.salah-logistics.uk/
+• شركة القمة للديكور والمقاولات: موقع حي رسمي للتشطيبات الفاخرة: https://alkemma-decor.salah-logistics.uk/
+• شركة كلين المثالية: موقع حي لخدمات التنظيف والصيانة بالسعودية: https://clean-almithalia.salah-logistics.uk/
+• مزرعة الشرقاوي: متجر حي لمنتجات الألبان والمزارع: http://elsharkawy-farm.salah-logistics.uk/
+• بالإضافة لنماذج ديمو تفاعلية حية لمتاجر العطور ومستحضرات التجميل والرياضة!
+
+يمكنك الضغط على أي صورة أو بطاقة في الصفحة الرئيسية لتجربة المتجر أو الموقع الحي مباشرة. تواصل معنا عبر واتساب (+201107787049) لبرمجة متجرك المخصص! 🚀`;
+    }
+
     if (isEn) {
       return `Welcome to WebStack! 👋 I'm Ahmed, your smart assistant.\nAt WebStack, "Every client has their own dedicated system" — custom-built with clean code:\n1. Custom E-Commerce Stores (PHP & MySQL, all payment gateways, 0% commissions).\n2. Corporate Bilingual Websites (Arabic & English, fast hosting, SSL).\n3. Natural AI Employees (WhatsApp & Telegram 24/7).\n4. Smart Shipping & Courier Logistics Platforms.\n5. Custom Mobile Apps & POS Systems.\n\nHow can I help you today? You can also message our team directly on WhatsApp (+201107787049) for a custom quotation! 🚀`;
     }
