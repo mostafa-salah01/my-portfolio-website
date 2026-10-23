@@ -71,10 +71,15 @@ const CUSTOMER_SERVICE_SYSTEM_PROMPT = `أنت "أحمد"، مساعد ذكي و
    - أتمتة مسارات العمل المؤسسية عبر n8n
    - هندسة الـ Backend وواجهات برمجة التطبيقات REST APIs
 
-أرقام التواصل الرسمية لفريق WebStack (جميع الأرقام تابعة لفريق الإدارة والمبيعات فقط):
-• إدارة WebStack والمبيعات (الخط الأساسي والرسمي الأول للموقع): +201107787049 (أو 01107787049)
-• م/ عمار (فريق الإدارة والمبيعات): +201555668194 (أو 01555668194)
-تنبيه للذكاء الاصطناعي: جميع هذه الأرقام مخصصة للتواصل مع فريق الإدارة والمبيعات وعروض الأسعار والتعاقدات (وليس للاستشارات البرمجية أو التقنية المباشرة).`;
+أرقام التواصل الرسمية لفريق WebStack:
+1. قسم المبيعات (الخط الأساسي لعروض الأسعار وحجز المشاريع والطلبات): +201205798302 (أو 01205798302)
+   - بالإنجليزية: Sales Department (Primary Line)
+2. م/ مصطفى (المبرمج ومهندس البرمجيات الرئيسي): +201107787049 (أو 01107787049)
+   - بالإنجليزية: Eng. Mostafa — Lead Software Engineer & Developer
+   - مخصص للاستشارات الهندسية والبرمجية والمعمارية وتفاصيل الكود وقواعد البيانات.
+3. م/ عمار (الإدارة): +201555668194 (أو 01555668194)
+   - بالإنجليزية: Eng. Ammar — Executive Management & Operations
+   - مخصص لشؤون الإدارة، التعاقدات الرسمية، الاتفاقيات، ومتابعة شؤون العملاء.`;
 
 function generateLocalSmartResponse(userText: string): string {
   const text = (userText || '').toLowerCase();
@@ -91,7 +96,7 @@ Here is how we engineer your store:
 3. Operations Dashboard: Inventory sync, PDF invoices & waybills, and customer accounts.
 4. Official Domain & Fast Cloud Hosting with ongoing dedicated technical support.
 
-Pricing is tailored to your exact catalog and feature specifications. Connect with our engineering team on WhatsApp (+201107787049) for a free consultation and customized quote! 🚀`;
+Pricing is tailored to your exact catalog and feature specifications. Connect with our Sales Department on WhatsApp (+201205798302) or Eng. Mostafa (Lead Dev: +201107787049) for a consultation and customized quote! 🚀`;
     }
     return `أهلاً بحضرتك يا فندم! 🛍️ في شركة WebStack بنقدملك خدمة إنشاء المتاجر الإلكترونية المخصصة:
 
@@ -103,7 +108,7 @@ Pricing is tailored to your exact catalog and feature specifications. Connect wi
 3. **الدومين والاستضافة والدعم**:
    • اسم نطاق رسمي خاص بمتجرك + استضافة سحابية فائقة السرعة SSD + عقد دعم فني ومتابعة مستمرة.
 
-تختلف التكلفة بدقة حسب متطلبات نشاطك وحجم المميزات التي تحتاجها. تواصل معنا عبر واتساب (+201107787049) لنناقش تفاصيل متجرك ونقدم لك عرض سعر مخصص مجاني! 🚀`;
+تختلف التكلفة بدقة حسب متطلبات نشاطك وحجم المميزات التي تحتاجها. تواصل مع قسم المبيعات عبر واتساب (+201205798302) أو م/ مصطفى (المبرمج الرئيسي: +201107787049) لمناقشة التفاصيل واستلام عرض سعر مخصص مجاني! 🚀`;
   }
 
   // Price & Quote Inquiries
@@ -113,14 +118,14 @@ Pricing is tailored to your exact catalog and feature specifications. Connect wi
 
 Because our solutions are built 100% from scratch to fit your exact business workflows, pricing depends on your required features, scale, and integrations.
 
-Please connect with us on WhatsApp at +201107787049 for an instant free consultation and tailored quotation! 🚀`;
+Please connect with our Sales Department on WhatsApp at +201205798302 for an instant free consultation and tailored quotation! 🚀`;
     }
     return `أهلاً بحضرتك يا فندم! 🌟
 في شركة WebStack شعارنا هو: "كل عميل له نظامه الخاص".
 
 لأن كل متجر أو موقع أو نظام بنبنيه من الصفر 100% بدون أي قوالب معلبة، فإن التكلفة بتختلف حسب متطلبات مشروعك بدقة والمميزات التي تحتاجها.
 
-تفضل بالتواصل معنا مباشرة على واتساب (+201107787049) وسنكون سعداء بمناقشة فكرتك وتقديم استشارة مجانية وعرض سعر مخصص يناسب أهدافك! 🚀`;
+تفضل بالتواصل مع قسم المبيعات مباشرة على واتساب (+201205798302) وسنكون سعداء بمناقشة فكرتك وتقديم استشارة مجانية وعرض سعر مخصص يناسب أهدافك! 🚀`;
   }
 
   // Corporate Website Inquiries
@@ -132,7 +137,7 @@ Please connect with us on WhatsApp at +201107787049 for an instant free consulta
 • 100% responsive across mobile, tablet, and desktop screens.
 • Direct WhatsApp integration to capture customer leads.
 
-Contact our team on WhatsApp (+201107787049) for a tailored quotation! 🚀`;
+Contact our Sales Department on WhatsApp (+201205798302) for a tailored quotation! 🚀`;
     }
     return `يا هلا بحضرتك يا فندم! 🌐
 باقة تصميم المواقع التعريفية للشركات من WebStack بتوفر لك واجهة رقمية راقية تعكس قوة ومصداقية شركتك:
@@ -140,7 +145,7 @@ Contact our team on WhatsApp (+201107787049) for a tailored quotation! 🚀`;
 • استضافة سحابية سريعة SSD مع شهادة أمان SSL.
 • ربط مباشر مع محادثات واتساب ونماذج التواصل لتحويل الزوار لعملاء.
 
-تفضل بالتواصل معنا على واتساب (+201107787049) لاستلام عرض سعر مخصص لموقع شركتك! 🚀`;
+تفضل بالتواصل مع قسم المبيعات على واتساب (+201205798302) لاستلام عرض سعر مخصص لموقع شركتك! 🚀`;
   }
 
   // AI Employee Inquiries
@@ -151,7 +156,7 @@ Contact our team on WhatsApp (+201107787049) for a tailored quotation! 🚀`;
 • Dispatches product photos, specification sheets, and official PDF quotations inside the chat.
 • Direct synchronization with your CRM, Google Sheets, and databases.
 
-Let's discuss customizing an AI employee for your business on WhatsApp: +201107787049! 🚀`;
+Let's discuss customizing an AI employee for your business on WhatsApp: +201205798302! 🚀`;
     }
     return `يا هلا بحضرتك يا فندم! 🤖
 موظف الذكاء الاصطناعي من WebStack للواتساب وتلجرام بيساعدك على مدار الساعة:
@@ -159,7 +164,7 @@ Let's discuss customizing an AI employee for your business on WhatsApp: +2011077
 • إرسال فوري لكتالوجات المنتجات وعروض الأسعار الرسمية PDF وصور المنتجات داخل الشات.
 • تسجيل فوري للطلبات والبيانات في جداول Google وقواعد البيانات.
 
-تحب نجربه لنشاطك؟ تواصل معنا على واتساب (+201107787049) لمعرفة التفاصيل وعرض السعر المخصص! 🚀`;
+تحب نجربه لنشاطك؟ تواصل مع قسم المبيعات على واتساب (+201205798302) لمعرفة التفاصيل وعرض السعر المخصص! 🚀`;
   }
 
   // General Inquiry
@@ -172,7 +177,7 @@ At WebStack, "Every client has their own dedicated system" — custom-built from
 4. Smart Shipping & Courier Management Platforms.
 5. Mobile Apps & Business ERP Systems.
 
-How can I help you today? You can also message our team directly on WhatsApp (+201107787049) for a custom quotation! 🚀`;
+How can I help you today? Contact Sales (+201205798302), Eng. Mostafa (Lead Dev: +201107787049), or Eng. Ammar (Management: +201555668194)! 🚀`;
   }
 
   return `أهلاً بحضرتك يا فندم في شركة WebStack للحلول البرمجية! 👋

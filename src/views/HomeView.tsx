@@ -820,7 +820,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
         <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-tr from-[#0B0F19] via-slate-900 to-[#1A1208] border border-amber-500/35 text-center shadow-2xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold mb-4">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>{isAr ? 'فريق الإدارة والمبيعات جاهز للتواصل الفوري' : 'Management & Sales Team Available'}</span>
+            <span>{isAr ? 'فريق العمل جاهز للتواصل الفوري' : 'WebStack Team Available 24/7'}</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-black text-white mb-4">
@@ -828,42 +828,45 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
           </h2>
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed">
             {isAr
-              ? 'تواصل مباشرة مع فريق الإدارة والمبيعات لمناقشة فكرة مشروعك، والحصول على جلسة استشارية مجانية وعرض سعر مخصص ودقيق.'
-              : 'Contact our Management and Sales team directly on WhatsApp to discuss your project requirements and receive a tailored quote.'}
+              ? 'تواصل مباشرة مع فريقنا لمناقشة مشروعك والحصول على استشارة فنية وعرض سعر مخصص ودقيق.'
+              : 'Connect directly with our sales, engineering, and management team for project inquiries and custom quotes.'}
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            {/* 1. Management & Sales - Primary Line FIRST */}
-            <div className="p-5 rounded-2xl bg-slate-900/90 border border-amber-500/35 text-start flex flex-col justify-between hover:border-amber-400/60 transition-all shadow-md group">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {/* 1. Sales Department - Primary Line */}
+            <div className="p-5 rounded-2xl bg-slate-900/90 border border-amber-500/40 text-start flex flex-col justify-between hover:border-amber-400/70 transition-all shadow-md group">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="font-extrabold text-white text-base flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span>{isAr ? TEAM_CONTACTS.management.nameAr : TEAM_CONTACTS.management.nameEn}</span>
+                    <span>{isAr ? TEAM_CONTACTS.sales.nameAr : TEAM_CONTACTS.sales.nameEn}</span>
                   </div>
                   <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                    {isAr ? 'الخط الأساسي والرسمي' : 'Primary Line'}
+                    {isAr ? 'الخط الأساسي' : 'Primary Line'}
                   </span>
                 </div>
-                <p className="text-xs text-slate-300 mb-4">
+                <div className="text-[11px] font-mono text-amber-200/90 mb-2 font-bold">
+                  {isAr ? TEAM_CONTACTS.sales.titleAr : TEAM_CONTACTS.sales.titleEn}
+                </div>
+                <p className="text-xs text-slate-300 mb-4 leading-relaxed">
                   {isAr
-                    ? 'الخط الأساسي والمعتمد لإدارة WebStack والمبيعات لطلب عروض الأسعار وحجز المشاريع والتعاقدات.'
-                    : 'Official primary line for quotes, pricing packages, and project booking agreements.'}
+                    ? 'الخط المعتمد للمبيعات لطلب عروض الأسعار وحجز المتاجر والمواقع وتحديد الباقات المناسبة.'
+                    : 'Primary line for quotes, pricing packages, turnkey stores and commercial orders.'}
                 </p>
               </div>
 
               <div className="flex items-center gap-2 pt-3 border-t border-slate-800">
                 <a
-                  href={TEAM_CONTACTS.management.whatsappUrl}
+                  href={TEAM_CONTACTS.sales.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#D97706] hover:from-[#B91C1C] hover:to-[#B45309] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:scale-[1.02] transition-transform"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>{isAr ? 'واتساب: 01107787049' : 'WhatsApp: 01107787049'}</span>
+                  <span>{isAr ? 'واتساب: 01205798302' : 'WhatsApp: 01205798302'}</span>
                 </a>
                 <a
-                  href={TEAM_CONTACTS.management.telUrl}
+                  href={TEAM_CONTACTS.sales.telUrl}
                   className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white transition-colors"
                   title={isAr ? 'اتصال مباشر' : 'Direct Call'}
                 >
@@ -872,7 +875,49 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
               </div>
             </div>
 
-            {/* 2. Eng. Ammar - Management & Sales Team */}
+            {/* 2. Eng. Mostafa - Lead Software Engineer */}
+            <div className="p-5 rounded-2xl bg-slate-900/90 border border-cyan-500/35 text-start flex flex-col justify-between hover:border-cyan-400/70 transition-all shadow-md group">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="font-extrabold text-white text-base flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+                    <span>{isAr ? TEAM_CONTACTS.engMostafa.nameAr : TEAM_CONTACTS.engMostafa.nameEn}</span>
+                  </div>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                    {isAr ? 'المبرمج الرئيسي' : 'Lead Dev'}
+                  </span>
+                </div>
+                <div className="text-[11px] font-mono text-cyan-200/90 mb-2 font-bold">
+                  {isAr ? TEAM_CONTACTS.engMostafa.titleAr : TEAM_CONTACTS.engMostafa.titleEn}
+                </div>
+                <p className="text-xs text-slate-300 mb-4 leading-relaxed">
+                  {isAr
+                    ? 'استشارات برمجية وهندسية مباشرة لمناقشة المعمارية وتفاصيل الكود وقواعد البيانات.'
+                    : 'Direct technical consultations for software architecture, code features & database specs.'}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 pt-3 border-t border-slate-800">
+                <a
+                  href={TEAM_CONTACTS.engMostafa.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md hover:scale-[1.02] transition-transform"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>{isAr ? 'واتساب: 01107787049' : 'WhatsApp: 01107787049'}</span>
+                </a>
+                <a
+                  href={TEAM_CONTACTS.engMostafa.telUrl}
+                  className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 hover:text-white transition-colors"
+                  title={isAr ? 'اتصال مباشر' : 'Direct Call'}
+                >
+                  <Phone className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* 3. Eng. Ammar - Executive Management */}
             <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-700 text-start flex flex-col justify-between hover:border-amber-400/50 transition-all shadow-md group">
               <div>
                 <div className="flex items-center justify-between mb-2">
@@ -881,13 +926,16 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
                     <span>{isAr ? TEAM_CONTACTS.engAmmar.nameAr : TEAM_CONTACTS.engAmmar.nameEn}</span>
                   </div>
                   <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-800 text-slate-300 border border-slate-700">
-                    {isAr ? 'إدارة ومبيعات' : 'Sales & Mgmt'}
+                    {isAr ? 'الإدارة' : 'Management'}
                   </span>
                 </div>
-                <p className="text-xs text-slate-300 mb-4">
+                <div className="text-[11px] font-mono text-slate-300 mb-2 font-bold">
+                  {isAr ? TEAM_CONTACTS.engAmmar.titleAr : TEAM_CONTACTS.engAmmar.titleEn}
+                </div>
+                <p className="text-xs text-slate-300 mb-4 leading-relaxed">
                   {isAr
-                    ? 'تواصل مع م/ عمار من فريق الإدارة والمبيعات للاستفسار عن الباقات والعقود والأسعار.'
-                    : 'Inquire with Eng. Ammar from management & sales regarding contracts, packages, and pricing.'}
+                    ? 'إدارة العمليات والتعاقدات الرسمية والاتفاقيات والشراكات ومتابعة شؤون العملاء.'
+                    : 'Executive operations, contracts, partnership agreements and client care.'}
                 </p>
               </div>
 

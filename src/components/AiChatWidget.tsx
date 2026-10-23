@@ -128,44 +128,44 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
 
     if (lower.includes('متجر') || lower.includes('متاجر') || lower.includes('ecommerce') || lower.includes('store') || lower.includes('شوب') || lower.includes('دفع')) {
       if (isEn) {
-        return `Hello! 🛍️ WebStack's Custom E-Commerce Store Solution is handcrafted from scratch:\n\n1. 100% Clean Code: Built with PHP 8+ and MySQL relational database, giving you 100% code ownership and 0% sales commission.\n2. Payment Integrations: Mada, Visa, Apple Pay, Tabby, Tamara, InstaPay, PayPal & Cash-on-Delivery.\n3. Operations Hub: Real-time inventory sync, PDF waybills & invoices, and discount coupons.\n4. Official Domain & Fast SSD Cloud Hosting included.\n\nPricing is tailored to your required catalog and features. Contact our team on WhatsApp (+201107787049) for a free consultation and custom quote! 🚀`;
+        return `Hello! 🛍️ WebStack's Custom E-Commerce Store Solution is handcrafted from scratch:\n\n1. 100% Clean Code: Built with PHP 8+ and MySQL relational database, giving you 100% code ownership and 0% sales commission.\n2. Payment Integrations: Mada, Visa, Apple Pay, Tabby, Tamara, InstaPay, PayPal & Cash-on-Delivery.\n3. Operations Hub: Real-time inventory sync, PDF waybills & invoices, and discount coupons.\n4. Official Domain & Fast SSD Cloud Hosting included.\n\nPricing is tailored to your required catalog and features. Contact our Sales Department on WhatsApp (+201205798302) or Eng. Mostafa (Lead Dev: +201107787049) for a consultation and custom quote! 🚀`;
       }
-      return `أهلاً بحضرتك يا فندم! 🛍️ في WebStack بنقدملك خدمة إنشاء المتاجر الإلكترونية المخصصة:\n\n1. برمجة من الصفر 100%: المتجر يُبنى بالكامل بلغة PHP وقواعد بيانات MySQL بدون قوالب ووردبريس أو منصات مؤجرة تقتطع عمولات.\n2. بوابات الدفع: ربط مدى، فيزا، أبل باي، تابي، تمارا، إنستاباي، والمحافظ والدفع عند الاستلام.\n3. لوحة تحكم ذكية لإدارة المخزون، المنتجات، الفواتير، وبوالص الشحن PDF.\n4. دومين رسمي + استضافة سحابية فائقة السرعة SSD + عقد دعم فني مستمر.\n\nالتكلفة تتحدد بدقة حسب ميزات نشاطك. تفضل بمراسلتنا على واتساب (+201107787049) لمناقشة مشروعك والحصول على استشارة مجانية وعرض سعر مخصص! 🚀`;
+      return `أهلاً بحضرتك يا فندم! 🛍️ في WebStack بنقدملك خدمة إنشاء المتاجر الإلكترونية المخصصة:\n\n1. برمجة من الصفر 100%: المتجر يُبنى بالكامل بلغة PHP وقواعد بيانات MySQL بدون قوالب ووردبريس أو منصات مؤجرة تقتطع عمولات.\n2. بوابات الدفع: ربط مدى، فيزا، أبل باي، تابي، تمارا، إنستاباي، والمحافظ والدفع عند الاستلام.\n3. لوحة تحكم ذكية لإدارة المخزون، المنتجات، الفواتير، وبوالص الشحن PDF.\n4. دومين رسمي + استضافة سحابية فائقة السرعة SSD + عقد دعم فني مستمر.\n\nالتكلفة تتحدد بدقة حسب ميزات نشاطك. تفضل بالتواصل مع قسم المبيعات على واتساب (+201205798302) أو م/ مصطفى (المبرمج الرئيسي: +201107787049) لمناقشة مشروعك والحصول على عرض سعر مخصص! 🚀`;
     }
 
     if (lower.includes('سعر') || lower.includes('باقة') || lower.includes('تكلفة') || lower.includes('كام') || lower.includes('price') || lower.includes('cost') || lower.includes('quote')) {
       if (isEn) {
-        return `At WebStack, "Every client has their own dedicated system".\n\nBecause we build 100% custom from scratch without rigid pre-made templates, pricing is tailored to your exact scope, features, and integrations.\n\nChat with our team on WhatsApp at +201107787049 for an instant free consultation and tailored quotation! 🚀`;
+        return `At WebStack, "Every client has their own dedicated system".\n\nBecause we build 100% custom from scratch without rigid pre-made templates, pricing is tailored to your exact scope, features, and integrations.\n\nChat with our Sales Department on WhatsApp at +201205798302 for an instant free consultation and tailored quotation! 🚀`;
       }
-      return `أهلاً بحضرتك يا فندم! 🌟\nفي WebStack مبدأنا الأساسي: "كل عميل له نظامه الخاص".\n\nلأن كل متجر أو موقع أو نظام بنبنيه من الصفر 100% بدون قوالب جاهزة، فإن التكلفة بتختلف حسب متطلبات مشروعك بدقة والمميزات المطلوبة.\n\nتفضل بالتواصل معنا مباشرة عبر واتساب (+201107787049) وسنكون سعداء بمناقشة فكرتك وتقديم استشارة مجانية وعرض سعر مخصص ودقيق! 🚀`;
+      return `أهلاً بحضرتك يا فندم! 🌟\nفي WebStack مبدأنا الأساسي: "كل عميل له نظامه الخاص".\n\nلأن كل متجر أو موقع أو نظام بنبنيه من الصفر 100% بدون قوالب جاهزة، فإن التكلفة بتختلف حسب متطلبات مشروعك بدقة والمميزات المطلوبة.\n\nتفضل بالتواصل معنا مباشرة عبر قسم المبيعات (+201205798302) وسنكون سعداء بمناقشة فكرتك وتقديم استشارة مجانية وعرض سعر مخصص ودقيق! 🚀`;
     }
 
     if (lower.includes('موقع') || lower.includes('شركات') || lower.includes('تعريفي') || lower.includes('website') || lower.includes('corporate')) {
       if (isEn) {
-        return `WebStack Corporate Websites are engineered for enterprise credibility:\n• Full bilingual support: Arabic and English fully integrated together.\n• High-speed SSD cloud hosting with free SSL certificate.\n• 100% responsive on all mobile, tablet, and PC screens.\n• Direct WhatsApp lead conversion buttons.\n\nMessage our engineering team on WhatsApp (+201107787049) for a custom quotation! 🚀`;
+        return `WebStack Corporate Websites are engineered for enterprise credibility:\n• Full bilingual support: Arabic and English fully integrated together.\n• High-speed SSD cloud hosting with free SSL certificate.\n• 100% responsive on all mobile, tablet, and PC screens.\n• Direct WhatsApp lead conversion buttons.\n\nMessage our Sales Department on WhatsApp (+201205798302) for a custom quotation! 🚀`;
       }
-      return `يا هلا بحضرتك! 🌐\nباقة تصميم المواقع التعريفية للشركات من WebStack بتوفر لك واجهة رقمية تعكس قوة شركتك:\n• دعم كامل للغتين (العربية والإنجليزية معاً) بتنسيق راقٍ ومتجاوب.\n• استضافة سحابية فائقة السرعة SSD مع شهادة أمان SSL.\n• ربط مباشر مع محادثات واتساب لتحويل الزوار لعملاء.\n\nتفضل بالتواصل معنا على واتساب (+201107787049) للحصول على عرض سعر مخصص لموقع شركتك! 🚀`;
+      return `يا هلا بحضرتك! 🌐\nباقة تصميم المواقع التعريفية للشركات من WebStack بتوفر لك واجهة رقمية تعكس قوة شركتك:\n• دعم كامل للغتين (العربية والإنجليزية معاً) بتنسيق راقٍ ومتجاوب.\n• استضافة سحابية فائقة السرعة SSD مع شهادة أمان SSL.\n• ربط مباشر مع محادثات واتساب لتحويل الزوار لعملاء.\n\nتفضل بالتواصل معنا عبر قسم المبيعات (+201205798302) للحصول على عرض سعر مخصص لموقع شركتك! 🚀`;
     }
 
     if (lower.includes('ذكاء') || lower.includes('ai') || lower.includes('واتساب') || lower.includes('whatsapp') || lower.includes('بوت') || lower.includes('bot')) {
       if (isEn) {
-        return `WebStack AI Employees for WhatsApp & Telegram work 24/7:\n• Natural and friendly tone with polite human escalation.\n• Dispatches product photos, specification sheets, and PDF quotations directly in chat.\n• Direct synchronization with your CRM, Google Sheets, and databases.\n\nConnect on WhatsApp (+201107787049) to customize an AI employee for your business! 🚀`;
+        return `WebStack AI Employees for WhatsApp & Telegram work 24/7:\n• Natural and friendly tone with polite human escalation.\n• Dispatches product photos, specification sheets, and PDF quotations directly in chat.\n• Direct synchronization with your CRM, Google Sheets, and databases.\n\nConnect with Sales on WhatsApp (+201205798302) to customize an AI employee for your business! 🚀`;
       }
-      return `يا هلا بحضرتك يا فندم! 🤖\nموظف الذكاء الاصطناعي من WebStack للواتساب وتلجرام بيساعدك على مدار الساعة:\n• ردود طبيعية وودودة 24/7 بلهجة تناسب طبيعة عملائك، مع تحويل العميل للموظف البشري عند الحاجة.\n• إرسال فوري لكتالوجات المنتجات وعروض الأسعار الرسمية PDF وصور المنتجات داخل الشات.\n• تسجيل فوري للطلبات والبيانات في جداول Google وقواعد البيانات.\n\nتواصل معنا على واتساب (+201107787049) لمعرفة التفاصيل وتجربة النظام لنشاطك! 🚀`;
+      return `يا هلا بحضرتك يا فندم! 🤖\nموظف الذكاء الاصطناعي من WebStack للواتساب وتلجرام بيساعدك على مدار الساعة:\n• ردود طبيعية وودودة 24/7 بلهجة تناسب طبيعة عملائك، مع تحويل العميل للموظف البشري عند الحاجة.\n• إرسال فوري لكتالوجات المنتجات وعروض الأسعار الرسمية PDF وصور المنتجات داخل الشات.\n• تسجيل فوري للطلبات والبيانات في جداول Google وقواعد البيانات.\n\nتواصل مع قسم المبيعات (+201205798302) أو م/ مصطفى لمناقشة التفاصيل التقنية! 🚀`;
     }
 
     if (lower.includes('شحن') || lower.includes('لوجست') || lower.includes('shipping') || lower.includes('courier')) {
       if (isEn) {
-        return `Our Smart Shipping & Courier Management Platform features:\n• Printable PDF waybills with high-density barcodes & QR codes.\n• Driver proof-of-delivery mobile interface with signatures.\n• Live tracking portal with automated WhatsApp/SMS customer updates.\n• Cash-on-Delivery (COD) financial reconciliation ledger.\n\nContact us on WhatsApp (+201107787049) for a live preview and consultation! 🚀`;
+        return `Our Smart Shipping & Courier Management Platform features:\n• Printable PDF waybills with high-density barcodes & QR codes.\n• Driver proof-of-delivery mobile interface with signatures.\n• Live tracking portal with automated WhatsApp/SMS customer updates.\n• Cash-on-Delivery (COD) financial reconciliation ledger.\n\nContact Sales on WhatsApp (+201205798302) for a live preview and consultation! 🚀`;
       }
-      return `أهلاً بحضرتك! 🚚\nسيستم الشحن واللوجستيات من WebStack بيوفر لك:\n• إصدار بوالص شحن PDF مع باركود وQR متوافق قياسياً.\n• شاشات للمناديب لتسجيل الاستلام وإثبات التسليم والتوقيع.\n• بوابة تتبع حية للعميل مع إشعارات واتساب لحظية.\n• تسوية دقيقة لمبالغ التحصيل عند الاستلام (COD) والمطابقات البنكية.\n\nتفضل بالتواصل معنا على واتساب (+201107787049) لمناقشة تفاصيل نظامك! 🚀`;
+      return `أهلاً بحضرتك! 🚚\nسيستم الشحن واللوجستيات من WebStack بيوفر لك:\n• إصدار بوالص شحن PDF مع باركود وQR متوافق قياسياً.\n• شاشات للمناديب لتسجيل الاستلام وإثبات التسليم والتوقيع.\n• بوابة تتبع حية للعميل مع إشعارات واتساب لحظية.\n• تسوية دقيقة لمبالغ التحصيل عند الاستلام (COD) والمطابقات البنكية.\n\nتفضل بالتواصل مع قسم المبيعات على واتساب (+201205798302) لمناقشة تفاصيل نظامك! 🚀`;
     }
 
-    if (lower.includes('عمار') || lower.includes('ammar') || lower.includes('تواصل') || lower.includes('رقم') || lower.includes('هاتف') || lower.includes('اتصال') || lower.includes('موبايل') || lower.includes('contact') || lower.includes('phone') || lower.includes('call')) {
+    if (lower.includes('مصطفى') || lower.includes('مبرمج') || lower.includes('عمار') || lower.includes('مبيعات') || lower.includes('ammar') || lower.includes('mostafa') || lower.includes('تواصل') || lower.includes('رقم') || lower.includes('هاتف') || lower.includes('اتصال') || lower.includes('موبايل') || lower.includes('contact') || lower.includes('phone') || lower.includes('call')) {
       if (isEn) {
-        return `Here are our direct team contacts:\n\n• Eng. Ammar (Technical & Engineering Consultant): +20 155 566 8194 (WhatsApp: https://wa.me/201555668194)\n• WebStack Management & Projects: +20 110 778 7049 (WhatsApp: https://wa.me/201107787049)\n\nFeel free to chat with Eng. Ammar directly for tailored technical advice and instant pricing! 🚀`;
+        return `Here are our official team contacts:\n\n• Sales Department (Primary Line): +20 120 579 8302 (Store orders & quotes: https://wa.me/201205798302)\n• Eng. Mostafa (Lead Software Engineer & Developer): +20 110 778 7049 (Technical architecture: https://wa.me/201107787049)\n• Eng. Ammar (Executive Management): +20 155 566 8194 (Operations & contracts: https://wa.me/201555668194)\n\nFeel free to connect directly based on your inquiry! 🚀`;
       }
-      return `يسعدنا تواصلك مع فريقنا الهندسي والإداري مباشرة:\n\n• م/ عمار (استشارات تقنية وهندسية ومبيعات): 01555668194 (+201555668194)\n  واتساب مباشر: https://wa.me/201555668194\n\n• إدارة WebStack وخدمة العملاء: 01107787049 (+201107787049)\n  واتساب مباشر: https://wa.me/201107787049\n\nتفضل بمراسلة م/ عمار أو فريق الإدارة لمناقشة مشروعك والحصول على عرض سعر فوري! 🚀`;
+      return `يسعدنا تواصلك مع فريق WebStack عبر القنوات الرسمية:\n\n• قسم المبيعات (الخط الأساسي): 01205798302 (+201205798302)\n  عروض الأسعار وحجز المتاجر والمشاريع: https://wa.me/201205798302\n\n• م/ مصطفى (المبرمج الرئيسي): 01107787049 (+201107787049)\n  الاستشارات البرمجية والهندسية: https://wa.me/201107787049\n\n• م/ عمار (الإدارة): 01555668194 (+201555668194)\n  التعاقدات الرسمية والاتفاقيات: https://wa.me/201555668194\n\nتفضل باختيار القناة الأنسب وسنكون في خدمتك فوراً! 🚀`;
     }
 
     if (lower.includes('أعمال') || lower.includes('سابقة') || lower.includes('portfolio') || lower.includes('لاروز') || lower.includes('larose') || lower.includes('القمة') || lower.includes('alkemma') || lower.includes('كلين') || lower.includes('ديمو') || lower.includes('demo')) {
@@ -177,7 +177,7 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({ lang }) => {
 • Elsharkawy Farm (Farm-Fresh Dairy Storefront): http://elsharkawy-farm.salah-logistics.uk/
 • Interactive Demos: Fragrance, Beauty, and Sportswear stores available on our Home page!
 
-You can click any showcase card on our homepage to test the live platform directly. Feel free to contact us on WhatsApp (+201107787049) to build your own custom store! 🚀`;
+You can click any showcase card on our homepage to test the live platform directly. Feel free to contact our Sales Department on WhatsApp (+201205798302) to build your own custom store! 🚀`;
       }
       return `يسعدني جداً استعراض سابقة أعمالنا الحية على أرض الواقع:
 • متجر لاروز (Larose Store): متجر إلكتروني حي متكامل للعطور ومستحضرات التجميل والأزياء: https://larose.salah-logistics.uk/
@@ -186,14 +186,14 @@ You can click any showcase card on our homepage to test the live platform direct
 • مزرعة الشرقاوي: متجر حي لمنتجات الألبان والمزارع: http://elsharkawy-farm.salah-logistics.uk/
 • بالإضافة لنماذج ديمو تفاعلية حية لمتاجر العطور ومستحضرات التجميل والرياضة!
 
-يمكنك الضغط على أي صورة أو بطاقة في الصفحة الرئيسية لتجربة المتجر أو الموقع الحي مباشرة. تواصل معنا عبر واتساب (+201107787049) لبرمجة متجرك المخصص! 🚀`;
+يمكنك الضغط على أي صورة أو بطاقة في الصفحة الرئيسية لتجربة المتجر أو الموقع الحي مباشرة. تواصل مع قسم المبيعات عبر واتساب (+201205798302) لبرمجة متجرك المخصص! 🚀`;
     }
 
     if (isEn) {
-      return `Welcome to WebStack! 👋 I'm Ahmed, your smart assistant.\nAt WebStack, "Every client has their own dedicated system" — custom-built with clean code:\n1. Custom E-Commerce Stores (PHP & MySQL, all payment gateways, 0% commissions).\n2. Corporate Bilingual Websites (Arabic & English, fast hosting, SSL).\n3. Natural AI Employees (WhatsApp & Telegram 24/7).\n4. Smart Shipping & Courier Logistics Platforms.\n5. Custom Mobile Apps & POS Systems.\n\nHow can I help you today? You can contact our Management & Sales team directly on WhatsApp (+201107787049) or Eng. Ammar (+201555668194) for a custom quotation! 🚀`;
+      return `Welcome to WebStack! 👋 I'm Ahmed, your smart assistant.\nAt WebStack, "Every client has their own dedicated system" — custom-built with clean code:\n1. Custom E-Commerce Stores (PHP & MySQL, all payment gateways, 0% commissions).\n2. Corporate Bilingual Websites (Arabic & English, fast hosting, SSL).\n3. Natural AI Employees (WhatsApp & Telegram 24/7).\n4. Smart Shipping & Courier Logistics Platforms.\n5. Custom Mobile Apps & POS Systems.\n\nHow can I help you today? You can contact Sales (+201205798302), Eng. Mostafa (Lead Dev: +201107787049), or Eng. Ammar (Mgmt: +201555668194)! 🚀`;
     }
 
-    return `أهلاً بحضرتك يا فندم في شركة WebStack للحلول البرمجية! 👋\nأنا أحمد، مساعدك الذكي:\n\nفي WebStack نؤمن بأن: "كل عميل له نظامه الخاص":\n1. المتاجر الإلكترونية المخصصة: برمجة من الصفر بلغة PHP وقواعد بيانات MySQL بدون قوالب جاهزة و0% عمولات على مبيعاتك.\n2. المواقع الإلكترونية للشركات: تصميم احترافي باللغتين العربية والإنجليزية مع سرعة عالية واستضافة سحابية مؤمنة.\n3. موظفو الذكاء الاصطناعي: ردود طبيعية على مدار الساعة وإرسال ملفات وكتالوجات وعروض أسعار PDF مع تحويل للموظف البشري.\n4. سيستمات الشحن واللوجستيات: إصدار بوالص الشحن، تتبع المناديب، وتسوية تحصيل الـ COD.\n5. تطبيقات الموبايل وأنظمة الكاشير POS وإدارة الشركات.\n\nأي هذه الحلول ترغب في الاستفسار عنها؟ ويمكنك دائماً التواصل مباشرة مع فريق الإدارة والمبيعات عبر واتساب على الخط الأساسي (+201107787049) أو م/ عمار (+201555668194) لاستلام عرض سعر مخصص! 🚀`;
+    return `أهلاً بحضرتك يا فندم في شركة WebStack للحلول البرمجية! 👋\nأنا أحمد، مساعدك الذكي:\n\nفي WebStack نؤمن بأن: "كل عميل له نظامه الخاص":\n1. المتاجر الإلكترونية المخصصة: برمجة من الصفر بلغة PHP وقواعد بيانات MySQL بدون قوالب جاهزة و0% عمولات على مبيعاتك.\n2. المواقع الإلكترونية للشركات: تصميم احترافي باللغتين العربية والإنجليزية مع سرعة عالية واستضافة سحابية مؤمنة.\n3. موظفو الذكاء الاصطناعي: ردود طبيعية على مدار الساعة وإرسال ملفات وكتالوجات وعروض أسعار PDF مع تحويل للموظف البشري.\n4. سيستمات الشحن واللوجستيات: إصدار بوالص الشحن، تتبع المناديب، وتسوية تحصيل الـ COD.\n5. تطبيقات الموبايل وأنظمة الكاشير POS وإدارة الشركات.\n\nأي هذه الحلول ترغب في الاستفسار عنها؟ ويمكنك دائماً التواصل مباشرة مع قسم المبيعات (+201205798302)، أو م/ مصطفى (المبرمج الرئيسي: +201107787049)، أو م/ عمار (الإدارة: +201555668194) لاستلام عرض سعر مخصص! 🚀`;
   };
 
   const sendMessage = async (textToSend?: string) => {
@@ -260,10 +260,10 @@ You can click any showcase card on our homepage to test the live platform direct
     }
   };
 
-  const whatsappEscalationUrl = `https://wa.me/201107787049?text=${encodeURIComponent(
+  const whatsappEscalationUrl = `https://wa.me/201205798302?text=${encodeURIComponent(
     lang === 'ar'
-      ? 'مرحباً فريق WebStack، أود التحدث مع مهندس متخصص بخصوص مشروعي البرمجي وطلب استشارة وعرض سعر مخصص.'
-      : 'Hello WebStack team, I would like to speak directly with an engineer for a free consultation and custom quotation.'
+      ? 'مرحباً قسم المبيعات في WebStack، أود الاستفسار وطلب عرض سعر مخصص لمشروعي.'
+      : 'Hello WebStack Sales Department, I would like to inquire and request a custom quotation.'
   )}`;
 
   return (
@@ -486,27 +486,37 @@ You can click any showcase card on our homepage to test the live platform direct
             </form>
 
             <div className="flex items-center justify-between mt-2 text-[10px] text-slate-500 px-1">
-              <span>{lang === 'ar' ? 'فريق الإدارة والمبيعات:' : 'Management & Sales:'}</span>
-              <div className="flex items-center gap-2 font-bold">
+              <span>{lang === 'ar' ? 'تواصل مباشر:' : 'Direct Contacts:'}</span>
+              <div className="flex items-center gap-1.5 font-bold">
                 <a
                   href={whatsappEscalationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-400 hover:underline flex items-center gap-1"
-                  title="الخط الأساسي للإدارة والمبيعات: 01107787049"
+                  title="المبيعات (الخط الأساسي): 01205798302"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-                  <span>{lang === 'ar' ? 'الخط الأساسي (01107787049)' : 'Primary (01107787049)'}</span>
+                  <span>{lang === 'ar' ? 'المبيعات' : 'Sales'}</span>
+                </a>
+                <span className="text-slate-600">·</span>
+                <a
+                  href="https://wa.me/201107787049"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:underline flex items-center gap-0.5"
+                  title="م/ مصطفى (المبرمج الرئيسي): 01107787049"
+                >
+                  <span>{lang === 'ar' ? 'م/ مصطفى (مبرمج)' : 'Eng. Mostafa'}</span>
                 </a>
                 <span className="text-slate-600">·</span>
                 <a
                   href="https://wa.me/201555668194"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-emerald-400 hover:underline flex items-center gap-1"
-                  title="م/ عمار (فريق الإدارة والمبيعات): 01555668194"
+                  className="text-emerald-400 hover:underline flex items-center gap-0.5"
+                  title="م/ عمار (الإدارة): 01555668194"
                 >
-                  <span>{lang === 'ar' ? 'م/ عمار (01555668194)' : 'Eng. Ammar'}</span>
+                  <span>{lang === 'ar' ? 'م/ عمار (إدارة)' : 'Eng. Ammar'}</span>
                 </a>
               </div>
             </div>

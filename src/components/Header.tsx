@@ -19,10 +19,10 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
     onNavigate(tab, anchor);
   };
 
-  const headerWhatsappUrl = `https://wa.me/201107787049?text=${encodeURIComponent(
+  const headerWhatsappUrl = `https://wa.me/201205798302?text=${encodeURIComponent(
     isAr
-      ? 'مرحباً فريق WebStack، أود الحصول على عرض سعر مخصص لمشروعي البرمجي.'
-      : 'Hello WebStack team, I would like to get a custom quote for my software project.'
+      ? 'مرحباً قسم المبيعات في WebStack، أود الحصول على عرض سعر مخصص لمشروعي.'
+      : 'Hello WebStack Sales Department, I would like to get a custom quote for my project.'
   )}`;
 
   return (
@@ -182,25 +182,47 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
             {isAr ? 'الأسئلة الشائعة وتحديد التكلفة' : 'FAQ & Pricing Model'}
           </button>
 
-          <div className="pt-3 border-t border-slate-800 space-y-2">
+          <div className="pt-3 border-t border-slate-800 space-y-2.5">
+            {/* Sales Department */}
             <div className="flex items-center justify-between text-xs">
               <span className="text-amber-300 font-bold flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>{isAr ? 'إدارة WebStack (الخط الأساسي):' : 'WebStack Mgmt (Primary):'}</span>
+                <span>{isAr ? 'المبيعات (الخط الأساسي):' : 'Sales Dept (Primary):'}</span>
               </span>
               <a
-                href={TEAM_CONTACTS.management.whatsappUrl}
+                href={TEAM_CONTACTS.sales.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-amber-300 font-mono font-bold flex items-center gap-1 hover:underline"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-amber-400" />
+                <span dir="ltr">01205798302</span>
+              </a>
+            </div>
+
+            {/* Eng. Mostafa - Lead Software Engineer */}
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-cyan-300 font-bold flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                <span>{isAr ? 'م/ مصطفى (المبرمج الرئيسي):' : 'Eng. Mostafa (Lead Dev):'}</span>
+              </span>
+              <a
+                href={TEAM_CONTACTS.engMostafa.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-300 font-mono font-bold flex items-center gap-1 hover:underline"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
                 <span dir="ltr">01107787049</span>
               </a>
             </div>
 
+            {/* Eng. Ammar - Executive Management */}
             <div className="flex items-center justify-between text-xs">
-              <span className="text-slate-300 font-medium">{isAr ? 'م/ عمار (إدارة ومبيعات):' : 'Eng. Ammar (Sales & Mgmt):'}</span>
+              <span className="text-slate-300 font-medium flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                <span>{isAr ? 'م/ عمار (الإدارة):' : 'Eng. Ammar (Management):'}</span>
+              </span>
               <a
                 href={TEAM_CONTACTS.engAmmar.whatsappUrl}
                 target="_blank"

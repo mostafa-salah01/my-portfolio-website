@@ -34,10 +34,10 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
     return true;
   }).slice(0, 3);
 
-  const quoteWhatsappUrl = `https://wa.me/201107787049?text=${encodeURIComponent(
+  const quoteWhatsappUrl = `https://wa.me/201205798302?text=${encodeURIComponent(
     isAr
-      ? `مرحباً فريق WebStack، أود الاستفسار وطلب عرض سعر مخصص لخدمة (${service.titleAr}).`
-      : `Hello WebStack team, I would like to request a tailored quote for (${service.titleEn}).`
+      ? `مرحباً قسم المبيعات في WebStack، أود الاستفسار وطلب عرض سعر مخصص لخدمة (${service.titleAr}).`
+      : `Hello WebStack Sales Department, I would like to request a tailored quote for (${service.titleEn}).`
   )}`;
 
   return (

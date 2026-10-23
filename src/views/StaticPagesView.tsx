@@ -11,10 +11,10 @@ export const StaticPagesView: React.FC<StaticPagesViewProps> = ({ pageType, lang
   const isAr = lang === 'ar';
 
   if (pageType === 'partner-program') {
-    const partnerWhatsapp = `https://wa.me/201107787049?text=${encodeURIComponent(
+    const partnerWhatsapp = `https://wa.me/201555668194?text=${encodeURIComponent(
       isAr
-        ? 'مرحباً فريق WebStack، أود الانضمام لبرنامج شركاء المبيعات والعمولة وبدء تسويق الحلول البرمجية.'
-        : 'Hello WebStack team, I would like to join the Sales Partner Program and market your software solutions.'
+        ? 'مرحباً م/ عمار (الإدارة)، أود الانضمام لبرنامج شركاء المبيعات والعمولة وبدء تسويق الحلول البرمجية.'
+        : 'Hello Eng. Ammar (Management), I would like to join the Sales Partner Program and market your software solutions.'
     )}`;
 
     return (

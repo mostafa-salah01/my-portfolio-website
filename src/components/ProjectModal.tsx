@@ -18,7 +18,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
   const features = isAr ? project.featuresAr : project.featuresEn;
   const categoryLabel = isAr ? project.categoryLabelAr : project.categoryLabelEn;
 
-  const whatsappUrl = `https://wa.me/201107787049?text=${encodeURIComponent(project.whatsappMsg)}`;
+  const whatsappUrl = `https://wa.me/201205798302?text=${encodeURIComponent(project.whatsappMsg)}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">

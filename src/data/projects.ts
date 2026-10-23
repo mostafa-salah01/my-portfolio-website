@@ -1050,26 +1050,55 @@ export const OTHER_SERVICES_LIST: ServiceItem[] = SERVICES_DATA.filter((s) =>
   ['ai-employees', 'smart-shipping', 'mobile-pos-apps', 'n8n-automation', 'backend-architecture'].includes(s.id)
 );
 
-// 5. Official Team & Management Contacts
+// 5. Official Team & Department Contacts
 export const TEAM_CONTACTS = {
-  management: {
-    nameAr: 'إدارة WebStack والمبيعات (الخط الأساسي)',
-    nameEn: 'WebStack Management & Sales (Primary Line)',
-    roleAr: 'الخط الأساسي للإدارة والمبيعات وعروض الأسعار',
-    roleEn: 'Primary Line for Management, Sales & Custom Quotes',
+  sales: {
+    nameAr: 'قسم المبيعات (الخط الأساسي)',
+    nameEn: 'Sales Department (Primary Line)',
+    titleAr: 'الخط الأساسي للمبيعات',
+    titleEn: 'Head of Sales & Inquiries',
+    roleAr: 'الخط الأساسي الرسمي للمبيعات وعروض الأسعار وحجز المشاريع',
+    roleEn: 'Primary Line for Commercial Deals, Store Orders & Quotes',
+    phone: '01205798302',
+    phoneIntl: '+20 120 579 8302',
+    whatsappUrl: 'https://wa.me/201205798302?text=' + encodeURIComponent('مرحباً قسم المبيعات في WebStack، أود الاستفسار وطلب عرض سعر مخصص لمشروعي.'),
+    telUrl: 'tel:+201205798302'
+  },
+  engMostafa: {
+    nameAr: 'م/ مصطفى (المبرمج الرئيسي)',
+    nameEn: 'Eng. Mostafa — Lead Software Engineer',
+    titleAr: 'مهندس برمجيات ومطور رئيسي',
+    titleEn: 'Lead Software Engineer & Developer',
+    roleAr: 'المبرمج الرئيسي واستشارات الهندسة البرمجية والمعمارية',
+    roleEn: 'Lead Developer & Technical Architecture Consultations',
     phone: '01107787049',
     phoneIntl: '+20 110 778 7049',
-    whatsappUrl: 'https://wa.me/201107787049?text=' + encodeURIComponent('مرحباً إدارة WebStack، أود الاستفسار وطلب عرض سعر لمشروعي.'),
+    whatsappUrl: 'https://wa.me/201107787049?text=' + encodeURIComponent('مرحباً م/ مصطفى، أود استشارتك برمجياً بخصوص مشروع متجر / موقع لشركتي.'),
     telUrl: 'tel:+201107787049'
   },
   engAmmar: {
-    nameAr: 'م/ عمار (فريق الإدارة والمبيعات)',
-    nameEn: 'Eng. Ammar (Management & Sales Team)',
-    roleAr: 'فريق الإدارة والمبيعات والتعاقدات',
-    roleEn: 'Management, Sales & Commercial Inquiries',
+    nameAr: 'م/ عمار (الإدارة)',
+    nameEn: 'Eng. Ammar — Executive Management',
+    titleAr: 'إدارة العمليات والتعاقدات',
+    titleEn: 'Executive Management & Operations',
+    roleAr: 'إدارة العمليات والتعاقدات والاتفاقيات وشؤون العملاء',
+    roleEn: 'Operations, Contracts, Client Care & Executive Affairs',
     phone: '01555668194',
     phoneIntl: '+20 155 566 8194',
-    whatsappUrl: 'https://wa.me/201555668194?text=' + encodeURIComponent('مرحباً م/ عمار، أود الاستفسار بخصوص عروض الأسعار وباقات المتاجر والمواقع.'),
+    whatsappUrl: 'https://wa.me/201555668194?text=' + encodeURIComponent('مرحباً م/ عمار، أود التواصل مع الإدارة بخصوص التعاقد والاتفاقيات.'),
+    telUrl: 'tel:+201555668194'
+  },
+  // Backward compatibility alias
+  management: {
+    nameAr: 'م/ عمار (الإدارة)',
+    nameEn: 'Eng. Ammar — Executive Management',
+    titleAr: 'إدارة العمليات والتعاقدات',
+    titleEn: 'Executive Management & Operations',
+    roleAr: 'إدارة العمليات والتعاقدات والاتفاقيات وشؤون العملاء',
+    roleEn: 'Operations, Contracts, Client Care & Executive Affairs',
+    phone: '01555668194',
+    phoneIntl: '+20 155 566 8194',
+    whatsappUrl: 'https://wa.me/201555668194?text=' + encodeURIComponent('مرحباً م/ عمار، أود التواصل مع الإدارة بخصوص التعاقد والاتفاقيات.'),
     telUrl: 'tel:+201555668194'
   }
 };

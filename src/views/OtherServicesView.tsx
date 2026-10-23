@@ -129,10 +129,10 @@ export const OtherServicesView: React.FC<OtherServicesViewProps> = ({
       {/* Services List Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {filtered.map((service) => {
-          const serviceWhatsappUrl = `https://wa.me/201107787049?text=${encodeURIComponent(
+          const serviceWhatsappUrl = `https://wa.me/201205798302?text=${encodeURIComponent(
             isAr
-              ? `مرحباً فريق WebStack، أود الاستفسار وطلب عرض سعر مخصص لنظام (${service.titleAr}).`
-              : `Hello WebStack team, I would like to inquire and request a custom quote for (${service.titleEn}).`
+              ? `مرحباً قسم المبيعات في WebStack، أود الاستفسار وطلب عرض سعر مخصص لنظام (${service.titleAr}).`
+              : `Hello WebStack Sales Department, I would like to inquire and request a custom quote for (${service.titleEn}).`
           )}`;
 
           const serviceImage = service.image || '/assets/images/ai_whatsapp_agent_1789851518713.jpg';
