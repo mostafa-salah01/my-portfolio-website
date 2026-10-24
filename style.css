@@ -879,6 +879,19 @@ body {
   pointer-events: auto;
 }
 
+/* Mobile-adapted smooth card offsets to guarantee zero horizontal scrollbar trigger */
+@media (max-width: 640px) {
+  .card-hidden-right {
+    transform: translateX(18px) scale(0.97);
+  }
+  .card-hidden-left {
+    transform: translateX(-18px) scale(0.97);
+  }
+  .card-hidden-up {
+    transform: translateY(28px) scale(0.97);
+  }
+}
+
 .floating-tech-orb {
   animation: float-slow 7s ease-in-out infinite;
 }

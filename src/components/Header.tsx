@@ -27,22 +27,22 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-2xl bg-[#07090E]/90 border-b border-amber-500/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
         
         {/* Brand Logo */}
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-3 text-start group cursor-pointer"
+          className="flex items-center gap-2 sm:gap-3 text-start group cursor-pointer shrink-0"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#DC2626] via-[#B91C1C] to-[#D97706] flex items-center justify-center font-mono font-bold text-white text-base shadow-[0_0_20px_rgba(220,38,38,0.45)] ring-1 ring-amber-400/40 group-hover:scale-105 transition-transform shrink-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-tr from-[#DC2626] via-[#B91C1C] to-[#D97706] flex items-center justify-center font-mono font-bold text-white text-sm sm:text-base shadow-[0_0_15px_rgba(220,38,38,0.45)] ring-1 ring-amber-400/40 group-hover:scale-105 transition-transform shrink-0">
             &gt;_
           </div>
           <div className="flex flex-col justify-center">
-            <div className="font-extrabold text-lg tracking-tight text-white flex items-center gap-2">
+            <div className="font-extrabold text-base sm:text-lg tracking-tight text-white flex items-center gap-1.5 sm:gap-2">
               <span className="font-sans">WebStack</span>
-              <span className="inline-block w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
+              <span className="inline-block w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
             </div>
-            <div className="text-[11px] text-amber-200/80 font-medium leading-none">
+            <div className="hidden md:block text-[11px] text-amber-200/80 font-medium leading-none">
               {isAr ? 'حلول البرمجيات والمتاجر المخصصة' : 'Custom Software & E-Commerce'}
             </div>
           </div>
@@ -95,39 +95,40 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
           </button>
         </nav>
 
-        {/* Action Buttons */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
-          {/* Language Switcher */}
+        {/* Action Buttons - Fully Optimized for Mobile Viewports */}
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          {/* Language Switcher - Sleek Circle on Mobile ("مجرد كورة بس") */}
           <button
             type="button"
             onClick={onToggleLang}
-            className="h-10 px-3.5 rounded-xl border border-amber-500/25 bg-slate-900/80 hover:bg-slate-800 text-xs font-bold text-slate-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm hover:border-amber-400/50"
-            aria-label="Toggle language"
+            className="w-8 h-8 sm:w-auto sm:h-10 sm:px-3.5 rounded-full sm:rounded-xl border border-amber-500/30 bg-slate-900/90 hover:bg-slate-800 text-xs font-bold text-slate-200 transition-all flex items-center justify-center sm:gap-1.5 cursor-pointer shadow-sm hover:border-amber-400/60 active:scale-95 shrink-0"
+            aria-label={isAr ? 'التحويل للإنجليزية' : 'Switch to Arabic'}
+            title={isAr ? 'English' : 'العربية'}
           >
-            <Globe className="w-4 h-4 text-amber-400" />
-            <span>{isAr ? 'English' : 'العربية'}</span>
+            <Globe className="w-4 h-4 text-amber-400 shrink-0" />
+            <span className="hidden sm:inline font-mono text-xs">{isAr ? 'English' : 'العربية'}</span>
           </button>
 
-          {/* WhatsApp Quote CTA */}
+          {/* WhatsApp Quote CTA - Compact on Mobile */}
           <a
             href={headerWhatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white font-bold text-xs sm:text-sm shadow-[0_0_20px_rgba(220,38,38,0.35)] hover:scale-105 transition-all shrink-0 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white font-bold text-[11px] sm:text-xs md:text-sm shadow-[0_0_15px_rgba(220,38,38,0.35)] hover:scale-105 active:scale-95 transition-all shrink-0 cursor-pointer whitespace-nowrap"
           >
-            <MessageCircle className="w-4 h-4 shrink-0" />
+            <MessageCircle className="w-3.5 h-3.5 shrink-0" />
+            <span className="inline sm:hidden">{isAr ? 'عرض سعر' : 'Quote'}</span>
             <span className="hidden sm:inline">{isAr ? 'احصل على عرض سعر' : 'Get Custom Quote'}</span>
-            <span className="sm:hidden">{isAr ? 'عرض سعر' : 'Quote'}</span>
           </a>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle ("القائمة التلاتراير") - Always Visible & Clearly Positioned */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl bg-slate-900 border border-amber-500/25 hover:bg-slate-800 text-slate-200 cursor-pointer"
-            aria-label="Toggle navigation menu"
+            className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-slate-900 border border-amber-500/30 hover:bg-slate-800 text-slate-200 cursor-pointer shrink-0 active:scale-95 transition-all shadow-sm"
+            aria-label={isAr ? 'فتح القائمة الرئيسية' : 'Toggle navigation menu'}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 text-amber-400" /> : <Menu className="w-5 h-5 text-amber-400" />}
           </button>
         </div>
 

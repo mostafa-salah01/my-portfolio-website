@@ -137,7 +137,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#07090E] text-slate-300 relative selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="min-h-screen bg-[#07090E] text-slate-300 relative selection:bg-amber-500/30 selection:text-amber-200 overflow-x-hidden w-full max-w-full">
       
       {/* Luxury Ambient Glow Blobs */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[850px] h-[500px] blob-pastel-blue pointer-events-none z-0"></div>

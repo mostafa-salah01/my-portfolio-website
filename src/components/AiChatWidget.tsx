@@ -342,7 +342,7 @@ You can click any showcase card on our homepage to test the live platform direct
 
       {/* Chat Window Modal (Always anchored to the RIGHT) */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 !left-auto w-[95vw] sm:w-[410px] h-[580px] max-h-[85vh] rounded-2xl bg-[#0B0F19] border border-amber-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.85)] flex flex-col overflow-hidden backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-50 !left-auto w-[calc(100vw-24px)] max-w-[410px] h-[580px] max-h-[85vh] rounded-2xl bg-[#0B0F19] border border-amber-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.85)] flex flex-col overflow-hidden backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-200">
           
           {/* Header */}
           <div className="p-4 bg-gradient-to-r from-slate-900 via-slate-900 to-[#1A1215] border-b border-amber-500/20 flex items-center justify-between">

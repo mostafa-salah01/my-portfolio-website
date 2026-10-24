@@ -124,20 +124,20 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-xl mx-auto sm:max-w-none">
             <a
               href={generalQuoteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#DC2626] via-[#B91C1C] to-[#D97706] text-white font-extrabold text-sm sm:text-base shadow-[0_10px_30px_rgba(220,38,38,0.4)] ring-1 ring-amber-400/40 hover:scale-105 active:scale-95 transition-all flex items-center gap-2.5 cursor-pointer"
+              className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-gradient-to-r from-[#DC2626] via-[#B91C1C] to-[#D97706] text-white font-extrabold text-xs sm:text-base shadow-[0_10px_30px_rgba(220,38,38,0.4)] ring-1 ring-amber-400/40 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2.5 cursor-pointer"
             >
-              <MessageCircle className="w-5 h-5 shrink-0" />
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
               <span>{isAr ? 'احصل على استشارة وعرض سعر مجاني' : 'Get Free Consultation & Quote'}</span>
             </a>
 
             <button
               onClick={() => onNavigate('home', 'client-work')}
-              className="px-6 py-3.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-amber-300 font-bold text-sm sm:text-base border border-amber-500/30 hover:border-amber-400 transition-all flex items-center gap-2 cursor-pointer shadow-sm hover:scale-105"
+              className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-amber-300 font-bold text-xs sm:text-base border border-amber-500/30 hover:border-amber-400 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:scale-105"
             >
               <span>{isAr ? 'معاينة سابقة أعمالنا الحية' : 'Explore Live Client Stores'}</span>
               <ArrowRight className="w-4 h-4 rtl:rotate-180" />
@@ -146,7 +146,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
             {/* Dedicated Button to the Second Page: Other Services */}
             <button
               onClick={() => onNavigate('other-services')}
-              className="px-5 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500/20 via-slate-900 to-rose-500/20 hover:from-amber-500/30 hover:to-rose-500/30 text-amber-300 hover:text-white font-bold text-xs sm:text-sm border border-amber-500/40 hover:border-amber-400 transition-all flex items-center gap-2 cursor-pointer shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:scale-105"
+              className="w-full sm:w-auto px-4 sm:px-5 py-3 sm:py-3.5 rounded-2xl bg-gradient-to-r from-amber-500/20 via-slate-900 to-rose-500/20 hover:from-amber-500/30 hover:to-rose-500/30 text-amber-300 hover:text-white font-bold text-xs sm:text-sm border border-amber-500/40 hover:border-amber-400 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:scale-105"
             >
               <Cpu className="w-4 h-4 text-amber-400" />
               <span>{isAr ? 'الخدمات والأنظمة البرمجية الأخرى' : 'Other Systems & Services'}</span>
