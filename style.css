@@ -795,6 +795,117 @@ body {
   }
 }
 
+/* ==========================================================================
+   Visual Effects & Motion Graphics System
+   Bespoke Typewriter, Staggered Card Entrances, Glowing Lights & Particles
+   ========================================================================== */
+
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+@keyframes float-slow-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(12px) rotate(-1.5deg); }
+}
+
+@keyframes pulse-aura {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.1); }
+}
+
+@keyframes laser-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes live-ping-slow {
+  0% { transform: scale(1); opacity: 0.9; }
+  75%, 100% { transform: scale(2.4); opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.15em;
+  background: linear-gradient(180deg, #F59E0B, #DC2626);
+  margin-inline-start: 4px;
+  margin-inline-end: 2px;
+  vertical-align: text-bottom;
+  border-radius: 1px;
+  animation: typewriter-blink 0.75s infinite;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.8);
+}
+
+.card-entrance {
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.card-hidden-right {
+  opacity: 0 !important;
+  transform: translateX(70px) rotate(1.5deg) scale(0.95);
+  pointer-events: none;
+}
+
+.card-hidden-left {
+  opacity: 0 !important;
+  transform: translateX(-70px) rotate(-1.5deg) scale(0.95);
+  pointer-events: none;
+}
+
+.card-hidden-up {
+  opacity: 0 !important;
+  transform: translateY(80px) scale(0.92);
+  pointer-events: none;
+}
+
+.card-visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) rotate(0deg) scale(1) !important;
+  pointer-events: auto;
+}
+
+.floating-tech-orb {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.floating-tech-orb-reverse {
+  animation: float-slow-reverse 8.5s ease-in-out infinite;
+}
+
+.live-beacon {
+  position: relative;
+}
+.live-beacon::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  background: inherit;
+  animation: live-ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  opacity: 0.7;
+}
+
+.shimmer-animated-border {
+  background: linear-gradient(90deg, rgba(245,158,11,0.2) 0%, rgba(220,38,38,0.5) 50%, rgba(245,158,11,0.2) 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   * {
