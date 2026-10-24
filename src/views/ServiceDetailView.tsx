@@ -1,9 +1,16 @@
 import React from 'react';
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, MessageCircle, ExternalLink, 
-  ShieldCheck, ShoppingBag, Globe, Bot, Truck, Smartphone, Cpu, Database, Sparkles, Layers
+  ShieldCheck, ShoppingBag, Globe, Bot, Truck, Smartphone, Cpu, Database, Sparkles, Layers,
+  PhoneCall
 } from 'lucide-react';
 import { SERVICES_DATA, PORTFOLIO_PROJECTS, ServiceItem, ProjectItem } from '../data/projects';
+import {
+  AmbientBackgroundGlow,
+  AlternatingCardReveal,
+  TypewriterHeading,
+  TypewriterText
+} from '../components/AnimatedVisuals';
 
 interface ServiceDetailViewProps {
   slug: string;
@@ -34,6 +41,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
     return true;
   }).slice(0, 3);
 
+  // Primary Sales Number 01205798302
   const quoteWhatsappUrl = `https://wa.me/201205798302?text=${encodeURIComponent(
     isAr
       ? `مرحباً قسم المبيعات في WebStack، أود الاستفسار وطلب عرض سعر مخصص لخدمة (${service.titleAr}).`
@@ -42,6 +50,8 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
 
   return (
     <div className="relative z-10 pt-28 pb-20">
+      <AmbientBackgroundGlow />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Link */}
@@ -75,16 +85,30 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
               )}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
-              {isAr ? service.titleAr : service.titleEn}
-            </h1>
+            <TypewriterHeading
+              as="h1"
+              text={isAr ? service.titleAr : service.titleEn}
+              startTrigger={true}
+              speed={28}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4"
+            />
 
-            <p className="text-amber-300 font-mono text-sm sm:text-base mb-4">
-              {isAr ? service.taglineAr : service.taglineEn}
+            <p className="text-amber-300 font-mono text-sm sm:text-base mb-4 min-h-[28px]">
+              <TypewriterText
+                text={isAr ? service.taglineAr : service.taglineEn}
+                startTrigger={true}
+                speed={20}
+                delay={200}
+              />
             </p>
 
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
-              {isAr ? service.fullDescAr : service.fullDescEn}
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 min-h-[60px]">
+              <TypewriterText
+                text={isAr ? service.fullDescAr : service.fullDescEn}
+                startTrigger={true}
+                speed={14}
+                delay={350}
+              />
             </p>
 
             {/* CTAs */}
@@ -101,7 +125,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
 
               <button
                 onClick={() => onNavigate('home', 'portfolio')}
-                className="px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-amber-300 font-bold text-sm sm:text-base border border-amber-500/30 transition-all flex items-center gap-2 cursor-pointer shadow-sm"
+                className="px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-amber-300 font-bold text-sm sm:text-base border border-amber-500/30 transition-all flex items-center gap-2 cursor-pointer shadow-sm hover:scale-105"
               >
                 <span>{isAr ? 'معاينة المتاجر والمواقع الحية' : 'View Live Stores & Sites'}</span>
                 <ArrowRight className="w-4 h-4 rtl:rotate-180" />
@@ -110,7 +134,8 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
           </div>
 
           {/* Quick Deliverables Box (Col 4) */}
-          <div className="lg:col-span-4 bg-[#0B0F19] rounded-2xl p-6 border border-amber-500/30 shadow-xl">
+          <div className="lg:col-span-4 bg-[#0B0F19] rounded-2xl p-6 border border-amber-500/30 shadow-2xl relative overflow-hidden group">
+            <div className="absolute top-0 end-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
             <h3 className="text-sm font-bold text-amber-400 mb-4 flex items-center gap-2 font-mono">
               <Sparkles className="w-4 h-4" />
               <span>{isAr ? 'أبرز مميزات التنفيذ' : 'Key Specifications'}</span>
@@ -126,128 +151,157 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
             </div>
 
             <div className="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400 space-y-1 font-mono">
-              <div>✓ Official Domain & SSL Included</div>
+              <div className="text-emerald-400 font-bold">✓ Official Domain & SSL Included</div>
               <div>✓ 100% Code & DB Ownership</div>
               <div>✓ Zero Ongoing Platform Cut</div>
             </div>
           </div>
         </div>
 
-        {/* Detailed Breakdown Features Grid */}
-        <div className="my-16">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-6 text-center">
-            {isAr ? 'كيف يتم تنفيذ هذا الحل في WebStack؟' : 'How We Engineer This Solution'}
-          </h2>
+        {/* Detailed Breakdown Features Grid with 3-Way Alternating Card Reveal */}
+        <div className="my-20">
+          <div className="text-center mb-8">
+            <TypewriterHeading
+              as="h2"
+              text={isAr ? 'كيف يتم تنفيذ هذا الحل في WebStack؟' : 'How We Engineer This Solution'}
+              className="text-2xl sm:text-3xl font-extrabold text-white mb-2"
+              speed={28}
+            />
+            <p className="text-xs sm:text-sm text-slate-400 font-mono">
+              {isAr ? 'مراحل هندسية احترافية تضمن أعلى جودة وتكامل تشغيلي' : 'Standard engineering lifecycle ensuring peak reliability'}
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center font-bold mb-4 font-mono">
-                01
+            <AlternatingCardReveal index={0} isParentVisible={true} staggerDelayMs={120}>
+              <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-amber-500/40 transition-all h-full shadow-lg">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center font-bold mb-4 font-mono">
+                  01
+                </div>
+                <h3 className="text-base font-bold text-white mb-2">
+                  {isAr ? 'جلسات استشارية تفصيلية' : 'Bespoke Blueprint & Scope'}
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {isAr
+                    ? 'بنمشي معاك خطوة بخطوة لحد ما نحلل ونفهم طبيعة تجارتك وتفاصيل منتجاتك وسير العمل قبل البدء.'
+                    : 'We walk step-by-step with you to map your exact catalog, operations, and business rules.'}
+                </p>
               </div>
-              <h3 className="text-base font-bold text-white mb-2">
-                {isAr ? 'جلسات استشارية تفصيلية' : 'Bespoke Blueprint & Scope'}
-              </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                {isAr
-                  ? 'بنمشي معاك خطوة بخطوة لحد ما نحلل ونفهم طبيعة تجارتك وتفاصيل منتجاتك وسير العمل قبل البدء.'
-                  : 'We walk step-by-step with you to map your exact catalog, operations, and business rules.'}
-              </p>
-            </div>
+            </AlternatingCardReveal>
 
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 flex items-center justify-center font-bold mb-4 font-mono">
-                02
+            <AlternatingCardReveal index={1} isParentVisible={true} staggerDelayMs={120}>
+              <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-rose-500/40 transition-all h-full shadow-lg">
+                <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 flex items-center justify-center font-bold mb-4 font-mono">
+                  02
+                </div>
+                <h3 className="text-base font-bold text-white mb-2">
+                  {isAr ? 'كود نظيف وأمان فائق' : 'Clean Code Architecture'}
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {isAr
+                    ? 'برمجة خالية من القوالب الجاهزة البطيئة لضمان أعلى سرعة وأمان ومرونة للتوسع المستقبلي.'
+                    : 'High-performance architecture built for instant responsiveness, scalability, and robust security.'}
+                </p>
               </div>
-              <h3 className="text-base font-bold text-white mb-2">
-                {isAr ? 'كود نظيف وأمان فائق' : 'Clean Code Architecture'}
-              </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                {isAr
-                  ? 'برمجة خالية من القوالب الجاهزة البطيئة لضمان أعلى سرعة وأمان ومرونة للتوسع المستقبلي.'
-                  : 'High-performance architecture built for instant responsiveness, scalability, and robust security.'}
-              </p>
-            </div>
+            </AlternatingCardReveal>
 
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-bold mb-4 font-mono">
-                03
+            <AlternatingCardReveal index={2} isParentVisible={true} staggerDelayMs={120}>
+              <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/40 transition-all h-full shadow-lg">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-bold mb-4 font-mono">
+                  03
+                </div>
+                <h3 className="text-base font-bold text-white mb-2">
+                  {isAr ? 'دعم فني ومتابعة مستمرة' : 'Cloud Launch & Support'}
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {isAr
+                    ? 'تسليم كامل لكود المشروع مع استضافة سحابية فائقة السرعة وعقد صيانة ودعم تقني دائم.'
+                    : 'Full cloud deployment, custom domain setup, and ongoing technical maintenance.'}
+                </p>
               </div>
-              <h3 className="text-base font-bold text-white mb-2">
-                {isAr ? 'دعم فني ومتابعة مستمرة' : 'Cloud Launch & Support'}
-              </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                {isAr
-                  ? 'تسليم كامل لكود المشروع مع استضافة سحابية فائقة السرعة وعقد صيانة ودعم تقني دائم.'
-                  : 'Full cloud deployment, custom domain setup, and ongoing technical maintenance.'}
-              </p>
-            </div>
+            </AlternatingCardReveal>
           </div>
         </div>
 
         {/* Related Portfolio Items (e.g. Larose Store, Clean Al-Mithalia, etc.) */}
         {relatedProjects.length > 0 && (
-          <div className="my-16">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-6 text-center">
-              {isAr ? 'سابقة أعمال ومشاريع حية مرتبطة بهذه الخدمة' : 'Related Live Production Showcases'}
-            </h2>
+          <div className="my-20">
+            <div className="text-center mb-8">
+              <TypewriterHeading
+                as="h2"
+                text={isAr ? 'سابقة أعمال ومشاريع حية مرتبطة بهذه الخدمة' : 'Related Live Production Showcases'}
+                className="text-2xl sm:text-3xl font-extrabold text-white mb-2"
+                speed={28}
+              />
+              <p className="text-xs sm:text-sm text-slate-400 font-mono">
+                {isAr ? 'اضغط على أي مشروع لتصفح النظام والواجهات مباشرة على الإنترنت' : 'Click any showcase to launch and test live online'}
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {relatedProjects.map((p) => (
-                <div
+              {relatedProjects.map((p, pIdx) => (
+                <AlternatingCardReveal
                   key={p.id}
-                  className="rounded-2xl bg-[#0B0F19] border border-amber-500/20 overflow-hidden flex flex-col justify-between hover:border-amber-400/50 transition-all group cursor-pointer"
-                  onClick={() => {
-                    if (p.liveUrl) {
-                      window.open(p.liveUrl, '_blank', 'noopener,noreferrer');
-                    } else {
-                      onSelectProject(p);
-                    }
-                  }}
-                  title={isAr ? `اضغط لمعاينة ${p.titleAr} مباشرة` : `Click to open ${p.titleEn} directly`}
+                  index={pIdx}
+                  isParentVisible={true}
+                  staggerDelayMs={140}
                 >
-                  <div className="relative aspect-video w-full bg-slate-950 overflow-hidden">
-                    <img
-                      src={p.image}
-                      alt={isAr ? p.titleAr : p.titleEn}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2">
-                      <span className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
-                        <span>{isAr ? 'فتح الرابط الحي ↗' : 'Open Live Link ↗'}</span>
-                      </span>
+                  <div
+                    className="rounded-2xl bg-[#0B0F19] border border-amber-500/20 overflow-hidden flex flex-col justify-between hover:border-amber-400/50 transition-all group cursor-pointer h-full shadow-xl"
+                    onClick={() => {
+                      if (p.liveUrl) {
+                        window.open(p.liveUrl, '_blank', 'noopener,noreferrer');
+                      } else {
+                        onSelectProject(p);
+                      }
+                    }}
+                    title={isAr ? `اضغط لمعاينة ${p.titleAr} مباشرة` : `Click to open ${p.titleEn} directly`}
+                  >
+                    <div className="relative aspect-video w-full bg-slate-950 overflow-hidden">
+                      <img
+                        src={p.image}
+                        alt={isAr ? p.titleAr : p.titleEn}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2">
+                        <span className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#DC2626] to-[#D97706] text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                          <span>{isAr ? 'فتح الرابط الحي ↗' : 'Open Live Link ↗'}</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-4 flex-1">
+                      <h3 className="text-sm sm:text-base font-bold text-white mb-1 group-hover:text-amber-300 transition-colors">
+                        {isAr ? p.titleAr : p.titleEn}
+                      </h3>
+                      <p className="text-xs text-slate-300 line-clamp-2 mb-3">
+                        {isAr ? p.taglineAr : p.taglineEn}
+                      </p>
+                    </div>
+                    <div 
+                      className="p-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <button
+                        onClick={() => onSelectProject(p)}
+                        className="text-xs font-bold text-amber-300 hover:text-white cursor-pointer"
+                      >
+                        {isAr ? 'المواصفات' : 'Specs'}
+                      </button>
+                      {p.liveUrl && (
+                        <a
+                          href={p.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1"
+                        >
+                          <span>{isAr ? 'زيارة الموقع الحي' : 'Visit Live'}</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      )}
                     </div>
                   </div>
-                  <div className="p-4 flex-1">
-                    <h3 className="text-sm sm:text-base font-bold text-white mb-1 group-hover:text-amber-300 transition-colors">
-                      {isAr ? p.titleAr : p.titleEn}
-                    </h3>
-                    <p className="text-xs text-slate-300 line-clamp-2 mb-3">
-                      {isAr ? p.taglineAr : p.taglineEn}
-                    </p>
-                  </div>
-                  <div 
-                    className="p-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <button
-                      onClick={() => onSelectProject(p)}
-                      className="text-xs font-bold text-amber-300 hover:text-white cursor-pointer"
-                    >
-                      {isAr ? 'المواصفات' : 'Specs'}
-                    </button>
-                    {p.liveUrl && (
-                      <a
-                        href={p.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1"
-                      >
-                        <span>{isAr ? 'زيارة الموقع الحي' : 'Visit Live'}</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    )}
-                  </div>
-                </div>
+                </AlternatingCardReveal>
               ))}
             </div>
           </div>

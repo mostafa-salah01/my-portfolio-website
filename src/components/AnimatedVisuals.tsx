@@ -224,6 +224,7 @@ interface AlternatingCardRevealProps {
   className?: string;
   onClick?: () => void;
   title?: string;
+  staggerDelayMs?: number;
 }
 
 export const AlternatingCardReveal: React.FC<AlternatingCardRevealProps> = ({
@@ -232,7 +233,8 @@ export const AlternatingCardReveal: React.FC<AlternatingCardRevealProps> = ({
   children,
   className = '',
   onClick,
-  title
+  title,
+  staggerDelayMs = 120
 }) => {
   const [isRenderedVisible, setIsRenderedVisible] = useState(false);
 
@@ -242,14 +244,14 @@ export const AlternatingCardReveal: React.FC<AlternatingCardRevealProps> = ({
   useEffect(() => {
     if (!isParentVisible) return;
 
-    // Staggered delay: card 0: 100ms, card 1: 220ms, card 2: 340ms, etc.
-    const staggerDelay = (index % 6) * 120 + 80;
+    // Staggered delay: card 0: 80ms, card 1: 80 + staggerDelayMs, etc.
+    const staggerDelay = (index % 6) * staggerDelayMs + 80;
     const timer = setTimeout(() => {
       setIsRenderedVisible(true);
     }, staggerDelay);
 
     return () => clearTimeout(timer);
-  }, [isParentVisible, index]);
+  }, [isParentVisible, index, staggerDelayMs]);
 
   // Determine hidden class based on alternating direction
   let hiddenClass = 'card-hidden-up';
