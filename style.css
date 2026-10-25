@@ -919,6 +919,33 @@ body {
   animation: gradient-shift 4s ease infinite;
 }
 
+/* Hand Holding Pen Animation & Handwriting Styles */
+@keyframes pen-write {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-5deg) translateY(-2px);
+  }
+  100% {
+    transform: rotate(4deg) translateY(1px);
+  }
+}
+
+.animate-pen-write {
+  animation: pen-write 0.26s infinite alternate ease-in-out;
+  transform-origin: bottom right;
+}
+
+[dir="ltr"] .animate-pen-write {
+  transform-origin: bottom left;
+}
+
+.handwritten-glow-finish {
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+  transition: text-shadow 0.6s ease;
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -928,3 +955,4 @@ body {
     scroll-behavior: auto !important;
   }
 }
+

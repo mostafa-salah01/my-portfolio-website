@@ -106,13 +106,23 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
             <CyclicTypewriter phrases={isAr ? rolesAr : rolesEn} />
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.2] mb-6">
+          {/* Main Headline with Hand Holding Pen Writing */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.25] mb-6">
             <span className="block text-slate-100">
-              {isAr ? 'إنشاء المتاجر الإلكترونية وتصميم المواقع' : 'Custom E-Commerce Stores & Corporate Websites'}
+              <TypewriterText
+                text={isAr ? 'إنشاء المتاجر الإلكترونية وتصميم المواقع' : 'Custom E-Commerce Stores & Corporate Websites'}
+                speed={28}
+                delay={200}
+                showPen={true}
+              />
             </span>
             <span className="gold-gradient-text block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#FDE68A] via-[#F59E0B] to-[#D97706]">
-              {isAr ? 'برمجة مخصصة 100% من الصفر بدون قوالب جاهزة' : '100% Handcrafted Code With Zero Template Bloat'}
+              <TypewriterText
+                text={isAr ? 'برمجة مخصصة 100% من الصفر بدون قوالب جاهزة' : '100% Handcrafted Code With Zero Template Bloat'}
+                speed={26}
+                delay={1200}
+                showPen={true}
+              />
             </span>
           </h1>
 

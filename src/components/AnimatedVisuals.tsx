@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { HandHoldingPen, HandwrittenHeading, HandwrittenText } from './HandwrittenPenWriter';
+export { HandHoldingPen, HandwrittenHeading, HandwrittenText };
 
 // ============================================================================
 // 1. Custom Hook: Intersection Observer for Scroll Reveals
@@ -35,8 +37,8 @@ export function useScrollIntersection(
 }
 
 // ============================================================================
-// 2. Typewriter Text Component
-// Types text character-by-character when scrolled into view
+// 2. Typewriter Text Component with Realistic Hand & Pen Writing Effect
+// Types text character-by-character when scrolled into view with animated pen
 // ============================================================================
 interface TypewriterTextProps {
   text: string;
@@ -47,23 +49,27 @@ interface TypewriterTextProps {
   startTrigger?: boolean;
   onComplete?: () => void;
   showCursor?: boolean;
+  showPen?: boolean;
 }
 
 export const TypewriterText: React.FC<TypewriterTextProps> = ({
   text,
-  speed = 36,
+  speed = 34,
   delay = 100,
   className = '',
   cursorClassName = 'typewriter-cursor',
   startTrigger = true,
   onComplete,
-  showCursor = true
+  showCursor = true,
+  showPen = true
 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   const textRef = useRef(text);
   textRef.current = text;
+
+  const isRtl = typeof document !== 'undefined' ? document.documentElement.dir === 'rtl' : true;
 
   useEffect(() => {
     if (!startTrigger) return;
@@ -84,9 +90,11 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
 
         if (currentIdx >= targetText.length) {
           clearInterval(intervalId);
-          setIsTyping(false);
-          setIsFinished(true);
-          if (onComplete) onComplete();
+          setTimeout(() => {
+            setIsTyping(false);
+            setIsFinished(true);
+            if (onComplete) onComplete();
+          }, 300);
         }
       }, speed);
     }, delay);
@@ -98,9 +106,14 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   }, [text, startTrigger, speed, delay]);
 
   return (
-    <span className={`inline ${className}`}>
-      {displayedText}
-      {showCursor && (!isFinished || isTyping) && (
+    <span className={`inline relative ${className} ${isFinished ? 'handwritten-glow-finish' : ''}`}>
+      <span>{displayedText}</span>
+      {/* Hand Holding Pen writing every letter with glowing nib */}
+      {showPen && isTyping && (
+        <HandHoldingPen isRtl={isRtl} isWriting={isTyping} />
+      )}
+      {/* Fallback cursor if pen is disabled */}
+      {!showPen && showCursor && (!isFinished || isTyping) && (
         <span className={cursorClassName} aria-hidden="true" />
       )}
     </span>
@@ -108,7 +121,7 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
 };
 
 // ============================================================================
-// 3. Scroll-Triggered Heading with Typewriter
+// 3. Scroll-Triggered Heading with Typewriter & Hand Pen
 // Observes viewport and writes the headline live
 // ============================================================================
 interface TypewriterHeadingProps {
@@ -117,9 +130,11 @@ interface TypewriterHeadingProps {
   speed?: number;
   delay?: number;
   className?: string;
+  startTrigger?: boolean;
   highlightWords?: string[];
   highlightClass?: string;
   onFinished?: () => void;
+  showPen?: boolean;
 }
 
 export const TypewriterHeading: React.FC<TypewriterHeadingProps> = ({
@@ -128,9 +143,12 @@ export const TypewriterHeading: React.FC<TypewriterHeadingProps> = ({
   speed = 32,
   delay = 150,
   className = '',
-  onFinished
+  startTrigger,
+  onFinished,
+  showPen = true
 }) => {
-  const [containerRef, isVisible] = useScrollIntersection({ threshold: 0.2 });
+  const [containerRef, isVisible] = useScrollIntersection({ threshold: 0.15 });
+  const shouldStart = startTrigger !== undefined ? (startTrigger && isVisible) || startTrigger : isVisible;
 
   return (
     <div ref={containerRef}>
@@ -139,8 +157,9 @@ export const TypewriterHeading: React.FC<TypewriterHeadingProps> = ({
           text={text}
           speed={speed}
           delay={delay}
-          startTrigger={isVisible}
+          startTrigger={shouldStart}
           onComplete={onFinished}
+          showPen={showPen}
         />
       </Component>
     </div>

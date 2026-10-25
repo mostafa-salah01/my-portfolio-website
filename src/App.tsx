@@ -8,6 +8,7 @@ import { OtherServicesView } from './views/OtherServicesView';
 import { ServiceDetailView } from './views/ServiceDetailView';
 import { StaticPagesView } from './views/StaticPagesView';
 import { ProjectItem } from './data/projects';
+import { CelebrationMouseCanvas } from './components/CelebrationMouseCanvas';
 
 export const App: React.FC = () => {
   // Initialize language from localStorage or default to Arabic
@@ -139,6 +140,9 @@ export const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#07090E] text-slate-300 relative selection:bg-amber-500/30 selection:text-amber-200 overflow-x-hidden w-full max-w-full">
       
+      {/* Interactive Celebration Mouse Trail & Click Fireworks (Fixed Canvas) */}
+      <CelebrationMouseCanvas enabled={true} />
+
       {/* Luxury Ambient Glow Blobs */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[850px] h-[500px] blob-pastel-blue pointer-events-none z-0"></div>
       <div className="fixed top-48 -right-24 w-[600px] h-[600px] blob-pastel-teal pointer-events-none z-0"></div>
