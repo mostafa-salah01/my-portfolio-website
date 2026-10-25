@@ -253,6 +253,35 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
     badge: 'ورشة معمارية'
   },
   {
+    id: 'remix-voltedge-perfumes',
+    titleEn: 'Remix VoltEdge Perfumes — Luxury Royal Fragrances & Oud Live Store Demo',
+    titleAr: 'متجر العطور الملكية والبخور الفاخر ريمكس (Remix VoltEdge Perfumes) - نموذج حي',
+    taglineEn: 'Turnkey royal luxury fragrance boutique: oriental oud, fragrance pyramid, 50ml/100ml bottle sizing, gift packaging & instant checkout',
+    taglineAr: 'نموذج متجر إلكتروني ملكي فاخر للعطور الشرقية والغربية والعود والبخور مع استعراض الهرم العطري، اختيار الأحجام، باقات الهدايا، وسلة ذكية ودفع فوري',
+    image: '/assets/images/demo_perfumes_store.jpg',
+    category: 'ecommerce-demos',
+    categoryLabelEn: 'Live Store Demo',
+    categoryLabelAr: 'نموذج متجر حي',
+    metricsEn: 'Live Store Demo · 100% Interactive',
+    metricsAr: 'نموذج حي متكامل · تفاعلي بالكامل',
+    tech: ['Luxury Perfumes UI', 'Fragrance Pyramid', 'Bottle Sizes (50/100ml)', 'Custom Gift Boxes', 'Instant Checkout'],
+    featuresEn: [
+      'Live interactive store demo engineered for Remix VoltEdge Perfumes (http://remix-voltedge-perfumes.codix.uk/)',
+      'Royal aesthetic showcasing top, heart, and base fragrance pyramid notes with luxury dark-gold styling',
+      'Bottle capacity selector (50ml / 100ml / Extrait) with dynamic live price calculation',
+      'Luxury gift box packaging add-on, personalized greeting cards, and instant cart drawer checkout'
+    ],
+    featuresAr: [
+      'نموذج حي تفاعلي لمتجر العطور الملكية ريمكس (Remix VoltEdge Perfumes) جاهز للمعاينة الفورية وتجربة الشراء',
+      'واجهة ملكية فاخرة تستعرض نوتات الهرم العطري (القمة، القلب، والقاعدة) بأسلوب راقٍ ومميز',
+      'اختيار أحجام الزجاجات (50ml / 100ml) وحساب السعر آلياً وفورياً مع دعم باقات العطور',
+      'إمكانية إضافة علب الهدايا الفاخرة وتخصيص بطاقات الإهداء ودفع إلكتروني آمن وسريع'
+    ],
+    liveUrl: 'http://remix-voltedge-perfumes.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت نموذج متجر العطور الملكية (Remix VoltEdge Perfumes) http://remix-voltedge-perfumes.codix.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
+    badge: 'نموذج متجر حي'
+  },
+  {
     id: 'voltedge-perfumes',
     titleEn: 'Voltedge Perfumes — Luxury Fragrances & Oud Live Store',
     titleAr: 'متجر العطور الملكية والبخور الفاخر (Voltedge Perfumes) - متجر إلكتروني حي',
@@ -277,8 +306,8 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
       'إمكانية إضافة علب الهدايا الفاخرة وتخصيص بطاقات الإهداء بلمسة راقية',
       'دفع إلكتروني آمن مع فواتير PDF فورية تؤكد تفاصيل ومحتوى الطلب'
     ],
-    liveUrl: 'http://perfumes.codix.uk/',
-    whatsappMsg: 'مرحباً فريق WebStack، شاهدت متجر العطور (Voltedge Perfumes) http://perfumes.codix.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
+    liveUrl: 'http://remix-voltedge-perfumes.codix.uk/',
+    whatsappMsg: 'مرحباً فريق WebStack، شاهدت متجر العطور (Voltedge Perfumes) http://remix-voltedge-perfumes.codix.uk/ وأرغب في برمجة متجر مماثل لنشاطي والحصول على عرض سعر مخصص',
     badge: 'متجر عطور'
   },
   {
@@ -1031,10 +1060,10 @@ export const CLIENT_PROJECTS: ProjectItem[] = PORTFOLIO_PROJECTS.filter((p) =>
 // 2. Interactive turnkey demo stores (المتاجر الاستعراضية الجاهزة للمعاينة)
 export const DEMO_STORES: ProjectItem[] = PORTFOLIO_PROJECTS.filter((p) =>
   [
+    'remix-voltedge-perfumes',
     'voltedge-furniture',
     'voltedge-fashion',
     'voltedge-atelier',
-    'voltedge-perfumes',
     'voltedge-sports',
     'voltedge-beauty'
   ].includes(p.id)
