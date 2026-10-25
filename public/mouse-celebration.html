@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مؤثر الماوس الاحتفالي | شرارات وانفجارات تفاعلية خفيفة</title>
+  
+  <!-- خط عربي أنيق وواضح -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       1. المتغيرات والأساسيات (قابل للتعديل بسهولة)
+       ========================================================== */
+    :root {
+      --bg-dark: #070B12;
+      --bg-card: #0D1424;
+      --bg-card-border: rgba(224, 165, 38, 0.18);
+      --gold-primary: #E0A526;
+      --gold-light: #F7D070;
+      --cyan-soft: #38BDF8;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --btn-danger: #EF4444;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    /* ==========================================================
+       2. كانفاس المؤثر الاحتفالي (الأساسي - لا يحجب أي نقرات)
+       ========================================================== */
+    #celebration-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999999; /* في الواجهة فوق كل العناصر دون منع الضغط */
+    }
+
+    /* ==========================================================
+       3. تنسيق صفحة المعاينة التفاعلية
+       ========================================================== */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      position: relative;
+      z-index: 10;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(224, 165, 38, 0.1);
+      border: 1px solid rgba(224, 165, 38, 0.3);
+      color: var(--gold-primary);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #FFFFFF 30%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* بطاقة التجربة التفاعلية */
+    .interactive-card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .test-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .btn {
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-primary), #B88214);
+      color: #0A0E17;
+      box-shadow: 0 4px 15px rgba(224, 165, 38, 0.25);
+    }
+    .btn-gold:hover {
+      box-shadow: 0 6px 20px rgba(224, 165, 38, 0.4);
+    }
+
+    .btn-cyan {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--cyan-soft);
+    }
+    .btn-cyan:hover {
+      background: rgba(56, 189, 248, 0.2);
+    }
+
+    .btn-red {
+      background: linear-gradient(135deg, #EF4444, #B91C1C);
+      color: white;
+      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+    }
+
+    .input-field {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      margin-top: 12px;
+      transition: border-color 0.2s ease;
+    }
+    .input-field:focus {
+      border-color: var(--gold-primary);
+    }
+
+    /* صندوق كود النسخ الجاهز */
+    .code-box {
+      background: #04060A;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 30px;
+      position: relative;
+    }
+
+    .code-box header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      text-align: right;
+    }
+
+    .code-box h3 {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .copy-btn {
+      background: rgba(224, 165, 38, 0.15);
+      border: 1px solid rgba(224, 165, 38, 0.4);
+      color: var(--gold-primary);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover {
+      background: rgba(224, 165, 38, 0.25);
+    }
+
+    pre {
+      direction: ltr;
+      text-align: left;
+      overflow-x: auto;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 0.85rem;
+      color: #38BDF8;
+      max-height: 280px;
+      line-height: 1.45;
+    }
+
+    /* زر تشغيل / إيقاف المؤثر العائم (إمكانية الوصول) */
+    .toggle-effect-btn {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 1000000;
+      background: var(--bg-card);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      transition: all 0.2s ease;
+    }
+    .toggle-effect-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(224, 165, 38, 0.25);
+    }
+    .toggle-effect-btn.disabled {
+      border-color: rgba(255, 255, 255, 0.2);
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. عنصر الكانفاس الوحيد بكامل الشاشة -->
+  <canvas id="celebration-canvas"></canvas>
+
+  <!-- 2. زر تشغيل / تعطيل المؤثر العائم -->
+  <button id="toggle-effect" class="toggle-effect-btn" aria-label="تشغيل أو تعطيل مؤثر الشرارات" aria-pressed="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>
+    </svg>
+    <span id="toggle-label">المؤثر: مفعل</span>
+  </button>
+
+  <!-- 3. المحتوى التجريبي والتوضيحي -->
+  <div class="container">
+    <header>
+      <div class="badge">✨ خفيف وسريع · زيرو مكتبات · أقل من 6KB</div>
+      <h1>حرّك الماوس… واضغط في أي مكان!</h1>
+      <p class="subtitle">
+        أثر شرارات يتبع سرعة الماوس، وانفجار ألعاب نارية مع حلقة موجية عند كل ضغطة. تم بناؤه بنظام Object Pool وتوقف ذاتي ذكي للكانفاس للحفاظ على المعالج والبطارية 100%.
+      </p>
+    </header>
+
+    <!-- بطاقة الاختبار المباشر -->
+    <div class="interactive-card">
+      <h2 class="card-title">منطقة التجربة التفاعلية</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        جرّب تحريك مؤشر الماوس بسرعة وبطء، أو اضغط عدة ضغطات متتالية هنا وفي أي مكان على الصفحة:
+      </p>
+
+      <div class="test-actions">
+        <button class="btn btn-gold" onclick="console.log('انقر زر ذهبي')">
+          <span>زر رئيسي تفاعلي</span>
+          <span>⚡</span>
+        </button>
+        <button class="btn btn-cyan" onclick="console.log('انقر زر سماوي')">
+          <span>شاهد الألعاب النارية</span>
+          <span>🎆</span>
+        </button>
+        <button class="btn btn-red" onclick="console.log('احصل على عرض سعر')">
+          <span>احصل على عرض سعر</span>
+        </button>
+      </div>
+
+      <!-- حقل إدخال لاختبار تجاهل إطلاق الجزيئات بداخله للحفاظ على تجربة الكتابة -->
+      <div style="margin-top: 18px;">
+        <label for="demo-input" style="font-size: 0.88rem; color: var(--text-muted); display: block;">
+          حقل نصي (مضبوط لتجاهل الشرارات عند الكتابة حتى لا يشوش على المستخدم):
+        </label>
+        <input id="demo-input" class="input-field" type="text" placeholder="اكتب أي شيء هنا لتجربة السلوك الهادئ...">
+      </div>
+    </div>
+
+    <!-- ميزات الأداء والأمان -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 36px;">
+      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 20px; border-radius: var(--radius-md);">
+        <h3 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 6px;">🎯 توقف تلقائي 0% CPU</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">حلقة الرسم تتوقف كلياً عن العمل لحظة اختفاء الجزيئات، ولا تستهلك فريم واحد في الفراغ.</p>
+      </div>
+      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 20px; border-radius: var(--radius-md);">
+        <h3 style="color: var(--cyan-soft); font-size: 1rem; margin-bottom: 6px;">♻️ تقنية Object Pool</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">إعادة تدوير نفس الكائنات بحد أقصى 250 جزيء، مما يمنع بطء Garbage Collector تماماً.</p>
+      </div>
+      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 20px; border-radius: var(--radius-md);">
+        <h3 style="color: #4ADE80; font-size: 1rem; margin-bottom: 6px;">📱 ذكي مع شاشات اللمس</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">على الهواتف، يعمل انفجار خفيف عند النقر فقط (18 جزيء) بدون أثر سحب حتى لا يعيق التمرير السلس.</p>
+      </div>
+    </div>
+
+    <!-- كود النسخ السريع لأي موقع آخر -->
+    <div class="code-box">
+      <header>
+        <h3>📋 كود جاهز للنسخ في موقعك (ضع السكربت والكانفاس قبل إغلاق body)</h3>
+        <button class="copy-btn" id="copy-script-btn">نسخ كود السكربت</button>
+      </header>
+      <pre><code>&lt;!-- 1. أضف الكانفاس في نهاية الصفحة --&gt;
+&lt;canvas id="celebration-canvas" style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:999999;"&gt;&lt;/canvas&gt;
+
+&lt;!-- 2. ثم ألصق كود السكربت أدناه مباشرة --&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       4. كود المؤثر الاحتفالي النقي (Vanilla JS - 0 Dependencies)
+       ========================================================== -->
+  <script id="celebration-effect-script">
+  (() => {
+    'use strict';
+
+    /* ==========================================================
+       مصفوفة الألوان والخيارات القابلة للتخصيص
+       (يمكنك استبدالها بدرجات الذهبي فقط أو أي هوية بصرية تريدها)
+       ========================================================== */
+    const CONFIG = {
+      // ألوان الجزيئات (ذهب، برتقالي، أحمر مرجاني، وردي، سماوي، أخضر ليموني، بنفسجي، أبيض)
+      COLORS: [
+        '#FFD700', // ذهبي
+        '#FFA500', // برتقالي
+        '#FF4757', // أحمر مرجاني
+        '#FF6B81', // وردي احتفالي
+        '#2ED573', // أخضر ليموني
+        '#1E90FF', // أزرق سماوي
+        '#A55EEA', // بنفسجي فاتح
+        '#FFFFFF'  // أبيض ساطع
+      ],
+      MAX_PARTICLES: 250,        // أقصى عدد جزيئات نشطة في الكانفاس في نفس اللحظة
+      BURST_COUNT_DESKTOP: 38,   // عدد جزيئات انفجار النقر على الديسكتوب (30 - 45)
+      BURST_COUNT_TOUCH: 18,     // عدد جزيئات انفجار النقر على الموبايل
+      TRAIL_CHANCE: 0.85,        // احتمالية صدور شرارة أثناء حركة الماوس
+      GRAVITY: 0.08,             // قوة الجاذبية الهابطة
+      FRICTION: 0.982            // مقاومة الهواء
+    };
+
+    // عناصر الصفحة
+    const canvas = document.getElementById('celebration-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d', { alpha: true });
+
+    // مواءمة حجم الشاشة والـ DPR (بحد أقصى 2 للأداء المثالي)
+    let dpr = 1;
+    let width = 0;
+    let height = 0;
+
+    function resizeCanvas() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas, { passive: true });
+
+    // حالة التفعيل / التعطيل
+    let isEffectEnabled = true;
+
+    // استرجاع الإعداد من التخزين المحلي ومراعاة تفضيل تقليل الحركة
+    try {
+      const saved = localStorage.getItem('celebration_effect_enabled');
+      if (saved !== null) {
+        isEffectEnabled = saved === 'true';
+      } else {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) isEffectEnabled = false;
+      }
+    } catch (_) {}
+
+    /* ==========================================================
+       Object Pool لإعادة تدوير الجزيئات بدون استهلاك ذاكرة
+       ========================================================== */
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.active = false;
+        this.x = 0;
+        this.y = 0;
+        this.vx = 0;
+        this.vy = 0;
+        this.size = 2;
+        this.color = '#FFF';
+        this.alpha = 1;
+        this.decay = 0.02;
+        this.shape = 'dot'; // 'dot' أو 'star'
+        this.rotation = 0;
+        this.vRot = 0;
+        this.gravity = CONFIG.GRAVITY;
+      }
+    }
+
+    // مسبح الجزيئات المسبقة التجهيز (250 كائن ثابت)
+    const particlePool = Array.from({ length: CONFIG.MAX_PARTICLES }, () => new Particle());
+
+    // موجات النقر الصادمة (Expanding Rings)
+    const rings = [];
+
+    // جلب جزيء خامل من المسبح
+    function getParticle() {
+      for (let i = 0; i < particlePool.length; i++) {
+        if (!particlePool[i].active) {
+          return particlePool[i];
+        }
+      }
+      return null; // المسبح ممتلئ، نتجاهل الإضافة للحفاظ على الـ 60 FPS
+    }
+
+    /* ==========================================================
+       إنشاء شرارة أثر الماوس (Trail Spark)
+       ========================================================== */
+    function spawnTrail(x, y, speed) {
+      if (!isEffectEnabled) return;
+
+      // عدد الشرارات يعتمد على سرعة الماوس (1 إلى 3 شرارات)
+      const count = Math.min(Math.floor(speed * 0.15) + 1, 3);
+
+      for (let i = 0; i < count; i++) {
+        const p = getParticle();
+        if (!p) break;
+
+        const color = CONFIG.COLORS[Math.floor(Math.random() * CONFIG.COLORS.length)];
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = (Math.random() * 2 + 1) * Math.min(speed * 0.12, 2.5);
+
+        p.active = true;
+        p.x = x;
+        p.y = y;
+        p.vx = Math.cos(angle) * velocity;
+        p.vy = Math.sin(angle) * velocity;
+        p.size = Math.random() * 3 + 1.8;
+        p.color = color;
+        p.alpha = 1;
+        // تلاشي خلال 400 إلى 800ms (تقريباً 25 - 45 إطار)
+        p.decay = 1 / (Math.random() * 20 + 25);
+        p.shape = Math.random() > 0.4 ? 'star' : 'dot';
+        p.rotation = Math.random() * Math.PI;
+        p.vRot = (Math.random() - 0.5) * 0.15;
+        p.gravity = 0.02; // جاذبية طفيفة جداً للشرارات
+      }
+      startLoop();
+    }
+
+    /* ==========================================================
+       انفجار الألعاب النارية عند النقر (Click Explosion)
+       ========================================================== */
+    function spawnExplosion(x, y, isTouch = false) {
+      if (!isEffectEnabled) return;
+
+      const count = isTouch ? CONFIG.BURST_COUNT_TOUCH : CONFIG.BURST_COUNT_DESKTOP;
+
+      // إضافة حلقة الصدمة السريعة
+      rings.push({
+        x: x,
+        y: y,
+        radius: 4,
+        maxRadius: isTouch ? 40 : 65,
+        alpha: 0.8,
+        color: CONFIG.COLORS[Math.floor(Math.random() * CONFIG.COLORS.length)]
+      });
+
+      // إطلاق الجزيئات في 360 درجة
+      for (let i = 0; i < count; i++) {
+        const p = getParticle();
+        if (!p) break;
+
+        const angle = Math.random() * Math.PI * 2;
+        // سرعات متفاوتة لإعطاء عمق وانفجار عضوي
+        const speed = Math.random() * 6.5 + 2.2;
+        const color = CONFIG.COLORS[Math.floor(Math.random() * CONFIG.COLORS.length)];
+
+        p.active = true;
+        p.x = x;
+        p.y = y;
+        p.vx = Math.cos(angle) * speed;
+        p.vy = Math.sin(angle) * speed;
+        p.size = Math.random() * 4.2 + 2;
+        p.color = color;
+        p.alpha = 1;
+        // تلاشي خلال 900 إلى 1300ms (تقريباً 55 - 78 إطار)
+        p.decay = 1 / (Math.random() * 25 + 55);
+        p.shape = Math.random() > 0.5 ? 'star' : 'dot';
+        p.rotation = Math.random() * Math.PI * 2;
+        p.vRot = (Math.random() - 0.5) * 0.2;
+        p.gravity = CONFIG.GRAVITY;
+      }
+
+      startLoop();
+    }
+
+    /* ==========================================================
+       رسم النجمة الرباعية المتوهجة (4-Pointed Sparkle Star)
+       ========================================================== */
+    function drawStar(context, cx, cy, spikes, outerRadius, innerRadius) {
+      let rot = Math.PI / 2 * 3;
+      let x = cx;
+      let y = cy;
+      const step = Math.PI / spikes;
+
+      context.beginPath();
+      context.moveTo(cx, cy - outerRadius);
+      for (let i = 0; i < spikes; i++) {
+        x = cx + Math.cos(rot) * outerRadius;
+        y = cy + Math.sin(rot) * outerRadius;
+        context.lineTo(x, y);
+        rot += step;
+
+        x = cx + Math.cos(rot) * innerRadius;
+        y = cy + Math.sin(rot) * innerRadius;
+        context.lineTo(x, y);
+        rot += step;
+      }
+      context.lineTo(cx, cy - outerRadius);
+      context.closePath();
+      context.fill();
+    }
+
+    /* ==========================================================
+       حلقة التحديث والرسم الموحدة (Single rAF Loop with Auto-Stop)
+       ========================================================== */
+    let animationFrameId = null;
+    let isRunning = false;
+
+    function render() {
+      // مسح الكانفاس
+      ctx.clearRect(0, 0, width, height);
+
+      let activeCount = 0;
+
+      // 1. رسم وتحديث حلقات الصدمة
+      for (let i = rings.length - 1; i >= 0; i--) {
+        const ring = rings[i];
+        ring.radius += 2.8;
+        ring.alpha -= 0.045;
+
+        if (ring.alpha <= 0 || ring.radius >= ring.maxRadius) {
+          rings.splice(i, 1);
+          continue;
+        }
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(ring.x, ring.y, ring.radius, 0, Math.PI * 2);
+        ctx.strokeStyle = ring.color;
+        ctx.lineWidth = 2;
+        ctx.globalAlpha = Math.max(0, ring.alpha);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // 2. تحديث ورسم الجزيئات
+      for (let i = 0; i < particlePool.length; i++) {
+        const p = particlePool[i];
+        if (!p.active) continue;
+
+        activeCount++;
+
+        // تحديث الموضع
+        p.vx *= CONFIG.FRICTION;
+        p.vy *= CONFIG.FRICTION;
+        p.vy += p.gravity;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rotation += p.vRot;
+        p.alpha -= p.decay;
+
+        // إخماد الجزيء عند انقضاء عمره أو خروجه من الشاشة
+        if (p.alpha <= 0.01 || p.x < -20 || p.x > width + 20 || p.y > height + 20) {
+          p.reset();
+          continue;
+        }
+
+        // رسم الجزيء بتوهج خفيف
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.alpha);
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 6;
+
+        if (p.shape === 'star') {
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rotation);
+          drawStar(ctx, 0, 0, 4, p.size * 1.5, p.size * 0.45);
+        } else {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+
+      // التوقف الذكي: إذا لم يعد هناك أي جزيء أو حلقة نشطة، نوقف الـ Loop تماماً لتوفير المعالج
+      if (activeCount > 0 || rings.length > 0) {
+        animationFrameId = requestAnimationFrame(render);
+      } else {
+        isRunning = false;
+        animationFrameId = null;
+      }
+    }
+
+    function startLoop() {
+      if (!isRunning) {
+        isRunning = true;
+        animationFrameId = requestAnimationFrame(render);
+      }
+    }
+
+    // إيقاف الرسم عند إخفاء التبويب للحفاظ على موارد الجهاز
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+          isRunning = false;
+        }
+      }
+    });
+
+    /* ==========================================================
+       التقاط أحداث المؤشر (Pointer Events)
+       ========================================================== */
+    let lastX = 0;
+    let lastY = 0;
+    let lastTime = 0;
+
+    // أثر الماوس (Trail) - يعمل فقط عند وجود ماوس (pointerType !== 'touch')
+    window.addEventListener('pointermove', (e) => {
+      if (!isEffectEnabled) return;
+      if (e.pointerType === 'touch') return; // لا أثر أثناء السحب على الشاشات اللمسية
+
+      const now = performance.now();
+      const dt = now - lastTime || 16;
+      const dx = e.clientX - lastX;
+      const dy = e.clientY - lastY;
+      const speed = Math.hypot(dx, dy) / (dt / 16); // بكسل لكل فريم
+
+      lastX = e.clientX;
+      lastY = e.clientY;
+      lastTime = now;
+
+      // إنشاء شرارات فقط عند سرعة معقولة
+      if (speed > 1.2 && Math.random() < CONFIG.TRAIL_CHANCE) {
+        spawnTrail(e.clientX, e.clientY, speed);
+      }
+    }, { passive: true });
+
+    // انفجار النقر (Burst)
+    window.addEventListener('pointerdown', (e) => {
+      if (!isEffectEnabled) return;
+
+      // تجاهل الانفجار إذا كان المستخدم يركز داخل حقل نصي أو textarea
+      const target = e.target;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
+        return;
+      }
+
+      // لا يعيق السلوك الأصلي لأي زر أو رابط (passive)
+      const isTouch = e.pointerType === 'touch';
+      spawnExplosion(e.clientX, e.clientY, isTouch);
+    }, { passive: true });
+
+    /* ==========================================================
+       التحكم وإمكانية الوصول (Accessibility Toggle Button)
+       ========================================================== */
+    const toggleBtn = document.getElementById('toggle-effect');
+    const toggleLabel = document.getElementById('toggle-label');
+
+    function updateToggleButton() {
+      if (!toggleBtn || !toggleLabel) return;
+      toggleBtn.setAttribute('aria-pressed', isEffectEnabled.toString());
+      if (isEffectEnabled) {
+        toggleBtn.classList.remove('disabled');
+        toggleLabel.textContent = 'المؤثر: مفعل';
+      } else {
+        toggleBtn.classList.add('disabled');
+        toggleLabel.textContent = 'المؤثر: متوقف';
+        // مسح أي جزيئات متبقية فوراً
+        for (let p of particlePool) p.reset();
+        rings.length = 0;
+        ctx.clearRect(0, 0, width, height);
+      }
+    }
+    updateToggleButton();
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // منع إطلاق انفجار على زر التبديل نفسه
+        isEffectEnabled = !isEffectEnabled;
+        try {
+          localStorage.setItem('celebration_effect_enabled', isEffectEnabled.toString());
+        } catch (_) {}
+        updateToggleButton();
+      });
+    }
+
+    // زر نسخ الكود للاستخدام الخارجي
+    const copyBtn = document.getElementById('copy-script-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const scriptElement = document.getElementById('celebration-effect-script');
+        if (!scriptElement) return;
+
+        const codeToCopy = `<canvas id="celebration-canvas" style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:999999;"></canvas>\n<script>\n${scriptElement.textContent.trim()}\n<\/script>`;
+
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          copyBtn.textContent = '✓ تم النسخ بنجاح!';
+          setTimeout(() => {
+            copyBtn.textContent = 'نسخ كود السكربت';
+          }, 2500);
+        }).catch(() => {
+          copyBtn.textContent = 'يرجى النسخ يدوياً';
+        });
+      });
+    }
+
+  })();
+  </script>
+</body>
+</html>
