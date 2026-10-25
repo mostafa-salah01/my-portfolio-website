@@ -143,10 +143,19 @@ export const App: React.FC = () => {
       {/* Interactive Celebration Mouse Trail & Click Fireworks (Fixed Canvas) */}
       <CelebrationMouseCanvas enabled={true} />
 
-      {/* Luxury Ambient Glow Blobs */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[850px] h-[500px] blob-pastel-blue pointer-events-none z-0"></div>
-      <div className="fixed top-48 -right-24 w-[600px] h-[600px] blob-pastel-teal pointer-events-none z-0"></div>
-      <div className="fixed top-96 -left-24 w-[600px] h-[600px] blob-pastel-peach pointer-events-none z-0"></div>
+      {/* Luxury Ambient Glow Blobs with GPU Layer Isolation */}
+      <div 
+        className="fixed top-0 left-1/2 -translate-x-1/2 w-[340px] md:w-[850px] h-[300px] md:h-[500px] blob-pastel-blue pointer-events-none z-0"
+        style={{ transform: 'translate3d(-50%, 0, 0)' }}
+      />
+      <div 
+        className="fixed top-48 -right-16 md:-right-24 w-[280px] md:w-[600px] h-[280px] md:h-[600px] blob-pastel-teal pointer-events-none z-0 opacity-60 md:opacity-100"
+        style={{ transform: 'translateZ(0)' }}
+      />
+      <div 
+        className="fixed top-96 -left-16 md:-left-24 w-[280px] md:w-[600px] h-[280px] md:h-[600px] blob-pastel-peach pointer-events-none z-0 opacity-60 md:opacity-100"
+        style={{ transform: 'translateZ(0)' }}
+      />
 
       {/* Main App Header */}
       <Header

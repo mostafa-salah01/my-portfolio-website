@@ -13,14 +13,14 @@ interface HandHoldingPenProps {
   className?: string;
 }
 
-export const HandHoldingPen: React.FC<HandHoldingPenProps> = ({
+const HandHoldingPenComponent: React.FC<HandHoldingPenProps> = ({
   isRtl = true,
   isWriting = true,
   className = ''
 }) => {
   return (
     <span
-      className={`inline-block select-none pointer-events-none transition-all duration-300 align-middle ${
+      className={`inline-block select-none pointer-events-none transition-transform duration-200 align-middle ${
         isWriting ? 'animate-pen-write' : 'opacity-0 scale-75 translate-y-2'
       } ${className}`}
       style={{
@@ -30,7 +30,8 @@ export const HandHoldingPen: React.FC<HandHoldingPenProps> = ({
         marginInlineStart: '2px',
         marginInlineEnd: '2px',
         verticalAlign: 'text-bottom',
-        transformOrigin: isRtl ? 'bottom right' : 'bottom left'
+        transformOrigin: isRtl ? 'bottom right' : 'bottom left',
+        willChange: 'transform'
       }}
       aria-hidden="true"
     >
@@ -40,10 +41,11 @@ export const HandHoldingPen: React.FC<HandHoldingPenProps> = ({
         viewBox="0 0 64 72"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={`filter drop-shadow(0 2px 8px rgba(245, 158, 11, 0.45)) ${
-          isRtl ? 'scale-x-[-1]' : ''
-        }`}
-        style={{ overflow: 'visible' }}
+        className={isRtl ? 'scale-x-[-1]' : ''}
+        style={{ 
+          overflow: 'visible',
+          filter: 'drop-shadow(0 2px 5px rgba(245, 158, 11, 0.4))'
+        }}
       >
         <defs>
           {/* Gold metallic gradient for pen body & nib */}
@@ -67,11 +69,6 @@ export const HandHoldingPen: React.FC<HandHoldingPenProps> = ({
             <stop offset="50%" stopColor="#E8A87C" />
             <stop offset="100%" stopColor="#C38D64" />
           </linearGradient>
-
-          {/* Ink glow filter */}
-          <filter id="inkGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" />
-          </filter>
         </defs>
 
         {/* 1. Pen Body / Shaft */}
@@ -154,7 +151,7 @@ export const HandHoldingPen: React.FC<HandHoldingPenProps> = ({
           cy="58"
           r="4.5"
           fill="#F59E0B"
-          filter="url(#inkGlow)"
+          opacity="0.75"
           className="animate-pulse"
         />
         <circle
@@ -167,6 +164,8 @@ export const HandHoldingPen: React.FC<HandHoldingPenProps> = ({
     </span>
   );
 };
+
+export const HandHoldingPen = React.memo(HandHoldingPenComponent);
 
 // ============================================================================
 // HandwrittenText Component

@@ -882,22 +882,53 @@ body {
 /* Mobile-adapted smooth card offsets to guarantee zero horizontal scrollbar trigger */
 @media (max-width: 640px) {
   .card-hidden-right {
-    transform: translateX(18px) scale(0.97);
+    transform: translateY(14px) scale(0.98);
   }
   .card-hidden-left {
-    transform: translateX(-18px) scale(0.97);
+    transform: translateY(14px) scale(0.98);
   }
   .card-hidden-up {
-    transform: translateY(28px) scale(0.97);
+    transform: translateY(16px) scale(0.98);
+  }
+  .card-entrance {
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 }
 
 .floating-tech-orb {
   animation: float-slow 7s ease-in-out infinite;
+  will-change: transform;
 }
 
 .floating-tech-orb-reverse {
   animation: float-slow-reverse 8.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Mobile GPU Performance Optimization:
+   Pause background blur animations on mobile screens to maintain rock-solid 60 FPS scrolling
+   and bypass expensive multi-layer backdrop-filters */
+@media (max-width: 768px) {
+  .floating-tech-orb,
+  .floating-tech-orb-reverse {
+    animation: none !important;
+  }
+  
+  /* Disable expensive backdrop blurs on mobile phones for buttery smooth scrolling */
+  .backdrop-blur-xl,
+  .backdrop-blur-lg,
+  .backdrop-blur-md,
+  .backdrop-blur-sm,
+  .backdrop-blur {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* CSS Content Visibility: skips off-screen layout calculations until scrolled near */
+.section-lazy-contain {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 750px;
 }
 
 .live-beacon {
@@ -922,19 +953,20 @@ body {
 /* Hand Holding Pen Animation & Handwriting Styles */
 @keyframes pen-write {
   0% {
-    transform: rotate(0deg) translateY(0px);
+    transform: translate3d(0, 0px, 0) rotate(0deg);
   }
   50% {
-    transform: rotate(-5deg) translateY(-2px);
+    transform: translate3d(-1px, -2px, 0) rotate(-5deg);
   }
   100% {
-    transform: rotate(4deg) translateY(1px);
+    transform: translate3d(1px, 1px, 0) rotate(4deg);
   }
 }
 
 .animate-pen-write {
   animation: pen-write 0.26s infinite alternate ease-in-out;
   transform-origin: bottom right;
+  will-change: transform;
 }
 
 [dir="ltr"] .animate-pen-write {
@@ -942,8 +974,8 @@ body {
 }
 
 .handwritten-glow-finish {
-  text-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
-  transition: text-shadow 0.6s ease;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+  transition: text-shadow 0.4s ease;
 }
 
 /* Reduced motion preference */

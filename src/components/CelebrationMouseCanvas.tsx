@@ -36,9 +36,18 @@ export const CelebrationMouseCanvas: React.FC<CelebrationMouseCanvasProps> = ({ 
       '#FFFFFF'  // Pure White
     ];
 
-    const MAX_PARTICLES = 250;
-    const BURST_COUNT_DESKTOP = 38;
-    const BURST_COUNT_TOUCH = 18;
+    const isMobileDevice = () => {
+      return typeof window !== 'undefined' && (
+        window.innerWidth < 768 || 
+        'ontouchstart' in window || 
+        navigator.maxTouchPoints > 0
+      );
+    };
+
+    const isMobile = isMobileDevice();
+    const MAX_PARTICLES = isMobile ? 100 : 250;
+    const BURST_COUNT_DESKTOP = 36;
+    const BURST_COUNT_TOUCH = 14;
     const GRAVITY = 0.08;
     const FRICTION = 0.982;
 
@@ -47,7 +56,9 @@ export const CelebrationMouseCanvas: React.FC<CelebrationMouseCanvasProps> = ({ 
     let height = 0;
 
     const resizeCanvas = () => {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      // On mobile phones, cap DPR to 1 to cut GPU memory & fill rate by 75%
+      const mobile = isMobileDevice();
+      dpr = mobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = Math.floor(width * dpr);
@@ -167,8 +178,10 @@ export const CelebrationMouseCanvas: React.FC<CelebrationMouseCanvasProps> = ({ 
         ctx.strokeStyle = ring.color;
         ctx.lineWidth = 2.2;
         ctx.globalAlpha = Math.max(0, ring.alpha);
-        ctx.shadowColor = ring.color;
-        ctx.shadowBlur = 8;
+        if (!isMobile) {
+          ctx.shadowColor = ring.color;
+          ctx.shadowBlur = 8;
+        }
         ctx.stroke();
         ctx.restore();
       }
@@ -195,8 +208,10 @@ export const CelebrationMouseCanvas: React.FC<CelebrationMouseCanvasProps> = ({ 
         ctx.save();
         ctx.globalAlpha = Math.max(0, p.alpha);
         ctx.fillStyle = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur = 7;
+        if (!isMobile) {
+          ctx.shadowColor = p.color;
+          ctx.shadowBlur = 7;
+        }
 
         if (p.shape === 'star') {
           ctx.translate(p.x, p.y);
@@ -321,7 +336,11 @@ export const CelebrationMouseCanvas: React.FC<CelebrationMouseCanvasProps> = ({ 
       }
     };
 
-    // Click / Pointerdown listener
+    // Tap vs scroll detection for touch devices
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+
     const handlePointerDown = (e: PointerEvent) => {
       // Safeguard: ignore if clicking inside text inputs
       const target = e.target as HTMLElement | null;
@@ -336,8 +355,37 @@ export const CelebrationMouseCanvas: React.FC<CelebrationMouseCanvasProps> = ({ 
         return;
       }
 
-      const isTouch = e.pointerType === 'touch';
-      spawnExplosion(e.clientX, e.clientY, isTouch);
+      if (e.pointerType === 'mouse') {
+        spawnExplosion(e.clientX, e.clientY, false);
+      } else if (e.pointerType === 'touch') {
+        touchStartX = e.clientX;
+        touchStartY = e.clientY;
+        touchStartTime = performance.now();
+      }
+    };
+
+    const handlePointerUp = (e: PointerEvent) => {
+      if (e.pointerType !== 'touch') return;
+
+      const dt = performance.now() - touchStartTime;
+      const dx = Math.abs(e.clientX - touchStartX);
+      const dy = Math.abs(e.clientY - touchStartY);
+
+      // Only explode if it was a genuine stationary tap (not a scroll swipe)
+      if (dx < 12 && dy < 12 && dt < 450) {
+        const target = e.target as HTMLElement | null;
+        if (
+          target &&
+          (target.tagName === 'INPUT' ||
+            target.tagName === 'TEXTAREA' ||
+            target.isContentEditable ||
+            target.closest('input') ||
+            target.closest('textarea'))
+        ) {
+          return;
+        }
+        spawnExplosion(e.clientX, e.clientY, true);
+      }
     };
 
     // Tab visibility handling
@@ -351,12 +399,14 @@ export const CelebrationMouseCanvas: React.FC<CelebrationMouseCanvasProps> = ({ 
 
     window.addEventListener('pointermove', handlePointerMove, { passive: true });
     window.addEventListener('pointerdown', handlePointerDown, { passive: true });
+    window.addEventListener('pointerup', handlePointerUp, { passive: true });
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('pointerdown', handlePointerDown);
+      window.removeEventListener('pointerup', handlePointerUp);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };

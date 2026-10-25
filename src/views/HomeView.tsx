@@ -267,6 +267,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
                         alt={projectTitle}
                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = '/assets/images/ecommerce_store_main.jpg';
                         }}
@@ -404,6 +405,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
                         alt={projectTitle}
                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = '/assets/images/ecommerce_store_main.jpg';
                         }}
@@ -546,6 +548,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
                         alt={isAr ? service.titleAr : service.titleEn}
                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
+                        decoding="async"
                       />
 
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
@@ -635,7 +638,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
       <section 
         id="store-features" 
         ref={storeFeaturesRef}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24 border-t border-amber-500/15 relative"
+        className="section-lazy-contain max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24 border-t border-amber-500/15 relative"
       >
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono font-bold mb-3">
@@ -823,7 +826,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
       <section 
         id="how-it-works" 
         ref={howItWorksRef}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24 border-t border-amber-500/15 relative"
+        className="section-lazy-contain max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24 border-t border-amber-500/15 relative"
       >
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-amber-500/30 text-amber-300 text-xs font-mono font-bold mb-3">
@@ -882,7 +885,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
       <section 
         id="faq" 
         ref={faqRef}
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24 border-t border-amber-500/15 relative"
+        className="section-lazy-contain max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24 border-t border-amber-500/15 relative"
       >
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-amber-500/30 text-amber-300 text-xs font-mono font-bold mb-3">

@@ -79,13 +79,23 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
     setDisplayedText('');
     setIsFinished(false);
 
+    // Mobile performance detection:
+    // On phones, step by 2 characters if text is long to prevent 60+ state updates per second,
+    // keeping animation visible, crisp and fluid without freezing the mobile UI
+    const isMobile = typeof window !== 'undefined' && (window.innerWidth < 768 || 'ontouchstart' in window);
+    const targetText = textRef.current;
+    const stepSize = isMobile && targetText.length > 25 ? 2 : 1;
+    const effectiveSpeed = isMobile ? Math.max(speed, 22) : speed;
+
     timeoutId = setTimeout(() => {
       setIsTyping(true);
       let currentIdx = 0;
-      const targetText = textRef.current;
 
       intervalId = setInterval(() => {
-        currentIdx++;
+        currentIdx += stepSize;
+        if (currentIdx > targetText.length) {
+          currentIdx = targetText.length;
+        }
         setDisplayedText(targetText.slice(0, currentIdx));
 
         if (currentIdx >= targetText.length) {
@@ -94,9 +104,9 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
             setIsTyping(false);
             setIsFinished(true);
             if (onComplete) onComplete();
-          }, 300);
+          }, 240);
         }
-      }, speed);
+      }, effectiveSpeed);
     }, delay);
 
     return () => {
@@ -141,13 +151,13 @@ export const TypewriterHeading: React.FC<TypewriterHeadingProps> = ({
   text,
   as: Component = 'h2',
   speed = 32,
-  delay = 150,
+  delay = 120,
   className = '',
   startTrigger,
   onFinished,
   showPen = true
 }) => {
-  const [containerRef, isVisible] = useScrollIntersection({ threshold: 0.15 });
+  const [containerRef, isVisible] = useScrollIntersection({ threshold: 0.1 });
   const shouldStart = startTrigger !== undefined ? (startTrigger && isVisible) || startTrigger : isVisible;
 
   return (
@@ -230,11 +240,6 @@ export const CyclicTypewriter: React.FC<CyclicTypewriterProps> = ({
 
 // ============================================================================
 // 5. Alternating Card Motion Wrapper
-// Alternates entry:
-//   - index % 3 === 0: slides in from right (translate-x)
-//   - index % 3 === 1: slides in from left (-translate-x)
-//   - index % 3 === 2: pops up from bottom with spring scale (translate-y)
-// Staggers each card with individual sequential delay!
 // ============================================================================
 interface AlternatingCardRevealProps {
   index: number;
@@ -257,14 +262,16 @@ export const AlternatingCardReveal: React.FC<AlternatingCardRevealProps> = ({
 }) => {
   const [isRenderedVisible, setIsRenderedVisible] = useState(false);
 
-  // Direction type: 0 = right, 1 = left, 2 = bottom/pop-up
   const directionMode = index % 3;
 
   useEffect(() => {
     if (!isParentVisible) return;
 
-    // Staggered delay: card 0: 80ms, card 1: 80 + staggerDelayMs, etc.
-    const staggerDelay = (index % 6) * staggerDelayMs + 80;
+    // On mobile devices, tighten stagger delay for snappy responsiveness
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const effectiveStagger = isMobile ? Math.min(staggerDelayMs, 60) : staggerDelayMs;
+    const staggerDelay = (index % 6) * effectiveStagger + (isMobile ? 30 : 60);
+
     const timer = setTimeout(() => {
       setIsRenderedVisible(true);
     }, staggerDelay);
@@ -288,7 +295,8 @@ export const AlternatingCardReveal: React.FC<AlternatingCardRevealProps> = ({
       title={title}
       className={`card-entrance ${animationStateClass} ${className}`}
       style={{
-        transitionDelay: `${(index % 3) * 60}ms`
+        transitionDelay: `${(index % 3) * 40}ms`,
+        willChange: isRenderedVisible ? 'auto' : 'transform, opacity'
       }}
     >
       {children}
@@ -305,20 +313,29 @@ export const AmbientBackgroundGlow: React.FC = () => {
     <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10" aria-hidden="true">
       {/* Top Gold Radial Light Orb */}
       <div 
-        className="floating-tech-orb absolute -top-40 start-1/4 w-[550px] h-[550px] rounded-full blur-[140px] opacity-25"
-        style={{ background: 'radial-gradient(circle, rgba(245, 158, 11, 0.4) 0%, rgba(220, 38, 38, 0.15) 50%, transparent 70%)' }}
+        className="floating-tech-orb absolute -top-40 start-1/4 w-[320px] md:w-[550px] h-[320px] md:h-[550px] rounded-full blur-[70px] md:blur-[140px] opacity-25"
+        style={{ 
+          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.4) 0%, rgba(220, 38, 38, 0.15) 50%, transparent 70%)',
+          transform: 'translateZ(0)'
+        }}
       />
 
       {/* Middle Crimson Radial Light Orb */}
       <div 
-        className="floating-tech-orb-reverse absolute top-1/3 end-10 w-[600px] h-[600px] rounded-full blur-[160px] opacity-20"
-        style={{ background: 'radial-gradient(circle, rgba(220, 38, 38, 0.4) 0%, rgba(245, 158, 11, 0.12) 50%, transparent 70%)' }}
+        className="floating-tech-orb-reverse absolute top-1/3 end-6 md:end-10 w-[340px] md:w-[600px] h-[340px] md:h-[600px] rounded-full blur-[80px] md:blur-[160px] opacity-20"
+        style={{ 
+          background: 'radial-gradient(circle, rgba(220, 38, 38, 0.4) 0%, rgba(245, 158, 11, 0.12) 50%, transparent 70%)',
+          transform: 'translateZ(0)'
+        }}
       />
 
       {/* Bottom Emerald/Cyan Ambient Light */}
       <div 
-        className="floating-tech-orb absolute bottom-1/4 start-10 w-[500px] h-[500px] rounded-full blur-[150px] opacity-15"
-        style={{ background: 'radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 70%)' }}
+        className="floating-tech-orb absolute bottom-1/4 start-6 md:start-10 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full blur-[70px] md:blur-[150px] opacity-15"
+        style={{ 
+          background: 'radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 70%)',
+          transform: 'translateZ(0)'
+        }}
       />
 
       {/* Tech Grid Pattern Lines */}
