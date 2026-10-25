@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نموذج الواجهة والتأثيرات التفاعلية | WebStack Front-end Demo</title>
+  
+  <!-- خط عربي واحد فقط (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       0. متغيرات الهوية البصرية والقيم العامة (:root)
+       قابلة للتعديل والنسخ المباشر لأي مشروع
+       ========================================================================== */
+    :root {
+      /* الألوان الأساسية */
+      --bg-primary: #0A0E17;              /* خلفية داكنة جداً (كحلي مسائي مسود) */
+      --bg-surface: #111827;              /* خلفية البطاقات والعناصر */
+      --bg-surface-elevated: #162032;     /* خلفية العناصر عند التحويم */
+      --border-subtle: rgba(255, 255, 255, 0.08); /* حدود ناعمة غير مشتتة */
+      --border-focus: #E0A526;            /* حدود التركيز للوحة المفاتيح */
+
+      /* لون الهوية (ذهبي) */
+      --brand-gold: #E0A526;
+      --brand-gold-glow: rgba(224, 165, 38, 0.18);
+      --brand-gold-hover: #F59E0B;
+
+      /* لون ثانوي هادئ للتفاصيل الصغيرة (أزرق سماوي فاتح) */
+      --accent-sky: #7DD3FC;
+      --accent-sky-bg: rgba(125, 211, 252, 0.10);
+
+      /* الأحمر مسموح لزر واحد فقط: «احصل على عرض سعر» */
+      --cta-red: #DC2626;
+      --cta-red-hover: #B91C1C;
+      --cta-red-shadow: rgba(220, 38, 38, 0.35);
+
+      /* نصوص غير ذهبية (أبيض ورمادي فاتح) */
+      --text-main: #FFFFFF;
+      --text-light: #E2E8F0;
+      --text-muted: #94A3B8;
+
+      /* الخط العربي */
+      --font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      /* أزمنة وانتقالات الحركة */
+      --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-btn: 140ms ease;
+      --transition-reveal: 450ms cubic-bezier(0.16, 1, 0.3, 1);
+      --phone-scroll-duration: 18s;
+
+      /* متغيرات حركة الهالة (تتحدث بالجافاسكريبت داخل الهيرو) */
+      --mx: 50%;
+      --my: 50%;
+    }
+
+    /* ==========================================================================
+       إعادة الضبط وقواعد الأساسيات (CSS Reset & Base)
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-primary);
+      color: var(--text-light);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-color: var(--bg-primary);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* إمكانية الوصول والتنقل بلوحة المفاتيح */
+    :focus-visible {
+      outline: 2px solid var(--border-focus);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    /* ==========================================================================
+       تأثير 5: تأثير الأزرار الموحد عند hover (يرتفع 3px مع ظل سفلي قصير، 140ms)
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 9999px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid transparent;
+      /* زمن الانتقال 140ms كما هو مطلوب */
+      transition: transform var(--transition-btn), box-shadow var(--transition-btn), background-color var(--transition-btn), border-color var(--transition-btn);
+      will-change: transform;
+    }
+
+    /* الارتفاع 3px والظل */
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn:active {
+      transform: translateY(-1px);
+    }
+
+    /* الزر الأحمر الوحيد في الموقع */
+    .btn-cta-red {
+      background-color: var(--cta-red);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 14px var(--cta-red-shadow);
+    }
+    .btn-cta-red:hover {
+      background-color: var(--cta-red-hover);
+      box-shadow: 0 8px 22px var(--cta-red-shadow);
+    }
+
+    /* الزر الثانوي */
+    .btn-secondary {
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-light);
+      border-color: var(--border-subtle);
+    }
+    .btn-secondary:hover {
+      border-color: rgba(224, 165, 38, 0.4);
+      color: var(--text-main);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ==========================================================================
+       الهيدر البسيط
+       ========================================================================== */
+    .site-header {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      background-color: rgba(10, 14, 23, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .brand-logo span.gold {
+      color: var(--brand-gold);
+    }
+
+    .badge-tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      background: var(--accent-sky-bg);
+      color: var(--accent-sky);
+      border: 1px solid rgba(125, 211, 252, 0.25);
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       تأثير 2: هالة ذهبية ناعمة تتبع الماوس في الهيرو (Glow Effect)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      padding: 5rem 0 4rem;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(16, 24, 39, 0.4) 0%, transparent 100%);
+    }
+
+    /* الهالة الدائرية (نصف قطر 400px، شفافية 18%، pointer-events: none) */
+    .hero-mouse-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(
+        400px circle at var(--mx, 50%) var(--my, 50%),
+        var(--brand-gold-glow) 0%,
+        rgba(224, 165, 38, 0.05) 50%,
+        transparent 80%
+      );
+      opacity: 0;
+      transition: opacity 300ms ease;
+    }
+
+    .hero-section.is-active .hero-mouse-glow {
+      opacity: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2; /* النص والأزرار دائماً فوق الهالة */
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title .highlight {
+      color: var(--brand-gold);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 2.25rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* ==========================================================================
+       شريط نقاط الثقة (4 نقاط تحت الهيرو)
+       ========================================================================== */
+    .trust-bar {
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      background-color: rgba(17, 24, 39, 0.6);
+      padding: 1.25rem 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      text-align: right;
+    }
+
+    .trust-icon {
+      width: 22px;
+      height: 22px;
+      color: var(--accent-sky);
+      flex-shrink: 0;
+    }
+
+    .trust-text {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    /* ==========================================================================
+       تأثير 4: شريط تصنيفات في معرض الأعمال (Filter Pills Bar)
+       ========================================================================== */
+    .portfolio-section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .filter-wrapper {
+      margin-bottom: 3rem;
+      /* تمرير أفقي بدون خروج على الموبايل */
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 0.5rem;
+    }
+
+    .filter-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      list-style: none;
+      min-width: max-content;
+      padding: 0 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .filter-list {
+        justify-content: flex-start;
+      }
+    }
+
+    .filter-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1.15rem;
+      border-radius: 9999px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-light);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+      transition: background-color var(--transition-btn), color var(--transition-btn), border-color var(--transition-btn), transform var(--transition-btn);
+    }
+
+    .filter-pill:hover {
+      background-color: var(--bg-surface-elevated);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--text-main);
+    }
+
+    /* عداد الأعمال بجانب كل اسم */
+    .filter-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* الشريحة النشطة: مميزة بلون خلفية وخط سفلي/أيقونة (ليس باللون وحده) */
+    .filter-pill.is-active {
+      background-color: var(--bg-surface-elevated);
+      color: var(--brand-gold);
+      border-color: var(--brand-gold);
+      font-weight: 700;
+    }
+
+    .filter-pill.is-active .filter-count {
+      background-color: rgba(224, 165, 38, 0.2);
+      color: var(--brand-gold);
+    }
+
+    /* خط مؤشر سفلي للشريحة النشطة لتأكيد الحالة دلالياً وبصرياً */
+    .filter-pill.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 3px;
+      background-color: var(--brand-gold);
+      border-radius: 9999px;
+    }
+
+    /* ==========================================================================
+       تأثير 3: ظهور متدرج للبطاقات عند التمرير (Staggered Fade & Slide)
+       ========================================================================== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* الحالة المبدئية قبل الظهور */
+    .portfolio-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      display: flex;
+      flex-col;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity var(--transition-reveal), transform var(--transition-reveal), border-color 200ms ease;
+      will-change: opacity, transform;
+    }
+
+    .portfolio-card:hover {
+      border-color: rgba(224, 165, 38, 0.4);
+    }
+
+    /* الحالة عند الدخول للشاشة */
+    .portfolio-card.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* إخفاء البطاقات المفلترة بنعومة */
+    .portfolio-card.is-hidden {
+      display: none;
+    }
+
+    /* ==========================================================================
+       تأثير 1: معاينة هاتف متحركة داخل كل بطاقة عمل (Mobile Frame & Auto Scroll)
+       ========================================================================== */
+    .phone-mockup-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto 1.25rem;
+    }
+
+    /* إطار الهاتف الأسود بحواف دائرية وفتحة علوية */
+    .phone-device {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 18; /* نسبة أبعاد شاشة الهاتف لمنع القفزات (CLS: 0) */
+      background: #000000;
+      border: 6px solid #1F2937;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    /* الفتحة العلوية الصغيرة (Dynamic Island / Notch) */
+    .phone-notch {
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 8px;
+      background: #111827;
+      border-radius: 10px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* نافذة العرض الداخلية التي تتحرك داخلها لقطة الصفحة */
+    .phone-screen {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background-color: #070A10;
+    }
+
+    /* الصورة الطويلة (Full Page Screenshot) */
+    .phone-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: translateY(0);
+      will-change: transform;
+    }
+
+    /* الحركة تعمل فقط عندما تكون البطاقة ظاهرة بنسبة 40% (.is-playing) */
+    .phone-screen.is-playing .phone-img {
+      animation: phoneScroll var(--phone-scroll-duration) ease-in-out infinite alternate;
+    }
+
+    /* أنيميشن التمرير من أعلى لأسفل ثم العودة (18 ثانية alternate) */
+    @keyframes phoneScroll {
+      0%, 12% {
+        transform: translateY(0%);
+      }
+      88%, 100% {
+        /* التمرير إلى نهاية الصورة الطويلة مع الحفاظ على أسفل الشاشة معروضاً */
+        transform: translateY(calc(-100% + 520px));
+      }
+    }
+
+    /* معلومات البطاقة */
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-sky);
+    }
+
+    .card-status {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--brand-gold);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .card-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #10B981;
+      display: inline-block;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: auto;
+    }
+
+    .card-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color var(--transition-btn);
+    }
+
+    .card-link:hover {
+      color: var(--brand-gold);
+    }
+
+    /* ==========================================================================
+       قسم الأسئلة الشائعة (FAQ Accordion)
+       ========================================================================== */
+    .faq-section {
+      padding: 4rem 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .faq-container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.75rem;
+      background-color: var(--bg-surface);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      transition: border-color var(--transition-btn);
+    }
+
+    .faq-item:hover {
+      border-color: rgba(224, 165, 38, 0.3);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      padding: 1.1rem 1.25rem;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: right;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--brand-gold);
+      transition: transform 200ms ease;
+      flex-shrink: 0;
+    }
+
+    .faq-trigger[aria-expanded="true"] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 250ms ease, padding 250ms ease;
+      padding: 0 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .faq-panel.is-open {
+      padding-bottom: 1.25rem;
+    }
+
+    /* ==========================================================================
+       الفوتر وزر الواتساب العائم
+       ========================================================================== */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* زر واتساب عائم واحد، يرتفع 3px مع hover */
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 1.75rem;
+      left: 1.75rem; /* على اليسار في واجهات RTL لتفادي تغطية المحتوى المهم */
+      z-index: 50;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background-color: #25D366;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      transition: transform var(--transition-btn), box-shadow var(--transition-btn);
+      will-change: transform;
+    }
+
+    .whatsapp-fab:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+    }
+
+    .whatsapp-fab svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    /* ==========================================================================
+       شروط سهولة الوصول وتقليل الحركة (prefers-reduced-motion)
+       تتوقف كل الحركات غير الضرورية عند طلب المستخدم
+       ========================================================================== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .hero-mouse-glow {
+        display: none !important;
+      }
+
+      .phone-screen.is-playing .phone-img {
+        animation: none !important;
+        transform: none !important;
+      }
+
+      .portfolio-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .btn:hover,
+      .whatsapp-fab:hover {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       الهيدر الأساسي
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-logo" aria-label="WebStack الصفحة الرئيسية">
+        <span>ويب<span class="gold">ستاك</span></span>
+        <span class="badge-tag">برمجة من الصفر 100%</span>
+      </a>
+
+      <nav aria-label="التنقل الرئيسي">
+        <a href="#quote" class="btn btn-cta-red" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">
+          احصل على عرض سعر
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ========================================================================
+         1. الهيرو (مع تأثير الهالة الذهبية المتتبعة للماوس)
+         ======================================================================== -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+      <!-- طبقة الهالة الذهبية (تأثير رقم 2) -->
+      <div class="hero-mouse-glow" id="heroMouseGlow" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <span class="badge-tag" style="margin-bottom: 1.25rem; display: inline-block;">
+          ✨ معمارية برمجية مخصصة لكل نشاط تجاري
+        </span>
+
+        <h1 id="hero-heading" class="hero-title">
+          نبني لك <span class="highlight">متجرك وموقعك</span> من الصفر بأداء استثنائي
+        </h1>
+
+        <p class="hero-subtitle">
+          برمجة خاصة خالية من قوالب ووردبريس الثقيلة، مع ملكية كاملة للكود وقاعدة البيانات و0% عمولة على مبيعاتك للأبد.
+        </p>
+
+        <div class="hero-actions">
+          <!-- الزر الأحمر الوحيد في الصفحة (تأثير رقم 5) -->
+          <a href="#quote" class="btn btn-cta-red">
+            احصل على عرض سعر
+          </a>
+
+          <!-- الزر الثانوي (تأثير رقم 5) -->
+          <a href="#portfolio" class="btn btn-secondary">
+            شاهد أعمالنا الحية
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         2. شريط نقاط الثقة (4 نقاط تحت الهيرو)
+         ======================================================================== -->
+    <section class="trust-bar" aria-label="نقاط الثقة والضمانات">
+      <div class="container">
+        <div class="trust-grid">
+          
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            <span class="trust-text">صفر عمولة على مبيعاتك</span>
+          </div>
+
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+            <span class="trust-text">كود نظيف وسرعة 90+</span>
+          </div>
+
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+            <span class="trust-text">بوابات دفع إلكترونية متعددة</span>
+          </div>
+
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span class="trust-text">ملكية كاملة للكود والدومين</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. معرض الأعمال (مع شريط التصنيفات والبطاقات الست)
+         ======================================================================== -->
+    <section id="portfolio" class="portfolio-section" aria-labelledby="portfolio-heading">
+      <div class="container">
+        
+        <header class="section-header">
+          <h2 id="portfolio-heading">نماذج من أعمالنا الحية</h2>
+          <p>تصفح عينات حية تم بناؤها من الصفر لتناسب متطلبات كل عميل</p>
+        </header>
+
+        <!-- تأثير 4: شريط التصنيفات الصغير المفلتر -->
+        <nav class="filter-wrapper" aria-label="تصفية معرض الأعمال">
+          <ul class="filter-list" role="tablist">
+            <li>
+              <button class="filter-pill is-active" data-filter="all" role="tab" aria-selected="true" aria-current="page">
+                الكل <span class="filter-count">6</span>
+              </button>
+            </li>
+            <li>
+              <button class="filter-pill" data-filter="stores" role="tab" aria-selected="false">
+                متاجر <span class="filter-count">2</span>
+              </button>
+            </li>
+            <li>
+              <button class="filter-pill" data-filter="companies" role="tab" aria-selected="false">
+                شركات <span class="filter-count">1</span>
+              </button>
+            </li>
+            <li>
+              <button class="filter-pill" data-filter="restaurants" role="tab" aria-selected="false">
+                مطاعم <span class="filter-count">1</span>
+              </button>
+            </li>
+            <li>
+              <button class="filter-pill" data-filter="clinics" role="tab" aria-selected="false">
+                عيادات <span class="filter-count">2</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- شبكة البطاقات (تأثير 3: ظهور متدرج | تأثير 1: معاينة الهاتف المتحركة) -->
+        <div class="portfolio-grid" id="portfolioGrid">
+          
+          <!-- بطاقة 1: متجر أزياء (تصنيف: متاجر) -->
+          <article class="portfolio-card" data-category="stores">
+            <div class="phone-mockup-wrapper">
+              <div class="phone-device">
+                <div class="phone-notch"></div>
+                <div class="phone-screen" data-phone-preview>
+                  <!-- SVG Mockup طويل تم تضمينه لتوفير أداء فائق وتمرير فوري بدون اعتماد خارجي -->
+                  <svg class="phone-img" viewBox="0 0 320 900" width="320" height="900" role="img" aria-label="معاينة كاملة لمتجر لاروز للأزياء" loading="lazy">
+                    <rect width="320" height="900" fill="#0D1117"/>
+                    <!-- Header -->
+                    <rect width="320" height="50" fill="#161B22"/>
+                    <rect x="20" y="18" width="60" height="14" rx="4" fill="#E0A526"/>
+                    <circle cx="285" cy="25" r="8" fill="#7DD3FC"/>
+                    <!-- Hero Banner -->
+                    <rect x="15" y="65" width="290" height="160" rx="12" fill="#21262D"/>
+                    <rect x="35" y="95" width="140" height="18" rx="4" fill="#FFFFFF"/>
+                    <rect x="35" y="125" width="100" height="12" rx="3" fill="#94A3B8"/>
+                    <rect x="35" y="155" width="75" height="26" rx="13" fill="#E0A526"/>
+                    <circle cx="240" cy="145" r="45" fill="#30363D"/>
+                    <!-- Products Grid -->
+                    <text x="20" y="255" fill="#FFFFFF" font-size="14" font-family="sans-serif" font-weight="bold">الأكثر مبيعاً</text>
+                    <rect x="15" y="270" width="138" height="180" rx="8" fill="#161B22"/>
+                    <rect x="25" y="280" width="118" height="100" rx="6" fill="#21262D"/>
+                    <rect x="25" y="390" width="80" height="12" rx="3" fill="#E2E8F0"/>
+                    <rect x="25" y="410" width="50" height="10" rx="2" fill="#E0A526"/>
+
+                    <rect x="167" y="270" width="138" height="180" rx="8" fill="#161B22"/>
+                    <rect x="177" y="280" width="118" height="100" rx="6" fill="#21262D"/>
+                    <rect x="177" y="390" width="80" height="12" rx="3" fill="#E2E8F0"/>
+                    <rect x="177" y="410" width="50" height="10" rx="2" fill="#E0A526"/>
+
+                    <!-- Secondary Section -->
+                    <rect x="15" y="470" width="290" height="120" rx="10" fill="#1A2234"/>
+                    <rect x="30" y="495" width="160" height="16" rx="4" fill="#7DD3FC"/>
+                    <rect x="30" y="525" width="220" height="10" rx="2" fill="#94A3B8"/>
+                    <rect x="30" y="545" width="190" height="10" rx="2" fill="#94A3B8"/>
+
+                    <!-- More Products -->
+                    <rect x="15" y="610" width="138" height="160" rx="8" fill="#161B22"/>
+                    <rect x="25" y="620" width="118" height="90" rx="6" fill="#21262D"/>
+                    <rect x="25" y="720" width="70" height="10" rx="2" fill="#E2E8F0"/>
+
+                    <rect x="167" y="610" width="138" height="160" rx="8" fill="#161B22"/>
+                    <rect x="177" y="620" width="118" height="90" rx="6" fill="#21262D"/>
+                    <rect x="177" y="720" width="70" height="10" rx="2" fill="#E2E8F0"/>
+
+                    <!-- Footer -->
+                    <rect y="800" width="320" height="100" fill="#090D14"/>
+                    <rect x="100" y="830" width="120" height="12" rx="3" fill="#484F58"/>
+                    <rect x="70" y="855" width="180" height="8" rx="2" fill="#30363D"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="card-category">متجر إلكتروني</span>
+                <span class="card-status">موقع حي</span>
+              </div>
+              <h3 class="card-title">متجر لاروز (La Rose) للأزياء</h3>
+              <p class="card-desc">متجر متكامل بسلة مشتريات فورية وتكامل مع بوابات الدفع الإلكتروني والدفع عند الاستلام.</p>
+              <div class="card-footer">
+                <a href="#demo" class="card-link">معاينة النظام ↗</a>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">PHP & MySQL</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- بطاقة 2: شركة مقاولات (تصنيف: شركات) -->
+          <article class="portfolio-card" data-category="companies">
+            <div class="phone-mockup-wrapper">
+              <div class="phone-device">
+                <div class="phone-notch"></div>
+                <div class="phone-screen" data-phone-preview>
+                  <svg class="phone-img" viewBox="0 0 320 900" width="320" height="900" role="img" aria-label="معاينة موقع عياش للمقاولات" loading="lazy">
+                    <rect width="320" height="900" fill="#0B131E"/>
+                    <rect width="320" height="50" fill="#132338"/>
+                    <rect x="20" y="18" width="70" height="14" rx="4" fill="#7DD3FC"/>
+                    <!-- Hero Corporate -->
+                    <rect x="15" y="65" width="290" height="170" rx="10" fill="#1C2E46"/>
+                    <rect x="35" y="90" width="150" height="20" rx="4" fill="#FFFFFF"/>
+                    <rect x="35" y="120" width="180" height="12" rx="3" fill="#94A3B8"/>
+                    <rect x="35" y="140" width="120" height="10" rx="2" fill="#94A3B8"/>
+                    <rect x="35" y="165" width="90" height="28" rx="6" fill="#E0A526"/>
+                    <!-- Trust Numbers -->
+                    <rect x="15" y="250" width="290" height="60" rx="8" fill="#132338"/>
+                    <rect x="30" y="265" width="50" height="16" rx="3" fill="#E0A526"/>
+                    <rect x="110" y="265" width="50" height="16" rx="3" fill="#7DD3FC"/>
+                    <rect x="190" y="265" width="50" height="16" rx="3" fill="#FFFFFF"/>
+                    <!-- Projects Gallery -->
+                    <rect x="15" y="325" width="290" height="150" rx="8" fill="#1E293B"/>
+                    <rect x="30" y="445" width="120" height="14" rx="3" fill="#FFFFFF"/>
+                    <!-- Services -->
+                    <rect x="15" y="490" width="138" height="130" rx="8" fill="#132338"/>
+                    <rect x="167" y="490" width="138" height="130" rx="8" fill="#132338"/>
+                    <rect x="15" y="635" width="138" height="130" rx="8" fill="#132338"/>
+                    <rect x="167" y="635" width="138" height="130" rx="8" fill="#132338"/>
+                    <!-- Footer -->
+                    <rect y="790" width="320" height="110" fill="#070D15"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="card-category">موقع تعريفي</span>
+                <span class="card-status">معتمد SCA</span>
+              </div>
+              <h3 class="card-title">شركة عياش للمقاولات والعزل</h3>
+              <p class="card-desc">واجهة رسمية باللغتين العربية والإنجليزية مع معرض مشاريع هندسية متكامل وطلب عروض أسعار.</p>
+              <div class="card-footer">
+                <a href="#demo" class="card-link">معاينة النظام ↗</a>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Bilingual Engine</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- بطاقة 3: عيادة طبية (تصنيف: عيادات) -->
+          <article class="portfolio-card" data-category="clinics">
+            <div class="phone-mockup-wrapper">
+              <div class="phone-device">
+                <div class="phone-notch"></div>
+                <div class="phone-screen" data-phone-preview>
+                  <svg class="phone-img" viewBox="0 0 320 900" width="320" height="900" role="img" aria-label="معاينة مركز نبض للرعاية الطبية" loading="lazy">
+                    <rect width="320" height="900" fill="#0C141F"/>
+                    <rect width="320" height="50" fill="#122336"/>
+                    <circle cx="35" cy="25" r="10" fill="#10B981"/>
+                    <rect x="55" y="18" width="60" height="14" rx="4" fill="#FFFFFF"/>
+                    <!-- Hero Clinic -->
+                    <rect x="15" y="65" width="290" height="160" rx="10" fill="#17314A"/>
+                    <rect x="35" y="90" width="140" height="18" rx="4" fill="#FFFFFF"/>
+                    <rect x="35" y="118" width="180" height="10" rx="2" fill="#94A3B8"/>
+                    <rect x="35" y="150" width="100" height="26" rx="13" fill="#10B981"/>
+                    <!-- Specialties -->
+                    <text x="20" y="250" fill="#FFFFFF" font-size="13" font-family="sans-serif">التخصصات الطبية</text>
+                    <rect x="15" y="265" width="90" height="70" rx="8" fill="#132336"/>
+                    <rect x="115" y="265" width="90" height="70" rx="8" fill="#132336"/>
+                    <rect x="215" y="265" width="90" height="70" rx="8" fill="#132336"/>
+                    <!-- Booking Box -->
+                    <rect x="15" y="355" width="290" height="180" rx="10" fill="#16293D"/>
+                    <rect x="35" y="380" width="120" height="14" rx="3" fill="#7DD3FC"/>
+                    <rect x="35" y="410" width="250" height="30" rx="6" fill="#0C141F"/>
+                    <rect x="35" y="450" width="250" height="30" rx="6" fill="#0C141F"/>
+                    <rect x="35" y="490" width="110" height="28" rx="14" fill="#E0A526"/>
+                    <!-- Doctors -->
+                    <rect x="15" y="555" width="290" height="100" rx="8" fill="#122336"/>
+                    <rect x="15" y="670" width="290" height="100" rx="8" fill="#122336"/>
+                    <!-- Footer -->
+                    <rect y="790" width="320" height="110" fill="#080F17"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="card-category">منصة طبية</span>
+                <span class="card-status">حجز فوري</span>
+              </div>
+              <h3 class="card-title">مركز نبض للرعاية الطبية</h3>
+              <p class="card-desc">منظومة حجز مواعيد إلكترونية في 12 تخصصاً مع خيارات الكشف بالعيادة أو استشارة فيديو.</p>
+              <div class="card-footer">
+                <a href="#demo" class="card-link">معاينة النظام ↗</a>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Doctor Booking</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- بطاقة 4: مطعم وسلسلة فروع (تصنيف: مطاعم) -->
+          <article class="portfolio-card" data-category="restaurants">
+            <div class="phone-mockup-wrapper">
+              <div class="phone-device">
+                <div class="phone-notch"></div>
+                <div class="phone-screen" data-phone-preview>
+                  <svg class="phone-img" viewBox="0 0 320 900" width="320" height="900" role="img" aria-label="معاينة منيو وحجوزات مطعم غوردون" loading="lazy">
+                    <rect width="320" height="900" fill="#111116"/>
+                    <rect width="320" height="50" fill="#181820"/>
+                    <rect x="20" y="18" width="65" height="14" rx="4" fill="#E0A526"/>
+                    <!-- Hero Restaurant -->
+                    <rect x="15" y="65" width="290" height="160" rx="10" fill="#24222D"/>
+                    <circle cx="235" cy="145" r="45" fill="#363242"/>
+                    <rect x="35" y="95" width="130" height="18" rx="4" fill="#FFFFFF"/>
+                    <rect x="35" y="125" width="90" height="12" rx="3" fill="#E0A526"/>
+                    <rect x="35" y="155" width="80" height="26" rx="13" fill="#E0A526"/>
+                    <!-- Menu Category Pills -->
+                    <rect x="15" y="240" width="60" height="24" rx="12" fill="#E0A526"/>
+                    <rect x="85" y="240" width="60" height="24" rx="12" fill="#1F1F2A"/>
+                    <rect x="155" y="240" width="60" height="24" rx="12" fill="#1F1F2A"/>
+                    <!-- Menu Items -->
+                    <rect x="15" y="280" width="290" height="85" rx="8" fill="#181822"/>
+                    <rect x="15" y="380" width="290" height="85" rx="8" fill="#181822"/>
+                    <rect x="15" y="480" width="290" height="85" rx="8" fill="#181822"/>
+                    <!-- Reservation Box -->
+                    <rect x="15" y="585" width="290" height="170" rx="10" fill="#201E29"/>
+                    <rect x="35" y="610" width="120" height="16" rx="4" fill="#FFFFFF"/>
+                    <rect x="35" y="640" width="250" height="32" rx="6" fill="#111116"/>
+                    <rect x="35" y="685" width="100" height="28" rx="14" fill="#E0A526"/>
+                    <!-- Footer -->
+                    <rect y="780" width="320" height="120" fill="#0A0A0E"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="card-category">مطاعم وضيافة</span>
+                <span class="card-status">منيو تفاعلي</span>
+              </div>
+              <h3 class="card-title">منصة وحجوزات مطاعم قصر الضيافة</h3>
+              <p class="card-desc">منيو رقمي سريع بالباركود مع نظام طلبات طاولات وتوصيل وحجز جلسات عائلية مباشر.</p>
+              <div class="card-footer">
+                <a href="#demo" class="card-link">معاينة النظام ↗</a>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">QR Ordering</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- بطاقة 5: متجر عطور وأثاث (تصنيف: متاجر) -->
+          <article class="portfolio-card" data-category="stores">
+            <div class="phone-mockup-wrapper">
+              <div class="phone-device">
+                <div class="phone-notch"></div>
+                <div class="phone-screen" data-phone-preview>
+                  <svg class="phone-img" viewBox="0 0 320 900" width="320" height="900" role="img" aria-label="معاينة متجر فولت إيدج للأثاث" loading="lazy">
+                    <rect width="320" height="900" fill="#0E1219"/>
+                    <rect width="320" height="50" fill="#161C26"/>
+                    <rect x="20" y="18" width="60" height="14" rx="4" fill="#E0A526"/>
+                    <!-- Hero Luxury -->
+                    <rect x="15" y="65" width="290" height="170" rx="10" fill="#1E2736"/>
+                    <rect x="35" y="95" width="160" height="18" rx="4" fill="#FFFFFF"/>
+                    <rect x="35" y="125" width="110" height="10" rx="2" fill="#7DD3FC"/>
+                    <rect x="35" y="150" width="85" height="26" rx="13" fill="#E0A526"/>
+                    <!-- Living Rooms Grid -->
+                    <rect x="15" y="255" width="138" height="170" rx="8" fill="#161C26"/>
+                    <rect x="167" y="255" width="138" height="170" rx="8" fill="#161C26"/>
+                    <!-- Natural Wood Specs -->
+                    <rect x="15" y="445" width="290" height="120" rx="8" fill="#131B26"/>
+                    <rect x="30" y="470" width="130" height="14" rx="3" fill="#E0A526"/>
+                    <rect x="30" y="495" width="210" height="10" rx="2" fill="#94A3B8"/>
+                    <rect x="30" y="515" width="180" height="10" rx="2" fill="#94A3B8"/>
+                    <!-- Additional Rows -->
+                    <rect x="15" y="585" width="138" height="160" rx="8" fill="#161C26"/>
+                    <rect x="167" y="585" width="138" height="160" rx="8" fill="#161C26"/>
+                    <!-- Footer -->
+                    <rect y="775" width="320" height="125" fill="#090D13"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="card-category">متجر أثاث وديكور</span>
+                <span class="card-status">سلة فورية</span>
+              </div>
+              <h3 class="card-title">معرض VoltEdge للأثاث العصري</h3>
+              <p class="card-desc">كتالوج متجاوب مع سلة فورية وخيارات تفصيل المقاسات وخامات خشب الزان الطبيعي.</p>
+              <div class="card-footer">
+                <a href="#demo" class="card-link">معاينة النظام ↗</a>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Instant Cart</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- بطاقة 6: مركز أسنان وعيادات تجميل (تصنيف: عيادات) -->
+          <article class="portfolio-card" data-category="clinics">
+            <div class="phone-mockup-wrapper">
+              <div class="phone-device">
+                <div class="phone-notch"></div>
+                <div class="phone-screen" data-phone-preview>
+                  <svg class="phone-img" viewBox="0 0 320 900" width="320" height="900" role="img" aria-label="معاينة عيادات النخبة لطب الأسنان" loading="lazy">
+                    <rect width="320" height="900" fill="#0C131D"/>
+                    <rect width="320" height="50" fill="#122031"/>
+                    <rect x="20" y="18" width="70" height="14" rx="4" fill="#7DD3FC"/>
+                    <!-- Hero Dental -->
+                    <rect x="15" y="65" width="290" height="160" rx="10" fill="#1A2D44"/>
+                    <rect x="35" y="95" width="140" height="18" rx="4" fill="#FFFFFF"/>
+                    <rect x="35" y="125" width="100" height="10" rx="2" fill="#7DD3FC"/>
+                    <rect x="35" y="150" width="85" height="26" rx="13" fill="#E0A526"/>
+                    <!-- Before/After slider mock -->
+                    <rect x="15" y="245" width="290" height="180" rx="10" fill="#16273B"/>
+                    <circle cx="160" cy="335" r="14" fill="#E0A526"/>
+                    <!-- Schedule -->
+                    <rect x="15" y="445" width="290" height="140" rx="8" fill="#122031"/>
+                    <rect x="30" y="470" width="110" height="14" rx="3" fill="#FFFFFF"/>
+                    <rect x="30" y="500" width="200" height="10" rx="2" fill="#94A3B8"/>
+                    <!-- Reviews -->
+                    <rect x="15" y="605" width="290" height="140" rx="8" fill="#122031"/>
+                    <!-- Footer -->
+                    <rect y="775" width="320" height="125" fill="#080E16"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="card-category">عيادات تخصصية</span>
+                <span class="card-status">حجز مقاعد</span>
+              </div>
+              <h3 class="card-title">مجمع النخبة لطب وتجميل الأسنان</h3>
+              <p class="card-desc">استعراض حالات قبل وبعد، تقييمات موثقة، وتوجيه آلي مباشر لمحادثات واتساب الاستقبال.</p>
+              <div class="card-footer">
+                <a href="#demo" class="card-link">معاينة النظام ↗</a>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Clinic CRM</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. قسم الأسئلة الشائعة (FAQ Accordion)
+         ======================================================================== -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="container faq-container">
+        
+        <header class="section-header">
+          <h2 id="faq-heading">الأسئلة الشائعة</h2>
+          <p>إجابات واضحة ومباشرة حول آلية العمل وضمانات الجودة</p>
+        </header>
+
+        <div class="faq-list">
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-1">
+              <span>ما الفرق بين البرمجة من الصفر والقوالب الجاهزة؟</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div id="faq-ans-1" class="faq-panel">
+              <p>البرمجة من الصفر تضمن كوداً خفيفاً بنسبة 100% مصمماً خصيصاً لاحتياجات نشاطك، بدون إضافات أمنية غير ضرورية، مع سرعة تصفح تتجاوز 90 نقطة على اختبارات Google وامتلاكك الكامل لملفات الكود وقواعد البيانات بدون اشتراكات أو عمولات على مبيعاتك.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-2">
+              <span>هل تقتطع الشركة أي نسبة أو عمولة على عمليات البيع؟</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div id="faq-ans-2" class="faq-panel">
+              <p>نهائياً. في ويب ستاك سياستنا واضحة: 0% عمولة على المبيعات. كافة أرباح متجرك وعمليات الدفع الإلكتروني تذهب مباشرة إلى حسابك البنكي التجاري دون أي وسيط أو اقتطاع.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-3">
+              <span>كم يستغرق تسليم المتجر أو الموقع الإلكتروني؟</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div id="faq-ans-3" class="faq-panel">
+              <p>تتراوح المدة عادة بين 7 إلى 14 يوم عمل حسب حجم الكتالوج والمميزات المطلوبة، وتشمل الاختبارات الشاملة لبوابات الدفع، التوافق مع الهواتف، وربط الدومين الرسمي والاستضافة السحابية.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       5. الفوتر البسيط
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-light);">
+        ويب ستاك للحلول البرمجية — كود مخصص، ملكية كاملة، أداء استثنائي
+      </p>
+      <p>© 2026 جميع الحقوق محفوظة. تم بناء هذا النموذج بمعايير Front-end نقية وخالية من المكتبات الثقيلة.</p>
+    </div>
+  </footer>
+
+  <!-- زر واتساب العائم الوحيد (تأثير رقم 5) -->
+  <a href="https://wa.me/201107787049?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="تواصل فوري عبر واتساب">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.26-1.49-1.41-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.54.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29"/>
+    </svg>
+  </a>
+
+  <!-- ========================================================================
+       كود JavaScript الخالص (Vanilla JS - حجم أقل من 5 كيلوبايت)
+       مقسم إلى دوال مستقلة قابلة للنسخ بسهولة
+       ======================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // فحص تفضيل تقليل الحركة لضمان سهولة الوصول (Accessibility)
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ========================================================================
+         التأثير 1: معاينة هاتف متحركة داخل كل بطاقة عمل
+         - يعمل فقط عند ظهور البطاقة بنسبة 40% داخل الشاشة
+         - يتوقف فور خروجها لتوفير موارد المعالج وكرت الشاشة
+         ======================================================================== */
+      function initPhoneScrollPreview() {
+        if (prefersReducedMotion) return;
+
+        const phoneScreens = document.querySelectorAll('[data-phone-preview]');
+        if (!phoneScreens.length) return;
+
+        const observerOptions = {
+          root: null,
+          threshold: 0.40 // 40% من البطاقة مرئية
+        };
+
+        const phoneObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const screen = entry.target;
+            if (entry.isIntersecting) {
+              screen.classList.add('is-playing');
+            } else {
+              screen.classList.remove('is-playing');
+            }
+          });
+        }, observerOptions);
+
+        phoneScreens.forEach((screen) => phoneObserver.observe(screen));
+      }
+
+      /* ========================================================================
+         التأثير 2: هالة ذهبية ناعمة تتبع الماوس في الهيرو
+         - تحديث متغيرات CSS (--mx و --my) عبر requestAnimationFrame
+         - تعمل فقط على الأجهزة المزودة بمؤشر ماوس دقيق (pointer: fine)
+         - لا تؤثر على الضغط (pointer-events: none)
+         ======================================================================== */
+      function initHeroMouseGlow() {
+        if (prefersReducedMotion) return;
+
+        const isMouseDevice = window.matchMedia('(pointer: fine)').matches;
+        if (!isMouseDevice) return;
+
+        const hero = document.getElementById('hero');
+        if (!hero) return;
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let isTicking = false;
+
+        function updateGlowPosition() {
+          hero.style.setProperty('--mx', `${mouseX}px`);
+          hero.style.setProperty('--my', `${mouseY}px`);
+          isTicking = false;
+        }
+
+        hero.addEventListener('mouseenter', () => {
+          hero.classList.add('is-active');
+        });
+
+        hero.addEventListener('mouseleave', () => {
+          hero.classList.remove('is-active');
+        });
+
+        hero.addEventListener('mousemove', (e) => {
+          const rect = hero.getBoundingClientRect();
+          mouseX = e.clientX - rect.left;
+          mouseY = e.clientY - rect.top;
+
+          if (!isTicking) {
+            requestAnimationFrame(updateGlowPosition);
+            isTicking = true;
+          }
+        }, { passive: true });
+      }
+
+      /* ========================================================================
+         التأثير 3: ظهور متدرج للبطاقات عند التمرير (Staggered Reveal)
+         - مدة 450ms مع تأخير متتالي (stagger) بين البطاقات
+         - يتم تفعيله مرة واحدة لكل بطاقة عبر IntersectionObserver
+         ======================================================================== */
+      function initStaggeredReveal() {
+        const cards = document.querySelectorAll('.portfolio-card');
+        if (!cards.length) return;
+
+        if (prefersReducedMotion) {
+          cards.forEach((card) => card.classList.add('is-revealed'));
+          return;
+        }
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const card = entry.target;
+              card.classList.add('is-revealed');
+              observer.unobserve(card); // يعمل مرة واحدة فقط
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        cards.forEach((card, index) => {
+          // تأخير متتالي محسوب: 0ms للأولى، 85ms للثانية، 170ms للثالثة
+          const delay = (index % 3) * 85;
+          card.style.transitionDelay = `${delay}ms`;
+          revealObserver.observe(card);
+        });
+      }
+
+      /* ========================================================================
+         التأثير 4: شريط تصنيفات في معرض الأعمال (Filter Pills)
+         - فلترة سلسة للبطاقات مع تحديث مؤشرات الحالة الدلالية (aria)
+         ======================================================================== */
+      function initPortfolioFilter() {
+        const filterButtons = document.querySelectorAll('.filter-pill');
+        const cards = document.querySelectorAll('.portfolio-card');
+        if (!filterButtons.length || !cards.length) return;
+
+        filterButtons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const selectedFilter = btn.getAttribute('data-filter');
+
+            // تحديث حالة الأزرار
+            filterButtons.forEach((b) => {
+              b.classList.remove('is-active');
+              b.setAttribute('aria-selected', 'false');
+              b.removeAttribute('aria-current');
+            });
+
+            btn.classList.add('is-active');
+            btn.setAttribute('aria-selected', 'true');
+            btn.setAttribute('aria-current', 'page');
+
+            // فلترة البطاقات
+            let visibleIndex = 0;
+            cards.forEach((card) => {
+              const cardCategory = card.getAttribute('data-category');
+              const shouldShow = (selectedFilter === 'all' || cardCategory === selectedFilter);
+
+              if (shouldShow) {
+                card.classList.remove('is-hidden');
+                // إعادة ضبط التأخير التتابعي للبطاقات الظاهرة
+                const delay = (visibleIndex % 3) * 60;
+                card.style.transitionDelay = `${delay}ms`;
+                visibleIndex++;
+                requestAnimationFrame(() => {
+                  card.classList.add('is-revealed');
+                });
+              } else {
+                card.classList.remove('is-revealed');
+                card.classList.add('is-hidden');
+              }
+            });
+          });
+        });
+      }
+
+      /* ========================================================================
+         قسم الأسئلة الشائعة البسيط (Accordion)
+         - يدعم إمكانية الوصول وفتح وإغلاق العناصر بنعومة
+         ======================================================================== */
+      function initFaqAccordion() {
+        const triggers = document.querySelectorAll('.faq-trigger');
+        if (!triggers.length) return;
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener('click', () => {
+            const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+            const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+            if (!panel) return;
+
+            // إغلاق باقي الأسئلة
+            triggers.forEach((otherTrigger) => {
+              if (otherTrigger !== trigger) {
+                otherTrigger.setAttribute('aria-expanded', 'false');
+                const otherPanel = document.getElementById(otherTrigger.getAttribute('aria-controls'));
+                if (otherPanel) {
+                  otherPanel.classList.remove('is-open');
+                  otherPanel.style.maxHeight = null;
+                }
+              }
+            });
+
+            // تبديل السؤال الحالي
+            if (isExpanded) {
+              trigger.setAttribute('aria-expanded', 'false');
+              panel.classList.remove('is-open');
+              panel.style.maxHeight = null;
+            } else {
+              trigger.setAttribute('aria-expanded', 'true');
+              panel.classList.add('is-open');
+              panel.style.maxHeight = panel.scrollHeight + 30 + 'px';
+            }
+          });
+        });
+      }
+
+      /* ========================================================================
+         تهيئة كافة التأثيرات عند اكتمال تحميل الصفحة
+         ======================================================================== */
+      document.addEventListener('DOMContentLoaded', () => {
+        initHeroMouseGlow();      // تأثير 2
+        initPhoneScrollPreview(); // تأثير 1
+        initStaggeredReveal();    // تأثير 3
+        initPortfolioFilter();    // تأثير 4
+        initFaqAccordion();       // الأسئلة الشائعة
+      });
+
+    })();
+  </script>
+</body>
+</html>
