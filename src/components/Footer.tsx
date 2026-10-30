@@ -21,13 +21,19 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#DC2626] to-[#D97706] flex items-center justify-center font-mono font-bold text-white text-base shadow-[0_0_15px_rgba(220,38,38,0.4)] ring-1 ring-amber-400/40">
-                &gt;_
+              <div className="relative w-12 h-12 rounded-full p-0.5 flex items-center justify-center shadow-[0_0_18px_rgba(245,158,11,0.25)] shrink-0">
+                <img
+                  src="/webstack-circle-full.png"
+                  alt="WebStack Circular Logo"
+                  className="w-full h-full object-contain rounded-full"
+                />
               </div>
               <div>
-                <span className="font-extrabold text-xl text-white block tracking-tight font-sans">
-                  WebStack
-                </span>
+                <div className="font-extrabold text-xl tracking-tight flex items-center gap-1">
+                  <span className="font-sans text-white font-black">Web</span>
+                  <span className="font-sans text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 font-black">Stack</span>
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.9)] ml-0.5"></span>
+                </div>
                 <span className="text-[11px] text-amber-300 font-mono">
                   {isAr ? 'حلول البرمجيات والمتاجر المخصصة' : 'Custom Software & E-Commerce'}
                 </span>

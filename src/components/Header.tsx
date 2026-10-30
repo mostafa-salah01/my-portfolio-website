@@ -29,18 +29,24 @@ export const Header: React.FC<HeaderProps> = ({ lang, onToggleLang, activeTab, o
     <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-2xl bg-[#07090E]/90 border-b border-amber-500/20">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
         
-        {/* Brand Logo */}
+        {/* Brand Logo with Themed WebStack Emblem in Site Colors */}
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2 sm:gap-3 text-start group cursor-pointer shrink-0"
+          className="flex items-center gap-2.5 sm:gap-3 text-start group cursor-pointer shrink-0"
+          aria-label="WebStack Software Solutions"
         >
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-tr from-[#DC2626] via-[#B91C1C] to-[#D97706] flex items-center justify-center font-mono font-bold text-white text-sm sm:text-base shadow-[0_0_15px_rgba(220,38,38,0.45)] ring-1 ring-amber-400/40 group-hover:scale-105 transition-transform shrink-0">
-            &gt;_
+          <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-[0_0_16px_rgba(245,158,11,0.25)] group-hover:shadow-[0_0_24px_rgba(245,158,11,0.45)] transition-all shrink-0">
+            <img
+              src="/webstack-circle-full.png"
+              alt="WebStack Circular Logo"
+              className="w-full h-full object-contain rounded-full group-hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div className="flex flex-col justify-center">
-            <div className="font-extrabold text-base sm:text-lg tracking-tight text-white flex items-center gap-1.5 sm:gap-2">
-              <span className="font-sans">WebStack</span>
-              <span className="inline-block w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
+            <div className="font-extrabold text-base sm:text-lg tracking-tight flex items-center gap-1">
+              <span className="font-sans text-white font-black tracking-tight">Web</span>
+              <span className="font-sans text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 font-black">Stack</span>
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.9)] ml-0.5"></span>
             </div>
             <div className="hidden md:block text-[11px] text-amber-200/80 font-medium leading-none">
               {isAr ? 'حلول البرمجيات والمتاجر المخصصة' : 'Custom Software & E-Commerce'}
