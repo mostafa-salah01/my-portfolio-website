@@ -101,35 +101,6 @@ export const HomeView: React.FC<HomeViewProps> = ({ lang, onSelectProject, onNav
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 relative">
         <div className="text-center max-w-4xl mx-auto">
           
-          {/* Top Hero Brand Crest & Logo Spotlight ("مكان الكورة واللوجو من فوق") in Website Colors */}
-          <div className="flex flex-col items-center justify-center mb-6 relative">
-            <div className="relative group cursor-pointer" onClick={() => onNavigate('home', 'client-work')}>
-              {/* Outer Pulsing Radial Glow in Site Theme (Gold & Ruby) */}
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-amber-500/25 via-red-500/20 to-amber-500/25 blur-xl opacity-80 group-hover:opacity-100 transition-opacity animate-pulse pointer-events-none"></div>
-
-              {/* Glowing Cyber Circular Icon ("مكان الكورة واللوجو من فوق") */}
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full p-1 flex items-center justify-center shadow-[0_0_40px_rgba(245,158,11,0.35)] group-hover:shadow-[0_0_65px_rgba(245,158,11,0.55)] group-hover:scale-105 transition-all duration-300">
-                <img
-                  src="/webstack-circle-full.png"
-                  alt="WebStack Circular Logo"
-                  className="w-full h-full object-contain rounded-full drop-shadow-[0_0_18px_rgba(1,160,249,0.35)] group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            </div>
-
-            {/* Official WebStack Brand Typography in Site Colors */}
-            <div className="mt-3 flex items-center gap-2">
-              <span className="font-extrabold text-base sm:text-lg md:text-xl tracking-tight flex items-center gap-1">
-                <span className="font-sans text-white font-black tracking-tight">Web</span>
-                <span className="font-sans text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 font-black">Stack</span>
-              </span>
-              <span className="h-3.5 w-px bg-amber-500/30"></span>
-              <span className="text-xs sm:text-[13px] font-mono text-amber-300/90 font-medium">
-                {isAr ? 'منظومة البرمجيات والمتاجر المخصصة' : 'Custom E-Commerce & Systems'}
-              </span>
-            </div>
-          </div>
-
           {/* Live Cyclic Typewriter Tag Badge */}
           <div className="mb-6">
             <CyclicTypewriter phrases={isAr ? rolesAr : rolesEn} />

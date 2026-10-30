@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
                 />
               </div>
               <div>
-                <div className="font-extrabold text-xl tracking-tight flex items-center gap-1">
+                <div dir="ltr" className="font-extrabold text-xl tracking-tight flex items-center gap-1">
                   <span className="font-sans text-white font-black">Web</span>
                   <span className="font-sans text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 font-black">Stack</span>
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.9)] ml-0.5"></span>
